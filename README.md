@@ -30,6 +30,8 @@ Kind:
 **All sub modules will be given a kind, and they will be placed in thoes directories, like "POINT".**
 1.RGB2GRAY:
 -----------
+**Progress:**  
+50%.  
 **Function:**  
 Graying, transforming a 24bits(rgb) image to a 8bits(gray) image.  
 **Files:**  
@@ -38,6 +40,8 @@ Graying, transforming a 24bits(rgb) image to a 8bits(gray) image.
 
 2.GRAY2BIN:
 -----------
+**Progress:**  
+20%.  
 **Function:**  
 Binorization, transforming a 8bits(gray) image to a 1bit(bin) image.  
 **Files:**  
