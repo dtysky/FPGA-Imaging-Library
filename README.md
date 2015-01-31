@@ -41,11 +41,11 @@ The function simulation's result will be placed in SIM_CHECK directory.**
 
 Testing process:
 ===========
-**1. Put your image file in  IMAGE_FOR_TEST.  
-2. Run software simulation files in SOFT_SIM.  
-3. Run fpga function simulation in Modelsim, until the vivado can support a complete systemverilog.  
-4. Creat files used for function simulation and testing on board.  
-5. Convent function simulation's result to image.  
+**1. Put your image files in  IMAGE_FOR_TEST.  
+2. Run software simulation in SOFT_SIM.  
+3. Run fpga function simulation in HDL_SIM, please using Modelsim, until the vivado can support a complete systemverilog.  
+4. Creat files used for function simulation and testing on board in DATA_CREAT.  
+5. Convent function simulation's results to image in SIM_CHECK.  
 6. If you want to do testing on board, you can open the project "TEST_ON_BOARD", the replace the moudle in .bd file, help yourself.**
 
 ***
@@ -94,7 +94,7 @@ Thanks
 ---
 **All images for testing are from [LM7](http://lm7.xxxxxxxx.jp/).**
 
-AUTHOR
+Author
 ---
 **Dai Tianyu(dtysky)**   
 [dtysky@outlook.com](dtysky@outlook.com)  

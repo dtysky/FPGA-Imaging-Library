@@ -19,7 +19,7 @@ def color_formot(color):
 		res = '0'+res
 	return res
 
-def creat_dat(im):
+def convert(im):
 	data_src = im.getdata()
 	data_res = ''
 	for rgb in data_src:
