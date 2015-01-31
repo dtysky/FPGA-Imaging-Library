@@ -19,7 +19,7 @@ def color_formot(color):
 		res = '0'+res
 	return res
 
-def convert(im):
+def creat_dat(im):
 	data_src = im.getdata()
 	data_res = ''
 	for rgb in data_src:
@@ -36,7 +36,7 @@ dat_index = ''
 for root,name,ex in FileAll:
 	im_src = Image.open(root+name+ex)
 	s_x, s_y = im_src.size
-	dat_res = open('../HDL_SIM/img'+name+'.dat','w')
+	dat_res = open('../HDL_SIM/'+name+'.dat','w')
 	dat_res.write(str(s_x)+'\n'+str(s_y)+'\n')
 	dat_res.write(creat_dat(im_src))
 	dat_index += 'img'+name+'\n'

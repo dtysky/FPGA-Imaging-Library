@@ -13,32 +13,18 @@ for root,dirs,files in os.walk('../HDL_SIM'):
         if ex=='.res':
         	FileAll.append((root+'/',name,ex))
 
-def color_formot(color):
-	res=bin(color)[2:]
-	for i in range(8-len(res)):
-		res = '0'+res
-	return res
-
-def convert(fp):
-	data_src = fp.readline
-	data_res = ''
-	for rgb in data_src:
-		for c in rgb:
-			data_res += color_formot(c)
-		data_res +='\n'
-	return data_res[:-1]
-
-dat_index = ''
+def convert(data):
+	data_res = []
+	for gray in data[2:]:
+		data_res.append(int(gray))
+	return list(data_res)
 
 for root,name,ex in FileAll:
-	im_src = Image.open(root+name+ex)
-	s_x, s_y = im_src.size
-	dat_res = open('../HDL_SIM/img'+name+'.dat','w')
-	dat_res.write(creat_dat(im_src))
-	dat_index += 'img'+name+'\n'
-	dat_res.close()
-
-dat_index = dat_index[:-1]
-dat_index_f = open('../HDL_SIM/imgindex.dat','w')
-dat_index_f.write(dat_index)
-dat_index_f.close()
+	dat_src = open(root+name+ex)
+	data_src = dat_src.readlines()
+	s_x = int(data_src[0])
+	s_y = int(data_src[1])
+	im_res = Image.new('L',(s_x,s_y),0)
+	im_res.putdata(convert(data_src))
+	im_res.save('hdl'+name+'.jpg')
+	dat_src.close()
