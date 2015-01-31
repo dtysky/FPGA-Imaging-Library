@@ -5,7 +5,7 @@
 // 
 // Create Date: 2015/01/30 16:56:39
 // Design Name: RGB2GRAY
-// Module Name: RGB2GRAY
+// Module Name: RGB2GRAY_TB
 // Project Name: Image processing project
 // Target Devices: 
 // Tool Versions: 

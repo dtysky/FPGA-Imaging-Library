@@ -22,6 +22,5 @@ for root,f in FileAll:
 	im_src = Image.open(root+f)
 	s_x, s_y = im_src.size
 	im_res = Image.new('L', (s_x, s_y), 0)
-	print im_res.getdata()[0]
 	im_res.putdata(transform(im_src))
-	im_res.save('res' + f)
+	im_res.save('../SIM_CHECK/soft' + f)
