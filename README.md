@@ -24,15 +24,15 @@ Before using those, you must get a python 2.7.8.**
 **Files for creating a mif and a dat file, mif file can be a init file for rom, and dat file can be used for hdl function simulation.**
 **Mif file will be placed in this directory, and the dat file will in HDL_SIM.**
 
-5. HDL_SIM:
+4. HDL_SIM:
 ----------
 **Hdl function simulation will be done here, please use Modelsim to open XXX.mpc file.**
 
-4. SIM_CHECK:
+5. SIM_CHECK:
 -------------
 **Creating a image from the result of hdl function simulation, software simulation's result also will be here.**  
 
-5. HDL:
+6. HDL:
 -----
 **FPGA project will be here, built on xilinx vivado.  
 The function simulation's result will be placed in SIM_CHECK directory.**
