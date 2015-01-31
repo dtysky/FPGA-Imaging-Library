@@ -65,7 +65,7 @@ This is a special project for all sub modules' testing on board.
 1.RGB2GRAY:
 -----------
 **Progress:**  
-50%.  
+100%.  
 **Kind:**  
 Point.  
 **Function:**  
