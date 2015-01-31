@@ -3,9 +3,9 @@
 // Company: Xilinx
 // Engineer: Dai Tianyu (dtysky)
 // 
-// Create Date: 2015/01/30 16:56:39
-// Design Name: RGB2GRAY
-// Module Name: RGB2GRAY_TB
+// Create Date: 2015/01/31 21:04:14
+// Design Name: GRAY2BIN
+// Module Name: GRAY2BIN_TB
 // Project Name: Image processing project
 // Target Devices: 
 // Tool Versions: 
@@ -18,6 +18,7 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
+
 module CLOCK (
 	output bit clk
 	);
@@ -28,13 +29,15 @@ module CLOCK (
 
 endmodule
 
-module RGB2GRAY_TB();
+module GRAY2BIN_TB();
 	//Pipeline's level
 	parameter pipe_lev = 0;
 
+	parameter th = 128;
+
 	bit clk;
-	bit[23:0] rgb;
 	bit[7:0] gray;
+	bit b;
 
 	integer fi,fo;
 	int wfw;
@@ -43,7 +46,7 @@ module RGB2GRAY_TB();
 	int fsize;
 
 	CLOCK CLOCK1 (clk);
-	RGB2GRAY RGB2GRAY1(rgb,gray);
+	GRAY2BIN #(th) GRAY2BIN1(gray,b);
 
 	initial begin
 		wfw = 0;
@@ -65,8 +68,8 @@ module RGB2GRAY_TB();
 			$fwrite(fo,"%s\n",imsize);
 			while (!$feof(fi)) begin 
 				@(posedge clk);
-				$fscanf(fi,"%b",rgb);
-				if(wfw == pipe_lev+1) $fwrite(fo,"%d\n",gray);
+				$fscanf(fi,"%b",gray);
+				if(wfw == pipe_lev+1) $fwrite(fo,"%d\n",b);
 				else wfw = wfw + 1;
 			end
 			wfw = 0;

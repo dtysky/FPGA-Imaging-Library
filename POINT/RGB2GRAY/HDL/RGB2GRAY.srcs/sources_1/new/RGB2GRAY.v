@@ -21,7 +21,6 @@
 
 
 module RGB2GRAY(
-	input clk,
 	input[23:0] rgb,
 	output[7:0] gray
     );

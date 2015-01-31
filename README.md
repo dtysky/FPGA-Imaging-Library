@@ -77,7 +77,7 @@ Graying, transforming a 24bits(rgb) image to a 8bits(gray) image.
 2.GRAY2BIN:
 -----------
 **Progress:**  
-20%.  
+100%.  
 **Kind:**  
 Point.  
 **Function:**  

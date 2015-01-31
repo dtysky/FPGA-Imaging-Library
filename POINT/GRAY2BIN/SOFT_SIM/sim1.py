@@ -3,7 +3,9 @@ __author__ = 'Dai Tianyu (dtysky)'
 from PIL import Image
 import os
 
-th = 100
+ModuleName='GRAY2BIN'
+
+th = 128
 FileAll = []
 
 for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
