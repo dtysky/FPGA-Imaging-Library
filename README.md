@@ -24,7 +24,7 @@ Before using those, you must get a python 2.7.8.**
 
 4. SIM_CHECK:
 -------------
-**Creating a image from the result of hdl function simulation, software simulation's result also will be here.  **
+**Creating a image from the result of hdl function simulation, software simulation's result also will be here.**  
 
 5. HDL:
 -----
@@ -73,14 +73,17 @@ Binorization, transforming a 8bits(gray) image to a 1bit(bin) image.
 
 Others
 ======
+Thanks
+---
+**All images for testing are from [LM7](http://lm7.xxxxxxxx.jp/).**
 
 AUTHOR
 ---
-Dai Tianyu(dtysky)   
+**Dai Tianyu(dtysky)**   
 [dtysky@outlook.com](dtysky@outlook.com)  
 [http://github.com/dtysky](http://github.com/dtysky)
 
 Copyright
 ---
-Copyright © 2014, Dai Tianyu(dtysky). All Rights Reserved.  
-This project is free software and released under the [MIT License (MIT)](http://mit-license.org/).
+**Copyright © 2014, Dai Tianyu(dtysky). All Rights Reserved.  
+This project is free software and released under the** [MIT License (MIT)](http://mit-license.org/).
