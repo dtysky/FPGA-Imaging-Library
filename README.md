@@ -21,7 +21,7 @@ The result will be placed in SIM_CHECK directory.**
 
 3.DATA_CREAT:
 ----------
-**Files for creating a mif and a dat file, mif file can be a init file for rom, and dat file can be used for hdl function simulation.**
+**Files for creating a mif and a dat file, mif file can be a init file for rom, and dat file can be used for hdl function simulation.**  
 **Mif file will be placed in this directory, and the dat file will in HDL_SIM.**
 
 4. HDL_SIM:
@@ -43,8 +43,8 @@ Testing process:
 ===========
 **1. Put your image files in  IMAGE_FOR_TEST.  
 2. Run software simulation in SOFT_SIM.  
-3. Run fpga function simulation in HDL_SIM, please using Modelsim, until the vivado can support a complete systemverilog.  
-4. Creat files used for function simulation and testing on board in DATA_CREAT.  
+3. Creat files used for function simulation and testing on board in DATA_CREAT.  
+4. Run fpga function simulation in HDL_SIM, please using Modelsim, until the vivado can support a complete systemverilog.  
 5. Convent function simulation's results to image in SIM_CHECK.  
 6. If you want to do testing on board, you can open the project "TEST_ON_BOARD", the replace the moudle in .bd file, help yourself.**
 
