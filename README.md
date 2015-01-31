@@ -1,5 +1,6 @@
 # IMAGE_PROCESS_SUB_MODULE
-All sub modules for image processing project on FPGA.
+**All sub modules for image processing project on FPGA.  
+Each module has its software and hdl simulation.**
 
 ***
 
@@ -21,6 +22,11 @@ Before using those, you must get a python 2.7.8.**
 3.DATA_CREAT:
 ----------
 **Files for creating a mif and a dat file, mif file can be a init file for rom, and dat file can be used for hdl function simulation.**
+**Mif file will be placed in this directory, and the dat file will in HDL_SIM.**
+
+5. HDL_SIM:
+----------
+**Hdl function simulation will be done here, please use Modelsim to open XXX.mpc file.**
 
 4. SIM_CHECK:
 -------------
@@ -30,6 +36,17 @@ Before using those, you must get a python 2.7.8.**
 -----
 **FPGA project will be here, built on xilinx vivado.  
 The function simulation's result will be placed in SIM_CHECK directory.**
+
+***
+
+Testing process:
+===========
+**1. Put your image file in  IMAGE_FOR_TEST.  
+2. Run software simulation files in SOFT_SIM.  
+3. Run fpga function simulation in Modelsim, until the vivado can support a complete systemverilog.  
+4. Creat files used for function simulation and testing on board.  
+5. Convent function simulation's result to image.  
+6. If you want to do testing on board, you can open the project "TEST_ON_BOARD", the replace the moudle in .bd file, help yourself.**
 
 ***
 

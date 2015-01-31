@@ -1,4 +1,4 @@
-__author__ = 'dtysky'
+__author__ = 'Dai Tianyu (dtysky)'
 
 from PIL import Image
 import os

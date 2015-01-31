@@ -1,7 +1,9 @@
-__author__ = 'dtysky'
+__author__ = 'Dai Tianyu (dtysky)'
 
 from PIL import Image
 import os
+
+ModuleName='RGB2GRAY'
 
 FileAll = []
 
@@ -29,9 +31,17 @@ def creat_dat(im):
 def creat_mif(im):
 	pass
 
+dat_index = ''
+
 for root,name,ex in FileAll:
 	im_src = Image.open(root+name+ex)
 	s_x, s_y = im_src.size
-	dat_res = open('img'+name+'.dat','w')
+	dat_res = open('../HDL_SIM/img'+name+'.dat','w')
 	dat_res.write(creat_dat(im_src))
+	dat_index += 'img'+name+'.dat\n'
 	dat_res.close()
+
+dat_index = dat_index[:-1]
+dat_index_f = open('../HDL_SIM/imgindex.dat','w')
+dat_index_f.write(dat_index)
+dat_index_f.close()
