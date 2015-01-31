@@ -1,6 +1,7 @@
 # IMAGE_PROCESS_SUB_MODULE
 **All sub modules for image processing project on FPGA.  
-Each module has its software and hdl simulation.**
+Each module has its software and hdl simulation, and will be packaged to vivado ipcore.  
+All software projects are depent on python 2.7.8, and hdl projects are built on xilinx vivado.**  
 
 ***
 
@@ -16,8 +17,7 @@ Each module will have its directory, and this directories will have the same str
 2.SOFT_SIM:
 ----------
 **Files for software simulation will be here, those can show you this module's function by software method.  
-The result will be placed in SIM_CHECK directory.  
-Before using those, you must get a python 2.7.8.**
+The result will be placed in SIM_CHECK directory.**
 
 3.DATA_CREAT:
 ----------
