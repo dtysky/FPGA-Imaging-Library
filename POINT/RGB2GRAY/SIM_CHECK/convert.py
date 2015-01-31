@@ -7,10 +7,10 @@ ModuleName='RGB2GRAY'
 
 FileAll = []
 
-for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
+for root,dirs,files in os.walk('../HDL_SIM'):
     for f in files:
     	name,ex=os.path.splitext(f)
-        if ex=='.jpg':
+        if ex=='.res':
         	FileAll.append((root+'/',name,ex))
 
 def color_formot(color):
@@ -19,8 +19,8 @@ def color_formot(color):
 		res = '0'+res
 	return res
 
-def creat_dat(im):
-	data_src = im.getdata()
+def convert(fp):
+	data_src = fp.readline
 	data_res = ''
 	for rgb in data_src:
 		for c in rgb:
@@ -28,16 +28,12 @@ def creat_dat(im):
 		data_res +='\n'
 	return data_res[:-1]
 
-def creat_mif(im):
-	pass
-
 dat_index = ''
 
 for root,name,ex in FileAll:
 	im_src = Image.open(root+name+ex)
 	s_x, s_y = im_src.size
 	dat_res = open('../HDL_SIM/img'+name+'.dat','w')
-	dat_res.write(str(s_x)+'\n'+str(s_y)+'\n')
 	dat_res.write(creat_dat(im_src))
 	dat_index += 'img'+name+'\n'
 	dat_res.close()

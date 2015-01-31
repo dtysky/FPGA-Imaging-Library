@@ -39,7 +39,7 @@ module RGB2GRAY_TB();
 	integer fi,fo;
 	int wfw;
 	string fname[$];
-	string ftmp;
+	string ftmp,imsize;
 	int fsize;
 
 	CLOCK CLOCK1 (clk);
@@ -56,8 +56,13 @@ module RGB2GRAY_TB();
 		fsize = fname.size();
 		for (int i = 0; i < fsize; i++) begin;
 			ftmp = fname.pop_back();
-			fi = $fopen(ftmp,"r");
-			fo = $fopen({"res_",ftmp},"w");
+			fi = $fopen({ftmp,".dat"},"r");
+			fo = $fopen({ftmp,".res"},"w");
+			//Keep xsize and ysize
+			$fscanf(fi,"%s",imsize);
+			$fwrite(fo,"%s\n",imsize);
+			$fscanf(fi,"%s",imsize);
+			$fwrite(fo,"%s\n",imsize);
 			while (!$feof(fi)) begin 
 				@(posedge clk);
 				$fscanf(fi,"%b",rgb);
