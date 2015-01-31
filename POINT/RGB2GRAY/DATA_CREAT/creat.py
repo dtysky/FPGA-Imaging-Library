@@ -39,7 +39,7 @@ for root,name,ex in FileAll:
 	dat_res = open('../HDL_SIM/'+name+'.dat','w')
 	dat_res.write(str(s_x)+'\n'+str(s_y)+'\n')
 	dat_res.write(creat_dat(im_src))
-	dat_index += 'img'+name+'\n'
+	dat_index += name+'\n'
 	dat_res.close()
 
 dat_index = dat_index[:-1]

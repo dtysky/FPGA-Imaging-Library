@@ -35,8 +35,8 @@ module RGB2GRAY(
 
 	//0.3 = 1/4 + 1/32
 	assign gray_r = {2'b0,r[7:2]} + {5'b0,r[7:5]};
-	//0.6 = 1/2 + 1/8
-	assign gray_g = {1'b0,g[7:1]} + {3'b0,g[7:3]};
+	//0.6 = 1/2 + 1/16
+	assign gray_g = {1'b0,g[7:1]} + {4'b0,g[7:4]};
 	//0.1 = 1/8
 	assign gray_b = {3'b0,b[7:3]};
 

@@ -66,9 +66,10 @@ module RGB2GRAY_TB();
 			while (!$feof(fi)) begin 
 				@(posedge clk);
 				$fscanf(fi,"%b",rgb);
-				if(wfw == pipe_lev) $fwrite(fo,"%b\n",gray);
+				if(wfw == pipe_lev+1) $fwrite(fo,"%d\n",gray);
 				else wfw = wfw + 1;
 			end
+			wfw = 0;
 			$fclose(fi);
 			$fclose(fo);
 		end
