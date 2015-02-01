@@ -33,9 +33,8 @@ module GRAY2BIN_TB();
 	//Pipeline's level
 	parameter pipe_lev = 0;
 
-	parameter th = 128;
-
 	bit clk;
+	bit[7:0] th;
 	bit[7:0] gray;
 	bit b;
 
@@ -46,9 +45,10 @@ module GRAY2BIN_TB();
 	int fsize;
 
 	CLOCK CLOCK1 (clk);
-	GRAY2BIN #(th) GRAY2BIN1(gray,b);
+	GRAY2BIN GRAY2BIN1(th,gray,b);
 
 	initial begin
+		th = 128;
 		wfw = 0;
 		fi = $fopen("imgindex.dat","r");
 		while (!$feof(fi)) begin

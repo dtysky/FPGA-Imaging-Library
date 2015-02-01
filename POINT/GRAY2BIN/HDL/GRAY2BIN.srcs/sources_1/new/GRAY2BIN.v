@@ -20,10 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module GRAY2BIN(
+	input[7:0] th,
 	input[7:0] gray,
 	output b
     );
-	parameter th = 128;
 
 	assign b = gray<th ? 0 : 1;
 
