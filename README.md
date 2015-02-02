@@ -96,7 +96,7 @@ Point.
 CT and luminance transition, changing a 24bits(rgb) image's CT and luminance.  
 **HDL Files:**  
 1. LM_CT_TRANS.v: Main function.  
-2. LM_CT_TRANS_TB.sv: TestBench.
+2. LM_CT_TRANS_TB.sv: TestBench.  
 3. MUL_FOR_SIM.sv: A multiplier for testing.
 
 ***
