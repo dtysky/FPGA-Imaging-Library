@@ -115,5 +115,5 @@ Author
 
 Copyright
 ---
-**Copyright © 2014, Dai Tianyu(dtysky). All Rights Reserved.  
+**Copyright © 2015, Dai Tianyu(dtysky). All Rights Reserved.  
 This project is free software and released under the** [MIT License (MIT)](http://mit-license.org/).
