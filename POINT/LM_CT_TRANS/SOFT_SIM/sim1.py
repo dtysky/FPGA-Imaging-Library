@@ -5,7 +5,7 @@ import os
 
 #Out = ct_control * (In + lm_control)
 
-lm_control = 20
+lm_control = 32
 ct_control = 0.5
 
 FileAll = []
