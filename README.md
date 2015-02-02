@@ -93,7 +93,7 @@ Binorization, transforming a 8bits(gray) image to a 1bit(bin) image.
 **Kind:**  
 Point.  
 **Function:**  
-CT and luminance transition, changing a 24bits(rgb) image's CT and luminance.  
+CT and luminance transition, changing a 8bits(a channel of rgb image) color's CT and luminance.  
 **HDL Files:**  
 1. LM_CT_TRANS.v: Main function.  
 2. LM_CT_TRANS_TB.sv: TestBench.  
