@@ -89,7 +89,7 @@ Binorization, transforming a 8bits(gray) image to a 1bit(bin) image.
 3.LM_CT_TRANS:
 -----------
 **Progress:**  
-90%.  
+100%.  
 **Kind:**  
 Point.  
 **Function:**  
