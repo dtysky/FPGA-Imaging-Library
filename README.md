@@ -12,7 +12,7 @@ Each module will have its directory, and this directories will have the same str
 
 1.IMAGE_FOR_TEST:
 -----------------
-**A directory for storing images, you can put your images for testing here.**  
+**A directory for storing images, you can put your '.jpg' images for testing here.**  
 
 2.SOFT_SIM:
 ----------
@@ -85,6 +85,18 @@ Binorization, transforming a 8bits(gray) image to a 1bit(bin) image.
 **HDL Files:**  
 1. GARY2BIN.v: Main function.  
 2. GARY2BIN_TB.sv: TestBench.
+
+3.LM_CT_TRANS:
+-----------
+**Progress:**  
+20%.  
+**Kind:**  
+Point.  
+**Function:**  
+CT and luminance transition, changing a 24bits(rgb) image's CT and luminance.  
+**HDL Files:**  
+1. LM_CT_TRANS.v: Main function.  
+2. LM_CT_TRANS_TB.sv: TestBench.
 
 ***
 
