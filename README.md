@@ -96,6 +96,13 @@ CT and luminance transition, changing a 8bits(a channel of rgb image) color's CT
 2. LM_CT_TRANS_TB.sv: TestBench.  
 3. MUL_FOR_SIM.sv: A multiplier for testing.
 
+Sp.OTHER_IP:
+-----------
+**Kind:**  
+Special. 
+**Function:**  
+Some Special IPs, for connecting and some hardware's controlling.  
+
 ***
 
 Others
