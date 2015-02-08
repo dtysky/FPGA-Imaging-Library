@@ -5,12 +5,12 @@ from PIL import ImageDraw
 from PIL import ImageFont
 import os
 
-ModuleName='FONT_SOURCE'
+ModuleName='CHR_ASCII_8X8'
 
 FONT = ImageFont.truetype('FONT.ttf',8)
 
 fi = open('ASCII.dat','r')
-fo = open('FONT_SOURCE.v','w')
+fo = open('../HDL/'+ModuleName+'.srcs/'+'sources_1/new/FONT_SOURCE.v','w')
 
 s = ''
 s += '`timescale 1ns / 1ps\n'
