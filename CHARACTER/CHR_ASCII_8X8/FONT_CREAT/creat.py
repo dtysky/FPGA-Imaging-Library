@@ -39,8 +39,8 @@ s += '\tinput[7:0] index,\n'
 s += '\toutput[63:0] result\n\t);\n\n'
 s += '\treg[63:0] r_result;\n'
 s += '\tassign result = r_result;\n\n\n'
-s += '\talways(*) begin\n'
-s += '\t\tcase(index):\n'
+s += '\talways @(*) begin\n'
+s += '\t\tcase(index)\n'
 
 for l in fi.read().splitlines():
 	l.rstrip()
@@ -59,9 +59,11 @@ for l in fi.read().splitlines():
 		im_s += str(p)
 	s += "\t\t\t8'h" + index + ' : result <= ' + im_s + ';\n'
 
-s += "\t\t\tdefault : 64'd0;\n"
-s += '\t\tend\n'
+s += "\t\t\tdefault : result <= 64'd0;\n"
+s += '\t\tendcase\n'
 s += '\tend\n'
 s += 'endmodule'
 
 fo.write(s)
+fi.close()
+fo.close()
