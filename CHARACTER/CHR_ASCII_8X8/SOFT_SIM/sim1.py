@@ -3,31 +3,39 @@ __author__ = 'Dai Tianyu (dtysky)'
 from PIL import Image
 import os
 
-#Out = ct_control * (In + lm_control)
+width = 320
+height = 180
 
-lm_control = 32
-ct_control = 0.5
+grid_width = width/8
+grid_height = height/8
 
-FileAll = []
+font_source = {}
+fi = open('FONT_SOURCE.dat','r')
+for l in fi.read().splitlines():
+	key,value = l.split(':')
+	font_source[eval(key)] = value
+fi.close()
 
-for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
-    for f in files:
-        if os.path.splitext(f)[1]=='.jpg':
-        	FileAll.append((root+'/',f))
+def transform(im,char = [{'pos':(0,0),'index':0x20}]):
+	data = list(im.getdata())
+	for c in char:
+		x0,y0 = c['pos']
+		ch = font_source[c['index']]
+		print x0,y0,ch
+		for y in range(8):
+			for x in range(8):
+				if int(ch[y*8 + x]):
+					data[(y0*8+y)*width + x0*8 + x] = (255,255,255);
+				else:
+					data[(y0*8+y)*width + x0*8 + x] = (0,0,0);
+	return data
 
-def transform(im):
-	data_src = im.getdata()
-	data_res = []
-	for rgb in data_src:
-		p = []
-		for c in rgb:
-			p.append(int(ct_control * (c + lm_control)))
-		data_res.append((p[0],p[1],p[2]))
-	return data_res
+char = []
 
-for root,f in FileAll:
-	im_src = Image.open(root+f)
-	s_x, s_y = im_src.size
-	im_res = Image.new('RGB', (s_x, s_y), 0)
-	im_res.putdata(transform(im_src))
-	im_res.save('../SIM_CHECK/soft' + f)
+
+for i in range(95):
+	char.append({'pos':(i%grid_width,i/grid_width),'index':0x20 + i})
+
+im_res = Image.new('RGB', (width, height), 0)
+im_res.putdata(transform(im_res,char))
+im_res.save('../SIM_CHECK/soft.jpg')
