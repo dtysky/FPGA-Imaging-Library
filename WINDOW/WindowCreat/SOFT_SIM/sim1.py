@@ -4,21 +4,20 @@ from PIL import Image
 import os
 
 ModuleName='WindowCreat'
-WindowSize = 9
 
 FileAll = []
 
-for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
-    for f in files:
-        if os.path.splitext(f)[1]=='.jpg':
-        	FileAll.append((root+'/',f))
+def fifo_init(wsize):
+	fifos = []
+	for y in range(WindowSize):
+		fifos.append([])
+		for x in range(WindowSize):
+			fifos.append(0)
+	return fifos
 
-def window_init():
-	
+def window_creat(wsize,data_src,xsize,ysize,xnow,ynow):
 
-def window_creat(data_src,xsize,ysize,xnow,ynow):
 	window = []
-	wsize = WindowSize
 	wsize_half = wsize >> 1
 	for y in range(wsize):
 		for x in range(wsize):
@@ -27,14 +26,15 @@ def window_creat(data_src,xsize,ysize,xnow,ynow):
 			window.append(data_src[yoffset * xsize + xoffset])
 	return window
 
-def creat(im):
+def creat(wsize,im):
+	fifos = fifo_init(wsize)
 	data_src = im.getdata()
 	xsize,ysize = im.size
 	data_res = []
 	for y in range(ysize):
 		for x in range(xsize):
 			gray = data_src[y * xsize + x]
-			window = window_creat(data_src,xsize,ysize,x,y)
+			window = window_creat(9,data_src,xsize,ysize,x,y)
 			dbg_tmp = str(y) + ' , ' + str(x) + ':\n'
 			pi = 0
 			for py in range(3):
@@ -44,6 +44,11 @@ def creat(im):
 				dbg_tmp += '\n'
 			data_res.append(dbg_tmp)
 	return data_res
+
+for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
+    for f in files:
+        if os.path.splitext(f)[1]=='.jpg':
+        	FileAll.append((root+'/',f))
 
 for root,f in FileAll:
 	im_src = Image.open(root+f)
