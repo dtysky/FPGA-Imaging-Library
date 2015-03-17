@@ -5,11 +5,10 @@ All software projects are depent on python 2.7.8 and PIL module, and hdl project
 You can also use these in quartus, just get hdl files**  
 
 ***
-Introduction：
-=============
+# Introduction：
 
-Dirs Struct:
-------------
+## Dirs Struct:
+
 This project will content many moudles, which are useful in image processing.  
 Each module will have its directory, and this directories will have the same struct as follows:  
 
@@ -36,7 +35,7 @@ The function simulation's result will be placed in SIM_CHECK directory.
 
 ***
 
-Testing process:
+## Testing process:
 --------------
 1. Put your image files in  IMAGE_FOR_TEST.  
 2. Run software simulation in SOFT_SIM.  
@@ -47,48 +46,41 @@ Testing process:
 
 ***
 
-Modules:
-=======
-Kind:
-----
-**All sub modules will be given a kind, and they will be placed in thoes directories, like "POINT".**  
-0.TEST_ON_BOARD:
----------------
-**Kind:**  
-Special.  
+## Modules:
+
+### Special:
+ 
+#### 1.TEST_ON_BOARD:
+
 **Function:**  
 This is a special project for all sub modules' testing on board.
 
-1.RGB2GRAY:
------------
+### Point:
+
+#### 1.RGB2GRAY:
+
 **Progress:**  
 100%.  
-**Kind:**  
-Point.  
 **Function:**  
 Graying, transforming a 24bits(rgb) image to a 8bits(gray) image.  
 **HDL Files:**  
 1. RGB2GRAY.v: Main function.  
 2. RGB2GRAY_TB.sv: TestBench.
 
-2.GRAY2BIN:
------------
+#### 2.GRAY2BIN:
+
 **Progress:**  
 100%.  
-**Kind:**  
-Point.  
 **Function:**  
 Binorization, transforming a 8bits(gray) image to a 1bit(bin) image.  
 **HDL Files:**  
 1. GARY2BIN.v: Main function.  
 2. GARY2BIN_TB.sv: TestBench.
 
-3.LM_CT_TRANS:
------------
+#### 3.LM_CT_TRANS:
+
 **Progress:**  
 100%.  
-**Kind:**  
-Point.  
 **Function:**  
 CT and luminance transition, changing a 8bits(a channel of rgb image) color's CT and luminance.  
 **HDL Files:**  
@@ -96,22 +88,42 @@ CT and luminance transition, changing a 8bits(a channel of rgb image) color's CT
 2. LM_CT_TRANS_TB.sv: TestBench.  
 3. MUL_FOR_SIM.sv: A multiplier for testing.
 
-4.CHR_ASCII_8X8：
-----------------
+### Window
+
+#### 1.WindowCreat:
 **Progress:**  
-20%.  
-**Kind:**  
-Character.  
+20%.    
+**Function:**  
+Creat a window from image by your definitions.  
+It will use some fifos which deepth is image's width and the amount of them are your window size. 
+**HDL Files:**  
+1. FONT_CREAT\: Creat font source by FONT.tff.    
+2. FONT_SOURCE.v: font source. 
+
+#### 2.MeanCreat:
+**Progress:**  
+20%.    
+**Function:**  
+Get the mean value form a window which created by WindowCreat.  
+**HDL Files:**  
+1. FONT_CREAT\: Creat font source by FONT.tff.    
+2. FONT_SOURCE.v: font source. 
+
+### Character
+
+#### 1.CHR_ASCII_8X8：
+
+**Progress:**  
+20%.    
+suspended development.  
 **Function:**  
 ASCII Characters Output, output characters to a frame buffer in specified position by index and offset.  
 **HDL Files:**  
 1. FONT_CREAT\: Creat font source by FONT.tff.    
 2. FONT_SOURCE.v: font source.  
 
-Sp.OTHER_IP:
------------
-**Kind:**  
-Special. 
+### OTHER_IP:
+
 **Function:**  
 Some Special IPs, for connecting and some hardware's controlling.  
 

@@ -3,20 +3,20 @@ __author__ = 'Dai Tianyu (dtysky)'
 from PIL import Image
 import os
 
-ModuleName='ChessWindowFiter'
+ModuleName='WindowCreat'
 
 FileAll = []
 
 for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
     for f in files:
     	name,ex=os.path.splitext(f)
-        if ex=='.bmp':
+        if ex=='.jpg':
         	FileAll.append((root+'/',name,ex))
 
 def color_formot(color):
-	res = '0'
-	if int(color):
-		res = '1'
+	res=bin(color)[2:]
+	for i in range(8-len(res)):
+		res = '0'+res
 	return res
 
 def creat_dat(im):

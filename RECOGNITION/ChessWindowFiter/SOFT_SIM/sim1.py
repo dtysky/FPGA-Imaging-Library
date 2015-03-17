@@ -7,13 +7,13 @@ import os,re
 
 ModuleName='ChessWindowFiter'
 
-LeftTop = (30,21)
-RightBottom = (455,480)
+LeftTop = (45,18)
+RightBottom = (257,222)
 GridWidth = 13
-GridHeight = 14
-Width = 485
-Height = 496
-# 14 16, >>4
+GridHeight = 13
+Width = 320
+Height = 240
+# 12
 GridDia = ((RightBottom[0] - LeftTop[0]) >> 4) + ((RightBottom[0] - LeftTop[0]) >> 6) + ((RightBottom[0] - LeftTop[0]) >> 7)
 GridRad = GridDia >> 1
 
