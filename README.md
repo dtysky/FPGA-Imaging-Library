@@ -88,7 +88,7 @@ CT and luminance transition, changing a 8bits(a channel of rgb image) color's CT
 2. LM_CT_TRANS_TB.sv: TestBench.  
 3. MUL_FOR_SIM.sv: A multiplier for testing.
 
-### Window
+### Window:
 
 #### 1.WindowCreat:
 **Progress:**  
@@ -109,13 +109,13 @@ Get the mean value form a window which created by WindowCreat.
 1. FONT_CREAT\: Creat font source by FONT.tff.    
 2. FONT_SOURCE.v: font source. 
 
-### Character
+### Character:
 
 #### 1.CHR_ASCII_8X8：
 
 **Progress:**  
 20%.    
-suspended development.  
+Suspended development.  
 **Function:**  
 ASCII Characters Output, output characters to a frame buffer in specified position by index and offset.  
 **HDL Files:**  
