@@ -97,8 +97,6 @@ CT and luminance transition, changing a 8bits(a channel of rgb image) color's CT
 Creat a window from image by your definitions.  
 It will use some fifos which deepth is image's width and the amount of them are your window size. 
 **HDL Files:**  
-1. FONT_CREAT\: Creat font source by FONT.tff.    
-2. FONT_SOURCE.v: font source. 
 
 #### 2.MeanCreat:
 **Progress:**  
@@ -106,8 +104,15 @@ It will use some fifos which deepth is image's width and the amount of them are 
 **Function:**  
 Get the mean value form a window which created by WindowCreat.  
 **HDL Files:**  
-1. FONT_CREAT\: Creat font source by FONT.tff.    
-2. FONT_SOURCE.v: font source. 
+
+### Recognition:
+
+#### 1.Harris:
+**Progress:**  
+20%.    
+**Function:**  
+Get all  corners from input images by harris method.  
+**HDL Files:**  
 
 ### Character:
 
