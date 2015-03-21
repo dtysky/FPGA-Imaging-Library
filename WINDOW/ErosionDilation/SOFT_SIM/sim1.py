@@ -152,7 +152,7 @@ for root,f in FileAll:
 	im_res = Image.new('1',(s_x,s_y))
 	im_res.putdata(erosion_dilation(im_src,3,MaskD1,1))
 	im_res.putdata(erosion_dilation(im_res,5,MaskE0,0))
-	for i in range(10):
+	for i in range(12):
 		im_res.putdata(ims_or(
 			[erosion_dilation(im_res,3,MaskE5,0),
 			erosion_dilation(im_res,3,MaskE6,0),
