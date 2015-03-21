@@ -105,6 +105,13 @@ It will use some fifos which deepth is image's width and the amount of them are 
 Get the mean value form a window which created by WindowCreat.  
 **HDL Files:**  
 
+#### 3.ErosionDilation:
+**Progress:**  
+20%.    
+**Function:**  
+Binary Morphology : erosion and dilation.  
+**HDL Files:**  
+
 ### Recognition:
 
 #### 1.Harris:

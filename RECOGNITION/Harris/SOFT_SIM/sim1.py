@@ -15,7 +15,7 @@ FileAll = []
 
 for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
     for f in files:
-        if os.path.splitext(f)[1]=='.bmp':
+        if os.path.splitext(f)[1]=='.jpg':
         	FileAll.append((root+'/',f))
 
 def harris(im,d_value,wsize_fitter):
@@ -43,10 +43,11 @@ def harris(im,d_value,wsize_fitter):
 			diff_col = abs(now_pix - last_pix_col)
 			diff_row = abs(now_pix - last_pix_row[x])
 
-			if in_range(x,y):
-				data_res.append(1 if diff_col >= d_value and diff_row >= d_value else 0)
-			else:
-				data_res.append(0)
+			# if in_range(x,y):
+			# 	data_res.append(1 if diff_col >= d_value and diff_row >= d_value else 0)
+			# else:
+			# 	data_res.append(0)
+			data_res.append(1 if diff_col >= d_value and diff_row >= d_value else 0)
 
 			last_pix_col = now_pix
 			last_pix_row[x] = now_pix
