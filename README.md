@@ -90,7 +90,15 @@ CT and luminance transition, changing a 8bits(a channel of rgb image) color's CT
 
 ### Window:
 
-#### 1.WindowCreat:
+#### 1.RowsCreat:
+**Progress:**  
+30%.    
+**Function:**  
+Creat and maintain some rows cache, preparing for creating window.  
+**HDL Files:**  
+
+
+#### 2.WindowCreat:
 **Progress:**  
 20%.    
 **Function:**  
@@ -98,14 +106,14 @@ Creat a window from image by your definitions.
 It will use some fifos which deepth is image's width and the amount of them are your window size. 
 **HDL Files:**  
 
-#### 2.MeanCreat:
+#### 3.MeanCreat:
 **Progress:**  
 20%.    
 **Function:**  
 Get the mean value form a window which created by WindowCreat.  
 **HDL Files:**  
 
-#### 3.ErosionDilation:
+#### 4.ErosionDilation:
 **Progress:**  
 20%.    
 **Function:**  

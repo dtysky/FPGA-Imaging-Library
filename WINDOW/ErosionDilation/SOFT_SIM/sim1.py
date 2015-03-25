@@ -130,8 +130,6 @@ def erosion_dilation(im,wsize,mask,act):
 				p_w = p_w | ~mask[w]
 				pix = pix & p_w
 			pix = pix ^ act
-			# if act == 0:
-			# 	pix = 1 if is_same(window,Mask0) else pix
 			data_res.append(pix)
 	return data_res
 
