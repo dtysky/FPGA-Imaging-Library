@@ -2,147 +2,148 @@ __author__ = 'Dai Tianyu (dtysky)'
 
 from PIL import Image
 import os,re
-import WindowCreat
+from WindowCreat import Window
+from RowsCreat import Rows
 
 ModuleName='ErosionDilation'
 
-# Mask = [
-# 1,0,0,0,1,
-# 0,0,0,0,0,
-# 0,0,0,0,0,
-# 0,0,0,0,0,
-# 1,0,0,0,1
-# ]
-
-# Mask = [
-# 1,0,0,1,
-# 0,0,0,0,
-# 0,0,0,0,
-# 1,0,0,1
-# ]
-
 Mask0 = [
-0,0,0,
-0,1,0,
-0,0,0
+[0,0,0],
+[0,1,0],
+[0,0,0]
 ]
 
 MaskE0 = [
-1,1,1,1,1,
-1,1,1,1,1,
-1,1,1,1,1,
-1,1,1,1,1,
-1,1,1,1,1
+[1,1,1,1,1],
+[1,1,1,1,1],
+[1,1,1,1,1],
+[1,1,1,1,1],
+[1,1,1,1,1]
 ]
 
 MaskE1 = [
-1,1,1,
-1,1,1,
-1,1,1
+[1,1,1],
+[1,1,1],
+[1,1,1]
 ]
 
 MaskE2 = [
-1,1,1,
-1,1,1,
-0,0,0
+[1,1,1],
+[1,1,1],
+[0,0,0]
 ]
 
 MaskE3 = [
-0,0,0,
-1,1,1,
-0,0,0
+[0,0,0],
+[1,1,1],
+[0,0,0]
 ]
 
 MaskE4 = [
-0,1,0,
-0,1,0,
-0,1,0
+[0,1,0],
+[0,1,0],
+[0,1,0]
 ]
 
 MaskE5 = [
-0,0,0,
-1,1,0,
-0,0,0
+[0,0,0],
+[1,1,0],
+[0,0,0]
 ]
 
 MaskE6 = [
-0,1,0,
-0,1,0,
-0,0,0
+[0,1,0],
+[0,1,0],
+[0,0,0]
 ]
 
 MaskE7 = [
-1,0,0,
-0,1,0,
-0,0,0
+[1,0,0],
+[0,1,0],
+[0,0,0]
 ]
 
 MaskE8 = [
-0,0,1,
-0,1,0,
-0,0,0
+[0,0,1],
+[0,1,0],
+[0,0,0]
 ]
 
 MaskD1 = [
-1,1,1,
-1,1,1,
-1,1,1
+[1,1,1],
+[1,1,1],
+[1,1,1]
 ]
 
 MaskD2 = [
-1,1,0,
-1,1,0,
-0,0,0
+[1,1,0],
+[1,1,0],
+[0,0,0]
 ]
 
 FileAll = []
 
-for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
-    for f in files:
-        if re.findall(r'jpg|bmp',f):
-        	FileAll.append((root+'/',f))
-
-def is_same(im,wsize,mask):
+def is_same(im, wsize, mask):
 	data_src = im.getdata()
 	xsize,ysize = im.size
 	data_res = []
+	rows = Rows(data_src, wsize, xsize)
+	win = Window(wsize)
+	while 1:
+		win.update(rows.update())
+		if win.is_enable():
+			break
 	for y in range(ysize):
 		for x in range(xsize):
-			window = WindowCreat.window_creat(wsize,data_src,xsize,ysize,x,y)
+			if rows.frame_empty():
+				rows = Rows(data_src, wsize, xsize)
+			w = win.update(rows.update())
 			pix = 0
-			for w in range(len(window)):
-				pix = pix | (window[w] ^ mask[w])
+			for wy in range(wsize):
+				for wx in range(wsize):
+					pix = pix | (w[wy][wx] ^ mask[wy][wx])
 			data_res.append(1 if pix == 0 else 0)
 	return data_res
 
 # act = 0 : erosion
 # act = 1 : dilation
-def erosion_dilation(im,wsize,mask,act):
+def erosion_dilation(im, wsize, mask, act):
 	data_src = im.getdata()
 	xsize,ysize = im.size
 	data_res = []
+	rows = Rows(data_src, wsize, xsize)
+	win = Window(wsize)
+	while 1:
+		win.update(rows.update())
+		if win.is_enable():
+			break
 	for y in range(ysize):
 		for x in range(xsize):
-			window = WindowCreat.window_creat(wsize,data_src,xsize,ysize,x,y)
+			if rows.frame_empty():
+				rows = Rows(data_src, wsize, xsize)
+			w = win.update(rows.update())
 			pix = 1
-			for w in range(len(window)):
-				p_w = window[w] ^ act
-				p_w = p_w | ~mask[w]
-				pix = pix & p_w
+			for wy in range(wsize):
+				for wx in range(wsize):
+					p_w = w[wy][wx] ^ act
+					p_w = p_w | ~mask[wy][wx]
+					pix = pix & p_w
 			pix = pix ^ act
 			data_res.append(pix)
 	return data_res
 
-def ims_or(ims,xsize,ysize):
-	data_src = []
-	for im in ims:
-		data_src.append(im)
-	data_res = list(data_src[0])
+def ims_or(ims, xsize, ysize):
+	data_res = list(ims[0])
 	for y in range(ysize):
 		for x in range(xsize):
-			for p_src in data_src:
+			for p_src in ims:
 				data_res[y * xsize + x] = (data_res[y * xsize + x] | p_src[y * xsize + x])
 	return data_res
+
+for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
+    for f in files:
+        if re.findall(r'jpg|bmp',f):
+        	FileAll.append((root+'/',f))
 
 for root,f in FileAll:
 	im_src = Image.open(root+f)

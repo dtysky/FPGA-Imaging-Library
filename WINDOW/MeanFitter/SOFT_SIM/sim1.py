@@ -28,6 +28,10 @@ def creat(im, wsize):
 	data_res = []
 	rows = Rows(data_src, wsize, xsize)
 	win = Window(wsize)
+	while 1:
+		win.update(rows.update())
+		if win.is_enable():
+			break
 	for i in range(len(data_src)):
 		if rows.frame_empty():
 			rows = Rows(data_src, wsize, xsize)
@@ -40,5 +44,5 @@ for root,f in FileAll:
 	im_src = Image.open(root+f)
 	s_x, s_y = im_src.size
 	im_res = Image.new('L', (s_x, s_y), 0)
-	im_res.putdata(creat(im_src, 3))
+	im_res.putdata(creat(im_src, 5))
 	im_res.save('../SIM_CHECK/soft' + f)

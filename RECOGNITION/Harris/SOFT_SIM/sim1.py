@@ -21,6 +21,10 @@ def fitter(im, wsize):
 	data_res = []
 	rows = Rows(data_src, wsize, xsize)
 	win = Window(wsize)
+	while 1:
+		win.update(rows.update())
+		if win.is_enable():
+			break
 	for i in range(len(data_src)):
 		if rows.frame_empty():
 			rows = Rows(data_src, wsize, xsize)
@@ -40,12 +44,16 @@ def harris(im, d_value):
 	last_pix_row = []
 	rows = Rows(data_src, 3, xsize)
 	win = Window(3)
+	while 1:
+		win.update(rows.update())
+		if win.is_enable():
+			break
 	for y in range(ysize):
 		for x in range(xsize):
 			if rows.frame_empty():
 				rows = Rows(data_src, 3, xsize)
 			w = win.update(rows.update())
-			pix_tblr = [w[0][1],w[2][1],w[1][0],w[1][2]]
+			pix_tblr = [w[0][1],w[2][1],w[1][2],w[1][0]]
 			pix_now = w[1][1]
 			diff_tblr = []
 			for pix in pix_tblr:
