@@ -124,7 +124,7 @@ Binary Morphology : erosion and dilation.
 
 #### 1.Harris:
 **Progress:**  
-20%.    
+40%.    
 **Function:**  
 Get all  corners from input images by harris method.  
 **HDL Files:**  
