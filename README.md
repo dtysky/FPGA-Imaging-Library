@@ -92,7 +92,7 @@ CT and luminance transition, changing a 8bits(a channel of rgb image) color's CT
 
 #### 1.RowsCreat:
 **Progress:**  
-30%.    
+40%.    
 **Function:**  
 Creat and maintain some rows cache, preparing for creating window.  
 **HDL Files:**  
@@ -100,7 +100,7 @@ Creat and maintain some rows cache, preparing for creating window.
 
 #### 2.WindowCreat:
 **Progress:**  
-20%.    
+40%.    
 **Function:**  
 Creat a window from image by your definitions.  
 It will use some fifos which deepth is image's width and the amount of them are your window size. 

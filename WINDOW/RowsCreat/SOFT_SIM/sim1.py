@@ -25,8 +25,8 @@ class Rows():
 				self.rows[y].insert(0,self.frame.pop())
 	def frame_empty(self):
 		return len(self.frame) == 0
-	def rows_empty(self):
-		return len(self.rows[0]) == 0
+	def rows_empty(self, row):
+		return len(self.rows[row]) == 0
 	def update(self):
 		output = []
 		if not self.frame_empty():
