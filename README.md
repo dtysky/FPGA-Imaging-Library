@@ -120,7 +120,7 @@ Get the mean value form a window which created by WindowCreat.
 Binary Morphology : erosion and dilation.  
 **HDL Files:**  
 
-#### 4.MatchTemplate:
+#### 5.MatchTemplate:
 **Progress:**  
 40%.    
 **Function:**  
