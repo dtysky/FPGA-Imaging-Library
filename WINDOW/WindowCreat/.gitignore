@@ -7,3 +7,4 @@ HDL_SIM/*
 !HDL_SIM/*.mpf
 !HDL_SIM/*.mti
 *.pyc
+SIM_CHECK/*
