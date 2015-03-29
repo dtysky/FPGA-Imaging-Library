@@ -103,7 +103,7 @@ Creat and maintain some rows cache, preparing for creating window.
 40%.    
 **Function:**  
 Creat a window from image by your definitions.  
-It will use some fifos which deepth is image's width and the amount of them are your window size. 
+It will use some fifos which deepth is image's width and the amount of them are your window size.   
 **HDL Files:**  
 
 #### 3.MeanCreat:
