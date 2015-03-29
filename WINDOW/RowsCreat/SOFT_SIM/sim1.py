@@ -31,9 +31,9 @@ class Rows():
 		output = []
 		for i in range(len(self.rows)):
 			output.append(self.rows[i].pop())
-		self.rows[0].insert(0,self.frame.pop())
-		for i in range(len(self.rows)-1):
-			self.rows[i+1].insert(0,output[i])
+		self.rows[self.width - 1].insert(0,self.frame.pop())
+		for i in range(self.width - 1):
+			self.rows[i].insert(0,output[i + 1])
 		return output
 
 for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):

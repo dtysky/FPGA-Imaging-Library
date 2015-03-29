@@ -12,6 +12,7 @@
     <Option Name="BoardPart" Val=""/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
+    <Option Name="IPRepoPath" Val="$PSRCDIR"/>
   </Configuration>
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
@@ -22,6 +23,9 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/component.xml">
+        <FileInfo SFType="IPXACT"/>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
@@ -59,18 +63,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="Fifo.xci" FileRelPathName="synth/Fifo.vhd"/>
-        <CompFileExtendedInfo CompFileName="Fifo.xci" FileRelPathName="Fifo.veo"/>
-        <CompFileExtendedInfo CompFileName="Fifo.xci" FileRelPathName="doc/fifo_generator_v12_0_changelog.txt"/>
-        <CompFileExtendedInfo CompFileName="Fifo.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2.vhd"/>
-        <CompFileExtendedInfo CompFileName="Fifo.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_vhsyn_rfs.vhd"/>
-        <CompFileExtendedInfo CompFileName="Fifo.xci" FileRelPathName="sim/Fifo.vhd"/>
-        <CompFileExtendedInfo CompFileName="Fifo.xci" FileRelPathName="fifo_generator_v12_0/hdl/fifo_generator_v12_0.vhd"/>
-        <CompFileExtendedInfo CompFileName="Fifo.xci" FileRelPathName="fifo_generator_v12_0/hdl/fifo_generator_v12_0_vhsyn_rfs.vhd"/>
-        <CompFileExtendedInfo CompFileName="Fifo.xci" FileRelPathName="fifo_generator_v12_0/hdl/fifo_generator_v12_0_vh_rfs.vhd"/>
-        <CompFileExtendedInfo CompFileName="Fifo.xci" FileRelPathName="Fifo_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="Fifo.xci" FileRelPathName="Fifo/Fifo.xdc"/>
-        <CompFileExtendedInfo CompFileName="Fifo.xci" FileRelPathName="Fifo.xml"/>
       </File>
       <Config>
         <Option Name="TopModule" Val="Fifo"/>
