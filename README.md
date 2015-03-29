@@ -92,11 +92,12 @@ CT and luminance transition, changing a 8bits(a channel of rgb image) color's CT
 
 #### 1.RowsCreat:
 **Progress:**  
-40%.    
+100%.    
 **Function:**  
 Creat and maintain some rows cache, preparing for creating window.  
 **HDL Files:**  
-
+Rows8x512/Rows8x512.v: A module for creating some rows by an image which max width is 512bits and color is 8bits.  
+Rows8x512/Rows8x512_TB.sv: Testbench for Rows8x512.  
 
 #### 2.WindowCreat:
 **Progress:**  
