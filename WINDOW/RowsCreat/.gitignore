@@ -1,9 +1,9 @@
 HDL/*
 !HDL/*.srcs/
 !HDL/*.xpr
-HDL_SIM/*
-!HDL_SIM/*.dat
-!HDL_SIM/*.res
-!HDL_SIM/*.mpf
-!HDL_SIM/*.mti
+HDL_SIM/Rows8x512/*
+!HDL_SIM/Rows8x512/*.dat
+!HDL_SIM/Rows8x512/*.res
+!HDL_SIM/Rows8x512/*.mpf
+!HDL_SIM/Rows8x512/*.mti
 *.pyc

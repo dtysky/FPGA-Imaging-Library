@@ -29,13 +29,11 @@ class Rows():
 		return len(self.rows[row]) == 0
 	def update(self):
 		output = []
-		if not self.frame_empty():
-			self.rows[0].insert(0,self.frame.pop())
+		for i in range(len(self.rows)):
+			output.append(self.rows[i].pop())
+		self.rows[0].insert(0,self.frame.pop())
 		for i in range(len(self.rows)-1):
-			now_pix = self.rows[i].pop()
-			self.rows[i+1].insert(0,now_pix)
-			output.append(now_pix)
-		output.append(self.rows[self.width - 1].pop())
+			self.rows[i+1].insert(0,output[i])
 		return output
 
 for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
@@ -50,9 +48,9 @@ for root,f in FileAll:
 	width = 5
 	deepth = xsize
 	rows = Rows(frame, width, deepth)
-	fo = open('../SIM_CHECK/dbg' + f + '.dat','w')
+	fo = open('../SIM_CHECK/soft' + f + '.dat','w')
 	for i in range(len(frame)):
 		if rows.frame_empty():
 			rows.creat(frame, width, deepth)
-		fo.write(str(rows.update()) + '\n')
+		fo.write(str(rows.update()).replace('[','').replace(']','') + '\n')
 	fo.close()
