@@ -1,6 +1,6 @@
-HDL/*
-!HDL/*.srcs/
-!HDL/*.xpr
+HDL/Rows8x512/*
+!HDL/Rows8x512/*.srcs/
+!HDL/Rows8x512/*.xpr
 HDL_SIM/Rows8x512/*
 !HDL_SIM/Rows8x512/*.dat
 !HDL_SIM/Rows8x512/*.res
