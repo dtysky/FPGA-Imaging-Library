@@ -94,16 +94,16 @@ CT and luminance transition, changing a 8bits(a channel of rgb image) color's CT
 **Progress:**  
 100%.    
 **Function:**  
-Creat and maintain some rows cache, preparing for creating window.  
+Create and maintain some rows cache, preparing for creating window.  
 **HDL Files:**  
-Rows8x512/Rows8x512.v: A module for creating some rows by an image which max width is 512bits and color is 8bits.  
-Rows8x512/Rows8x512_TB.sv: Testbench for Rows8x512.  
+1. Rows8x512/Rows8x512.v: A module for creating some rows by an image which max width is 512bits and color is 8bits.  
+2. Rows8x512/Rows8x512_TB.sv: Testbench for Rows8x512.  
 
 #### 2.WindowCreat:
 **Progress:**  
 40%.    
 **Function:**  
-Creat a window from image by your definitions.  
+Create a window from image by your definitions.  
 It will use some fifos which deepth is image's width and the amount of them are your window size.   
 **HDL Files:**  
 
@@ -147,7 +147,7 @@ Suspended development.
 **Function:**  
 ASCII Characters Output, output characters to a frame buffer in specified position by index and offset.  
 **HDL Files:**  
-1. FONT_CREAT\: Creat font source by FONT.tff.    
+1. FONT_CREAT\: Create font source by FONT.tff.    
 2. FONT_SOURCE.v: font source.  
 
 ### OTHER_IP:
