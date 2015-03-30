@@ -1,0 +1,56 @@
+B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/WindowCreator/HDL/Window.srcs/sim_1/imports/sources_1/ip/Fifo/Fifo_funcsim.v {1 {vlog -work work -vopt B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/WindowCreator/HDL/Window.srcs/sim_1/imports/sources_1/ip/Fifo/Fifo_funcsim.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module Fifo
+-- Compiling module Fifo_blk_mem_gen_generic_cstr
+-- Compiling module Fifo_blk_mem_gen_prim_width
+-- Compiling module Fifo_blk_mem_gen_prim_wrapper
+-- Compiling module Fifo_blk_mem_gen_top
+-- Compiling module Fifo_blk_mem_gen_v8_2__parameterized0
+-- Compiling module Fifo_blk_mem_gen_v8_2_synth
+-- Compiling module Fifo_compare
+-- Compiling module Fifo_compare_0
+-- Compiling module Fifo_compare_1
+-- Compiling module Fifo_compare_2
+-- Compiling module Fifo_dc_ss
+-- Compiling module Fifo_fifo_generator_ramfifo
+-- Compiling module Fifo_fifo_generator_top
+-- Compiling module Fifo_fifo_generator_v12_0__parameterized0
+-- Compiling module Fifo_fifo_generator_v12_0_synth
+-- Compiling module Fifo_memory
+-- Compiling module Fifo_rd_bin_cntr
+-- Compiling module Fifo_rd_logic
+-- Compiling module Fifo_rd_status_flags_ss
+-- Compiling module Fifo_reset_blk_ramfifo
+-- Compiling module Fifo_updn_cntr
+-- Compiling module Fifo_wr_bin_cntr
+-- Compiling module Fifo_wr_logic
+-- Compiling module Fifo_wr_status_flags_ss
+-- Compiling module glbl
+
+Top level modules:
+	Fifo
+	glbl
+
+} {} {}} B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/WindowCreator/HDL/Window.srcs/sources_1/new/Window.v {1 {vlog -work work -vopt B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/WindowCreator/HDL/Window.srcs/sources_1/new/Window.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module Window
+
+Top level modules:
+	Window
+
+} {} {}} B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/WindowCreator/HDL/Window.srcs/sim_1/imports/sources_1/new/Rows8x512.v {1 {vlog -work work -vopt B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/WindowCreator/HDL/Window.srcs/sim_1/imports/sources_1/new/Rows8x512.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module Rows8x512
+
+Top level modules:
+	Rows8x512
+
+} {} {}} B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/WindowCreator/HDL/Window.srcs/sim_1/new/Window_TB.sv {1 {vlog -work work -vopt -sv B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/WindowCreator/HDL/Window.srcs/sim_1/new/Window_TB.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module CLOCK
+-- Compiling module Window_TB
+
+Top level modules:
+	Window_TB
+
+} {} {}}

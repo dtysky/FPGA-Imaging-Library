@@ -3,7 +3,7 @@ __author__ = 'Dai Tianyu (dtysky)'
 from PIL import Image
 import os
 
-ModuleName='WindowCreat'
+ModuleName='WindowCreator'
 
 FileAll = []
 

@@ -19,7 +19,7 @@ A directory for storing images, you can put your '.jpg' images for testing here.
 Files for software simulation will be here, those can show you this module's function by software method.  
 The result will be placed in SIM_CHECK directory.
 
-**3.DATA_CREAT:**  
+**3.DATA_CREATE:**  
 Files for creating a mif and a dat file, mif file can be a init file for rom, and dat file can be used for hdl function simulation.  
 Mif file will be placed in this directory, and the dat file will in HDL_SIM.
 
@@ -101,11 +101,13 @@ Create and maintain some rows cache, preparing for creating window.
 
 #### 2.WindowCreator:
 **Progress:**  
-40%.    
+100%.    
 **Function:**  
 Create a window from image by your definitions.  
 It will use some fifos which deepth is image's width and the amount of them are your window size.   
 **HDL Files:**  
+1. Window.v: A module for creating a window from rows cache.  
+2. Window_TB.sv: Testbench for Window.  
 
 #### 3.MeanFitter:
 **Progress:**  

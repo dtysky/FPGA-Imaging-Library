@@ -5,14 +5,22 @@ proc init_gui { IPINST } {
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
   ipgui::add_param $IPINST -name "im_width" -parent ${Page_0}
   ipgui::add_param $IPINST -name "rows_width" -parent ${Page_0}
-  ipgui::add_static_text $IPINST -name "Discriptions:" -parent ${Page_0} -text {
-
-Discriptions:
-
-clk: Fifos clock.
-rst_n: Reset all fifos, active low.
-in_color: Image source data, 8bits.
-out_enable: A flag, it will be higgh if the rows can be used.
+  ipgui::add_static_text $IPINST -name "Discriptions:" -parent ${Page_0} -text {
+
+
+
+Discriptions:
+The lowest color_width-bits of out_data are the first row!
+
+
+clk: Fifos clock.
+
+rst_n: Reset all fifos, active low.
+
+in_color: Image source data, 8bits.
+
+out_enable: A flag, it will be higgh if the rows can be used.
+
 out_color: Output data.}
 
 

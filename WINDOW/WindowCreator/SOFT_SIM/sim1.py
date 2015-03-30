@@ -4,7 +4,7 @@ from PIL import Image
 import os
 from Rows import Rows
 
-ModuleName='WindowCreat'
+ModuleName='Window'
 
 FileAll = []
 
@@ -68,7 +68,7 @@ for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
 
 for root,f in FileAll:
 	im_src = Image.open(root+f)
-	wsizes = [3,5]
+	wsizes = [5]
 	fo = open('../SIM_CHECK/dbg' + f + '.dat','w')
 	for w in create(im_src, wsizes):
 		fo.write(str(w) + '\n')
