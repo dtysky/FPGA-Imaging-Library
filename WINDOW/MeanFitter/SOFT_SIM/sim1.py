@@ -2,8 +2,8 @@ __author__ = 'Dai Tianyu (dtysky)'
 
 from PIL import Image
 import os
-from WindowCreat import Window
-from RowsCreat import Rows
+from Window import Window
+from Rows import Rows
 
 ModuleName='MeanFitter'
 
@@ -22,7 +22,7 @@ def mean_fitter(window):
 		w_len += len(row)
 	return w_sum / w_len
 
-def creat(im, wsize):
+def create(im, wsize):
 	data_src = im.getdata()
 	xsize,ysize = im.size
 	data_res = []
@@ -34,7 +34,7 @@ def creat(im, wsize):
 			break
 	for i in range(len(data_src)):
 		if rows.frame_empty():
-			rows = Rows(data_src, wsize, xsize)
+			rows.create(data_src, wsize, xsize)
 		w = win.update(rows.update())
 		if win.is_enable():
 			data_res.append(mean_fitter(w))
@@ -44,5 +44,5 @@ for root,f in FileAll:
 	im_src = Image.open(root+f)
 	s_x, s_y = im_src.size
 	im_res = Image.new('L', (s_x, s_y), 0)
-	im_res.putdata(creat(im_src, 5))
+	im_res.putdata(create(im_src, 5))
 	im_res.save('../SIM_CHECK/soft' + f)

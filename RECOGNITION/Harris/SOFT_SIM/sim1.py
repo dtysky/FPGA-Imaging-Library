@@ -2,8 +2,8 @@ __author__ = 'Dai Tianyu (dtysky)'
 
 from PIL import Image
 import os
-from WindowCreat import Window
-from RowsCreat import Rows
+from Window import Window
+from Rows import Rows
 from MeanFitter import mean_fitter
 
 ModuleName='Harris'
@@ -51,7 +51,7 @@ def harris(im, d_value):
 	for y in range(ysize):
 		for x in range(xsize):
 			if rows.frame_empty():
-				rows = Rows(data_src, 3, xsize)
+				rows.create(data_src, 3, xsize)
 			w = win.update(rows.update())
 			pix_tblr = [w[0][1],w[2][1],w[1][2],w[1][0]]
 			pix_now = w[1][1]

@@ -2,8 +2,8 @@ __author__ = 'Dai Tianyu (dtysky)'
 
 from PIL import Image
 import os,re
-from WindowCreat import Window
-from RowsCreat import Rows
+from Window import Window
+from Rows import Rows
 
 ModuleName='ErosionDilation'
 
@@ -96,7 +96,7 @@ def is_same(im, wsize, mask):
 	for y in range(ysize):
 		for x in range(xsize):
 			if rows.frame_empty():
-				rows = Rows(data_src, wsize, xsize)
+				rows.create(data_src, wsize, xsize)
 			w = win.update(rows.update())
 			pix = 0
 			for wy in range(wsize):
@@ -120,7 +120,7 @@ def erosion_dilation(im, wsize, mask, act):
 	for y in range(ysize):
 		for x in range(xsize):
 			if rows.frame_empty():
-				rows = Rows(data_src, wsize, xsize)
+				rows.create(data_src, wsize, xsize)
 			w = win.update(rows.update())
 			pix = 1
 			for wy in range(wsize):

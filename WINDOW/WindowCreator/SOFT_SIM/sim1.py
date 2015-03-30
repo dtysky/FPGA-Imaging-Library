@@ -2,7 +2,7 @@ __author__ = 'Dai Tianyu (dtysky)'
 
 from PIL import Image
 import os
-from RowsCreat import Rows
+from Rows import Rows
 
 ModuleName='WindowCreat'
 
@@ -11,8 +11,8 @@ FileAll = []
 class Window():
 	"""A class for creating and maintaining a window."""
 	def __init__(self, wsize):
-		self.creat(wsize)
-	def creat(self, wsize):
+		self.create(wsize)
+	def create(self, wsize):
 		self.enable = False
 		self.init = 0
 		self.window = []
@@ -35,7 +35,7 @@ class Window():
 	def is_enable(self):
 		return self.enable
 
-def creat(im, wsizes):
+def create(im, wsizes):
 	data_res = []
 	data_src = im.getdata()
 	xsize,ysize = im.size
@@ -49,7 +49,7 @@ def creat(im, wsizes):
 		for y in range(ysize):
 			for x in range(xsize):
 				if rows.frame_empty():
-					rows = Rows(data_src, max(wsizes), xsize)
+					rows.create(data_src, max(wsizes), xsize)
 				w = win.update(rows.update())
 				if not win.is_enable():
 					continue
@@ -70,6 +70,6 @@ for root,f in FileAll:
 	im_src = Image.open(root+f)
 	wsizes = [3,5]
 	fo = open('../SIM_CHECK/dbg' + f + '.dat','w')
-	for w in creat(im_src, wsizes):
+	for w in create(im_src, wsizes):
 		fo.write(str(w) + '\n')
 	fo.close()

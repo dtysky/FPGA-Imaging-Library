@@ -3,8 +3,8 @@ __author__ = 'Dai Tianyu (dtysky)'
 class Window():
 	"""A class for creating and maintaining a window."""
 	def __init__(self, wsize):
-		self.creat(wsize)
-	def creat(self, wsize):
+		self.create(wsize)
+	def create(self, wsize):
 		self.enable = False
 		self.init = 0
 		self.window = []
