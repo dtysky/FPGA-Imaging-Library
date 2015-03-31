@@ -37,7 +37,7 @@ module Window(clk, rst_n, in_enable, in_data, out_enable, out_data);
 	reg[color_width * window_size - 1 : 0] reg_out_data[0 : window_size - 1];
 	reg[3 : 0] con_init;
 
-	always @(posedge clk or negedge rst_n  or negedge in_enable) begin
+	always @(posedge clk or negedge rst_n) begin
 		if(~rst_n || ~in_enable) begin
 			con_init <= 0;
 			reg_out_enable <= 0;
@@ -60,7 +60,7 @@ module Window(clk, rst_n, in_enable, in_data, out_enable, out_data);
 			for (x = 0; x < window_size; x = x + 1) begin
 
 				if (x == 0) begin 
-					always @(posedge clk or negedge rst_n or negedge in_enable) begin
+					always @(posedge clk or negedge rst_n) begin
 						if(~rst_n || ~in_enable) begin
 							reg_out_data[y][(x + 1) * color_width - 1 : x * color_width] <= 0;
 						end else begin
@@ -68,7 +68,7 @@ module Window(clk, rst_n, in_enable, in_data, out_enable, out_data);
 						end
 					end
 				end else begin
-					always @(posedge clk or negedge rst_n or negedge in_enable) begin
+					always @(posedge clk or negedge rst_n) begin
 						if(~rst_n || ~in_enable) begin
 							reg_out_data[y][(x + 1) * color_width - 1 : x * color_width] <= 0;
 						end else begin

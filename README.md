@@ -111,10 +111,12 @@ It will use some fifos which deepth is image's width and the amount of them are 
 
 #### 3.MeanFitter:
 **Progress:**  
-20%.    
+100%.    
 **Function:**  
 Get the mean value form a window which created by WindowCreat.  
 **HDL Files:**  
+1. MeanFitter.v: Main module.  
+2. MeanFitter_TB.sv: Testbench.  
 
 #### 4.ErosionDilation:
 **Progress:**  

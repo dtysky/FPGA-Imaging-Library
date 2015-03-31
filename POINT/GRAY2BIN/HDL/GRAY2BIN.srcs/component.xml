@@ -1,190 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <spirit:vendor>dtysky</spirit:vendor>
-  <spirit:library>XUP</spirit:library>
-  <spirit:name>GRAY2BIN</spirit:name>
-  <spirit:version>1.0</spirit:version>
-  <spirit:model>
-    <spirit:views>
-      <spirit:view>
-        <spirit:name>xilinx_verilogsynthesis</spirit:name>
-        <spirit:displayName>Verilog Synthesis</spirit:displayName>
-        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
-        <spirit:language>verilog</spirit:language>
-        <spirit:modelName>GRAY2BIN</spirit:modelName>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_verilogsynthesis_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c0f26f50</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_verilogbehavioralsimulation</spirit:name>
-        <spirit:displayName>Verilog Simulation</spirit:displayName>
-        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
-        <spirit:language>verilog</spirit:language>
-        <spirit:modelName>GRAY2BIN</spirit:modelName>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c0f26f50</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_verilogtestbench</spirit:name>
-        <spirit:displayName>Verilog Test Bench</spirit:displayName>
-        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
-        <spirit:language>verilog</spirit:language>
-        <spirit:modelName>GARY2BIN_TB</spirit:modelName>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_verilogtestbench_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>14849b78</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_xpgui</spirit:name>
-        <spirit:displayName>UI Layout</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>485b4d62</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-    </spirit:views>
-    <spirit:ports>
-      <spirit:port>
-        <spirit:name>th</spirit:name>
-        <spirit:wire>
-          <spirit:direction>in</spirit:direction>
-          <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="immediate">7</spirit:left>
-            <spirit:right spirit:format="long" spirit:resolve="immediate">0</spirit:right>
-          </spirit:vector>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>gray</spirit:name>
-        <spirit:wire>
-          <spirit:direction>in</spirit:direction>
-          <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="immediate">7</spirit:left>
-            <spirit:right spirit:format="long" spirit:resolve="immediate">0</spirit:right>
-          </spirit:vector>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>b</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-    </spirit:ports>
-  </spirit:model>
-  <spirit:fileSets>
-    <spirit:fileSet>
-      <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>sources_1/new/GRAY2BIN.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_c0f26f50</spirit:userFileType>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>sources_1/new/GRAY2BIN.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_verilogtestbench_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>sim_1/new/GARY2BIN_TB.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>xgui/GRAY2BIN_v1_0.tcl</spirit:name>
-        <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
-        <spirit:userFileType>CHECKSUM_096fbec4</spirit:userFileType>
-      </spirit:file>
-    </spirit:fileSet>
-  </spirit:fileSets>
-  <spirit:description>GRAY2BIN_v1_0</spirit:description>
-  <spirit:parameters>
-    <spirit:parameter>
-      <spirit:name>Component_Name</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">GRAY2BIN_v1_0</spirit:value>
-    </spirit:parameter>
-  </spirit:parameters>
-  <spirit:vendorExtensions>
-    <xilinx:coreExtensions>
-      <xilinx:supportedFamilies>
-        <xilinx:family xilinx:lifeCycle="Production">artix7</xilinx:family>
-      </xilinx:supportedFamilies>
-      <xilinx:taxonomies>
-        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
-      </xilinx:taxonomies>
-      <xilinx:displayName>GRAY2BIN_v1_0</xilinx:displayName>
-      <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:upgrades>
-        <xilinx:canUpgradeFrom>dtysky:user:GRAY2BIN:1.0</xilinx:canUpgradeFrom>
-      </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2015-02-06T06:14:51Z</xilinx:coreCreationDateTime>
-      <xilinx:tags>
-        <xilinx:tag xilinx:name="xilinx.com:ip:GRAY2BIN:1.0_ARCHIVE_LOCATION">D:/Spira_Heaven/0-MyWorks/XUP_IMAGE/SUB_MODULE/POINT/GRAY2BIN/HDL/GRAY2BIN.srcs</xilinx:tag>
-        <xilinx:tag xilinx:name="xilinx.com:user:GRAY2BIN:1.0_ARCHIVE_LOCATION">D:/Spira_Heaven/0-MyWorks/XUP_IMAGE/SUB_MODULE/POINT/GRAY2BIN/HDL/GRAY2BIN.srcs</xilinx:tag>
-        <xilinx:tag xilinx:name="dtysky:user:GRAY2BIN:1.0_ARCHIVE_LOCATION">B:/Complex_Mind/XUP_IMAGE/BINARIZATION/ProjectBuilt</xilinx:tag>
-        <xilinx:tag xilinx:name="dtysky:XUP:GRAY2BIN:1.0_ARCHIVE_LOCATION">B:/Complex_Mind/XUP_IMAGE/BINARIZATION/ProjectBuilt</xilinx:tag>
-      </xilinx:tags>
-    </xilinx:coreExtensions>
-    <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="22fedd59"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="70f9afa9"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="4641740e"/>
-    </xilinx:packagingInfo>
-  </spirit:vendorExtensions>
+<spirit:component xmlns:xilinx="http://www.xilinx.com"
+		xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<spirit:vendor>dtysky</spirit:vendor>
+	<spirit:library>Image</spirit:library>
+	<spirit:name>GRAY2BIN</spirit:name>
+	<spirit:version>1.0</spirit:version>
+	<spirit:model>
+		<spirit:views>
+			<spirit:view>
+				<spirit:name>xilinx_verilogsynthesis</spirit:name>
+				<spirit:displayName>Verilog Synthesis</spirit:displayName>
+				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+				<spirit:language>verilog</spirit:language>
+				<spirit:modelName>GRAY2BIN</spirit:modelName>
+				<spirit:fileSetRef>
+					<spirit:localName>xilinx_verilogsynthesis_view_fileset</spirit:localName>
+				</spirit:fileSetRef>
+				<spirit:parameters>
+					<spirit:parameter>
+						<spirit:name>viewChecksum</spirit:name>
+						<spirit:value>c0f26f50</spirit:value>
+					</spirit:parameter>
+				</spirit:parameters>
+			</spirit:view>
+			<spirit:view>
+				<spirit:name>xilinx_verilogbehavioralsimulation</spirit:name>
+				<spirit:displayName>Verilog Simulation</spirit:displayName>
+				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
+				<spirit:language>verilog</spirit:language>
+				<spirit:modelName>GRAY2BIN</spirit:modelName>
+				<spirit:fileSetRef>
+					<spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
+				</spirit:fileSetRef>
+				<spirit:parameters>
+					<spirit:parameter>
+						<spirit:name>viewChecksum</spirit:name>
+						<spirit:value>c0f26f50</spirit:value>
+					</spirit:parameter>
+				</spirit:parameters>
+			</spirit:view>
+			<spirit:view>
+				<spirit:name>xilinx_verilogtestbench</spirit:name>
+				<spirit:displayName>Verilog Test Bench</spirit:displayName>
+				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
+				<spirit:language>verilog</spirit:language>
+				<spirit:modelName>GARY2BIN_TB</spirit:modelName>
+				<spirit:fileSetRef>
+					<spirit:localName>xilinx_verilogtestbench_view_fileset</spirit:localName>
+				</spirit:fileSetRef>
+				<spirit:parameters>
+					<spirit:parameter>
+						<spirit:name>viewChecksum</spirit:name>
+						<spirit:value>14849b78</spirit:value>
+					</spirit:parameter>
+				</spirit:parameters>
+			</spirit:view>
+			<spirit:view>
+				<spirit:name>xilinx_xpgui</spirit:name>
+				<spirit:displayName>UI Layout</spirit:displayName>
+				<spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+				<spirit:fileSetRef>
+					<spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+				</spirit:fileSetRef>
+				<spirit:parameters>
+					<spirit:parameter>
+						<spirit:name>viewChecksum</spirit:name>
+						<spirit:value>485b4d62</spirit:value>
+					</spirit:parameter>
+				</spirit:parameters>
+			</spirit:view>
+		</spirit:views>
+		<spirit:ports>
+			<spirit:port>
+				<spirit:name>th</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left spirit:format="long"
+								spirit:resolve="immediate">7</spirit:left>
+						<spirit:right spirit:format="long"
+								spirit:resolve="immediate">0</spirit:right>
+					</spirit:vector>
+					<spirit:wireTypeDefs>
+						<spirit:wireTypeDef>
+							<spirit:typeName>std_logic_vector</spirit:typeName>
+							<spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+							<spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+						</spirit:wireTypeDef>
+					</spirit:wireTypeDefs>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>gray</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left spirit:format="long"
+								spirit:resolve="immediate">7</spirit:left>
+						<spirit:right spirit:format="long"
+								spirit:resolve="immediate">0</spirit:right>
+					</spirit:vector>
+					<spirit:wireTypeDefs>
+						<spirit:wireTypeDef>
+							<spirit:typeName>std_logic_vector</spirit:typeName>
+							<spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+							<spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+						</spirit:wireTypeDef>
+					</spirit:wireTypeDefs>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>b</spirit:name>
+				<spirit:wire>
+					<spirit:direction>out</spirit:direction>
+					<spirit:wireTypeDefs>
+						<spirit:wireTypeDef>
+							<spirit:typeName>std_logic</spirit:typeName>
+							<spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+							<spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+						</spirit:wireTypeDef>
+					</spirit:wireTypeDefs>
+				</spirit:wire>
+			</spirit:port>
+		</spirit:ports>
+	</spirit:model>
+	<spirit:fileSets>
+		<spirit:fileSet>
+			<spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
+			<spirit:file>
+				<spirit:name>sources_1/new/GRAY2BIN.v</spirit:name>
+				<spirit:fileType>verilogSource</spirit:fileType>
+				<spirit:userFileType>CHECKSUM_c0f26f50</spirit:userFileType>
+			</spirit:file>
+		</spirit:fileSet>
+		<spirit:fileSet>
+			<spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
+			<spirit:file>
+				<spirit:name>sources_1/new/GRAY2BIN.v</spirit:name>
+				<spirit:fileType>verilogSource</spirit:fileType>
+			</spirit:file>
+		</spirit:fileSet>
+		<spirit:fileSet>
+			<spirit:name>xilinx_verilogtestbench_view_fileset</spirit:name>
+			<spirit:file>
+				<spirit:name>sim_1/new/GARY2BIN_TB.sv</spirit:name>
+				<spirit:fileType>systemVerilogSource</spirit:fileType>
+			</spirit:file>
+		</spirit:fileSet>
+		<spirit:fileSet>
+			<spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+			<spirit:file>
+				<spirit:name>xgui/GRAY2BIN_v1_0.tcl</spirit:name>
+				<spirit:fileType>tclSource</spirit:fileType>
+				<spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+				<spirit:userFileType>CHECKSUM_096fbec4</spirit:userFileType>
+			</spirit:file>
+		</spirit:fileSet>
+	</spirit:fileSets>
+	<spirit:description>GRAY2BIN_v1_0</spirit:description>
+	<spirit:parameters>
+		<spirit:parameter>
+			<spirit:name>Component_Name</spirit:name>
+			<spirit:value spirit:resolve="user"
+					spirit:id="PARAM_VALUE.Component_Name"
+					spirit:order="1">GRAY2BIN_v1_0</spirit:value>
+		</spirit:parameter>
+	</spirit:parameters>
+	<spirit:vendorExtensions>
+		<xilinx:coreExtensions>
+			<xilinx:supportedFamilies>
+				<xilinx:family xilinx:lifeCycle="Production">artix7</xilinx:family>
+			</xilinx:supportedFamilies>
+			<xilinx:taxonomies>
+				<xilinx:taxonomy>/UserIP</xilinx:taxonomy>
+				<xilinx:taxonomy>/Video_&amp;_Image_Processing</xilinx:taxonomy>
+			</xilinx:taxonomies>
+			<xilinx:displayName>GRAY2BIN_v1_0</xilinx:displayName>
+			<xilinx:coreRevision>2</xilinx:coreRevision>
+			<xilinx:upgrades>
+				<xilinx:canUpgradeFrom>dtysky:user:GRAY2BIN:1.0</xilinx:canUpgradeFrom>
+			</xilinx:upgrades>
+			<xilinx:coreCreationDateTime>2015-03-31T16:27:11Z</xilinx:coreCreationDateTime>
+			<xilinx:tags>
+				<xilinx:tag xilinx:name="xilinx.com:ip:GRAY2BIN:1.0_ARCHIVE_LOCATION">D:/Spira_Heaven/0-MyWorks/XUP_IMAGE/SUB_MODULE/POINT/GRAY2BIN/HDL/GRAY2BIN.srcs</xilinx:tag>
+				<xilinx:tag xilinx:name="xilinx.com:user:GRAY2BIN:1.0_ARCHIVE_LOCATION">D:/Spira_Heaven/0-MyWorks/XUP_IMAGE/SUB_MODULE/POINT/GRAY2BIN/HDL/GRAY2BIN.srcs</xilinx:tag>
+				<xilinx:tag xilinx:name="dtysky:user:GRAY2BIN:1.0_ARCHIVE_LOCATION">B:/Complex_Mind/XUP_IMAGE/BINARIZATION/ProjectBuilt</xilinx:tag>
+				<xilinx:tag xilinx:name="dtysky:XUP:GRAY2BIN:1.0_ARCHIVE_LOCATION">B:/Complex_Mind/XUP_IMAGE/BINARIZATION/ProjectBuilt</xilinx:tag>
+				<xilinx:tag xilinx:name="dtysky:Image:GRAY2BIN:1.0_ARCHIVE_LOCATION">b:/Complex_Mind/XUP_IMAGE/SUB_MODULE/POINT/GRAY2BIN/HDL/GRAY2BIN.srcs</xilinx:tag>
+			</xilinx:tags>
+		</xilinx:coreExtensions>
+		<xilinx:packagingInfo>
+			<xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
+			<xilinx:checksum xilinx:scope="fileGroups"
+					xilinx:value="22fedd59"/>
+			<xilinx:checksum xilinx:scope="ports"
+					xilinx:value="70f9afa9"/>
+			<xilinx:checksum xilinx:scope="parameters"
+					xilinx:value="4641740e"/>
+		</xilinx:packagingInfo>
+	</spirit:vendorExtensions>
 </spirit:component>

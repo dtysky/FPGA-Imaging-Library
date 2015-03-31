@@ -11,10 +11,10 @@ FileAll = []
 class Window():
 	"""A class for creating and maintaining a window."""
 	def __init__(self, wsize):
+		self.init = 0
 		self.create(wsize)
 	def create(self, wsize):
 		self.enable = False
-		self.init = 0
 		self.window = []
 		self.wsize = wsize
 		self.wsize_half = wsize >> 1
@@ -69,7 +69,7 @@ for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
 for root,f in FileAll:
 	im_src = Image.open(root+f)
 	wsizes = [5]
-	fo = open('../SIM_CHECK/dbg' + f + '.dat','w')
+	fo = open('../SIM_CHECK/soft' + f + '.dat','w')
 	for w in create(im_src, wsizes):
 		fo.write(str(w) + '\n')
 	fo.close()

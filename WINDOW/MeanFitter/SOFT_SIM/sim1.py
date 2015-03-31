@@ -29,15 +29,14 @@ def create(im, wsize):
 	rows = Rows(data_src, wsize, xsize)
 	win = Window(wsize)
 	while 1:
-		win.update(rows.update())
+		w = win.update(rows.update())
 		if win.is_enable():
 			break
 	for i in range(len(data_src)):
 		if rows.frame_empty():
 			rows.create(data_src, wsize, xsize)
+		data_res.append(mean_fitter(w))
 		w = win.update(rows.update())
-		if win.is_enable():
-			data_res.append(mean_fitter(w))
 	return data_res
 
 for root,f in FileAll:
@@ -46,3 +45,6 @@ for root,f in FileAll:
 	im_res = Image.new('L', (s_x, s_y), 0)
 	im_res.putdata(create(im_src, 5))
 	im_res.save('../SIM_CHECK/soft' + f)
+	# fo = open('../SIM_CHECK/soft' + f + '.dat','w')
+	# for pix in im_res.getdata():
+	# 	fo.write(str(pix) + '\n')
