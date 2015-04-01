@@ -4,6 +4,7 @@ HDL/Rows8x512/*
 HDL_SIM/Rows8x512/*
 !HDL_SIM/Rows8x512/*.mpf
 !HDL_SIM/Rows8x512/*.mti
+HDL/Rows1x512/*
 !HDL/Rows1x512/*.srcs/
 !HDL/Rows1x512/*.xpr
 HDL_SIM/Rows1x512/*
