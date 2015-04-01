@@ -136,10 +136,12 @@ Binary Morphology : using a template window to match your image.
 
 #### 1.Harris:
 **Progress:**  
-40%.    
+100%.    
 **Function:**  
 Get all  corners from input images by harris method.  
 **HDL Files:**  
+1. Harris.v: Main module.  
+2. Harris_TB.sv: Testbench for Harris.  
 
 ### Character:
 

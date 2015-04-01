@@ -1,11 +1,4 @@
-B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sim_1/imports/sources_1/new/Rows8x512.v {1 {vlog -work work -vopt B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sim_1/imports/sources_1/new/Rows8x512.v
-Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
--- Compiling module Rows8x512
-
-Top level modules:
-	Rows8x512
-
-} {} {}} B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sim_1/new/MeanFitter_TB.sv {1 {vlog -work work -vopt -sv B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sim_1/new/MeanFitter_TB.sv
+B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sim_1/new/MeanFitter_TB.sv {1 {vlog -work work -vopt -sv B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sim_1/new/MeanFitter_TB.sv
 Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 -- Compiling module CLOCK
 -- Compiling module MeanFitter_TB
@@ -13,19 +6,19 @@ Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 Top level modules:
 	MeanFitter_TB
 
+} {} {}} B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sim_1/imports/sources_1/new/Rows8x512.v {1 {vlog -work work -vopt B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sim_1/imports/sources_1/new/Rows8x512.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module Rows8x512
+
+Top level modules:
+	Rows8x512
+
 } {} {}} B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sim_1/imports/new/Window.v {1 {vlog -work work -vopt B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sim_1/imports/new/Window.v
 Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 -- Compiling module Window
 
 Top level modules:
 	Window
-
-} {} {}} B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sources_1/new/MeanFitter.v {1 {vlog -work work -vopt B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sources_1/new/MeanFitter.v
-Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
--- Compiling module MeanFitter
-
-Top level modules:
-	MeanFitter
 
 } {} {}} B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sim_1/imports/sources_1/ip/Fifo/Fifo_funcsim.v {1 {vlog -work work -vopt B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sim_1/imports/sources_1/ip/Fifo/Fifo_funcsim.v
 Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
@@ -59,5 +52,12 @@ Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 Top level modules:
 	Fifo
 	glbl
+
+} {} {}} B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sources_1/new/MeanFitter.v {1 {vlog -work work -vopt B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sources_1/new/MeanFitter.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module MeanFitter
+
+Top level modules:
+	MeanFitter
 
 } {} {}}

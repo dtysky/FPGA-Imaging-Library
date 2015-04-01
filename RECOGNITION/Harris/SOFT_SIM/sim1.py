@@ -12,11 +12,12 @@ Bottom = 205
 Left = 60
 Right = 280
 
+def in_range(x,y):
+	return x > Left and x < Right and y > Top and y < Bottom
+
 FileAll = []
 
 def harris(im, d_value):
-	def in_range(x,y):
-		return x > Left and x < Right and y > Top and y < Bottom
 	data_src = im.getdata()
 	xsize,ysize = im.size
 	data_res = []
@@ -39,11 +40,10 @@ def harris(im, d_value):
 			for pix in pix_tblr:
 				diff_tblr.append(abs(pix_now - pix))
 			pix_res = 0
-			if in_range(x,y):
-				for d_tb in diff_tblr[0:2]:
-					for d_lr in diff_tblr[2:4]:
-						if d_tb >= d_value and d_lr >= d_value:
-							pix_res = 1
+			for d_tb in diff_tblr[0:2]:
+				for d_lr in diff_tblr[2:4]:
+					if d_tb >= d_value and d_lr >= d_value:
+						pix_res = 1
 			data_res.append(pix_res)
 			w = win.update(rows.update())
 	return data_res
