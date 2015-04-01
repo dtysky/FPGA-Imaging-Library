@@ -3,7 +3,7 @@ __author__ = 'Dai Tianyu (dtysky)'
 from PIL import Image
 import os
 
-ModuleName='WindowCreator'
+ModuleName='MatchTemplate'
 
 FileAll = []
 
@@ -19,7 +19,7 @@ def color_formot(color):
 		res = '0'+res
 	return res
 
-def creat_dat(im):
+def create_dat(im):
 	data_src = im.getdata()
 	data_res = ''
 	for gray in data_src:
@@ -27,7 +27,7 @@ def creat_dat(im):
 		data_res += '\n'
 	return data_res[:-1]
 
-def creat_mif(im):
+def create_mif(im):
 	pass
 
 dat_index = ''
@@ -37,7 +37,7 @@ for root,name,ex in FileAll:
 	s_x, s_y = im_src.size
 	dat_res = open('../HDL_SIM/'+name+'.dat','w')
 	dat_res.write(str(s_x)+'\n'+str(s_y)+'\n')
-	dat_res.write(creat_dat(im_src))
+	dat_res.write(create_dat(im_src))
 	dat_index += name+'\n'
 	dat_res.close()
 

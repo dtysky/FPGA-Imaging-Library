@@ -118,14 +118,14 @@ Get the mean value form a window which created by WindowCreat.
 1. MeanFitter.v: Main module.  
 2. MeanFitter_TB.sv: Testbench.  
 
-#### 4.ErosionDilation:
+#### 4.ErosionDilationBin:
 **Progress:**  
 20%.    
 **Function:**  
 Binary Morphology : erosion and dilation.  
 **HDL Files:**  
 
-#### 5.MatchTemplate:
+#### 5.MatchTemplateBin:
 **Progress:**  
 40%.    
 **Function:**  
