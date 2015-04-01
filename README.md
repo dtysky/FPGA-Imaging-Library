@@ -127,10 +127,12 @@ Binary Morphology : erosion and dilation.
 
 #### 5.MatchTemplateBin:
 **Progress:**  
-40%.    
+100%.    
 **Function:**  
 Binary Morphology : using a template window to match your image.  
 **HDL Files:**  
+1. MatchTemplateBin.v: Main module.  
+2. MatchTemplateBin_TB.sv: Testbench for MatchTemplateBin.  
 
 ### Recognition:
 

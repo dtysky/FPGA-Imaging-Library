@@ -3,20 +3,21 @@ __author__ = 'Dai Tianyu (dtysky)'
 from PIL import Image
 import os
 
-ModuleName='MatchTemplate'
+ModuleName='MatchTemplateBin'
 
 FileAll = []
 
 for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
     for f in files:
     	name,ex=os.path.splitext(f)
-        if ex=='.jpg':
+        if ex in ['.jpg','.bmp']:
         	FileAll.append((root+'/',name,ex))
 
 def color_formot(color):
-	res=bin(color)[2:]
-	for i in range(8-len(res)):
-		res = '0'+res
+	if color == 0:
+		res = '0'
+	else:
+		res = '1'
 	return res
 
 def create_dat(im):

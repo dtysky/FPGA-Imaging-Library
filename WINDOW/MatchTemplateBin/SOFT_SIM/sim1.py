@@ -5,7 +5,7 @@ import os,re
 from Window import Window
 from Rows import Rows
 
-ModuleName='MatchTemplate'
+ModuleName='MatchTemplateBin'
 
 Mask0 = [
 [0,0,0],
@@ -22,19 +22,15 @@ def match_template(im, wsize, mask):
 	rows = Rows(data_src, wsize, xsize)
 	win = Window(wsize)
 	while 1:
-		win.update(rows.update())
+		w = win.update(rows.update())
 		if win.is_enable():
 			break
 	for y in range(ysize):
 		for x in range(xsize):
 			if rows.frame_empty():
 				rows.create(data_src, wsize, xsize)
+			data_res.append(1 if w == mask else 0)
 			w = win.update(rows.update())
-			pix = 0
-			for wy in range(wsize):
-				for wx in range(wsize):
-					pix = pix | (w[wy][wx] ^ mask[wy][wx])
-			data_res.append(1 if pix == 0 else 0)
 	return data_res
 
 for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
