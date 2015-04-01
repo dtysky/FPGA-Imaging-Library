@@ -6,34 +6,61 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}
   ipgui::add_param $IPINST -name "sum_counter" -parent ${Page_0}
   ipgui::add_param $IPINST -name "window_size" -parent ${Page_0}
-  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Page_0} -text {Discriptions:
-The window size must be less than 16 !
-
-clk: Clock.
-rst_n: Reset, active low.
-in_enable: Input enable from windw.
-in_data: Input data from window.
-out_enable: Output enable, low -> high when the first data can be read.
-out_data: Output data.
+  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Page_0} -text {Discriptions:
+
+The window size must be less than 16 !
+
+
+
+clk: Clock.
+
+rst_n: Reset, active low.
+
+in_enable: Input enable from windw.
+
+in_data: Input data from window.
+
+out_enable: Output enable, low -> high when the first data can be read.
+
+out_data: Output data.
+
 }
-  ipgui::add_static_text $IPINST -name "Sum Counter" -parent ${Page_0} -text {
-Sum Counter:
-As follows - "Window Szie : Sum Counter":
-1 : 0;
-2 : 1;
-3 : 3;
-4 : 4;
-5 : 4;
-6 : 5;
-7 : 5;
-8 : 6;
-9 : 6;
-10 : 6;
-11 : 6;
-12 : 7;
-13 : 7;
-14 : 8;
-15 : 8;
+  ipgui::add_static_text $IPINST -name "Sum Counter" -parent ${Page_0} -text {
+
+Sum Counter:
+
+As follows - "Window Szie : Sum Counter":
+
+1 : 0;
+
+2 : 1;
+
+3 : 3;
+
+4 : 4;
+
+5 : 4;
+
+6 : 5;
+
+7 : 5;
+
+8 : 6;
+
+9 : 6;
+
+10 : 6;
+
+11 : 6;
+
+12 : 7;
+
+13 : 7;
+
+14 : 8;
+
+15 : 8;
+
 16 : 8;}
 
 

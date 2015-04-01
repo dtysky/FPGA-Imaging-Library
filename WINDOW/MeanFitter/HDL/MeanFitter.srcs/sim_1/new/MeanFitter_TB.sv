@@ -32,9 +32,11 @@ module MeanFitter_TB();
 
 	//For Rows8x512
 	parameter im_width = 320;
-	parameter rows_width = 5;
+	parameter rows_width = 3;
 	//For Window
-	parameter window_size = 5;
+	parameter window_size = 3;
+	//For MeanFitter
+	parameter sum_counter = 3;
 	//Can't be changed in this IP.
 	parameter color_width = 8;
 
@@ -52,7 +54,7 @@ module MeanFitter_TB();
 	CLOCK CLOCK1(clk);
 	Rows8x512 #(im_width,rows_width) Rows1 (clk, rst_n, in_color, row_enable, out_color);
 	Window #(color_width,window_size) Window1(clk, rst_n, row_enable, out_color, win_enable, win_data);
-	MeanFitter #(color_width,window_size) MF1(clk, rst_n, win_enable, win_data, out_enable, out_data);
+	MeanFitter #(color_width,window_size,sum_counter) MF1(clk, rst_n, win_enable, win_data, out_enable, out_data);
 
 	integer fi,fo;
 	string fname[$];

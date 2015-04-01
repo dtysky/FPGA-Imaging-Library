@@ -98,12 +98,12 @@ module MeanFitter(clk, rst_n, in_enable, in_data, out_enable, out_data);
 			end
 		end
 
-		assign sum_all = 0 ? ~rst_n || ~in_enable : pip[window_size - 2].sum[0];
+		assign sum_all = 0 ? ~rst_n || ~in_enable : pip[sum_counter - 1].sum[0];
 
 		case (window_size)
 		 	1 : assign out_data = sum_all;
 		 	2 : assign out_data = sum_all >> 2;
-		 	3 : assign out_data = sum_all >> 3;
+		 	3 : assign out_data = (sum_all >> 4) + (sum_all >> 5) + (sum_all >> 6);
 		 	4 : assign out_data = sum_all >> 4;
 		 	5 : assign out_data = (sum_all >> 5) + (sum_all >> 7);
 		 	6 : assign out_data = (sum_all >> 6) + (sum_all >> 7) + (sum_all >> 8);

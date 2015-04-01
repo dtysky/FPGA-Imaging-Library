@@ -43,7 +43,7 @@ for root,f in FileAll:
 	im_src = Image.open(root+f)
 	s_x, s_y = im_src.size
 	im_res = Image.new('L', (s_x, s_y), 0)
-	im_res.putdata(create(im_src, 5))
+	im_res.putdata(create(im_src, 3))
 	im_res.save('../SIM_CHECK/soft' + f)
 	# fo = open('../SIM_CHECK/soft' + f + '.dat','w')
 	# for pix in im_res.getdata():
