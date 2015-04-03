@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="2" Path="B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/RowsCreat/HDL/Rows8x512/Rows8x512.xpr">
+<Project Version="7" Minor="2" Path="B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="5792323b407549d48e8ee4c0a98f4e63"/>

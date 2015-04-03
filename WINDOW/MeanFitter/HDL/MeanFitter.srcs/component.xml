@@ -52,7 +52,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>ea928395</spirit:value>
+						<spirit:value>ed37e469</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -66,7 +66,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>a024ff2b</spirit:value>
+						<spirit:value>353189a5</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -239,7 +239,7 @@
 				<spirit:name>xgui/MeanFitter_v1_0.tcl</spirit:name>
 				<spirit:fileType>tclSource</spirit:fileType>
 				<spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
-				<spirit:userFileType>CHECKSUM_754ca3d7</spirit:userFileType>
+				<spirit:userFileType>CHECKSUM_c001b7a0</spirit:userFileType>
 			</spirit:file>
 		</spirit:fileSet>
 	</spirit:fileSets>
@@ -283,8 +283,8 @@
 				<xilinx:taxonomy>/Video_&amp;_Image_Processing</xilinx:taxonomy>
 			</xilinx:taxonomies>
 			<xilinx:displayName>MeanFitter_v1_0</xilinx:displayName>
-			<xilinx:coreRevision>3</xilinx:coreRevision>
-			<xilinx:coreCreationDateTime>2015-04-01T05:56:31Z</xilinx:coreCreationDateTime>
+			<xilinx:coreRevision>5</xilinx:coreRevision>
+			<xilinx:coreCreationDateTime>2015-04-03T14:47:41Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>
 				<xilinx:tag xilinx:name="xilinx.com:ip:MeanFitter:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/meanfitter/hdl/meanfitter.srcs</xilinx:tag>
 				<xilinx:tag xilinx:name="xilinx.com:user:MeanFitter:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/meanfitter/hdl/meanfitter.srcs</xilinx:tag>
@@ -295,7 +295,7 @@
 		<xilinx:packagingInfo>
 			<xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
 			<xilinx:checksum xilinx:scope="fileGroups"
-					xilinx:value="49fb41b8"/>
+					xilinx:value="f1d614d5"/>
 			<xilinx:checksum xilinx:scope="ports"
 					xilinx:value="b246ded2"/>
 			<xilinx:checksum xilinx:scope="hdlParameters"

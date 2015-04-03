@@ -4,10 +4,14 @@ proc init_gui { IPINST } {
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
   ipgui::add_param $IPINST -name "window_size" -parent ${Page_0}
-  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Page_0} -text {Discriptions:
-
-template: The template you want to match.
-in_data: Input data from window.
+  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Page_0} -text {Discriptions:
+
+
+
+template: The template you want to match.
+
+in_data: Input data from window, the first data must be given in the same time with in_enable enabling.
+
 out_data: Output data.}
 
 

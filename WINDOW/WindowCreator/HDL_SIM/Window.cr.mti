@@ -45,12 +45,4 @@ Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 Top level modules:
 	Window
 
-} {} {}} B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/WindowCreator/HDL/Window.srcs/sim_1/new/Window_TB.sv {1 {vlog -work work -vopt -sv B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/WindowCreator/HDL/Window.srcs/sim_1/new/Window_TB.sv
-Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
--- Compiling module CLOCK
--- Compiling module Window_TB
-
-Top level modules:
-	Window_TB
-
 } {} {}}

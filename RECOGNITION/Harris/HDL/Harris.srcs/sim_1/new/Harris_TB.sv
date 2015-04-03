@@ -38,6 +38,7 @@ module Harris_TB();
 	parameter color_width = 8;
 
 	bit clk,rst_n;
+	bit in_enable;
 	bit[color_width - 1 : 0] in_color;
 	bit row_enable;
 	bit[color_width * rows_width - 1 : 0] out_color;
@@ -46,12 +47,15 @@ module Harris_TB();
 	bit win_enable;
 
 	bit[color_width - 1 : 0] diff_th = 5;
+	bit out_enable;
 	bit out_data;
 
+	bit now_start = 0;
+
 	CLOCK CLOCK1(clk);
-	Rows8x512 #(im_width,rows_width) Rows1 (clk, rst_n, in_color, row_enable, out_color);
+	Rows8x512 #(im_width,rows_width) Rows1 (clk, rst_n, in_enable, in_color, row_enable, out_color);
 	Window #(color_width,window_size) Window1(clk, rst_n, row_enable, out_color, win_enable, win_data);
-	Harris #(color_width) Harris1(diff_th, win_data, out_data);
+	Harris #(color_width) Harris1(diff_th, win_enable, win_data, out_enable, out_data);
 
 	integer fi,fo;
 	string fname[$];
@@ -67,6 +71,8 @@ module Harris_TB();
 		$fclose(fi);
 		fsize = fname.size();
 		rst_n = 0;
+		in_enable = 0;
+		now_start = 0;
 		repeat(1100) @(posedge clk);
 		rst_n = 1;
 		@(posedge clk);
@@ -84,8 +90,13 @@ module Harris_TB();
 			while (!$feof(fi)) begin 
 				@(posedge clk);
 				$fscanf(fi,"%b",in_color);
-				if(win_enable)
+				in_enable = 1;
+				if(out_enable) begin
+					if(~now_start)
+						$display("%m: at time %t ps , start%d !", $time, i);
+					now_start = 1;
 					$fwrite(fo,"%d\n",out_data);
+				end
 			end
 			$fclose(fi);
 			$fclose(fo);

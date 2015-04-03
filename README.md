@@ -98,6 +98,7 @@ Create and maintain some rows cache, preparing for creating window.
 **HDL Files:**  
 1. Rows8x512/Rows8x512.v: A module for creating some rows by an image which max width is 512bits and color is 8bits.  
 2. Rows8x512/Rows8x512_TB.sv: Testbench for Rows8x512.  
+3. Rows1x512/Rows8x512.v: A module for creating some rows by an image which max width is 512bits and color is 1bit.  
 
 #### 2.WindowCreator:
 **Progress:**  

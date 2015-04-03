@@ -4,10 +4,14 @@ proc init_gui { IPINST } {
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
   ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}
-  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Page_0} -text {Discriptions:
-
-diff_th: Threshold to judge corners.
-in_data: Input data from 3x3 window.
+  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Page_0} -text {Discriptions:
+
+
+
+diff_th: Threshold to judge corners.
+
+in_data: Input data from 3x3 window, the first data must be given in the same time with in_enable enabling.
+
 out_data: Output data.}
 
 

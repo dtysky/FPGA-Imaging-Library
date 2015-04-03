@@ -23,9 +23,10 @@
 module Rows8x512(
 	clk,
 	rst_n,
-	in_color,
+	in_enable,
+	in_data,
 	out_enable,
-	out_color
+	out_data
 	);
 	parameter im_width = 320;
 	parameter rows_width = 5;
@@ -34,9 +35,10 @@ module Rows8x512(
 
 	input clk;
 	input rst_n;
-	input[color_width - 1 : 0] in_color;
+	input in_enable;
+	input[color_width - 1 : 0] in_data;
 	output out_enable;
-	output[color_width * rows_width - 1 : 0] out_color;
+	output[color_width * rows_width - 1 : 0] out_data;
 
 	wire row_rst = ~rst_n;
 	reg reg_row_wr_en[0 : rows_width];
@@ -46,6 +48,8 @@ module Rows8x512(
 	wire[color_width - 1 : 0] row_dout[0 : rows_width - 1];
 	wire[8 : 0] row_num[0 : rows_width - 1];
 
+	reg[color_width - 1 : 0] reg_in_data;
+
 	assign out_enable = row_wr_en[rows_width];
 
 	genvar i;
@@ -54,8 +58,10 @@ module Rows8x512(
 			assign row_rd_en[i] = 1 ? row_num[i] == im_width - 1 : 0;
 
 			if (i == 0) begin
-				assign row_din[i] = in_color;
-				assign row_wr_en[i] = 1;
+				always @(posedge clk)
+					reg_in_data = in_data;
+				assign row_din[i] = reg_in_data;
+				assign row_wr_en[i] = in_enable;
 			end else begin
 				assign row_din[i] = row_dout[i - 1];
 			end
@@ -75,7 +81,7 @@ module Rows8x512(
 				.data_count(row_num[i])
 				);
 
-			assign out_color[(i + 1) * color_width - 1 : i * color_width] = row_dout[rows_width - 1 - i];
+			assign out_data[(i + 1) * color_width - 1 : i * color_width] = row_dout[rows_width - 1 - i];
 		
 		end
 

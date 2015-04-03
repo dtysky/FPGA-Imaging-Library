@@ -39,6 +39,7 @@ module Window_TB();
 	parameter color_width = 8;
 
 	bit clk,rst_n;
+	bit in_enable;
 	bit[color_width - 1 : 0] in_color;
 	bit row_enable;
 	bit[color_width * rows_width - 1 : 0] out_color;
@@ -47,13 +48,15 @@ module Window_TB();
 	bit win_enable;
 
 	CLOCK CLOCK1(clk);
-	Rows8x512 #(im_width,rows_width) Rows1 (clk, rst_n, in_color, row_enable, out_color);
+	Rows8x512 #(im_width,rows_width) Rows1 (clk, rst_n, in_enable, in_color, row_enable, out_color);
 	Window #(color_width,window_size) Window1(clk, rst_n, row_enable, out_color, win_enable, win_data);
 
 	integer fi,fo;
 	string fname[$];
 	string ftmp,imsize;
 	int fsize;
+
+	bit now_start = 0;
 
 	initial begin
 		fi = $fopen("imgindex.dat","r");
@@ -64,6 +67,8 @@ module Window_TB();
 		$fclose(fi);
 		fsize = fname.size();
 		rst_n = 0;
+		in_enable = 0;
+		now_start = 0;
 		repeat(1100) @(posedge clk);
 		rst_n = 1;
 		@(posedge clk);
@@ -80,9 +85,14 @@ module Window_TB();
 			$fwrite(fo,"%s\n",imsize);
 			while (!$feof(fi)) begin 
 				@(posedge clk);
+				in_enable = 1;
 				$fscanf(fi,"%b",in_color);
-				if(win_enable)
+				if(win_enable) begin
+					if(~now_start)
+						$display("%m: at time %t ps , start%d !", $time, i);
+					now_start = 1;
 					$fwrite(fo,"%b\n",win_data);
+				end
 			end
 			$fclose(fi);
 			$fclose(fo);

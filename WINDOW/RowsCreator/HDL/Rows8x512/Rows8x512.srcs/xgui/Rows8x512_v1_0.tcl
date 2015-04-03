@@ -15,13 +15,15 @@ The lowest color_width-bits of out_data are the first row!
 
 clk: Fifos clock.
 
-rst_n: Reset all fifos, active low.
+rst_n: Reset all fifos, active low, at least 3 duty.
 
-in_color: Image source data, 8bits.
+in_enable: Input start flag.
+
+in_data: Image source data, 8bits, the first data must be given in the same time with in_enable enabling.
 
 out_enable: A flag, it will be higgh if the rows can be used.
 
-out_color: Output data.}
+out_data: Output data.}
 
 
 }

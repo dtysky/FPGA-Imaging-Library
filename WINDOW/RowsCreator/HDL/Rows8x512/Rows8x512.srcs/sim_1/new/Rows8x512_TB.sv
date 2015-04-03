@@ -37,12 +37,13 @@ module Rows8x512_TB();
 	parameter color_width = 8;
 
 	bit clk,rst_n;
+	bit in_enable;
 	bit[color_width - 1 : 0] in_color;
 	bit out_enable;
 	bit[color_width * rows_width - 1 : 0] out_color;
 
 	CLOCK CLOCK1(clk);
-	Rows8x512 #(im_width,rows_width) Rows1 (clk,rst_n,in_color,out_enable,out_color);
+	Rows8x512 #(im_width,rows_width) Rows1 (clk,rst_n,in_enable,in_color,out_enable,out_color);
 
 	integer fi,fo;
 	string fname[$];
@@ -58,12 +59,15 @@ module Rows8x512_TB();
 		$fclose(fi);
 		fsize = fname.size();
 		rst_n = 0;
+		in_enable = 0;
 		repeat(1100) @(posedge clk);
 		rst_n = 1;
 		@(posedge clk);
 		@(posedge clk);
 		@(posedge clk);
+		//in_enable = 1;
 		for (int i = 0; i < fsize; i++) begin;
+			$display("%m: at time %t ps , start%d !", $time, i);
 			ftmp = fname.pop_back();
 			fi = $fopen({ftmp,".dat"},"r");
 			fo = $fopen({ftmp,".res"},"w");
@@ -74,6 +78,7 @@ module Rows8x512_TB();
 			$fwrite(fo,"%s\n",imsize);
 			while (!$feof(fi)) begin 
 				@(posedge clk);
+				in_enable = 1;
 				$fscanf(fi,"%b",in_color);
 				if(out_enable == 1)
 					$fwrite(fo,"%b\n",out_color);

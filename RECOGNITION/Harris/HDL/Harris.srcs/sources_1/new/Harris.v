@@ -20,13 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Harris(diff_th, in_data, out_data);
+module Harris(diff_th, in_enable, in_data, out_enable, out_data);
 
 	parameter color_width = 8;
 
 	input[color_width - 1 : 0] diff_th;
+	input in_enable;
 	input[color_width * 9 - 1 : 0] in_data;
 	output out_data;
+	output out_enable;
 
 	//top:2nd; left:4th; right:6th; bottom:8th; now:5th;
 	wire signed [color_width : 0] top = {1'b0, in_data[2 * color_width - 1 : 1 * color_width]};
@@ -49,6 +51,6 @@ module Harris(diff_th, in_data, out_data);
 	wire en_bottom = 1 ? (diff_bottom >= diff_th_p) || (diff_bottom <= diff_th_n) : 0;
 
 	assign out_data = (en_top & en_left) | (en_bottom & en_left) | (en_top & en_right) | (en_bottom & en_right);
-
+	assign out_enable = in_enable;
 
 endmodule

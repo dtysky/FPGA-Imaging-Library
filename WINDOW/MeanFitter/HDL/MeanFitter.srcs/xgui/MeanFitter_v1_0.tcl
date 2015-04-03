@@ -18,7 +18,7 @@ rst_n: Reset, active low.
 
 in_enable: Input enable from windw.
 
-in_data: Input data from window.
+in_data: Input data from window, the first data must be given in the same time with in_enable enabling.
 
 out_enable: Output enable, low -> high when the first data can be read.
 
