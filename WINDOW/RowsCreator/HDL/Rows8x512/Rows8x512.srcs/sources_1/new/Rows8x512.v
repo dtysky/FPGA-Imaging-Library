@@ -55,7 +55,7 @@ module Rows8x512(
 	genvar i;
 	generate
 		for (i = 0; i < rows_width; i = i + 1) begin : Fifos
-			assign row_rd_en[i] = 1 ? row_num[i] == im_width - 1 : 0;
+			assign row_rd_en[i] = row_num[i] == im_width - 1 ? 1 : 0;
 
 			if (i == 0) begin
 				always @(posedge clk)

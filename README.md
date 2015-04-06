@@ -135,6 +135,15 @@ Binary Morphology : using a template window to match your image.
 1. MatchTemplateBin.v: Main module.  
 2. MatchTemplateBin_TB.sv: Testbench for MatchTemplateBin.  
 
+#### 6.FrameController:
+**Progress:**  
+100%.    
+**Function:**  
+For writing or reading data to a block ram, this IP can be usefull to store your image.  
+**HDL Files:**  
+1. Frame.v: Main module.  
+2. Frame_TB.sv: Testbench for Frame.  
+
 ### Recognition:
 
 #### 1.Harris:

@@ -28,5 +28,5 @@ module MatchTemplateBin(template, in_data, out_data);
 	input[ window_size * window_size - 1 : 0] in_data;
 	output out_data;
 
-	assign out_data = 1 ? template == in_data : 0;
+	assign out_data = template == in_data ? 1 : 0;
 endmodule

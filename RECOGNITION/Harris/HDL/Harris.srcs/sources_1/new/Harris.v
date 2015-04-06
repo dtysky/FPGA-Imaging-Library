@@ -45,10 +45,10 @@ module Harris(diff_th, in_enable, in_data, out_enable, out_data);
 	wire signed [color_width : 0] diff_th_p = {1'b0, diff_th};
 	wire signed [color_width : 0] diff_th_n = 0 - diff_th;
 
-	wire en_top = 1 ? (diff_top >= diff_th_p) || (diff_top <= diff_th_n) : 0;
-	wire en_left = 1 ? (diff_left >= diff_th_p) || (diff_left <= diff_th_n) : 0;
-	wire en_right = 1 ? (diff_right >= diff_th_p) || (diff_right <= diff_th_n) : 0;
-	wire en_bottom = 1 ? (diff_bottom >= diff_th_p) || (diff_bottom <= diff_th_n) : 0;
+	wire en_top = (diff_top >= diff_th_p) || (diff_top <= diff_th_n) ? 1 : 0;
+	wire en_left = (diff_left >= diff_th_p) || (diff_left <= diff_th_n) ? 1 : 0;
+	wire en_right = (diff_right >= diff_th_p) || (diff_right <= diff_th_n) ? 1 : 0;
+	wire en_bottom = (diff_bottom >= diff_th_p) || (diff_bottom <= diff_th_n) ? 1 : 0;
 
 	assign out_data = (en_top & en_left) | (en_bottom & en_left) | (en_top & en_right) | (en_bottom & en_right);
 	assign out_enable = in_enable;

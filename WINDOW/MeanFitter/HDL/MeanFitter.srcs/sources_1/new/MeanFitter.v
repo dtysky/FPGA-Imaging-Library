@@ -64,7 +64,7 @@ module MeanFitter(clk, rst_n, in_enable, in_data, out_enable, out_data);
 			con_enable <= con_enable + 1;
 	end
 
-	assign out_enable = 1 ? con_enable == sum_counter : 0;
+	assign out_enable = con_enable == sum_counter ? 1 : 0;
 
 	genvar i;
 	genvar j;
