@@ -98,9 +98,3 @@ proc update_MODELPARAM_VALUE.pip_counter { MODELPARAM_VALUE.pip_counter PARAM_VA
 	set_property value [get_property value ${PARAM_VALUE.pip_counter}] ${MODELPARAM_VALUE.pip_counter}
 }
 
-proc update_MODELPARAM_VALUE.full_win_size { MODELPARAM_VALUE.full_win_size } {
-	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	# WARNING: There is no corresponding user parameter named "full_win_size". Setting updated value from the model parameter.
-set_property value 25 ${MODELPARAM_VALUE.full_win_size}
-}
-

@@ -20,7 +20,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>d5d2ec80</spirit:value>
+						<spirit:value>03fb9365</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -36,7 +36,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>d5d2ec80</spirit:value>
+						<spirit:value>03fb9365</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -66,7 +66,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>353189a5</spirit:value>
+						<spirit:value>4b410d31</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -188,14 +188,6 @@
 						spirit:resolve="generated"
 						spirit:id="MODELPARAM_VALUE.sum_counter">4</spirit:value>
 			</spirit:modelParameter>
-			<spirit:modelParameter spirit:dataType="integer">
-				<spirit:name>full_win_size</spirit:name>
-				<spirit:displayName>Full Win Size</spirit:displayName>
-				<spirit:value spirit:format="long"
-						spirit:resolve="generated"
-						spirit:id="MODELPARAM_VALUE.full_win_size"
-						spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;)) * spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;)))">25</spirit:value>
-			</spirit:modelParameter>
 		</spirit:modelParameters>
 	</spirit:model>
 	<spirit:fileSets>
@@ -204,7 +196,7 @@
 			<spirit:file>
 				<spirit:name>sources_1/new/MeanFitter.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
-				<spirit:userFileType>CHECKSUM_d5d2ec80</spirit:userFileType>
+				<spirit:userFileType>CHECKSUM_03fb9365</spirit:userFileType>
 			</spirit:file>
 		</spirit:fileSet>
 		<spirit:fileSet>
@@ -239,7 +231,7 @@
 				<spirit:name>xgui/MeanFitter_v1_0.tcl</spirit:name>
 				<spirit:fileType>tclSource</spirit:fileType>
 				<spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
-				<spirit:userFileType>CHECKSUM_c001b7a0</spirit:userFileType>
+				<spirit:userFileType>CHECKSUM_87d0b40b</spirit:userFileType>
 			</spirit:file>
 		</spirit:fileSet>
 	</spirit:fileSets>
@@ -283,8 +275,8 @@
 				<xilinx:taxonomy>/Video_&amp;_Image_Processing</xilinx:taxonomy>
 			</xilinx:taxonomies>
 			<xilinx:displayName>MeanFitter_v1_0</xilinx:displayName>
-			<xilinx:coreRevision>6</xilinx:coreRevision>
-			<xilinx:coreCreationDateTime>2015-04-07T13:20:15Z</xilinx:coreCreationDateTime>
+			<xilinx:coreRevision>7</xilinx:coreRevision>
+			<xilinx:coreCreationDateTime>2015-04-07T17:33:52Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>
 				<xilinx:tag xilinx:name="xilinx.com:ip:MeanFitter:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/meanfitter/hdl/meanfitter.srcs</xilinx:tag>
 				<xilinx:tag xilinx:name="xilinx.com:user:MeanFitter:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/meanfitter/hdl/meanfitter.srcs</xilinx:tag>
@@ -295,11 +287,11 @@
 		<xilinx:packagingInfo>
 			<xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
 			<xilinx:checksum xilinx:scope="fileGroups"
-					xilinx:value="78cab849"/>
+					xilinx:value="add4f773"/>
 			<xilinx:checksum xilinx:scope="ports"
-					xilinx:value="b86484a7"/>
+					xilinx:value="94323405"/>
 			<xilinx:checksum xilinx:scope="hdlParameters"
-					xilinx:value="ae86121e"/>
+					xilinx:value="fef03f63"/>
 			<xilinx:checksum xilinx:scope="parameters"
 					xilinx:value="6eae421f"/>
 		</xilinx:packagingInfo>

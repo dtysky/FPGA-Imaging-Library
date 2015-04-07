@@ -57,9 +57,3 @@ proc update_MODELPARAM_VALUE.window_size { MODELPARAM_VALUE.window_size PARAM_VA
 	set_property value [get_property value ${PARAM_VALUE.window_size}] ${MODELPARAM_VALUE.window_size}
 }
 
-proc update_MODELPARAM_VALUE.window_size_half { MODELPARAM_VALUE.window_size_half } {
-	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	# WARNING: There is no corresponding user parameter named "window_size_half". Setting updated value from the model parameter.
-set_property value 1 ${MODELPARAM_VALUE.window_size_half}
-}
-

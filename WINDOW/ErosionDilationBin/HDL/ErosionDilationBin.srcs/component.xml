@@ -20,7 +20,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>8256134c</spirit:value>
+						<spirit:value>0c172b11</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -36,7 +36,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>8256134c</spirit:value>
+						<spirit:value>0c172b11</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -66,7 +66,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>cc44bcf7</spirit:value>
+						<spirit:value>9d56e807</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -118,7 +118,7 @@
 					<spirit:vector>
 						<spirit:left spirit:format="long"
 								spirit:resolve="dependent"
-								spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;)) * spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;))) - 1)">24</spirit:left>
+								spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;)) * spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;))) - 1)">8</spirit:left>
 						<spirit:right spirit:format="long"
 								spirit:resolve="immediate">0</spirit:right>
 					</spirit:vector>
@@ -151,7 +151,7 @@
 					<spirit:vector>
 						<spirit:left spirit:format="long"
 								spirit:resolve="dependent"
-								spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;)) * spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;))) - 1)">24</spirit:left>
+								spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;)) * spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;))) - 1)">8</spirit:left>
 						<spirit:right spirit:format="long"
 								spirit:resolve="immediate">0</spirit:right>
 					</spirit:vector>
@@ -198,7 +198,7 @@
 				<spirit:displayName>Window Size</spirit:displayName>
 				<spirit:value spirit:format="long"
 						spirit:resolve="generated"
-						spirit:id="MODELPARAM_VALUE.window_size">5</spirit:value>
+						spirit:id="MODELPARAM_VALUE.window_size">3</spirit:value>
 			</spirit:modelParameter>
 			<spirit:modelParameter spirit:dataType="integer">
 				<spirit:name>pip_counter</spirit:name>
@@ -206,14 +206,6 @@
 				<spirit:value spirit:format="long"
 						spirit:resolve="generated"
 						spirit:id="MODELPARAM_VALUE.pip_counter">4</spirit:value>
-			</spirit:modelParameter>
-			<spirit:modelParameter spirit:dataType="integer">
-				<spirit:name>full_win_size</spirit:name>
-				<spirit:displayName>Full Win Size</spirit:displayName>
-				<spirit:value spirit:format="long"
-						spirit:resolve="generated"
-						spirit:id="MODELPARAM_VALUE.full_win_size"
-						spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;)) * spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;)))">25</spirit:value>
 			</spirit:modelParameter>
 		</spirit:modelParameters>
 	</spirit:model>
@@ -223,7 +215,7 @@
 			<spirit:file>
 				<spirit:name>sources_1/new/ErosionDilationBin.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
-				<spirit:userFileType>CHECKSUM_8256134c</spirit:userFileType>
+				<spirit:userFileType>CHECKSUM_0c172b11</spirit:userFileType>
 			</spirit:file>
 		</spirit:fileSet>
 		<spirit:fileSet>
@@ -258,7 +250,7 @@
 				<spirit:name>xgui/ErosionDilationBin_v1_1.tcl</spirit:name>
 				<spirit:fileType>tclSource</spirit:fileType>
 				<spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
-				<spirit:userFileType>CHECKSUM_f5f00538</spirit:userFileType>
+				<spirit:userFileType>CHECKSUM_71b64e46</spirit:userFileType>
 			</spirit:file>
 		</spirit:fileSet>
 	</spirit:fileSets>
@@ -295,8 +287,8 @@
 				<xilinx:taxonomy>/UserIP</xilinx:taxonomy>
 			</xilinx:taxonomies>
 			<xilinx:displayName>ErosionDilationBin_v1_0</xilinx:displayName>
-			<xilinx:coreRevision>4</xilinx:coreRevision>
-			<xilinx:coreCreationDateTime>2015-04-07T13:17:57Z</xilinx:coreCreationDateTime>
+			<xilinx:coreRevision>6</xilinx:coreRevision>
+			<xilinx:coreCreationDateTime>2015-04-07T17:31:59Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>
 				<xilinx:tag xilinx:name="xilinx.com:ip:ErosionDilationBin:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/erosiondilationbin/hdl/erosiondilationbin.srcs</xilinx:tag>
 				<xilinx:tag xilinx:name="xilinx.com:user:ErosionDilationBin:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/erosiondilationbin/hdl/erosiondilationbin.srcs</xilinx:tag>
@@ -308,11 +300,11 @@
 		<xilinx:packagingInfo>
 			<xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
 			<xilinx:checksum xilinx:scope="fileGroups"
-					xilinx:value="62b98b9c"/>
+					xilinx:value="2a9fdd54"/>
 			<xilinx:checksum xilinx:scope="ports"
-					xilinx:value="e1b032f4"/>
+					xilinx:value="a2d5514b"/>
 			<xilinx:checksum xilinx:scope="hdlParameters"
-					xilinx:value="47224550"/>
+					xilinx:value="3a5fd554"/>
 			<xilinx:checksum xilinx:scope="parameters"
 					xilinx:value="2ef463f6"/>
 		</xilinx:packagingInfo>
