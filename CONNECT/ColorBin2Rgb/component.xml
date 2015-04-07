@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>dtysky</spirit:vendor>
-  <spirit:library>XUP</spirit:library>
+  <spirit:library>Image</spirit:library>
   <spirit:name>ColorBin2Rgb</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:model>
@@ -139,7 +139,7 @@
         <xilinx:tag xilinx:name="xilinx.com:ip:ColorBin2Rgb:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/other_ip/colorbin2rgb</xilinx:tag>
         <xilinx:tag xilinx:name="dtysky:ip:ColorBin2Rgb:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/other_ip/colorbin2rgb</xilinx:tag>
         <xilinx:tag xilinx:name="dtysky:user:ColorBin2Rgb:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/other_ip/colorbin2rgb</xilinx:tag>
-        <xilinx:tag xilinx:name="dtysky:XUP:ColorBin2Rgb:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/other_ip/colorbin2rgb</xilinx:tag>
+        <xilinx:tag xilinx:name="dtysky:Image:ColorBin2Rgb:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/other_ip/colorbin2rgb</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>

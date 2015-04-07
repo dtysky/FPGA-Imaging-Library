@@ -21,7 +21,7 @@
 
 
 module ErosionDilationBin(clk, rst_n, mode, template, in_enable, in_data, out_enable, out_data);
-	parameter window_size = 5;
+	parameter window_size = 3;
 	// The highest bit of full_win_size, the lowest bit is "0"
 	// 1 : 0;
 	// 2 : 1;

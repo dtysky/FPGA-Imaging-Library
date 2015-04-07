@@ -170,6 +170,26 @@ ASCII Characters Output, output characters to a frame buffer in specified positi
 1. FONT_CREAT\: Create font source by FONT.tff.    
 2. FONT_SOURCE.v: font source.  
 
+### CONNECT:
+
+**Function:**  
+Some Special IPs, for connecting.  
+
+#### Color16to24:
+Convert 16bits color to 24bits color.  
+
+#### ColorBin2Rgb:
+Convert 1bit color to 24bits color.  
+
+#### ColorGray2Rgb:
+Convert 8bits color to 24bits color.  
+
+#### ColorRgb2Vga:
+Convert 24bits color to vga color.  
+
+#### ColorRgbMux:
+A multiplexer for rbg color.   
+
 ### OTHER_IP:
 
 **Function:**  

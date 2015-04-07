@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>dtysky</spirit:vendor>
-  <spirit:library>XUP</spirit:library>
+  <spirit:library>Image</spirit:library>
   <spirit:name>Color16to24</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:model>
@@ -143,7 +143,7 @@
         <xilinx:tag xilinx:name="xilinx.com:ip:Color16to24:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/other_ip/color16to24</xilinx:tag>
         <xilinx:tag xilinx:name="dtysky:ip:Color16to24:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/other_ip/color16to24</xilinx:tag>
         <xilinx:tag xilinx:name="dtysky:user:Color16to24:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/other_ip/color16to24</xilinx:tag>
-        <xilinx:tag xilinx:name="dtysky:XUP:Color16to24:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/other_ip/color16to24</xilinx:tag>
+        <xilinx:tag xilinx:name="dtysky:Image:Color16to24:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/other_ip/color16to24</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
