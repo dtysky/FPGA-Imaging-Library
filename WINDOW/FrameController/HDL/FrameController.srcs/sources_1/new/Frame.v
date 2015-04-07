@@ -30,6 +30,7 @@ module Frame(clk, rst_n, in_enable, in_data, out_enable, out_data, ram_addr);
 	parameter im_height = 240;
 	parameter addr_width = 17;
 	parameter ram_read_latency = 1;
+	parameter row_init = 0;
 
 	input clk, rst_n;
 	input in_enable;
@@ -43,12 +44,6 @@ module Frame(clk, rst_n, in_enable, in_data, out_enable, out_data, ram_addr);
 	reg[color_width - 1 : 0] reg_out_data;
 
 	assign ram_addr = reg_ram_addr;
-	always @(posedge clk or negedge rst_n or negedge in_enable) begin
-		if(~rst_n || ~in_enable || reg_ram_addr == im_width * im_height - 1)
-			reg_ram_addr <= 0;
-		else
-			reg_ram_addr <= reg_ram_addr + 1;
-	end
 	assign out_data = ~rst_n || ~in_enable ? 0 : in_data;
 
 	generate
@@ -56,9 +51,21 @@ module Frame(clk, rst_n, in_enable, in_data, out_enable, out_data, ram_addr);
 		if(mode == 0) begin
 
 			assign out_enable = ~rst_n || ~in_enable ? 0 : 1;
+			always @(posedge clk or negedge rst_n or negedge in_enable) begin
+				if(~rst_n || ~in_enable || reg_ram_addr == im_width * im_height - 1)
+					reg_ram_addr <= row_init;
+				else
+					reg_ram_addr <= reg_ram_addr + 1;
+			end
 
 		end else begin
 
+			always @(posedge clk or negedge rst_n or negedge in_enable) begin
+				if(~rst_n || ~in_enable || reg_ram_addr == im_width * im_height - 1)
+					reg_ram_addr <= 0;
+				else
+					reg_ram_addr <= reg_ram_addr + 1;
+			end
 			always @(posedge clk or negedge rst_n or negedge in_enable) begin
 				if(~rst_n || ~in_enable)
 					reg_out_enable <= 0;

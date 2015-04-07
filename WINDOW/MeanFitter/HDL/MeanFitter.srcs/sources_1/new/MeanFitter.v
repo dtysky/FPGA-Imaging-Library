@@ -48,7 +48,7 @@ module MeanFitter(clk, rst_n, in_enable, in_data, out_enable, out_data);
 	input clk;
 	input rst_n;
 	input in_enable;
-	input[color_width * full_win_size - 1 : 0] in_data;
+	input[color_width * window_size * window_size - 1 : 0] in_data;
 	output out_enable;
 	output[color_width - 1 : 0] out_data;
 

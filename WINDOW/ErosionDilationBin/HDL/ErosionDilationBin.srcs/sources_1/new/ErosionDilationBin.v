@@ -45,9 +45,9 @@ module ErosionDilationBin(clk, rst_n, mode, template, in_enable, in_data, out_en
 	input clk, rst_n;
 	//0 for erosion, 1 for dilation
 	input mode;
-	input[full_win_size - 1 : 0] template;
+	input[window_size * window_size - 1 : 0] template;
 	input in_enable;
-	input[full_win_size - 1 : 0] in_data;
+	input[window_size * window_size - 1 : 0] in_data;
 	output out_enable;
 	output out_data;
 
