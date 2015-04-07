@@ -7,7 +7,7 @@ You can also use these in quartus, just get hdl files**
 ***
 # Introduction：
 
-## Dirs Struct:
+## Dirs Structure:
 
 This project will content many moudles, which are useful in image processing.  
 Each module will have its directory, and this directories will have the same struct as follows:  
