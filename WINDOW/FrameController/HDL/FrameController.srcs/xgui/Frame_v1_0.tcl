@@ -29,7 +29,7 @@ in_data: Input data.
 
 out_enable: Output enable, will be high when the first output data output.
 
-in_data: Output data.
+out_data: Output data.
 
 ram_addr: Address for Block Ram.}
 
