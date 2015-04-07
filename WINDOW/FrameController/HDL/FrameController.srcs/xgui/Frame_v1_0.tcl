@@ -3,23 +3,34 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
+  ipgui::add_param $IPINST -name "mode" -parent ${Page_0}
   ipgui::add_param $IPINST -name "addr_width" -parent ${Page_0}
   ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}
   ipgui::add_param $IPINST -name "im_height" -parent ${Page_0}
   ipgui::add_param $IPINST -name "im_width" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "mode" -parent ${Page_0}
   ipgui::add_param $IPINST -name "ram_read_latency" -parent ${Page_0}
-  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Page_0} -text {
-Discriptions:
-
-Ram Read Latency: Depend on the number of registers by your Block Ram setting.
-
-clk: colck.
-rst_n: Reset, active low.
-in_enable: Input enable, must enable with the same time as the first input data.
-in_data: Input data.
-out_enable: Output enable, will be high when the first output data output.
-in_data: Output data.
+  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Page_0} -text {
+
+Discriptions:
+
+Mode: 0 for writing, 1 for reading.
+
+Ram Read Latency: Depend on the number of registers by your Block Ram setting.
+
+
+
+clk: colck.
+
+rst_n: Reset, active low.
+
+in_enable: Input enable, must enable with the same time as the first input data.
+
+in_data: Input data.
+
+out_enable: Output enable, will be high when the first output data output.
+
+in_data: Output data.
+
 ram_addr: Address for Block Ram.}
 
 

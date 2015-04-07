@@ -5,7 +5,7 @@ import os,re
 from Window import Window
 from Rows import Rows
 
-ModuleName='ErosionDilation'
+ModuleName='ErosionDilationBin'
 
 Mask0 = [
 [0,0,0],
@@ -83,31 +83,9 @@ MaskD2 = [
 
 FileAll = []
 
-def is_same(im, wsize, mask):
-	data_src = im.getdata()
-	xsize,ysize = im.size
-	data_res = []
-	rows = Rows(data_src, wsize, xsize)
-	win = Window(wsize)
-	while 1:
-		win.update(rows.update())
-		if win.is_enable():
-			break
-	for y in range(ysize):
-		for x in range(xsize):
-			if rows.frame_empty():
-				rows.create(data_src, wsize, xsize)
-			w = win.update(rows.update())
-			pix = 0
-			for wy in range(wsize):
-				for wx in range(wsize):
-					pix = pix | (w[wy][wx] ^ mask[wy][wx])
-			data_res.append(1 if pix == 0 else 0)
-	return data_res
-
-# act = 0 : erosion
-# act = 1 : dilation
-def erosion_dilation(im, wsize, mask, act):
+# mode = 0 : erosion
+# mode = 1 : dilation
+def erosion_dilation(im, wsize, mask, mode):
 	data_src = im.getdata()
 	xsize,ysize = im.size
 	data_res = []
@@ -125,19 +103,11 @@ def erosion_dilation(im, wsize, mask, act):
 			pix = 1
 			for wy in range(wsize):
 				for wx in range(wsize):
-					p_w = w[wy][wx] ^ act
+					p_w = w[wy][wx] ^ mode
 					p_w = p_w | ~mask[wy][wx]
 					pix = pix & p_w
-			pix = pix ^ act
+			pix = pix ^ mode
 			data_res.append(pix)
-	return data_res
-
-def ims_or(ims, xsize, ysize):
-	data_res = list(ims[0])
-	for y in range(ysize):
-		for x in range(xsize):
-			for p_src in ims:
-				data_res[y * xsize + x] = (data_res[y * xsize + x] | p_src[y * xsize + x])
 	return data_res
 
 for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
@@ -150,14 +120,6 @@ for root,f in FileAll:
 	s_x, s_y = im_src.size
 	im_res = Image.new('1',(s_x,s_y))
 	im_res.putdata(erosion_dilation(im_src,3,MaskD1,1))
-	im_res.putdata(erosion_dilation(im_res,5,MaskE0,0))
-	for i in range(12):
-		im_res.putdata(ims_or(
-			[erosion_dilation(im_res,3,MaskE5,0),
-			erosion_dilation(im_res,3,MaskE6,0),
-			erosion_dilation(im_res,3,MaskE7,0),
-			erosion_dilation(im_res,3,MaskE8,0),
-			is_same(im_res,3,Mask0)],
-			s_x,s_y
-			))
-	im_res.save('../SIM_CHECK/soft' + f)
+	im_res.save('../SIM_CHECK/softD' + f)
+	im_res.putdata(erosion_dilation(im_src,3,MaskE5,0))
+	im_res.save('../SIM_CHECK/softE' + f)

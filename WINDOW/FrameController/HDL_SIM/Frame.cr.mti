@@ -1,4 +1,12 @@
-B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/FrameController/HDL/FrameController.srcs/sim_1/new/BRam.v {1 {vlog -work work -vopt B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/FrameController/HDL/FrameController.srcs/sim_1/new/BRam.v
+B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/FrameController/HDL/FrameController.srcs/sim_1/new/Frame_TB.sv {1 {vlog -work work -vopt -sv B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/FrameController/HDL/FrameController.srcs/sim_1/new/Frame_TB.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module CLOCK
+-- Compiling module Frame_TB
+
+Top level modules:
+	Frame_TB
+
+} {} {}} B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/FrameController/HDL/FrameController.srcs/sim_1/new/BRam.v {1 {vlog -work work -vopt B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/FrameController/HDL/FrameController.srcs/sim_1/new/BRam.v
 Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 -- Compiling module BRam
 -- Compiling module BRam_blk_mem_gen_generic_cstr
@@ -49,5 +57,12 @@ Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 Top level modules:
 	BRam
 	glbl
+
+} {} {}} B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/FrameController/HDL/FrameController.srcs/sources_1/new/Frame.v {1 {vlog -work work -vopt B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/FrameController/HDL/FrameController.srcs/sources_1/new/Frame.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module Frame
+
+Top level modules:
+	Frame
 
 } {} {}}

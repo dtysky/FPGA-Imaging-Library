@@ -77,10 +77,15 @@ module MeanFitter(clk, rst_n, in_enable, in_data, out_enable, out_data);
 
 					if(j == 0 && ((full_win_size >> i) % 2 != 0)) begin
 						always @(posedge clk)
-							sum[j] <= in_data[full_win_size * color_width - 1 : (full_win_size - 1) * color_width] + in_data[(2 * j + 1) * color_width - 1 : (2 * j) * color_width] + in_data[(2 * j + 2) * color_width - 1 : (2 * j + 1) * color_width];
+							sum[j] <= 
+								in_data[full_win_size * color_width - 1 : (full_win_size - 1) * color_width] +
+								in_data[(2 * j + 1) * color_width - 1 : (2 * j) * color_width] +
+								in_data[(2 * j + 2) * color_width - 1 : (2 * j + 1) * color_width];
 					end else begin
 						always @(posedge clk)
-							sum[j] <= in_data[(2 * j + 1) * color_width - 1 : (2 * j) * color_width] + in_data[(2 * j + 2) * color_width - 1 : (2 * j + 1) * color_width];
+							sum[j] <= 
+								in_data[(2 * j + 1) * color_width - 1 : (2 * j) * color_width] +
+								in_data[(2 * j + 2) * color_width - 1 : (2 * j + 1) * color_width];
 					end
 
 
@@ -98,7 +103,7 @@ module MeanFitter(clk, rst_n, in_enable, in_data, out_enable, out_data);
 			end
 		end
 
-		assign sum_all = 0 ? ~rst_n || ~in_enable : pip[sum_counter - 1].sum[0];
+		assign sum_all = ~rst_n || ~in_enable ? 0 : pip[sum_counter - 1].sum[0];
 
 		case (window_size)
 		 	1 : assign out_data = sum_all;

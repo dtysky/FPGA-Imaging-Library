@@ -10,7 +10,11 @@ proc init_gui { IPINST } {
 
 template: The template you want to match.
 
+in_enable: Input enable.
+
 in_data: Input data from window, the first data must be given in the same time with in_enable enabling.
+
+out_enable: Output enable with first output data.
 
 out_data: Output data.}
 

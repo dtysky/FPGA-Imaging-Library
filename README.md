@@ -121,10 +121,12 @@ Get the mean value form a window which created by WindowCreat.
 
 #### 4.ErosionDilationBin:
 **Progress:**  
-20%.    
+100%.    
 **Function:**  
 Binary Morphology : erosion and dilation.  
 **HDL Files:**  
+1. ErosionDilationBin.v: Main module.  
+2. ErosionDilationBin_TB.sv: Testbench for ErosionDilationBin.  
 
 #### 5.MatchTemplateBin:
 **Progress:**  
