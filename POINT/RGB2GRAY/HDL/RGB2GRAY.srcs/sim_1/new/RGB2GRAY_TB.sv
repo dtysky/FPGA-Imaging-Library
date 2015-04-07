@@ -29,15 +29,14 @@ module CLOCK (
 endmodule
 
 module RGB2GRAY_TB();
-	//Pipeline's level
-	parameter pipe_lev = 0;
 
 	bit clk;
+	bit in_enable;
 	bit[23:0] rgb;
+	bit out_enable;
 	bit[7:0] gray;
 
 	integer fi,fo;
-	int wfw;
 	string fname[$];
 	string ftmp,imsize;
 	int fsize;
@@ -46,7 +45,7 @@ module RGB2GRAY_TB();
 	RGB2GRAY RGB2GRAY1(rgb,gray);
 
 	initial begin
-		wfw = 0;
+		in_enable = 0;
 		fi = $fopen("imgindex.dat","r");
 		while (!$feof(fi)) begin
 			$fscanf(fi,"%s",ftmp);
@@ -63,13 +62,14 @@ module RGB2GRAY_TB();
 			$fwrite(fo,"%s\n",imsize);
 			$fscanf(fi,"%s",imsize);
 			$fwrite(fo,"%s\n",imsize);
+			$display("time %t ps start%0d!", $time, i);
 			while (!$feof(fi)) begin 
 				@(posedge clk);
-				$fscanf(fi,"%b",rgb);
-				if(wfw == pipe_lev+1) $fwrite(fo,"%d\n",gray);
-				else wfw = wfw + 1;
+				in_enable = 1;
+				$fscanf(fi,"%b",in_data);
+				if(out_enable) 
+					$fwrite(fo,"%d\n",out_data);
 			end
-			wfw = 0;
 			$fclose(fi);
 			$fclose(fo);
 		end

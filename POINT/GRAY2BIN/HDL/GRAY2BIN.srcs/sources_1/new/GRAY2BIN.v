@@ -21,10 +21,13 @@
 
 module GRAY2BIN(
 	input[7:0] th,
-	input[7:0] gray,
-	output b
+	input in_enable,
+	input[7:0] in_data,
+	output out_enable,
+	output out_data
     );
 
+	assign out_enable = in_enable;
 	assign b = gray<th ? 0 : 1;
 
 endmodule

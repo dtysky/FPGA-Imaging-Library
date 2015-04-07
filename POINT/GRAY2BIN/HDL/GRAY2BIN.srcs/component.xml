@@ -20,7 +20,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>c0f26f50</spirit:value>
+						<spirit:value>2914177a</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -36,7 +36,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>c0f26f50</spirit:value>
+						<spirit:value>2914177a</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -52,7 +52,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>14849b78</spirit:value>
+						<spirit:value>63965157</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -66,7 +66,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>485b4d62</spirit:value>
+						<spirit:value>e7b99b83</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -92,7 +92,20 @@
 				</spirit:wire>
 			</spirit:port>
 			<spirit:port>
-				<spirit:name>gray</spirit:name>
+				<spirit:name>in_enable</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+					<spirit:wireTypeDefs>
+						<spirit:wireTypeDef>
+							<spirit:typeName>std_logic</spirit:typeName>
+							<spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+							<spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+						</spirit:wireTypeDef>
+					</spirit:wireTypeDefs>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>in_data</spirit:name>
 				<spirit:wire>
 					<spirit:direction>in</spirit:direction>
 					<spirit:vector>
@@ -111,7 +124,20 @@
 				</spirit:wire>
 			</spirit:port>
 			<spirit:port>
-				<spirit:name>b</spirit:name>
+				<spirit:name>out_enable</spirit:name>
+				<spirit:wire>
+					<spirit:direction>out</spirit:direction>
+					<spirit:wireTypeDefs>
+						<spirit:wireTypeDef>
+							<spirit:typeName>std_logic</spirit:typeName>
+							<spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+							<spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+						</spirit:wireTypeDef>
+					</spirit:wireTypeDefs>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>out_data</spirit:name>
 				<spirit:wire>
 					<spirit:direction>out</spirit:direction>
 					<spirit:wireTypeDefs>
@@ -131,7 +157,7 @@
 			<spirit:file>
 				<spirit:name>sources_1/new/GRAY2BIN.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
-				<spirit:userFileType>CHECKSUM_c0f26f50</spirit:userFileType>
+				<spirit:userFileType>CHECKSUM_2914177a</spirit:userFileType>
 			</spirit:file>
 		</spirit:fileSet>
 		<spirit:fileSet>
@@ -154,7 +180,7 @@
 				<spirit:name>xgui/GRAY2BIN_v1_0.tcl</spirit:name>
 				<spirit:fileType>tclSource</spirit:fileType>
 				<spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
-				<spirit:userFileType>CHECKSUM_096fbec4</spirit:userFileType>
+				<spirit:userFileType>CHECKSUM_7d25b681</spirit:userFileType>
 			</spirit:file>
 		</spirit:fileSet>
 	</spirit:fileSets>
@@ -177,11 +203,11 @@
 				<xilinx:taxonomy>/Video_&amp;_Image_Processing</xilinx:taxonomy>
 			</xilinx:taxonomies>
 			<xilinx:displayName>GRAY2BIN_v1_0</xilinx:displayName>
-			<xilinx:coreRevision>2</xilinx:coreRevision>
+			<xilinx:coreRevision>3</xilinx:coreRevision>
 			<xilinx:upgrades>
 				<xilinx:canUpgradeFrom>dtysky:user:GRAY2BIN:1.0</xilinx:canUpgradeFrom>
 			</xilinx:upgrades>
-			<xilinx:coreCreationDateTime>2015-03-31T16:27:11Z</xilinx:coreCreationDateTime>
+			<xilinx:coreCreationDateTime>2015-04-07T08:44:30Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>
 				<xilinx:tag xilinx:name="xilinx.com:ip:GRAY2BIN:1.0_ARCHIVE_LOCATION">D:/Spira_Heaven/0-MyWorks/XUP_IMAGE/SUB_MODULE/POINT/GRAY2BIN/HDL/GRAY2BIN.srcs</xilinx:tag>
 				<xilinx:tag xilinx:name="xilinx.com:user:GRAY2BIN:1.0_ARCHIVE_LOCATION">D:/Spira_Heaven/0-MyWorks/XUP_IMAGE/SUB_MODULE/POINT/GRAY2BIN/HDL/GRAY2BIN.srcs</xilinx:tag>
@@ -193,9 +219,9 @@
 		<xilinx:packagingInfo>
 			<xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
 			<xilinx:checksum xilinx:scope="fileGroups"
-					xilinx:value="22fedd59"/>
+					xilinx:value="28f1e1b4"/>
 			<xilinx:checksum xilinx:scope="ports"
-					xilinx:value="70f9afa9"/>
+					xilinx:value="ef404999"/>
 			<xilinx:checksum xilinx:scope="parameters"
 					xilinx:value="4641740e"/>
 		</xilinx:packagingInfo>
