@@ -18,14 +18,13 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+`define window_size_half window_size >> 1
 
 module Window(clk, rst_n, in_enable, in_data, out_enable, out_data);
 
 	parameter color_width = 8;
 	//Less than 16
 	parameter window_size = 3;
-	parameter window_size_half = window_size >> 1;
 
 	input clk, rst_n;
 	input in_enable;
@@ -41,7 +40,7 @@ module Window(clk, rst_n, in_enable, in_data, out_enable, out_data);
 		if(~rst_n || ~in_enable) begin
 			con_init <= 0;
 			reg_out_enable <= 0;
-		end else if(con_init == window_size_half) begin
+		end else if(con_init == `window_size_half) begin
 			con_init <= con_init;
 			reg_out_enable <= 1;
 		end else begin

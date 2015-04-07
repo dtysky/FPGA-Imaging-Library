@@ -18,7 +18,7 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+`define full_win_size window_size * window_size
 
 module MeanFitter(clk, rst_n, in_enable, in_data, out_enable, out_data);
 
@@ -43,7 +43,6 @@ module MeanFitter(clk, rst_n, in_enable, in_data, out_enable, out_data);
 	// 15 : 8;
 	// 16 : 8;
 	parameter sum_counter = 4;
-	parameter full_win_size = window_size * window_size;
 
 	input clk;
 	input rst_n;
@@ -52,7 +51,7 @@ module MeanFitter(clk, rst_n, in_enable, in_data, out_enable, out_data);
 	output out_enable;
 	output[color_width - 1 : 0] out_data;
 
-	wire[color_width + full_win_size - 1 : 0] sum_all;
+	wire[color_width + `full_win_size - 1 : 0] sum_all;
 	reg[3 : 0] con_enable;
 
 	always @(posedge clk or negedge rst_n or negedge in_enable) begin
@@ -71,14 +70,14 @@ module MeanFitter(clk, rst_n, in_enable, in_data, out_enable, out_data);
 	generate
 
 		for (i = 0; i < sum_counter; i = i + 1) begin : pip
-			reg[color_width + full_win_size - 1 : 0] sum[0 : (full_win_size >> i + 1) - 1];
-			for (j = 0; j < full_win_size >> i + 1; j = j + 1) begin
+			reg[color_width + `full_win_size - 1 : 0] sum[0 : (`full_win_size >> i + 1) - 1];
+			for (j = 0; j < `full_win_size >> i + 1; j = j + 1) begin
 				if(i == 0) begin
 
-					if(j == 0 && ((full_win_size >> i) % 2 != 0)) begin
+					if(j == 0 && ((`full_win_size >> i) % 2 != 0)) begin
 						always @(posedge clk)
 							sum[j] <= 
-								in_data[full_win_size * color_width - 1 : (full_win_size - 1) * color_width] +
+								in_data[`full_win_size * color_width - 1 : (`full_win_size - 1) * color_width] +
 								in_data[(2 * j + 1) * color_width - 1 : (2 * j) * color_width] +
 								in_data[(2 * j + 2) * color_width - 1 : (2 * j + 1) * color_width];
 					end else begin
@@ -91,9 +90,9 @@ module MeanFitter(clk, rst_n, in_enable, in_data, out_enable, out_data);
 
 				end else begin 
 
-					if(j == 0 && ((full_win_size >> i) % 2 != 0)) begin
+					if(j == 0 && ((`full_win_size >> i) % 2 != 0)) begin
 						always @(posedge clk)
-							sum[j] <= pip[i - 1].sum[(full_win_size >> i) - 1] + pip[i - 1].sum[2 * j] + pip[i - 1].sum[2 * j + 1];
+							sum[j] <= pip[i - 1].sum[(`full_win_size >> i) - 1] + pip[i - 1].sum[2 * j] + pip[i - 1].sum[2 * j + 1];
 					end else begin
 						always @(posedge clk)
 							sum[j] <= pip[i - 1].sum[2 * j] + pip[i - 1].sum[2 * j + 1];

@@ -1,8 +1,8 @@
-# IMAGE_PROCESS_SUB_MODULE
+# Image-processing-on-FPGA
 **All sub modules for image processing project on FPGA.  
 Each module has its software and hdl simulation, and will be packaged to vivado IPcore.  
 All software projects are depent on python 2.7.8 and PIL module, and hdl projects are built on xilinx vivado.  
-You can also use these in quartus, just get hdl files**  
+You can also use these in quartus, just get hdl files**.  
 
 ***
 # Introduction：

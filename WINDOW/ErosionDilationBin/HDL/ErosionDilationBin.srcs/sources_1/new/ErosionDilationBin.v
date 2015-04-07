@@ -19,6 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`define full_win_size window_size * window_size
 
 module ErosionDilationBin(clk, rst_n, mode, template, in_enable, in_data, out_enable, out_data);
 	parameter window_size = 3;
@@ -40,7 +41,6 @@ module ErosionDilationBin(clk, rst_n, mode, template, in_enable, in_data, out_en
 	// 15 : 8;
 	// 16 : 8;
 	parameter pip_counter = 4;
-	parameter full_win_size = window_size * window_size;
 
 	input clk, rst_n;
 	//0 for erosion, 1 for dilation
@@ -73,14 +73,14 @@ module ErosionDilationBin(clk, rst_n, mode, template, in_enable, in_data, out_en
 	generate
 
 		for (i = 0; i < pip_counter; i = i + 1) begin : pip
-			reg res[0 : (full_win_size >> i + 1) - 1];
-			for (j = 0; j < full_win_size >> i + 1; j = j + 1) begin
+			reg res[0 : (`full_win_size >> i + 1) - 1];
+			for (j = 0; j < `full_win_size >> i + 1; j = j + 1) begin
 				if(i == 0) begin
 
-					if(j == 0 && ((full_win_size >> i) % 2 != 0)) begin
+					if(j == 0 && ((`full_win_size >> i) % 2 != 0)) begin
 						always @(posedge clk)
 							res[j] <= 
-								pre_now_pix(in_data[full_win_size - 1], mode, template[full_win_size - 1]) &
+								pre_now_pix(in_data[`full_win_size - 1], mode, template[`full_win_size - 1]) &
 								pre_now_pix(in_data[2 * j], mode, template[2 * j]) &
 								pre_now_pix(in_data[2 * j + 1], mode, template[2 * j + 1]);
 					end else begin
@@ -93,9 +93,9 @@ module ErosionDilationBin(clk, rst_n, mode, template, in_enable, in_data, out_en
 
 				end else begin 
 
-					if(j == 0 && ((full_win_size >> i) % 2 != 0)) begin
+					if(j == 0 && ((`full_win_size >> i) % 2 != 0)) begin
 						always @(posedge clk)
-							res[j] <= pip[i - 1].res[(full_win_size >> i) - 1] & pip[i - 1].res[2 * j] & pip[i - 1].res[2 * j + 1];
+							res[j] <= pip[i - 1].res[(`full_win_size >> i) - 1] & pip[i - 1].res[2 * j] & pip[i - 1].res[2 * j + 1];
 					end else begin
 						always @(posedge clk)
 							res[j] <= pip[i - 1].res[2 * j] & pip[i - 1].res[2 * j + 1];
