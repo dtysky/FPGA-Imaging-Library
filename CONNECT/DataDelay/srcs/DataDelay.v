@@ -20,11 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module DataDelay(in_data, out_data);
+module DataDelay(clk, in_data, out_data);
 
 	parameter data_width = 8;
 	parameter delay = 1;
 
+	input clk;
 	input[data_width - 1 : 0] in_data;
 	output[data_width - 1 : 0] out_data;
 

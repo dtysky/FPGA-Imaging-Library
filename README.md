@@ -190,6 +190,15 @@ Convert 24bits color to vga color.
 #### ColorRgbMux:
 A multiplexer for rbg color.   
 
+#### DataDelay:
+Create pipelines between input and output.  
+
+#### Mux2:
+As its name.  
+
+#### Or8:
+As its name. 
+
 ### OTHER_IP:
 
 **Function:**  
