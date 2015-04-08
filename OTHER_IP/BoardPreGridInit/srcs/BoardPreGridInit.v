@@ -38,6 +38,7 @@ module BoardPreGridInit(
 	);
 
 	parameter init_delay = 2000;
+	parameter harris_th_p = 5;
 
 	assign mode_erosion = 0;
 	assign mode_dilation = 1;
@@ -48,7 +49,7 @@ module BoardPreGridInit(
 	assign erosion3 = 9'b000010001;
 	assign erosion4 = 9'b000010100;
 	assign match0 = 9'b000010000;
-	assign harris_th = 5;
+	assign harris_th = harris_th_p;
 
 	reg[15 : 0] con_init;
 	initial con_init = 0;

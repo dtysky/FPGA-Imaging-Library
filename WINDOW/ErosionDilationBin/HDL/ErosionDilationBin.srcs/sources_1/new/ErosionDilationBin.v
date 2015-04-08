@@ -40,7 +40,7 @@ module ErosionDilationBin(clk, rst_n, mode, template, in_enable, in_data, out_en
 	// 14 : 8;
 	// 15 : 8;
 	// 16 : 8;
-	parameter pip_counter = 4;
+	parameter pip_counter = 3;
 
 	input clk, rst_n;
 	//0 for erosion, 1 for dilation

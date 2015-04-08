@@ -1,0 +1,16 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
+| Date         : Wed Apr 08 23:05:43 2015
+| Host         : Dtysky running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'frame_buffer'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of frame_buffer (xilinx.com:ip:blk_mem_gen:8.2) from (Rev. 1) to (Rev. 3)
+

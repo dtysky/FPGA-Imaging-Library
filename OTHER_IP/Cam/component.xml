@@ -18,7 +18,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e88240c9</spirit:value>
+            <spirit:value>42a8c1df</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -34,7 +34,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e88240c9</spirit:value>
+            <spirit:value>42a8c1df</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -178,7 +178,7 @@
       <spirit:file>
         <spirit:name>src/camCap.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_e88240c9</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_42a8c1df</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -214,11 +214,11 @@
         <xilinx:taxonomy>/BaseIP</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>camCap_v1_0</xilinx:displayName>
-      <xilinx:coreRevision>1</xilinx:coreRevision>
+      <xilinx:coreRevision>2</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>xilinx.com:ip:camCap:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2015-02-06T06:08:12Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2015-04-08T15:44:37Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="nopcore"/>
         <xilinx:tag xilinx:name="xilinx.com:ip:camCap:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/other_ip/cam</xilinx:tag>
@@ -227,7 +227,7 @@
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="b3ef0df6"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="9b86e096"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="38f49f8c"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="6cc1f930"/>
     </xilinx:packagingInfo>

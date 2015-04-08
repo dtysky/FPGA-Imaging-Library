@@ -22,16 +22,16 @@
 
 module vga_readBRAM(
     input clk25,
-    output reg[3:0] vga_red,
-    output reg[3:0] vga_green,
-    output reg[3:0] vga_blue,
+    output reg[4:0] vga_red,
+    output reg[5:0] vga_green,
+    output reg[4:0] vga_blue,
     output reg vga_hsync,
     output reg vga_vsync,
     output [9:0] HCnt,
     output [9:0] VCnt,
 
     output [16:0] frame_addr,
-    input [11:0] vga_in
+    input [15:0] vga_in
 );
     parameter hRez   = 640;
     parameter hStartSync   = 640+16;
@@ -70,13 +70,13 @@ module vga_readBRAM(
     	end else hCounter <= hCounter+1;
 
     	if (blank ==0) begin
-    		vga_red   <= vga_in[11:8];
-    		vga_green <= vga_in[7:4];
-    		vga_blue  <= vga_in[3:0];
+    		vga_red   <= vga_in[15:11];
+    		vga_green <= vga_in[10:5];
+    		vga_blue  <= vga_in[4:0];
 		end else begin
-    		vga_red   <= 4'b0;
-    		vga_green <= 4'b0;
-    		vga_blue  <= 4'b0;
+    		vga_red   <= 0;
+    		vga_green <= 0;
+    		vga_blue  <= 0;
         end;
 
     	if (vCounter  >= 360 || vCounter  < 120) begin

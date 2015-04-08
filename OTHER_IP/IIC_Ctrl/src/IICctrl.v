@@ -1,13 +1,12 @@
 module IICctrl 
 (
-	input				iCLK,	
+	input				iCLK,
+	input				iRST_N,
 	output				I2C_SCLK,	
 	inout				I2C_SDAT	
 );
 
 parameter	LUT_SIZE	=	170;
-wire	iRST_N;	
-assign iRST_N = 1;
 reg	[7:0]	LUT_INDEX;
 wire [7:0]	I2C_RDATA;
 reg			Config_Done;

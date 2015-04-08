@@ -46,7 +46,7 @@ module camCap(
 
 			if (wr_hold[1] == 1) begin
 				address_next <= address_next+1;
-				dout[15:0]  <= d_latch;
+				dout[15:0]  <= d_latch[15:0];
 			end
 
 		end;

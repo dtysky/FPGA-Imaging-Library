@@ -22,11 +22,11 @@
 
 module ColorRgb2Vga(
 	input[23:0] rgb24,
-	output[11:0] vga
+	output[15:0] vga
     );
 
-	assign vga[11:8] = rgb24[23:20];
-	assign vga[7:4] = rgb24[15:12];
-	assign vga[3:0] = rgb24[7:4];
+	assign vga[15:11] = rgb24[23:19];
+	assign vga[10:5] = rgb24[15:10];
+	assign vga[4:0] = rgb24[7:3];
 
 endmodule
