@@ -5,7 +5,7 @@
 // 
 // Create Date: 2014/08/30 11:01:22
 // Design Name: 
-// Module Name: bram
+// Module Name: Bram8x320x240
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -29,7 +29,7 @@ input [16:0] addrb
 
     );
     
-Bram u_fb(
+BlcokRam8x320x240 u_fb(
         .clka ( clka),
         .wea  (wea),
         .addra( addra),

@@ -71,7 +71,7 @@ module Rows1x512(
 				reg_row_wr_en[i + 1] <= row_rd_en[i];
 			assign row_wr_en[i + 1] = reg_row_wr_en[i + 1];
 
-			Fifo f(
+			Fifo1x512 f(
 				.clk(clk),
 				.rst(row_rst),
 				.din(row_din[i]),

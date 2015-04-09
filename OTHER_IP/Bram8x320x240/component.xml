@@ -18,7 +18,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>4ec838bb</spirit:value>
+            <spirit:value>0729d2e4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -34,7 +34,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>4ec838bb</spirit:value>
+            <spirit:value>0729d2e4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -167,19 +167,19 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>src/Bram/Bram.xci</spirit:name>
+        <spirit:name>src/BlcokRam8x320x240/BlcokRam8x320x240.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/Bram8x320x240.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_f6f494d7</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_e36b3ad4</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>src/Bram/Bram.xci</spirit:name>
+        <spirit:name>src/BlcokRam8x320x240/BlcokRam8x320x240.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
@@ -213,8 +213,8 @@
         <xilinx:taxonomy>/BaseIP</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>Bram8x320x240_v1_0</xilinx:displayName>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2015-04-07T12:54:03Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2015-04-09T11:28:57Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="nopcore"/>
         <xilinx:tag xilinx:name="xilinx.com:ip:Bram8x320x240:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/other_ip/bram8x320x240</xilinx:tag>
@@ -222,7 +222,7 @@
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="d7bfe75d"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="233f2be7"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="2d4f8bfe"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="37fa8a82"/>
     </xilinx:packagingInfo>

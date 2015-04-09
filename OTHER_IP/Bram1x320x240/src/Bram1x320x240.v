@@ -29,7 +29,7 @@ input [16:0] addrb
 
     );
     
-Bram u_fb(
+BlcokRam1x320x240 u_fb(
         .clka ( clka),
         .wea  (wea),
         .addra( addra),
