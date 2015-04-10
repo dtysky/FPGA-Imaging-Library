@@ -52,8 +52,10 @@ module Frame(clk, rst_n, in_enable, in_data, out_enable, out_data, ram_addr);
 
 			assign out_enable = ~rst_n || ~in_enable ? 0 : 1;
 			always @(posedge clk or negedge rst_n or negedge in_enable) begin
-				if(~rst_n || ~in_enable || reg_ram_addr == im_width * im_height - 1)
-					reg_ram_addr <= row_init;
+				if(~rst_n || ~in_enable)
+					reg_ram_addr <= row_init * im_width;
+				else if(reg_ram_addr == im_width * im_height - 1)
+					reg_ram_addr <= 0;
 				else
 					reg_ram_addr <= reg_ram_addr + 1;
 			end
@@ -61,7 +63,9 @@ module Frame(clk, rst_n, in_enable, in_data, out_enable, out_data, ram_addr);
 		end else begin
 
 			always @(posedge clk or negedge rst_n or negedge in_enable) begin
-				if(~rst_n || ~in_enable || reg_ram_addr == im_width * im_height - 1)
+				if(~rst_n || ~in_enable)
+					reg_ram_addr <= 0;
+				else if(reg_ram_addr == im_width * im_height - 1)
 					reg_ram_addr <= 0;
 				else
 					reg_ram_addr <= reg_ram_addr + 1;

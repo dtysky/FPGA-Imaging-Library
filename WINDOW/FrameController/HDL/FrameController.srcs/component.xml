@@ -20,7 +20,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>92a968c0</spirit:value>
+						<spirit:value>d299845e</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -36,7 +36,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>92a968c0</spirit:value>
+						<spirit:value>d299845e</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -244,7 +244,7 @@
 			<spirit:file>
 				<spirit:name>sources_1/new/Frame.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
-				<spirit:userFileType>CHECKSUM_92a968c0</spirit:userFileType>
+				<spirit:userFileType>CHECKSUM_d299845e</spirit:userFileType>
 			</spirit:file>
 		</spirit:fileSet>
 		<spirit:fileSet>
@@ -343,8 +343,8 @@
 				<xilinx:taxonomy>/UserIP</xilinx:taxonomy>
 			</xilinx:taxonomies>
 			<xilinx:displayName>Frame_v1_0</xilinx:displayName>
-			<xilinx:coreRevision>6</xilinx:coreRevision>
-			<xilinx:coreCreationDateTime>2015-04-07T12:33:02Z</xilinx:coreCreationDateTime>
+			<xilinx:coreRevision>8</xilinx:coreRevision>
+			<xilinx:coreCreationDateTime>2015-04-10T08:36:49Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>
 				<xilinx:tag xilinx:name="xilinx.com:ip:Frame:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/framecontroller/hdl/framecontroller.srcs</xilinx:tag>
 				<xilinx:tag xilinx:name="xilinx.com:user:Frame:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/framecontroller/hdl/framecontroller.srcs</xilinx:tag>
@@ -356,7 +356,7 @@
 		<xilinx:packagingInfo>
 			<xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
 			<xilinx:checksum xilinx:scope="fileGroups"
-					xilinx:value="b4466091"/>
+					xilinx:value="950453f0"/>
 			<xilinx:checksum xilinx:scope="ports"
 					xilinx:value="9a12b3fa"/>
 			<xilinx:checksum xilinx:scope="hdlParameters"
