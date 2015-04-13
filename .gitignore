@@ -10,3 +10,15 @@
 /WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/ip/Fifo/fifo_generator_v12_0/hdl/fifo_generator_v12_0.vhd
 /WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/ip/Fifo/fifo_generator_v12_0/hdl/fifo_generator_v12_0_vh_rfs.vhd
 /WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/ip/Fifo/fifo_generator_v12_0/hdl/fifo_generator_v12_0_vhsyn_rfs.vhd
+/WINDOW/RowsCreator/HDL/Rows1x512/Rows1x512.srcs/sources_1/ip/Fifo1x512/blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2.vhd
+/WINDOW/RowsCreator/HDL/Rows1x512/Rows1x512.srcs/sources_1/ip/Fifo1x512/blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_vhsyn_rfs.vhd
+/WINDOW/RowsCreator/HDL/Rows1x512/Rows1x512.srcs/sources_1/ip/Fifo1x512/doc/fifo_generator_v12_0_changelog.txt
+/WINDOW/RowsCreator/HDL/Rows1x512/Rows1x512.srcs/sources_1/ip/Fifo1x512/fifo_generator_v12_0/hdl/fifo_generator_v12_0.vhd
+/WINDOW/RowsCreator/HDL/Rows1x512/Rows1x512.srcs/sources_1/ip/Fifo1x512/fifo_generator_v12_0/hdl/fifo_generator_v12_0_vh_rfs.vhd
+/WINDOW/RowsCreator/HDL/Rows1x512/Rows1x512.srcs/sources_1/ip/Fifo1x512/fifo_generator_v12_0/hdl/fifo_generator_v12_0_vhsyn_rfs.vhd
+/WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/ip/Fifo8x512/blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2.vhd
+/WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/ip/Fifo8x512/blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_vhsyn_rfs.vhd
+/WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/ip/Fifo8x512/doc/fifo_generator_v12_0_changelog.txt
+/WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/ip/Fifo8x512/fifo_generator_v12_0/hdl/fifo_generator_v12_0.vhd
+/WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/ip/Fifo8x512/fifo_generator_v12_0/hdl/fifo_generator_v12_0_vh_rfs.vhd
+/WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/ip/Fifo8x512/fifo_generator_v12_0/hdl/fifo_generator_v12_0_vhsyn_rfs.vhd
