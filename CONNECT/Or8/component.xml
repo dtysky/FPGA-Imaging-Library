@@ -215,6 +215,7 @@
         <xilinx:taxonomy>/BaseIP</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>Or8_v1_0</xilinx:displayName>
+      <xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
       <xilinx:coreRevision>2</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>xilinx.com:ip:Or8:1.0</xilinx:canUpgradeFrom>

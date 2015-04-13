@@ -275,6 +275,7 @@
 				<xilinx:taxonomy>/UserIP</xilinx:taxonomy>
 			</xilinx:taxonomies>
 			<xilinx:displayName>Rows1x512_v1_0</xilinx:displayName>
+			<xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
 			<xilinx:coreRevision>9</xilinx:coreRevision>
 			<xilinx:coreCreationDateTime>2015-04-09T12:18:31Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>

@@ -190,6 +190,7 @@
 				<xilinx:taxonomy>/Video_&amp;_Image_Processing</xilinx:taxonomy>
 			</xilinx:taxonomies>
 			<xilinx:displayName>RGB2GRAY_v1_0</xilinx:displayName>
+			<xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
 			<xilinx:coreRevision>3</xilinx:coreRevision>
 			<xilinx:upgrades>
 				<xilinx:canUpgradeFrom>dtysky:user:RGB2GRAY:1.0</xilinx:canUpgradeFrom>

@@ -259,6 +259,7 @@
 				<xilinx:taxonomy>/UserIP</xilinx:taxonomy>
 			</xilinx:taxonomies>
 			<xilinx:displayName>LM_CT_TRANS_v1_0</xilinx:displayName>
+			<xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
 			<xilinx:coreRevision>3</xilinx:coreRevision>
 			<xilinx:coreCreationDateTime>2015-03-31T16:28:55Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>

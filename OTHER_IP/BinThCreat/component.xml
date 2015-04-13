@@ -127,6 +127,7 @@
         <xilinx:taxonomy>/BaseIP</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>BinThCreat_v1_0</xilinx:displayName>
+      <xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
       <xilinx:coreRevision>2</xilinx:coreRevision>
       <xilinx:coreCreationDateTime>2015-03-10T10:17:18Z</xilinx:coreCreationDateTime>
       <xilinx:tags>

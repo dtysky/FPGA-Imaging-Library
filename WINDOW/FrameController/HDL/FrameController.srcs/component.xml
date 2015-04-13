@@ -343,6 +343,7 @@
 				<xilinx:taxonomy>/UserIP</xilinx:taxonomy>
 			</xilinx:taxonomies>
 			<xilinx:displayName>Frame_v1_0</xilinx:displayName>
+			<xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
 			<xilinx:coreRevision>8</xilinx:coreRevision>
 			<xilinx:coreCreationDateTime>2015-04-10T08:36:49Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>

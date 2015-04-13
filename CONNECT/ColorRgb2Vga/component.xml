@@ -132,6 +132,7 @@
         <xilinx:taxonomy>/BaseIP</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>ColorRgb2Vga_v1_0</xilinx:displayName>
+      <xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
       <xilinx:coreRevision>4</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>xilinx.com:ip:ColorRgb2Vga:1.0</xilinx:canUpgradeFrom>

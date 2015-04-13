@@ -157,6 +157,18 @@ Get all  corners from input images by harris method.
 1. Harris.v: Main module.  
 2. Harris_TB.sv: Testbench for Harris.  
 
+### GEOMETRIC
+
+#### 1. Crop:
+
+**Progress:**  
+100%.  
+**Function:**  
+Crop a image, depending on your top, bottom, left and right coordinate.  
+**HDL Files:**  
+1. Crop.v: Main module.    
+2. Crop_TB.sv: Testbench for Crop.  
+
 ### Character:
 
 #### 1.CHR_ASCII_8X8：

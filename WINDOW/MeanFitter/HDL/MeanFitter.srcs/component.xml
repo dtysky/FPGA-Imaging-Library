@@ -275,6 +275,7 @@
 				<xilinx:taxonomy>/Video_&amp;_Image_Processing</xilinx:taxonomy>
 			</xilinx:taxonomies>
 			<xilinx:displayName>MeanFitter_v1_0</xilinx:displayName>
+			<xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
 			<xilinx:coreRevision>7</xilinx:coreRevision>
 			<xilinx:coreCreationDateTime>2015-04-07T17:33:52Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>

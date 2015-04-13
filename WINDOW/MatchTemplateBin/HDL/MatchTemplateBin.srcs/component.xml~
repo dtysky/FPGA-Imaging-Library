@@ -234,6 +234,7 @@
 				<xilinx:taxonomy>/UserIP</xilinx:taxonomy>
 			</xilinx:taxonomies>
 			<xilinx:displayName>MatchTemplateBin_v1_0</xilinx:displayName>
+			<xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
 			<xilinx:coreRevision>4</xilinx:coreRevision>
 			<xilinx:coreCreationDateTime>2015-04-07T08:15:44Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>

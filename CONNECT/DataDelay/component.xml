@@ -168,6 +168,7 @@
         <xilinx:taxonomy>/Video_&amp;_Image_Processing</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>DataDelay_v1_0</xilinx:displayName>
+      <xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
       <xilinx:coreRevision>2</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>xilinx.com:ip:DataDelay:1.0</xilinx:canUpgradeFrom>

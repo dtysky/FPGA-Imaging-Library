@@ -213,6 +213,7 @@
         <xilinx:taxonomy>/BaseIP</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>Bram8x320x240_v1_0</xilinx:displayName>
+      <xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
       <xilinx:coreRevision>3</xilinx:coreRevision>
       <xilinx:coreCreationDateTime>2015-04-09T11:28:57Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
