@@ -21,10 +21,11 @@
 		output wire mode_dilation,
 		output wire[8 : 0] dilation0,
 		output wire[24 : 0] erosion0,
-		output wire[8 : 0] erosion1,
+		output wire[24 : 0] erosion1,
 		output wire[8 : 0] erosion2,
 		output wire[8 : 0] erosion3,
 		output wire[8 : 0] erosion4,
+		output wire[8 : 0] erosion5,
 		output wire[8 : 0] match0,
 		output wire[7 : 0] harris_th,
 		output wire[im_bits_width - 1 : 0] top, bottom, left, right,
@@ -714,16 +715,17 @@
 	assign mode_dilation = 1;
 	assign dilation0 = slv_reg1[8 : 0];
 	assign erosion0 = slv_reg2[24 : 0];
-	assign erosion1 = slv_reg3[8 : 0];
+	assign erosion1 = slv_reg3[24 : 0];
 	assign erosion2 = slv_reg4[8 : 0];
 	assign erosion3 = slv_reg5[8 : 0];
 	assign erosion4 = slv_reg6[8 : 0];
-	assign match0 = slv_reg7[8 : 0];
-	assign harris_th = slv_reg8[7 : 0];
-	assign top = slv_reg9[im_bits_width - 1 : 0];
-	assign bottom = slv_reg10[im_bits_width - 1 : 0];
-	assign left = slv_reg11[im_bits_width - 1 : 0];
-	assign right = slv_reg12[im_bits_width - 1 : 0];
+	assign erosion5 = slv_reg7[8 : 0];
+	assign match0 = slv_reg8[8 : 0];
+	assign harris_th = slv_reg9[7 : 0];
+	assign top = slv_reg10[im_bits_width - 1 : 0];
+	assign bottom = slv_reg11[im_bits_width - 1 : 0];
+	assign left = slv_reg12[im_bits_width - 1 : 0];
+	assign right = slv_reg13[im_bits_width - 1 : 0];
 
 	reg[15 : 0] con_init;
 	initial con_init = 0;

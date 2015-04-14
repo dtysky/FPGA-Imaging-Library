@@ -549,7 +549,7 @@ BEGIN
       C_HAS_WR_RST => 0,
       C_IMPLEMENTATION_TYPE => 0,
       C_INIT_WR_PNTR_VAL => 0,
-      C_MEMORY_TYPE => 1,
+      C_MEMORY_TYPE => 2,
       C_MIF_FILE_NAME => "BlankString",
       C_OPTIMIZATION_MODE => 0,
       C_OVERFLOW_LOW => 0,
