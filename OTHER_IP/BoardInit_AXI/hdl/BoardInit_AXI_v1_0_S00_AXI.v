@@ -19,8 +19,8 @@
 		output wire rst_all_n,
 		output wire mode_erosion,
 		output wire mode_dilation,
-		output wire[8 : 0] dilation0,
-		output wire[24 : 0] erosion0,
+		output wire[24 : 0] dilation0,
+		output wire[8 : 0] erosion0,
 		output wire[24 : 0] erosion1,
 		output wire[8 : 0] erosion2,
 		output wire[8 : 0] erosion3,
@@ -29,6 +29,7 @@
 		output wire[8 : 0] match0,
 		output wire[7 : 0] harris_th,
 		output wire[im_bits_width - 1 : 0] top, bottom, left, right,
+		output wire[7 : 0] black_th, white_th,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -713,8 +714,8 @@
 	// Add user logic here
 	assign mode_erosion = 0;
 	assign mode_dilation = 1;
-	assign dilation0 = slv_reg1[8 : 0];
-	assign erosion0 = slv_reg2[24 : 0];
+	assign dilation0 = slv_reg1[24 : 0];
+	assign erosion0 = slv_reg2[8 : 0];
 	assign erosion1 = slv_reg3[24 : 0];
 	assign erosion2 = slv_reg4[8 : 0];
 	assign erosion3 = slv_reg5[8 : 0];
@@ -726,6 +727,8 @@
 	assign bottom = slv_reg11[im_bits_width - 1 : 0];
 	assign left = slv_reg12[im_bits_width - 1 : 0];
 	assign right = slv_reg13[im_bits_width - 1 : 0];
+	assign black_th = slv_reg14;
+	assign white_th = slv_reg15;
 
 	reg[15 : 0] con_init;
 	initial con_init = 0;

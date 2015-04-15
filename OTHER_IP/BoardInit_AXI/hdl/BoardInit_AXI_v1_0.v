@@ -20,8 +20,8 @@
 		output wire rst_all_n,
 		output wire mode_erosion,
 		output wire mode_dilation,
-		output wire[8 : 0] dilation0,
-		output wire[24 : 0] erosion0,
+		output wire[24 : 0] dilation0,
+		output wire[8 : 0] erosion0,
 		output wire[24 : 0] erosion1,
 		output wire[8 : 0] erosion2,
 		output wire[8 : 0] erosion3,
@@ -30,6 +30,7 @@
 		output wire[8 : 0] match0,
 		output wire[7 : 0] harris_th,
 		output wire[im_bits_width - 1 : 0] top, bottom, left, right,
+		output wire[7 : 0] black_th, white_th,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -77,6 +78,8 @@
 		.erosion5(erosion5),
 		.match0(match0),
 		.harris_th(harris_th),
+		.black_th(black_th),
+		.white_th(white_th),
 		.top(top),
 		.bottom(bottom),
 		.left(left),
