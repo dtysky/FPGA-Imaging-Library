@@ -20,7 +20,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>0c172b11</spirit:value>
+						<spirit:value>6dd89c48</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -36,7 +36,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>0c172b11</spirit:value>
+						<spirit:value>6dd89c48</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -66,7 +66,21 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>9d56e807</spirit:value>
+						<spirit:value>26334997</spirit:value>
+					</spirit:parameter>
+				</spirit:parameters>
+			</spirit:view>
+			<spirit:view>
+				<spirit:name>xilinx_utilityxitfiles</spirit:name>
+				<spirit:displayName>Utility XIT/TTCL</spirit:displayName>
+				<spirit:envIdentifier>:vivado.xilinx.com:xit.util</spirit:envIdentifier>
+				<spirit:fileSetRef>
+					<spirit:localName>xilinx_utilityxitfiles_view_fileset</spirit:localName>
+				</spirit:fileSetRef>
+				<spirit:parameters>
+					<spirit:parameter>
+						<spirit:name>viewChecksum</spirit:name>
+						<spirit:value>47ad57af</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -118,7 +132,7 @@
 					<spirit:vector>
 						<spirit:left spirit:format="long"
 								spirit:resolve="dependent"
-								spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;)) * spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;))) - 1)">8</spirit:left>
+								spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;)) * spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;))) - 1)">24</spirit:left>
 						<spirit:right spirit:format="long"
 								spirit:resolve="immediate">0</spirit:right>
 					</spirit:vector>
@@ -151,7 +165,7 @@
 					<spirit:vector>
 						<spirit:left spirit:format="long"
 								spirit:resolve="dependent"
-								spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;)) * spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;))) - 1)">8</spirit:left>
+								spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;)) * spirit:decode(id(&apos;MODELPARAM_VALUE.window_size&apos;))) - 1)">24</spirit:left>
 						<spirit:right spirit:format="long"
 								spirit:resolve="immediate">0</spirit:right>
 					</spirit:vector>
@@ -198,7 +212,7 @@
 				<spirit:displayName>Window Size</spirit:displayName>
 				<spirit:value spirit:format="long"
 						spirit:resolve="generated"
-						spirit:id="MODELPARAM_VALUE.window_size">3</spirit:value>
+						spirit:id="MODELPARAM_VALUE.window_size">5</spirit:value>
 			</spirit:modelParameter>
 			<spirit:modelParameter spirit:dataType="integer">
 				<spirit:name>pip_counter</spirit:name>
@@ -206,16 +220,44 @@
 				<spirit:value spirit:format="long"
 						spirit:resolve="generated"
 						spirit:id="MODELPARAM_VALUE.pip_counter">4</spirit:value>
+				<spirit:vendorExtensions>
+					<xilinx:parameterInfo>
+						<xilinx:enablement>
+							<xilinx:isEnabled>false</xilinx:isEnabled>
+						</xilinx:enablement>
+					</xilinx:parameterInfo>
+				</spirit:vendorExtensions>
 			</spirit:modelParameter>
 		</spirit:modelParameters>
 	</spirit:model>
+	<spirit:choices>
+		<spirit:choice>
+			<spirit:name>choices_0</spirit:name>
+			<spirit:enumeration>1</spirit:enumeration>
+			<spirit:enumeration>2</spirit:enumeration>
+			<spirit:enumeration>3</spirit:enumeration>
+			<spirit:enumeration>4</spirit:enumeration>
+			<spirit:enumeration>5</spirit:enumeration>
+			<spirit:enumeration>6</spirit:enumeration>
+			<spirit:enumeration>7</spirit:enumeration>
+			<spirit:enumeration>8</spirit:enumeration>
+			<spirit:enumeration>9</spirit:enumeration>
+			<spirit:enumeration>10</spirit:enumeration>
+			<spirit:enumeration>11</spirit:enumeration>
+			<spirit:enumeration>12</spirit:enumeration>
+			<spirit:enumeration>13</spirit:enumeration>
+			<spirit:enumeration>14</spirit:enumeration>
+			<spirit:enumeration>15</spirit:enumeration>
+			<spirit:enumeration>16</spirit:enumeration>
+		</spirit:choice>
+	</spirit:choices>
 	<spirit:fileSets>
 		<spirit:fileSet>
 			<spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
 			<spirit:file>
 				<spirit:name>sources_1/new/ErosionDilationBin.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
-				<spirit:userFileType>CHECKSUM_0c172b11</spirit:userFileType>
+				<spirit:userFileType>CHECKSUM_6dd89c48</spirit:userFileType>
 			</spirit:file>
 		</spirit:fileSet>
 		<spirit:fileSet>
@@ -250,7 +292,14 @@
 				<spirit:name>xgui/ErosionDilationBin_v1_1.tcl</spirit:name>
 				<spirit:fileType>tclSource</spirit:fileType>
 				<spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
-				<spirit:userFileType>CHECKSUM_71b64e46</spirit:userFileType>
+				<spirit:userFileType>CHECKSUM_e7fdd020</spirit:userFileType>
+			</spirit:file>
+		</spirit:fileSet>
+		<spirit:fileSet>
+			<spirit:name>xilinx_utilityxitfiles_view_fileset</spirit:name>
+			<spirit:file>
+				<spirit:name>gui/ErosionDilationBin_v1_1.gtcl</spirit:name>
+				<spirit:userFileType>GTCL</spirit:userFileType>
 			</spirit:file>
 		</spirit:fileSet>
 	</spirit:fileSets>
@@ -261,7 +310,8 @@
 			<spirit:displayName>Window Size</spirit:displayName>
 			<spirit:value spirit:format="long"
 					spirit:resolve="user"
-					spirit:id="PARAM_VALUE.window_size">5</spirit:value>
+					spirit:id="PARAM_VALUE.window_size"
+					spirit:choiceRef="choices_0">5</spirit:value>
 		</spirit:parameter>
 		<spirit:parameter>
 			<spirit:name>pip_counter</spirit:name>
@@ -269,6 +319,13 @@
 			<spirit:value spirit:format="long"
 					spirit:resolve="user"
 					spirit:id="PARAM_VALUE.pip_counter">4</spirit:value>
+			<spirit:vendorExtensions>
+				<xilinx:parameterInfo>
+					<xilinx:enablement>
+						<xilinx:isEnabled>false</xilinx:isEnabled>
+					</xilinx:enablement>
+				</xilinx:parameterInfo>
+			</spirit:vendorExtensions>
 		</spirit:parameter>
 		<spirit:parameter>
 			<spirit:name>Component_Name</spirit:name>
@@ -288,8 +345,8 @@
 			</xilinx:taxonomies>
 			<xilinx:displayName>ErosionDilationBin_v1_0</xilinx:displayName>
 			<xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
-			<xilinx:coreRevision>6</xilinx:coreRevision>
-			<xilinx:coreCreationDateTime>2015-04-07T17:31:59Z</xilinx:coreCreationDateTime>
+			<xilinx:coreRevision>7</xilinx:coreRevision>
+			<xilinx:coreCreationDateTime>2015-04-17T13:46:01Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>
 				<xilinx:tag xilinx:name="xilinx.com:ip:ErosionDilationBin:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/erosiondilationbin/hdl/erosiondilationbin.srcs</xilinx:tag>
 				<xilinx:tag xilinx:name="xilinx.com:user:ErosionDilationBin:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/erosiondilationbin/hdl/erosiondilationbin.srcs</xilinx:tag>
@@ -301,13 +358,13 @@
 		<xilinx:packagingInfo>
 			<xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
 			<xilinx:checksum xilinx:scope="fileGroups"
-					xilinx:value="2a9fdd54"/>
+					xilinx:value="6d2c9a38"/>
 			<xilinx:checksum xilinx:scope="ports"
-					xilinx:value="a2d5514b"/>
+					xilinx:value="e1b032f4"/>
 			<xilinx:checksum xilinx:scope="hdlParameters"
-					xilinx:value="3a5fd554"/>
+					xilinx:value="1924c64a"/>
 			<xilinx:checksum xilinx:scope="parameters"
-					xilinx:value="2ef463f6"/>
+					xilinx:value="97a5a083"/>
 		</xilinx:packagingInfo>
 	</spirit:vendorExtensions>
 </spirit:component>

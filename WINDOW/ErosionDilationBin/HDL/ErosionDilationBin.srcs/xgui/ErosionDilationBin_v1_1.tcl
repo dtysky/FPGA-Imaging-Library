@@ -1,10 +1,14 @@
+
+# Loading additional proc with user specified bodies to compute parameter values.
+source [file join [file dirname [file dirname [info script]]] gui/ErosionDilationBin_v1_1.gtcl]
+
 # Definitional proc to organize widgets for parameters.
 proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
+  ipgui::add_param $IPINST -name "window_size" -parent ${Page_0} -widget comboBox
   ipgui::add_param $IPINST -name "pip_counter" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "window_size" -parent ${Page_0}
   ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Page_0} -text {
 
 Discriptions:
@@ -28,49 +32,18 @@ in_data: Input data.
 out_enable: Output enable, will be high when the first output data output.
 
 out_data: Output data.}
-  ipgui::add_static_text $IPINST -name "Pip Counter" -parent ${Page_0} -text {
-
-Pip Counter:
-
-As follows - "Window Szie : Pip Counter":
-
-1 : 0;
-
-2 : 1;
-
-3 : 3;
-
-4 : 4;
-
-5 : 4;
-
-6 : 5;
-
-7 : 5;
-
-8 : 6;
-
-9 : 6;
-
-10 : 6;
-
-11 : 6;
-
-12 : 7;
-
-13 : 7;
-
-14 : 8;
-
-15 : 8;
-
-16 : 8;}
 
 
 }
 
-proc update_PARAM_VALUE.pip_counter { PARAM_VALUE.pip_counter } {
+proc update_PARAM_VALUE.pip_counter { PARAM_VALUE.pip_counter PARAM_VALUE.window_size PARAM_VALUE.pip_counter } {
 	# Procedure called to update pip_counter when any of the dependent parameters in the arguments change
+	
+	set pip_counter ${PARAM_VALUE.pip_counter}
+	set window_size ${PARAM_VALUE.window_size}
+	set values(window_size) [get_property value $window_size]
+	set values(pip_counter) [get_property value $pip_counter]
+	set_property value [gen_USERPARAMETER_pip_counter_VALUE $values(window_size) $values(pip_counter)] $pip_counter
 }
 
 proc validate_PARAM_VALUE.pip_counter { PARAM_VALUE.pip_counter } {
