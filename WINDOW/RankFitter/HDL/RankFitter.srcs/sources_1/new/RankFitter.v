@@ -43,7 +43,7 @@ module RankFitter(clk, rst_n, rank, in_enable, in_data, out_enable, out_data);
 	// 14 : 8;
 	// 15 : 8;
 	// 16 : 8;
-	//parameter sum_counter = 3;
+	parameter sum_counter = 3;
 
 	input clk;
 	input rst_n;
@@ -54,28 +54,24 @@ module RankFitter(clk, rst_n, rank, in_enable, in_data, out_enable, out_data);
 	output[color_width - 1 : 0] out_data;
 	
 	reg[`full_win_size - 1 : 0] big_flag[0 : `full_win_size - 1];
-	reg[`full_win_size - 1 : 0] enable_list;
+	reg[`full_win_size - 1 : 0] sorted_list[0 : `full_win_size - 1];
 	reg[3 : 0] con_enable;
-
-	wire[2 ** full_win_bits - 1 : 0] ed_index = {{(2 ** full_win_bits - `full_win_size){1'b0}}, enable_list};
-	wire[full_win_bits - 1 : 0] ed_value;
-	Encoder #(full_win_bits) Ed1(ed_index, ed_value);
 
 	always @(posedge clk or negedge rst_n or negedge in_enable) begin
 		if(~rst_n || ~in_enable) 
 			con_enable <= 0;
-		else if(con_enable == 3)
+		else if(con_enable == sum_counter + 2)
 			con_enable <= con_enable;
 		else
 			con_enable <= con_enable + 1;
 	end
 
-	assign out_enable = con_enable == 3 ? 1 : 0;
-	assign out_data = buffer[1].b[ed_value];
+	assign out_enable = con_enable == sum_counter + 2 ? 1 : 0;
+	assign out_data = sorted_list[rank];
 
-	genvar i, j;
+	genvar i, j, k;
 	generate
-		for (i = 0; i < 2; i = i + 1) begin : buffer
+		for (i = 0; i < sum_counter + 1; i = i + 1) begin : buffer
 			reg[color_width - 1 : 0] b[0 : `full_win_size - 1];
 			for (j = 0; j < `full_win_size; j = j + 1) begin
 				if(i == 0) begin
@@ -107,59 +103,45 @@ module RankFitter(clk, rst_n, rank, in_enable, in_data, out_enable, out_data);
 			end
 		end
 
-		for (i = 0; i < `full_win_size; i = i + 1) begin : set_list
-			wire[full_win_bits - 1 : 0] ce_value;
-			CountEncoder #(full_win_bits)
-				CE({{(2 ** full_win_bits - `full_win_size){1'b0}}, big_flag[i]}, ce_value);
-			always @(posedge clk or negedge rst_n or negedge in_enable) begin
-				if(~rst_n || ~in_enable) 
-					enable_list[i] <= 0;
-				else if(ce_value == rank)
-					enable_list[i] <= 1;
-				else
-					enable_list[i] <= 0;
+		for (i = 0; i < sum_counter; i = i + 1) begin : pip
+			for (k = 0; k < `full_win_size; k = k + 1) begin : pixel
+				reg[i + 1 : 0] sum[0 : (`full_win_size >> i + 1) - 1];
+				for (j = 0; j < `full_win_size >> i + 1; j = j + 1) begin
+					if(i == 0) begin
+
+						if(j == 0 && ((`full_win_size >> i) % 2 != 0)) begin
+							always @(posedge clk)
+								sum[j] <= 
+									big_flag[k][`full_win_size - 1] + big_flag[k][2 * j] + big_flag[k][2 * j + 1];
+						end else begin
+							always @(posedge clk)
+								sum[j] <= 
+									big_flag[k][2 * j] + big_flag[k][2 * j + 1];
+						end
+
+					end else begin 
+
+						if(j == 0 && ((`full_win_size >> i) % 2 != 0)) begin
+							always @(posedge clk)
+								sum[j] <=
+									pip[i - 1].pixel[k].sum[(`full_win_size >> i) - 1] +
+									pip[i - 1].pixel[k].sum[2 * j] +
+									pip[i - 1].pixel[k].sum[2 * j + 1];
+						end else begin
+							always @(posedge clk)
+								sum[j] <=
+									pip[i - 1].pixel[k].sum[2 * j] +
+									pip[i - 1].pixel[k].sum[2 * j + 1];
+						end
+					end
 				end
+			end
 		end
 
-		// for (i = 0; i < sum_counter; i = i + 1) begin : pip
-		// 	for (k = 0; k < `full_win_size; k = k + 1) begin : pixel
-		// 		reg[i + 1 : 0] sum[0 : (`full_win_size >> i + 1) - 1];
-		// 		for (j = 0; j < `full_win_size >> i + 1; j = j + 1) begin
-		// 			if(i == 0) begin
-
-		// 				if(j == 0 && ((`full_win_size >> i) % 2 != 0)) begin
-		// 					always @(posedge clk)
-		// 						sum[j] <= 
-		// 							big_flag[k][`full_win_size - 1] + big_flag[k][2 * j] + big_flag[k][2 * j + 1];
-		// 				end else begin
-		// 					always @(posedge clk)
-		// 						sum[j] <= 
-		// 							big_flag[k][2 * j] + big_flag[k][2 * j + 1];
-		// 				end
-
-		// 			end else begin 
-
-		// 				if(j == 0 && ((`full_win_size >> i) % 2 != 0)) begin
-		// 					always @(posedge clk)
-		// 						sum[j] <=
-		// 							pip[i - 1].pixel[k].sum[(`full_win_size >> i) - 1] +
-		// 							pip[i - 1].pixel[k].sum[2 * j] +
-		// 							pip[i - 1].pixel[k].sum[2 * j + 1];
-		// 				end else begin
-		// 					always @(posedge clk)
-		// 						sum[j] <=
-		// 							pip[i - 1].pixel[k].sum[2 * j] +
-		// 							pip[i - 1].pixel[k].sum[2 * j + 1];
-		// 				end
-		// 			end
-		// 		end
-		// 	end
-		// end
-
-		// for (i = 0; i < `full_win_size; i = i + 1) begin
-		// 	always @(*)
-		// 		sorted_list[pip[sum_counter - 1].pixel[i].sum[0]] = ~rst_n || ~in_enable ? 0 : buffer[`full_win_size - 1].b[i];
-		// end
+		for (i = 0; i < `full_win_size; i = i + 1) begin
+			always @(*)
+				sorted_list[pip[sum_counter - 1].pixel[i].sum[0]] = ~rst_n || ~in_enable ? 0 : buffer[sum_counter].b[i];
+		end
 
 	endgenerate
 endmodule
