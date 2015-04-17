@@ -30,6 +30,7 @@
 		output wire[7 : 0] harris_th,
 		output wire[im_bits_width - 1 : 0] top, bottom, left, right,
 		output wire[7 : 0] black_th, white_th,
+		output wire[31 : 0] sels,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -729,6 +730,7 @@
 	assign right = slv_reg13[im_bits_width - 1 : 0];
 	assign black_th = slv_reg14;
 	assign white_th = slv_reg15;
+	assign sels = slv_reg31;
 
 	reg[15 : 0] con_init;
 	initial con_init = 0;

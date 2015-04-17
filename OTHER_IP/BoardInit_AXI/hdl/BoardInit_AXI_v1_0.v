@@ -31,6 +31,7 @@
 		output wire[7 : 0] harris_th,
 		output wire[im_bits_width - 1 : 0] top, bottom, left, right,
 		output wire[7 : 0] black_th, white_th,
+		output wire[31 : 0] sels,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -84,6 +85,7 @@
 		.bottom(bottom),
 		.left(left),
 		.right(right),
+		.sels(sels),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),

@@ -22,6 +22,7 @@ void BOARDINIT_Init(BOARDINIT *bdit, u32 BaseAddress){
 	bdit->Right = BaseAddress + BOARDINIT_Right;
 	bdit->BlackTh = BaseAddress + BOARDINIT_BlackTh;
 	bdit->WhiteTh = BaseAddress + BOARDINIT_WhiteTh;
+	bdit->Sels = BaseAddress + BOARDINIT_Sels;
 }
 
 void BOARDINIT_SetWithCheck(u32 Address, u32 data){
