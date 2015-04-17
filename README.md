@@ -153,7 +153,7 @@ For writing or reading data to a block ram, this IP can be usefull to store your
 Sort all data from a window, then output the result by your giving ordinal.  
 **HDL Files:**  
 1. RankFitter.v: Main module.  
-2. RankFitter_TB.sv: Testbench for Frame.  
+2. RankFitter_TB.sv: Testbench for RankFitter.  
 
 #### 8.RankFitterFast:
 **Progress:**  
@@ -165,7 +165,7 @@ This module is faster than "RankFitter", only spending 2 cycles it can give the 
 1. CountEncoder.v: An encoder for getting the count of '1' from input data.  
 2. Encoder.v: An normal encoder.  
 3. RankFitterFast.v: Main module.  
-4. RankFitterFast_TB.sv: Testbench for Frame.  
+4. RankFitterFast_TB.sv: Testbench for RankFitterFast.  
 
 ### Recognition:
 
