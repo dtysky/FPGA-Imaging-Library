@@ -5,11 +5,11 @@
 // 
 // Create Date: 2015/04/16 20:54:09
 // Design Name: RankFitter
-// Module Name: RankFitter
+// Module Name: RankFitter_Fast
 // Project Name: Image processing project
 // Target Devices: 
 // Tool Versions: 
-// Description: The window size must be less than 16 !
+// Description: The window size must be less than 5 !
 // 
 // Dependencies: 
 // 
@@ -20,30 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 `define full_win_size window_size * window_size
 
-module RankFitter(clk, rst_n, rank, in_enable, in_data, out_enable, out_data);
+module RankFitter_Fast(clk, rst_n, rank, in_enable, in_data, out_enable, out_data);
 
 	parameter color_width = 8;
-	//Less than 16
+	//Less than 5
 	parameter window_size = 3;
 	parameter full_win_bits = 4;
-	// The highest bit of full_win_size, the lowest bit is "0"
-	// 1 : 0;
-	// 2 : 1;
-	// 3 : 3;
-	// 4 : 4;
-	// 5 : 4;
-	// 6 : 5;
-	// 7 : 5;
-	// 8 : 6;
-	// 9 : 6;
-	// 10 : 6;
-	// 11 : 6;
-	// 12 : 7;
-	// 13 : 7;
-	// 14 : 8;
-	// 15 : 8;
-	// 16 : 8;
-	//parameter sum_counter = 3;
 
 	input clk;
 	input rst_n;
@@ -120,46 +102,5 @@ module RankFitter(clk, rst_n, rank, in_enable, in_data, out_enable, out_data);
 					enable_list[i] <= 0;
 				end
 		end
-
-		// for (i = 0; i < sum_counter; i = i + 1) begin : pip
-		// 	for (k = 0; k < `full_win_size; k = k + 1) begin : pixel
-		// 		reg[i + 1 : 0] sum[0 : (`full_win_size >> i + 1) - 1];
-		// 		for (j = 0; j < `full_win_size >> i + 1; j = j + 1) begin
-		// 			if(i == 0) begin
-
-		// 				if(j == 0 && ((`full_win_size >> i) % 2 != 0)) begin
-		// 					always @(posedge clk)
-		// 						sum[j] <= 
-		// 							big_flag[k][`full_win_size - 1] + big_flag[k][2 * j] + big_flag[k][2 * j + 1];
-		// 				end else begin
-		// 					always @(posedge clk)
-		// 						sum[j] <= 
-		// 							big_flag[k][2 * j] + big_flag[k][2 * j + 1];
-		// 				end
-
-		// 			end else begin 
-
-		// 				if(j == 0 && ((`full_win_size >> i) % 2 != 0)) begin
-		// 					always @(posedge clk)
-		// 						sum[j] <=
-		// 							pip[i - 1].pixel[k].sum[(`full_win_size >> i) - 1] +
-		// 							pip[i - 1].pixel[k].sum[2 * j] +
-		// 							pip[i - 1].pixel[k].sum[2 * j + 1];
-		// 				end else begin
-		// 					always @(posedge clk)
-		// 						sum[j] <=
-		// 							pip[i - 1].pixel[k].sum[2 * j] +
-		// 							pip[i - 1].pixel[k].sum[2 * j + 1];
-		// 				end
-		// 			end
-		// 		end
-		// 	end
-		// end
-
-		// for (i = 0; i < `full_win_size; i = i + 1) begin
-		// 	always @(*)
-		// 		sorted_list[pip[sum_counter - 1].pixel[i].sum[0]] = ~rst_n || ~in_enable ? 0 : buffer[`full_win_size - 1].b[i];
-		// end
-
 	endgenerate
 endmodule

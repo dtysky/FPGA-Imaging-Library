@@ -36,8 +36,7 @@ module RankFitter_TB();
 	//For Window
 	parameter window_size = 3;
 	//For RankFitter
-	parameter full_win_bits = 3;
-	parameter sum_counter = 3;
+	parameter full_win_bits = 4;
 	//Can't be changed in this IP.
 	parameter color_width = 8;
 
@@ -50,14 +49,14 @@ module RankFitter_TB();
 	bit[color_width * window_size * window_size - 1 : 0] win_data;
 	bit win_enable;
 
-	bit[full_win_bits - 1 : 0] rank = 5;
+	bit[full_win_bits - 1 : 0] rank = 4;
 	bit out_enable;
 	bit[color_width - 1 : 0] out_data;
 
 	CLOCK CLOCK1(clk);
 	Rows8x512 #(im_width, rows_width) Rows1 (clk, rst_n, in_enable, in_color, row_enable, out_color);
 	Window #(color_width, window_size) Window1(clk, rst_n, row_enable, out_color, win_enable, win_data);
-	RankFitter #(color_width, window_size, full_win_bits, sum_counter) RF1(clk, rst_n, rank, win_enable, win_data, out_enable, out_data);
+	RankFitter #(color_width, window_size, full_win_bits) RF1(clk, rst_n, rank, win_enable, win_data, out_enable, out_data);
 
 	integer fi,fo;
 	string fname[$];
