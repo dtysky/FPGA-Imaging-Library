@@ -64,7 +64,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>36616228</spirit:value>
+            <spirit:value>912199fd</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -78,7 +78,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>f26ecaa4</spirit:value>
+            <spirit:value>009ce4e2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -228,7 +228,6 @@
   <spirit:choices>
     <spirit:choice>
       <spirit:name>choices_0</spirit:name>
-      <spirit:enumeration>1</spirit:enumeration>
       <spirit:enumeration>2</spirit:enumeration>
       <spirit:enumeration>3</spirit:enumeration>
       <spirit:enumeration>4</spirit:enumeration>
@@ -287,7 +286,7 @@
         <spirit:name>xgui/RankFitter_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
-        <spirit:userFileType>CHECKSUM_aeb62467</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_b5bfcd3f</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -350,8 +349,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>RankFitter_v1_0</xilinx:displayName>
       <xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2015-04-17T13:20:18Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2015-04-18T09:04:02Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:ip:RankFitter:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/rankfitter/hdl/rankfitter.srcs</xilinx:tag>
         <xilinx:tag xilinx:name="xilinx.com:user:RankFitter:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/rankfitter/hdl/rankfitter.srcs</xilinx:tag>
@@ -361,7 +360,7 @@
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="7fa10a61"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="acbd9d13"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="6cc2f19d"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="772592dd"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="b7f12fbf"/>

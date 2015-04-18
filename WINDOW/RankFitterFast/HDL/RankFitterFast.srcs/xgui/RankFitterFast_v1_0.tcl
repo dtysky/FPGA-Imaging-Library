@@ -8,7 +8,7 @@ proc init_gui { IPINST } {
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
   ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "window_size" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "window_size" -parent ${Page_0} -widget comboBox
   ipgui::add_param $IPINST -name "full_win_bits" -parent ${Page_0}
 
 

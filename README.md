@@ -48,7 +48,7 @@ The function simulation's result will be placed in SIM_CHECK directory.
 
 ## Modules:
 
-### Special:
+### SPECIAL:
  
 #### 1.TEST_ON_BOARD:
 
@@ -90,7 +90,16 @@ CT and luminance transition, changing a 8bits(a channel of rgb image) color's CT
 
 ### Window:
 
-#### 1.RowsCreator:
+#### 1.FrameController:
+**Progress:**  
+100%.    
+**Function:**  
+For writing or reading data to a block ram, this IP can be usefull to store your image.  
+**HDL Files:**  
+1. Frame.v: Main module.  
+2. Frame_TB.sv: Testbench for Frame. 
+
+#### 2.RowsCreator:
 **Progress:**  
 100%.    
 **Function:**  
@@ -100,7 +109,7 @@ Create and maintain some rows cache, preparing for creating window.
 2. Rows8x512/Rows8x512_TB.sv: Testbench for Rows8x512.  
 3. Rows1x512/Rows8x512.v: A module for creating some rows by an image which max width is 512bits and color is 1bit.  
 
-#### 2.WindowCreator:
+#### 3.WindowCreator:
 **Progress:**  
 100%.    
 **Function:**  
@@ -110,7 +119,7 @@ It will use some fifos which deepth is image's width and the amount of them are 
 1. Window.v: A module for creating a window from rows cache.  
 2. Window_TB.sv: Testbench for Window.  
 
-#### 3.MeanFitter:
+#### 4.MeanFitter:
 **Progress:**  
 100%.    
 **Function:**  
@@ -119,7 +128,7 @@ Get the mean value form a window which created by WindowCreat.
 1. MeanFitter.v: Main module.  
 2. MeanFitter_TB.sv: Testbench.  
 
-#### 4.ErosionDilationBin:
+#### 5.ErosionDilationBin:
 **Progress:**  
 100%.    
 **Function:**  
@@ -128,25 +137,25 @@ Binary Morphology : erosion and dilation.
 1. ErosionDilationBin.v: Main module.  
 2. ErosionDilationBin_TB.sv: Testbench for ErosionDilationBin.  
 
-#### 5.MatchTemplateBin:
+#### 6.ErosionDilationGray:
+**Progress:**  
+100%.    
+**Function:**  
+Gray Morphology : erosion and dilation.  
+**HDL Files:**  
+1. ErosionDilationGray.v: Main module.  
+2. ErosionDilationGray_TB.sv: Testbench for ErosionDilationBin.  
+
+#### 7.MatchTemplateBin:
 **Progress:**  
 100%.    
 **Function:**  
 Binary Morphology : using a template window to match your image.  
 **HDL Files:**  
 1. MatchTemplateBin.v: Main module.  
-2. MatchTemplateBin_TB.sv: Testbench for MatchTemplateBin.  
+2. MatchTemplateBin_TB.sv: Testbench for MatchTemplateBin.   
 
-#### 6.FrameController:
-**Progress:**  
-100%.    
-**Function:**  
-For writing or reading data to a block ram, this IP can be usefull to store your image.  
-**HDL Files:**  
-1. Frame.v: Main module.  
-2. Frame_TB.sv: Testbench for Frame.  
-
-#### 7.RankFitter:
+#### 8.RankFitter:
 **Progress:**  
 100%.    
 **Function:**  
@@ -155,7 +164,7 @@ Sort all data from a window, then output the result by your giving ordinal.
 1. RankFitter.v: Main module.  
 2. RankFitter_TB.sv: Testbench for RankFitter.  
 
-#### 8.RankFitterFast:
+#### 9.RankFitterFast:
 **Progress:**  
 100%.    
 **Function:**  

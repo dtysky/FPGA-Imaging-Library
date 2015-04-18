@@ -1,8 +1,6 @@
 # This file is automatically written.  Do not modify.
 proc gen_USERPARAMETER_sum_counter_VALUE {window_size sum_counter } {
-if {$window_size == 1} {
-	set ${sum_counter} 0
-} elseif {$window_size == 2} {
+if {$window_size == 2} {
 	set ${sum_counter} 1
 } elseif {$window_size == 3} {
 	set ${sum_counter} 3

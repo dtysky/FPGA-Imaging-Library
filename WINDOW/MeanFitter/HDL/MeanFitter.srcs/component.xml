@@ -80,7 +80,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>c9a2130d</spirit:value>
+						<spirit:value>f60feebb</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -214,7 +214,6 @@
 	<spirit:choices>
 		<spirit:choice>
 			<spirit:name>choices_0</spirit:name>
-			<spirit:enumeration>1</spirit:enumeration>
 			<spirit:enumeration>2</spirit:enumeration>
 			<spirit:enumeration>3</spirit:enumeration>
 			<spirit:enumeration>4</spirit:enumeration>
@@ -333,8 +332,8 @@
 			</xilinx:taxonomies>
 			<xilinx:displayName>MeanFitter_v1_0</xilinx:displayName>
 			<xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
-			<xilinx:coreRevision>10</xilinx:coreRevision>
-			<xilinx:coreCreationDateTime>2015-04-17T13:43:21Z</xilinx:coreCreationDateTime>
+			<xilinx:coreRevision>11</xilinx:coreRevision>
+			<xilinx:coreCreationDateTime>2015-04-18T09:02:40Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>
 				<xilinx:tag xilinx:name="xilinx.com:ip:MeanFitter:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/meanfitter/hdl/meanfitter.srcs</xilinx:tag>
 				<xilinx:tag xilinx:name="xilinx.com:user:MeanFitter:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/meanfitter/hdl/meanfitter.srcs</xilinx:tag>
@@ -345,7 +344,7 @@
 		<xilinx:packagingInfo>
 			<xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
 			<xilinx:checksum xilinx:scope="fileGroups"
-					xilinx:value="2dccb60d"/>
+					xilinx:value="d6d9675d"/>
 			<xilinx:checksum xilinx:scope="ports"
 					xilinx:value="94323405"/>
 			<xilinx:checksum xilinx:scope="hdlParameters"

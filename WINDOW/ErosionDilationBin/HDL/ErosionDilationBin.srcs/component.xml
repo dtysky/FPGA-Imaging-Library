@@ -80,7 +80,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>47ad57af</spirit:value>
+						<spirit:value>5ddd8137</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -233,7 +233,6 @@
 	<spirit:choices>
 		<spirit:choice>
 			<spirit:name>choices_0</spirit:name>
-			<spirit:enumeration>1</spirit:enumeration>
 			<spirit:enumeration>2</spirit:enumeration>
 			<spirit:enumeration>3</spirit:enumeration>
 			<spirit:enumeration>4</spirit:enumeration>
@@ -345,8 +344,8 @@
 			</xilinx:taxonomies>
 			<xilinx:displayName>ErosionDilationBin_v1_0</xilinx:displayName>
 			<xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
-			<xilinx:coreRevision>7</xilinx:coreRevision>
-			<xilinx:coreCreationDateTime>2015-04-17T13:46:01Z</xilinx:coreCreationDateTime>
+			<xilinx:coreRevision>8</xilinx:coreRevision>
+			<xilinx:coreCreationDateTime>2015-04-18T09:01:49Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>
 				<xilinx:tag xilinx:name="xilinx.com:ip:ErosionDilationBin:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/erosiondilationbin/hdl/erosiondilationbin.srcs</xilinx:tag>
 				<xilinx:tag xilinx:name="xilinx.com:user:ErosionDilationBin:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/erosiondilationbin/hdl/erosiondilationbin.srcs</xilinx:tag>
@@ -358,7 +357,7 @@
 		<xilinx:packagingInfo>
 			<xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
 			<xilinx:checksum xilinx:scope="fileGroups"
-					xilinx:value="6d2c9a38"/>
+					xilinx:value="e0d44eb2"/>
 			<xilinx:checksum xilinx:scope="ports"
 					xilinx:value="e1b032f4"/>
 			<xilinx:checksum xilinx:scope="hdlParameters"

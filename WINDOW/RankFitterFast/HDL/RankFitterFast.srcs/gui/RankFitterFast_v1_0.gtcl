@@ -1,8 +1,6 @@
 # This file is automatically written.  Do not modify.
 proc gen_USERPARAMETER_full_win_bits_VALUE {window_size full_win_bits } {
-if {$window_size == 1} {
-	set ${full_win_bits} 1
-} elseif {$window_size == 2} {
+if {$window_size == 2} {
 	set ${full_win_bits} 2
 } elseif {$window_size == 3} {
 	set ${full_win_bits} 4

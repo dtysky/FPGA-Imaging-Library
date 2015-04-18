@@ -3,47 +3,29 @@
 <!--                                                         -->
 <!-- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="2" Path="B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/RankFitter/HDL/RankFitter.xpr">
+<Project Version="7" Minor="2" Path="B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/ErosionDilationGray/HDL/ErosionDilationGray.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="b261a83bf8894025b3c5d8415b7dd68e"/>
+    <Option Name="Id" Val="e6380cea43c443448f0f471ebaa936ba"/>
     <Option Name="Part" Val="xc7z010clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="BoardPart" Val=""/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
-    <Option Name="IPRepoPath" Val="$PSRCDIR"/>
   </Configuration>
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/new/RankFitter.v">
+      <File Path="$PSRCDIR/sources_1/new/ErosionDilationGray.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Encoder.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/CountEncoder.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/component.xml">
-        <FileInfo SFType="IPXACT"/>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="RankFitter"/>
+        <Option Name="TopModule" Val="ErosionDilationGray"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
@@ -54,20 +36,10 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
-      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_1/imports/WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/ip/Fifo8x512/Fifo8x512_funcsim.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/ip/Fifo8x512/Fifo8x512_funcsim.v"/>
           <Attr Name="ImportTime" Val="1429019579"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sim_1/imports/WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/new/Rows8x512.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/new/Rows8x512.v"/>
-          <Attr Name="ImportTime" Val="1428577556"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -82,7 +54,16 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sim_1/new/RankFitter_TB.sv">
+      <File Path="$PSRCDIR/sim_1/imports/WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/new/Rows8x512.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/new/Rows8x512.v"/>
+          <Attr Name="ImportTime" Val="1428577556"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/new/ErosionDilationGray_TB.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -91,7 +72,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="RankFitter_TB"/>
+        <Option Name="TopModule" Val="ErosionDilationGray_TB"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="SrcSet" Val="sources_1"/>
@@ -114,16 +95,19 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="9">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" Dir="$PRUNDIR/synth_1">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" SynthRun="synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
+          <Desc>Vivado Implementation Defaults</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

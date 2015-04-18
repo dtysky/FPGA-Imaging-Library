@@ -8,18 +8,27 @@ proc init_gui { IPINST } {
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
   ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "window_size" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "window_size" -parent ${Page_0} -widget comboBox
   ipgui::add_param $IPINST -name "full_win_bits" -parent ${Page_0}
   ipgui::add_param $IPINST -name "sum_counter" -parent ${Page_0}
-  ipgui::add_static_text $IPINST -name "Discriptions:" -parent ${Page_0} -text {
-Discriptions:
-
-clk: Clock.
-rst_n: Reset, active low.
-rank: The ordinal of a list after the input window data been sorted which you want to get.
-in_enable: Input enable from windw.
-in_data: Input data from window, the first data must be given in the same time with in_enable enabling.
-out_enable: Output enable, low -> high when the first data can be read.
+  ipgui::add_static_text $IPINST -name "Discriptions:" -parent ${Page_0} -text {
+
+Discriptions:
+
+
+
+clk: Clock.
+
+rst_n: Reset, active low.
+
+rank: The ordinal of a list after the input window data been sorted which you want to get.
+
+in_enable: Input enable from windw.
+
+in_data: Input data from window, the first data must be given in the same time with in_enable enabling.
+
+out_enable: Output enable, low -> high when the first data can be read.
+
 out_data: Output data.}
 
 

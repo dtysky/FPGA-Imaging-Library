@@ -1,8 +1,6 @@
 # This file is automatically written.  Do not modify.
 proc gen_USERPARAMETER_pip_counter_VALUE {window_size pip_counter } {
-if {$window_size == 1} {
-	set ${pip_counter} 0
-} elseif {$window_size == 2} {
+if {$window_size == 2} {
 	set ${pip_counter} 1
 } elseif {$window_size == 3} {
 	set ${pip_counter} 3
