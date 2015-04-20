@@ -273,4 +273,4 @@ Author
 Copyright
 ---
 **Copyright © 2015, Dai Tianyu(dtysky). All Rights Reserved.  
-This project is free software and released under the** [MIT License (MIT)](http://mit-license.org/).
+This project is free software and released under the** [GNU Lesser General Public License (LGPL)](https://www.gnu.org/licenses/lgpl-2.1.html).

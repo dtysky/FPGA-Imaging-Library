@@ -1,3 +1,37 @@
+###########################################################################
+#
+# Software simulation for "Gary2BinAuto".
+# Module function: Auto binorization from original pixel and a pixel for referencing, 
+# the original pixel will be given by a window, and ref pixel may from some fitters.
+#
+# Copyright (C) 2015  Dai Tianyu (dtysky)
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+#
+# This module is a part of image processing project, you can get all of them here:
+# 	https://github.com/dtysky/Image-processing-on-FPGA
+#
+# And you can use this mail to connect me, if you have any issues in this project:
+# 	dtysky@outlook.com
+#
+# My blog is here:
+# 	http://dtysky.github.io/
+#
+###########################################################################
+
+
 __author__ = 'Dai Tianyu (dtysky)'
 
 from PIL import Image
