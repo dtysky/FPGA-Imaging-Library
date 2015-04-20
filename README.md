@@ -176,6 +176,15 @@ This module is faster than "RankFitter", only spending 2 cycles it can give the 
 3. RankFitterFast.v: Main module.  
 4. RankFitterFast_TB.sv: Testbench for RankFitterFast.  
 
+#### 10.Gary2BinAuto:
+**Progress:**  
+100%.    
+**Function:**  
+Auto binorization from original pixel and a pixel for referencing, the original pixel will be given by a window, and ref pixel may from some fitters.  
+**HDL Files:**  
+1. Gary2BinAuto.v: Main module.  
+2. Gary2BinAuto_TB.sv: Testbench for Gary2BinAuto, this simulation use "MeanFitter" as default.  
+
 ### Recognition:
 
 #### 1.Harris:

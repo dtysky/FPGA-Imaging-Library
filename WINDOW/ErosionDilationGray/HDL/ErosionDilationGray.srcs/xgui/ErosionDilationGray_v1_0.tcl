@@ -8,19 +8,30 @@ proc init_gui { IPINST } {
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
   ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "window_size" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "window_size" -parent ${Page_0} -widget comboBox
   ipgui::add_param $IPINST -name "pip_counter" -parent ${Page_0}
-  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Page_0} -text {
-Discriptions:
-The window size must be less than 16 !
-
-clk: colck.
-rst_n: Reset, active low.
-mode: 0 for erosion, 1 for dilation
-template: The template you want to use for erosion or dilation.
-in_enable: Input enable, must enable with the same time as the first input data.
-in_data: Input data.
-out_enable: Output enable, will be high when the first output data output.
+  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Page_0} -text {
+
+Discriptions:
+
+The window size must be less than 16 !
+
+
+
+clk: colck.
+
+rst_n: Reset, active low.
+
+mode: 0 for erosion, 1 for dilation
+
+template: The template you want to use for erosion or dilation.
+
+in_enable: Input enable, must enable with the same time as the first input data.
+
+in_data: Input data.
+
+out_enable: Output enable, will be high when the first output data output.
+
 out_data: Output data.}
 
 
