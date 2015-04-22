@@ -1,6 +1,9 @@
-# Software simulation for "Gary2BinAuto".
-# Module function: Auto binorization from original pixel and a pixel for referencing, 
-# the original pixel will be given by a window, and ref pixel may from some fitters.
+# Image processing project : Threshold.
+#
+# Function: Thresholding depend on two threshold,
+# convert the grayscale image to ternary or binary image.
+#
+# Software simulation.
 #
 # Copyright (C) 2015  Dai Tianyu (dtysky)
 #
@@ -31,11 +34,8 @@ __author__ = 'Dai Tianyu (dtysky)'
 
 from PIL import Image
 import os
-from Window import Window
-from Rows import Rows
-import MeanFitter, RankFitter
 
-ModuleName='GRAY2BINAuto'
+ModuleName='Threshold'
 
 FileAll = []
 
@@ -44,35 +44,33 @@ for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
         if os.path.splitext(f)[1]=='.jpg':
         	FileAll.append((root+'/',f))
 
-def transform(mode, im, wsize):
+def transform(mode, im, th1 = 100, th2 = 200):
 	data_src = im.getdata()
 	xsize,ysize = im.size
 	data_res = []
-	rows = Rows(data_src, wsize, xsize)
-	win = Window(wsize)
-	while 1:
-		w = win.update(rows.update())
-		if win.is_enable():
-			break
-	for i in range(len(data_src)):
-		if rows.frame_empty():
-			rows.create(data_src, wsize, xsize)
-		if mode == 0:
-			data_res.append(0 if w[wsize >> 1][wsize >> 1] < MeanFitter.mean_fitter(w) else 1)
-		elif mode == 1:
-			data_res.append(0 if w[wsize >> 1][wsize >> 1] < RankFitter.rank_fitter(w, wsize * wsize >> 1) else 1)
-		w = win.update(rows.update())
+	for pixel in data_src:
+		if mode == 'Base':
+			data_res.append(255 if pixel > th1 else 0)
+		elif mode == 'Ternary':
+			if pixel <= th1:
+				data_res.append(0)
+			elif pixel <= th2:
+				data_res.append(128)
+			else:
+				data_res.append(255)
+		elif mode == 'Contour':
+			data_res.append(255 if pixel > th1 and pixel <= th2 else 0)
+		else:
+			data_res.append(0)
 	return data_res
 
 for root,f in FileAll:
 	im_src = Image.open(root+f)
 	s_x, s_y = im_src.size
-	im_res = Image.new('1', (s_x, s_y), 0)
-	im_res.putdata(transform(0, im_src ,5))
-	im_res.save('../SIM_CHECK/soft' + f.split('.')[0] + 'MeanW5.bmp')
-	# im_res.putdata(transform(0, im_src ,15))
-	# im_res.save('../SIM_CHECK/soft' + f.split('.')[0] + 'MeanW15.bmp')
-	# im_res.putdata(transform(1, im_src, 5))
-	# im_res.save('../SIM_CHECK/soft' + f.split('.')[0] + 'MedianW5.bmp')
-	# im_res.putdata(transform(1, im_src, 15))
-	# im_res.save('../SIM_CHECK/soft' + f.split('.')[0] + 'MedianW15.bmp')
+	im_res = Image.new('L', (s_x, s_y), 0)
+	im_res.putdata(transform('Base', im_src ,128))
+	im_res.save('../SIM_CHECK/soft' + f.split('.')[0] +'Base.jpg')
+	im_res.putdata(transform('Ternary', im_src ,100 ,200))
+	im_res.save('../SIM_CHECK/soft' + f.split('.')[0] +'Ternary.jpg')
+	im_res.putdata(transform('Contour', im_src ,100 ,200))
+	im_res.save('../SIM_CHECK/soft' + f.split('.')[0] +'Contour.jpg')

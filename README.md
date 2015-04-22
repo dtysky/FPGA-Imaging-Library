@@ -67,15 +67,15 @@ Graying, transforming a 24bits(rgb) image to a 8bits(gray) image.
 1. RGB2GRAY.v: Main function.  
 2. RGB2GRAY_TB.sv: TestBench.
 
-#### 2.GRAY2BIN:
+#### 2.Threshold:
 
 **Progress:**  
 100%.  
 **Function:**  
-Binorization, transforming a 8bits(gray) image to a 1bit(bin) image.  
+Thresholding depend on two threshold, convert the grayscale image to ternary or binary image.  
 **HDL Files:**  
-1. GARY2BIN.v: Main function.  
-2. GARY2BIN_TB.sv: TestBench.
+1. Threshold.v: Main function.  
+2. Threshold_TB.sv: TestBench.
 
 #### 3.LM_CT_TRANS:
 
