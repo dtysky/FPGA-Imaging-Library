@@ -1,7 +1,6 @@
-# Image processing project : Threshold.
+# Image processing project : Pan.
 #
-# Function: Thresholding depend on two threshold,
-# convert the grayscale image to ternary or binary image.
+# Function: Panning a image from your given offset.
 #
 # Software simulation.
 #
@@ -34,8 +33,7 @@ __author__ = 'Dai Tianyu (dtysky)'
 
 from PIL import Image
 import os
-
-ModuleName='Threshold'
+ModuleName='Pan'
 
 FileAll = []
 
@@ -44,33 +42,26 @@ for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
         if os.path.splitext(f)[1]=='.jpg':
         	FileAll.append((root+'/',f))
 
-def transform(mode, im, th1 = 100, th2 = 200):
+def create(im, xoffset, yoffset):
 	data_src = im.getdata()
-	xsize,ysize = im.size
-	data_res = []
-	for pixel in data_src:
-		if mode == 'Base':
-			data_res.append(255 if pixel > th1 else 0)
-		elif mode == 'Ternary':
-			if pixel <= th1:
-				data_res.append(0)
-			elif pixel <= th2:
-				data_res.append(128)
+	xsize, ysize = im.size
+	data_res = list(data_src)
+	for y in xrange(ysize):
+		for x in xrange(xsize):
+			xaddress = x + xoffset if x + xoffset < xsize else x + xoffset - xsize
+			yaddress = y + yoffset if y + yoffset < ysize else y + yoffset - ysize
+			if xaddress >= xoffset and yaddress >= yoffset and xaddress < xsize + xoffset and yaddress < ysize + yoffset:
+				data_res[yaddress * xsize + xaddress] = data_src[y * xsize + x]
 			else:
-				data_res.append(255)
-		elif mode == 'Contour':
-			data_res.append(255 if pixel > th1 and pixel <= th2 else 0)
-		else:
-			data_res.append(0)
+				data_res[yaddress * xsize + xaddress] = 0
 	return data_res
 
 for root,f in FileAll:
 	im_src = Image.open(root+f)
 	s_x, s_y = im_src.size
 	im_res = Image.new('L', (s_x, s_y), 0)
-	im_res.putdata(transform('Base', im_src ,128))
-	im_res.save('../SIM_CHECK/soft' + f.split('.')[0] +'Base.jpg')
-	im_res.putdata(transform('Ternary', im_src ,100 ,200))
-	im_res.save('../SIM_CHECK/soft' + f.split('.')[0] +'Ternary.jpg')
-	im_res.putdata(transform('Contour', im_src ,100 ,200))
-	im_res.save('../SIM_CHECK/soft' + f.split('.')[0] +'Contour.jpg')
+	im_res.putdata(create(im_src, 100, 100))
+	im_res.save('../SIM_CHECK/soft' + f)
+	# fo = open('../SIM_CHECK/soft' + f + '.dat','w')
+	# for pix in im_res.getdata():
+	# 	fo.write(str(pix) + '\n')

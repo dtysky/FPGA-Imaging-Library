@@ -29,7 +29,7 @@ This mail is for connecting me:
 	dtysky@outlook.com
 
 My blog is here:
-	http://dtysky.github.io/
+	http://dtysky.moe/
 */
 
 `timescale 1ns / 1ps
