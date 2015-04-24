@@ -31,22 +31,27 @@ endmodule
 module Crop_TB();
 
 	parameter color_width = 8;
-	parameter im_bits_width = 9;
-	parameter im_width = 320;
-	parameter im_height = 240;
+	parameter im_width_bits = 9;
+	parameter im_width = 512;
+	parameter im_height = 512;
 
 	bit clk,rst_n;
 	bit in_enable;
 	bit[color_width - 1 : 0] in_data;
+	bit[im_width_bits - 1 : 0] in_count_x, in_count_y;
 	bit out_enable;
 	bit[color_width - 1 : 0] out_data;
-	bit[im_bits_width - 1 : 0] top, bottom, left, right;
+	bit[im_width_bits - 1 : 0] out_count_x, out_count_y;
+	bit[im_width_bits - 1 : 0] top, bottom, left, right;
 	bit in_range;
 
 
 	CLOCK CLOCK1(clk);
-	Crop #(color_width, im_bits_width, im_width, im_height)
-		MF1(clk, rst_n, top, bottom, left, right, in_enable, in_data, out_enable, out_data, in_range);
+	Crop #(color_width, im_width_bits, im_width, im_height)
+		Crop1(
+			clk, rst_n, top, bottom, left, right,
+			in_enable, in_data, in_count_x, in_count_y,
+			out_enable, out_data, out_count_x, out_count_y, in_range);
 
 	integer fi,fo;
 	string fname[$];
@@ -56,10 +61,10 @@ module Crop_TB();
 	bit now_start = 0;
 
 	initial begin
-		top = 40;
-		bottom = 200;
-		left = 40;
-		right = 280;
+		top = 50;
+		bottom = 462;
+		left = 50;
+		right = 462;
 		fi = $fopen("imgindex.dat","r");
 		while (!$feof(fi)) begin
 			$fscanf(fi,"%s",ftmp);
@@ -83,13 +88,15 @@ module Crop_TB();
 			$fwrite(fo,"%s\n",imsize);
 			while (!$feof(fi)) begin 
 				@(posedge clk);
-				$fscanf(fi,"%b",in_data);
+				$fscanf(fi, "%b", in_count_x);
+				$fscanf(fi, "%b", in_count_y);
+				$fscanf(fi, "%b", in_data);
 				in_enable = 1;
 				if(out_enable) begin
 					if(~now_start)
 						$display("%m: at time %t ps , start%d !", $time, i);
 					now_start = 1;
-					$fwrite(fo,"%d\n",out_data);
+					$fwrite(fo, "%0d , %0d , %0d\n", out_count_x, out_count_y, out_data);
 				end
 			end
 			$fclose(fi);

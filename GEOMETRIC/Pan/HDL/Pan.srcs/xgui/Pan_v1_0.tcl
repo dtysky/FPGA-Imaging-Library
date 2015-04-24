@@ -33,16 +33,16 @@ out_count_y: Count for height of the output image.}
   set Help [ipgui::add_page $IPINST -name "Help"]
   set_property tooltip {Help} ${Help}
   ipgui::add_static_text $IPINST -name "Copyright" -parent ${Help} -text {Documents for all modules:
+http://image-on-fpga.dtysky.moe
 
-
-All modules of image processing project:
+All modules for image processing project:
 https://github.com/dtysky/Image-processing-on-FPGA
 
 This mail is for connecting me:
 dtysky@outlook.com
 
 My blog is here:
-http://dtysky.moe/
+http://dtysky.moe
 
 Copyright  2015, Dai Tianyu(dtysky). All Rights Reserved.
 This project is free software and released under the GNU Lesser General Public License (LGPL).}

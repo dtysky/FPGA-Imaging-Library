@@ -33,5 +33,5 @@ for root,f in FileAll:
 	im_src = Image.open(root+f)
 	s_x, s_y = im_src.size
 	im_res = Image.new('L', (s_x, s_y), 0)
-	im_res.putdata(create(im_src, (40, 200, 40, 280)))
+	im_res.putdata(create(im_src, (50, 462, 50, 462)))
 	im_res.save('../SIM_CHECK/soft' + f)

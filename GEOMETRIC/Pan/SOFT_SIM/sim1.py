@@ -20,14 +20,17 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# This module is a part of image processing project, you can get all of them here:
-# 	https://github.com/dtysky/Image-processing-on-FPGA
-#
+# Documents for all modules:
+# http://image-on-fpga.dtysky.moe
+
+# All modules for image processing project:
+# https://github.com/dtysky/Image-processing-on-FPGA
+
 # This mail is for connecting me:
-# 	dtysky@outlook.com
-#
+# dtysky@outlook.com
+
 # My blog is here:
-# 	http://dtysky.moe/
+# http://dtysky.moe
 
 __author__ = 'Dai Tianyu (dtysky)'
 

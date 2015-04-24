@@ -21,14 +21,18 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-This module is a part of image processing project, you can get all of them here:
-	https://github.com/dtysky/Image-processing-on-FPGA
+Documents for all modules:
+http://image-on-fpga.dtysky.moe
+
+All modules for image processing project:
+https://github.com/dtysky/Image-processing-on-FPGA
 
 This mail is for connecting me:
-	dtysky@outlook.com
+dtysky@outlook.com
 
 My blog is here:
-	http://dtysky.moe/
+http://dtysky.moe
+
 */
 
 `timescale 1ns / 1ps
@@ -108,11 +112,10 @@ module Pan_TB();
 				$fscanf(fi, "%b", in_count_x);
 				$fscanf(fi, "%b", in_count_y);
 				$fscanf(fi, "%b", in_data);
-				if(~now_start) begin
-					$display("%m: at time %t ps , start%0d-0 !", $time, i);
-				end
 				now_start = 1;
 				if(out_enable) begin
+					if(~now_start) begin
+						$display("%m: at time %t ps , start%0d-0 !", $time, i);
 					$fwrite(fo, "%0d , %0d , %0d\n", out_count_x, out_count_y, out_data);
 				end
 			end

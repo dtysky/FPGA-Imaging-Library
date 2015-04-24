@@ -13,10 +13,12 @@ for root,dirs,files in os.walk('../HDL_SIM'):
         if ex=='.res':
         	FileAll.append((root+'/',name,ex))
 
-def convert(data):
-	data_res = []
-	for gray in data[2:]:
-		data_res.append(int(gray))
+def convert(im, data):
+	data_res = list(im.getdata())
+	xsize, ysize = im.size
+	for p in data[2:]:
+		x, y, c = p.split(' , ')
+		data_res[int(y) * xsize + int(x)] = (int(c))
 	return list(data_res)
 
 for root,name,ex in FileAll:
@@ -25,6 +27,6 @@ for root,name,ex in FileAll:
 	s_x = int(data_src[0])
 	s_y = int(data_src[1])
 	im_res = Image.new('L',(s_x,s_y),0)
-	im_res.putdata(convert(data_src))
+	im_res.putdata(convert(im_res, data_src))
 	im_res.save('hdl'+name+'.jpg')
 	dat_src.close()
