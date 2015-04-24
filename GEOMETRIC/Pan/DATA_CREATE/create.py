@@ -3,14 +3,14 @@ __author__ = 'Dai Tianyu (dtysky)'
 from PIL import Image
 import os
 
-ModuleName='RankFitter'
+ModuleName='Pan'
 
 FileAll = []
 
 for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
     for f in files:
     	name,ex=os.path.splitext(f)
-        if ex=='.jpg':
+        if ex in ['.jpg','.bmp']:
         	FileAll.append((root+'/',name,ex))
 
 def color_formot(color):
@@ -21,10 +21,14 @@ def color_formot(color):
 
 def create_dat(im):
 	data_src = im.getdata()
+	xsize, ysize = im.size
 	data_res = ''
-	for gray in data_src:
-		data_res += color_formot(gray)
-		data_res += '\n'
+	all_size = xsize * ysize - 1
+	for y in range(ysize):
+		for x in range(xsize):
+			data_res += color_formot(xsize - 1 - x) + '\n'
+			data_res += color_formot(ysize - 1 - y) + '\n'
+			data_res += color_formot(data_src[(ysize - 1 - y) * xsize + (xsize - 1 - x)]) + '\n'
 	return data_res[:-1]
 
 def create_mif(im):

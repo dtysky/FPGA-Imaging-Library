@@ -213,10 +213,20 @@ Controlling a frame(block ram etc.), writing or reading with counts.
 **Progress:**  
 100%.  
 **Function:**  
-Crop a image, depending on your top, bottom, left and right coordinate.  
+Cropping a image, depending on your top, bottom, left and right coordinate.  
 **HDL Files:**  
 1. Crop.v: Main module.    
 2. Crop_TB.sv: Testbench for Crop.  
+
+#### 3. Pan:
+
+**Progress:**  
+100%.  
+**Function:**  
+Panning a image from your given offset.  
+**HDL Files:**  
+1. Pan.v: Main module.    
+2. Pan_TB.sv: Testbench for Pan.  
 
 ### Character:
 
