@@ -228,6 +228,16 @@ Panning a image from your given offset.
 1. Pan.v: Main module.    
 2. Pan_TB.sv: Testbench for Pan.  
 
+#### 4. Mirror:
+
+**Progress:**  
+100%.  
+**Function:**  
+Getting a mirror of your given image.  
+**HDL Files:**  
+1. Mirror.v: Main module.    
+2. Mirror_TB.sv: Testbench for Mirror.  
+
 ### Character:
 
 #### 1.CHR_ASCII_8X8：

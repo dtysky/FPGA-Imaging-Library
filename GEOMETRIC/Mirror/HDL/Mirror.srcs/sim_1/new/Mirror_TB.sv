@@ -1,7 +1,7 @@
 /*
-Image processing project : Crop.
+Image processing project : Mirror.
 
-Function: Cropping a image, depending on your top, bottom, left and right coordinate.
+Function: Getting a mirror of your given image.
 
 Testbench.
 
@@ -22,10 +22,10 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 Documents for all modules:
-	http://image-on-fpga.dtysky.moe
+	http://ifl.dtysky.moe
 
 All modules for image processing project:
-	https://github.com/dtysky/FPGA-Imaging-Libaray
+	https://github.com/dtysky/FPGA-Imaging-Library
 
 This mail is for connecting me:
 	dtysky@outlook.com
@@ -47,43 +47,39 @@ module CLOCK (
 
 endmodule
 
-module Crop_TB();
+module Mirror_TB();
 
-	parameter color_width = 8;
+	//For Mirror
 	parameter im_width_bits = 9;
 	parameter im_width = 512;
 	parameter im_height = 512;
+	//Can't be changed in this IP.
+	parameter color_width = 8;
 
-	bit clk,rst_n;
+	bit clk, rst_n;
+	bit[1 : 0] mode;
 	bit in_enable;
 	bit[color_width - 1 : 0] in_data;
 	bit[im_width_bits - 1 : 0] in_count_x, in_count_y;
 	bit out_enable;
 	bit[color_width - 1 : 0] out_data;
 	bit[im_width_bits - 1 : 0] out_count_x, out_count_y;
-	bit[im_width_bits - 1 : 0] top, bottom, left, right;
-	bit in_range;
-
 
 	CLOCK CLOCK1(clk);
-	Crop #(color_width, im_width_bits, im_width, im_height)
-		Crop1(
-			clk, rst_n, top, bottom, left, right,
+	Mirror #(color_width, im_width, im_height, im_width_bits)
+		Mirror1(
+			clk, rst_n, mode,
 			in_enable, in_data, in_count_x, in_count_y,
-			out_enable, out_data, out_count_x, out_count_y, in_range);
+			out_enable, out_data, out_count_x, out_count_y); 
 
 	integer fi,fo;
 	string fname[$];
-	string ftmp,imsize;
+	string ftmp, imsize, act_now;
 	int fsize;
 
-	bit now_start = 0;
+	bit now_start;
 
 	initial begin
-		top = 50;
-		bottom = 462;
-		left = 50;
-		right = 462;
 		fi = $fopen("imgindex.dat","r");
 		while (!$feof(fi)) begin
 			$fscanf(fi,"%s",ftmp);
@@ -91,35 +87,48 @@ module Crop_TB();
 		end
 		$fclose(fi);
 		fsize = fname.size();
+		@(posedge clk);
 		for (int i = 0; i < fsize; i++) begin;
-			rst_n = 0;
-			in_enable = 0;
-			now_start = 0;
-			repeat(10) @(posedge clk);
-			rst_n = 1;
 			ftmp = fname.pop_back();
-			fi = $fopen({ftmp,".dat"},"r");
-			fo = $fopen({ftmp,".res"},"w");
-			//Keep xsize and ysize
-			$fscanf(fi,"%s",imsize);
-			$fwrite(fo,"%s\n",imsize);
-			$fscanf(fi,"%s",imsize);
-			$fwrite(fo,"%s\n",imsize);
-			while (!$feof(fi)) begin 
+			for (int j = 0; j < 3; j++) begin;
+
+				case (j)
+					0 : act_now = "Hori";
+					1 : act_now = "Vert";
+					2 : act_now = "All";
+					default : /* default */;
+				endcase
+
+				mode = j;
+				rst_n = 0;
+				now_start = 0;
+				in_enable = 0;
+				repeat(10) @(posedge clk);
+				rst_n = 1;
 				@(posedge clk);
-				$fscanf(fi, "%b", in_count_x);
-				$fscanf(fi, "%b", in_count_y);
-				$fscanf(fi, "%b", in_data);
-				in_enable = 1;
-				if(out_enable) begin
-					if(~now_start)
-						$display("%m: at time %t ps , start%d !", $time, i);
-					now_start = 1;
-					$fwrite(fo, "%0d , %0d , %0d\n", out_count_x, out_count_y, out_data);
+				fi = $fopen({ftmp, ".dat"}, "r");
+				fo = $fopen({ftmp, act_now, ".res"}, "w");
+				//Keep xsize and ysize
+				$fscanf(fi,"%s",imsize);
+				$fwrite(fo,"%s\n",imsize);
+				$fscanf(fi,"%s",imsize);
+				$fwrite(fo,"%s\n",imsize);
+				while(!$feof(fi)) begin 
+					@(posedge clk);
+					in_enable = 1;
+					$fscanf(fi, "%b", in_count_x);
+					$fscanf(fi, "%b", in_count_y);
+					$fscanf(fi, "%b", in_data);
+					if(out_enable) begin
+						if(~now_start)
+							$display("%m: at time %t ps , %0d %s start !", $time, i, act_now);
+						now_start = 1;
+						$fwrite(fo, "%0d , %0d , %0d\n", out_count_x, out_count_y, out_data);
+					end
 				end
+				$fclose(fi);
+				$fclose(fo);
 			end
-			$fclose(fi);
-			$fclose(fo);
 		end
 		$finish;
 	end

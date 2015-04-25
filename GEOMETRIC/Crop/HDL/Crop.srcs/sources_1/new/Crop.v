@@ -22,16 +22,16 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 Documents for all modules:
-http://image-on-fpga.dtysky.moe
+	http://image-on-fpga.dtysky.moe
 
 All modules for image processing project:
-https://github.com/dtysky/Image-processing-on-FPGA
+	https://github.com/dtysky/FPGA-Imaging-Libaray
 
 This mail is for connecting me:
-dtysky@outlook.com
+	dtysky@outlook.com
 
 My blog is here:
-http://dtysky.moe
+	http://dtysky.moe
 
 */
 

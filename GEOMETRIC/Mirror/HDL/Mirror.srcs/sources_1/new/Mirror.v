@@ -1,7 +1,7 @@
 /*
-Image processing project : Pan.
+Image processing project : Mirror.
 
-Function: Panning a image from your given offset.
+Function: Getting a mirror of your given image.
 
 Main module.
 
@@ -22,26 +22,25 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 Documents for all modules:
-http://image-on-fpga.dtysky.moe
+	http://ifl.dtysky.moe
 
 All modules for image processing project:
-https://github.com/dtysky/Image-processing-on-FPGA
+	https://github.com/dtysky/FPGA-Imaging-Library
 
 This mail is for connecting me:
-dtysky@outlook.com
+	dtysky@outlook.com
 
 My blog is here:
-http://dtysky.moe
+	http://dtysky.moe
 
 */
 
 `timescale 1ns / 1ps
 
-module Pan(
+module Mirror(
 	clk,
 	rst_n,
-	offset_x,
-	offset_y,
+	mode,
 	in_enable,
 	in_data,
 	in_count_x,
@@ -57,7 +56,8 @@ module Pan(
 	parameter im_width_bits = 9;
 	
 	input clk, rst_n;
-	input signed [im_width_bits : 0] offset_x, offset_y;
+	//0 for horizontal, 1 for vertical, 2 for all
+	input[1 : 0] mode;
 	input in_enable;
 	input[color_width - 1 : 0] in_data;
 	input[im_width_bits - 1 : 0] in_count_x, in_count_y;
@@ -65,31 +65,49 @@ module Pan(
 	output[color_width - 1 : 0] out_data;
 	output[im_width_bits - 1 : 0] out_count_x, out_count_y;
 
-	wire signed [im_width_bits : 0] tmp_out_x, tmp_out_y;
-
-	function signed [im_width_bits : 0] out_count_gen(
-		input[im_width_bits - 1 : 0] c,
-		input signed [im_width_bits : 0] coffset,
-		input[im_width_bits - 1 : 0] csize);
-		reg signed [im_width_bits : 0] c_sum;
-		reg [im_width_bits - 1 : 0] out_sp;
-		begin
-			c_sum = c + coffset;
-			out_sp = c_sum >= csize ? c_sum - csize : c_sum + csize;
-			out_count_gen = c_sum < csize && c_sum >= 0 ? c_sum : out_sp;
-		end
-	endfunction
+	reg[im_width_bits - 1 : 0] reg_out_x, reg_out_y;
+	reg[color_width - 1 : 0] reg_out_data;
+	reg reg_out_enable;
 	
-	assign out_enable = ~rst_n || ~in_enable ? 0 : 1;
+	always @(posedge clk or negedge rst_n or negedge in_enable) begin
+		if(~rst_n || ~in_enable)
+			reg_out_enable <= 0;
+		else
+			reg_out_enable <= 1;
+	end
 
-	assign tmp_out_x = out_count_gen(in_count_x, offset_x, im_width);
-	assign tmp_out_y = out_count_gen(in_count_y, offset_y, im_height);
+	always @(posedge clk or negedge rst_n or negedge in_enable) begin
+		if(~rst_n || ~in_enable)
+			reg_out_data <= 0;
+		else
+			reg_out_data <= in_data;
+	end
 
-	assign out_count_x = ~rst_n || ~in_enable ? 0 : tmp_out_x[im_width_bits - 1 : 0];
-	assign out_count_y = ~rst_n || ~in_enable ? 0 : tmp_out_y[im_width_bits - 1 : 0];
-	assign out_data =
-		tmp_out_x >= offset_x && tmp_out_x < im_width + offset_x &&
-		tmp_out_y >= offset_y && tmp_out_y < im_height + offset_y ?
-		in_data : 0;
+	always @(posedge clk or negedge rst_n or negedge in_enable) begin
+		if(~rst_n || ~in_enable)
+			reg_out_x <= 0;
+		else begin
+			case (mode)
+				1 : reg_out_x <= in_count_x;
+				default : reg_out_x <= im_width - in_count_x;
+			endcase
+		end
+	end
+
+	always @(posedge clk or negedge rst_n or negedge in_enable) begin
+		if(~rst_n || ~in_enable)
+			reg_out_y <= 0;
+		else begin 
+			case (mode)
+				0 : reg_out_y <= in_count_y;
+				default : reg_out_y <= im_width - in_count_y;
+			endcase
+		end
+	end
+
+	assign out_enable = reg_out_enable;
+	assign out_count_x = reg_out_x;
+	assign out_count_y = reg_out_y;
+	assign out_data = reg_out_data;
 
 endmodule
