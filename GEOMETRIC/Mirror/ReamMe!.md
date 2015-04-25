@@ -1,4 +1,6 @@
-Using these to simulate:  
+# Testing for this module just support gray-scale images !  
+
+# Using these to simulate:  
 
 At first, changing your work path:  
     
