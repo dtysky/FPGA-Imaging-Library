@@ -58,7 +58,7 @@ def transform(im, xscale, yscale):
 	for y in xrange(ysize):
 		for x in xrange(xsize):
 			xaddress, yaddress = address_gen(x, y)
-			if xaddress < 0 or xaddress >= xsize or yaddress < 0 or yaddress >= ysize:
+			if xaddress >= xsize or yaddress >= ysize:
 				pass
 			else:
 				data_res[y * xsize + x] = data_src[yaddress * xsize + xaddress]

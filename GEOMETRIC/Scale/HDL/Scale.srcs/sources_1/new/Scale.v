@@ -40,8 +40,8 @@ My blog:
 module Scale(
 	clk,
 	rst_n,
-	xscale,
-	yscale,
+	scale_x,
+	scale_y,
 	in_enable,
 	frame_in_enable,
 	frame_in_data,
@@ -58,7 +58,7 @@ module Scale(
 	
 	input clk, rst_n;
 	//16{integer}.16{decimal}
-	input[31 : 0] xscale, yscale;
+	input[31 : 0] scale_x, scale_y;
 	input in_enable;
 	input frame_in_enable;
 	input frame_in_data;
@@ -93,8 +93,8 @@ module Scale(
 
 
 	wire[47 : 0] mul_x_p, mul_y_p;
-	Multiplier16x32 MulX(clk, {{16 - im_width_bits{1'b0}}, count_x}, xscale, mul_x_p);
-	Multiplier16x32 MulY(clk, {{16 - im_width_bits{1'b0}}, count_y}, yscale, mul_y_p);
+	Multiplier16x32 MulX(clk, {{16 - im_width_bits{1'b0}}, count_x}, scale_x, mul_x_p);
+	Multiplier16x32 MulY(clk, {{16 - im_width_bits{1'b0}}, count_y}, scale_y, mul_y_p);
 
 	assign frame_out_count_x = mul_x_p[im_width_bits + 16 : 16];
 	assign frame_out_count_y = mul_y_p[im_width_bits + 16 : 16];
@@ -103,15 +103,17 @@ module Scale(
 	always @(posedge clk or negedge rst_n or negedge in_enable) begin
 		if(~rst_n || ~in_enable)
 			con_mul_enable <= 0;
-		else if(con_mul_enable == 3)
+		else if(con_mul_enable == 4)
 			con_mul_enable <= con_mul_enable;
 		else
 			con_mul_enable <= con_mul_enable + 1;
 	end
-	assign frame_out_enable = con_mul_enable == 3 ? 1 : 0;
+	assign frame_out_enable = con_mul_enable == 4 ? 1 : 0;
 
-	assign out_enable = ~rst_n || ~frame_in_enable ? 1 : 0;
-	assign out_data = frame_in_data;
+	assign out_enable = ~rst_n || ~frame_in_enable ? 0 : 1;
+	assign out_data = 
+		mul_x_p[47 : 16] >= im_width || mul_y_p[47 : 16] >= im_height 
+		? 0 : frame_in_data;
 
 
 endmodule

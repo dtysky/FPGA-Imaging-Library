@@ -1,10 +1,10 @@
 vsim work.glbl -voptargs=+acc -L unisims_ver work.Scale_TB
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-quietly virtual signal -install /Scale_TB/Scale1 {/Scale_TB/Scale1/xscale[31:16]} xsacle_r
-quietly virtual signal -install /Scale_TB/Scale1 {/Scale_TB/Scale1/xscale[15:0]} xsacle_d
-quietly virtual signal -install /Scale_TB/Scale1 {/Scale_TB/Scale1/yscale[31:16]} ysacle_r
-quietly virtual signal -install /Scale_TB/Scale1 {/Scale_TB/Scale1/yscale[31:16]} ysacle_d
+quietly virtual signal -install /Scale_TB/Scale1 {/Scale_TB/Scale1/scale_x[31:16]} xsacle_r
+quietly virtual signal -install /Scale_TB/Scale1 {/Scale_TB/Scale1/scale_x[15:0]} xsacle_d
+quietly virtual signal -install /Scale_TB/Scale1 {/Scale_TB/Scale1/scale_y[31:16]} ysacle_r
+quietly virtual signal -install /Scale_TB/Scale1 {/Scale_TB/Scale1/scale_y[15:0]} ysacle_d
 add wave -noupdate -radix unsigned /Scale_TB/Scale1/clk
 add wave -noupdate -radix unsigned /Scale_TB/Scale1/rst_n
 add wave -noupdate -radix unsigned /Scale_TB/Scale1/xsacle_r

@@ -60,7 +60,7 @@ module Scale_TB();
 
 	bit clk, rst_n;
 	//16{integer}.16{decimal}
-	bit[31 : 0] xscale, yscale;
+	bit[31 : 0] scale_x, yscale;
 	bit in_enable;
 	bit out_enable;
 	bit[color_width - 1 : 0] out_data;
@@ -84,7 +84,7 @@ module Scale_TB();
 	CLOCK CLOCK1(clk);
 	Scale #(color_width, im_width, im_height, im_width_bits)
 		Scale1(
-			clk, rst_n, xscale, yscale, in_enable,
+			clk, rst_n, scale_x, yscale, in_enable,
 			out_enableR, out_dataR, in_enableR, in_count_xR, in_count_yR,
 			out_enable, out_data); 
 	FrameController2 #(0, color_width, im_width, im_height, im_width_bits, addr_width, ram_read_latency)
@@ -92,7 +92,7 @@ module Scale_TB();
 	FrameController2 #(1, color_width, im_width, im_height, im_width_bits, addr_width, ram_read_latency)
 		FrameRead (clk, rst_n, in_enableR, in_dataR, in_count_xR, in_count_yR, out_enableR, out_dataR, out_count_xR, out_count_yR, ram_addrR);
 	//Write clock must be in the middle of data and address !
-	BRam BRam1(~clk, out_enableW, ram_addrW, out_dataW, clk, ram_addrR, in_dataR);
+	BRam BRam1(clk, out_enableW, ram_addrW, out_dataW, clk, ram_addrR, in_dataR);
 
 	integer fi,fo;
 	string fname[$];
@@ -126,7 +126,7 @@ module Scale_TB();
 			$fwrite(fo,"%s\n", imsize);
 			$fscanf(fi, "%s", imsize);
 			$fwrite(fo, "%s\n", imsize);
-			$fscanf(fi, "%b", xscale);
+			$fscanf(fi, "%b", scale_x);
 			$fscanf(fi, "%b", yscale);
 			while(!$feof(fi)) begin 
 				@(posedge clk);
@@ -142,17 +142,15 @@ module Scale_TB();
 			end
 			in_enableW = 0;
 			now_start = 0;
-			repeat(10) @(posedge clk)
-			for (int i = 0; i < im_height; i++) begin
-				for (int j = 0; j < im_width; i++) begin
-					@(posedge clk);
-					in_enable = 1;
-					if(out_enable) begin
-						if(~now_start)
-							$display("%m: at time %t ps , %s working start !", $time, ftmp);
-						now_start = 1;
-						$fwrite(fo, "%0d", out_data);
-					end
+			repeat(10) @(posedge clk);
+			for (int j = 0; j < im_height * im_width; j++) begin
+				@(posedge clk);
+				in_enable = 1;
+				if(out_enable) begin
+					if(~now_start)
+						$display("%m: at time %t ps , %s working start !", $time, ftmp);
+					now_start = 1;
+					$fwrite(fo, "%0d\n", out_data);
 				end
 			end
 			$fclose(fi);

@@ -238,6 +238,16 @@ Getting a mirror of your given image.
 1. Mirror.v: Main module.    
 2. Mirror_TB.sv: Testbench for Mirror.  
 
+#### 5. Scale:
+
+**Progress:**  
+100%.  
+**Function:**  
+Scaling an image by your given scale.  
+**HDL Files:**  
+1. Scale.v: Main module.    
+2. Scale_TB.sv: Testbench for Scale.  
+
 ### Character:
 
 #### 1.CHR_ASCII_8X8：
