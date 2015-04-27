@@ -8,12 +8,16 @@ At first, changing your work path:
 
 etc.  
     
-    set proj_path B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/Mirror  
+    set proj_path B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2  
 
-Run this at first time:
+Run this commond at first time:
 
-    do $proj_path/FunSimForHDL/Init.do
+    vlib work  
 
-Then, run this:
+Then, compile all your source file:  
+
+    top-menu -> compile -> compile all  
+
+Finally, run this:
 
     do $proj_path/FunSimForHDL/Run.do

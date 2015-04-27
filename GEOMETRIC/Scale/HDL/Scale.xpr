@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="2" Path="B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.xpr">
+<Project Version="7" Minor="2" Path="B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/Scale/HDL/Scale.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="91fe39d8cc5544129e3d781e79b94f9d"/>
+    <Option Name="Id" Val="dc2b1f5503234cce8a73bedd3d83afd7"/>
     <Option Name="Part" Val="xc7z010clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="BoardPart" Val=""/>
@@ -17,7 +17,7 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/new/FrameController2.v">
+      <File Path="$PSRCDIR/sources_1/new/Scale.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -26,7 +26,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="FrameController2"/>
+        <Option Name="TopModule" Val="Scale"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
@@ -38,7 +38,14 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../Scale/HDL/Scale.srcs/sim_1/import/Multiplier16x16_funcsim.v">
+      <File Path="$PSRCDIR/sim_1/import/Multiplier16x16_funcsim.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/import/FrameController2.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -52,7 +59,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sim_1/new/FrameController2_TB.sv">
+      <File Path="$PSRCDIR/sim_1/new/Scale_TB.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -61,14 +68,14 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="FrameController2_TB"/>
+        <Option Name="TopModule" Val="Scale_TB"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
-    <FileSet Name="Multiplier16x16" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Multiplier16x16">
-      <File Path="$PSRCDIR/sources_1/ip/Multiplier16x16/Multiplier16x16.xci">
+    <FileSet Name="Multiplier16x32" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Multiplier16x32">
+      <File Path="$PSRCDIR/sources_1/ip/Multiplier16x32/Multiplier16x32.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -76,7 +83,7 @@
         </FileInfo>
       </File>
       <Config>
-        <Option Name="TopModule" Val="Multiplier16x16"/>
+        <Option Name="TopModule" Val="Multiplier16x32"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -103,7 +110,7 @@
         <Step Id="synth_design"/>
       </Strategy>
     </Run>
-    <Run Id="Multiplier16x16_synth_1" Type="Ft3:Synth" SrcSet="Multiplier16x16" Part="xc7z010clg400-1" ConstrsSet="Multiplier16x16" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Multiplier16x16_synth_1">
+    <Run Id="Multiplier16x32_synth_1" Type="Ft3:Synth" SrcSet="Multiplier16x32" Part="xc7z010clg400-1" ConstrsSet="Multiplier16x32" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Multiplier16x32_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -126,7 +133,7 @@
         <Step Id="write_bitstream"/>
       </Strategy>
     </Run>
-    <Run Id="Multiplier16x16_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Multiplier16x16" Description="Vivado Implementation Defaults" SynthRun="Multiplier16x16_synth_1">
+    <Run Id="Multiplier16x32_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Multiplier16x32" Description="Vivado Implementation Defaults" SynthRun="Multiplier16x32_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
           <Desc>Vivado Implementation Defaults</Desc>

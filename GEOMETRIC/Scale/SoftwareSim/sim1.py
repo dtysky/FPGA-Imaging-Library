@@ -1,6 +1,6 @@
-# Image processing project : Mirror.
+# Image processing project : Scale.
 #
-# Function: Getting a mirror of your given image.
+# Function: Scaling an image by your given scale.
 #
 # Software simulation.
 #
@@ -20,24 +20,26 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Documents for all modules:
+# Homepage for this project:
 # 	http://ifl.dtysky.moe
 
-# All modules for image processing project:
+# Sources for this project:
 # 	https://github.com/dtysky/FPGA-Imaging-Library
 
-# This mail is for connecting me:
+# My e-mail:
 # 	dtysky@outlook.com
 
-# My blog is here:
+# My blog:
 # 	http://dtysky.moe
 
 __author__ = 'Dai Tianyu (dtysky)'
 
 from PIL import Image
-import os
+import os, json
 
-ModuleName='Mirror'
+ModuleName='Scale'
+
+conf = json.load(open('../ImageForTest/conf.json', 'r'))['conf']
 
 FileAll = []
 
@@ -47,29 +49,26 @@ for root,dirs,files in os.walk('../ImageForTest'):
         if ex in ['.jpg', '.png', '.bmp']:
         	FileAll.append((root+'/', name, ex))
 
-# mode: 0 for horizontal, 1 for vertical, 2 for all
-def transform(im, mode):
-	def address_gen(x, y, xmax, ymax):
-		if mode == 0:
-			return xmax - x, y
-		elif mode == 1:
-			return x, ymax - y
-		return xmax - x, ymax - y
+def transform(im, xscale, yscale):
+	def address_gen(x, y):
+		return int(x / xscale), int(y / yscale)
 	data_src = im.getdata()
 	xsize, ysize = im.size
-	data_res = list(data_src)
+	data_res = list(Image.new('L', (xsize, ysize), 0).getdata())
 	for y in xrange(ysize):
 		for x in xrange(xsize):
-			xaddress, yaddress = address_gen(x, y, xsize - 1, ysize - 1)
-			data_res[yaddress * xsize + xaddress] = data_src[y * xsize + x]
+			xaddress, yaddress = address_gen(x, y)
+			if xaddress < 0 or xaddress >= xsize or yaddress < 0 or yaddress >= ysize:
+				pass
+			else:
+				data_res[y * xsize + x] = data_src[yaddress * xsize + xaddress]
 	return data_res
 
 for root, name, ex in FileAll:
 	im_src = Image.open(root + name + ex)
 	im_res = im_src.copy()
-	im_res.putdata(transform(im_src, 0))
-	im_res.save('../SimResCheck/soft' + name + 'Hori.jpg')
-	im_res.putdata(transform(im_src, 1))
-	im_res.save('../SimResCheck/soft' + name + 'Vert.jpg')
-	im_res.putdata(transform(im_src, 2))
-	im_res.save('../SimResCheck/soft' + name + 'All.jpg')
+	for c in conf:
+		xscale = float(c['xscale'])
+		yscale = float(c['yscale'])
+		im_res.putdata(transform(im_src, xscale, yscale))
+		im_res.save('../SimResCheck/%s-%sx%s-soft.jpg' % (name, c['xscale'], c['yscale']))
