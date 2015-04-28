@@ -248,6 +248,16 @@ Scaling an image by your given scale.
 1. Scale.v: Main module.    
 2. Scale_TB.sv: Testbench for Scale.  
 
+#### 6. Rotate:
+
+**Progress:**  
+100%.  
+**Function:**  
+Scaling an image by your given scale, using 16bits sin and cos LUTs.  
+**HDL Files:**  
+1. Rotate.v: Main module.    
+2. Rotate_TB.sv: Testbench for Rotate.  
+
 ### Character:
 
 #### 1.CHR_ASCII_8X8：

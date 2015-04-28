@@ -101,8 +101,8 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="AddSub19x19" Type="BlockSrcs" RelSrcDir="$PSRCDIR/AddSub19x19">
-      <File Path="$PSRCDIR/sources_1/ip/AddSub19x19/AddSub19x19.xci">
+    <FileSet Name="AddSub19Sx19S" Type="BlockSrcs" RelSrcDir="$PSRCDIR/AddSub19Sx19S">
+      <File Path="$PSRCDIR/sources_1/ip/AddSub19Sx19S/AddSub19Sx19S.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -110,7 +110,7 @@
         </FileInfo>
       </File>
       <Config>
-        <Option Name="TopModule" Val="AddSub19x19"/>
+        <Option Name="TopModule" Val="AddSub19Sx19S"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -146,7 +146,7 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="AddSub19x19_synth_1" Type="Ft3:Synth" SrcSet="AddSub19x19" Part="xc7z010clg400-1" ConstrsSet="AddSub19x19" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/AddSub19x19_synth_1">
+    <Run Id="AddSub19Sx19S_synth_1" Type="Ft3:Synth" SrcSet="AddSub19Sx19S" Part="xc7z010clg400-1" ConstrsSet="AddSub19Sx19S" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/AddSub19Sx19S_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -185,7 +185,7 @@
         <Step Id="write_bitstream"/>
       </Strategy>
     </Run>
-    <Run Id="AddSub19x19_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="AddSub19x19" Description="Vivado Implementation Defaults" SynthRun="AddSub19x19_synth_1">
+    <Run Id="AddSub19Sx19S_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="AddSub19Sx19S" Description="Vivado Implementation Defaults" SynthRun="AddSub19Sx19S_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
           <Desc>Vivado Implementation Defaults</Desc>

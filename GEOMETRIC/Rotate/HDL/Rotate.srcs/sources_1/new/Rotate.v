@@ -117,12 +117,12 @@ module Rotate(
 	Multiplier18Sx17S MulY2(clk, cosa, mul_y_b2, mul_y_p2);
 
 	wire signed [18 : 0] add_x1, add_y1;
-	AddSub19x19 AddX1(mul_x_r1, mul_x_r2, clk, add_x1);
-	AddSub19x19 AddY1(mul_y_r1, mul_y_r2, clk, add_y1);
+	AddSub19Sx19S AddX1(mul_x_r1, mul_x_r2, clk, add_x1);
+	AddSub19Sx19S AddY1(mul_y_r1, mul_y_r2, clk, add_y1);
 
 	wire signed [18 : 0] tmp_frame_count_x, tmp_frame_count_y;
-	AddSub19x19 AddX2(add_x1, `im_width_half, clk, tmp_frame_count_x);
-	AddSub19x19 AddY2(add_y1, `im_height_half, clk, tmp_frame_count_y);
+	AddSub19Sx19S AddX2(add_x1, `im_width_half, clk, tmp_frame_count_x);
+	AddSub19Sx19S AddY2(add_y1, `im_height_half, clk, tmp_frame_count_y);
 
 	assign frame_out_count_x = tmp_frame_count_x[im_width_bits - 1 : 0];
 	assign frame_out_count_y = tmp_frame_count_y[im_width_bits - 1 : 0];
@@ -131,13 +131,13 @@ module Rotate(
 	always @(posedge clk or negedge rst_n or negedge in_enable) begin
 		if(~rst_n || ~in_enable)
 			con_mul_enable <= 0;
-		// 2 + 3 + 2
-		else if(con_mul_enable == 7)
+		// 2 + 4 + 2
+		else if(con_mul_enable == 8)
 			con_mul_enable <= con_mul_enable;
 		else
 			con_mul_enable <= con_mul_enable + 1;
 	end
-	assign frame_out_enable = con_mul_enable == 7 ? 1 : 0;
+	assign frame_out_enable = con_mul_enable == 8 ? 1 : 0;
 
 	assign out_enable = ~rst_n || ~frame_in_enable ? 0 : 1;
 	genvar i;

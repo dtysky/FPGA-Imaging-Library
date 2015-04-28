@@ -79,7 +79,7 @@ module Rotate_TB();
 	bit[addr_width - 1 : 0] ram_addrR;
 
 	CLOCK CLOCK1(clk);
-	Rotate #(color_width, im_width, im_height, im_width_bits, ram_read_latency)
+	Rotate #(color_width, im_width, im_height, im_width_bits, ram_read_latency + 2)
 		Rotate1(
 			clk, rst_n, angle, in_enable,
 			out_enableR, out_dataR, in_enableR, in_count_xR, in_count_yR,
