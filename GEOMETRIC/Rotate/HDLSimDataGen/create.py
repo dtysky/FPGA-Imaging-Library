@@ -36,6 +36,7 @@ def scale_format(scale):
 			res += '1' if tmp >= 1 else '0'
 			tmp = tmp - 1 if tmp >= 1 else tmp
 		return res
+
 	r, d = str(format(1 / float(scale), '.16f')).split('.')
 	r, d = format_r(r), format_d(d)
 	return r + d
