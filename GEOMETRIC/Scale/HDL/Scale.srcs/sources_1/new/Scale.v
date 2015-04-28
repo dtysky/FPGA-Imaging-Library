@@ -61,7 +61,6 @@ module Scale(
 	input[31 : 0] scale_x, scale_y;
 	input in_enable;
 	input frame_in_enable;
-	input frame_in_data;
 	input[color_width - 1 : 0] frame_in_data;
 	output frame_out_enable;
 	output[im_width_bits - 1 : 0] frame_out_count_x, frame_out_count_y;

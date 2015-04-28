@@ -1,11 +1,4 @@
-B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.srcs/sources_1/new/FrameController2.v {1 {vlog -work work -vopt B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.srcs/sources_1/new/FrameController2.v
-Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
--- Compiling module FrameController2
-
-Top level modules:
-	FrameController2
-
-} {} {}} B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.srcs/sim_1/new/FrameController2_TB.sv {1 {vlog -work work -vopt -sv B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.srcs/sim_1/new/FrameController2_TB.sv
+B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.srcs/sim_1/new/FrameController2_TB.sv {1 {vlog -work work -vopt -sv B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.srcs/sim_1/new/FrameController2_TB.sv
 Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 -- Compiling module CLOCK
 -- Compiling module FrameController2_TB
@@ -13,14 +6,14 @@ Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 Top level modules:
 	FrameController2_TB
 
-} {} {}} B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.srcs/sources_1/ip/Multiplier/Multiplier_funcsim.v {1 {vlog -work work -vopt B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.srcs/sources_1/ip/Multiplier/Multiplier_funcsim.v
+} {} {}} B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.srcs/sources_1/ip/MultiplierAdd16x16x16/MultiplierAdd16x16x16_funcsim.v {1 {vlog -work work -vopt B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.srcs/sources_1/ip/MultiplierAdd16x16x16/MultiplierAdd16x16x16_funcsim.v
 Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
--- Compiling module Multiplier
--- Compiling module Multiplier_mult_gen_v12_0__parameterized0
+-- Compiling module MultiplierAdd16x16x16
+-- Compiling module MultiplierAdd16x16x16_xbip_multadd_v3_0__parameterized0
 -- Compiling module glbl
 
 Top level modules:
-	Multiplier
+	MultiplierAdd16x16x16
 	glbl
 
 } {} {}} B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.srcs/sim_1/import/BRam_funcsim.v {1 {vlog -work work -vopt B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.srcs/sim_1/import/BRam_funcsim.v
@@ -115,6 +108,16 @@ Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 
 Top level modules:
 	BRam
+	glbl
+
+} {} {}} B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.srcs/sources_1/ip/Multiplier16x16/Multiplier16x16_funcsim.v {1 {vlog -work work -vopt B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/FrameController2/HDL/FrameController2.srcs/sources_1/ip/Multiplier16x16/Multiplier16x16_funcsim.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module Multiplier16x16
+-- Compiling module Multiplier16x16_mult_gen_v12_0__parameterized0
+-- Compiling module glbl
+
+Top level modules:
+	Multiplier16x16
 	glbl
 
 } {} {}}

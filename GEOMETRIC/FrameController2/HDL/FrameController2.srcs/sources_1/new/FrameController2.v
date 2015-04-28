@@ -42,8 +42,6 @@ module FrameController2(
 	in_count_y,
 	out_enable,
 	out_data,
-	out_count_x,
-	out_count_y,
 	ram_addr);
 
 	//0 for write, 1 for read
@@ -61,15 +59,16 @@ module FrameController2(
 	input[im_width_bits - 1 : 0] in_count_x, in_count_y;
 	output out_enable;
 	output[color_width - 1 : 0] out_data;
-	output[im_width_bits - 1 : 0] out_count_x, out_count_y;
 	output[addr_width - 1 : 0] ram_addr;
 
-	wire[15 : 0] mul_a, mul_b;
-	wire[31 : 0] mul_p;
+	reg[15 : 0] reg_mul_c;
+	always @(posedge clk)
+		reg_mul_c <= {{(16 - im_width_bits){1'b0}}, in_count_x};
+	wire[15 : 0] mul_a, mul_b, mul_c;
 	assign mul_a = {{(16 - im_width_bits){1'b0}}, in_count_y};
 	assign mul_b = im_width;
-	assign ram_addr = mul_p + in_count_x;
-	Multiplier16x16 Mul1(clk, mul_a, mul_b, mul_p);
+	assign mul_c = reg_mul_c;
+	MultiplierAdd16x16x16 MulAdd1(clk, 1, 0, mul_a, mul_b, mul_c, 0, ram_addr);
 
 	genvar i;
 	generate
@@ -104,11 +103,11 @@ module FrameController2(
 			reg[3 : 0] con_enable;
 
 			assign out_data = ~rst_n || ~in_enable ? 0 : in_data;
-			assign out_enable = con_enable == ram_read_latency ? 1 : 0;
+			assign out_enable = con_enable == ram_read_latency + 2 ? 1 : 0;
 			always @(posedge clk or negedge rst_n or negedge in_enable) begin
 				if(~rst_n || ~in_enable)
 					con_enable <= 0;
-				else if (con_enable == ram_read_latency)
+				else if (con_enable == ram_read_latency + 2)
 					con_enable <= con_enable;
 				else
 					con_enable <= con_enable + 1;

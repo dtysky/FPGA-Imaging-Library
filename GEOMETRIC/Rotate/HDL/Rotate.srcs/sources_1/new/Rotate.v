@@ -36,12 +36,13 @@ My blog:
 */
 
 `timescale 1ns / 1ps
+`define im_width_half im_width / 2
+`define im_height_half im_height / 2
 
 module Rotate(
 	clk,
 	rst_n,
-	scale_x,
-	scale_y,
+	angle,
 	in_enable,
 	frame_in_enable,
 	frame_in_data,
@@ -52,13 +53,14 @@ module Rotate(
 	out_data);
 
 	parameter color_width = 8;
-	parameter im_width = 320;
-	parameter im_height = 240;
+	parameter signed[16 : 0] im_width = 320;
+	parameter signed[16 : 0] im_height = 240;
 	parameter im_width_bits = 9;
+	parameter frame_read_latency = 2;
 	
 	input clk, rst_n;
-	//16{integer}.16{decimal}
-	input[31 : 0] scale_x, scale_y;
+	//0 - 359
+	input[8 : 0] angle;
 	input in_enable;
 	input frame_in_enable;
 	input frame_in_data;
@@ -68,51 +70,96 @@ module Rotate(
 	output out_enable;
 	output[color_width - 1 : 0] out_data;
 
-	reg[im_width_bits - 1 : 0] reg_count_x, reg_count_y;
-	wire[im_width_bits - 1 : 0] count_x = reg_count_x;
-	wire[im_width_bits - 1 : 0] count_y = reg_count_y;
+	reg signed [im_width_bits : 0] reg_count_u, reg_count_v;
+	wire signed [im_width_bits : 0] count_u = reg_count_u;
+	wire signed [im_width_bits : 0] count_v = reg_count_v;
 	always @(posedge clk or negedge rst_n or negedge in_enable) begin
 		if(~rst_n || ~in_enable)
-			reg_count_x <= 0;
-		else if(reg_count_x == im_width - 1)
-			reg_count_x <= 0;
+			reg_count_u <= 0;
+		else if(reg_count_u == im_width - 1)
+			reg_count_u <= 0;
 		else
-			reg_count_x <= reg_count_x + 1;
+			reg_count_u <= reg_count_u + 1;
 	end
-
 	always @(posedge clk or negedge rst_n or negedge in_enable) begin
 		if(~rst_n || ~in_enable)
-			reg_count_y <= 0;
-		else if(reg_count_x == im_width - 1 && reg_count_y == im_height - 1)
-			reg_count_y <= 0;
-		else if(reg_count_x == im_width - 1)
-			reg_count_y <= reg_count_y + 1;
+			reg_count_v <= 0;
+		else if(reg_count_u == im_width - 1 && reg_count_v == im_height - 1)
+			reg_count_v <= 0;
+		else if(reg_count_u == im_width - 1)
+			reg_count_v <= reg_count_v + 1;
 		else
-			reg_count_y <= reg_count_y;
+			reg_count_v <= reg_count_v;
 	end
 
+	wire [17 : 0] sina_o, cosa_o;
+	SinLUT Sin1(angle, sina_o);
+	CosLUT Cos1(angle, cosa_o);
 
-	wire[47 : 0] mul_x_p, mul_y_p;
-	Multiplier16x32 MulX(clk, {{16 - im_width_bits{1'b0}}, count_x}, scale_x, mul_x_p);
-	Multiplier16x32 MulY(clk, {{16 - im_width_bits{1'b0}}, count_y}, scale_y, mul_y_p);
+	// Convert to complementation
+	wire signed [17 : 0] sina = sina_o[17] == 0 ? sina_o : {sina_o[17], ~sina_o[16 : 0] + 1};
+	wire signed [17 : 0] cosa = cosa_o[17] == 0 ? cosa_o : {cosa_o[17], ~cosa_o[16 : 0] + 1};
 
-	assign frame_out_count_x = mul_x_p[im_width_bits + 16 : 16];
-	assign frame_out_count_y = mul_y_p[im_width_bits + 16 : 16];
+	// x = (u -xcenter) * cos(a) + (v - ycenter) * sin(a) + xcenter
+	// y = (- u + xcenter)  * sin(a) + (v - ycenter) * cos(a) + ycenter
+	wire signed [34 : 0] mul_x_p1, mul_x_p2, mul_y_p1, mul_y_p2;
+	wire signed [16 : 0] mul_x_b1 = count_u - `im_width_half;
+	wire signed [16 : 0] mul_x_b2 = count_v - `im_height_half;
+	wire signed [16 : 0] mul_y_b1 = `im_width_half - count_u;
+	wire signed [16 : 0] mul_y_b2 = count_v - `im_height_half;
+	wire signed [18 : 0] mul_x_r1 = mul_x_p1 >>> 16;
+	wire signed [18 : 0] mul_x_r2 = mul_x_p2 >>> 16;
+	wire signed [18 : 0] mul_y_r1 = mul_y_p1 >>> 16;
+	wire signed [18 : 0] mul_y_r2 = mul_y_p2 >>> 16;
+	Multiplier18Sx17S MulX1(clk, cosa, mul_x_b1, mul_x_p1);
+	Multiplier18Sx17S MulX2(clk, sina, mul_x_b2, mul_x_p2);
+	Multiplier18Sx17S MulY1(clk, sina, mul_y_b1, mul_y_p1);
+	Multiplier18Sx17S MulY2(clk, cosa, mul_y_b2, mul_y_p2);
 
-	reg[2 : 0] con_mul_enable;
+	wire signed [18 : 0] add_x1, add_y1;
+	AddSub19x19 AddX1(mul_x_r1, mul_x_r2, clk, add_x1);
+	AddSub19x19 AddY1(mul_y_r1, mul_y_r2, clk, add_y1);
+
+	wire signed [18 : 0] tmp_frame_count_x, tmp_frame_count_y;
+	AddSub19x19 AddX2(add_x1, `im_width_half, clk, tmp_frame_count_x);
+	AddSub19x19 AddY2(add_y1, `im_height_half, clk, tmp_frame_count_y);
+
+	assign frame_out_count_x = tmp_frame_count_x[im_width_bits - 1 : 0];
+	assign frame_out_count_y = tmp_frame_count_y[im_width_bits - 1 : 0];
+
+	reg[3 : 0] con_mul_enable;
 	always @(posedge clk or negedge rst_n or negedge in_enable) begin
 		if(~rst_n || ~in_enable)
 			con_mul_enable <= 0;
-		else if(con_mul_enable == 4)
+		// 2 + 3 + 2
+		else if(con_mul_enable == 7)
 			con_mul_enable <= con_mul_enable;
 		else
 			con_mul_enable <= con_mul_enable + 1;
 	end
-	assign frame_out_enable = con_mul_enable == 4 ? 1 : 0;
+	assign frame_out_enable = con_mul_enable == 7 ? 1 : 0;
 
 	assign out_enable = ~rst_n || ~frame_in_enable ? 0 : 1;
+	genvar i;
+	generate
+		for (i = 0; i < frame_read_latency; i = i + 1) begin : count_buffer
+			reg signed [18 : 0] x, y;
+			if(i == 0) begin
+				always @(posedge clk) begin
+					x <= tmp_frame_count_x;
+					y <= tmp_frame_count_y;
+				end
+			end else begin
+				always @(posedge clk) begin
+					x <= count_buffer[i - 1].x;
+					y <= count_buffer[i - 1].y;
+				end
+			end
+		end
+	endgenerate
 	assign out_data = 
-		mul_x_p[47 : 16] >= im_width || mul_y_p[47 : 16] >= im_height 
+		count_buffer[frame_read_latency - 1].x >= im_width || count_buffer[frame_read_latency - 1].y >= im_height || 
+		count_buffer[frame_read_latency - 1].x < 0 || count_buffer[frame_read_latency - 1].y < 0
 		? 0 : frame_in_data;
 
 

@@ -17,15 +17,26 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/new/Rotate.v">
+      <File Path="$PSRCDIR/sources_1/new/SinLUT.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/component.xml">
-        <FileInfo SFType="IPXACT"/>
+      <File Path="$PSRCDIR/sources_1/new/CosLUT.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Rotate.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
@@ -41,7 +52,7 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sim_1/import/Multiplier16x16_funcsim.v">
+      <File Path="$PSRCDIR/sim_1/import/MultiplierAdd16x16x16_funcsim.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -77,8 +88,8 @@
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
-    <FileSet Name="Multiplier16x32" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Multiplier16x32">
-      <File Path="$PSRCDIR/sources_1/ip/Multiplier16x32/Multiplier16x32.xci">
+    <FileSet Name="Multiplier18Sx17S" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Multiplier18Sx17S">
+      <File Path="$PSRCDIR/sources_1/ip/Multiplier18Sx17S/Multiplier18Sx17S.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -86,7 +97,20 @@
         </FileInfo>
       </File>
       <Config>
-        <Option Name="TopModule" Val="Multiplier16x32"/>
+        <Option Name="TopModule" Val="Multiplier18Sx17S"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="AddSub19x19" Type="BlockSrcs" RelSrcDir="$PSRCDIR/AddSub19x19">
+      <File Path="$PSRCDIR/sources_1/ip/AddSub19x19/AddSub19x19.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="AddSub19x19"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -113,7 +137,16 @@
         <Step Id="synth_design"/>
       </Strategy>
     </Run>
-    <Run Id="Multiplier16x32_synth_1" Type="Ft3:Synth" SrcSet="Multiplier16x32" Part="xc7z010clg400-1" ConstrsSet="Multiplier16x32" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Multiplier16x32_synth_1">
+    <Run Id="Multiplier18Sx17S_synth_1" Type="Ft3:Synth" SrcSet="Multiplier18Sx17S" Part="xc7z010clg400-1" ConstrsSet="Multiplier18Sx17S" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Multiplier18Sx17S_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="AddSub19x19_synth_1" Type="Ft3:Synth" SrcSet="AddSub19x19" Part="xc7z010clg400-1" ConstrsSet="AddSub19x19" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/AddSub19x19_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -136,7 +169,23 @@
         <Step Id="write_bitstream"/>
       </Strategy>
     </Run>
-    <Run Id="Multiplier16x32_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Multiplier16x32" Description="Vivado Implementation Defaults" SynthRun="Multiplier16x32_synth_1">
+    <Run Id="Multiplier18Sx17S_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Multiplier18Sx17S" Description="Vivado Implementation Defaults" SynthRun="Multiplier18Sx17S_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
+          <Desc>Vivado Implementation Defaults</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="AddSub19x19_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="AddSub19x19" Description="Vivado Implementation Defaults" SynthRun="AddSub19x19_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
           <Desc>Vivado Implementation Defaults</Desc>

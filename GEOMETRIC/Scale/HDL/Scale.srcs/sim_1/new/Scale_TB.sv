@@ -60,7 +60,7 @@ module Scale_TB();
 
 	bit clk, rst_n;
 	//16{integer}.16{decimal}
-	bit[31 : 0] scale_x, yscale;
+	bit[31 : 0] scale_x, scale_y;
 	bit in_enable;
 	bit out_enable;
 	bit[color_width - 1 : 0] out_data;
@@ -84,7 +84,7 @@ module Scale_TB();
 	CLOCK CLOCK1(clk);
 	Scale #(color_width, im_width, im_height, im_width_bits)
 		Scale1(
-			clk, rst_n, scale_x, yscale, in_enable,
+			clk, rst_n, scale_x, scale_y, in_enable,
 			out_enableR, out_dataR, in_enableR, in_count_xR, in_count_yR,
 			out_enable, out_data); 
 	FrameController2 #(0, color_width, im_width, im_height, im_width_bits, addr_width, ram_read_latency)
@@ -127,7 +127,7 @@ module Scale_TB();
 			$fscanf(fi, "%s", imsize);
 			$fwrite(fo, "%s\n", imsize);
 			$fscanf(fi, "%b", scale_x);
-			$fscanf(fi, "%b", yscale);
+			$fscanf(fi, "%b", scale_y);
 			while(!$feof(fi)) begin 
 				@(posedge clk);
 				in_enableW = 1;

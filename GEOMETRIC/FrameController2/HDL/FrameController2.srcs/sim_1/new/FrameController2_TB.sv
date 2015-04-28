@@ -61,7 +61,6 @@ module FrameController2_TB();
 	bit out_enableW;
 	bit[color_width - 1 : 0] out_dataW;
 	bit[addr_width - 1 : 0] ram_addrW;
-	bit[im_width_bits - 1 : 0] out_count_xW, out_count_yW;
 
 	bit[im_width_bits - 1 : 0] in_count_xR, in_count_yR;
 	bit in_enableR;
@@ -69,13 +68,12 @@ module FrameController2_TB();
 	bit out_enableR;
 	bit[color_width - 1 : 0] out_dataR;
 	bit[addr_width - 1 : 0] ram_addrR;
-	bit[im_width_bits - 1 : 0] out_count_xR, out_count_yR;
 
 	CLOCK CLOCK1(clk);
 	FrameController2 #(0, color_width, im_width, im_height, im_width_bits, addr_width, ram_read_latency)
-		FrameWrite (clk, rst_n, in_enableW, in_dataW, in_count_xW, in_count_yW, out_enableW, out_dataW, out_count_xW, out_count_yW, ram_addrW);
+		FrameWrite (clk, rst_n, in_enableW, in_dataW, in_count_xW, in_count_yW, out_enableW, out_dataW, ram_addrW);
 	FrameController2 #(1, color_width, im_width, im_height, im_width_bits, addr_width, ram_read_latency)
-		FrameRead (clk, rst_n, in_enableR, in_dataR, in_count_xR, in_count_yR, out_enableR, out_dataR, out_count_xR, out_count_yR, ram_addrR);
+		FrameRead (clk, rst_n, in_enableR, in_dataR, in_count_xR, in_count_yR, out_enableR, out_dataR, ram_addrR);
 	//Write clock must be in the middle of data and address !
 	BRam BRam1(~clk, out_enableW, ram_addrW, out_dataW, clk, ram_addrR, in_dataR);
 
@@ -119,14 +117,13 @@ module FrameController2_TB();
 				$fscanf(fi, "%b", in_count_yW);
 				$fscanf(fi, "%b", in_dataW);
 			end
-			repeat(3) @(posedge clk);
+			repeat(10) @(posedge clk);
 			$display("%m: at time %t ps , frame %s read begin!", $time, ftmp);
 			in_enableW = 0;
-			@(posedge clk)
-			in_enableR = 1;
 			for (in_count_yR = 0; in_count_yR < im_width; in_count_yR++) begin
 				for (in_count_xR = 0; in_count_xR < im_width; in_count_xR++) begin
 					@(posedge clk)
+					in_enableR = 1;
 					if(out_enableR)
 						$fwrite(fo,"%d\n",out_dataR);
 				end

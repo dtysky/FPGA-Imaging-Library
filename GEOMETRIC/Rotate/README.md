@@ -8,7 +8,7 @@ At first, changing your work path:
 
 etc.  
     
-    set proj_path B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/Scale  
+    set proj_path B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/Rotate  
 
 Run this commond at first time:
 

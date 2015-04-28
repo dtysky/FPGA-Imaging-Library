@@ -47,7 +47,7 @@ module CLOCK (
 
 endmodule
 
-module Scale_TB();
+module Rotate_TB();
 
 	//For Frame
 	parameter im_width_bits = 9;
@@ -59,8 +59,7 @@ module Scale_TB();
 	parameter color_width = 8;
 
 	bit clk, rst_n;
-	//16{integer}.16{decimal}
-	bit[31 : 0] scale_x, yscale;
+	bit[8 : 0] angle;
 	bit in_enable;
 	bit out_enable;
 	bit[color_width - 1 : 0] out_data;
@@ -71,7 +70,6 @@ module Scale_TB();
 	bit out_enableW;
 	bit[color_width - 1 : 0] out_dataW;
 	bit[addr_width - 1 : 0] ram_addrW;
-	bit[im_width_bits - 1 : 0] out_count_xW, out_count_yW;
 
 	bit[im_width_bits - 1 : 0] in_count_xR, in_count_yR;
 	bit in_enableR;
@@ -79,24 +77,22 @@ module Scale_TB();
 	bit out_enableR;
 	bit[color_width - 1 : 0] out_dataR;
 	bit[addr_width - 1 : 0] ram_addrR;
-	bit[im_width_bits - 1 : 0] out_count_xR, out_count_yR;
 
 	CLOCK CLOCK1(clk);
-	Scale #(color_width, im_width, im_height, im_width_bits)
-		Scale1(
-			clk, rst_n, scale_x, yscale, in_enable,
+	Rotate #(color_width, im_width, im_height, im_width_bits, ram_read_latency)
+		Rotate1(
+			clk, rst_n, angle, in_enable,
 			out_enableR, out_dataR, in_enableR, in_count_xR, in_count_yR,
 			out_enable, out_data); 
 	FrameController2 #(0, color_width, im_width, im_height, im_width_bits, addr_width, ram_read_latency)
-		FrameWrite (clk, rst_n, in_enableW, in_dataW, in_count_xW, in_count_yW, out_enableW, out_dataW, out_count_xW, out_count_yW, ram_addrW);
+		FrameWrite (clk, rst_n, in_enableW, in_dataW, in_count_xW, in_count_yW, out_enableW, out_dataW, ram_addrW);
 	FrameController2 #(1, color_width, im_width, im_height, im_width_bits, addr_width, ram_read_latency)
-		FrameRead (clk, rst_n, in_enableR, in_dataR, in_count_xR, in_count_yR, out_enableR, out_dataR, out_count_xR, out_count_yR, ram_addrR);
-	//Write clock must be in the middle of data and address !
-	BRam BRam1(clk, out_enableW, ram_addrW, out_dataW, clk, ram_addrR, in_dataR);
+		FrameRead (clk, rst_n, in_enableR, in_dataR, in_count_xR, in_count_yR, out_enableR, out_dataR, ram_addrR);
+	BRam BRam1(~clk, out_enableW, ram_addrW, out_dataW, clk, ram_addrR, in_dataR);
 
 	integer fi,fo;
 	string fname[$];
-	string ftmp, imsize, act_now;
+	string ftmp, imsize;
 	int fsize;
 
 	bit now_start;
@@ -126,8 +122,7 @@ module Scale_TB();
 			$fwrite(fo,"%s\n", imsize);
 			$fscanf(fi, "%s", imsize);
 			$fwrite(fo, "%s\n", imsize);
-			$fscanf(fi, "%b", scale_x);
-			$fscanf(fi, "%b", yscale);
+			$fscanf(fi, "%b", angle);
 			while(!$feof(fi)) begin 
 				@(posedge clk);
 				in_enableW = 1;
@@ -136,7 +131,7 @@ module Scale_TB();
 				$fscanf(fi, "%b", in_dataW);
 				if(out_enableW) begin
 					if(~now_start)
-						$display("%m: at time %t ps , %s writing bram start !", $time, ftmp);
+						$display("%m: at time %0t ps , %s writing frame start !", $time, ftmp);
 					now_start = 1;
 				end
 			end
@@ -148,7 +143,7 @@ module Scale_TB();
 				in_enable = 1;
 				if(out_enable) begin
 					if(~now_start)
-						$display("%m: at time %t ps , %s working start !", $time, ftmp);
+						$display("%m: at time %0t ps , %s working start !", $time, ftmp);
 					now_start = 1;
 					$fwrite(fo, "%0d\n", out_data);
 				end
