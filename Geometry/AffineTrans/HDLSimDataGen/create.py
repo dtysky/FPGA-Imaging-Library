@@ -15,9 +15,13 @@ for root,dirs,files in os.walk('../ImageForTest'):
         if ex in ['.jpg', '.bmp']:
         	FileAll.append((root+'/', name, ex))
 
-def sh_format(sh):
-	r, d = format(sh, 'f').split('.')
-	r = '0' + r[0] if len(r) == 1 else '1' + r[1]
+def aff_format1(a):
+	r, d = format(a, 'f').split('.')
+	s = '1' if a < 0 else '0'
+	r = bin(int(r)).split('0b')
+	for i in xrange(8 - len(r[1])):
+		r[1] = '0' + r[1]
+	r = s + r[1]
 	d = float('0.' + d)
 	res = ''
 	for i in xrange(16):
@@ -26,6 +30,13 @@ def sh_format(sh):
 		d = d - 1 if d >= 1 else d
 	return r + res
 
+def aff_format2(a):
+	s = '1' if a < 0 else '0'
+	r = bin(a).split('0b')
+	for i in xrange(16 - len(r[1])):
+		r[1] = '0' + r[1]
+	r[0] = '1' if r[0] == '-' else '0'
+	return s + r[1]
 
 def color_format(color):
 	res = bin(color)[2:]
@@ -54,20 +65,29 @@ for root, name, ex in FileAll:
 	for c in conf:
 		aux = float(c['aux'])
 		auy = float(c['auy'])
-		au = float(c['au'])
+		au = int(c['au'])
 		avx = float(c['avx'])
 		avy = float(c['avy'])
-		av = float(c['av'])
-		dat_res = open('../FunSimForHDL/%s-%sx%sx%s-%sx%sx%s-soft.jpg' % \
+		av = int(c['av'])
+		axu = avy / (aux * avy - auy * avx)
+		axv = -auy / (aux * avy - auy * avx)
+		ax = int ((auy * av - au * avy) / (aux * avy - auy * avx))
+		ayu = -avx / (aux * avy - auy * avx)
+		ayv = aux / (aux * avy - auy * avx)
+		ay = int ((-aux * av + au * avx) / (aux * avy - auy * avx))
+		dat_res = open('../FunSimForHDL/%s-%sx%sx%s-%sx%sx%s.dat' % \
 			(name, c['aux'], c['auy'], c['au'], c['avx'], c['avy'], c['av']), 'w')
 		dat_res.write('%d\n%d\n' % (xsize, ysize))
 		if not first:
-			dat_res.write('%s\n%s\n' % (sh_format(shu), sh_format(shv)))
+			dat_res.write('%s\n%s\n%s\n%s\n%s\n%s\n' % \
+				(aff_format1(axu), aff_format1(axv), aff_format2(ax), aff_format1(ayu), aff_format1(ayv), aff_format2(ay)))
 			dat_res.write(create_dat(im_src))
 		else:
-			dat_res.write('%s\n%s' % (sh_format(shu), sh_format(shv)))
+			dat_res.write('%s\n%s\n%s\n%s\n%s\n%s' % \
+				(aff_format1(axu), aff_format1(axv), aff_format2(ax), aff_format1(ayu), aff_format1(ayv), aff_format2(ay)))
 		first = True
-		dat_index += '%s-%sx%s\n' % (name, c['shu'], c['shv'])
+		dat_index += '%s-%sx%sx%s-%sx%sx%s\n' % \
+			(name, c['aux'], c['auy'], c['au'], c['avx'], c['avy'], c['av'])
 		dat_res.close()
 
 dat_index = dat_index[:-1]

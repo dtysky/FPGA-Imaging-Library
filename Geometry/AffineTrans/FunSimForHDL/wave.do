@@ -1,4 +1,3 @@
-vsim work.glbl -voptargs=+acc -L unisims_ver work.AffineTrans_TB
 onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate -radix unsigned /AffineTrans_TB/AT1/clk
@@ -52,4 +51,3 @@ configure wave -timeline 0
 configure wave -timelineunits ps
 update
 WaveRestoreZoom {6961675 ps} {6965635 ps}
-run -all

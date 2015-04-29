@@ -1,7 +1,7 @@
 /*
-Image processing project : Shear.
+Image processing project : AffineTrans.
 
-Function: Shearing an image by your given sh.
+Function: Affine transformation.
 
 Testbench.
 
@@ -47,7 +47,7 @@ module CLOCK (
 
 endmodule
 
-module Shear_TB();
+module AffineTrans_TB();
 
 	//For Frame
 	parameter im_width_bits = 9;
@@ -58,8 +58,12 @@ module Shear_TB();
 	//Can't be changed in this IP.
 	parameter color_width = 8;
 
+	bit [24 : 0] axu_o, axv_o, ayu_o, ayv_o;
+	bit [16 : 0] ax_o, ay_o;
+
 	bit clk, rst_n;
-	bit[17 : 0] sh_u, sh_v;
+	bit [24 : 0] axu, axv, ayu, ayv;
+	bit [16 : 0] ax, ay;
 	bit in_enable;
 	bit out_enable;
 	bit[color_width - 1 : 0] out_data;
@@ -79,9 +83,15 @@ module Shear_TB();
 	bit[addr_width - 1 : 0] ram_addrR;
 
 	CLOCK CLOCK1(clk);
-	Shear #(color_width, im_width, im_height, im_width_bits, ram_read_latency + 3)
-		Shear1(
-			clk, rst_n, sh_u, sh_v, in_enable,
+	Orig2Comp #(25) OC1(axu_o, axu);
+	Orig2Comp #(25) OC2(axv_o, axv);
+	Orig2Comp #(17) OC3(ax_o, ax);
+	Orig2Comp #(25) OC4(ayu_o, ayu);
+	Orig2Comp #(25) OC5(ayv_o, ayv);
+	Orig2Comp #(17) OC6(ay_o, ay);
+	AffineTrans #(color_width, im_width, im_height, im_width_bits, ram_read_latency + 3)
+		AT1(
+			clk, rst_n, axu, axv, ax, ayu, ayv, ay, in_enable,
 			out_enableR, out_dataR, in_enableR, in_count_xR, in_count_yR,
 			out_enable, out_data); 
 	FrameController2 #(0, color_width, im_width, im_height, im_width_bits, addr_width, ram_read_latency)
@@ -122,8 +132,12 @@ module Shear_TB();
 			$fwrite(fo,"%s\n", imsize);
 			$fscanf(fi, "%s", imsize);
 			$fwrite(fo, "%s\n", imsize);
-			$fscanf(fi, "%b", sh_u);
-			$fscanf(fi, "%b", sh_v);
+			$fscanf(fi, "%b", axu_o);
+			$fscanf(fi, "%b", axv_o);
+			$fscanf(fi, "%b", ax_o);
+			$fscanf(fi, "%b", ayu_o);
+			$fscanf(fi, "%b", ayv_o);
+			$fscanf(fi, "%b", ay_o);
 			while(!$feof(fi)) begin 
 				@(posedge clk);
 				in_enableW = 1;

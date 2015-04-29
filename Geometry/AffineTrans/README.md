@@ -8,7 +8,7 @@ At first, changing your work path:
 
 etc.  
     
-    set proj_path B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/Shear  
+    set proj_path B:/Complex_Mind/FPGA-Imaging-Library/Geometry/AffineTrans  
 
 Run this commond at first time:
 
@@ -16,7 +16,7 @@ Run this commond at first time:
 
 Then, compile all your source file:  
 
-    modelsim gui -> top-menu -> compile -> compile all  
+    modelsim gui -> Compile -> Compile all  
 
 Then, run this:
 

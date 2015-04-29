@@ -1,7 +1,7 @@
 /*
-Image processing project : Shear.
+Image processing project : AffineTrans.
 
-Function: Shearing an image by your given sh.
+Function: Affine transformation.
 
 Main module.
 
@@ -37,11 +37,33 @@ My blog:
 
 `timescale 1ns / 1ps
 
-module Shear(
+/*
+u = aux x + auy y + au
+v = avx x + avy y + av
+
+x = (auy * av - au * avy + avy * u - auy * v) / (aux * avy - auy * avx)
+y = (-aux * av + au * avx - avx * u + aux * v) / (aux * avy - auy * avx)
+
+ax = (auy * av - au * avy) / (aux * avy - auy * avx)
+axu = avy / (aux * avy - auy * avx)
+axv = -auy / (aux * avy - auy * avx)
+ay = (-aux * av + au * avx) / (aux * avy - auy * avx)
+ayu = -avx / (aux * avy - auy * avx)
+ayv = aux / (aux * avy - auy * avx)
+
+x = axu * u + axv * v + ax
+y = ayu * u + ayv * v + ay
+*/
+
+module AffineTrans(
 	clk,
 	rst_n,
-	sh_u,
-	sh_v,
+	axu,
+	axv,
+	ax,
+	ayu,
+	ayv,
+	ay,
 	in_enable,
 	frame_in_enable,
 	frame_in_data,
@@ -55,10 +77,12 @@ module Shear(
 	parameter signed[16 : 0] im_width = 320;
 	parameter signed[16 : 0] im_height = 240;
 	parameter im_width_bits = 9;
-	parameter frame_read_latency = 2;
+	parameter frame_read_latency = 5;
 	
 	input clk, rst_n;
-	input [17 : 0] sh_u, sh_v;
+	//Complement !
+	input [24 : 0] axu, axv, ayu, ayv;
+	input [16 : 0] ax, ay;
 	input in_enable;
 	input frame_in_enable;
 	input[color_width - 1 : 0] frame_in_data;
@@ -66,8 +90,6 @@ module Shear(
 	output[im_width_bits - 1 : 0] frame_out_count_x, frame_out_count_y;
 	output out_enable;
 	output[color_width - 1 : 0] out_data;
-
-	genvar i;
 
 	reg [im_width_bits - 1 : 0] reg_count_u, reg_count_v;
 	wire signed [16 : 0] count_u = {{(17 - im_width_bits){1'b0}}, reg_count_u};
@@ -91,63 +113,48 @@ module Shear(
 			reg_count_v <= reg_count_v;
 	end
 
-	// Convert to complementation
-	wire signed [17 : 0] sh_uc = sh_u[17] == 0 ? sh_u : {sh_u[17], ~sh_u[16 : 0] + 1};
-	wire signed [17 : 0] sh_vc = sh_v[17] == 0 ? sh_v : {sh_v[17], ~sh_v[16 : 0] + 1};
+	wire signed [41 : 0] mul_x_p1, mul_x_p2, mul_y_p1, mul_y_p2;
+	wire signed [25 : 0] mul_x_r1 = mul_x_p1 >>> 16;
+	wire signed [25 : 0] mul_x_r2 = mul_x_p2 >>> 16;
+	wire signed [25 : 0] mul_y_r1 = mul_y_p1 >>> 16;
+	wire signed [25 : 0] mul_y_r2 = mul_y_p2 >>> 16;
+	Multiplier25Sx17S MulX1(clk, axu, count_u, mul_x_p1);
+	Multiplier25Sx17S MulY1(clk, axv, count_v, mul_x_p2);
+	Multiplier25Sx17S MulX2(clk, ayu, count_u, mul_y_p1);
+	Multiplier25Sx17S MulY2(clk, ayv, count_v, mul_y_p2);
 
-	// x = u + sh_v * v
-	// y = v + sh_u * u 
-	wire signed [34 : 0] mul_x_p, mul_y_p;
-	wire signed [18 : 0] mul_x_r = mul_x_p >>> 16;
-	wire signed [18 : 0] mul_y_r = mul_y_p >>> 16;
-	generate
-		for (i = 0; i < 3; i = i + 1) begin : count_buffer
-			reg signed [18 : 0] x, y;
-			if(i == 0) begin
-				always @(posedge clk) begin
-					x <= {2'b0, count_u};
-					y <= {2'b0, count_v};
-				end
-			end else begin
-				always @(posedge clk) begin
-					x <= count_buffer[i - 1].x;
-					y <= count_buffer[i - 1].y;
-				end
-			end
-		end
-	endgenerate
-	Multiplier18Sx17S MulX(clk, sh_vc, count_v, mul_x_p);
-	Multiplier18Sx17S MulY(clk, sh_uc, count_u, mul_y_p);
+	wire signed [26 : 0] add_x_r1, add_y_r1;
+	AddSub26Sx26S AddX1(mul_x_r1, mul_x_r2, clk, add_x_r1);
+	AddSub26Sx26S AddY1(mul_y_r1, mul_y_r2, clk, add_y_r1);
 
-	wire signed [18 : 0] add_x_a = count_buffer[2].x;
-	wire signed [18 : 0] add_y_a = count_buffer[2].y;
-	wire signed [18 : 0] add_x_r, add_y_r;
-	AddSub19Sx19S AddX(add_x_a, mul_x_r, clk, add_x_r);
-	AddSub19Sx19S AddY(add_y_a, mul_y_r, clk, add_y_r);
+	wire signed [27 : 0] add_x_r2, add_y_r2;
+	AddSub27Sx27S AddX2(add_x_r1, {{10{ax[16]}}, ax}, clk, add_x_r2);
+	AddSub27Sx27S AddY2(add_y_r1, {{10{ay[16]}}, ay}, clk, add_y_r2);
 
-	assign frame_out_count_x = add_x_r[im_width_bits - 1 : 0];
-	assign frame_out_count_y = add_y_r[im_width_bits - 1 : 0];
+	assign frame_out_count_x = add_x_r2[im_width_bits - 1 : 0];
+	assign frame_out_count_y = add_y_r2[im_width_bits - 1 : 0];
 
-	reg[2 : 0] con_mul_enable;
+	reg[3 : 0] con_mul_enable;
 	always @(posedge clk or negedge rst_n or negedge in_enable) begin
 		if(~rst_n || ~in_enable)
 			con_mul_enable <= 0;
-		// 3 + 1 + 2 - 1
-		else if(con_mul_enable == 5)
+		// 3 + 3 + 3 - 1
+		else if(con_mul_enable == 8)
 			con_mul_enable <= con_mul_enable;
 		else
 			con_mul_enable <= con_mul_enable + 1;
 	end
-	assign frame_out_enable = con_mul_enable == 5 ? 1 : 0;
-
+	assign frame_out_enable = con_mul_enable == 8 ? 1 : 0;
 	assign out_enable = ~rst_n || ~frame_in_enable ? 0 : 1;
+
+	genvar i;
 	generate
 		for (i = 0; i < frame_read_latency; i = i + 1) begin : out_count_buffer
-			reg signed [18 : 0] x, y;
+			reg signed [27 : 0] x, y;
 			if(i == 0) begin
 				always @(posedge clk) begin
-					x <= add_x_r;
-					y <= add_y_r;
+					x <= add_x_r2;
+					y <= add_y_r2;
 				end
 			end else begin
 				always @(posedge clk) begin
