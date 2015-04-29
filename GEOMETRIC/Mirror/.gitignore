@@ -1,9 +1,0 @@
-HDL/*
-!HDL/*.srcs/
-!HDL/*.xpr
-FunSimForHDL/*
-!FunSimForHDL/*.mpf
-!FunSimForHDL/*.mti
-!FunSimForHDL/*.do
-!FunSimForHDL/*.md
-*.pyc
