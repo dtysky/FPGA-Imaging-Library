@@ -258,7 +258,7 @@ Scaling an image by your given scale, using 16bits sin and cos LUTs.
 1. Rotate.v: Main module.    
 2. Rotate_TB.sv: Testbench for Rotate.  
 
-#### 6. Shear:
+#### 7. Shear:
 
 **Progress:**  
 100%.  
@@ -266,7 +266,17 @@ Scaling an image by your given scale, using 16bits sin and cos LUTs.
 Shearing an image by your given sh.    
 **HDL Files:**  
 1. Shear.v: Main module.    
-2. Shear_TB.sv: Testbench for Rotate.  
+2. Shear_TB.sv: Testbench for Shear.  
+
+#### 8. AffineTrans:
+
+**Progress:**  
+100%.  
+**Function:**  
+Affine transformation.    
+**HDL Files:**  
+1. AffineTrans.v: Main module.    
+2. AffineTrans_TB.sv: Testbench for AffineTrans.  
 
 ### Character:
 
