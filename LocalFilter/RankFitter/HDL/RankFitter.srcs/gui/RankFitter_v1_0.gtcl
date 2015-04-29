@@ -1,0 +1,67 @@
+# This file is automatically written.  Do not modify.
+proc gen_USERPARAMETER_sum_counter_VALUE {window_size sum_counter } {
+if {$window_size == 2} {
+	set ${sum_counter} 1
+} elseif {$window_size == 3} {
+	set ${sum_counter} 3
+} elseif {$window_size == 4} {
+	set ${sum_counter} 4
+} elseif {$window_size == 5} {
+	set ${sum_counter} 4
+} elseif {$window_size == 6} {
+	set ${sum_counter} 5
+} elseif {$window_size == 7} {
+	set ${sum_counter} 5
+} elseif {$window_size == 8} {
+	set ${sum_counter} 6
+} elseif {$window_size == 9} {
+	set ${sum_counter} 6
+} elseif {$window_size == 10} {
+	set ${sum_counter} 6
+} elseif {$window_size == 11} {
+	set ${sum_counter} 6
+} elseif {$window_size == 12} {
+	set ${sum_counter} 7
+} elseif {$window_size == 13} {
+	set ${sum_counter} 7
+} elseif {$window_size == 14} {
+	set ${sum_counter} 8
+} elseif {$window_size == 15} {
+	set ${sum_counter} 8
+} elseif {$window_size == 16} {
+	set ${sum_counter} 8
+}
+}
+proc gen_USERPARAMETER_full_win_bits_VALUE {window_size full_win_bits } {
+if {$window_size == 2} {
+	set ${full_win_bits} 2
+} elseif {$window_size == 3} {
+	set ${full_win_bits} 4
+} elseif {$window_size == 4} {
+	set ${full_win_bits} 4
+} elseif {$window_size == 5} {
+	set ${full_win_bits} 5
+} elseif {$window_size == 6} {
+	set ${full_win_bits} 6
+} elseif {$window_size == 7} {
+	set ${full_win_bits} 6
+} elseif {$window_size == 8} {
+	set ${full_win_bits} 6
+} elseif {$window_size == 9} {
+	set ${full_win_bits} 7
+} elseif {$window_size == 10} {
+	set ${full_win_bits} 7
+} elseif {$window_size == 11} {
+	set ${full_win_bits} 7
+} elseif {$window_size == 12} {
+	set ${full_win_bits} 8
+} elseif {$window_size == 13} {
+	set ${full_win_bits} 8
+} elseif {$window_size == 14} {
+	set ${full_win_bits} 8
+} elseif {$window_size == 15} {
+	set ${full_win_bits} 8
+} elseif {$window_size == 16} {
+	set ${full_win_bits} 8
+}
+}
