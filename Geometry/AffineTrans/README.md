@@ -21,3 +21,7 @@ Then, compile all your source file:
 Then, run this:
 
     do $proj_path/FunSimForHDL/Run.do
+
+If you just want to the finally result, and don't want to watch the waveform, run this:  
+
+    do $proj_path/FunSimForHDL/RunOver.do

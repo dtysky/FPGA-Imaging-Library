@@ -114,14 +114,15 @@ module AffineTrans(
 	end
 
 	wire signed [41 : 0] mul_x_p1, mul_x_p2, mul_y_p1, mul_y_p2;
-	wire signed [25 : 0] mul_x_r1 = mul_x_p1 >>> 16;
-	wire signed [25 : 0] mul_x_r2 = mul_x_p2 >>> 16;
-	wire signed [25 : 0] mul_y_r1 = mul_y_p1 >>> 16;
-	wire signed [25 : 0] mul_y_r2 = mul_y_p2 >>> 16;
+	wire signed [25 : 0] mul_x_r1, mul_x_r2, mul_y_r1, mul_y_r2;
 	Multiplier25Sx17S MulX1(clk, axu, count_u, mul_x_p1);
 	Multiplier25Sx17S MulY1(clk, axv, count_v, mul_x_p2);
 	Multiplier25Sx17S MulX2(clk, ayu, count_u, mul_y_p1);
 	Multiplier25Sx17S MulY2(clk, ayv, count_v, mul_y_p2);
+	FixedRound #(42, 16) FDX1(clk, mul_x_p1, mul_x_r1);
+	FixedRound #(42, 16) FDX2(clk, mul_x_p2, mul_x_r2);
+	FixedRound #(42, 16) FDY1(clk, mul_y_p1, mul_y_r1);
+	FixedRound #(42, 16) FDY2(clk, mul_y_p2, mul_y_r2);
 
 	wire signed [26 : 0] add_x_r1, add_y_r1;
 	AddSub26Sx26S AddX1(mul_x_r1, mul_x_r2, clk, add_x_r1);
@@ -138,13 +139,13 @@ module AffineTrans(
 	always @(posedge clk or negedge rst_n or negedge in_enable) begin
 		if(~rst_n || ~in_enable)
 			con_mul_enable <= 0;
-		// 3 + 3 + 3 - 1
-		else if(con_mul_enable == 8)
+		// 3 + 3 + 3 - 1 + 3
+		else if(con_mul_enable == 11)
 			con_mul_enable <= con_mul_enable;
 		else
 			con_mul_enable <= con_mul_enable + 1;
 	end
-	assign frame_out_enable = con_mul_enable == 8 ? 1 : 0;
+	assign frame_out_enable = con_mul_enable == 11 ? 1 : 0;
 	assign out_enable = ~rst_n || ~frame_in_enable ? 0 : 1;
 
 	genvar i;

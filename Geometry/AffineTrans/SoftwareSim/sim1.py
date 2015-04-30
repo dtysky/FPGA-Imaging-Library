@@ -73,8 +73,10 @@ def transform(im, aux, auy, au, avx, avy, av):
 	ay = (-aux * av + au * avx) / (aux * avy - auy * avx)
 	ayu = -avx / (aux * avy - auy * avx)
 	ayv = aux / (aux * avy - auy * avx)
+	# print axu, axv, ax, ayu, ayv, ay
 	def address_gen(u, v):
-		return int(axu * u + axv * v + ax), int(ayu * u + ayv * v + ay)
+		# sync as FPGA
+		return int(round(axu * u) + round(axv * v) + int(ax)), int(round(ayu * u) + round(ayv * v) + int(ay))
 	data_src = im.getdata()
 	xsize, ysize = im.size
 	data_res = list(Image.new('L', (xsize, ysize), 0).getdata())

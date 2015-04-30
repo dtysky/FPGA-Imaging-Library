@@ -1,8 +1,14 @@
 vsim work.glbl -voptargs=+acc -L unisims_ver work.AffineTrans_TB
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate -radix unsigned /AffineTrans_TB/AT1/clk
-add wave -noupdate -radix unsigned /AffineTrans_TB/AT1/rst_n
+add wave -noupdate -radix unsigned /AffineTrans_TB/clk
+add wave -noupdate -radix unsigned /AffineTrans_TB/rst_n
+add wave -noupdate -radix decimal /AffineTrans_TB/axu_o
+add wave -noupdate -radix decimal /AffineTrans_TB/axv_o
+add wave -noupdate -radix decimal /AffineTrans_TB/ayu_o
+add wave -noupdate -radix decimal /AffineTrans_TB/ayv_o
+add wave -noupdate -radix decimal /AffineTrans_TB/ax_o
+add wave -noupdate -radix decimal /AffineTrans_TB/ay_o
 add wave -noupdate -radix decimal /AffineTrans_TB/AT1/axu
 add wave -noupdate -radix decimal /AffineTrans_TB/AT1/axv
 add wave -noupdate -radix decimal /AffineTrans_TB/AT1/ayu
@@ -17,8 +23,6 @@ add wave -noupdate -radix unsigned /AffineTrans_TB/AT1/frame_out_count_x
 add wave -noupdate -radix unsigned /AffineTrans_TB/AT1/frame_out_count_y
 add wave -noupdate -radix unsigned /AffineTrans_TB/AT1/out_enable
 add wave -noupdate -radix unsigned /AffineTrans_TB/AT1/out_data
-add wave -noupdate -radix decimal /AffineTrans_TB/AT1/reg_count_u
-add wave -noupdate -radix decimal /AffineTrans_TB/AT1/reg_count_v
 add wave -noupdate -radix decimal /AffineTrans_TB/AT1/count_u
 add wave -noupdate -radix decimal /AffineTrans_TB/AT1/count_v
 add wave -noupdate -radix decimal /AffineTrans_TB/AT1/mul_x_p1
