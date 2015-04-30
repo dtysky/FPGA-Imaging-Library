@@ -88,6 +88,16 @@ CT and luminance transition, changing a 8bits(a channel of rgb image) color's CT
 2. LM_CT_TRANS_TB.sv: TestBench.  
 3. MUL_FOR_SIM.sv: A multiplier for testing.
 
+#### 4.ColorReversal:
+
+**Progress:**  
+100%.  
+**Function:**  
+Get a reversal all ponit's color.  
+**HDL Files:**  
+1. ColorReversal.v: Main function.  
+2. ColorReversal_TB.sv: TestBench.  
+
 ### Window:
 
 #### 1.FrameController:
