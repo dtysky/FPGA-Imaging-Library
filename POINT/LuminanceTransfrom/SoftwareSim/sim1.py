@@ -21,7 +21,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 #
 # Homepage for this project:
-# 	http://fil.dtysky.moe
+# 	http://ifl.dtysky.moe
 
 # Sources for this project:
 # 	https://github.com/dtysky/FPGA-Imaging-Library
@@ -37,49 +37,35 @@ __author__ = 'Dai Tianyu (dtysky)'
 from PIL import Image
 import os, json
 
-ModuleName='ColorReversal'
+ModuleName='ContrastTranslate'
 FileFormat = ['.jpg', '.bmp']
 Conf = json.load(open('../ImageForTest/conf.json', 'r'))['conf']
 Debug = True
+#Out = ct_control * (In + lm_control)
 
-def name_format(root, name, ex, conf):
-	return '%s-soft%s' % (name, ex)
-
-def transform(im, conf):
-	mode = im.mode
-	data_src = im.getdata()
-	data_res = []
-	for color in data_src:
-		if mode == 'RGB':
-			data_res.append((255 - color[0], 255 - color[1], 255 - color[2]))
-		else:
-			data_res.append(255 - color)
-	im_res = im.copy()
-	im_res.putdata(data_res)
-	return im_res
-
-def debug(im, conf):
-	mode = im.mode
-	data_src = im.getdata()
-	data_res = ''
-	for color in data_src:
-		if mode == 'RGB':
-			data_res += '%d %d %d\n' % (255 - color[0], 255 - color[1], 255 - color[2])
-		else:
-			data_res += '%d\n' % (255 - color)
-	return data_res
+lm_control = 32
+ct_control = 0.5
 
 FileAll = []
-for root, dirs, files in os.walk('../ImageForTest'):
+
+for root,dirs,files in os.walk('../IMAGE_FOR_TEST'):
     for f in files:
-    	name, ex = os.path.splitext(f)
-        if ex in FileFormat:
-        	FileAll.append((root+'/', name, ex))
-for root, name, ex in FileAll:
-	im_src = Image.open(root + name + ex)
-	for c in Conf:
-		if Debug:
-			open('../SimResCheck/%s.dat' \
-				% name_format(root, name, ex, c), 'w').write(debug(im_src, c))
-			continue
-		transform(im_src, c).save('../SimResCheck/%s' % name_format(root, name, ex, c))
+        if os.path.splitext(f)[1]=='.jpg':
+        	FileAll.append((root+'/',f))
+
+def transform(im):
+	data_src = im.getdata()
+	data_res = []
+	for rgb in data_src:
+		p = []
+		for c in rgb:
+			p.append(int(ct_control * (c + lm_control)))
+		data_res.append((p[0],p[1],p[2]))
+	return data_res
+
+for root,f in FileAll:
+	im_src = Image.open(root+f)
+	s_x, s_y = im_src.size
+	im_res = Image.new('RGB', (s_x, s_y), 0)
+	im_res.putdata(transform(im_src))
+	im_res.save('../SIM_CHECK/soft' + f)
