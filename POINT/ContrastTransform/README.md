@@ -1,7 +1,8 @@
-# Testing for this module just support RGB and gray-scale images !  
+# Simulations
+**Simulations for this module just support RGB and gray-scale images !**  
 
 ## Steps for simulations
-**Waring: procedures for simulation depend on python 2.x and PIL(Python Imaging Library), please get them by your self.**  
+**Warning: procedures for simulation depend on python 2.x and PIL(Python Imaging Library), please get them by your self.**  
 
 ### Preparing
 Open "ImageForTest".  
