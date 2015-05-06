@@ -5,7 +5,7 @@ Function: Get a reversal all ponit's color.
 
 Testbench.
 
-Copyright (C) 2015  Dai Tianyu (dtysky)
+Copyright (C) 2015  Tianyu Dai (dtysky)
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

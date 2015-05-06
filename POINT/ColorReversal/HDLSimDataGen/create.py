@@ -1,4 +1,4 @@
-__author__ = 'Dai Tianyu (dtysky)'
+__author__ = 'Tianyu Dai (dtysky)'
 
 from PIL import Image
 import os, json

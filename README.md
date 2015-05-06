@@ -27,13 +27,13 @@ IPCores just support xilinx vivado now.
 
 ## Author
 **Dai Tianyu (dtysky)**   
-**戴天宇 (dtysky)**
-[http://dtysky.moe](http://dtysky.github.io)  
+**戴天宇 (dtysky)**  
+[http://dtysky.moe](http://dtysky.moe)  
 [dtysky@outlook.com](dtysky@outlook.com)  
 [http://proj.dtysky.moe/](http://proj.dtysky.moe/)  
 
 ***
 
 ## Copyright
-**Copyright © 2015, 戴天宇, Dai Tianyu (dtysky). All Rights Reserved.  
+**Copyright © 2015, 戴天宇, Tianyu Dai (dtysky). All Rights Reserved.  
 This project is free software and released under the** [GNU Lesser General Public License (LGPL)](https://www.gnu.org/licenses/lgpl-2.1.html).
