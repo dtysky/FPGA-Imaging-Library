@@ -5,10 +5,10 @@
 		"out_path": "",
 		"mode": [".v",".sv"],
 		"additional_files": [
-			["Multiplier12x24LUT.xci", ""],
-			["Multiplier12x24LUT_funcsim.v", ""],
-			["Multiplier12x24LUT.xci", ""],
-			["Multiplier12x24LUT_funcsim.v", ""]
+			["Multiplier12x24LUT.xci", "Xilinx IPCore file."],
+			["Multiplier12x24LUT_funcsim.v", "Model for functional simulation."],
+			["Multiplier12x24LUT.xci", "Xilinx IPCore file."],
+			["Multiplier12x24LUT_funcsim.v", "Model for functional simulation."]
 		],
 		"titles": [
 			"Project",

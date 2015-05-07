@@ -141,7 +141,6 @@ module LuminanceTransform(
 				assign add_a = reg_add_a;
 				assign add_b = reg_add_b;
 			end
-
 			/*
 			::description
 			Adder for Signed 12bits + Signed 12bits.

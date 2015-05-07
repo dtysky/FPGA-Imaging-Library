@@ -27,14 +27,6 @@ Open "ContrastTranslate.mpf" with modelsim.
 
 #### Do these:
 
-At first, changing your work path:  
-    
-    set proj_path your-project-path  
-
-etc.  
-    
-    set proj_path B:/Complex_Mind/FPGA-Imaging-Library/Point/ContrastTransform  
-
 Run this commond at first time:
 
     vlib work  
@@ -45,11 +37,11 @@ Then, compile all your source file:
 
 Then, run this:
 
-    do $proj_path/FunSimForHDL/Run.do
+    do Run.do
 
 If you just want to the finally result, and don't want to watch the waveform, run this:  
 
-    do $proj_path/FunSimForHDL/RunOver.do
+    do RunOver.do
 
 ## Comparing
 Open "SimResCheck".  

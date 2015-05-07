@@ -36,19 +36,19 @@ Change the contrast of an image.Give the first output after 3 or 5 cycles while 
 </tr>
 <tr>
 <td>Multiplier12x24LUT.xci</td>
-<td></td>
+<td>Xilinx IPCore file.</td>
 </tr>
 <tr>
 <td>Multiplier12x24LUT_funcsim.v</td>
-<td></td>
+<td>Model for functional simulation.</td>
 </tr>
 <tr>
 <td>Multiplier12x24LUT.xci</td>
-<td></td>
+<td>Xilinx IPCore file.</td>
 </tr>
 <tr>
 <td>Multiplier12x24LUT_funcsim.v</td>
-<td></td>
+<td>Model for functional simulation.</td>
 </tr>
 </table>
 
@@ -81,7 +81,7 @@ Change the contrast of an image.Give the first output after 3 or 5 cycles while 
 <tr>
 <td>color\_mode</td>
 <td>unsigned</td>
-<td>1 - 4</td>
+<td>1 - Inf</td>
 <td>3</td>
 <td>Channels for color, 1 for gray, 3 for rgb, etc.</td>
 </tr>
@@ -178,12 +178,12 @@ Change the contrast of an image.Give the first output after 3 or 5 cycles while 
 <tr>
 <td>Mul</td>
 <td>Multiplier12x24Mul</td>
-<td>Multiplier for Unsigned 12bits x Unsigned 24bits, using hardware multiplier.</td>
+<td>Multiplier for Unsigned 12bits x Unsigned 24bits, using hardware multiplier.The pipline stages is 3.</td>
 </tr>
 <tr>
 <td>Mul</td>
 <td>Multiplier12x24LUT</td>
-<td>Multiplier for Unsigned 12bits x Unsigned 24bits, using LUTs.</td>
+<td>Multiplier for Unsigned 12bits x Unsigned 24bits, using LUTs.The pipline stages is 5.</td>
 </tr>
 </table>
 

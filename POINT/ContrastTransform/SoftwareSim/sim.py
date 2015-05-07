@@ -63,7 +63,7 @@ def name_format(root, name, ex, conf):
 #Out = st_scale * In
 def transform(im, conf):
 	mode = im.mode
-	ct_scale = float(conf['ct_scale'])
+	ct_scale = conf['ct_scale']
 	data_src = im.getdata()
 	data_res = []
 	for p in data_src:
@@ -80,7 +80,7 @@ def transform(im, conf):
 
 def debug(im, conf):
 	mode = im.mode
-	ct_scale = float(conf['ct_scale'])
+	ct_scale = conf['ct_scale']
 	data_src = im.getdata()
 	data_res = ''
 	for p in data_src:

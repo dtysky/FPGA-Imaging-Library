@@ -11,14 +11,12 @@ def name_format(root, name, ex, conf):
 	return '%s-%s' % (name, conf['ct_scale'])
 
 def conf_format(im, conf):
-	c = float(conf['ct_scale'])
+	c = conf['ct_scale']
 	r = int(c)
 	d = abs(c - r)
-	r = [bin(int(r)).split('0b').pop()]
-	r.insert(0, '1' if c < 0 else '0')
-	for i in xrange(12 - len(r[1])):
-		r[1] = '0' + r[1]
-	r = r[0] + r[1]
+	r = bin(int(r)).split('0b').pop()
+	for i in xrange(12 - len(r)):
+		r = '0' + r
 	dtmp = ''
 	for i in xrange(12):
 		d = d * 2

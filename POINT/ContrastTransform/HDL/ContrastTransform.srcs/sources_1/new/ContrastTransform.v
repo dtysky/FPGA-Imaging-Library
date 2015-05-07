@@ -79,7 +79,7 @@ module ContrastTransform(
 	::description
 	Channels for color, 1 for gray, 3 for rgb, etc.
 	::range
-	1 - 4
+	1 - Inf
 	*/
 	parameter color_mode = 3;
 	/*
@@ -154,12 +154,14 @@ module ContrastTransform(
 				/*
 				::description
 				Multiplier for Unsigned 12bits x Unsigned 24bits, using hardware multiplier.
+				The pipline stages is 3.
 				*/
 				Multiplier12x24Mul Mul(clk, mul_a, mul_b, ~rst_n, mul_p);
 			end else begin
 				/*
 				::description
 				Multiplier for Unsigned 12bits x Unsigned 24bits, using LUTs.
+				The pipline stages is 5.
 				*/
 				Multiplier12x24LUT Mul(clk, mul_a, mul_b, ~rst_n, mul_p);
 			end

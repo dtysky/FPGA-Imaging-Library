@@ -2,12 +2,12 @@
 **Simulations for this module just support RGB and gray-scale images !**  
 
 ## Steps for simulations
-**Warning: procedures for simulation depend on python 2.x and PIL(Python Imaging Library), please get them by your self.**  
+**Warning: procedures for simulation depend on python 2.7 and PIL(Python Imaging Library), please get them by your self.**  
 
 ### Preparing
 Open "ImageForTest".  
 Put images which you want to use for simulations.  
-Edit the "conf.json" for setting the configuration for simulations.  
+Edit the "conf.json" for setting the configurations for simulations.  
 
 ### Software simulation
 Open "SoftwareSim".  
