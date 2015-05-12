@@ -1,0 +1,14 @@
+{
+	"conf" : [
+		{"mode" : "RGB24-CMY"},
+		{"mode" : "RGB24-CMYK"},
+		{"mode" : "RGB24-HSV"},
+		{"mode" : "RGB24-HSL"},
+		{"mode" : "RGB24-YCrCb"},
+		{"mode" : "CMY-RGB24"},
+		{"mode" : "CMYK-RGB24"},
+		{"mode" : "HSV-RGB24"},
+		{"mode" : "HSL-RGB24"},
+		{"mode" : "YCrCb-RGB24"}
+	]
+}
