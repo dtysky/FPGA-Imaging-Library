@@ -47,10 +47,10 @@ for ex_path in conf['excluded_path']:
 			FileAll.remove(f)
 
 Doc = complete_source(parse_file(FileAll), conf['additional_files'])
-fo = open(conf['out_path'] + Doc['Design'] + '.md', 'w')
+fo = open(conf['out_path'] + Doc['Design'].strip() + '.md', 'w')
 fo.write(generate_md(Doc, conf['titles']))
 fo.close()
 if conf['tcl'][0]:
-	fo = open(conf['out_path'] + Doc['Design'] + '.tcl', 'w')
+	fo = open(conf['out_path'] + Doc['Design'].strip() + '.tcl', 'w')
 	fo.write(generate_tcl(Doc, conf['tcl'][1]))
 	fo.close()

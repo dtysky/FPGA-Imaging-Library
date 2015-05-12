@@ -19,7 +19,7 @@ def compare(FileAll):
 		psnr = 20.0 * math.log10(255.0 / rms) if rms != 0 else 1000*1000
 		psnrs[name] = psnr
 	psnr_t = 0
-	res = '#### Psnr:\n\n'
+	res = '#### PSNR:\n\n'
 	for name in sorted(psnrs):
 		psnr_t += psnrs[name]
 		res += '%s : %f  \n' % (name, psnrs[name])

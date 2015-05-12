@@ -63,8 +63,8 @@ module FixedRound(
 			{num_orig[num_width - 1], ~num_orig[num_width - 2 : fixed_pos] + 1};
 		//Why not use num_comp[25] to judge? : if 0
 		case(num_orig[41])
-			0 : reg_round <= num_orig[fixed_pos - 1] == 0 ? num_comp : num_comp + 1;
-			1 : reg_round <= num_orig[fixed_pos - 1] == 0 ? num_comp : num_comp - 1;
+			0 : reg_round <= num_orig[fixed_pos - 1] == 0 ? num_comp - 1 : num_comp + 1;
+			1 : reg_round <= num_orig[fixed_pos - 1] == 0 ? num_comp + 1 : num_comp - 1;
 			default : /* default */;
 		endcase
 	end

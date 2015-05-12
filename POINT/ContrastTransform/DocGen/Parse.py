@@ -57,7 +57,7 @@ def parse_block(block, fs):
 		tmp = re.match(r'\s*:(\S+)', line)
 		if tmp:
 			if res['type'] == 2:
-				fs.error("'::' after ':' is not supported now !")
+				fs.error("':' after '::' is not supported now !")
 			res['type'] = 1
 			res['args'][tmp.group(1)] = ''
 			ptr += 1

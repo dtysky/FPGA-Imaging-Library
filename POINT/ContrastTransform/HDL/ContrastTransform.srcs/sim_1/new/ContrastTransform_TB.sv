@@ -11,7 +11,7 @@ Change the contrast of an image.
 Give the first output after 3 or 5 cycles while the input enable, depends on work_mode.
 
 :Module
-Testbench
+Test Bench
 
 :Version
 1.0
@@ -19,7 +19,7 @@ Testbench
 :Modified
 2015-05-05
 
-Copyright (C) 2015  Tianyu Dai (dtysky)
+Copyright (C) 2015  Tianyu Dai (dtysky) <dtysky@outlook.com>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

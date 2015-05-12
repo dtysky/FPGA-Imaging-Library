@@ -14,6 +14,13 @@
 
 ***
 
+### IP-GUI
+
+![ContrastTransform-GUI](/theme/image/contrast_transform/gui.png)
+
+
+***
+
 ### Function
 Change the contrast of an image.Give the first output after 3 or 5 cycles while the input enable, depends on work\_mode.  
 
@@ -32,7 +39,7 @@ Change the contrast of an image.Give the first output after 3 or 5 cycles while 
 </tr>
 <tr>
 <td>ContrastTransform_TB.sv</td>
-<td>Testbench</td>
+<td>Test Bench</td>
 </tr>
 <tr>
 <td>Multiplier12x24LUT.xci</td>

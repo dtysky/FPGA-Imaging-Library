@@ -25,6 +25,12 @@ My blog:
 	http://dtysky.moe
 """
 
+def camel_to_underline(name):
+	s = ''
+	for _s_ in name:
+		s += _s_ if _s_.islower() else '_' + _s_.lower()
+	return s[1:]
+
 def complete_source(source, additional_files):
 	for f in additional_files:
 		source['Files'].append(f)
@@ -109,6 +115,10 @@ def generate_md(source, titles):
 				res += '<td>%s</td>\n' % p['description']
 				res += '</tr>\n'
 			res += '</table>\n\n***\n\n'
+		elif title in ['IP-GUI']:
+			res += '### IP-GUI\n\n'
+			res += '![%s-GUI](/theme/image/%s/gui.png)\n' % (source['Design'], camel_to_underline(source['Design']))
+			res += '\n\n***\n\n' 
 	return res
 
 def generate_tcl(source, tcl_help):
