@@ -4,7 +4,7 @@
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<spirit:vendor>dtysky</spirit:vendor>
 	<spirit:library>Image</spirit:library>
-	<spirit:name>Frame</spirit:name>
+	<spirit:name>FrameController</spirit:name>
 	<spirit:version>1.1</spirit:version>
 	<spirit:model>
 		<spirit:views>
@@ -13,7 +13,7 @@
 				<spirit:displayName>Verilog Synthesis</spirit:displayName>
 				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
 				<spirit:language>verilog</spirit:language>
-				<spirit:modelName>Frame</spirit:modelName>
+				<spirit:modelName>FrameController</spirit:modelName>
 				<spirit:fileSetRef>
 					<spirit:localName>xilinx_verilogsynthesis_view_fileset</spirit:localName>
 				</spirit:fileSetRef>
@@ -29,7 +29,7 @@
 				<spirit:displayName>Verilog Simulation</spirit:displayName>
 				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
 				<spirit:language>verilog</spirit:language>
-				<spirit:modelName>Frame</spirit:modelName>
+				<spirit:modelName>FrameController</spirit:modelName>
 				<spirit:fileSetRef>
 					<spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
 				</spirit:fileSetRef>
@@ -45,7 +45,7 @@
 				<spirit:displayName>Verilog Test Bench</spirit:displayName>
 				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
 				<spirit:language>verilog</spirit:language>
-				<spirit:modelName>Frame_TB</spirit:modelName>
+				<spirit:modelName>FrameController_TB</spirit:modelName>
 				<spirit:fileSetRef>
 					<spirit:localName>xilinx_verilogtestbench_view_fileset</spirit:localName>
 				</spirit:fileSetRef>
@@ -249,7 +249,7 @@
 		<spirit:fileSet>
 			<spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
 			<spirit:file>
-				<spirit:name>sources_1/new/Frame.v</spirit:name>
+				<spirit:name>sources_1/new/FrameController.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:userFileType>CHECKSUM_d299845e</spirit:userFileType>
 			</spirit:file>
@@ -257,7 +257,7 @@
 		<spirit:fileSet>
 			<spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
 			<spirit:file>
-				<spirit:name>sources_1/new/Frame.v</spirit:name>
+				<spirit:name>sources_1/new/FrameController.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 			</spirit:file>
 		</spirit:fileSet>
@@ -268,21 +268,21 @@
 				<spirit:fileType>verilogSource</spirit:fileType>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>sim_1/new/Frame_TB.sv</spirit:name>
+				<spirit:name>sim_1/new/FrameController_TB.sv</spirit:name>
 				<spirit:fileType>systemVerilogSource</spirit:fileType>
 			</spirit:file>
 		</spirit:fileSet>
 		<spirit:fileSet>
 			<spirit:name>xilinx_xpgui_view_fileset</spirit:name>
 			<spirit:file>
-				<spirit:name>xgui/Frame_v1_1.tcl</spirit:name>
+				<spirit:name>xgui/FrameController_v1_1.tcl</spirit:name>
 				<spirit:fileType>tclSource</spirit:fileType>
 				<spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
 				<spirit:userFileType>CHECKSUM_079de894</spirit:userFileType>
 			</spirit:file>
 		</spirit:fileSet>
 	</spirit:fileSets>
-	<spirit:description>Frame_v1_0</spirit:description>
+	<spirit:description>FrameController_v1_0</spirit:description>
 	<spirit:parameters>
 		<spirit:parameter>
 			<spirit:name>mode</spirit:name>
@@ -331,7 +331,7 @@
 			<spirit:name>Component_Name</spirit:name>
 			<spirit:value spirit:resolve="user"
 					spirit:id="PARAM_VALUE.Component_Name"
-					spirit:order="1">Frame_v1_0</spirit:value>
+					spirit:order="1">FrameController_v1_0</spirit:value>
 		</spirit:parameter>
 		<spirit:parameter>
 			<spirit:name>row_init</spirit:name>
@@ -350,16 +350,16 @@
 				<xilinx:taxonomy>/Video_&amp;_Image_Processing</xilinx:taxonomy>
 				<xilinx:taxonomy>/UserIP</xilinx:taxonomy>
 			</xilinx:taxonomies>
-			<xilinx:displayName>Frame_v1_0</xilinx:displayName>
+			<xilinx:displayName>FrameController_v1_0</xilinx:displayName>
 			<xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
 			<xilinx:coreRevision>9</xilinx:coreRevision>
 			<xilinx:coreCreationDateTime>2015-04-19T04:40:44Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>
-				<xilinx:tag xilinx:name="xilinx.com:ip:Frame:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/framecontroller/hdl/framecontroller.srcs</xilinx:tag>
-				<xilinx:tag xilinx:name="xilinx.com:user:Frame:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/framecontroller/hdl/framecontroller.srcs</xilinx:tag>
-				<xilinx:tag xilinx:name="dtysky:user:Frame:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/framecontroller/hdl/framecontroller.srcs</xilinx:tag>
-				<xilinx:tag xilinx:name="dtysky:Image:Frame:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/framecontroller/hdl/framecontroller.srcs</xilinx:tag>
-				<xilinx:tag xilinx:name="dtysky:Image:Frame:1.1_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/framecontroller/hdl/framecontroller.srcs</xilinx:tag>
+				<xilinx:tag xilinx:name="xilinx.com:ip:FrameController:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/framecontroller/hdl/framecontroller.srcs</xilinx:tag>
+				<xilinx:tag xilinx:name="xilinx.com:user:FrameController:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/framecontroller/hdl/framecontroller.srcs</xilinx:tag>
+				<xilinx:tag xilinx:name="dtysky:user:FrameController:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/framecontroller/hdl/framecontroller.srcs</xilinx:tag>
+				<xilinx:tag xilinx:name="dtysky:Image:FrameController:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/framecontroller/hdl/framecontroller.srcs</xilinx:tag>
+				<xilinx:tag xilinx:name="dtysky:Image:FrameController:1.1_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/window/framecontroller/hdl/framecontroller.srcs</xilinx:tag>
 			</xilinx:tags>
 		</xilinx:coreExtensions>
 		<xilinx:packagingInfo>
