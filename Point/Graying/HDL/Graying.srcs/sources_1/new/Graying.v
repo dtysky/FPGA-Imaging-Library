@@ -65,12 +65,12 @@ module Graying(
 	::description
 	This module's working mode.
 	::range
-	0 for Piplines, 1 for Req-ack
+	0 for Pipline, 1 for Req-ack
 	*/
 	parameter work_mode = 0;
 	/*
 	::description
-	Color's bit wide
+	Color's bit width.
 	::range
 	1 - 12
 	*/

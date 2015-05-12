@@ -13,6 +13,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="IPRepoPath" Val="$PSRCDIR"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../complex_mind/fpga-imaging-library/inout/vga640x480"/>
   </Configuration>
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
@@ -23,6 +24,9 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/component.xml">
+        <FileInfo SFType="IPXACT"/>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
@@ -117,27 +121,21 @@
     </Run>
     <Run Id="MultiplierRedx0d299_synth_1" Type="Ft3:Synth" SrcSet="MultiplierRedx0d299" Part="xc7a35tcpg236-1" ConstrsSet="MultiplierRedx0d299" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/MultiplierRedx0d299_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="MultiplierGreenx0d587_synth_1" Type="Ft3:Synth" SrcSet="MultiplierGreenx0d587" Part="xc7a35tcpg236-1" ConstrsSet="MultiplierGreenx0d587" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/MultiplierGreenx0d587_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="MultiplierBluex0d114_synth_1" Type="Ft3:Synth" SrcSet="MultiplierBluex0d114" Part="xc7a35tcpg236-1" ConstrsSet="MultiplierBluex0d114" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/MultiplierBluex0d114_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -158,9 +156,7 @@
     </Run>
     <Run Id="MultiplierRedx0d299_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="MultiplierRedx0d299" Description="Vivado Implementation Defaults" SynthRun="MultiplierRedx0d299_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
-          <Desc>Vivado Implementation Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -174,9 +170,7 @@
     </Run>
     <Run Id="MultiplierGreenx0d587_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="MultiplierGreenx0d587" Description="Vivado Implementation Defaults" SynthRun="MultiplierGreenx0d587_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
-          <Desc>Vivado Implementation Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -190,9 +184,7 @@
     </Run>
     <Run Id="MultiplierBluex0d114_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="MultiplierBluex0d114" Description="Vivado Implementation Defaults" SynthRun="MultiplierBluex0d114_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
-          <Desc>Vivado Implementation Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

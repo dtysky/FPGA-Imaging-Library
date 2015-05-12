@@ -127,14 +127,13 @@ def generate_tcl(source, tcl_help):
 	res += '#Adding Page\n'
 	res += 'set Page_0 [ipgui::add_page $IPINST -name "Page 0" -display_name {Parameters}]\n'
 	res += 'set_property tooltip {Parameters} ${Page_0}\n'
-	res += 'ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}\n'
-	res += 'ipgui::add_param $IPINST -name "im_height" -parent ${Page_0}\n'
-	res += 'ipgui::add_param $IPINST -name "im_width" -parent ${Page_0}\n'
-	res += 'ipgui::add_param $IPINST -name "im_width_bits" -parent ${Page_0}\n'
 	if 'Parameters' in source:
-		res += 'ipgui::add_static_text $IPINST -name "Par_Discriptions" -parent ${Page_0} -text {\n'
 		for p in source['Parameters']:
-			res += '%s: %s, %s\n' % (p['name'], p['type'], p['description'])
+			res += '''ipgui::add_param $IPINST -name "%s" -parent ${Page_0}\n''' % p['name'].replace('\\_', '_')
+		res += 'ipgui::add_static_text $IPINST -name "Par_Discriptions" -parent ${Page_0} -text {\n\n\n'
+		for p in source['Parameters']:
+			res += '%s:\n%s.\nDescription: %s\nRange: %s\n\n\n' % (\
+				p['name'].replace('\\_', '_'), p['type'], p['description'].replace('\\_', '_'), p['range'].replace('\\_', '_'))
 		res += '}\n'
 	if 'Ports' in source:
 		res += '#Adding Page\n'
@@ -142,11 +141,12 @@ def generate_tcl(source, tcl_help):
 		res += 'set_property tooltip {Ports} ${Ports}\n'
 		res += 'ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Ports} -text {\n'
 		for p in source['Ports']:
-			res += '%s: %s, %s\n' % (p['name'], p['type'], p['description'])
+			res += '%s:\n%s.\nDescription: %s\nRange: %s\n\n\n' % (\
+				p['name'].replace('\\_', '_'), p['type'], p['description'].replace('\\_', '_'), p['range'].replace('\\_', '_'))
 		res += '}\n'
 	res += '#Adding Page\n'
 	res += '''set Help [ipgui::add_page $IPINST -name "Help"]\n'''
   	res += 'set_property tooltip {Help} ${Help}\n'
-  	res += 'ipgui::add_static_text $IPINST -name "Copyright" -parent ${Help} -text {Documents for all modules:\n'
+  	res += 'ipgui::add_static_text $IPINST -name "Copyright" -parent ${Help} -text {\n'
   	res += tcl_help + '\n}\n}'
   	return res
