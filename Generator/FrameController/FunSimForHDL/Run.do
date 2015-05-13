@@ -1,34 +1,36 @@
-vsim work.glbl -voptargs=+acc -L unisims_ver work.Graying_TB
+vsim work.glbl -voptargs=+acc -L unisims_ver work.FrameController_TB
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/clk
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/rst_n
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/in_enable
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/in_data
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/r
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/g
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/b
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/mul_r
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/mul_g
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/mul_b
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/out_ready
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/out_data
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/con_enable
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/clk
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/rst_n
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/in_enable
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/in_data
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/r
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/g
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/b
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/mul_r
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/mul_g
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/mul_b
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/out_ready
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/out_data
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/con_enable
+add wave -noupdate -radix unsigned /FrameController_TB/FramePipelineWrite/clk
+add wave -noupdate -radix unsigned /FrameController_TB/FramePipelineWrite/rst_n
+add wave -noupdate -radix unsigned /FrameController_TB/FramePipelineWrite/in_enable
+add wave -noupdate -radix unsigned /FrameController_TB/FramePipelineWrite/in_data
+add wave -noupdate -radix unsigned /FrameController_TB/FramePipelineWrite/out_ready
+add wave -noupdate -radix unsigned /FrameController_TB/FramePipelineWrite/out_data
+add wave -noupdate -radix unsigned /FrameController_TB/FramePipelineWrite/ram_addr
+add wave -noupdate -radix unsigned /FrameController_TB/FramePipelineRead/clk
+add wave -noupdate -radix unsigned /FrameController_TB/FramePipelineRead/rst_n
+add wave -noupdate -radix unsigned /FrameController_TB/FramePipelineRead/in_enable
+add wave -noupdate -radix unsigned /FrameController_TB/FramePipelineRead/in_data
+add wave -noupdate -radix unsigned /FrameController_TB/FramePipelineRead/out_ready
+add wave -noupdate -radix unsigned /FrameController_TB/FramePipelineRead/out_data
+add wave -noupdate -radix unsigned /FrameController_TB/FramePipelineRead/ram_addr
+add wave -noupdate -radix unsigned /FrameController_TB/FrameReqAckWrite/clk
+add wave -noupdate -radix unsigned /FrameController_TB/FrameReqAckWrite/rst_n
+add wave -noupdate -radix unsigned /FrameController_TB/FrameReqAckWrite/in_enable
+add wave -noupdate -radix unsigned /FrameController_TB/FrameReqAckWrite/in_data
+add wave -noupdate -radix unsigned /FrameController_TB/FrameReqAckWrite/out_ready
+add wave -noupdate -radix unsigned /FrameController_TB/FrameReqAckWrite/out_data
+add wave -noupdate -radix unsigned /FrameController_TB/FrameReqAckWrite/ram_addr
+add wave -noupdate -radix unsigned /FrameController_TB/FrameReqAckRead/clk
+add wave -noupdate -radix unsigned /FrameController_TB/FrameReqAckRead/rst_n
+add wave -noupdate -radix unsigned /FrameController_TB/FrameReqAckRead/in_enable
+add wave -noupdate -radix unsigned /FrameController_TB/FrameReqAckRead/in_data
+add wave -noupdate -radix unsigned /FrameController_TB/FrameReqAckRead/out_ready
+add wave -noupdate -radix unsigned /FrameController_TB/FrameReqAckRead/out_data
+add wave -noupdate -radix unsigned /FrameController_TB/FrameReqAckRead/ram_addr
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {786643537 ps} 0}
+WaveRestoreCursors {{Cursor 1} {7659559 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
@@ -44,5 +46,5 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {786639450 ps} {786647450 ps}
+WaveRestoreZoom {7655850 ps} {7663850 ps}
 run -all

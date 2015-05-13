@@ -4,7 +4,7 @@
 FPGA-Imaging-Library
 
 :Design
-ContrastTransform
+FrameController
 
 :Function
 For controlling a block ram from xilinx.
@@ -61,26 +61,100 @@ module FrameController(
 	out_data,
 	ram_addr);
 
+	/*
+	::description
+	This module's working mode.
+	::range
+	0 for Pipline, 1 for Req-ack
+	*/
 	parameter work_mode = 0;
-	//0 for Write, 1 for Read
+	/*
+	::description
+	This module's working mode.
+	::range
+	0 for Write, 1 for Read
+	*/
 	parameter wr_mode = 0;
+	/*
+	::description
+	Color's bit width.
+	::range
+	1 - 12
+	*/
 	parameter color_width = 8;
+	/*
+	::description
+	Width of image.
+	::range
+	1 - 4096
+	*/
 	parameter im_width = 320;
+	/*
+	::description
+	Height of image.
+	::range
+	1 - 4096
+	*/
 	parameter im_height = 240;
+	/*
+	::description
+	Address bit width of a ram for storing this image.
+	::range
+	Depend on im_width and im_height.
+	*/
 	parameter addr_width = 17;
-	parameter ram_read_latency = 1;
+	/*
+	::description
+	RL of Ram, in xilinx 7-series device, it is 3.
+	::range
+	0 - 15, Depend on your using ram.
+	*/
+	parameter ram_read_latency = 2;
+	/*
+	::description
+	The first row you want to storing, used for eliminating offset.
+	::range
+	Depend on your input offset.
+	*/
 	parameter row_init = 0;
-
+	/*
+	::description
+	Clock.
+	*/
 	input clk;
+	/*
+	::description
+	Reset, active low.
+	*/
 	input rst_n;
+	/*
+	::description
+	Input data enable, in pipelines mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be changes.
+	*/
 	input in_enable;
-	input[color_width - 1 : 0] in_data;
+	/*
+	::description
+	Input data, it must be synchronous with in_enable.
+	*/
+	input [color_width - 1 : 0] in_data;
+	/*
+	::description
+	Output data ready, in both two mode, it will be high while the out_data can be read.
+	*/
 	output out_ready;
+	/*
+	::description
+	Output data, it will be synchronous with out_ready.
+	*/
 	output[color_width - 1 : 0] out_data;
+	/*
+	::description
+	Address for ram.
+	*/
 	output[addr_width - 1 : 0] ram_addr;
 
 	reg[addr_width - 1 : 0] reg_ram_addr;
-	reg reg_out_ready;
+	reg[3 : 0] con_ready;
 
 	assign ram_addr = reg_ram_addr;
 	assign out_data = out_ready ? in_data : 0;
@@ -101,14 +175,14 @@ module FrameController(
 			end else begin 
 				always @(posedge in_enable or negedge rst_n) begin
 					if(~rst_n)
-						reg_ram_addr <= row_init * im_width;
+						reg_ram_addr <= row_init * im_width - 1;
 					else if(reg_ram_addr == im_width * im_height - 1)
 						reg_ram_addr <= 0;
 					else
 						reg_ram_addr <= reg_ram_addr + 1;
 				end
 			end
-			assign out_enable = ~rst_n || ~in_enable ? 0 : 1;
+			assign out_ready = ~rst_n || ~in_enable ? 0 : 1;
 
 		end else begin
 
@@ -124,7 +198,7 @@ module FrameController(
 			end else begin 
 				always @(posedge in_enable or negedge rst_n) begin
 					if(~rst_n)
-						reg_ram_addr <= 0;
+						reg_ram_addr <= 0 - 1;
 					else if(reg_ram_addr == im_width * im_height - 1)
 						reg_ram_addr <= 0;
 					else
@@ -134,13 +208,13 @@ module FrameController(
 
 			always @(posedge clk or negedge rst_n or negedge in_enable) begin
 				if(~rst_n || ~in_enable)
-					reg_out_ready <= 0;
-				else if (reg_ram_addr == ram_read_latency)
-					reg_out_ready <= 1;
+					con_ready <= 0;
+				else if (con_ready == ram_read_latency)
+					con_ready <= con_ready;
 				else
-					reg_out_ready <= reg_out_ready;
+					con_ready <= con_ready + 1;
 			end
-			assign out_ready = reg_out_ready;
+			assign out_ready = con_ready == ram_read_latency ? 1 : 0;
 
 		end
 

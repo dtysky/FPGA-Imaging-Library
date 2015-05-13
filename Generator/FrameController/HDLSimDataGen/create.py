@@ -20,10 +20,7 @@ def conf_format(im, conf):
 	return ''
 
 def color_format(mode, color):
-	if mode == '1':
-		color = 0 if color == 0 else 255
-	if mode != 'RGB':
-		color = [color]
+	color = [color]
 	res = ''
 	for c in color:
 		tmp = bin(c)[2:]

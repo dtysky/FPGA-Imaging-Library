@@ -26,7 +26,7 @@ IPCores just support xilinx vivado now.
 ***
 
 ## Author
-**Dai Tianyu (dtysky)**   
+**Tianyu Dai (dtysky)**   
 **戴天宇 (dtysky)**  
 [http://dtysky.moe](http://dtysky.moe)  
 [dtysky@outlook.com](dtysky@outlook.com)  
