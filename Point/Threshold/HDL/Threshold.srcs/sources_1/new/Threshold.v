@@ -1,12 +1,25 @@
+//Com2DocHDL
 /*
-Image processing project : Threshold.
+:Project
+FPGA-Imaging-Library
 
-Function: Thresholding depend on two threshold,
-convert the grayscale image to ternary or binary image.
+:Design
+Threshold
 
-Main module.
+:Function
+Convert gray-scales image to binary images.  
+Give the first output after 1 cycles while the input enable.
 
-Copyright (C) 2015  Dai Tianyu (dtysky)
+:Module
+Main module
+
+:Version
+1.0
+
+:Modified
+2015-05-15
+
+Copyright (C) 2015  Tianyu Dai (dtysky) <dtysky@outlook.com>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -22,54 +35,135 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-This module is a part of image processing project, you can get all of them here:
-	https://github.com/dtysky/Image-processing-on-FPGA
+Homepage for this project:
+	http://fil.dtysky.moe
 
-This mail is for connecting me:
+Sources for this project:
+	https://github.com/dtysky/FPGA-Imaging-Library
+
+My e-mail:
 	dtysky@outlook.com
 
-My blog is here:
-	http://dtysky.moe/
+My blog:
+	http://dtysky.moe
+
 */
 
 `timescale 1ns / 1ps
 
 
-module Threshold(clk, rst_n, th1, th2, in_enable, in_data, out_enable, out_data);
-	//0 for Base, 1 for Contour, 2 for Ternary
-	parameter mode = 0;
+module Threshold(
+	clk,
+	rst_n,
+	th_mode,
+	th1,
+	th2,
+	in_enable,
+	in_data,
+	out_ready,
+	out_data
+    );
+
+	/*
+	::description
+	This module's working mode.
+	::range
+	0 for Pipeline, 1 for Req-ack
+	*/
+	parameter work_mode = 0;
+	/*
+	::description
+	Color's bit width.
+	::range
+	1 - 12
+	*/
 	parameter color_width = 8;
 
-	input clk, rst_n;
-	input[color_width - 1 : 0] th1, th2;
+	/*
+	::description
+	Clock.
+	*/
+	input clk;
+	/*
+	::description
+	Reset, active low.
+	*/
+	input rst_n;
+	/*
+	::description
+	The method to processing.
+	::range
+	0 for Base, 1 for Contour
+	*/
+	input th_mode;
+	/*
+	::description
+	First thorshold, used for all methods.
+	*/
+	input [color_width - 1 : 0] th1;
+	/*
+	::description
+	First thorshold, only used for "Contour" method.
+	*/
+	input [color_width - 1 : 0] th2;
+	/*
+	::description
+	Input data enable, in pipeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be changes.
+	*/
 	input in_enable;
-	input[color_width - 1 : 0] in_data;
-	output out_enable;
-	output[1 : 0] out_data;
+	/*
+	::description
+	Input data, it must be synchronous with in_enable.
+	*/
+	input [color_width - 1 : 0] in_data;
+	/*
+	::description
+	Output data ready, in both two mode, it will be high while the out_data can be read.
+	*/
+	output out_ready;
+	/*
+	::description
+	Output data, it will be synchronous with out_ready.
+	*/
+	output out_data;
 
-	assign out_enable = in_enable;
+	reg reg_out_ready;
+	reg reg_out_data;
 
 	generate
 
-		if(mode == 0) 
-			assign out_data = in_data > th1 ? 1 : 0; 
-		else if(mode == 1)
-			assign out_data = in_data > th1 && in_data <= th2 ? 1 : 0;
-		else if(mode == 2) begin
-			reg[1 : 0] reg_out_data;
-			wire[1 : 0] tmp;
-			assign tmp[0] = in_data > th1 ? 1 : 0;
-			assign tmp[1] = in_data > th2 ? 1 : 0;
-			always @(*) begin
-				case (tmp)
-					2'b00 : reg_out_data <= 0;
-					2'b01 : reg_out_data <= 1;
-					2'b11 : reg_out_data <= 2;
-					default : reg_out_data <= 0;
+		always @(posedge clk or negedge rst_n or negedge in_enable) begin
+			if(~rst_n || ~in_enable) begin
+				reg_out_ready <= 0;
+			end else begin
+				reg_out_ready <= 1;
+			end
+		end
+
+		if(work_mode == 0) begin 
+
+			always @(posedge clk) begin
+				case (th_mode)
+					0 : reg_out_data <= in_data > th1 ? 1 : 0;
+					1 : reg_out_data <= in_data > th1 && in_data <= th2 ? 1 : 0;
+					default : /* default */;
 				endcase
 			end
-	 		assign out_data = reg_out_data;
-	 	end
+
+		end else begin
+
+			always @(posedge in_enable) begin
+				case (th_mode)
+					0 : reg_out_data <= in_data > th1 ? 1 : 0;
+					1 : reg_out_data <= in_data > th1 && in_data <= th2 ? 1 : 0;
+					default : /* default */;
+				endcase
+			end
+
+		end
+
+		assign out_ready = reg_out_ready;
+		assign out_data = out_ready == 0 ? 0 : reg_out_data;
 
 	endgenerate
 
