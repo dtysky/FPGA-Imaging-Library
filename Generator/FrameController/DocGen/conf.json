@@ -5,28 +5,23 @@
 		"out_path": "",
 		"mode": [".v",".sv"],
 		"additional_files": [
-			["MultiplierRedx0d299.xci", "Xilinx IPCore file."],
-			["MultiplierRedx0d299_funcsim.v", "Model for functional simulation."],
-			["MultiplierGreenx0d587.xci", "Xilinx IPCore file."],
-			["MultiplierGreenx0d587_funcsim.v", "Model for functional simulation."],
-			["MultiplierBluex0d114.xci", "Xilinx IPCore file."],
-			["MultiplierBluex0d114_funcsim.v", "Model for functional simulation."]
+			["BRam8x512x512_funcsim.v", "Model for functional simulation."]
 		],
 		"titles": [
 			"Design",
 			"Version",
 			"Modified",
-			["Source", "![Graying](https://github.com/dtysky/FPGA-Imaging-Library/tree/master/Point/Graying)"],
-			"IP-GUI",
+			["Source", "[FrameController](https://github.com/dtysky/FPGA-Imaging-Library/tree/master/Generator/FrameController)"],
+			["IP-GUI", "![FrameController IP-GUI](http://src.dtysky.moe/image/f-i-l/3/2/7.png)"],
 			"Function",
 			"Files",
 			"Parameters",
 			"Ports",
 			"Instances",
-			["Simulations","Simulations for this module just support RGB images !\n\n### Software\n\n\n### HDL\n\n\n### Compare\n\n\n"],
+			["Simulations","Simulations for this module just support Gray-scale and 512x512 images !\n\n### Waves\n\n\n### Results\n\n\n### PSNR\n\n\n"],
 			["Utilization",""],
 			["Timing",""],
-			["Power",""]
+			["Thanks","**The sources of images for simulations:**  \n"]
 		],
 		"tcl": [
 			true,

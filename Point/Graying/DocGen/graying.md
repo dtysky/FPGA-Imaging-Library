@@ -103,7 +103,7 @@ Covert RGB images to gray-scale images.Users can configure the multipliers by th
 <td>mul_delay</td>
 <td>unsigned</td>
 <td>Depend your multilpliers' configurations</td>
-<td>4</td>
+<td>3</td>
 <td>Delay for multiplier.</td>
 </tr>
 </table>

@@ -91,7 +91,7 @@ module Threshold(
 	input rst_n;
 	/*
 	::description
-	The method to processing.
+	The method for processing.
 	::range
 	0 for Base, 1 for Contour
 	*/
@@ -103,7 +103,7 @@ module Threshold(
 	input [color_width - 1 : 0] th1;
 	/*
 	::description
-	First thorshold, only used for "Contour" method.
+	Second thorshold, only used for "Contour" method.
 	*/
 	input [color_width - 1 : 0] th2;
 	/*

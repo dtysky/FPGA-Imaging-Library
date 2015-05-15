@@ -63,7 +63,7 @@ def show_error(e):
 	exit(0)
 
 def name_format(root, name, ex, conf):
-	return '%s-soft%s' % (name, ex)
+	return '%s-soft%s' % (name, '.bmp')
 
 def transform(im, conf):
 	mode = im.mode
@@ -84,7 +84,7 @@ def debug(im, conf):
 	if mode not in ['RGB']:
 		show_error('This module just supports RGB images, check your images !')
 	for p in data_src:
-		data_res += str(int(p[0] * .299 + p[1] * .587 + p[2] * .114))
+		data_res += str(int(p[0] * .299 + p[1] * .587 + p[2] * .114)) + '\n'
 	return data_res
 
 FileAll = []

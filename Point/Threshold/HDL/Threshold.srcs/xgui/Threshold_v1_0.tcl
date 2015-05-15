@@ -3,8 +3,8 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0" -display_name {Parameters}]
+  ipgui::add_param $IPINST -name "work_mode" -parent ${Page_0} -widget comboBox
   ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "mode" -parent ${Page_0} -widget comboBox
   ipgui::add_static_text $IPINST -name "Par_Discriptions" -parent ${Page_0} -text {
 
 work_mode:
@@ -98,19 +98,19 @@ proc validate_PARAM_VALUE.color_width { PARAM_VALUE.color_width } {
 	return true
 }
 
-proc update_PARAM_VALUE.mode { PARAM_VALUE.mode } {
-	# Procedure called to update mode when any of the dependent parameters in the arguments change
+proc update_PARAM_VALUE.work_mode { PARAM_VALUE.work_mode } {
+	# Procedure called to update work_mode when any of the dependent parameters in the arguments change
 }
 
-proc validate_PARAM_VALUE.mode { PARAM_VALUE.mode } {
-	# Procedure called to validate mode
+proc validate_PARAM_VALUE.work_mode { PARAM_VALUE.work_mode } {
+	# Procedure called to validate work_mode
 	return true
 }
 
 
-proc update_MODELPARAM_VALUE.mode { MODELPARAM_VALUE.mode PARAM_VALUE.mode } {
+proc update_MODELPARAM_VALUE.work_mode { MODELPARAM_VALUE.work_mode PARAM_VALUE.work_mode } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.mode}] ${MODELPARAM_VALUE.mode}
+	set_property value [get_property value ${PARAM_VALUE.work_mode}] ${MODELPARAM_VALUE.work_mode}
 }
 
 proc update_MODELPARAM_VALUE.color_width { MODELPARAM_VALUE.color_width PARAM_VALUE.color_width } {

@@ -82,7 +82,7 @@ module Graying(
 	::range
 	Depend your multilpliers' configurations
 	*/
-	parameter mul_delay = 4;
+	parameter mul_delay = 3;
 	/*
 	::description
 	Clock.

@@ -7,7 +7,10 @@
 ## Progress
 Refactoring codes and building Wiki now:  
 重构代码并搭建Wiki中：  
-[http://fil.dtysky.moe/](http://fil.dtysky.moe/)  
+[http://fil.dtysky.moe/](http://fil.dtysky.moe)  
+<br>
+系列教程：  
+[FPGA的图像处理](http://dtysky.moe/tag/fpga-imaging-library.html)  
 
 ***
 

@@ -7,7 +7,7 @@ FPGA-Imaging-Library
 FrameController
 
 :Function
-For controlling a block ram from xilinx.
+For controlling a BlockRAM from xilinx.
 Give the first output after ram_read_latency cycles while the input enable.
 
 :Module

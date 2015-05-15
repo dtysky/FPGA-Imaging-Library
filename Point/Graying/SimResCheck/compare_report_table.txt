@@ -8,9 +8,9 @@
 		<th>Total</th>
 	</tr>
 	<tr>
-		<td>41.11</td>
-		<td>43.58</td>
-		<td>41.99</td>
-		<td>42.23</td>
+		<td>46.73</td>
+		<td>46.96</td>
+		<td>46.83</td>
+		<td>46.84</td>
 	</tr>
 </table>

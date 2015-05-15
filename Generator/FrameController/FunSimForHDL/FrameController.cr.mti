@@ -5,6 +5,15 @@ Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 Top level modules:
 	FrameController
 
+} {} {}} ../HDL/FrameController.srcs/sim_1/new/FrameController_TB.sv {1 {vlog -work work -vopt -sv B:/Complex_Mind/FPGA-Imaging-Library/Generator/FrameController/HDL/FrameController.srcs/sim_1/new/FrameController_TB.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module CLOCK
+-- Compiling interface TBInterface
+-- Compiling module FrameController_TB
+
+Top level modules:
+	FrameController_TB
+
 } {} {}} ../HDL/FrameController.srcs/sim_1/import/BRam8x512x512_funcsim.v {1 {vlog -work work -vopt B:/Complex_Mind/FPGA-Imaging-Library/Generator/FrameController/HDL/FrameController.srcs/sim_1/import/BRam8x512x512_funcsim.v
 Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 -- Compiling module BRam8x512x512

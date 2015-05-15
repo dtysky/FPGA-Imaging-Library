@@ -83,10 +83,10 @@ module Graying_TB();
 	TBInterface #(8) RGBPipeline(clk, rst_n);
 	TBInterface #(8) RGBReqAck(clk, rst_n);
 	CLOCK CLOCK1 (clk);
-	Graying #(0, 8, 4) 
+	Graying #(0, 8, 3) 
 		CTRGBPipeline(RGBPipeline.clk, RGBPipeline.rst_n, 
 			RGBPipeline.in_enable, RGBPipeline.in_data, RGBPipeline.out_ready, RGBPipeline.out_data);
-	Graying #(1, 8, 4) 
+	Graying #(1, 8, 3) 
 		CTRGBReqAck(RGBReqAck.clk, RGBReqAck.rst_n, 
 			RGBReqAck.in_enable, RGBReqAck.in_data, RGBReqAck.out_ready, RGBReqAck.out_data);
 
@@ -150,6 +150,8 @@ module Graying_TB();
 			while (!$feof(fi)) begin 
 				work_pipeline();
 			end
+			$fclose(fi);
+			$fclose(fo);
 			fi = $fopen({ftmp, ".dat"}, "r");
 			fo = $fopen({ftmp, "-reqack.res"}, "w");
 			init_file();

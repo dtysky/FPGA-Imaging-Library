@@ -7,7 +7,7 @@ FPGA-Imaging-Library
 FrameController
 
 :Function
-For controlling a block ram from xilinx.
+For controlling a BlockRAM from xilinx.
 Give the first output after ram_read_latency cycles while the input enable.
 
 :Module
@@ -70,7 +70,7 @@ module FrameController(
 	parameter work_mode = 0;
 	/*
 	::description
-	This module's working mode.
+	This module's WR mode.
 	::range
 	0 for Write, 1 for Read
 	*/
@@ -105,7 +105,7 @@ module FrameController(
 	parameter addr_width = 17;
 	/*
 	::description
-	RL of Ram, in xilinx 7-series device, it is 3.
+	RL of RAM, in xilinx 7-series device, it is 2.
 	::range
 	0 - 15, Depend on your using ram.
 	*/
@@ -129,7 +129,7 @@ module FrameController(
 	input rst_n;
 	/*
 	::description
-	Input data enable, in pipelines mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be changes.
+	Input data enable, in pipeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.
 	*/
 	input in_enable;
 	/*

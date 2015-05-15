@@ -284,7 +284,7 @@
 			<spirit:file>
 				<spirit:name>sources_1/new/FrameController.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
-				<spirit:userFileType>CHECKSUM_46633261</spirit:userFileType>
+				<spirit:userFileType>CHECKSUM_de7470c1</spirit:userFileType>
 			</spirit:file>
 		</spirit:fileSet>
 		<spirit:fileSet>
@@ -434,7 +434,7 @@
 			<xilinx:displayName>FrameController_v1_0</xilinx:displayName>
 			<xilinx:vendorURL>http://fil.dtysky.moe</xilinx:vendorURL>
 			<xilinx:coreRevision>5</xilinx:coreRevision>
-			<xilinx:coreCreationDateTime>2015-05-14T04:58:16Z</xilinx:coreCreationDateTime>
+			<xilinx:coreCreationDateTime>2015-05-14T08:18:58Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>
 				<xilinx:tag xilinx:name="xilinx.com:ip:FrameController:1.0_ARCHIVE_LOCATION">b:/Complex_Mind/FPGA-Imaging-Library/Generator/FrameController/HDL/FrameController.srcs</xilinx:tag>
 				<xilinx:tag xilinx:name="dtysky.moe:ip:FrameController:1.0_ARCHIVE_LOCATION">b:/Complex_Mind/FPGA-Imaging-Library/Generator/FrameController/HDL/FrameController.srcs</xilinx:tag>

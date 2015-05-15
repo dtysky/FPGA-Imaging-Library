@@ -1,46 +1,125 @@
+
+# Loading additional proc with user specified bodies to compute parameter values.
+source [file join [file dirname [file dirname [info script]]] gui/FrameController_v1_0.gtcl]
+
 # Definitional proc to organize widgets for parameters.
 proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
-  set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
-  ipgui::add_param $IPINST -name "mode" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "row_init" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "addr_width" -parent ${Page_0}
+  set Page_0 [ipgui::add_page $IPINST -name "Page 0" -display_name {Parameters}]
+  ipgui::add_param $IPINST -name "work_mode" -parent ${Page_0} -widget comboBox
+  ipgui::add_param $IPINST -name "wr_mode" -parent ${Page_0} -widget comboBox
   ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}
   ipgui::add_param $IPINST -name "im_height" -parent ${Page_0}
   ipgui::add_param $IPINST -name "im_width" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "addr_width" -parent ${Page_0}
   ipgui::add_param $IPINST -name "ram_read_latency" -parent ${Page_0}
-  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Page_0} -text {
+  ipgui::add_param $IPINST -name "row_init" -parent ${Page_0}
+  ipgui::add_static_text $IPINST -name "Par_Discriptions" -parent ${Page_0} -text {
+color_width:
+unsigned.
+Description: Color's bit width.
 
-Discriptions:
+im_width:
+unsigned.
+Description: Width of image.
 
-Mode: 0 for writing, 1 for reading.
+im_height:
+unsigned.
+Description: Height of image.
 
-Ram Read Latency: Depend on the number of registers by your Block Ram setting.
+addr_width:
+unsigned.
+Description: Address bit width of a ram for storing this image.
 
-Row Init: Only acvtive in write mode, the first row you want to write, for correcting rows cache.
+ram_read_latency:
+unsigned.
+Description: RL of Ram, in xilinx 7-series device, it is 3.
+
+row_init:
+unsigned.
+Description: The first row you want to storing, used for eliminating offset.
+}
+
+  #Adding Page
+  set Ports [ipgui::add_page $IPINST -name "Ports"]
+  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Ports} -text {
+clk:
+unsigned.
+Description: Clock.
+Range: None
 
 
+rst_n:
+unsigned.
+Description: Reset, active low.
+Range: None
 
-clk: colck.
 
-rst_n: Reset, active low.
+in_enable:
+unsigned.
+Description: Input data enable, in pipelines mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be changes.
+Range: None
 
-in_enable: Input enable, must enable with the same time as the first input data.
 
-in_data: Input data.
+in_data:
+unsigned.
+Description: Input data, it must be synchronous with in_enable.
+Range: color_width - 1 : 0
 
-out_enable: Output enable, will be high when the first output data output.
 
-out_data: Output data.
+out_ready:
+unsigned.
+Description: Output data ready, in both two mode, it will be high while the out_data can be read.
+Range: None
 
-ram_addr: Address for Block Ram.}
+
+out_data:
+unsigned.
+Description: Output data, it will be synchronous with out_ready.
+Range: color_width - 1 : 0
+
+
+ram_addr:
+unsigned.
+Description: Address for ram.
+Range: addr_width - 1 : 0
 
 
 }
 
-proc update_PARAM_VALUE.addr_width { PARAM_VALUE.addr_width } {
+  #Adding Page
+  set Help [ipgui::add_page $IPINST -name "Help"]
+  ipgui::add_static_text $IPINST -name "Copyright" -parent ${Help} -text {
+Homepage for this project:
+http://fil.dtysky.moe
+
+Sources for this project:
+https://github.com/dtysky/FPGA-Imaging-Library
+
+My e-mail:
+dtysky@outlook.com
+
+My blog:
+http://dtysky.moe
+
+Copyright 2015, Tianyu Dai(dtysky). All Rights Reserved.
+This project is free software and released under the GNU Lesser General Public License (LGPL).
+}
+
+
+}
+
+proc update_PARAM_VALUE.addr_width { PARAM_VALUE.addr_width PARAM_VALUE.im_width PARAM_VALUE.im_height PARAM_VALUE.addr_width } {
 	# Procedure called to update addr_width when any of the dependent parameters in the arguments change
+	
+	set addr_width ${PARAM_VALUE.addr_width}
+	set im_width ${PARAM_VALUE.im_width}
+	set im_height ${PARAM_VALUE.im_height}
+	set values(im_width) [get_property value $im_width]
+	set values(im_height) [get_property value $im_height]
+	set values(addr_width) [get_property value $addr_width]
+	set_property value [gen_USERPARAMETER_addr_width_VALUE $values(im_width) $values(im_height) $values(addr_width)] $addr_width
 }
 
 proc validate_PARAM_VALUE.addr_width { PARAM_VALUE.addr_width } {
@@ -75,15 +154,6 @@ proc validate_PARAM_VALUE.im_width { PARAM_VALUE.im_width } {
 	return true
 }
 
-proc update_PARAM_VALUE.mode { PARAM_VALUE.mode } {
-	# Procedure called to update mode when any of the dependent parameters in the arguments change
-}
-
-proc validate_PARAM_VALUE.mode { PARAM_VALUE.mode } {
-	# Procedure called to validate mode
-	return true
-}
-
 proc update_PARAM_VALUE.ram_read_latency { PARAM_VALUE.ram_read_latency } {
 	# Procedure called to update ram_read_latency when any of the dependent parameters in the arguments change
 }
@@ -102,10 +172,33 @@ proc validate_PARAM_VALUE.row_init { PARAM_VALUE.row_init } {
 	return true
 }
 
+proc update_PARAM_VALUE.work_mode { PARAM_VALUE.work_mode } {
+	# Procedure called to update work_mode when any of the dependent parameters in the arguments change
+}
 
-proc update_MODELPARAM_VALUE.mode { MODELPARAM_VALUE.mode PARAM_VALUE.mode } {
+proc validate_PARAM_VALUE.work_mode { PARAM_VALUE.work_mode } {
+	# Procedure called to validate work_mode
+	return true
+}
+
+proc update_PARAM_VALUE.wr_mode { PARAM_VALUE.wr_mode } {
+	# Procedure called to update wr_mode when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.wr_mode { PARAM_VALUE.wr_mode } {
+	# Procedure called to validate wr_mode
+	return true
+}
+
+
+proc update_MODELPARAM_VALUE.work_mode { MODELPARAM_VALUE.work_mode PARAM_VALUE.work_mode } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.mode}] ${MODELPARAM_VALUE.mode}
+	set_property value [get_property value ${PARAM_VALUE.work_mode}] ${MODELPARAM_VALUE.work_mode}
+}
+
+proc update_MODELPARAM_VALUE.wr_mode { MODELPARAM_VALUE.wr_mode PARAM_VALUE.wr_mode } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.wr_mode}] ${MODELPARAM_VALUE.wr_mode}
 }
 
 proc update_MODELPARAM_VALUE.color_width { MODELPARAM_VALUE.color_width PARAM_VALUE.color_width } {

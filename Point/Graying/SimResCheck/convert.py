@@ -6,7 +6,7 @@ import os
 FileFormat = ['.res']
 
 def name_format(root, name, ex):
-	return '%s-hdlfun.jpg' % name
+	return '%s-hdlfun.bmp' % name
 
 def convert(data):
 	data_res = []
