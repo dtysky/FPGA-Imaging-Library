@@ -7,8 +7,9 @@ FPGA-Imaging-Library
 Graying
 
 :Function
-Covert RGB images to gray-scale images.
-Give the first output after 2 cycles while the input enable.
+Covert RGB images to gray-scale images. 
+Users can configure the multipliers by themselves. 
+Give the first output after mul_delay + 2 cycles while the input enable.
 
 :Module
 Test bench
@@ -79,13 +80,13 @@ module Graying_TB();
 	int fst;
 
 	bit clk, rst_n;
-	TBInterface #(8) RGBPipline(clk, rst_n);
+	TBInterface #(8) RGBPipeline(clk, rst_n);
 	TBInterface #(8) RGBReqAck(clk, rst_n);
 	CLOCK CLOCK1 (clk);
-	Graying #(0, 8) 
-		CTRGBPipline(RGBPipline.clk, RGBPipline.rst_n, 
-			RGBPipline.in_enable, RGBPipline.in_data, RGBPipline.out_ready, RGBPipline.out_data);
-	Graying #(1, 8) 
+	Graying #(0, 8, 4) 
+		CTRGBPipeline(RGBPipeline.clk, RGBPipeline.rst_n, 
+			RGBPipeline.in_enable, RGBPipeline.in_data, RGBPipeline.out_ready, RGBPipeline.out_data);
+	Graying #(1, 8, 4) 
 		CTRGBReqAck(RGBReqAck.clk, RGBReqAck.rst_n, 
 			RGBReqAck.in_enable, RGBReqAck.in_data, RGBReqAck.out_ready, RGBReqAck.out_data);
 
@@ -100,23 +101,23 @@ module Graying_TB();
 	task init_signal();
 		rst_n = 0;
 		now_start = 0;
-		RGBPipline.in_enable = 0;
+		RGBPipeline.in_enable = 0;
 		RGBReqAck.in_enable = 0;
 		repeat(10) @(posedge clk);
 		rst_n = 1;
 	endtask : init_signal
 
-	task work_pipline();
+	task work_pipeline();
 		@(posedge clk);
-		RGBPipline.in_enable = 1;
-		fst = $fscanf(fi, "%b", RGBPipline.in_data);
-		if(RGBPipline.out_ready) begin
+		RGBPipeline.in_enable = 1;
+		fst = $fscanf(fi, "%b", RGBPipeline.in_data);
+		if(RGBPipeline.out_ready) begin
 			if(~now_start)
-				$display("%m: at time %0t ps , %s-pipline working start !", $time, ftmp);
+				$display("%m: at time %0t ps , %s-pipeline working start !", $time, ftmp);
 			now_start = 1;
-			$fwrite(fo, "%0d\n", RGBPipline.out_data);
+			$fwrite(fo, "%0d\n", RGBPipeline.out_data);
 		end
-	endtask : work_pipline
+	endtask : work_pipeline
 
 	task work_regack();
 		@(posedge clk);
@@ -143,11 +144,11 @@ module Graying_TB();
 		for (int i = 0; i < fsize; i++) begin;
 			ftmp = fname.pop_back();
 			fi = $fopen({ftmp, ".dat"}, "r");
-			fo = $fopen({ftmp, "-pipline.res"}, "w");
+			fo = $fopen({ftmp, "-pipeline.res"}, "w");
 			init_file();
 			init_signal();
 			while (!$feof(fi)) begin 
-				work_pipline();
+				work_pipeline();
 			end
 			fi = $fopen({ftmp, ".dat"}, "r");
 			fo = $fopen({ftmp, "-reqack.res"}, "w");

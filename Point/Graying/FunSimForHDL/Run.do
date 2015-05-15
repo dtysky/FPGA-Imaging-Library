@@ -1,19 +1,19 @@
 vsim work.glbl -voptargs=+acc -L unisims_ver work.Graying_TB
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/clk
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/rst_n
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/in_enable
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/in_data
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/r
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/g
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/b
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/mul_r
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/mul_g
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/mul_b
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/out_ready
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/out_data
-add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipline/con_enable
+add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipeline/clk
+add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipeline/rst_n
+add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipeline/in_enable
+add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipeline/in_data
+add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipeline/r
+add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipeline/g
+add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipeline/b
+add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipeline/mul_r
+add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipeline/mul_g
+add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipeline/mul_b
+add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipeline/out_ready
+add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipeline/out_data
+add wave -noupdate -radix unsigned /Graying_TB/CTRGBPipeline/con_enable
 add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/clk
 add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/rst_n
 add wave -noupdate -radix unsigned /Graying_TB/CTRGBReqAck/in_enable

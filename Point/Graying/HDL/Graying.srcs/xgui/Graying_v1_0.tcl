@@ -5,20 +5,19 @@ proc init_gui { IPINST } {
   set Page_0 [ipgui::add_page $IPINST -name "Page 0" -display_name {Parameters}]
   ipgui::add_param $IPINST -name "work_mode" -parent ${Page_0} -widget comboBox
   ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "mul_delay" -parent ${Page_0}
   ipgui::add_static_text $IPINST -name "Par_Discriptions" -parent ${Page_0} -text {
-
-
 work_mode:
 unsigned.
 Description: This module's working mode.
-Range: 0 for Pipline, 1 for Req-ack
-
 
 color_width:
 unsigned.
 Description: Color's bit width.
-Range: 1 - 12
 
+mul_delay:
+unsigned.
+Description: Delay for multiplier.
 
 }
 
@@ -94,6 +93,15 @@ proc validate_PARAM_VALUE.color_width { PARAM_VALUE.color_width } {
 	return true
 }
 
+proc update_PARAM_VALUE.mul_delay { PARAM_VALUE.mul_delay } {
+	# Procedure called to update mul_delay when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.mul_delay { PARAM_VALUE.mul_delay } {
+	# Procedure called to validate mul_delay
+	return true
+}
+
 proc update_PARAM_VALUE.work_mode { PARAM_VALUE.work_mode } {
 	# Procedure called to update work_mode when any of the dependent parameters in the arguments change
 }
@@ -112,5 +120,10 @@ proc update_MODELPARAM_VALUE.work_mode { MODELPARAM_VALUE.work_mode PARAM_VALUE.
 proc update_MODELPARAM_VALUE.color_width { MODELPARAM_VALUE.color_width PARAM_VALUE.color_width } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.color_width}] ${MODELPARAM_VALUE.color_width}
+}
+
+proc update_MODELPARAM_VALUE.mul_delay { MODELPARAM_VALUE.mul_delay PARAM_VALUE.mul_delay } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.mul_delay}] ${MODELPARAM_VALUE.mul_delay}
 }
 

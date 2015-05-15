@@ -65,7 +65,6 @@ def show_error(e):
 def name_format(root, name, ex, conf):
 	return '%s-soft%s' % (name, ex)
 
-#Out = st_scale * In
 def transform(im, conf):
 	mode = im.mode
 	data_src = im.getdata()

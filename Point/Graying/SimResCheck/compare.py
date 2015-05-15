@@ -37,7 +37,7 @@ def compare_table(FileAll):
 	for name in sorted(psnrs):
 		psnr_t += psnrs[name]
 		res += '\t\t<th>%s</th>\n' % name
-	res += '\t\t<th>%s</th>\n' % 'total'
+	res += '\t\t<th>%s</th>\n' % 'Total'
 	res += '\t</tr>\n'
 	res += '\t<tr>\n'
 	for name in sorted(psnrs):

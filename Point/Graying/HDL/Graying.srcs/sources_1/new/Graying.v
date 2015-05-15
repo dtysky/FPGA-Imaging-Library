@@ -7,8 +7,9 @@ FPGA-Imaging-Library
 Graying
 
 :Function
-Covert RGB images to gray-scale images.
-Give the first output after 2 cycles while the input enable.
+Covert RGB images to gray-scale images. 
+Users can configure the multipliers by themselves. 
+Give the first output after mul_delay + 2 cycles while the input enable.
 
 :Module
 Main module
@@ -65,7 +66,7 @@ module Graying(
 	::description
 	This module's working mode.
 	::range
-	0 for Pipline, 1 for Req-ack
+	0 for Pipeline, 1 for Req-ack
 	*/
 	parameter work_mode = 0;
 	/*
@@ -75,7 +76,13 @@ module Graying(
 	1 - 12
 	*/
 	parameter color_width = 8;
-
+	/*
+	::description
+	Delay for multiplier.
+	::range
+	Depend your multilpliers' configurations
+	*/
+	parameter mul_delay = 4;
 	/*
 	::description
 	Clock.
@@ -88,7 +95,7 @@ module Graying(
 	input rst_n;
 	/*
 	::description
-	Input data enable, in pipelines mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be changes.
+	Input data enable, in pipeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be changes.
 	*/
 	input in_enable;
 	/*
@@ -133,28 +140,37 @@ module Graying(
 	
 		/*
 		::description
-		Multiplier for Unsigned 12bits x 0.299, used for Red channel.
-		The pipline stages is 2.
+		Multiplier for Unsigned 12bits x 0.299, used for red channel. 
+		You can configure the multiplier by yourself, then change the "mul_delay". 
+		All Multiplier's pipeline stage must be same, you can not change the ports' configurations!
 		*/
-		MultiplierRedx0d299 MulRed(clk, {{12 - color_width{1'b0}} ,r}, ~rst_n, mul_r);
+		MultiplierRedx0d299 MulRed(.CLK (clk), .A({{12 - color_width{1'b0}} ,r}), .SCLR(~rst_n), .P(mul_r));
 		/*
 		::description
-		Multiplier for Unsigned 12bits x 0.587, used for Red channel.
-		The pipline stages is 2.
+		Multiplier for Unsigned 12bits x 0.587, used for green channel.
+		You can configure the multiplier by yourself, then change the "mul_delay".
+		All Multiplier's pipeline stage must be same, you can not change the ports' configurations!
 		*/
-		MultiplierGreenx0d587 MulGreen(clk, {{12 - color_width{1'b0}} ,g}, ~rst_n, mul_g);
+		MultiplierGreenx0d587 MulGreen(.CLK (clk), .A({{12 - color_width{1'b0}} ,g}), .SCLR(~rst_n), .P(mul_g));
 		/*
 		::description
-		Multiplier for Unsigned 12bits x 0.114, used for Red channel.
-		The pipline stages is 2.
+		Multiplier for Unsigned 12bits x 0.114, used for blue channel.
+		You can configure the multiplier by yourself, then change the "mul_delay".
+		All Multiplier's pipeline stage must be same, you can not change the ports' configurations!
 		*/
-		MultiplierBluex0d114 MulBlue(clk, {{12 - color_width{1'b0}} ,b}, ~rst_n, mul_b);
+		MultiplierBluex0d114 MulBlue(.CLK (clk), .A({{12 - color_width{1'b0}} ,b}), .SCLR(~rst_n), .P(mul_b));
 
+		reg[11 : 0] mul_g_buffer;
+		reg[color_width - 1 : 0] sum_tmp;
+		always @(posedge clk) begin
+			mul_g_buffer <= mul_g;
+			sum_tmp <= mul_r + mul_b;
+		end
 		always @(posedge clk or negedge rst_n or negedge in_enable) begin
 			if(~rst_n || ~in_enable) begin
 				reg_out_data <= 0;
 			end else begin
-				reg_out_data <= mul_r + mul_g + mul_b;
+				reg_out_data <= sum_tmp + mul_g_buffer;
 			end
 		end
 		assign out_data = out_ready ? reg_out_data : 0;
@@ -162,12 +178,12 @@ module Graying(
 		always @(posedge clk or negedge rst_n or negedge in_enable) begin
 			if(~rst_n || ~in_enable)
 				con_enable <= 0;
-			else if(con_enable == 3)
+			else if(con_enable == mul_delay + 2)
 				con_enable <= con_enable;
 			else
 				con_enable <= con_enable + 1;
 		end
-		assign out_ready = con_enable == 3 ? 1 : 0; 
+		assign out_ready = con_enable == mul_delay + 2 ? 1 : 0; 
 
 	endgenerate
 

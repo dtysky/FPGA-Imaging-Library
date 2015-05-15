@@ -16,17 +16,17 @@
 			"Design",
 			"Version",
 			"Modified",
-			["Source", "![Graying](https://github.com/dtysky/FPGA-Imaging-Library/tree/master/Point/Graying)"],
-			"IP-GUI",
+			["Source", "[Graying](https://github.com/dtysky/FPGA-Imaging-Library/tree/master/Point/Graying)"],
+			["IP-GUI", "![Graying IP-GUI](http://src.dtysky.moe/image/f-i-l/3/2/7.png)"],
 			"Function",
 			"Files",
 			"Parameters",
 			"Ports",
 			"Instances",
-			["Simulations","Simulations for this module just support RGB images !\n\n### Software\n\n\n### HDL\n\n\n### Compare\n\n\n"],
+			["Simulations","Simulations for this module just support Gray-scale and 512x512 images !\n\n### Waves\n\n\n### Original\n\n\n### Results\n\n\n### PSNR\n\n\n"],
 			["Utilization",""],
 			["Timing",""],
-			["Power",""]
+			["Thanks","**The sources of images for simulations:**  \n"]
 		],
 		"tcl": [
 			true,

@@ -102,11 +102,12 @@ def parse_sp(line):
 	tmp = re.match(r'\s*(?P<id>\S+)\s*(?P<name>\S+)\s*;', line)
 	if tmp:
 		return attrs_return(tmp)
-	tmp = re.match(r'\s*(?P<id>\S+)\s*(?P<name>\S+)\s*()\s*\(.*', line)
+	tmp = re.match(r'\s*(?P<id>\S+)\s*(?P<name>\S+)\s*\(\..*', line)
 	if tmp:
 		return attrs_return(tmp)
-	tmp = re.match(r'\s*(?P<id>\S+)\s*#\(.*\)\s*(?P<name>\S+)\s*\(.*', line)
+	tmp = re.match(r'\s*(?P<id>\S+)\s*#\(.*\)\s*(?P<name>\S+)\s*\(\..*', line)
 	if tmp:
+		print line
 		return attrs_return(tmp)
 	return {'id': None}
 

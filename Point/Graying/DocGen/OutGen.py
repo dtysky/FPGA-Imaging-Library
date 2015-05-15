@@ -25,12 +25,6 @@ My blog:
 	http://dtysky.moe
 """
 
-def camel_to_underline(name):
-	s = ''
-	for _s_ in name:
-		s += _s_ if _s_.islower() else '_' + _s_.lower()
-	return s[1:]
-
 def complete_source(source, additional_files):
 	for f in additional_files:
 		source['Files'].append(f)
@@ -44,10 +38,11 @@ def generate_md(source, titles):
 		elif title in ['Version', 'Modified']:
 			res += '**%s**  \n%s  \n\n***\n\n' % (title, source[title])
 		elif title in ['Project', 'Design']:
-			res += '## %s\n\n\n' % source[title]
+			res += '## %s\n%s\n\n\n' % (title, source[title])
 		elif title in ['Files'] : 
 			res += '### Files\n\n'
-			res += '''<table board = "3", width="100%">\n'''
+			res += '''<center>\n'''
+			res += '''<table border="1" cellspacing="0">\n'''
 			res += '<tr>\n'
 			res += '<th>Name</th>\n'
 			res += '<th>Function</th>\n'
@@ -58,11 +53,13 @@ def generate_md(source, titles):
 				res += '<td>%s</td>\n' % p[1]
 				res += '</tr>\n'
 			res += '</table>\n\n***\n\n'
+			res += '''</center>\n'''
 		elif title in ['Function'] : 
 			res += '### %s\n%s  \n\n***\n\n' % (title, source[title])
 		elif title in ['Parameters'] and 'Parameters' in source:
 			res += '### Parameters\n\n'
-			res += '''<table board = "3", width="100%">\n'''
+			res += '''<center>\n'''
+			res += '''<table border="1" cellspacing="0">\n'''
 			res += '<tr>\n'
 			res += '<th>Name</th>\n'
 			res += '<th>Type</th>\n'
@@ -78,10 +75,13 @@ def generate_md(source, titles):
 				res += '<td>%s</td>\n' % p['default']
 				res += '<td>%s</td>\n' % p['description']
 				res += '</tr>\n'
-			res += '</table>\n\n***\n\n'
+			res += '</table>\n'
+			res += '''</center>\n\n'''
+			res += '***\n\n'
 		elif title in ['Ports'] and 'Ports' in source:
 			res += '### Ports\n\n'
-			res += '''<table board = "3", width="100%">\n'''
+			res += '''<center>\n'''
+			res += '''<table border="1" cellspacing="0">\n'''
 			res += '<tr>\n'
 			res += '<th>Name</th>\n'
 			res += '<th>Port</th>\n'
@@ -99,10 +99,13 @@ def generate_md(source, titles):
 				res += '<td>%s</td>\n' % p['default']
 				res += '<td>%s</td>\n' % p['description']
 				res += '</tr>\n'
-			res += '</table>\n\n***\n\n'
+			res += '</table>\n'
+			res += '''</center>\n\n'''
+			res += '***\n\n'
 		elif title in ['Instances'] and 'Instances' in source:
 			res += '### Instances\n\n'
-			res += '''<table board = "3", width="100%">\n'''
+			res += '''<center>\n'''
+			res += '''<table border="1" cellspacing="0">\n'''
 			res += '<tr>\n'
 			res += '<th>Name</th>\n'
 			res += '<th>Type</th>\n'
@@ -114,11 +117,9 @@ def generate_md(source, titles):
 				res += '<td>%s</td>\n' % p['type']
 				res += '<td>%s</td>\n' % p['description']
 				res += '</tr>\n'
-			res += '</table>\n\n***\n\n'
-		elif title in ['IP-GUI']:
-			res += '### IP-GUI\n\n'
-			res += '![%s-GUI](/theme/image/%s/gui.png)\n' % (source['Design'], camel_to_underline(source['Design']))
-			res += '\n\n***\n\n' 
+			res += '</table>\n'
+			res += '''</center>\n\n'''
+			res += '***\n\n'
 	return res
 
 def generate_tcl(source, tcl_help):
@@ -129,11 +130,11 @@ def generate_tcl(source, tcl_help):
 	res += 'set_property tooltip {Parameters} ${Page_0}\n'
 	if 'Parameters' in source:
 		for p in source['Parameters']:
-			res += '''ipgui::add_param $IPINST -name "%s" -parent ${Page_0}\n''' % p['name'].replace('\\_', '_')
+			res += '''ipgui::add_param $IPINST -name "%s" -parent ${Page_0}\n''' % p['name']
 		res += 'ipgui::add_static_text $IPINST -name "Par_Discriptions" -parent ${Page_0} -text {\n\n\n'
 		for p in source['Parameters']:
-			res += '%s:\n%s.\nDescription: %s\nRange: %s\n\n\n' % (\
-				p['name'].replace('\\_', '_'), p['type'], p['description'].replace('\\_', '_'), p['range'].replace('\\_', '_'))
+			res += '%s:\n%s.\nDescription: %s\n\n' % (\
+				p['name'], p['type'], p['description'])
 		res += '}\n'
 	if 'Ports' in source:
 		res += '#Adding Page\n'
@@ -141,8 +142,8 @@ def generate_tcl(source, tcl_help):
 		res += 'set_property tooltip {Ports} ${Ports}\n'
 		res += 'ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Ports} -text {\n'
 		for p in source['Ports']:
-			res += '%s:\n%s.\nDescription: %s\nRange: %s\n\n\n' % (\
-				p['name'].replace('\\_', '_'), p['type'], p['description'].replace('\\_', '_'), p['range'].replace('\\_', '_'))
+			res += '%s:\n%s.\nDescription: %s\nRange: %s\n\n' % (\
+				p['name'], p['type'], p['description'], p['range'])
 		res += '}\n'
 	res += '#Adding Page\n'
 	res += '''set Help [ipgui::add_page $IPINST -name "Help"]\n'''

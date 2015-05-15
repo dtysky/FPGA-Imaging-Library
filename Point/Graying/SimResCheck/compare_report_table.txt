@@ -5,7 +5,7 @@
 		<th>1</th>
 		<th>2</th>
 		<th>3</th>
-		<th>total</th>
+		<th>Total</th>
 	</tr>
 	<tr>
 		<td>41.11</td>
