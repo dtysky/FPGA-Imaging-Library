@@ -1,0 +1,17 @@
+../HDL/LightnessTransform.srcs/sim_1/new/LightnessTransform_TB.sv {1 {vlog -work work -vopt -sv B:/Complex_Mind/FPGA-Imaging-Library/Point/LightnessTransform/HDL/LightnessTransform.srcs/sim_1/new/LightnessTransform_TB.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module CLOCK
+-- Compiling interface TBInterface
+-- Compiling module LightnessTransform_TB
+
+Top level modules:
+	LightnessTransform_TB
+
+} {} {}} ../HDL/LightnessTransform.srcs/sim_1/import/True2Comp.v {1 {vlog -work work -vopt -sv B:/Complex_Mind/FPGA-Imaging-Library/Point/LightnessTransform/HDL/LightnessTransform.srcs/sim_1/import/True2Comp.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module True2Comp
+
+Top level modules:
+	True2Comp
+
+} {} {}}
