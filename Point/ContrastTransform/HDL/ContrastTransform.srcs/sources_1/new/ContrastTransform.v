@@ -7,8 +7,8 @@ FPGA-Imaging-Library
 ContrastTransform
 
 :Function
-Change the contrast of an image.
-Give the first output after 3 or 5 cycles while the input enable, depends on work_mode.
+Change the contrast of an image. 
+Give the first output after mul_delay + 1 cycles while the input enable.
 
 :Module
 Main module
@@ -65,23 +65,14 @@ module ContrastTransform(
 	::description
 	This module's working mode.
 	::range
-	0 for Piplines, 1 for Req-ack
+	0 for Pipelines, 1 for Req-ack
 	*/
 	parameter[0 : 0] work_mode = 0; 
 	/*
 	::description
-	The kind of multiplier you want to use.
-	::range
-	0 for Multiplier, 1 for LUTs
-	*/
-	parameter[0 : 0] multiplier_mode = 0;
-	/*
-	::description
 	Channels for color, 1 for gray, 3 for rgb, etc.
-	::range
-	1 - Inf
 	*/
-	parameter color_mode = 3;
+	parameter color_channels = 3;
 	/*
 	::description
 	Color's bit wide
@@ -89,6 +80,13 @@ module ContrastTransform(
 	1 - 12
 	*/
 	parameter[3: 0] color_width = 8;
+	/*
+	::description
+	Delay for multiplier.
+	::range
+	Depend your multilpliers' configurations
+	*/
+	parameter mul_delay = 3;
 	/*
 	::description
 	Clock.
@@ -113,7 +111,7 @@ module ContrastTransform(
 	::description
 	Input data, it must be synchronous with in_enable.
 	*/
-	input [color_mode * color_width - 1 : 0] in_data;
+	input [color_channels * color_width - 1 : 0] in_data;
 	/*
 	::description
 	Output data ready, in both two mode, it will be high while the out_data can be read.
@@ -123,18 +121,29 @@ module ContrastTransform(
 	::description
 	Output data, it will be synchronous with out_ready.
 	*/
-	output[color_mode * color_width - 1 : 0] out_data;
+	output[color_channels * color_width - 1 : 0] out_data;
 
 	reg[2 : 0] con_enable;
 
 	genvar i;
 	generate
+
+		always @(posedge clk or negedge rst_n or negedge in_enable) begin
+			if(~rst_n || ~in_enable)
+				con_enable <= 0;
+			else if(con_enable == mul_delay + 1)
+				con_enable <= con_enable;
+			else
+				con_enable <= con_enable +1;
+		end
+		assign out_ready = con_enable == mul_delay + 1 ? 1 : 0; 
+
 		`define h (i + 1) * color_width - 1
 		`define l i * color_width
-		for (i = 0; i < color_mode; i = i + 1) begin: channel
+		for (i = 0; i < color_channels; i = i + 1) begin: channel
 			wire[11 : 0] mul_a;
 			wire[23 : 0] mul_b;
-			wire[35 : 0] mul_p;
+			wire[23 : 0] mul_p;
 
 			if(work_mode == 0) begin
 				assign mul_a = in_data[`h : `l];
@@ -150,51 +159,27 @@ module ContrastTransform(
 				assign mul_b = reg_mul_b;
 			end
 
-			if(multiplier_mode == 0) begin
-				/*
-				::description
-				Multiplier for Unsigned 12bits x Unsigned 24bits, using hardware multiplier.
-				The pipline stages is 3.
-				*/
-				Multiplier12x24Mul Mul(clk, mul_a, mul_b, ~rst_n, mul_p);
-			end else begin
-				/*
-				::description
-				Multiplier for Unsigned 12bits x Unsigned 24bits, using LUTs.
-				The pipline stages is 5.
-				*/
-				Multiplier12x24LUT Mul(clk, mul_a, mul_b, ~rst_n, mul_p);
-			end
+			/*
+			::description
+			Multiplier for Unsigned 12bits x 24bits, used for fixed multiplication. 
+			You can configure the multiplier by yourself, then change the "mul_delay". 
+			All Multiplier's pipeline stage must be same, you can not change the ports' configurations!
+			*/
+			Multiplier12x24CT Mul(.CLK(clk), .A(mul_a), .B(mul_b), .SCLR(~rst_n), .P(mul_p));
+
 			//For overflow
-			wire[color_width - 1 : 0] out_buffer = mul_p[23 : color_width + 12] != 0 ? 
-				{color_width{1'b1}} : mul_p[color_width + 12 - 1 : 12];
+			reg [color_width - 1 : 0] out_buffer;
+			always @(posedge clk) begin
+				out_buffer <= mul_p[23 : color_width] != 0 ? 
+					{color_width{1'b1}} : 
+					mul_p[color_width - 1 : 0];
+			end
 			assign out_data[`h : `l] = out_ready ? out_buffer : 0;
 			
 		end
 		`undef h
 		`undef l
 
-		if(multiplier_mode == 0) begin
-			always @(posedge clk or negedge rst_n or negedge in_enable) begin
-				if(~rst_n || ~in_enable)
-					con_enable <= 0;
-				else if(con_enable == 3)
-					con_enable <= con_enable;
-				else
-					con_enable <= con_enable +1;
-			end
-			assign out_ready = con_enable == 3 ? 1 : 0; 
-		end else begin
-			always @(posedge clk or negedge rst_n or negedge in_enable) begin
-				if(~rst_n || ~in_enable)
-					con_enable <= 0;
-				else if(con_enable == 5)
-					con_enable <= con_enable;
-				else
-					con_enable <= con_enable +1;
-			end
-			assign out_ready = con_enable == 5 ? 1 : 0; 
-		end
 
 	endgenerate
 

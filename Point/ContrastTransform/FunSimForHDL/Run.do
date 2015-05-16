@@ -1,33 +1,59 @@
 vsim work.glbl -voptargs=+acc -L unisims_ver work.ContrastTransform_TB
 onerror {resume}
+quietly virtual signal -install /ContrastTransform_TB/CTRGBPipeline { /ContrastTransform_TB/CTRGBPipeline/in_data[23:16]} in_data_r
+quietly virtual signal -install /ContrastTransform_TB/CTRGBPipeline { /ContrastTransform_TB/CTRGBPipeline/in_data[15:8]} in_data_g
+quietly virtual signal -install /ContrastTransform_TB/CTRGBPipeline { /ContrastTransform_TB/CTRGBPipeline/in_data[7:0]} in_data_b
 quietly WaveActivateNextPane {} 0
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipline/clk
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipline/rst_n
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipline/ct_scale
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipline/in_enable
-add wave -noupdate -radix unsigned -childformat {{{/ContrastTransform_TB/CTRGBPipline/in_data[23]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[22]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[21]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[20]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[19]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[18]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[17]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[16]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[15]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[14]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[13]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[12]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[11]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[10]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[9]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[8]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[7]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[6]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[5]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[4]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[3]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[2]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[1]} -radix unsigned} {{/ContrastTransform_TB/CTRGBPipline/in_data[0]} -radix unsigned}} -subitemconfig {{/ContrastTransform_TB/CTRGBPipline/in_data[23]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[22]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[21]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[20]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[19]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[18]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[17]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[16]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[15]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[14]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[13]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[12]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[11]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[10]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[9]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[8]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[7]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[6]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[5]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[4]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[3]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[2]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[1]} {-radix unsigned} {/ContrastTransform_TB/CTRGBPipline/in_data[0]} {-radix unsigned}} /ContrastTransform_TB/CTRGBPipline/in_data
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipline/out_ready
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipline/out_data
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipline/con_enable
+quietly virtual signal -install /ContrastTransform_TB/CTRGBReqAck { /ContrastTransform_TB/CTRGBReqAck/in_data[23:16]} in_data_r
+quietly virtual signal -install /ContrastTransform_TB/CTRGBReqAck { /ContrastTransform_TB/CTRGBReqAck/in_data[15:8]} in_data_g
+quietly virtual signal -install /ContrastTransform_TB/CTRGBReqAck { /ContrastTransform_TB/CTRGBReqAck/in_data[7:0]} in_data_b
+quietly virtual signal -install /ContrastTransform_TB/CTRGBPipeline { /ContrastTransform_TB/CTRGBPipeline/out_data[23:16]} out_data_r
+quietly virtual signal -install /ContrastTransform_TB/CTRGBPipeline { /ContrastTransform_TB/CTRGBPipeline/out_data[15:8]} out_data_g
+quietly virtual signal -install /ContrastTransform_TB/CTRGBPipeline { /ContrastTransform_TB/CTRGBPipeline/out_data[7:0]} out_data_b
+quietly WaveActivateNextPane {} 0
+quietly virtual signal -install /ContrastTransform_TB/CTRGBReqAck { /ContrastTransform_TB/CTRGBReqAck/out_data[23:16]} out_data_r
+quietly virtual signal -install /ContrastTransform_TB/CTRGBReqAck { /ContrastTransform_TB/CTRGBReqAck/out_data[15:8]} out_data_g
+quietly virtual signal -install /ContrastTransform_TB/CTRGBReqAck { /ContrastTransform_TB/CTRGBReqAck/out_data[7:0]} out_data_b
+quietly WaveActivateNextPane {} 0
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipeline/clk
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipeline/rst_n
+add wave -noupdate -radix binary /ContrastTransform_TB/CTRGBPipeline/ct_scale
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipeline/in_enable
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipeline/in_data
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipeline/in_data_r
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipeline/in_data_g
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipeline/in_data_b
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipeline/out_ready
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipeline/out_data
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipeline/out_data_r
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipeline/out_data_g
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipeline/out_data_b
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBPipeline/con_enable
 add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBReqAck/clk
 add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBReqAck/rst_n
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBReqAck/ct_scale
+add wave -noupdate -radix binary /ContrastTransform_TB/CTRGBReqAck/ct_scale
 add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBReqAck/in_enable
 add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBReqAck/in_data
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBReqAck/in_data_r
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBReqAck/in_data_g
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBReqAck/in_data_b
 add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBReqAck/out_ready
 add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBReqAck/out_data
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBReqAck/out_data_r
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBReqAck/out_data_g
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBReqAck/out_data_b
 add wave -noupdate -radix unsigned /ContrastTransform_TB/CTRGBReqAck/con_enable
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipline/clk
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipline/rst_n
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipline/ct_scale
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipline/in_enable
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipline/in_data
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipline/out_ready
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipline/out_data
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipline/con_enable
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipeline/clk
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipeline/rst_n
+add wave -noupdate -radix binary /ContrastTransform_TB/CTGrayPipeline/ct_scale
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipeline/in_enable
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipeline/in_data
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipeline/out_ready
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipeline/out_data
+add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayPipeline/con_enable
 add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayReqAck/clk
 add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayReqAck/rst_n
-add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayReqAck/ct_scale
+add wave -noupdate -radix binary /ContrastTransform_TB/CTGrayReqAck/ct_scale
 add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayReqAck/in_enable
 add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayReqAck/in_data
 add wave -noupdate -radix unsigned /ContrastTransform_TB/CTGrayReqAck/out_ready

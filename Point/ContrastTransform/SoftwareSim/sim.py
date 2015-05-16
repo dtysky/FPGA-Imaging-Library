@@ -17,7 +17,7 @@ Version
 Modified
 2015-05-05
 
-Copyright (C) 2015  Dai Tianyu (dtysky)
+Copyright (C) 2015 Tianyu Dai (dtysky) <dtysky@outlook.com>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -46,36 +46,34 @@ My blog:
 	http://dtysky.moe
 """
 
-__author__ = 'Dai Tianyu (dtysky)'
+__author__ = 'Tianyu Dai (dtysky)'
 
 from PIL import Image
 import os, json
+from ctypes import *
+user32 = windll.LoadLibrary('user32.dll')
+MessageBox = lambda x:user32.MessageBoxA(0, x, 'Error', 0) 
 
-ModuleName='ContrastTransform'
 FileFormat = ['.jpg', '.bmp']
 Conf = json.load(open('../ImageForTest/conf.json', 'r'))['conf']
 Debug = False
 
+def show_error(e):
+	MessageBox(e)
+	exit(0)
+
 def name_format(root, name, ex, conf):
 	ct_scale = conf['ct_scale']
-	return '%s-%s-soft%s' % (name, ct_scale, ex)
+	return '%s-%s-soft%s' % (name, ct_scale, '.bmp')
 
-#Out = st_scale * In
 def transform(im, conf):
 	mode = im.mode
 	ct_scale = conf['ct_scale']
-	data_src = im.getdata()
-	data_res = []
-	for p in data_src:
-		if mode == 'RGB':
-			r = int(p[0] * ct_scale)
-			g = int(p[1] * ct_scale)
-			b = int(p[2] * ct_scale)
-			data_res.append((r, g, b))
-		else:
-			data_res.append(int(p * ct_scale))
-	im_res = im.copy()
-	im_res.putdata(data_res)
+	if mode not in ['RGB', 'L']:
+		show_error('This module just supports RGB and Gray-scale images, check your images !')
+	if ct_scale < 0:
+		show_error('''"ct_scale" must be greater than 0 !''')
+	im_res = im.point(lambda p : p * ct_scale)
 	return im_res
 
 def debug(im, conf):

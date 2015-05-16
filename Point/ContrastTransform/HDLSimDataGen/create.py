@@ -2,10 +2,16 @@ __author__ = 'Tianyu Dai (dtysky)'
 
 from PIL import Image
 import os, json
+from ctypes import *
+user32 = windll.LoadLibrary('user32.dll')
+MessageBox = lambda x:user32.MessageBoxA(0, x, 'Error', 0) 
 
-ModuleName='ContrastTransform'
 FileFormat = ['.jpg', '.bmp']
 Conf = json.load(open('../ImageForTest/conf.json', 'r'))['conf']
+
+def show_error(e):
+	MessageBox(e)
+	exit(0)
 
 def name_format(root, name, ex, conf):
 	return '%s-%s' % (name, conf['ct_scale'])
@@ -22,11 +28,9 @@ def conf_format(im, conf):
 		d = d * 2
 		dtmp += '1' if d >= 1 else '0'
 		d = d - 1 if d >= 1 else d
-	return '%s\n%s' % (im.mode, r + dtmp)
+	return '%s\n%s\n' % (im.mode, r + dtmp)
 
 def color_format(mode, color):
-	if mode == '1':
-		color = 0 if color == 0 else 255
 	if mode != 'RGB':
 		color = [color]
 	res = ''
@@ -38,11 +42,17 @@ def color_format(mode, color):
 	return res
 
 def create_dat(im, conf):
+	mode = im.mode
+	ct_scale = conf['ct_scale']
+	if mode not in ['RGB', 'L']:
+		show_error('This module just supports RGB and Gray-scale images, check your images !')
+	if ct_scale < 0:
+		show_error('''"ct_scale" must be greater than 0 !''')
 	data_src = im.getdata()
 	xsize, ysize = im.size
 	data_res = ''
 	for color in data_src:
-		data_res += color_format(im.mode, color) + '\n'
+		data_res += color_format(mode, color) + '\n'
 	return data_res[:-1]
 
 FileAll = []
@@ -59,7 +69,7 @@ for root, name, ex in FileAll:
 		dat_res = open('../FunSimForHDL/%s.dat' \
 			% name_format(root, name, ex, c), 'w')
 		dat_res.write('%d\n%d\n' % (xsize, ysize))
-		dat_res.write('%s\n' % conf_format(im_src, c))
+		dat_res.write('%s' % conf_format(im_src, c))
 		dat_res.write(create_dat(im_src, c))
 		dat_index += '%s' % name_format(root, name, ex, c)
 		dat_index += '\n'

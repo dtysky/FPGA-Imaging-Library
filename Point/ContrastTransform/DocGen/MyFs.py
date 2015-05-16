@@ -52,7 +52,7 @@ class MyFS():
 		tmp=self.fs.readline()
 		if tmp=='':
 			self.end=True
-		return tmp.strip().replace('_', '\_')
+		return tmp.strip()
 	def error(self,e,exit=True):
 		MessageBox(e.encode(locale.getdefaultlocale()[1])+'\r\n'+'Path : '+self.path.encode(locale.getdefaultlocale()[1])+'\r\n'+'Line : '+str(self.linepos))
 		if exit:

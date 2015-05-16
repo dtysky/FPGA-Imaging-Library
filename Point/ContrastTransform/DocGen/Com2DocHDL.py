@@ -46,11 +46,17 @@ for ex_path in conf['excluded_path']:
 		if ex_path in f[0]:
 			FileAll.remove(f)
 
+def camel_to_underline(name):
+	s = ''
+	for _s_ in name:
+		s += _s_ if _s_.islower() else '-' + _s_.lower()
+	return s[1:]
+
 Doc = complete_source(parse_file(FileAll), conf['additional_files'])
-fo = open(conf['out_path'] + Doc['Design'].strip() + '.md', 'w')
+fo = open(conf['out_path'] + camel_to_underline(Doc['Design'].strip()) + '.md', 'w')
 fo.write(generate_md(Doc, conf['titles']))
 fo.close()
 if conf['tcl'][0]:
-	fo = open(conf['out_path'] + Doc['Design'].strip() + '.tcl', 'w')
+	fo = open(conf['out_path'] + camel_to_underline(Doc['Design'].strip()) + '.tcl', 'w')
 	fo.write(generate_tcl(Doc, conf['tcl'][1]))
 	fo.close()

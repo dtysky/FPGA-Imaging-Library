@@ -5,30 +5,28 @@
 		"out_path": "",
 		"mode": [".v",".sv"],
 		"additional_files": [
-			["Multiplier12x24LUT.xci", "Xilinx IPCore file."],
-			["Multiplier12x24LUT_funcsim.v", "Model for functional simulation."],
-			["Multiplier12x24LUT.xci", "Xilinx IPCore file."],
-			["Multiplier12x24LUT_funcsim.v", "Model for functional simulation."]
+			["Multiplier12x24CT.xci", "Xilinx IPCore file."],
+			["Multiplier12x24CT_funcsim.v", "Model for functional simulation."]
 		],
 		"titles": [
-			"Project",
 			"Design",
 			"Version",
 			"Modified",
-			"IP-GUI",
+			["Source", "[Threshold](https://github.com/dtysky/FPGA-Imaging-Library/tree/master/Point/Threshold)"],
+			["IP-GUI", "![Threshold IP-GUI](http://src.dtysky.moe/image/f-i-l/3/4/.png)"],
 			"Function",
 			"Files",
 			"Parameters",
 			"Ports",
 			"Instances",
-			["Simulations","Functional simulation is just supported for RGB and Gray-scale images !\n\n### Software\n\n\n### HDL\n\n\n### Compare\n\n\n"],
+			["Simulations","Simulations for this module just support Gray-scale !\n\n### Waves\n\n\n### Original\n\n\n### Results\n\n\n### PSNR\n\n\n"],
 			["Utilization",""],
 			["Timing",""],
-			["Power",""]
+			["Thanks","**The sources of images for simulations:**  \n"]
 		],
 		"tcl": [
 			true,
-"Homepage for this project:\nhttp://fil.dtysky.moe\n\nSources for this project:\nhttps://github.com/dtysky/FPGA-Imaging-Library\n\nMy e-mail:\ndtysky@outlook.com\n\nMy blog:\nhttp://dtysky.moe\n\n"
+"Homepage for this project:\nhttp://fil.dtysky.moe\n\nSources for this project:\nhttps://github.com/dtysky/FPGA-Imaging-Library\n\nMy e-mail:\ndtysky@outlook.com\n\nMy blog:\nhttp://dtysky.moe\n\nCopyright 2015, Tianyu Dai(dtysky). All Rights Reserved.\nThis project is free software and released under the GNU Lesser General Public License (LGPL)."
 		]
 	}
 }
