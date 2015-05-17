@@ -1,4 +1,3 @@
-vsim -voptargs=+acc -L unisims_ver work.ColorReversal_TB
 onerror {resume}
 quietly virtual signal -install /ColorReversal_TB/CRRGBPipeline { /ColorReversal_TB/CRRGBPipeline/in_data[23:16]} in_data_r
 quietly virtual signal -install /ColorReversal_TB/CRRGBPipeline { /ColorReversal_TB/CRRGBPipeline/in_data[15:8]} in_data_g
@@ -81,4 +80,3 @@ configure wave -timeline 0
 configure wave -timelineunits ps
 update
 WaveRestoreZoom {0 ps} {7200 ps}
-run -all

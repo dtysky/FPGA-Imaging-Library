@@ -3,25 +3,20 @@ __author__ = 'Dai Tianyu (dtysky)'
 from PIL import Image
 import os
 
-ModuleName='ColorReversal'
 FileFormat = ['.res']
 
 def name_format(root, name, ex):
-	return '%s-hdlfun.jpg' % name
+	return '%s-hdlfun.bmp' % name
 
 def convert(data):
-	data_res = []
 	mode = data[2].strip()
-	if mode == 'RGB':
-		for p in data[3:]:
-			r, g, b = p.split(' ')
-			data_res.append((int(r), int(g), int(b)))
-	elif mode == 'L':
-		for p in data[3:]:
+	data_res = []
+	for p in data[3:]:
+		if mode == 'RGB':
+			p = p.split(' ')
+			data_res.append((int(p[0]), int(p[1]), int(p[2])))
+		else:
 			data_res.append(int(p))
-	elif mode == '1':
-		for p in data[3:]:
-			data_res.append(0 if int(p) == 0 else 255)
 	xsize, ysize = int(data[0]), int(data[1])
 	im_res = Image.new(mode, (xsize, ysize))
 	im_res.putdata(data_res)
