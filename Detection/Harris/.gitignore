@@ -1,0 +1,8 @@
+HDL/*
+!HDL/*.srcs/
+!HDL/*.xpr
+HDL_SIM/*
+!HDL_SIM/*.mpf
+!HDL_SIM/*.mti
+!HDL_SIM/*.do
+!HDL_SIM/*.md

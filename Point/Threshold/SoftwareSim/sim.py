@@ -17,7 +17,7 @@ Version
 Modified
 2015-05-15
 
-Copyright (C) 2015  Dai Tianyu (dtysky) <dtysky@outlook.com>
+Copyright (C) 2015 Tianyu Dai (dtysky) <dtysky@outlook.com>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -46,7 +46,7 @@ My blog:
 	http://dtysky.moe
 """
 
-__author__ = 'Dai Tianyu (dtysky)'
+__author__ = 'Tianyu Dai (dtysky)'
 
 from PIL import Image
 import os, json
@@ -69,19 +69,14 @@ def transform(im, conf):
 	mode = im.mode
 	th1 = int(conf['th1'])
 	th2 = int(conf['th2'])
-	data_src = im.getdata()
-	data_res = []
 	if mode not in ['L']:
 		show_error('This module just supports Gray-scale images, check your images !')
 	if conf['mode'] not in ['Base', 'Contour']:
 		show_error('''This module just supports conf "Base" and "Contour", check your conf !''')
-	for p in data_src:
-		if conf['mode'] == 'Base':
-			data_res.append(255 if p > th1 else 0)
-		else:
-			data_res.append(255 if p > th1 and p <= th2 else 0)
-	im_res = Image.new('1', im.size)
-	im_res.putdata(data_res)
+	if conf['mode'] == 'Base':
+		im_res = im.point(lambda p : 255 if p > th1 else 0)
+	else:
+		im_res = im.point(lambda p : 255 if p > th1 and p <= th2 else 0)
 	return im_res
 
 def debug(im, conf):

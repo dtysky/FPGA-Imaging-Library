@@ -17,7 +17,7 @@ Version
 Modified
 2015-05-12
 
-Copyright (C) 2015  Dai Tianyu (dtysky) <dtysky@outlook.com>
+Copyright (C) 2015 Tianyu Dai (dtysky) <dtysky@outlook.com>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

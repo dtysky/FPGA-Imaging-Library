@@ -1,0 +1,34 @@
+# This file is automatically written.  Do not modify.
+proc gen_USERPARAMETER_sum_counter_VALUE {window_size sum_counter } {
+if {$window_size == 2} {
+	set ${sum_counter} 1
+} elseif {$window_size == 3} {
+	set ${sum_counter} 3
+} elseif {$window_size == 4} {
+	set ${sum_counter} 4
+} elseif {$window_size == 5} {
+	set ${sum_counter} 4
+} elseif {$window_size == 6} {
+	set ${sum_counter} 5
+} elseif {$window_size == 7} {
+	set ${sum_counter} 5
+} elseif {$window_size == 8} {
+	set ${sum_counter} 6
+} elseif {$window_size == 9} {
+	set ${sum_counter} 6
+} elseif {$window_size == 10} {
+	set ${sum_counter} 6
+} elseif {$window_size == 11} {
+	set ${sum_counter} 6
+} elseif {$window_size == 12} {
+	set ${sum_counter} 7
+} elseif {$window_size == 13} {
+	set ${sum_counter} 7
+} elseif {$window_size == 14} {
+	set ${sum_counter} 8
+} elseif {$window_size == 15} {
+	set ${sum_counter} 8
+} elseif {$window_size == 16} {
+	set ${sum_counter} 8
+}
+}

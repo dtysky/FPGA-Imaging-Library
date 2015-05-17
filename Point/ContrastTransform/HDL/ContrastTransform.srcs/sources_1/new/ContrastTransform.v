@@ -17,7 +17,7 @@ Main module
 1.0
 
 :Modified
-2015-05-05
+2015-05-16
 
 Copyright (C) 2015  Tianyu Dai (dtysky) <dtysky@outlook.com>
 
@@ -161,7 +161,7 @@ module ContrastTransform(
 
 			/*
 			::description
-			Multiplier for Unsigned 12bits x 24bits, used for fixed multiplication. 
+			Multiplier for Unsigned 12bits x Unsigned 24bits, used for fixed multiplication. 
 			You can configure the multiplier by yourself, then change the "mul_delay". 
 			All Multiplier's pipeline stage must be same, you can not change the ports' configurations!
 			*/

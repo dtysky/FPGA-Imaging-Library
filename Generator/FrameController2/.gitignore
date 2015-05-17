@@ -1,0 +1,12 @@
+HDL/*
+!HDL/*.srcs/
+!HDL/*.xpr
+HDL/Rows8x512/*.srcs/sources_1/ip/MultiplierAdd16x16x16
+!HDL/Rows8x512/*.srcs/sources_1/ip/MultiplierAdd16x16x16/MultiplierAdd16x16x16_funcsim.v
+!HDL/Rows8x512/*.srcs/sources_1/ip/MultiplierAdd16x16x16/MultiplierAdd16x16x16.xci
+FunSimForHDL/*
+!FunSimForHDL/*.mpf
+!FunSimForHDL/*.mti
+!FunSimForHDL/*.do
+!FunSimForHDL/*.md
+*.pyc

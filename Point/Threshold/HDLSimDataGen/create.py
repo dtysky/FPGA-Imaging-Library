@@ -25,8 +25,6 @@ def conf_format(im, conf):
 	return '%s\n%s\n%s\n' % ('1', color_format('L', th1), color_format('L', th2))
 
 def color_format(mode, color):
-	if mode not in ['L']:
-		show_error('This module just supports Gray-scale images, check your images !')
 	res = ''
 	color = [color]
 	for c in color:
@@ -37,11 +35,16 @@ def color_format(mode, color):
 	return res
 
 def create_dat(im, conf):
+	mode = im.mode
+	if im.mode not in ['L']:
+		show_error('This module just supports Gray-scale images, check your images !')
+	if conf['mode'] not in ['Base', 'Contour']:
+		show_error('''This module just supports conf "Base" and "Contour", check your conf !''')
 	data_src = im.getdata()
 	xsize, ysize = im.size
 	data_res = ''
 	for color in data_src:
-		data_res += color_format(im.mode, color) + '\n'
+		data_res += color_format(mode, color) + '\n'
 	return data_res[:-1]
 
 FileAll = []
