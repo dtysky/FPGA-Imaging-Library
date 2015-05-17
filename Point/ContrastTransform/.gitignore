@@ -6,6 +6,6 @@ FunSimForHDL/*
 !FunSimForHDL/*.mti
 !FunSimForHDL/*.do
 *.pyc
-HDL/ContrastTransform.srcs/sources_1/ip/Multiplier12x24CT
+HDL/ContrastTransform.srcs/sources_1/ip/Multiplier12x24CT/*
 !HDL/ContrastTransform.srcs/sources_1/ip/Multiplier12x24CT/Multiplier12x24CT.xci
 !HDL/ContrastTransform.srcs/sources_1/ip/Multiplier12x24CT/Multiplier12x24CT_funcsim.v
