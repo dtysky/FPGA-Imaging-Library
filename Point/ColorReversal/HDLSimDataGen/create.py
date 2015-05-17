@@ -2,20 +2,26 @@ __author__ = 'Tianyu Dai (dtysky)'
 
 from PIL import Image
 import os, json
+from ctypes import *
+user32 = windll.LoadLibrary('user32.dll')
+MessageBox = lambda x:user32.MessageBoxA(0, x, 'Error', 0) 
 
-ModuleName='ColorReversal'
 FileFormat = ['.jpg', '.bmp']
 Conf = json.load(open('../ImageForTest/conf.json', 'r'))['conf']
 
+def show_error(e):
+	MessageBox(e)
+	exit(0)
+
 def name_format(root, name, ex, conf):
-	return name
+	return '%s' % name
 
 def conf_format(im, conf):
-	return im.mode
+	return '%s\n' % im.mode
 
 def color_format(mode, color):
 	if mode == '1':
-		color = 0 if color == 0 else 255
+		return '0' if color == 0 else '1'
 	if mode != 'RGB':
 		color = [color]
 	res = ''
@@ -27,11 +33,14 @@ def color_format(mode, color):
 	return res
 
 def create_dat(im, conf):
+	mode = im.mode
+	if mode not in ['RGB', 'L', '1']:
+		show_error('This module just supports RGB, Gray-scale and binary images, check your images !')
 	data_src = im.getdata()
 	xsize, ysize = im.size
 	data_res = ''
 	for color in data_src:
-		data_res += color_format(im.mode, color) + '\n'
+		data_res += color_format(mode, color) + '\n'
 	return data_res[:-1]
 
 FileAll = []
@@ -48,7 +57,7 @@ for root, name, ex in FileAll:
 		dat_res = open('../FunSimForHDL/%s.dat' \
 			% name_format(root, name, ex, c), 'w')
 		dat_res.write('%d\n%d\n' % (xsize, ysize))
-		dat_res.write('%s\n' % conf_format(im_src, c))
+		dat_res.write('%s' % conf_format(im_src, c))
 		dat_res.write(create_dat(im_src, c))
 		dat_index += '%s' % name_format(root, name, ex, c)
 		dat_index += '\n'

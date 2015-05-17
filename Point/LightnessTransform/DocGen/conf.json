@@ -12,6 +12,8 @@
 			"Design",
 			"Version",
 			"Modified",
+			["Source", "[LightnessTransform](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Point/LightnessTransform)"],
+			["IP-GUI", "![LightnessTransform IP-GUI](http://src.dtysky.moe/image/f-i-l/3/6/3.png)"],
 			"Function",
 			"Files",
 			"Parameters",

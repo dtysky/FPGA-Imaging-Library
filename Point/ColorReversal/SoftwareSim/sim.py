@@ -3,10 +3,10 @@ Project
 FPGA-Imaging-Library
 
 Design
-LightnessTransform
+ColorReversal
 
 Function
-Change the lightness of an image.
+Get a reversal all ponit's color.
 
 Module
 Software simulation.
@@ -63,37 +63,44 @@ def show_error(e):
 	exit(0)
 
 def name_format(root, name, ex, conf):
-	lm_gain = conf['lm_gain']
-	return '%s-%s-soft%s' % (name, lm_gain, '.bmp')
+	return '%s-soft%s' % (name, '.bmp')
 
 def transform(im, conf):
 	mode = im.mode
-	lm_gain = conf['lm_gain']
-	if mode not in ['RGB', 'L']:
-		show_error('This module just supports RGB and Gray-scale images, check your images !')
-	if abs(lm_gain) > 255:
-		show_error('''"Range of lm_gain" must be -255 to 255!''')
-	im_res = im.point(lambda p : p + lm_gain)
+	if mode not in ['RGB', 'L', '1']:
+		show_error('This module just supports RGB, Gray-scale and binary images, check your images !')
+	im_res = im.point(lambda p : 255 - p)
 	return im_res
 
 def debug(im, conf):
 	mode = im.mode
-	lm_gain = conf['lm_gain']
-	if mode not in ['RGB', 'L']:
-		show_error('This module just supports RGB and Gray-scale images, check your images !')
-	if abs(lm_gain) > 255:
-		show_error('''"Range of lm_gain" must be -255 to 255!''')
+	if mode not in ['RGB', 'L', '1']:
+		show_error('This module just supports RGB, Gray-scale and binary images, check your images !')
 	data_src = im.getdata()
 	data_res = ''
 	for p in data_src:
 		if mode == 'RGB':
-			r = int(p[0] * lm_gain)
-			g = int(p[1] * lm_gain)
-			b = int(p[2] * lm_gain)
-			data_res += '%d %d %d\n' % (r, g, b)
+			data_res += '%d %d %d\n' % (255 - color[0], 255 - color[1], 255 - color[2])
 		else:
-			data_res += '%d\n' % int(p * lm_gain)
+			data_res += '%d\n' % (255 - color)
 	return data_res
+
+
+FileAll = []
+for root, dirs, files in os.walk('../ImageForTest'):
+    for f in files:
+    	name, ex = os.path.splitext(f)
+        if ex in FileFormat:
+        	FileAll.append((root+'/', name, ex))
+for root, name, ex in FileAll:
+	im_src = Image.open(root + name + ex)
+	for c in Conf:
+		if Debug:
+			open('../SimResCheck/%s.dat' \
+				% name_format(root, name, ex, c), 'w').write(debug(im_src, c))
+			continue
+		transform(im_src, c).save('../SimResCheck/%s' % name_format(root, name, ex, c))
+
 
 FileAll = []
 for root, dirs, files in os.walk('../ImageForTest'):

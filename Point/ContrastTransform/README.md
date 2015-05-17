@@ -1,3 +1,9 @@
+# Wiki and Contact
+[Homepage for this project](http://ifl.dtysky.moe)  
+[Sources for this project](https://github.com/dtysky/FPGA-Imaging-Library)  
+[My e-mail](Mailto:dtysky@outlook.com)  
+[My blog](http://dtysky.moe)  
+
 # Simulations
 **Simulations for this module just support RGB and gray-scale images !**  
 

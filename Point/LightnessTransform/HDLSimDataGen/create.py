@@ -6,7 +6,6 @@ from ctypes import *
 user32 = windll.LoadLibrary('user32.dll')
 MessageBox = lambda x:user32.MessageBoxA(0, x, 'Error', 0) 
 
-ModuleName='LuminanceTransform'
 FileFormat = ['.jpg', '.bmp']
 Conf = json.load(open('../ImageForTest/conf.json', 'r'))['conf']
 
