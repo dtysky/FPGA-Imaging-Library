@@ -86,13 +86,6 @@ module RowsGenerator(
 	parameter[3: 0] color_width = 8;
 	/*
 	::description
-	Cycles from wr_en enable to first data can input. 
-	::range
-	Depend on fifo's configuration, if using distributed RAM, it's 3, etc. 
-	*/
-	parameter[4 : 0] fifo_wl = 3;
-	/*
-	::description
 	The bits of width of image.
 	::range
 	Depend on width of image
@@ -137,21 +130,11 @@ module RowsGenerator(
 	wire[color_width - 1 : 0] row_dout[0 : rows_width - 1];
 	wire[im_width_bits - 1 : 0] row_num[0 : rows_width - 1];
 
-	wire rst = ~rst_n | ~in_enable;
+	wire rst = ~rst_n;
 
 	genvar i, j;
 	generate
 		assign out_ready = row_wr_en[rows_width];
-		for (j = 0; j < fifo_wl; j = j + 1) begin : buffer
-			reg[color_width - 1 : 0] data;
-			if(j == 0) begin
-				always @(posedge clk)
-					data <= in_data;
-			end else begin
-				always @(posedge clk)
-					data <= buffer[j - 1].data;
-			end				
-		end
 
 		for (i = 0; i < rows_width; i = i + 1) begin : fifos
 			
@@ -159,7 +142,7 @@ module RowsGenerator(
 
 			if (i == 0) begin
 				assign row_wr_en[i] = in_enable;
-				assign row_din[i] = buffer[fifo_wl - 1].data;
+				assign row_din[i] = in_data;
 			end else begin 
 				assign row_din[i] = row_dout[i - 1];
 			end

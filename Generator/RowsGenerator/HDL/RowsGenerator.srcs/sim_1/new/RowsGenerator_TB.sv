@@ -89,16 +89,16 @@ module RowsGenerator_TB();
 	TBInterface #(5, 1) BinPipelinex5(clk, rst_n);
 	TBInterface #(5, 8) GrayPipelinex5(clk, rst_n);
 	CLOCK CLOCK1 (clk);
-	RowsGenerator #(BinPipelinex3.rows_width, 500, 1, 3, 9) 
+	RowsGenerator #(BinPipelinex3.rows_width, 500, 1, 9) 
 		RGBinPipelinex3(BinPipelinex3.clk, BinPipelinex3.rst_n,  
 			BinPipelinex3.in_enable, BinPipelinex3.in_data, BinPipelinex3.out_ready, BinPipelinex3.out_data);
-	RowsGenerator #(GrayPipelinex3.rows_width, 500, 8, 3, 9) 
+	RowsGenerator #(GrayPipelinex3.rows_width, 500, 8, 9) 
 		RGGrayPipelinex3(GrayPipelinex3.clk, GrayPipelinex3.rst_n,  
 			GrayPipelinex3.in_enable, GrayPipelinex3.in_data, GrayPipelinex3.out_ready, GrayPipelinex3.out_data);
-	RowsGenerator #(BinPipelinex5.rows_width, 500, 1, 3, 9) 
+	RowsGenerator #(BinPipelinex5.rows_width, 500, 1, 9) 
 		RGBinPipelinex5(BinPipelinex5.clk, BinPipelinex5.rst_n,  
 			BinPipelinex5.in_enable, BinPipelinex5.in_data, BinPipelinex5.out_ready, BinPipelinex5.out_data);
-	RowsGenerator #(GrayPipelinex5.rows_width, 500, 8, 3, 9) 
+	RowsGenerator #(GrayPipelinex5.rows_width, 500, 8, 9) 
 		RGGrayPipelinex5(GrayPipelinex5.clk, GrayPipelinex5.rst_n,  
 			GrayPipelinex5.in_enable, GrayPipelinex5.in_data, GrayPipelinex5.out_ready, GrayPipelinex5.out_data);
 
@@ -122,6 +122,7 @@ module RowsGenerator_TB();
 		GrayPipelinex5.in_enable = 0;
 		repeat(10) @(posedge clk);
 		rst_n = 1;
+		repeat(10) @(posedge clk);
 	endtask : init_signal
 
 	task work_pipeline();
@@ -162,7 +163,7 @@ module RowsGenerator_TB();
 		end
 		$fclose(fi);
 		fsize = fname.size();
-		repeat(5000) @(posedge clk);
+		repeat(2000) @(posedge clk);
 		for (int i = 0; i < fsize; i++) begin;
 			ftmp = fname.pop_back();
 			fi = $fopen({ftmp, ".dat"}, "r");
