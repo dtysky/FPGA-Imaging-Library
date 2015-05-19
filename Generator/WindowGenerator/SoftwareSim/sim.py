@@ -3,10 +3,11 @@ Project
 FPGA-Imaging-Library
 
 Design
-LightnessTransform
+RowsGenerator
 
 Function
-Change the lightness of an image.
+Generate rows cache. 
+The lowest "color_width" bits of "out_data" is the top left corner pixel of the window! 
 
 Module
 Software simulation.
@@ -15,9 +16,9 @@ Version
 1.0
 
 Modified
-2015-05-16
+2015-05-17
 
-Copyright (C) 2015  Dai Tianyu (dtysky)
+Copyright (C) 2015  Tianyu Dai (dtysky) <dtysky@outlook.com>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -46,54 +47,55 @@ My blog:
 	http://dtysky.moe
 """
 
-__author__ = 'Dai Tianyu (dtysky)'
+__author__ = 'Tianyu Dai (dtysky)'
 
 from PIL import Image
 import os, json
+from RowsGenerator import RowsGenerator as RG
+from WindowGenerator import WindowGenerator as WG
 from ctypes import *
 user32 = windll.LoadLibrary('user32.dll')
 MessageBox = lambda x:user32.MessageBoxA(0, x, 'Error', 0) 
 
 FileFormat = ['.jpg', '.bmp']
 Conf = json.load(open('../ImageForTest/conf.json', 'r'))['conf']
-Debug = False
+"""Debug must be True in this mode !"""
+Debug = True
 
 def show_error(e):
 	MessageBox(e)
 	exit(0)
 
 def name_format(root, name, ex, conf):
-	lm_gain = conf['lm_gain']
-	return '%s-%s-soft%s' % (name, lm_gain, '.bmp')
+	return '%s-%s-soft' % (name, conf['width'])
 
 def transform(im, conf):
-	mode = im.mode
-	lm_gain = conf['lm_gain']
-	if mode not in ['RGB', 'L']:
-		show_error('This module just supports RGB and Gray-scale images, check your images !')
-	if abs(lm_gain) > 255:
-		show_error('''"Range of lm_gain" must be -255 to 255!''')
-	im_res = im.point(lambda p : p + lm_gain)
-	return im_res
+	return []
 
 def debug(im, conf):
 	mode = im.mode
-	lm_gain = conf['lm_gain']
-	if mode not in ['RGB', 'L']:
-		show_error('This module just supports RGB and Gray-scale images, check your images !')
-	if abs(lm_gain) > 255:
-		show_error('''"Range of lm_gain" must be -255 to 255!''')
-	data_src = im.getdata()
+	xsize = im.size[0]
+	if mode not in ['L', '1']:
+		show_error('This module just supports Gray-scale and binary images, check your images !')
+	if xsize != 512:
+		show_error('This module just supports 500xN images, check your images !')
+	if conf['width'] not in [3, 5]:
+		show_error('''This module just supports conf "width" 3 and 5, check your images !''')
+	rows = RG(im, conf['width'])
+	window = WG(conf['width'])
 	data_res = ''
-	for p in data_src:
-		if mode == 'RGB':
-			r = int(p[0] * lm_gain)
-			g = int(p[1] * lm_gain)
-			b = int(p[2] * lm_gain)
-			data_res += '%d %d %d\n' % (r, g, b)
-		else:
-			data_res += '%d\n' % int(p * lm_gain)
-	return data_res
+	while not rows.frame_empty():
+		win = window.update(rows.update())
+		if not window.is_enable():
+			continue
+		for row in win:
+			row = str(row)
+			if mode == '1':
+				row = row.replace('255', '1')
+			data_res += '%s\n' % row.replace('[', '').replace(']', '').replace(',', '')
+		data_res += '\n'
+	return data_res[:-1]
+
 
 FileAll = []
 for root, dirs, files in os.walk('../ImageForTest'):
@@ -105,7 +107,8 @@ for root, name, ex in FileAll:
 	im_src = Image.open(root + name + ex)
 	for c in Conf:
 		if Debug:
-			open('../SimResCheck/%s.dat' \
-				% name_format(root, name, ex, c), 'w').write(debug(im_src, c))
+			with open('../SimResCheck/%s.dat' \
+				% name_format(root, name, ex, c), 'w') as fo:
+				fo.write(debug(im_src, c))
 			continue
 		transform(im_src, c).save('../SimResCheck/%s' % name_format(root, name, ex, c))

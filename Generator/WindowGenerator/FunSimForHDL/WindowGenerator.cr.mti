@@ -1,0 +1,10 @@
+../HDL/WindowGenerator.srcs/sim_1/new/WindowGenerator_TB.sv {1 {vlog -work work -vopt B:/Complex_Mind/FPGA-Imaging-Library/Master/Generator/WindowGenerator/HDL/WindowGenerator.srcs/sim_1/new/WindowGenerator_TB.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module CLOCK
+-- Compiling interface TBInterface
+-- Compiling module WindowGenerator_TB
+
+Top level modules:
+	WindowGenerator_TB
+
+} {} {}}

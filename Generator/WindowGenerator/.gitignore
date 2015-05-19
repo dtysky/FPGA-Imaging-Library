@@ -1,0 +1,10 @@
+HDL/*
+!HDL/*.srcs/
+!HDL/*.xpr
+FunSimForHDL/*
+!FunSimForHDL/*.mpf
+!FunSimForHDL/*.mti
+!FunSimForHDL/*.do
+*.pyc
+SimResCheck/*
+!SimResCheck/*.py
