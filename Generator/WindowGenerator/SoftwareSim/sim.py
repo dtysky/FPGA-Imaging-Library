@@ -7,7 +7,7 @@ RowsGenerator
 
 Function
 Generate rows cache. 
-The lowest "color_width" bits of "out_data" is the first row! 
+The lowest "color_width" bits of "out_data" is the top left corner pixel of the window! 
 
 Module
 Software simulation.
@@ -52,6 +52,7 @@ __author__ = 'Tianyu Dai (dtysky)'
 from PIL import Image
 import os, json
 from RowsGenerator import RowsGenerator as RG
+from WindowGenerator import WindowGenerator as WG
 from ctypes import *
 user32 = windll.LoadLibrary('user32.dll')
 MessageBox = lambda x:user32.MessageBoxA(0, x, 'Error', 0) 
@@ -77,17 +78,24 @@ def debug(im, conf):
 	if mode not in ['L', '1']:
 		show_error('This module just supports Gray-scale and binary images, check your images !')
 	if xsize != 512:
-		show_error('This module just supports 512xN images, check your images !')
+		show_error('This module just supports 500xN images, check your images !')
 	if conf['width'] not in [3, 5]:
 		show_error('''This module just supports conf "width" 3 and 5, check your images !''')
 	rows = RG(im, conf['width'])
-	data_res = 'Showed row1 -> rowN\nBut the lowest color_width-bits of this are the first row !\n\n'
+	window = WG(conf['width'])
+	data_res = ''
 	while not rows.frame_empty():
-		row = str(rows.update())
-		if mode == '1':
-			row = row.replace('255', '1')
-		data_res += '%s\n' % row.replace('[', '').replace(']', '').replace(',', '')
+		win = window.update(rows.update())
+		if not window.is_enable():
+			continue
+		for row in win:
+			row = str(row)
+			if mode == '1':
+				row = row.replace('255', '1')
+			data_res += '%s\n' % row.replace('[', '').replace(']', '').replace(',', '')
+		data_res += '\n'
 	return data_res[:-1]
+
 
 FileAll = []
 for root, dirs, files in os.walk('../ImageForTest'):

@@ -7,7 +7,7 @@ FPGA-Imaging-Library
 RowsGenerator
 
 :Function
-Generate rows cache, **this module just support Pipeline mode !!!** 
+Generate rows cache, **this module just support Pipeline mode now !!!** 
 The lowest color_width-bits of out_data are the first row! 
 You can configure all fifos by yourself, but fifos in one project whcih have same name must have same configurations. 
 And you can just change the "Write Depth" and "Fifo Implementation", the Read Latency must be 1 ! 
@@ -67,9 +67,9 @@ module RowsGenerator(
 	::description
 	The width of rows.
 	::range
-	2 - 16
+	2 - 15
 	*/
-	parameter[4 : 0] rows_width = 3;
+	parameter[3 : 0] rows_width = 3;
 	/*
 	::description
 	Thee width of image.
@@ -104,7 +104,7 @@ module RowsGenerator(
 	input rst_n;
 	/*
 	::description
-	Input data enable, in pipelines mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be changes.
+	Input data enable, it works as fifo0's wr_en.
 	*/
 	input in_enable;
 	/*
@@ -119,7 +119,8 @@ module RowsGenerator(
 	output out_ready;
 	/*
 	::description
-	Output data, it will be synchronous with out_ready.
+	Output data, it will be synchronous with out_ready. 
+	The lowest color_width-bits of this are the first row! 
 	*/
 	output[rows_width * color_width - 1 : 0] out_data;
 

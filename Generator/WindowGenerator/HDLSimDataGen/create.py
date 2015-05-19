@@ -3,6 +3,7 @@ __author__ = 'Tianyu Dai (dtysky)'
 from PIL import Image
 import os, json
 from ctypes import *
+from RowsGenerator import RowsGenerator as RG
 user32 = windll.LoadLibrary('user32.dll')
 MessageBox = lambda x:user32.MessageBoxA(0, x, 'Error', 0) 
 
@@ -40,10 +41,16 @@ def create_dat(im, conf):
 		show_error('This module just supports 512xN images, check your images !')
 	if conf['width'] not in [3, 5]:
 		show_error('''This module just supports conf "width" 3 and 5, check your images !''')
-	data_src = im.getdata()
+	rows = RG(im, conf['width'])
 	data_res = ''
-	for color in data_src:
-		data_res += color_format(mode, color) + '\n'
+	while not rows.frame_empty():
+		row = rows.update()
+		row.reverse()
+		for p in row:
+			if mode == '1':
+				p = 0 if p == 0 else 1
+			data_res += color_format(mode, p)
+		data_res += '\n'
 	return data_res[:-1]
 
 FileAll = []
