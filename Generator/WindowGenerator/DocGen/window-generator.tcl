@@ -4,7 +4,7 @@ ipgui::add_param $IPINST -name "Component_Name"
 set Page_0 [ipgui::add_page $IPINST -name "Page 0" -display_name {Parameters}]
 set_property tooltip {Parameters} ${Page_0}
 ipgui::add_param $IPINST -name "work_mode" -parent ${Page_0}
-ipgui::add_param $IPINST -name "color_channels" -parent ${Page_0}
+ipgui::add_param $IPINST -name "window_width" -parent ${Page_0}
 ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}
 ipgui::add_static_text $IPINST -name "Par_Discriptions" -parent ${Page_0} -text {
 
@@ -13,13 +13,13 @@ work_mode:
 unsigned.
 Description: This module's working mode.
 
-color_channels:
+window_width:
 unsigned.
-Description: Channels for color, 1 for gray, 3 for rgb, etc.
+Description: The width(and height) of window.
 
 color_width:
 unsigned.
-Description: Color's bit wide
+Description: Color's bit wide.
 
 }
 #Adding Page
@@ -38,13 +38,13 @@ Range: None
 
 in_enable:
 unsigned.
-Description: Input data enable, in pipelines mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be changes.
+Description: Input data enable, it works as fifo0's wr_en.
 Range: None
 
 in_data:
 unsigned.
 Description: Input data, it must be synchronous with in_enable.
-Range: color_channels * color_width - 1 : 0
+Range: color_width * window_width - 1 : 0
 
 out_ready:
 unsigned.
@@ -54,7 +54,12 @@ Range: None
 out_data:
 unsigned.
 Description: Output data, it will be synchronous with out_ready.
-Range: color_channels * color_width - 1 : 0
+Range: color_width * window_width * window_width - 1 : 0
+
+input_ack:
+unsigned.
+Description: Input ack, only used for req-ack mode, this port will give a ack while the input_data received.
+Range: None
 
 }
 #Adding Page

@@ -5,22 +5,14 @@
 		"out_path": "",
 		"mode": [".v",".sv"],
 		"additional_files": [
-			["Fifo1xWidthRows.xci", ""]
-			["Fifo1xWidthRows_funcsim.v",""]
-			["Fifo4xWidthRows.xci", ""]
-			["Fifo4xWidthRows_funcsim.v",""]
-			["Fifo8xWidthRows.xci", ""]
-			["Fifo8xWidthRows_funcsim.v",""]
-			["Fifo12xWidthRows.xci", ""]
-			["Fifo12xWidthRows_funcsim.v",""]
 		],
 		"titles": [
 			"Project",
 			"Design",
 			"Version",
 			"Modified",
-			["Source", "[RowsGenerator](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Generate/RowsGenerator)"],
-			["IP-GUI", "![RowsGenerator IP-GUI](http://src.dtysky.moe/image/f-i-l/3/8/3.png)"],
+			["Source", "[WindowGenerator](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Generate/WindowGenerator)"],
+			["IP-GUI", "![WindowGenerator IP-GUI](http://src.dtysky.moe/image/f-i-l/3/9/3.png)"],
 			"Function",
 			"Files",
 			"Parameters",

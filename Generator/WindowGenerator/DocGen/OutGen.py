@@ -52,8 +52,9 @@ def generate_md(source, titles):
 				res += '<td>%s</td>\n' % p[0]
 				res += '<td>%s</td>\n' % p[1]
 				res += '</tr>\n'
-			res += '</table>\n\n***\n\n'
-			res += '''</center>\n'''
+			res += '</table>\n'
+			res += '''</center>\n\n'''
+			res += '***\n\n'
 		elif title in ['Function'] : 
 			res += '### %s\n%s  \n\n***\n\n' % (title, source[title])
 		elif title in ['Parameters'] and 'Parameters' in source:

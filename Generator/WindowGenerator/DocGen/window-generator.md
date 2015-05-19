@@ -1,35 +1,43 @@
 ## Project
-FPGA-Imaging-Library
+FPGA-Imaging-Library  
+
 
 
 ## Design
-ColorReversal
+WindowGenerator  
+
 
 
 **Version**  
 1.0  
+  
 
 ***
 
 **Modified**  
-2015-05-16  
+2015-05-19  
+  
 
 ***
 
 ## Source
-[ColorReversal](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Point/ColorReversal)
+[WindowGenerator](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Generate/WindowGenerator)
 
 
 ***
 
 ## IP-GUI
-![ColorReversal IP-GUI](http://src.dtysky.moe/image/f-i-l/3/7/3.png)
+![WindowGenerator IP-GUI](http://src.dtysky.moe/image/f-i-l/3/9/3.png)
 
 
 ***
 
 ### Function
-Get a reversal all ponit's color.Give the first output after 1 cycle while the input enable.  
+Generate window.  
+The lowest "color_width" bits of "out_data" is the top left corner pixel of the window!  
+In pipeline mode, it will give the first output after window_width / 2 + 1 cycles while the input enable.  
+In req-ack mode, before the first window can be output, it will give a input ack for every req, then you can give the next input data.  
+  
 
 ***
 
@@ -42,18 +50,20 @@ Get a reversal all ponit's color.Give the first output after 1 cycle while the i
 <th>Function</th>
 </tr>
 <tr>
-<td>ColorReversal.v</td>
-<td>Main module</td>
+<td>WindowGenerator.v</td>
+<td>Main module  
+</td>
 </tr>
 <tr>
-<td>ColorReversal_TB.sv</td>
-<td>Test bench</td>
+<td>WindowGenerator_TB.sv</td>
+<td>Test bench  
+</td>
 </tr>
 </table>
+</center>
 
 ***
 
-</center>
 ### Parameters
 
 <center>
@@ -68,23 +78,23 @@ Get a reversal all ponit's color.Give the first output after 1 cycle while the i
 <tr>
 <td>work_mode</td>
 <td>unsigned</td>
-<td>0 for Pipelines, 1 for Req-ack</td>
+<td>0 for Pipline, 1 for Req-ack</td>
 <td>0</td>
 <td>This module's working mode.</td>
 </tr>
 <tr>
-<td>color_channels</td>
+<td>window_width</td>
 <td>unsigned</td>
-<td>None</td>
-<td>3</td>
-<td>Channels for color, 1 for gray, 3 for rgb, etc.</td>
+<td>2 - 15</td>
+<td>5</td>
+<td>The width(and height) of window.</td>
 </tr>
 <tr>
 <td>color_width</td>
 <td>unsigned</td>
 <td>1 - 12</td>
 <td>8</td>
-<td>Color's bit wide</td>
+<td>Color's bit wide.</td>
 </tr>
 </table>
 </center>
@@ -125,13 +135,13 @@ Get a reversal all ponit's color.Give the first output after 1 cycle while the i
 <td>unsigned</td>
 <td>None</td>
 <td>None</td>
-<td>Input data enable, in pipelines mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be changes.</td>
+<td>Input data enable, it works as fifo0's wr_en.</td>
 </tr>
 <tr>
 <td>in_data</td>
 <td>input</td>
 <td>unsigned</td>
-<td>color_channels * color_width - 1 : 0</td>
+<td>color_width * window_width - 1 : 0</td>
 <td>None</td>
 <td>Input data, it must be synchronous with in_enable.</td>
 </tr>
@@ -147,9 +157,17 @@ Get a reversal all ponit's color.Give the first output after 1 cycle while the i
 <td>out_data</td>
 <td>output</td>
 <td>unsigned</td>
-<td>color_channels * color_width - 1 : 0</td>
+<td>color_width * window_width * window_width - 1 : 0</td>
 <td>None</td>
 <td>Output data, it will be synchronous with out_ready.</td>
+</tr>
+<tr>
+<td>input_ack</td>
+<td>output</td>
+<td>unsigned</td>
+<td>None</td>
+<td>None</td>
+<td>Input ack, only used for req-ack mode, this port will give a ack while the input_data received.</td>
 </tr>
 </table>
 </center>
@@ -157,15 +175,18 @@ Get a reversal all ponit's color.Give the first output after 1 cycle while the i
 ***
 
 ## Simulations
-Functional simulation is just supported for RGB and Gray-scale images !
+Simulations for this module just support 500xN, Gray-scale and binary images ! And module just supports conf 'width' 3 and 5 !
 
-### Software
-
-
-### HDL
+### Waves
 
 
-### Compare
+### Original
+
+
+### Results
+
+
+### PSNR
 
 
 

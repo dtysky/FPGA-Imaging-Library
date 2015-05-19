@@ -3,23 +3,28 @@ ipgui::add_param $IPINST -name "Component_Name"
 #Adding Page
 set Page_0 [ipgui::add_page $IPINST -name "Page 0" -display_name {Parameters}]
 set_property tooltip {Parameters} ${Page_0}
-ipgui::add_param $IPINST -name "work_mode" -parent ${Page_0}
-ipgui::add_param $IPINST -name "color_channels" -parent ${Page_0}
+ipgui::add_param $IPINST -name "rows_width" -parent ${Page_0}
+ipgui::add_param $IPINST -name "im_width" -parent ${Page_0}
 ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}
+ipgui::add_param $IPINST -name "im_width_bits" -parent ${Page_0}
 ipgui::add_static_text $IPINST -name "Par_Discriptions" -parent ${Page_0} -text {
 
 
-work_mode:
+rows_width:
 unsigned.
-Description: This module's working mode.
+Description: The width of rows.
 
-color_channels:
+im_width:
 unsigned.
-Description: Channels for color, 1 for gray, 3 for rgb, etc.
+Description: Thee width of image.
 
 color_width:
 unsigned.
-Description: Color's bit wide
+Description: Color's bit wide.
+
+im_width_bits:
+unsigned.
+Description: The bits of width of image.
 
 }
 #Adding Page
@@ -38,13 +43,13 @@ Range: None
 
 in_enable:
 unsigned.
-Description: Input data enable, in pipelines mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be changes.
+Description: Input data enable, it works as fifo0's wr_en.
 Range: None
 
 in_data:
 unsigned.
 Description: Input data, it must be synchronous with in_enable.
-Range: color_channels * color_width - 1 : 0
+Range: color_width - 1 : 0
 
 out_ready:
 unsigned.
@@ -53,8 +58,8 @@ Range: None
 
 out_data:
 unsigned.
-Description: Output data, it will be synchronous with out_ready.
-Range: color_channels * color_width - 1 : 0
+Description: Output data, it will be synchronous with out_ready.The lowest color_width-bits of this are the first row!
+Range: rows_width * color_width - 1 : 0
 
 }
 #Adding Page

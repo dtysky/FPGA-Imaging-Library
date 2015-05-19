@@ -5,13 +5,13 @@
 		"out_path": "",
 		"mode": [".v",".sv"],
 		"additional_files": [
-			["Fifo1xWidthRows.xci", ""]
-			["Fifo1xWidthRows_funcsim.v",""]
-			["Fifo4xWidthRows.xci", ""]
-			["Fifo4xWidthRows_funcsim.v",""]
-			["Fifo8xWidthRows.xci", ""]
-			["Fifo8xWidthRows_funcsim.v",""]
-			["Fifo12xWidthRows.xci", ""]
+			["Fifo1xWidthRows.xci", ""],
+			["Fifo1xWidthRows_funcsim.v",""],
+			["Fifo4xWidthRows.xci", ""],
+			["Fifo4xWidthRows_funcsim.v",""],
+			["Fifo8xWidthRows.xci", ""],
+			["Fifo8xWidthRows_funcsim.v",""],
+			["Fifo12xWidthRows.xci", ""],
 			["Fifo12xWidthRows_funcsim.v",""]
 		],
 		"titles": [

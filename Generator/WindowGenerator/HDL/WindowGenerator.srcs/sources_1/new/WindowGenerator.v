@@ -84,12 +84,7 @@ module WindowGenerator(
 	1 - 12
 	*/
 	parameter[3: 0] color_width = 8;
-	/*
-	::description
-	Half of width(and height) of window.
-	::range
-	Depend on window's width
-	*/
+
 	parameter[2 : 0] window_width_half = window_width >> 1;
 	/*
 	::description
