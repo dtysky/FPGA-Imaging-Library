@@ -1,2 +1,2 @@
-vsim -work.glbl -L unisims_ver work.ContrastTransform_TB
+vsim -L unisims_ver work.MeanFilter_TB
 run -all

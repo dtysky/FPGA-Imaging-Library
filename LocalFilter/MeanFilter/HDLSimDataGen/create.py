@@ -3,6 +3,8 @@ __author__ = 'Tianyu Dai (dtysky)'
 from PIL import Image
 import os, json
 from ctypes import *
+from RowsGenerator import RowsGenerator as RG
+from WindowGenerator import WindowGenerator as WG
 user32 = windll.LoadLibrary('user32.dll')
 MessageBox = lambda x:user32.MessageBoxA(0, x, 'Error', 0) 
 
@@ -14,45 +16,39 @@ def show_error(e):
 	exit(0)
 
 def name_format(root, name, ex, conf):
-	return '%s-%s' % (name, conf['ct_scale'])
+	return '%s-%s' % (name, conf['window_width'])
 
 def conf_format(im, conf):
-	c = conf['ct_scale']
-	r = int(c)
-	d = abs(c - r)
-	r = bin(int(r)).split('0b').pop()
-	for i in xrange(12 - len(r)):
-		r = '0' + r
-	dtmp = ''
-	for i in xrange(12):
-		d = d * 2
-		dtmp += '1' if d >= 1 else '0'
-		d = d - 1 if d >= 1 else d
-	return '%s\n%s\n' % (im.mode, r + dtmp)
+	return '%d\n' % conf['window_width']
 
 def color_format(mode, color):
-	if mode != 'RGB':
-		color = [color]
-	res = ''
-	for c in color:
-		tmp = bin(c)[2:]
-		for i in xrange(10 - len(bin(c))):
-			tmp = '0' + tmp
-		res += tmp
+	res = bin(color)[2:]
+	for i in xrange(10 - len(bin(color))):
+		res = '0' + res
 	return res
 
 def create_dat(im, conf):
 	mode = im.mode
-	ct_scale = conf['ct_scale']
-	if mode not in ['RGB', 'L']:
-		show_error('This module just supports RGB and Gray-scale images, check your images !')
-	if ct_scale < 0:
-		show_error('''"ct_scale" must be greater than 0 !''')
-	data_src = im.getdata()
+	width = int(conf['window_width'])
+	if mode not in ['L']:
+		show_error('Simulations for this module just supports Gray-scale images, check your images !')
+	if width not in [3, 5]:
+		show_error('Simulations for this module just supports "window_width" 3 and 5, check your images !')
 	xsize, ysize = im.size
 	data_res = ''
-	for color in data_src:
-		data_res += color_format(mode, color) + '\n'
+	rows = RG(im, width)
+	window = WG(width)
+	while not rows.frame_empty():
+		win = window.update(rows.update())
+		if not window.is_enable():
+			continue
+		win.reverse()
+		for row in win:
+			row = list(row)
+			row.reverse()
+			for p in row:
+				data_res += color_format(mode, p)
+		data_res += '\n'
 	return data_res[:-1]
 
 FileAll = []

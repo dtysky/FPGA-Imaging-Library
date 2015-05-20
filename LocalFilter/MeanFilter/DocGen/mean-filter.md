@@ -1,31 +1,36 @@
 ## Design
-ContrastTransform
+MeanFilter  
+
 
 
 **Version**  
 1.0  
+  
 
 ***
 
 **Modified**  
-2015-05-16  
+2015-05-20  
+  
 
 ***
 
 ## Source
-[ContrastTransform](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Point/ContrastTransform)
+[MeanFilter](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/LocalFilter/MeanFilter)
 
 
 ***
 
 ## IP-GUI
-![ContrastTransform IP-GUI](http://src.dtysky.moe/image/f-i-l/3/5/3.png)
+![MeanFilter IP-GUI](http://src.dtysky.moe/image/f-i-l/3/10/3.png)
 
 
 ***
 
 ### Function
-Change the contrast of an image.Give the first output after mul_delay + 1 cycles while the input enable.  
+Local filter - Mean filter, it always used for smoothing images.  
+It will give the first output after sum_stage cycles while the input enable.  
+  
 
 ***
 
@@ -38,26 +43,20 @@ Change the contrast of an image.Give the first output after mul_delay + 1 cycles
 <th>Function</th>
 </tr>
 <tr>
-<td>ContrastTransform.v</td>
-<td>Main module</td>
+<td>MeanFilter.v</td>
+<td>Main module  
+</td>
 </tr>
 <tr>
-<td>ContrastTransform_TB.sv</td>
-<td>Test Bench</td>
-</tr>
-<tr>
-<td>Multiplier12x24CT.xci</td>
-<td>Xilinx IPCore file.</td>
-</tr>
-<tr>
-<td>Multiplier12x24CT_funcsim.v</td>
-<td>Model for functional simulation.</td>
+<td>MeanFilter_TB.sv</td>
+<td>Test bench  
+</td>
 </tr>
 </table>
+</center>
 
 ***
 
-</center>
 ### Parameters
 
 <center>
@@ -72,30 +71,30 @@ Change the contrast of an image.Give the first output after mul_delay + 1 cycles
 <tr>
 <td>work_mode</td>
 <td>unsigned</td>
-<td>0 for Pipelines, 1 for Req-ack</td>
+<td>0 for Pipline, 1 for Req-ack</td>
 <td>0</td>
 <td>This module's working mode.</td>
 </tr>
 <tr>
-<td>color_channels</td>
+<td>window_width</td>
 <td>unsigned</td>
-<td>None</td>
+<td>2 - 15</td>
 <td>3</td>
-<td>Channels for color, 1 for gray, 3 for rgb, etc.</td>
+<td>The width(and height) of window.</td>
 </tr>
 <tr>
 <td>color_width</td>
 <td>unsigned</td>
 <td>1 - 12</td>
 <td>8</td>
-<td>Color's bit wide</td>
+<td>Color's bit wide.</td>
 </tr>
 <tr>
-<td>mul_delay</td>
+<td>sum_stage</td>
 <td>unsigned</td>
-<td>Depend your multilpliers' configurations</td>
+<td>Depend on width of window, log2(window_width^2)</td>
 <td>3</td>
-<td>Delay for multiplier.</td>
+<td>Stage of sum.</td>
 </tr>
 </table>
 </center>
@@ -131,26 +130,18 @@ Change the contrast of an image.Give the first output after mul_delay + 1 cycles
 <td>Reset, active low.</td>
 </tr>
 <tr>
-<td>ct_scale</td>
-<td>input</td>
-<td>unsigned</td>
-<td>23 : 0</td>
-<td>None</td>
-<td>Scale for contrast, fixed, 12bits.12bits.</td>
-</tr>
-<tr>
 <td>in_enable</td>
 <td>input</td>
 <td>unsigned</td>
 <td>None</td>
 <td>None</td>
-<td>Input data enable, in pipelines mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be changes.</td>
+<td>Input data enable, in pipeeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.</td>
 </tr>
 <tr>
 <td>in_data</td>
 <td>input</td>
 <td>unsigned</td>
-<td>color_channels * color_width - 1 : 0</td>
+<td>color_width * window_width * window_width - 1 : 0</td>
 <td>None</td>
 <td>Input data, it must be synchronous with in_enable.</td>
 </tr>
@@ -166,7 +157,7 @@ Change the contrast of an image.Give the first output after mul_delay + 1 cycles
 <td>out_data</td>
 <td>output</td>
 <td>unsigned</td>
-<td>color_channels * color_width - 1 : 0</td>
+<td>color_width - 1 : 0</td>
 <td>None</td>
 <td>Output data, it will be synchronous with out_ready.</td>
 </tr>
@@ -175,27 +166,8 @@ Change the contrast of an image.Give the first output after mul_delay + 1 cycles
 
 ***
 
-### Instances
-
-<center>
-<table border="1" cellspacing="0">
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>Mul</td>
-<td>Multiplier12x24CT</td>
-<td>Multiplier for Unsigned 12bits x Unsigned 24bits, used for fixed multiplication.You can configure the multiplier by yourself, then change the "mul_delay".All Multiplier's pipeline stage must be same, you can not change the ports' configurations!</td>
-</tr>
-</table>
-</center>
-
-***
-
 ## Simulations
-Simulations for this module just support Gray-scale !
+Simulations for this module just support Gray-scale images !
 
 ### Waves
 

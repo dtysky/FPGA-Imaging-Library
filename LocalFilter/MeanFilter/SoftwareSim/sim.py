@@ -78,25 +78,25 @@ def mean_filter(window):
 	elif len(window) == 4:
 		return w_sum >> 4;
 	elif len(window) == 5:
-		return (w_sum >> 5) + (w_sum >> 7);
+		return (w_sum >> 5) + (w_sum >> 7) + (w_sum >> 10);
 	elif len(window) == 6:
 		return (w_sum >> 6) + (w_sum >> 7) + (w_sum >> 8);
 	elif len(window) == 7:
-		return (w_sum >> 6) + (w_sum >> 8);
+		return (w_sum >> 6) + (w_sum >> 8) + (w_sum >> 10);
 	elif len(window) == 8:
 		return w_sum >> 6;
 	elif len(window) == 9:
-		return (w_sum >> 7) + (w_sum >> 8) + (w_sum >> 10);
+		return (w_sum >> 7) + (w_sum >> 8) + (w_sum >> 11);
 	elif len(window) == 10:
-		return (w_sum >> 7) + (w_sum >> 9);
+		return (w_sum >> 7) + (w_sum >> 9) + (w_sum >> 13);
 	elif len(window) == 11:
-		return (w_sum >> 7) + (w_sum >> 10);
+		return (w_sum >> 7) + (w_sum >> 12) + (w_sum >> 13);
 	elif len(window) == 12:
 		return (w_sum >> 8) + (w_sum >> 9) + (w_sum >> 10);
 	elif len(window) == 13:
-		return (w_sum >> 8) + (w_sum >> 9);
+		return (w_sum >> 8) + (w_sum >> 9) + (w_sum >> 14);
 	elif len(window) == 14:
-		return (w_sum >> 8) + (w_sum >> 10);
+		return (w_sum >> 8) + (w_sum >> 10) + (w_sum >> 12);
 	elif len(window) == 15:
 		return (w_sum >> 8) + (w_sum >> 11);
 
@@ -105,8 +105,8 @@ def transform(im, conf):
 	width = int(conf['window_width'])
 	if mode not in ['L']:
 		show_error('Simulations for this module just supports Gray-scale images, check your images !')
-	if width < 2 or width > 15:
-		show_error('Simulations for this module just supports "window_width" 2 to 15, check your images !')
+	if width not in [3, 5]:
+		show_error('Simulations for this module just supports "window_width" 3 and 5, check your images !')
 	data_res = []
 	rows = RG(im, width)
 	window = WG(width)
@@ -124,8 +124,8 @@ def debug(im, conf):
 	width = int(conf['window_width'])
 	if mode not in ['L']:
 		show_error('Simulations for this module just supports Gray-scale images, check your images !')
-	if width < 2 or width > 15:
-		show_error('Simulations for this module just supports "window_width" 2 to 15, check your images !')
+	if width not in [3, 5]:
+		show_error('Simulations for this module just supports "window_width" 3 and 5, check your images !')
 	data_src = im.getdata()
 	data_res = ''
 	rows = RG(im, width)

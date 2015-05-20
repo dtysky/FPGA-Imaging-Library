@@ -62,9 +62,9 @@ def parse_block(block, fs):
 			res['args'][tmp.group(1)] = ''
 			ptr += 1
 			while ptr < len(block) and block[ptr] != '':
-				if '::' in block[ptr]:
+				if ':' in block[ptr]:
 					break
-				res['args'][tmp.group(1)] += block[ptr]
+				res['args'][tmp.group(1)] += block[ptr] + '  \n'
 				ptr += 1
 	return res
 
@@ -102,12 +102,17 @@ def parse_sp(line):
 	tmp = re.match(r'\s*(?P<id>\S+)\s*(?P<name>\S+)\s*;', line)
 	if tmp:
 		return attrs_return(tmp)
+	tmp = re.match(r'\s*(?P<id>\S+)\s*#\(.*\)\s*(?P<name>\S+)\s*\(\..*', line)
+	if tmp:
+		return attrs_return(tmp)
 	tmp = re.match(r'\s*(?P<id>\S+)\s*(?P<name>\S+)\s*\(\..*', line)
 	if tmp:
 		return attrs_return(tmp)
-	tmp = re.match(r'\s*(?P<id>\S+)\s*#\(.*\)\s*(?P<name>\S+)\s*\(\..*', line)
+	tmp = re.match(r'\s*(?P<id>\S+)\s*#\(.*\)\s*(?P<name>\S+)\s*\(.*', line)
 	if tmp:
-		print line
+		return attrs_return(tmp)
+	tmp = re.match(r'\s*(?P<id>\S+)\s*(?P<name>\S+)\s*\(.*', line)
+	if tmp:
 		return attrs_return(tmp)
 	return {'id': None}
 
@@ -140,7 +145,7 @@ def parse_file(files):
 
 		if 'Module' not in args:
 			fi.error("Head block must have 'Module' !")
-		if args['Module'] != 'Main module':
+		if args['Module'].replace('  \n', '') != 'Main module':
 			res['Files'].append((name + ex, args['Module']))
 			continue
 

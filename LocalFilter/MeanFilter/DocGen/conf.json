@@ -5,21 +5,19 @@
 		"out_path": "",
 		"mode": [".v",".sv"],
 		"additional_files": [
-			["Multiplier12x24CT.xci", "Xilinx IPCore file."],
-			["Multiplier12x24CT_funcsim.v", "Model for functional simulation."]
 		],
 		"titles": [
 			"Design",
 			"Version",
 			"Modified",
-			["Source", "[ContrastTransform](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Point/ContrastTransform)"],
-			["IP-GUI", "![ContrastTransform IP-GUI](http://src.dtysky.moe/image/f-i-l/3/5/3.png)"],
+			["Source", "[MeanFilter](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/LocalFilter/MeanFilter)"],
+			["IP-GUI", "![MeanFilter IP-GUI](http://src.dtysky.moe/image/f-i-l/3/10/3.png)"],
 			"Function",
 			"Files",
 			"Parameters",
 			"Ports",
 			"Instances",
-			["Simulations","Simulations for this module just support RGB and Gray-scale images !\n\n### Waves\n\n\n### Original\n\n\n### Results\n\n\n### PSNR\n\n\n"],
+			["Simulations","Simulations for this module just support Gray-scale images !\n\n### Waves\n\n\n### Original\n\n\n### Results\n\n\n### PSNR\n\n\n"],
 			["Utilization",""],
 			["Timing",""],
 			["Thanks","**The sources of images for simulations:**  \n"]

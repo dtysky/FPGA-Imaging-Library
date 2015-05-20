@@ -9,16 +9,11 @@ def name_format(root, name, ex):
 	return '%s-hdlfun.bmp' % name
 
 def convert(data):
-	mode = data[2].strip()
 	data_res = []
-	for p in data[3:]:
-		if mode == 'RGB':
-			p = p.split(' ')
-			data_res.append((int(p[0]), int(p[1]), int(p[2])))
-		else:
-			data_res.append(int(p))
+	for p in data[2:]:
+		data_res.append(int(p))
 	xsize, ysize = int(data[0]), int(data[1])
-	im_res = Image.new(mode, (xsize, ysize))
+	im_res = Image.new('L', (xsize, ysize))
 	im_res.putdata(data_res)
 	return im_res
 

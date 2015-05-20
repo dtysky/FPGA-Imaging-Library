@@ -66,7 +66,21 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>viewChecksum</spirit:name>
-						<spirit:value>b399970e</spirit:value>
+						<spirit:value>fde0103f</spirit:value>
+					</spirit:parameter>
+				</spirit:parameters>
+			</spirit:view>
+			<spirit:view>
+				<spirit:name>xilinx_utilityxitfiles</spirit:name>
+				<spirit:displayName>Utility XIT/TTCL</spirit:displayName>
+				<spirit:envIdentifier>:vivado.xilinx.com:xit.util</spirit:envIdentifier>
+				<spirit:fileSetRef>
+					<spirit:localName>xilinx_utilityxitfiles_view_fileset</spirit:localName>
+				</spirit:fileSetRef>
+				<spirit:parameters>
+					<spirit:parameter>
+						<spirit:name>viewChecksum</spirit:name>
+						<spirit:value>f617d9f8</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -208,6 +222,13 @@
 						spirit:resolve="immediate"
 						spirit:id="MODELPARAM_VALUE.window_width_half"
 						spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.window_width&apos;)) >> 1)">2</spirit:value>
+				<spirit:vendorExtensions>
+					<xilinx:parameterInfo>
+						<xilinx:enablement>
+							<xilinx:isEnabled>false</xilinx:isEnabled>
+						</xilinx:enablement>
+					</xilinx:parameterInfo>
+				</spirit:vendorExtensions>
 			</spirit:modelParameter>
 		</spirit:modelParameters>
 	</spirit:model>
@@ -247,7 +268,14 @@
 				<spirit:name>xgui/WindowGenerator_v1_0.tcl</spirit:name>
 				<spirit:fileType>tclSource</spirit:fileType>
 				<spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
-				<spirit:userFileType>CHECKSUM_e0525365</spirit:userFileType>
+				<spirit:userFileType>CHECKSUM_4c859f49</spirit:userFileType>
+			</spirit:file>
+		</spirit:fileSet>
+		<spirit:fileSet>
+			<spirit:name>xilinx_utilityxitfiles_view_fileset</spirit:name>
+			<spirit:file>
+				<spirit:name>gui/WindowGenerator_v1_0.gtcl</spirit:name>
+				<spirit:userFileType>GTCL</spirit:userFileType>
 			</spirit:file>
 		</spirit:fileSet>
 	</spirit:fileSets>
@@ -287,6 +315,20 @@
 					spirit:id="PARAM_VALUE.Component_Name"
 					spirit:order="1">WindowGenerator_v1_0</spirit:value>
 		</spirit:parameter>
+		<spirit:parameter>
+			<spirit:name>window_width_half</spirit:name>
+			<spirit:displayName>Window Width Half</spirit:displayName>
+			<spirit:value spirit:format="long"
+					spirit:resolve="user"
+					spirit:id="PARAM_VALUE.window_width_half">2</spirit:value>
+			<spirit:vendorExtensions>
+				<xilinx:parameterInfo>
+					<xilinx:enablement>
+						<xilinx:isEnabled>false</xilinx:isEnabled>
+					</xilinx:enablement>
+				</xilinx:parameterInfo>
+			</spirit:vendorExtensions>
+		</spirit:parameter>
 	</spirit:parameters>
 	<spirit:vendorExtensions>
 		<xilinx:coreExtensions>
@@ -313,8 +355,8 @@
 			</xilinx:taxonomies>
 			<xilinx:displayName>WindowGenerator_v1_0</xilinx:displayName>
 			<xilinx:vendorURL>http://fil.dtysky.moe</xilinx:vendorURL>
-			<xilinx:coreRevision>4</xilinx:coreRevision>
-			<xilinx:coreCreationDateTime>2015-05-20T07:59:35Z</xilinx:coreCreationDateTime>
+			<xilinx:coreRevision>5</xilinx:coreRevision>
+			<xilinx:coreCreationDateTime>2015-05-20T08:49:22Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>
 				<xilinx:tag xilinx:name="xilinx.com:ip:WindowGenerator:1.0_ARCHIVE_LOCATION">b:/complex_mind/fpga-imaging-library/master/generator/windowgenerator/hdl/windowgenerator.srcs</xilinx:tag>
 				<xilinx:tag xilinx:name="xilinx.com:user:WindowGenerator:1.0_ARCHIVE_LOCATION">b:/complex_mind/fpga-imaging-library/master/generator/windowgenerator/hdl/windowgenerator.srcs</xilinx:tag>
@@ -325,13 +367,13 @@
 		<xilinx:packagingInfo>
 			<xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
 			<xilinx:checksum xilinx:scope="fileGroups"
-					xilinx:value="9c69440e"/>
+					xilinx:value="03162fc3"/>
 			<xilinx:checksum xilinx:scope="ports"
 					xilinx:value="300bbec7"/>
 			<xilinx:checksum xilinx:scope="hdlParameters"
-					xilinx:value="4a9b7a49"/>
+					xilinx:value="06fa25b3"/>
 			<xilinx:checksum xilinx:scope="parameters"
-					xilinx:value="b1ba365c"/>
+					xilinx:value="9df0e1c3"/>
 		</xilinx:packagingInfo>
 	</spirit:vendorExtensions>
 </spirit:component>

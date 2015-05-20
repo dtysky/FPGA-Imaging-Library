@@ -1,4 +1,3 @@
-vsim -voptargs=+acc -L unisims_ver work.MeanFilter_TB
 onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate -radix unsigned /MeanFilter_TB/MFGrayPipelinex3/clk
@@ -59,4 +58,3 @@ configure wave -timeline 0
 configure wave -timelineunits ps
 update
 WaveRestoreZoom {234740606 ps} {234742390 ps}
-run -all

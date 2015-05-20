@@ -1,14 +1,14 @@
 Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
-| Date              : Sat May 16 17:12:59 2015
+| Date              : Wed May 20 18:31:59 2015
 | Host              : Dtysky running 64-bit major release  (build 9200)
-| Command           : report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -name timing_1 -file B:/Complex_Mind/FPGA-Imaging-Library/Point/ContrastTransform/DocGen/timing_report.txt
-| Design            : ContrastTransform
-| Device            : 7a35t-cpg236
-| Speed File        : -1  PRODUCTION 1.14 2014-09-11
+| Command           : report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -name timing_1 -file B:/Complex_Mind/FPGA-Imaging-Library/Master/LocalFilter/MeanFilter/DocGen/timing_report.txt
+| Design            : MeanFilter
+| Device            : 7z100-ffg1156
+| Speed File        : -1  PRODUCTION 1.11 2014-09-11
 | Temperature Grade : C
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Timing Summary Report
 
@@ -52,7 +52,86 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 0 register/latch pins with no clock.
+ There are 78 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+
+con_enable_reg[0]/C
+con_enable_reg[1]/C
+con_enable_reg[2]/C
+con_enable_reg[3]/C
+pipe[0].genblk1[0].sum_reg[0][0]/C
+pipe[0].genblk1[0].sum_reg[0][1]/C
+pipe[0].genblk1[0].sum_reg[0][2]/C
+pipe[0].genblk1[0].sum_reg[0][3]/C
+pipe[0].genblk1[0].sum_reg[0][4]/C
+pipe[0].genblk1[0].sum_reg[0][5]/C
+pipe[0].genblk1[0].sum_reg[0][6]/C
+pipe[0].genblk1[0].sum_reg[0][7]/C
+pipe[0].genblk1[0].sum_reg[0][8]/C
+pipe[0].genblk1[0].sum_reg[0][9]/C
+pipe[0].genblk1[1].sum_reg[1][0]/C
+pipe[0].genblk1[1].sum_reg[1][1]/C
+pipe[0].genblk1[1].sum_reg[1][2]/C
+pipe[0].genblk1[1].sum_reg[1][3]/C
+pipe[0].genblk1[1].sum_reg[1][4]/C
+pipe[0].genblk1[1].sum_reg[1][5]/C
+pipe[0].genblk1[1].sum_reg[1][6]/C
+pipe[0].genblk1[1].sum_reg[1][7]/C
+pipe[0].genblk1[1].sum_reg[1][8]/C
+pipe[0].genblk1[2].sum_reg[2][0]/C
+pipe[0].genblk1[2].sum_reg[2][1]/C
+pipe[0].genblk1[2].sum_reg[2][2]/C
+pipe[0].genblk1[2].sum_reg[2][3]/C
+pipe[0].genblk1[2].sum_reg[2][4]/C
+pipe[0].genblk1[2].sum_reg[2][5]/C
+pipe[0].genblk1[2].sum_reg[2][6]/C
+pipe[0].genblk1[2].sum_reg[2][7]/C
+pipe[0].genblk1[2].sum_reg[2][8]/C
+pipe[0].genblk1[3].sum_reg[3][0]/C
+pipe[0].genblk1[3].sum_reg[3][1]/C
+pipe[0].genblk1[3].sum_reg[3][2]/C
+pipe[0].genblk1[3].sum_reg[3][3]/C
+pipe[0].genblk1[3].sum_reg[3][4]/C
+pipe[0].genblk1[3].sum_reg[3][5]/C
+pipe[0].genblk1[3].sum_reg[3][6]/C
+pipe[0].genblk1[3].sum_reg[3][7]/C
+pipe[0].genblk1[3].sum_reg[3][8]/C
+pipe[1].genblk1[0].sum_reg[0][0]/C
+pipe[1].genblk1[0].sum_reg[0][10]/C
+pipe[1].genblk1[0].sum_reg[0][1]/C
+pipe[1].genblk1[0].sum_reg[0][2]/C
+pipe[1].genblk1[0].sum_reg[0][3]/C
+pipe[1].genblk1[0].sum_reg[0][4]/C
+pipe[1].genblk1[0].sum_reg[0][5]/C
+pipe[1].genblk1[0].sum_reg[0][6]/C
+pipe[1].genblk1[0].sum_reg[0][7]/C
+pipe[1].genblk1[0].sum_reg[0][8]/C
+pipe[1].genblk1[0].sum_reg[0][9]/C
+pipe[1].genblk1[1].sum_reg[1][0]/C
+pipe[1].genblk1[1].sum_reg[1][1]/C
+pipe[1].genblk1[1].sum_reg[1][2]/C
+pipe[1].genblk1[1].sum_reg[1][3]/C
+pipe[1].genblk1[1].sum_reg[1][4]/C
+pipe[1].genblk1[1].sum_reg[1][5]/C
+pipe[1].genblk1[1].sum_reg[1][6]/C
+pipe[1].genblk1[1].sum_reg[1][7]/C
+pipe[1].genblk1[1].sum_reg[1][8]/C
+pipe[1].genblk1[1].sum_reg[1][9]/C
+pipe[2].genblk1[0].sum_reg[0][10]/C
+pipe[2].genblk1[0].sum_reg[0][11]/C
+pipe[2].genblk1[0].sum_reg[0][4]/C
+pipe[2].genblk1[0].sum_reg[0][5]/C
+pipe[2].genblk1[0].sum_reg[0][6]/C
+pipe[2].genblk1[0].sum_reg[0][7]/C
+pipe[2].genblk1[0].sum_reg[0][8]/C
+pipe[2].genblk1[0].sum_reg[0][9]/C
+reg_out_data_reg[0]/C
+reg_out_data_reg[1]/C
+reg_out_data_reg[2]/C
+reg_out_data_reg[3]/C
+reg_out_data_reg[4]/C
+reg_out_data_reg[5]/C
+reg_out_data_reg[6]/C
+reg_out_data_reg[7]/C
 
 
 2. checking constant_clock
@@ -67,39 +146,99 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 0 pins that are not constrained for maximum delay.
+ There are 82 pins that are not constrained for maximum delay. (HIGH)
+
+con_enable_reg[0]/CLR
+con_enable_reg[0]/D
+con_enable_reg[1]/CLR
+con_enable_reg[1]/D
+con_enable_reg[2]/CLR
+con_enable_reg[2]/D
+con_enable_reg[3]/CLR
+con_enable_reg[3]/D
+pipe[0].genblk1[0].sum_reg[0][0]/D
+pipe[0].genblk1[0].sum_reg[0][1]/D
+pipe[0].genblk1[0].sum_reg[0][2]/D
+pipe[0].genblk1[0].sum_reg[0][3]/D
+pipe[0].genblk1[0].sum_reg[0][4]/D
+pipe[0].genblk1[0].sum_reg[0][5]/D
+pipe[0].genblk1[0].sum_reg[0][6]/D
+pipe[0].genblk1[0].sum_reg[0][7]/D
+pipe[0].genblk1[0].sum_reg[0][8]/D
+pipe[0].genblk1[0].sum_reg[0][9]/D
+pipe[0].genblk1[1].sum_reg[1][0]/D
+pipe[0].genblk1[1].sum_reg[1][1]/D
+pipe[0].genblk1[1].sum_reg[1][2]/D
+pipe[0].genblk1[1].sum_reg[1][3]/D
+pipe[0].genblk1[1].sum_reg[1][4]/D
+pipe[0].genblk1[1].sum_reg[1][5]/D
+pipe[0].genblk1[1].sum_reg[1][6]/D
+pipe[0].genblk1[1].sum_reg[1][7]/D
+pipe[0].genblk1[1].sum_reg[1][8]/D
+pipe[0].genblk1[2].sum_reg[2][0]/D
+pipe[0].genblk1[2].sum_reg[2][1]/D
+pipe[0].genblk1[2].sum_reg[2][2]/D
+pipe[0].genblk1[2].sum_reg[2][3]/D
+pipe[0].genblk1[2].sum_reg[2][4]/D
+pipe[0].genblk1[2].sum_reg[2][5]/D
+pipe[0].genblk1[2].sum_reg[2][6]/D
+pipe[0].genblk1[2].sum_reg[2][7]/D
+pipe[0].genblk1[2].sum_reg[2][8]/D
+pipe[0].genblk1[3].sum_reg[3][0]/D
+pipe[0].genblk1[3].sum_reg[3][1]/D
+pipe[0].genblk1[3].sum_reg[3][2]/D
+pipe[0].genblk1[3].sum_reg[3][3]/D
+pipe[0].genblk1[3].sum_reg[3][4]/D
+pipe[0].genblk1[3].sum_reg[3][5]/D
+pipe[0].genblk1[3].sum_reg[3][6]/D
+pipe[0].genblk1[3].sum_reg[3][7]/D
+pipe[0].genblk1[3].sum_reg[3][8]/D
+pipe[1].genblk1[0].sum_reg[0][0]/D
+pipe[1].genblk1[0].sum_reg[0][10]/D
+pipe[1].genblk1[0].sum_reg[0][1]/D
+pipe[1].genblk1[0].sum_reg[0][2]/D
+pipe[1].genblk1[0].sum_reg[0][3]/D
+pipe[1].genblk1[0].sum_reg[0][4]/D
+pipe[1].genblk1[0].sum_reg[0][5]/D
+pipe[1].genblk1[0].sum_reg[0][6]/D
+pipe[1].genblk1[0].sum_reg[0][7]/D
+pipe[1].genblk1[0].sum_reg[0][8]/D
+pipe[1].genblk1[0].sum_reg[0][9]/D
+pipe[1].genblk1[1].sum_reg[1][0]/D
+pipe[1].genblk1[1].sum_reg[1][1]/D
+pipe[1].genblk1[1].sum_reg[1][2]/D
+pipe[1].genblk1[1].sum_reg[1][3]/D
+pipe[1].genblk1[1].sum_reg[1][4]/D
+pipe[1].genblk1[1].sum_reg[1][5]/D
+pipe[1].genblk1[1].sum_reg[1][6]/D
+pipe[1].genblk1[1].sum_reg[1][7]/D
+pipe[1].genblk1[1].sum_reg[1][8]/D
+pipe[1].genblk1[1].sum_reg[1][9]/D
+pipe[2].genblk1[0].sum_reg[0][10]/D
+pipe[2].genblk1[0].sum_reg[0][11]/D
+pipe[2].genblk1[0].sum_reg[0][4]/D
+pipe[2].genblk1[0].sum_reg[0][5]/D
+pipe[2].genblk1[0].sum_reg[0][6]/D
+pipe[2].genblk1[0].sum_reg[0][7]/D
+pipe[2].genblk1[0].sum_reg[0][8]/D
+pipe[2].genblk1[0].sum_reg[0][9]/D
+reg_out_data_reg[0]/D
+reg_out_data_reg[1]/D
+reg_out_data_reg[2]/D
+reg_out_data_reg[3]/D
+reg_out_data_reg[4]/D
+reg_out_data_reg[5]/D
+reg_out_data_reg[6]/D
+reg_out_data_reg[7]/D
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
 5. checking no_input_delay
 --------------------------
- There are 50 input ports with no input delay specified. (HIGH)
+ There are 75 input ports with no input delay specified. (HIGH)
 
-ct_scale[0]
-ct_scale[10]
-ct_scale[11]
-ct_scale[12]
-ct_scale[13]
-ct_scale[14]
-ct_scale[15]
-ct_scale[16]
-ct_scale[17]
-ct_scale[18]
-ct_scale[19]
-ct_scale[1]
-ct_scale[20]
-ct_scale[21]
-ct_scale[22]
-ct_scale[23]
-ct_scale[2]
-ct_scale[3]
-ct_scale[4]
-ct_scale[5]
-ct_scale[6]
-ct_scale[7]
-ct_scale[8]
-ct_scale[9]
+clk
 in_data[0]
 in_data[10]
 in_data[11]
@@ -116,11 +255,59 @@ in_data[20]
 in_data[21]
 in_data[22]
 in_data[23]
+in_data[24]
+in_data[25]
+in_data[26]
+in_data[27]
+in_data[28]
+in_data[29]
 in_data[2]
+in_data[30]
+in_data[31]
+in_data[32]
+in_data[33]
+in_data[34]
+in_data[35]
+in_data[36]
+in_data[37]
+in_data[38]
+in_data[39]
 in_data[3]
+in_data[40]
+in_data[41]
+in_data[42]
+in_data[43]
+in_data[44]
+in_data[45]
+in_data[46]
+in_data[47]
+in_data[48]
+in_data[49]
 in_data[4]
+in_data[50]
+in_data[51]
+in_data[52]
+in_data[53]
+in_data[54]
+in_data[55]
+in_data[56]
+in_data[57]
+in_data[58]
+in_data[59]
 in_data[5]
+in_data[60]
+in_data[61]
+in_data[62]
+in_data[63]
+in_data[64]
+in_data[65]
+in_data[66]
+in_data[67]
+in_data[68]
+in_data[69]
 in_data[6]
+in_data[70]
+in_data[71]
 in_data[7]
 in_data[8]
 in_data[9]
@@ -132,32 +319,16 @@ rst_n
 
 6. checking no_output_delay
 ---------------------------
- There are 25 ports with no output delay specified. (HIGH)
+ There are 9 ports with no output delay specified. (HIGH)
 
 out_data[0]
-out_data[10]
-out_data[11]
-out_data[12]
-out_data[13]
-out_data[14]
-out_data[15]
-out_data[16]
-out_data[17]
-out_data[18]
-out_data[19]
 out_data[1]
-out_data[20]
-out_data[21]
-out_data[22]
-out_data[23]
 out_data[2]
 out_data[3]
 out_data[4]
 out_data[5]
 out_data[6]
 out_data[7]
-out_data[8]
-out_data[9]
 out_ready
 
  There are 0 ports with no output delay but user has a false path constraint
@@ -208,20 +379,16 @@ out_ready
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-     96.757        0.000                      0                   51        0.035        0.000                      0                   51       49.500        0.000                       0                    30  
+        inf        0.000                      0                   91          inf        0.000                      0                   91           NA           NA                      NA                    NA  
 
 
-All user specified timing constraints are met.
+There are no user specified timing constraints.
 
 
 ------------------------------------------------------------------------------------------------
 | Clock Summary
 | -------------
 ------------------------------------------------------------------------------------------------
-
-Clock  Waveform(ns)       Period(ns)      Frequency(MHz)
------  ------------       ----------      --------------
-CLK    {0.000 50.000}     100.000         10.000          
 
 
 ------------------------------------------------------------------------------------------------
@@ -231,7 +398,6 @@ CLK    {0.000 50.000}     100.000         10.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-CLK                96.757        0.000                      0                   51        0.035        0.000                      0                   51       49.500        0.000                       0                    30  
 
 
 ------------------------------------------------------------------------------------------------
@@ -268,8 +434,7 @@ Path Group    From Clock    To Clock
 
 Path Group    From Clock    To Clock    
 ----------    ----------    --------    
-(none)        CLK                         
-(none)                      CLK           
+(none)                                    
 
 
 ------------------------------------------------------------------------------------------------
@@ -278,1265 +443,284 @@ Path Group    From Clock    To Clock
 ------------------------------------------------------------------------------------------------
 
 
----------------------------------------------------------------------------------------------------
-From Clock:  CLK
-  To Clock:  CLK
-
-Setup :            0  Failing Endpoints,  Worst Slack       96.757ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.035ns,  Total Violation        0.000ns
-PW    :            0  Failing Endpoints,  Worst Slack       49.500ns,  Total Violation        0.000ns
----------------------------------------------------------------------------------------------------
-
-
-Max Delay Paths
---------------------------------------------------------------------------------------
-Slack (MET) :             96.757ns  (required time - arrival time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[0]/S
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            100.000ns  (CLK rise@100.000ns - CLK rise@0.000ns)
-  Data Path Delay:        2.746ns  (logic 0.682ns (24.837%)  route 2.064ns (75.163%))
-  Logic Levels:           2  (LUT6=2)
-  Clock Path Skew:        -0.029ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.602ns = ( 101.602 - 100.000 ) 
-    Source Clock Delay      (SCD):    1.631ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.631     1.631    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[25])
-                                                      0.434     2.065 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[25]
-                         net (fo=1, unplaced)         0.800     2.864    mul_p[13]
-                                                                      r  channel[0].out_buffer[7]_i_3/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     2.988 r  channel[0].out_buffer[7]_i_3/O
-                         net (fo=1, unplaced)         0.449     3.437    n_0_channel[0].out_buffer[7]_i_3
-                                                                      r  channel[0].out_buffer[7]_i_1/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     3.561 r  channel[0].out_buffer[7]_i_1/O
-                         net (fo=8, unplaced)         0.815     4.376    p_0_in
-                         FDSE                                         r  channel[0].out_buffer_reg[0]/S
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)      100.000   100.000 r  
-                                                      0.000   100.000 r  clk
-                         net (fo=29, unset)           1.602   101.602    clk
-                                                                      r  channel[0].out_buffer_reg[0]/C
-                         clock pessimism              0.000   101.602    
-                         clock uncertainty           -0.035   101.567    
-                         FDSE (Setup_fdse_C_S)       -0.433   101.134    channel[0].out_buffer_reg[0]
-  -------------------------------------------------------------------
-                         required time                        101.134    
-                         arrival time                          -4.376    
-  -------------------------------------------------------------------
-                         slack                                 96.757    
-
-Slack (MET) :             96.757ns  (required time - arrival time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[1]/S
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            100.000ns  (CLK rise@100.000ns - CLK rise@0.000ns)
-  Data Path Delay:        2.746ns  (logic 0.682ns (24.837%)  route 2.064ns (75.163%))
-  Logic Levels:           2  (LUT6=2)
-  Clock Path Skew:        -0.029ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.602ns = ( 101.602 - 100.000 ) 
-    Source Clock Delay      (SCD):    1.631ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.631     1.631    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[25])
-                                                      0.434     2.065 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[25]
-                         net (fo=1, unplaced)         0.800     2.864    mul_p[13]
-                                                                      r  channel[0].out_buffer[7]_i_3/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     2.988 r  channel[0].out_buffer[7]_i_3/O
-                         net (fo=1, unplaced)         0.449     3.437    n_0_channel[0].out_buffer[7]_i_3
-                                                                      r  channel[0].out_buffer[7]_i_1/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     3.561 r  channel[0].out_buffer[7]_i_1/O
-                         net (fo=8, unplaced)         0.815     4.376    p_0_in
-                         FDSE                                         r  channel[0].out_buffer_reg[1]/S
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)      100.000   100.000 r  
-                                                      0.000   100.000 r  clk
-                         net (fo=29, unset)           1.602   101.602    clk
-                                                                      r  channel[0].out_buffer_reg[1]/C
-                         clock pessimism              0.000   101.602    
-                         clock uncertainty           -0.035   101.567    
-                         FDSE (Setup_fdse_C_S)       -0.433   101.134    channel[0].out_buffer_reg[1]
-  -------------------------------------------------------------------
-                         required time                        101.134    
-                         arrival time                          -4.376    
-  -------------------------------------------------------------------
-                         slack                                 96.757    
-
-Slack (MET) :             96.757ns  (required time - arrival time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[2]/S
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            100.000ns  (CLK rise@100.000ns - CLK rise@0.000ns)
-  Data Path Delay:        2.746ns  (logic 0.682ns (24.837%)  route 2.064ns (75.163%))
-  Logic Levels:           2  (LUT6=2)
-  Clock Path Skew:        -0.029ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.602ns = ( 101.602 - 100.000 ) 
-    Source Clock Delay      (SCD):    1.631ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.631     1.631    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[25])
-                                                      0.434     2.065 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[25]
-                         net (fo=1, unplaced)         0.800     2.864    mul_p[13]
-                                                                      r  channel[0].out_buffer[7]_i_3/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     2.988 r  channel[0].out_buffer[7]_i_3/O
-                         net (fo=1, unplaced)         0.449     3.437    n_0_channel[0].out_buffer[7]_i_3
-                                                                      r  channel[0].out_buffer[7]_i_1/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     3.561 r  channel[0].out_buffer[7]_i_1/O
-                         net (fo=8, unplaced)         0.815     4.376    p_0_in
-                         FDSE                                         r  channel[0].out_buffer_reg[2]/S
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)      100.000   100.000 r  
-                                                      0.000   100.000 r  clk
-                         net (fo=29, unset)           1.602   101.602    clk
-                                                                      r  channel[0].out_buffer_reg[2]/C
-                         clock pessimism              0.000   101.602    
-                         clock uncertainty           -0.035   101.567    
-                         FDSE (Setup_fdse_C_S)       -0.433   101.134    channel[0].out_buffer_reg[2]
-  -------------------------------------------------------------------
-                         required time                        101.134    
-                         arrival time                          -4.376    
-  -------------------------------------------------------------------
-                         slack                                 96.757    
-
-Slack (MET) :             96.757ns  (required time - arrival time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[3]/S
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            100.000ns  (CLK rise@100.000ns - CLK rise@0.000ns)
-  Data Path Delay:        2.746ns  (logic 0.682ns (24.837%)  route 2.064ns (75.163%))
-  Logic Levels:           2  (LUT6=2)
-  Clock Path Skew:        -0.029ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.602ns = ( 101.602 - 100.000 ) 
-    Source Clock Delay      (SCD):    1.631ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.631     1.631    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[25])
-                                                      0.434     2.065 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[25]
-                         net (fo=1, unplaced)         0.800     2.864    mul_p[13]
-                                                                      r  channel[0].out_buffer[7]_i_3/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     2.988 r  channel[0].out_buffer[7]_i_3/O
-                         net (fo=1, unplaced)         0.449     3.437    n_0_channel[0].out_buffer[7]_i_3
-                                                                      r  channel[0].out_buffer[7]_i_1/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     3.561 r  channel[0].out_buffer[7]_i_1/O
-                         net (fo=8, unplaced)         0.815     4.376    p_0_in
-                         FDSE                                         r  channel[0].out_buffer_reg[3]/S
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)      100.000   100.000 r  
-                                                      0.000   100.000 r  clk
-                         net (fo=29, unset)           1.602   101.602    clk
-                                                                      r  channel[0].out_buffer_reg[3]/C
-                         clock pessimism              0.000   101.602    
-                         clock uncertainty           -0.035   101.567    
-                         FDSE (Setup_fdse_C_S)       -0.433   101.134    channel[0].out_buffer_reg[3]
-  -------------------------------------------------------------------
-                         required time                        101.134    
-                         arrival time                          -4.376    
-  -------------------------------------------------------------------
-                         slack                                 96.757    
-
-Slack (MET) :             96.757ns  (required time - arrival time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[4]/S
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            100.000ns  (CLK rise@100.000ns - CLK rise@0.000ns)
-  Data Path Delay:        2.746ns  (logic 0.682ns (24.837%)  route 2.064ns (75.163%))
-  Logic Levels:           2  (LUT6=2)
-  Clock Path Skew:        -0.029ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.602ns = ( 101.602 - 100.000 ) 
-    Source Clock Delay      (SCD):    1.631ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.631     1.631    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[25])
-                                                      0.434     2.065 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[25]
-                         net (fo=1, unplaced)         0.800     2.864    mul_p[13]
-                                                                      r  channel[0].out_buffer[7]_i_3/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     2.988 r  channel[0].out_buffer[7]_i_3/O
-                         net (fo=1, unplaced)         0.449     3.437    n_0_channel[0].out_buffer[7]_i_3
-                                                                      r  channel[0].out_buffer[7]_i_1/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     3.561 r  channel[0].out_buffer[7]_i_1/O
-                         net (fo=8, unplaced)         0.815     4.376    p_0_in
-                         FDSE                                         r  channel[0].out_buffer_reg[4]/S
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)      100.000   100.000 r  
-                                                      0.000   100.000 r  clk
-                         net (fo=29, unset)           1.602   101.602    clk
-                                                                      r  channel[0].out_buffer_reg[4]/C
-                         clock pessimism              0.000   101.602    
-                         clock uncertainty           -0.035   101.567    
-                         FDSE (Setup_fdse_C_S)       -0.433   101.134    channel[0].out_buffer_reg[4]
-  -------------------------------------------------------------------
-                         required time                        101.134    
-                         arrival time                          -4.376    
-  -------------------------------------------------------------------
-                         slack                                 96.757    
-
-Slack (MET) :             96.757ns  (required time - arrival time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[5]/S
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            100.000ns  (CLK rise@100.000ns - CLK rise@0.000ns)
-  Data Path Delay:        2.746ns  (logic 0.682ns (24.837%)  route 2.064ns (75.163%))
-  Logic Levels:           2  (LUT6=2)
-  Clock Path Skew:        -0.029ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.602ns = ( 101.602 - 100.000 ) 
-    Source Clock Delay      (SCD):    1.631ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.631     1.631    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[25])
-                                                      0.434     2.065 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[25]
-                         net (fo=1, unplaced)         0.800     2.864    mul_p[13]
-                                                                      r  channel[0].out_buffer[7]_i_3/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     2.988 r  channel[0].out_buffer[7]_i_3/O
-                         net (fo=1, unplaced)         0.449     3.437    n_0_channel[0].out_buffer[7]_i_3
-                                                                      r  channel[0].out_buffer[7]_i_1/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     3.561 r  channel[0].out_buffer[7]_i_1/O
-                         net (fo=8, unplaced)         0.815     4.376    p_0_in
-                         FDSE                                         r  channel[0].out_buffer_reg[5]/S
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)      100.000   100.000 r  
-                                                      0.000   100.000 r  clk
-                         net (fo=29, unset)           1.602   101.602    clk
-                                                                      r  channel[0].out_buffer_reg[5]/C
-                         clock pessimism              0.000   101.602    
-                         clock uncertainty           -0.035   101.567    
-                         FDSE (Setup_fdse_C_S)       -0.433   101.134    channel[0].out_buffer_reg[5]
-  -------------------------------------------------------------------
-                         required time                        101.134    
-                         arrival time                          -4.376    
-  -------------------------------------------------------------------
-                         slack                                 96.757    
-
-Slack (MET) :             96.757ns  (required time - arrival time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[6]/S
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            100.000ns  (CLK rise@100.000ns - CLK rise@0.000ns)
-  Data Path Delay:        2.746ns  (logic 0.682ns (24.837%)  route 2.064ns (75.163%))
-  Logic Levels:           2  (LUT6=2)
-  Clock Path Skew:        -0.029ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.602ns = ( 101.602 - 100.000 ) 
-    Source Clock Delay      (SCD):    1.631ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.631     1.631    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[25])
-                                                      0.434     2.065 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[25]
-                         net (fo=1, unplaced)         0.800     2.864    mul_p[13]
-                                                                      r  channel[0].out_buffer[7]_i_3/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     2.988 r  channel[0].out_buffer[7]_i_3/O
-                         net (fo=1, unplaced)         0.449     3.437    n_0_channel[0].out_buffer[7]_i_3
-                                                                      r  channel[0].out_buffer[7]_i_1/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     3.561 r  channel[0].out_buffer[7]_i_1/O
-                         net (fo=8, unplaced)         0.815     4.376    p_0_in
-                         FDSE                                         r  channel[0].out_buffer_reg[6]/S
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)      100.000   100.000 r  
-                                                      0.000   100.000 r  clk
-                         net (fo=29, unset)           1.602   101.602    clk
-                                                                      r  channel[0].out_buffer_reg[6]/C
-                         clock pessimism              0.000   101.602    
-                         clock uncertainty           -0.035   101.567    
-                         FDSE (Setup_fdse_C_S)       -0.433   101.134    channel[0].out_buffer_reg[6]
-  -------------------------------------------------------------------
-                         required time                        101.134    
-                         arrival time                          -4.376    
-  -------------------------------------------------------------------
-                         slack                                 96.757    
-
-Slack (MET) :             96.757ns  (required time - arrival time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[7]/S
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            100.000ns  (CLK rise@100.000ns - CLK rise@0.000ns)
-  Data Path Delay:        2.746ns  (logic 0.682ns (24.837%)  route 2.064ns (75.163%))
-  Logic Levels:           2  (LUT6=2)
-  Clock Path Skew:        -0.029ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.602ns = ( 101.602 - 100.000 ) 
-    Source Clock Delay      (SCD):    1.631ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.631     1.631    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[25])
-                                                      0.434     2.065 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[25]
-                         net (fo=1, unplaced)         0.800     2.864    mul_p[13]
-                                                                      r  channel[0].out_buffer[7]_i_3/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     2.988 r  channel[0].out_buffer[7]_i_3/O
-                         net (fo=1, unplaced)         0.449     3.437    n_0_channel[0].out_buffer[7]_i_3
-                                                                      r  channel[0].out_buffer[7]_i_1/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     3.561 r  channel[0].out_buffer[7]_i_1/O
-                         net (fo=8, unplaced)         0.815     4.376    p_0_in
-                         FDSE                                         r  channel[0].out_buffer_reg[7]/S
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)      100.000   100.000 r  
-                                                      0.000   100.000 r  clk
-                         net (fo=29, unset)           1.602   101.602    clk
-                                                                      r  channel[0].out_buffer_reg[7]/C
-                         clock pessimism              0.000   101.602    
-                         clock uncertainty           -0.035   101.567    
-                         FDSE (Setup_fdse_C_S)       -0.433   101.134    channel[0].out_buffer_reg[7]
-  -------------------------------------------------------------------
-                         required time                        101.134    
-                         arrival time                          -4.376    
-  -------------------------------------------------------------------
-                         slack                                 96.757    
-
-Slack (MET) :             96.757ns  (required time - arrival time)
-  Source:                 channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[1].out_buffer_reg[0]/S
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            100.000ns  (CLK rise@100.000ns - CLK rise@0.000ns)
-  Data Path Delay:        2.746ns  (logic 0.682ns (24.837%)  route 2.064ns (75.163%))
-  Logic Levels:           2  (LUT6=2)
-  Clock Path Skew:        -0.029ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.602ns = ( 101.602 - 100.000 ) 
-    Source Clock Delay      (SCD):    1.631ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.631     1.631    channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[25])
-                                                      0.434     2.065 r  channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[25]
-                         net (fo=1, unplaced)         0.800     2.864    n_10_channel[1].Mul
-                                                                      r  channel[1].out_buffer[7]_i_3/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     2.988 r  channel[1].out_buffer[7]_i_3/O
-                         net (fo=1, unplaced)         0.449     3.437    n_0_channel[1].out_buffer[7]_i_3
-                                                                      r  channel[1].out_buffer[7]_i_1/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     3.561 r  channel[1].out_buffer[7]_i_1/O
-                         net (fo=8, unplaced)         0.815     4.376    n_0_channel[1].out_buffer[7]_i_1
-                         FDSE                                         r  channel[1].out_buffer_reg[0]/S
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)      100.000   100.000 r  
-                                                      0.000   100.000 r  clk
-                         net (fo=29, unset)           1.602   101.602    clk
-                                                                      r  channel[1].out_buffer_reg[0]/C
-                         clock pessimism              0.000   101.602    
-                         clock uncertainty           -0.035   101.567    
-                         FDSE (Setup_fdse_C_S)       -0.433   101.134    channel[1].out_buffer_reg[0]
-  -------------------------------------------------------------------
-                         required time                        101.134    
-                         arrival time                          -4.376    
-  -------------------------------------------------------------------
-                         slack                                 96.757    
-
-Slack (MET) :             96.757ns  (required time - arrival time)
-  Source:                 channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[1].out_buffer_reg[1]/S
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            100.000ns  (CLK rise@100.000ns - CLK rise@0.000ns)
-  Data Path Delay:        2.746ns  (logic 0.682ns (24.837%)  route 2.064ns (75.163%))
-  Logic Levels:           2  (LUT6=2)
-  Clock Path Skew:        -0.029ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.602ns = ( 101.602 - 100.000 ) 
-    Source Clock Delay      (SCD):    1.631ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.631     1.631    channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[25])
-                                                      0.434     2.065 r  channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[25]
-                         net (fo=1, unplaced)         0.800     2.864    n_10_channel[1].Mul
-                                                                      r  channel[1].out_buffer[7]_i_3/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     2.988 r  channel[1].out_buffer[7]_i_3/O
-                         net (fo=1, unplaced)         0.449     3.437    n_0_channel[1].out_buffer[7]_i_3
-                                                                      r  channel[1].out_buffer[7]_i_1/I5
-                         LUT6 (Prop_lut6_I5_O)        0.124     3.561 r  channel[1].out_buffer[7]_i_1/O
-                         net (fo=8, unplaced)         0.815     4.376    n_0_channel[1].out_buffer[7]_i_1
-                         FDSE                                         r  channel[1].out_buffer_reg[1]/S
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)      100.000   100.000 r  
-                                                      0.000   100.000 r  clk
-                         net (fo=29, unset)           1.602   101.602    clk
-                                                                      r  channel[1].out_buffer_reg[1]/C
-                         clock pessimism              0.000   101.602    
-                         clock uncertainty           -0.035   101.567    
-                         FDSE (Setup_fdse_C_S)       -0.433   101.134    channel[1].out_buffer_reg[1]
-  -------------------------------------------------------------------
-                         required time                        101.134    
-                         arrival time                          -4.376    
-  -------------------------------------------------------------------
-                         slack                                 96.757    
-
-
-
-
-
-Min Delay Paths
---------------------------------------------------------------------------------------
-Slack (MET) :             0.035ns  (arrival time - required time)
-  Source:                 con_enable_reg[0]/C
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            con_enable_reg[0]/D
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (CLK rise@0.000ns - CLK rise@0.000ns)
-  Data Path Delay:        0.399ns  (logic 0.239ns (59.936%)  route 0.160ns (40.064%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.273ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.911ns
-    Source Clock Delay      (SCD):    0.638ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.638     0.638    clk
-                                                                      r  con_enable_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-                         FDCE (Prop_fdce_C_Q)         0.141     0.779 f  con_enable_reg[0]/Q
-                         net (fo=28, unplaced)        0.160     0.939    con_enable[0]
-                                                                      f  con_enable[0]_i_1/I2
-                         LUT3 (Prop_lut3_I2_O)        0.098     1.037 r  con_enable[0]_i_1/O
-                         net (fo=1, unplaced)         0.000     1.037    n_0_con_enable[0]_i_1
-                         FDCE                                         r  con_enable_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.911     0.911    clk
-                                                                      r  con_enable_reg[0]/C
-                         clock pessimism              0.000     0.911    
-                         FDCE (Hold_fdce_C_D)         0.091     1.002    con_enable_reg[0]
-  -------------------------------------------------------------------
-                         required time                         -1.002    
-                         arrival time                           1.037    
-  -------------------------------------------------------------------
-                         slack                                  0.035    
-
-Slack (MET) :             0.035ns  (arrival time - required time)
-  Source:                 con_enable_reg[0]/C
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            con_enable_reg[1]/D
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (CLK rise@0.000ns - CLK rise@0.000ns)
-  Data Path Delay:        0.399ns  (logic 0.239ns (59.936%)  route 0.160ns (40.064%))
-  Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        0.273ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.911ns
-    Source Clock Delay      (SCD):    0.638ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.638     0.638    clk
-                                                                      r  con_enable_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-                         FDCE (Prop_fdce_C_Q)         0.141     0.779 r  con_enable_reg[0]/Q
-                         net (fo=28, unplaced)        0.160     0.939    con_enable[0]
-                                                                      r  con_enable[1]_i_1/I1
-                         LUT2 (Prop_lut2_I1_O)        0.098     1.037 r  con_enable[1]_i_1/O
-                         net (fo=1, unplaced)         0.000     1.037    n_0_con_enable[1]_i_1
-                         FDCE                                         r  con_enable_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.911     0.911    clk
-                                                                      r  con_enable_reg[1]/C
-                         clock pessimism              0.000     0.911    
-                         FDCE (Hold_fdce_C_D)         0.091     1.002    con_enable_reg[1]
-  -------------------------------------------------------------------
-                         required time                         -1.002    
-                         arrival time                           1.037    
-  -------------------------------------------------------------------
-                         slack                                  0.035    
-
-Slack (MET) :             0.089ns  (arrival time - required time)
-  Source:                 con_enable_reg[0]/C
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            con_enable_reg[2]/D
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (CLK rise@0.000ns - CLK rise@0.000ns)
-  Data Path Delay:        0.469ns  (logic 0.242ns (51.624%)  route 0.227ns (48.376%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.273ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.911ns
-    Source Clock Delay      (SCD):    0.638ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.638     0.638    clk
-                                                                      r  con_enable_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-                         FDCE (Prop_fdce_C_Q)         0.141     0.779 r  con_enable_reg[0]/Q
-                         net (fo=28, unplaced)        0.227     1.006    con_enable[0]
-                                                                      r  con_enable[2]_i_1/I2
-                         LUT3 (Prop_lut3_I2_O)        0.101     1.107 r  con_enable[2]_i_1/O
-                         net (fo=1, unplaced)         0.000     1.107    n_0_con_enable[2]_i_1
-                         FDCE                                         r  con_enable_reg[2]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.911     0.911    clk
-                                                                      r  con_enable_reg[2]/C
-                         clock pessimism              0.000     0.911    
-                         FDCE (Hold_fdce_C_D)         0.107     1.018    con_enable_reg[2]
-  -------------------------------------------------------------------
-                         required time                         -1.018    
-                         arrival time                           1.107    
-  -------------------------------------------------------------------
-                         slack                                  0.089    
-
-Slack (MET) :             0.157ns  (arrival time - required time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[0]/D
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (CLK rise@0.000ns - CLK rise@0.000ns)
-  Data Path Delay:        0.463ns  (logic 0.126ns (27.205%)  route 0.337ns (72.795%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.270ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.911ns
-    Source Clock Delay      (SCD):    0.641ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.641     0.641    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[12])
-                                                      0.126     0.767 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[12]
-                         net (fo=1, unplaced)         0.337     1.104    mul_p[0]
-                         FDSE                                         r  channel[0].out_buffer_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.911     0.911    clk
-                                                                      r  channel[0].out_buffer_reg[0]/C
-                         clock pessimism              0.000     0.911    
-                         FDSE (Hold_fdse_C_D)         0.036     0.947    channel[0].out_buffer_reg[0]
-  -------------------------------------------------------------------
-                         required time                         -0.947    
-                         arrival time                           1.104    
-  -------------------------------------------------------------------
-                         slack                                  0.157    
-
-Slack (MET) :             0.157ns  (arrival time - required time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[1]/D
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (CLK rise@0.000ns - CLK rise@0.000ns)
-  Data Path Delay:        0.463ns  (logic 0.126ns (27.205%)  route 0.337ns (72.795%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.270ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.911ns
-    Source Clock Delay      (SCD):    0.641ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.641     0.641    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[13])
-                                                      0.126     0.767 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[13]
-                         net (fo=1, unplaced)         0.337     1.104    mul_p[1]
-                         FDSE                                         r  channel[0].out_buffer_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.911     0.911    clk
-                                                                      r  channel[0].out_buffer_reg[1]/C
-                         clock pessimism              0.000     0.911    
-                         FDSE (Hold_fdse_C_D)         0.036     0.947    channel[0].out_buffer_reg[1]
-  -------------------------------------------------------------------
-                         required time                         -0.947    
-                         arrival time                           1.104    
-  -------------------------------------------------------------------
-                         slack                                  0.157    
-
-Slack (MET) :             0.157ns  (arrival time - required time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[2]/D
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (CLK rise@0.000ns - CLK rise@0.000ns)
-  Data Path Delay:        0.463ns  (logic 0.126ns (27.205%)  route 0.337ns (72.795%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.270ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.911ns
-    Source Clock Delay      (SCD):    0.641ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.641     0.641    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[14])
-                                                      0.126     0.767 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[14]
-                         net (fo=1, unplaced)         0.337     1.104    mul_p[2]
-                         FDSE                                         r  channel[0].out_buffer_reg[2]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.911     0.911    clk
-                                                                      r  channel[0].out_buffer_reg[2]/C
-                         clock pessimism              0.000     0.911    
-                         FDSE (Hold_fdse_C_D)         0.036     0.947    channel[0].out_buffer_reg[2]
-  -------------------------------------------------------------------
-                         required time                         -0.947    
-                         arrival time                           1.104    
-  -------------------------------------------------------------------
-                         slack                                  0.157    
-
-Slack (MET) :             0.157ns  (arrival time - required time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[3]/D
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (CLK rise@0.000ns - CLK rise@0.000ns)
-  Data Path Delay:        0.463ns  (logic 0.126ns (27.205%)  route 0.337ns (72.795%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.270ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.911ns
-    Source Clock Delay      (SCD):    0.641ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.641     0.641    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[15])
-                                                      0.126     0.767 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[15]
-                         net (fo=1, unplaced)         0.337     1.104    mul_p[3]
-                         FDSE                                         r  channel[0].out_buffer_reg[3]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.911     0.911    clk
-                                                                      r  channel[0].out_buffer_reg[3]/C
-                         clock pessimism              0.000     0.911    
-                         FDSE (Hold_fdse_C_D)         0.036     0.947    channel[0].out_buffer_reg[3]
-  -------------------------------------------------------------------
-                         required time                         -0.947    
-                         arrival time                           1.104    
-  -------------------------------------------------------------------
-                         slack                                  0.157    
-
-Slack (MET) :             0.157ns  (arrival time - required time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[4]/D
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (CLK rise@0.000ns - CLK rise@0.000ns)
-  Data Path Delay:        0.463ns  (logic 0.126ns (27.205%)  route 0.337ns (72.795%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.270ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.911ns
-    Source Clock Delay      (SCD):    0.641ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.641     0.641    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[16])
-                                                      0.126     0.767 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[16]
-                         net (fo=1, unplaced)         0.337     1.104    mul_p[4]
-                         FDSE                                         r  channel[0].out_buffer_reg[4]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.911     0.911    clk
-                                                                      r  channel[0].out_buffer_reg[4]/C
-                         clock pessimism              0.000     0.911    
-                         FDSE (Hold_fdse_C_D)         0.036     0.947    channel[0].out_buffer_reg[4]
-  -------------------------------------------------------------------
-                         required time                         -0.947    
-                         arrival time                           1.104    
-  -------------------------------------------------------------------
-                         slack                                  0.157    
-
-Slack (MET) :             0.157ns  (arrival time - required time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[5]/D
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (CLK rise@0.000ns - CLK rise@0.000ns)
-  Data Path Delay:        0.463ns  (logic 0.126ns (27.205%)  route 0.337ns (72.795%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.270ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.911ns
-    Source Clock Delay      (SCD):    0.641ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.641     0.641    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[17])
-                                                      0.126     0.767 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[17]
-                         net (fo=1, unplaced)         0.337     1.104    mul_p[5]
-                         FDSE                                         r  channel[0].out_buffer_reg[5]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.911     0.911    clk
-                                                                      r  channel[0].out_buffer_reg[5]/C
-                         clock pessimism              0.000     0.911    
-                         FDSE (Hold_fdse_C_D)         0.036     0.947    channel[0].out_buffer_reg[5]
-  -------------------------------------------------------------------
-                         required time                         -0.947    
-                         arrival time                           1.104    
-  -------------------------------------------------------------------
-                         slack                                  0.157    
-
-Slack (MET) :             0.157ns  (arrival time - required time)
-  Source:                 channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            channel[0].out_buffer_reg[6]/D
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             CLK
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (CLK rise@0.000ns - CLK rise@0.000ns)
-  Data Path Delay:        0.463ns  (logic 0.126ns (27.205%)  route 0.337ns (72.795%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.270ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.911ns
-    Source Clock Delay      (SCD):    0.641ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.641     0.641    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-  -------------------------------------------------------------------    -------------------
-                         DSP48E1 (Prop_dsp48e1_CLK_P[18])
-                                                      0.126     0.767 r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/P[18]
-                         net (fo=1, unplaced)         0.337     1.104    mul_p[6]
-                         FDSE                                         r  channel[0].out_buffer_reg[6]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.911     0.911    clk
-                                                                      r  channel[0].out_buffer_reg[6]/C
-                         clock pessimism              0.000     0.911    
-                         FDSE (Hold_fdse_C_D)         0.036     0.947    channel[0].out_buffer_reg[6]
-  -------------------------------------------------------------------
-                         required time                         -0.947    
-                         arrival time                           1.104    
-  -------------------------------------------------------------------
-                         slack                                  0.157    
-
-
-
-
-
-Pulse Width Checks
---------------------------------------------------------------------------------------
-Clock Name:         CLK
-Waveform:           { 0 50 }
-Period:             100.000
-Sources:            { clk }
-
-Check Type        Corner  Lib Pin      Reference Pin  Required  Actual   Slack   Location  Pin                                                                                
-Min Period        n/a     DSP48E1/CLK  n/a            2.154     100.000  97.846            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK  
-Min Period        n/a     DSP48E1/CLK  n/a            2.154     100.000  97.846            channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK  
-Min Period        n/a     DSP48E1/CLK  n/a            2.154     100.000  97.846            channel[2].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK  
-Min Period        n/a     FDSE/C       n/a            1.000     100.000  99.000            channel[0].out_buffer_reg[0]/C                                                     
-Min Period        n/a     FDSE/C       n/a            1.000     100.000  99.000            channel[0].out_buffer_reg[1]/C                                                     
-Min Period        n/a     FDSE/C       n/a            1.000     100.000  99.000            channel[0].out_buffer_reg[2]/C                                                     
-Min Period        n/a     FDSE/C       n/a            1.000     100.000  99.000            channel[0].out_buffer_reg[3]/C                                                     
-Min Period        n/a     FDSE/C       n/a            1.000     100.000  99.000            channel[0].out_buffer_reg[4]/C                                                     
-Min Period        n/a     FDSE/C       n/a            1.000     100.000  99.000            channel[0].out_buffer_reg[5]/C                                                     
-Min Period        n/a     FDSE/C       n/a            1.000     100.000  99.000            channel[0].out_buffer_reg[6]/C                                                     
-Low Pulse Width   Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[0]/C                                                     
-Low Pulse Width   Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[1]/C                                                     
-Low Pulse Width   Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[2]/C                                                     
-Low Pulse Width   Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[3]/C                                                     
-Low Pulse Width   Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[4]/C                                                     
-Low Pulse Width   Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[5]/C                                                     
-Low Pulse Width   Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[6]/C                                                     
-Low Pulse Width   Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[7]/C                                                     
-Low Pulse Width   Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[1].out_buffer_reg[0]/C                                                     
-Low Pulse Width   Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[1].out_buffer_reg[1]/C                                                     
-High Pulse Width  Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[0]/C                                                     
-High Pulse Width  Fast    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[0]/C                                                     
-High Pulse Width  Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[1]/C                                                     
-High Pulse Width  Fast    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[1]/C                                                     
-High Pulse Width  Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[2]/C                                                     
-High Pulse Width  Fast    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[2]/C                                                     
-High Pulse Width  Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[3]/C                                                     
-High Pulse Width  Fast    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[3]/C                                                     
-High Pulse Width  Slow    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[4]/C                                                     
-High Pulse Width  Fast    FDSE/C       n/a            0.500     50.000   49.500            channel[0].out_buffer_reg[4]/C                                                     
-
-
-
 --------------------------------------------------------------------------------------
 Path Group:  (none)
-From Clock:  CLK
+From Clock:  
   To Clock:  
 
-Max Delay            25 Endpoints
-Min Delay            25 Endpoints
+Max Delay            91 Endpoints
+Min Delay            91 Endpoints
 --------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 con_enable_reg[0]/C
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Source:                 in_data[14]
+                            (input port)
+  Destination:            pipe[0].genblk1[0].sum_reg[0][8]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        2.085ns  (logic 0.610ns (29.257%)  route 1.475ns (70.743%))
+  Logic Levels:           4  (CARRY4=2 LUT3=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  in_data[14]
+                         net (fo=1, unset)            0.771     0.771    in_data[14]
+                                                                      r  pipe[0].genblk1[0].sum[0][7]_i_2/I1
+                         LUT3 (Prop_lut3_I1_O)        0.066     0.837 r  pipe[0].genblk1[0].sum[0][7]_i_2/O
+                         net (fo=2, unplaced)         0.704     1.541    n_0_pipe[0].genblk1[0].sum[0][7]_i_2
+                                                                      r  pipe[0].genblk1[0].sum[0][7]_i_6/I0
+                         LUT4 (Prop_lut4_I0_O)        0.165     1.706 r  pipe[0].genblk1[0].sum[0][7]_i_6/O
+                         net (fo=1, unplaced)         0.000     1.706    n_0_pipe[0].genblk1[0].sum[0][7]_i_6
+                                                                      r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/S[3]
+                         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.233     1.939 r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     1.939    n_0_pipe[0].genblk1[0].sum_reg[0][7]_i_1
+                                                                      r  pipe[0].genblk1[0].sum_reg[0][9]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.146     2.085 r  pipe[0].genblk1[0].sum_reg[0][9]_i_1/O[0]
+                         net (fo=1, unplaced)         0.000     2.085    p_9_out[8]
+                         FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][8]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 in_data[14]
+                            (input port)
+  Destination:            pipe[0].genblk1[0].sum_reg[0][9]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        2.047ns  (logic 0.572ns (27.943%)  route 1.475ns (72.057%))
+  Logic Levels:           4  (CARRY4=2 LUT3=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  in_data[14]
+                         net (fo=1, unset)            0.771     0.771    in_data[14]
+                                                                      r  pipe[0].genblk1[0].sum[0][7]_i_2/I1
+                         LUT3 (Prop_lut3_I1_O)        0.066     0.837 r  pipe[0].genblk1[0].sum[0][7]_i_2/O
+                         net (fo=2, unplaced)         0.704     1.541    n_0_pipe[0].genblk1[0].sum[0][7]_i_2
+                                                                      r  pipe[0].genblk1[0].sum[0][7]_i_6/I0
+                         LUT4 (Prop_lut4_I0_O)        0.165     1.706 r  pipe[0].genblk1[0].sum[0][7]_i_6/O
+                         net (fo=1, unplaced)         0.000     1.706    n_0_pipe[0].genblk1[0].sum[0][7]_i_6
+                                                                      r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/S[3]
+                         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.233     1.939 r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     1.939    n_0_pipe[0].genblk1[0].sum_reg[0][7]_i_1
+                                                                      r  pipe[0].genblk1[0].sum_reg[0][9]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.108     2.047 r  pipe[0].genblk1[0].sum_reg[0][9]_i_1/CO[1]
+                         net (fo=1, unplaced)         0.000     2.047    p_9_out[9]
+                         FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][9]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 in_data[10]
+                            (input port)
+  Destination:            pipe[0].genblk1[0].sum_reg[0][5]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        1.956ns  (logic 0.684ns (34.969%)  route 1.272ns (65.031%))
+  Logic Levels:           4  (CARRY4=2 LUT3=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  in_data[10]
+                         net (fo=1, unset)            0.771     0.771    in_data[10]
+                                                                      r  pipe[0].genblk1[0].sum[0][3]_i_2/I1
+                         LUT3 (Prop_lut3_I1_O)        0.066     0.837 r  pipe[0].genblk1[0].sum[0][3]_i_2/O
+                         net (fo=2, unplaced)         0.493     1.330    n_0_pipe[0].genblk1[0].sum[0][3]_i_2
+                                                                      r  pipe[0].genblk1[0].sum[0][3]_i_5/I3
+                         LUT4 (Prop_lut4_I3_O)        0.165     1.495 r  pipe[0].genblk1[0].sum[0][3]_i_5/O
+                         net (fo=1, unplaced)         0.000     1.495    n_0_pipe[0].genblk1[0].sum[0][3]_i_5
+                                                                      r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/S[3]
+                         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.233     1.728 r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.008     1.736    n_0_pipe[0].genblk1[0].sum_reg[0][3]_i_1
+                                                                      r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.220     1.956 r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/O[1]
+                         net (fo=1, unplaced)         0.000     1.956    p_9_out[5]
+                         FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][5]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 in_data[10]
+                            (input port)
+  Destination:            pipe[0].genblk1[0].sum_reg[0][7]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        1.923ns  (logic 0.651ns (33.853%)  route 1.272ns (66.147%))
+  Logic Levels:           4  (CARRY4=2 LUT3=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  in_data[10]
+                         net (fo=1, unset)            0.771     0.771    in_data[10]
+                                                                      r  pipe[0].genblk1[0].sum[0][3]_i_2/I1
+                         LUT3 (Prop_lut3_I1_O)        0.066     0.837 r  pipe[0].genblk1[0].sum[0][3]_i_2/O
+                         net (fo=2, unplaced)         0.493     1.330    n_0_pipe[0].genblk1[0].sum[0][3]_i_2
+                                                                      r  pipe[0].genblk1[0].sum[0][3]_i_5/I3
+                         LUT4 (Prop_lut4_I3_O)        0.165     1.495 r  pipe[0].genblk1[0].sum[0][3]_i_5/O
+                         net (fo=1, unplaced)         0.000     1.495    n_0_pipe[0].genblk1[0].sum[0][3]_i_5
+                                                                      r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/S[3]
+                         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.233     1.728 r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.008     1.736    n_0_pipe[0].genblk1[0].sum_reg[0][3]_i_1
+                                                                      r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.187     1.923 r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/O[3]
+                         net (fo=1, unplaced)         0.000     1.923    p_9_out[7]
+                         FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][7]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 in_data[10]
+                            (input port)
+  Destination:            pipe[0].genblk1[0].sum_reg[0][4]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        1.882ns  (logic 0.610ns (32.412%)  route 1.272ns (67.588%))
+  Logic Levels:           4  (CARRY4=2 LUT3=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  in_data[10]
+                         net (fo=1, unset)            0.771     0.771    in_data[10]
+                                                                      r  pipe[0].genblk1[0].sum[0][3]_i_2/I1
+                         LUT3 (Prop_lut3_I1_O)        0.066     0.837 r  pipe[0].genblk1[0].sum[0][3]_i_2/O
+                         net (fo=2, unplaced)         0.493     1.330    n_0_pipe[0].genblk1[0].sum[0][3]_i_2
+                                                                      r  pipe[0].genblk1[0].sum[0][3]_i_5/I3
+                         LUT4 (Prop_lut4_I3_O)        0.165     1.495 r  pipe[0].genblk1[0].sum[0][3]_i_5/O
+                         net (fo=1, unplaced)         0.000     1.495    n_0_pipe[0].genblk1[0].sum[0][3]_i_5
+                                                                      r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/S[3]
+                         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.233     1.728 r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.008     1.736    n_0_pipe[0].genblk1[0].sum_reg[0][3]_i_1
+                                                                      r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.146     1.882 r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/O[0]
+                         net (fo=1, unplaced)         0.000     1.882    p_9_out[4]
+                         FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][4]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 in_data[10]
+                            (input port)
+  Destination:            pipe[0].genblk1[0].sum_reg[0][6]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        1.880ns  (logic 0.608ns (32.340%)  route 1.272ns (67.660%))
+  Logic Levels:           4  (CARRY4=2 LUT3=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  in_data[10]
+                         net (fo=1, unset)            0.771     0.771    in_data[10]
+                                                                      r  pipe[0].genblk1[0].sum[0][3]_i_2/I1
+                         LUT3 (Prop_lut3_I1_O)        0.066     0.837 r  pipe[0].genblk1[0].sum[0][3]_i_2/O
+                         net (fo=2, unplaced)         0.493     1.330    n_0_pipe[0].genblk1[0].sum[0][3]_i_2
+                                                                      r  pipe[0].genblk1[0].sum[0][3]_i_5/I3
+                         LUT4 (Prop_lut4_I3_O)        0.165     1.495 r  pipe[0].genblk1[0].sum[0][3]_i_5/O
+                         net (fo=1, unplaced)         0.000     1.495    n_0_pipe[0].genblk1[0].sum[0][3]_i_5
+                                                                      r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/S[3]
+                         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.233     1.728 r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.008     1.736    n_0_pipe[0].genblk1[0].sum_reg[0][3]_i_1
+                                                                      r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.144     1.880 r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/O[2]
+                         net (fo=1, unplaced)         0.000     1.880    p_9_out[6]
+                         FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][6]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 con_enable_reg[2]/C
+                            (rising edge-triggered cell FDCE)
   Destination:            out_ready
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        2.533ns  (logic 0.751ns (29.649%)  route 1.782ns (70.351%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Uncertainty:      0.025ns
+  Data Path Delay:        1.863ns  (logic 0.422ns (22.652%)  route 1.441ns (77.348%))
+  Logic Levels:           2  (FDCE=1 LUT4=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.730     1.730    clk
-                                                                      r  con_enable_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-                         FDCE (Prop_fdce_C_Q)         0.456     2.186 f  con_enable_reg[0]/Q
-                         net (fo=28, unplaced)        0.809     2.995    con_enable[0]
-                                                                      f  out_ready_INST_0/I0
-                         LUT3 (Prop_lut3_I0_O)        0.295     3.290 r  out_ready_INST_0/O
-                         net (fo=0)                   0.973     4.263    out_ready
+                         FDCE                         0.000     0.000 r  con_enable_reg[2]/C
+                         FDCE (Prop_fdce_C_Q)         0.269     0.269 r  con_enable_reg[2]/Q
+                         net (fo=12, unplaced)        0.670     0.939    con_enable[2]
+                                                                      r  out_ready_INST_0/I1
+                         LUT4 (Prop_lut4_I1_O)        0.153     1.092 r  out_ready_INST_0/O
+                         net (fo=0)                   0.771     1.863    out_ready
                                                                       r  out_ready
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 con_enable_reg[2]/C
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[0]
-                            (output port)
+  Source:                 in_data[0]
+                            (input port)
+  Destination:            pipe[0].genblk1[0].sum_reg[0][3]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        2.532ns  (logic 0.751ns (29.660%)  route 1.781ns (70.340%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
+  Data Path Delay:        1.708ns  (logic 0.547ns (32.026%)  route 1.161ns (67.974%))
+  Logic Levels:           2  (CARRY4=1 LUT3=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.730     1.730    clk
-                                                                      r  con_enable_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-                         FDCE (Prop_fdce_C_Q)         0.456     2.186 r  con_enable_reg[2]/Q
-                         net (fo=27, unplaced)        0.808     2.994    con_enable[2]
-                                                                      r  out_data[0]_INST_0/I1
-                         LUT4 (Prop_lut4_I1_O)        0.295     3.289 r  out_data[0]_INST_0/O
-                         net (fo=0)                   0.973     4.262    out_data[0]
-                                                                      r  out_data[0]
+                                                      0.000     0.000 r  in_data[0]
+                         net (fo=1, unset)            0.771     0.771    in_data[0]
+                                                                      r  pipe[0].genblk1[0].sum[0][3]_i_4/I0
+                         LUT3 (Prop_lut3_I0_O)        0.067     0.838 r  pipe[0].genblk1[0].sum[0][3]_i_4/O
+                         net (fo=2, unplaced)         0.390     1.228    n_0_pipe[0].genblk1[0].sum[0][3]_i_4
+                                                                      r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/DI[1]
+                         CARRY4 (Prop_carry4_DI[1]_O[3])
+                                                      0.480     1.708 r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/O[3]
+                         net (fo=1, unplaced)         0.000     1.708    p_9_out[3]
+                         FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][3]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 con_enable_reg[2]/C
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[10]
-                            (output port)
+  Source:                 in_data[0]
+                            (input port)
+  Destination:            pipe[0].genblk1[0].sum_reg[0][2]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        2.532ns  (logic 0.751ns (29.660%)  route 1.781ns (70.340%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
+  Data Path Delay:        1.674ns  (logic 0.513ns (30.645%)  route 1.161ns (69.355%))
+  Logic Levels:           2  (CARRY4=1 LUT3=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.730     1.730    clk
-                                                                      r  con_enable_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-                         FDCE (Prop_fdce_C_Q)         0.456     2.186 r  con_enable_reg[2]/Q
-                         net (fo=27, unplaced)        0.808     2.994    con_enable[2]
-                                                                      r  out_data[10]_INST_0/I1
-                         LUT4 (Prop_lut4_I1_O)        0.295     3.289 r  out_data[10]_INST_0/O
-                         net (fo=0)                   0.973     4.262    out_data[10]
-                                                                      r  out_data[10]
+                                                      0.000     0.000 r  in_data[0]
+                         net (fo=1, unset)            0.771     0.771    in_data[0]
+                                                                      r  pipe[0].genblk1[0].sum[0][3]_i_4/I0
+                         LUT3 (Prop_lut3_I0_O)        0.067     0.838 r  pipe[0].genblk1[0].sum[0][3]_i_4/O
+                         net (fo=2, unplaced)         0.390     1.228    n_0_pipe[0].genblk1[0].sum[0][3]_i_4
+                                                                      r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/DI[1]
+                         CARRY4 (Prop_carry4_DI[1]_O[2])
+                                                      0.446     1.674 r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/O[2]
+                         net (fo=1, unplaced)         0.000     1.674    p_9_out[2]
+                         FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][2]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 con_enable_reg[2]/C
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[11]
+  Source:                 reg_out_data_reg[1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            out_data[1]
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        2.532ns  (logic 0.751ns (29.660%)  route 1.781ns (70.340%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
+  Data Path Delay:        1.550ns  (logic 0.322ns (20.774%)  route 1.228ns (79.226%))
+  Logic Levels:           2  (FDRE=1 LUT5=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.730     1.730    clk
-                                                                      r  con_enable_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-                         FDCE (Prop_fdce_C_Q)         0.456     2.186 r  con_enable_reg[2]/Q
-                         net (fo=27, unplaced)        0.808     2.994    con_enable[2]
-                                                                      r  out_data[11]_INST_0/I1
-                         LUT4 (Prop_lut4_I1_O)        0.295     3.289 r  out_data[11]_INST_0/O
-                         net (fo=0)                   0.973     4.262    out_data[11]
-                                                                      r  out_data[11]
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 con_enable_reg[2]/C
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[12]
-                            (output port)
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        2.532ns  (logic 0.751ns (29.660%)  route 1.781ns (70.340%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.730     1.730    clk
-                                                                      r  con_enable_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-                         FDCE (Prop_fdce_C_Q)         0.456     2.186 r  con_enable_reg[2]/Q
-                         net (fo=27, unplaced)        0.808     2.994    con_enable[2]
-                                                                      r  out_data[12]_INST_0/I1
-                         LUT4 (Prop_lut4_I1_O)        0.295     3.289 r  out_data[12]_INST_0/O
-                         net (fo=0)                   0.973     4.262    out_data[12]
-                                                                      r  out_data[12]
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 con_enable_reg[2]/C
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[13]
-                            (output port)
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        2.532ns  (logic 0.751ns (29.660%)  route 1.781ns (70.340%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.730     1.730    clk
-                                                                      r  con_enable_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-                         FDCE (Prop_fdce_C_Q)         0.456     2.186 r  con_enable_reg[2]/Q
-                         net (fo=27, unplaced)        0.808     2.994    con_enable[2]
-                                                                      r  out_data[13]_INST_0/I1
-                         LUT4 (Prop_lut4_I1_O)        0.295     3.289 r  out_data[13]_INST_0/O
-                         net (fo=0)                   0.973     4.262    out_data[13]
-                                                                      r  out_data[13]
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 con_enable_reg[2]/C
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[14]
-                            (output port)
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        2.532ns  (logic 0.751ns (29.660%)  route 1.781ns (70.340%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.730     1.730    clk
-                                                                      r  con_enable_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-                         FDCE (Prop_fdce_C_Q)         0.456     2.186 r  con_enable_reg[2]/Q
-                         net (fo=27, unplaced)        0.808     2.994    con_enable[2]
-                                                                      r  out_data[14]_INST_0/I1
-                         LUT4 (Prop_lut4_I1_O)        0.295     3.289 r  out_data[14]_INST_0/O
-                         net (fo=0)                   0.973     4.262    out_data[14]
-                                                                      r  out_data[14]
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 con_enable_reg[2]/C
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[15]
-                            (output port)
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        2.532ns  (logic 0.751ns (29.660%)  route 1.781ns (70.340%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.730     1.730    clk
-                                                                      r  con_enable_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-                         FDCE (Prop_fdce_C_Q)         0.456     2.186 r  con_enable_reg[2]/Q
-                         net (fo=27, unplaced)        0.808     2.994    con_enable[2]
-                                                                      r  out_data[15]_INST_0/I1
-                         LUT4 (Prop_lut4_I1_O)        0.295     3.289 r  out_data[15]_INST_0/O
-                         net (fo=0)                   0.973     4.262    out_data[15]
-                                                                      r  out_data[15]
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 con_enable_reg[2]/C
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[16]
-                            (output port)
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        2.532ns  (logic 0.751ns (29.660%)  route 1.781ns (70.340%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.730     1.730    clk
-                                                                      r  con_enable_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-                         FDCE (Prop_fdce_C_Q)         0.456     2.186 r  con_enable_reg[2]/Q
-                         net (fo=27, unplaced)        0.808     2.994    con_enable[2]
-                                                                      r  out_data[16]_INST_0/I1
-                         LUT4 (Prop_lut4_I1_O)        0.295     3.289 r  out_data[16]_INST_0/O
-                         net (fo=0)                   0.973     4.262    out_data[16]
-                                                                      r  out_data[16]
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 con_enable_reg[2]/C
-                            (rising edge-triggered cell FDCE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[17]
-                            (output port)
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        2.532ns  (logic 0.751ns (29.660%)  route 1.781ns (70.340%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.730     1.730    clk
-                                                                      r  con_enable_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-                         FDCE (Prop_fdce_C_Q)         0.456     2.186 r  con_enable_reg[2]/Q
-                         net (fo=27, unplaced)        0.808     2.994    con_enable[2]
-                                                                      r  out_data[17]_INST_0/I1
-                         LUT4 (Prop_lut4_I1_O)        0.295     3.289 r  out_data[17]_INST_0/O
-                         net (fo=0)                   0.973     4.262    out_data[17]
-                                                                      r  out_data[17]
+                         FDRE                         0.000     0.000 r  reg_out_data_reg[1]/C
+                         FDRE (Prop_fdre_C_Q)         0.269     0.269 r  reg_out_data_reg[1]/Q
+                         net (fo=1, unplaced)         0.457     0.726    reg_out_data[1]
+                                                                      r  out_data[1]_INST_0/I4
+                         LUT5 (Prop_lut5_I4_O)        0.053     0.779 r  out_data[1]_INST_0/O
+                         net (fo=0)                   0.771     1.550    out_data[1]
+                                                                      r  out_data[1]
   -------------------------------------------------------------------    -------------------
 
 
@@ -1546,836 +730,236 @@ Slack:                    inf
 Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 channel[0].out_buffer_reg[0]/C
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[0]
-                            (output port)
+  Source:                 pipe[2].genblk1[0].sum_reg[0][11]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            reg_out_data_reg[5]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.780ns  (logic 0.239ns (30.632%)  route 0.541ns (69.368%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
+  Data Path Delay:        0.302ns  (logic 0.177ns (58.572%)  route 0.125ns (41.428%))
+  Logic Levels:           3  (CARRY4=1 FDRE=1 LUT2=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.638     0.638    clk
-                                                                      r  channel[0].out_buffer_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-                         FDSE (Prop_fdse_C_Q)         0.141     0.779 r  channel[0].out_buffer_reg[0]/Q
-                         net (fo=1, unplaced)         0.131     0.910    out_buffer[0]
-                                                                      r  out_data[0]_INST_0/I3
-                         LUT4 (Prop_lut4_I3_O)        0.098     1.008 r  out_data[0]_INST_0/O
-                         net (fo=0)                   0.410     1.418    out_data[0]
-                                                                      r  out_data[0]
+                         FDRE                         0.000     0.000 r  pipe[2].genblk1[0].sum_reg[0][11]/C
+                         FDRE (Prop_fdre_C_Q)         0.100     0.100 r  pipe[2].genblk1[0].sum_reg[0][11]/Q
+                         net (fo=1, unplaced)         0.125     0.225    reg_out_data210_in[7]
+                                                                      r  reg_out_data[7]_i_4/I1
+                         LUT2 (Prop_lut2_I1_O)        0.028     0.253 r  reg_out_data[7]_i_4/O
+                         net (fo=1, unplaced)         0.000     0.253    n_0_reg_out_data[7]_i_4
+                                                                      r  reg_out_data_reg[7]_i_1/S[1]
+                         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.049     0.302 r  reg_out_data_reg[7]_i_1/O[1]
+                         net (fo=1, unplaced)         0.000     0.302    reg_out_data0[5]
+                         FDRE                                         r  reg_out_data_reg[5]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 channel[1].out_buffer_reg[2]/C
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[10]
-                            (output port)
+  Source:                 pipe[0].genblk1[1].sum_reg[1][3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            pipe[1].genblk1[0].sum_reg[0][3]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.780ns  (logic 0.239ns (30.632%)  route 0.541ns (69.368%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
+  Data Path Delay:        0.305ns  (logic 0.177ns (58.086%)  route 0.128ns (41.914%))
+  Logic Levels:           3  (CARRY4=1 FDRE=1 LUT2=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.638     0.638    clk
-                                                                      r  channel[1].out_buffer_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-                         FDSE (Prop_fdse_C_Q)         0.141     0.779 r  channel[1].out_buffer_reg[2]/Q
-                         net (fo=1, unplaced)         0.131     0.910    n_0_channel[1].out_buffer_reg[2]
-                                                                      r  out_data[10]_INST_0/I3
-                         LUT4 (Prop_lut4_I3_O)        0.098     1.008 r  out_data[10]_INST_0/O
-                         net (fo=0)                   0.410     1.418    out_data[10]
-                                                                      r  out_data[10]
+                         FDRE                         0.000     0.000 r  pipe[0].genblk1[1].sum_reg[1][3]/C
+                         FDRE (Prop_fdre_C_Q)         0.100     0.100 r  pipe[0].genblk1[1].sum_reg[1][3]/Q
+                         net (fo=1, unplaced)         0.128     0.228    pipe[0].genblk1[1].sum_reg[1]__0[3]
+                                                                      r  pipe[1].genblk1[0].sum[0][3]_i_2/I1
+                         LUT2 (Prop_lut2_I1_O)        0.028     0.256 r  pipe[1].genblk1[0].sum[0][3]_i_2/O
+                         net (fo=1, unplaced)         0.000     0.256    n_0_pipe[1].genblk1[0].sum[0][3]_i_2
+                                                                      r  pipe[1].genblk1[0].sum_reg[0][3]_i_1/S[3]
+                         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.049     0.305 r  pipe[1].genblk1[0].sum_reg[0][3]_i_1/O[3]
+                         net (fo=1, unplaced)         0.000     0.305    n_4_pipe[1].genblk1[0].sum_reg[0][3]_i_1
+                         FDRE                                         r  pipe[1].genblk1[0].sum_reg[0][3]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 channel[1].out_buffer_reg[3]/C
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[11]
-                            (output port)
+  Source:                 pipe[0].genblk1[1].sum_reg[1][7]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            pipe[1].genblk1[0].sum_reg[0][7]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.780ns  (logic 0.239ns (30.632%)  route 0.541ns (69.368%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
+  Data Path Delay:        0.305ns  (logic 0.177ns (58.086%)  route 0.128ns (41.914%))
+  Logic Levels:           3  (CARRY4=1 FDRE=1 LUT2=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.638     0.638    clk
-                                                                      r  channel[1].out_buffer_reg[3]/C
-  -------------------------------------------------------------------    -------------------
-                         FDSE (Prop_fdse_C_Q)         0.141     0.779 r  channel[1].out_buffer_reg[3]/Q
-                         net (fo=1, unplaced)         0.131     0.910    n_0_channel[1].out_buffer_reg[3]
-                                                                      r  out_data[11]_INST_0/I3
-                         LUT4 (Prop_lut4_I3_O)        0.098     1.008 r  out_data[11]_INST_0/O
-                         net (fo=0)                   0.410     1.418    out_data[11]
-                                                                      r  out_data[11]
+                         FDRE                         0.000     0.000 r  pipe[0].genblk1[1].sum_reg[1][7]/C
+                         FDRE (Prop_fdre_C_Q)         0.100     0.100 r  pipe[0].genblk1[1].sum_reg[1][7]/Q
+                         net (fo=1, unplaced)         0.128     0.228    pipe[0].genblk1[1].sum_reg[1]__0[7]
+                                                                      r  pipe[1].genblk1[0].sum[0][7]_i_2/I1
+                         LUT2 (Prop_lut2_I1_O)        0.028     0.256 r  pipe[1].genblk1[0].sum[0][7]_i_2/O
+                         net (fo=1, unplaced)         0.000     0.256    n_0_pipe[1].genblk1[0].sum[0][7]_i_2
+                                                                      r  pipe[1].genblk1[0].sum_reg[0][7]_i_1/S[3]
+                         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.049     0.305 r  pipe[1].genblk1[0].sum_reg[0][7]_i_1/O[3]
+                         net (fo=1, unplaced)         0.000     0.305    n_4_pipe[1].genblk1[0].sum_reg[0][7]_i_1
+                         FDRE                                         r  pipe[1].genblk1[0].sum_reg[0][7]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 channel[1].out_buffer_reg[4]/C
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[12]
-                            (output port)
+  Source:                 pipe[0].genblk1[3].sum_reg[3][3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            pipe[1].genblk1[1].sum_reg[1][3]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.780ns  (logic 0.239ns (30.632%)  route 0.541ns (69.368%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
+  Data Path Delay:        0.305ns  (logic 0.177ns (58.086%)  route 0.128ns (41.914%))
+  Logic Levels:           3  (CARRY4=1 FDRE=1 LUT2=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.638     0.638    clk
-                                                                      r  channel[1].out_buffer_reg[4]/C
-  -------------------------------------------------------------------    -------------------
-                         FDSE (Prop_fdse_C_Q)         0.141     0.779 r  channel[1].out_buffer_reg[4]/Q
-                         net (fo=1, unplaced)         0.131     0.910    n_0_channel[1].out_buffer_reg[4]
-                                                                      r  out_data[12]_INST_0/I3
-                         LUT4 (Prop_lut4_I3_O)        0.098     1.008 r  out_data[12]_INST_0/O
-                         net (fo=0)                   0.410     1.418    out_data[12]
-                                                                      r  out_data[12]
+                         FDRE                         0.000     0.000 r  pipe[0].genblk1[3].sum_reg[3][3]/C
+                         FDRE (Prop_fdre_C_Q)         0.100     0.100 r  pipe[0].genblk1[3].sum_reg[3][3]/Q
+                         net (fo=1, unplaced)         0.128     0.228    pipe[0].genblk1[3].sum_reg[3]__0[3]
+                                                                      r  pipe[1].genblk1[1].sum[1][3]_i_2/I1
+                         LUT2 (Prop_lut2_I1_O)        0.028     0.256 r  pipe[1].genblk1[1].sum[1][3]_i_2/O
+                         net (fo=1, unplaced)         0.000     0.256    n_0_pipe[1].genblk1[1].sum[1][3]_i_2
+                                                                      r  pipe[1].genblk1[1].sum_reg[1][3]_i_1/S[3]
+                         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.049     0.305 r  pipe[1].genblk1[1].sum_reg[1][3]_i_1/O[3]
+                         net (fo=1, unplaced)         0.000     0.305    n_4_pipe[1].genblk1[1].sum_reg[1][3]_i_1
+                         FDRE                                         r  pipe[1].genblk1[1].sum_reg[1][3]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 channel[1].out_buffer_reg[5]/C
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[13]
-                            (output port)
+  Source:                 pipe[0].genblk1[3].sum_reg[3][7]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            pipe[1].genblk1[1].sum_reg[1][7]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.780ns  (logic 0.239ns (30.632%)  route 0.541ns (69.368%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
+  Data Path Delay:        0.305ns  (logic 0.177ns (58.086%)  route 0.128ns (41.914%))
+  Logic Levels:           3  (CARRY4=1 FDRE=1 LUT2=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.638     0.638    clk
-                                                                      r  channel[1].out_buffer_reg[5]/C
-  -------------------------------------------------------------------    -------------------
-                         FDSE (Prop_fdse_C_Q)         0.141     0.779 r  channel[1].out_buffer_reg[5]/Q
-                         net (fo=1, unplaced)         0.131     0.910    n_0_channel[1].out_buffer_reg[5]
-                                                                      r  out_data[13]_INST_0/I3
-                         LUT4 (Prop_lut4_I3_O)        0.098     1.008 r  out_data[13]_INST_0/O
-                         net (fo=0)                   0.410     1.418    out_data[13]
-                                                                      r  out_data[13]
+                         FDRE                         0.000     0.000 r  pipe[0].genblk1[3].sum_reg[3][7]/C
+                         FDRE (Prop_fdre_C_Q)         0.100     0.100 r  pipe[0].genblk1[3].sum_reg[3][7]/Q
+                         net (fo=1, unplaced)         0.128     0.228    pipe[0].genblk1[3].sum_reg[3]__0[7]
+                                                                      r  pipe[1].genblk1[1].sum[1][7]_i_2/I1
+                         LUT2 (Prop_lut2_I1_O)        0.028     0.256 r  pipe[1].genblk1[1].sum[1][7]_i_2/O
+                         net (fo=1, unplaced)         0.000     0.256    n_0_pipe[1].genblk1[1].sum[1][7]_i_2
+                                                                      r  pipe[1].genblk1[1].sum_reg[1][7]_i_1/S[3]
+                         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.049     0.305 r  pipe[1].genblk1[1].sum_reg[1][7]_i_1/O[3]
+                         net (fo=1, unplaced)         0.000     0.305    n_4_pipe[1].genblk1[1].sum_reg[1][7]_i_1
+                         FDRE                                         r  pipe[1].genblk1[1].sum_reg[1][7]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 channel[1].out_buffer_reg[6]/C
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[14]
-                            (output port)
+  Source:                 pipe[1].genblk1[1].sum_reg[1][7]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            pipe[2].genblk1[0].sum_reg[0][7]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.780ns  (logic 0.239ns (30.632%)  route 0.541ns (69.368%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
+  Data Path Delay:        0.305ns  (logic 0.177ns (58.086%)  route 0.128ns (41.914%))
+  Logic Levels:           3  (CARRY4=1 FDRE=1 LUT2=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.638     0.638    clk
-                                                                      r  channel[1].out_buffer_reg[6]/C
-  -------------------------------------------------------------------    -------------------
-                         FDSE (Prop_fdse_C_Q)         0.141     0.779 r  channel[1].out_buffer_reg[6]/Q
-                         net (fo=1, unplaced)         0.131     0.910    n_0_channel[1].out_buffer_reg[6]
-                                                                      r  out_data[14]_INST_0/I3
-                         LUT4 (Prop_lut4_I3_O)        0.098     1.008 r  out_data[14]_INST_0/O
-                         net (fo=0)                   0.410     1.418    out_data[14]
-                                                                      r  out_data[14]
+                         FDRE                         0.000     0.000 r  pipe[1].genblk1[1].sum_reg[1][7]/C
+                         FDRE (Prop_fdre_C_Q)         0.100     0.100 r  pipe[1].genblk1[1].sum_reg[1][7]/Q
+                         net (fo=1, unplaced)         0.128     0.228    pipe[1].genblk1[1].sum_reg[1]__0[7]
+                                                                      r  pipe[2].genblk1[0].sum[0][7]_i_3/I1
+                         LUT2 (Prop_lut2_I1_O)        0.028     0.256 r  pipe[2].genblk1[0].sum[0][7]_i_3/O
+                         net (fo=1, unplaced)         0.000     0.256    n_0_pipe[2].genblk1[0].sum[0][7]_i_3
+                                                                      r  pipe[2].genblk1[0].sum_reg[0][7]_i_1/S[3]
+                         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.049     0.305 r  pipe[2].genblk1[0].sum_reg[0][7]_i_1/O[3]
+                         net (fo=1, unplaced)         0.000     0.305    n_4_pipe[2].genblk1[0].sum_reg[0][7]_i_1
+                         FDRE                                         r  pipe[2].genblk1[0].sum_reg[0][7]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 channel[1].out_buffer_reg[7]/C
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[15]
-                            (output port)
+  Source:                 pipe[2].genblk1[0].sum_reg[0][7]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            reg_out_data_reg[1]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.780ns  (logic 0.239ns (30.632%)  route 0.541ns (69.368%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
+  Data Path Delay:        0.310ns  (logic 0.177ns (57.138%)  route 0.133ns (42.862%))
+  Logic Levels:           3  (CARRY4=1 FDRE=1 LUT4=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.638     0.638    clk
-                                                                      r  channel[1].out_buffer_reg[7]/C
-  -------------------------------------------------------------------    -------------------
-                         FDSE (Prop_fdse_C_Q)         0.141     0.779 r  channel[1].out_buffer_reg[7]/Q
-                         net (fo=1, unplaced)         0.131     0.910    n_0_channel[1].out_buffer_reg[7]
-                                                                      r  out_data[15]_INST_0/I3
-                         LUT4 (Prop_lut4_I3_O)        0.098     1.008 r  out_data[15]_INST_0/O
-                         net (fo=0)                   0.410     1.418    out_data[15]
-                                                                      r  out_data[15]
+                         FDRE                         0.000     0.000 r  pipe[2].genblk1[0].sum_reg[0][7]/C
+                         FDRE (Prop_fdre_C_Q)         0.100     0.100 r  pipe[2].genblk1[0].sum_reg[0][7]/Q
+                         net (fo=3, unplaced)         0.133     0.233    reg_out_data210_in[3]
+                                                                      r  reg_out_data[3]_i_5/I3
+                         LUT4 (Prop_lut4_I3_O)        0.028     0.261 r  reg_out_data[3]_i_5/O
+                         net (fo=1, unplaced)         0.000     0.261    n_0_reg_out_data[3]_i_5
+                                                                      r  reg_out_data_reg[3]_i_1/S[1]
+                         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.049     0.310 r  reg_out_data_reg[3]_i_1/O[1]
+                         net (fo=1, unplaced)         0.000     0.310    reg_out_data0[1]
+                         FDRE                                         r  reg_out_data_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 channel[2].out_buffer_reg[0]/C
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[16]
-                            (output port)
+  Source:                 con_enable_reg[1]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            con_enable_reg[0]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.780ns  (logic 0.239ns (30.632%)  route 0.541ns (69.368%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
+  Data Path Delay:        0.311ns  (logic 0.164ns (52.786%)  route 0.147ns (47.214%))
+  Logic Levels:           2  (FDCE=1 LUT4=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.638     0.638    clk
-                                                                      r  channel[2].out_buffer_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-                         FDSE (Prop_fdse_C_Q)         0.141     0.779 r  channel[2].out_buffer_reg[0]/Q
-                         net (fo=1, unplaced)         0.131     0.910    n_0_channel[2].out_buffer_reg[0]
-                                                                      r  out_data[16]_INST_0/I3
-                         LUT4 (Prop_lut4_I3_O)        0.098     1.008 r  out_data[16]_INST_0/O
-                         net (fo=0)                   0.410     1.418    out_data[16]
-                                                                      r  out_data[16]
+                         FDCE                         0.000     0.000 r  con_enable_reg[1]/C
+                         FDCE (Prop_fdce_C_Q)         0.100     0.100 r  con_enable_reg[1]/Q
+                         net (fo=13, unplaced)        0.147     0.247    con_enable[1]
+                                                                      r  con_enable[0]_i_1/I3
+                         LUT4 (Prop_lut4_I3_O)        0.064     0.311 r  con_enable[0]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.311    n_0_con_enable[0]_i_1
+                         FDCE                                         r  con_enable_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 channel[2].out_buffer_reg[1]/C
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[17]
-                            (output port)
+  Source:                 con_enable_reg[1]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            con_enable_reg[1]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.780ns  (logic 0.239ns (30.632%)  route 0.541ns (69.368%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
+  Data Path Delay:        0.311ns  (logic 0.164ns (52.786%)  route 0.147ns (47.214%))
+  Logic Levels:           2  (FDCE=1 LUT2=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.638     0.638    clk
-                                                                      r  channel[2].out_buffer_reg[1]/C
-  -------------------------------------------------------------------    -------------------
-                         FDSE (Prop_fdse_C_Q)         0.141     0.779 r  channel[2].out_buffer_reg[1]/Q
-                         net (fo=1, unplaced)         0.131     0.910    n_0_channel[2].out_buffer_reg[1]
-                                                                      r  out_data[17]_INST_0/I3
-                         LUT4 (Prop_lut4_I3_O)        0.098     1.008 r  out_data[17]_INST_0/O
-                         net (fo=0)                   0.410     1.418    out_data[17]
-                                                                      r  out_data[17]
+                         FDCE                         0.000     0.000 r  con_enable_reg[1]/C
+                         FDCE (Prop_fdce_C_Q)         0.100     0.100 r  con_enable_reg[1]/Q
+                         net (fo=13, unplaced)        0.147     0.247    con_enable[1]
+                                                                      r  con_enable[1]_i_1/I1
+                         LUT2 (Prop_lut2_I1_O)        0.064     0.311 r  con_enable[1]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.311    n_0_con_enable[1]_i_1
+                         FDCE                                         r  con_enable_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 channel[2].out_buffer_reg[2]/C
-                            (rising edge-triggered cell FDSE clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            out_data[18]
-                            (output port)
+  Source:                 pipe[2].genblk1[0].sum_reg[0][9]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            reg_out_data_reg[6]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.780ns  (logic 0.239ns (30.632%)  route 0.541ns (69.368%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Uncertainty:      0.025ns
+  Data Path Delay:        0.312ns  (logic 0.179ns (57.413%)  route 0.133ns (42.588%))
+  Logic Levels:           3  (CARRY4=1 FDRE=1 LUT1=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.638     0.638    clk
-                                                                      r  channel[2].out_buffer_reg[2]/C
+                         FDRE                         0.000     0.000 r  pipe[2].genblk1[0].sum_reg[0][9]/C
+                         FDRE (Prop_fdre_C_Q)         0.100     0.100 f  pipe[2].genblk1[0].sum_reg[0][9]/Q
+                         net (fo=3, unplaced)         0.133     0.233    reg_out_data210_in[5]
+                                                                      f  reg_out_data[7]_i_3/I0
+                         LUT1 (Prop_lut1_I0_O)        0.028     0.261 r  reg_out_data[7]_i_3/O
+                         net (fo=1, unplaced)         0.000     0.261    n_0_reg_out_data[7]_i_3
+                                                                      r  reg_out_data_reg[7]_i_1/S[2]
+                         CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.051     0.312 r  reg_out_data_reg[7]_i_1/O[2]
+                         net (fo=1, unplaced)         0.000     0.312    reg_out_data0[6]
+                         FDRE                                         r  reg_out_data_reg[6]/D
   -------------------------------------------------------------------    -------------------
-                         FDSE (Prop_fdse_C_Q)         0.141     0.779 r  channel[2].out_buffer_reg[2]/Q
-                         net (fo=1, unplaced)         0.131     0.910    n_0_channel[2].out_buffer_reg[2]
-                                                                      r  out_data[18]_INST_0/I3
-                         LUT4 (Prop_lut4_I3_O)        0.098     1.008 r  out_data[18]_INST_0/O
-                         net (fo=0)                   0.410     1.418    out_data[18]
-                                                                      r  out_data[18]
-  -------------------------------------------------------------------    -------------------
-
-
-
-
-
---------------------------------------------------------------------------------------
-Path Group:  (none)
-From Clock:  
-  To Clock:  CLK
-
-Max Delay           111 Endpoints
-Min Delay           111 Endpoints
---------------------------------------------------------------------------------------
-
-
-Max Delay Paths
---------------------------------------------------------------------------------------
-Slack:                    inf
-  Source:                 rst_n
-                            (input port)
-  Destination:            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTA
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Setup (Max at Slow Process Corner)
-  Data Path Delay:        1.897ns  (logic 0.124ns (6.537%)  route 1.773ns (93.463%))
-  Logic Levels:           1  (LUT1=1)
-  Clock Path Skew:        1.515ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.515ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 f  rst_n
-                         net (fo=1, unset)            0.973     0.973    rst_n
-                                                                      f  channel[0].Mul_i_1/I0
-                         LUT1 (Prop_lut1_I0_O)        0.124     1.097 r  channel[0].Mul_i_1/O
-                         net (fo=12, unplaced)        0.800     1.897    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/SCLR
-                         DSP48E1                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTA
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.515     1.515    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 rst_n
-                            (input port)
-  Destination:            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTB
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Setup (Max at Slow Process Corner)
-  Data Path Delay:        1.897ns  (logic 0.124ns (6.537%)  route 1.773ns (93.463%))
-  Logic Levels:           1  (LUT1=1)
-  Clock Path Skew:        1.515ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.515ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 f  rst_n
-                         net (fo=1, unset)            0.973     0.973    rst_n
-                                                                      f  channel[0].Mul_i_1/I0
-                         LUT1 (Prop_lut1_I0_O)        0.124     1.097 r  channel[0].Mul_i_1/O
-                         net (fo=12, unplaced)        0.800     1.897    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/SCLR
-                         DSP48E1                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTB
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.515     1.515    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 rst_n
-                            (input port)
-  Destination:            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTM
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Setup (Max at Slow Process Corner)
-  Data Path Delay:        1.897ns  (logic 0.124ns (6.537%)  route 1.773ns (93.463%))
-  Logic Levels:           1  (LUT1=1)
-  Clock Path Skew:        1.515ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.515ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 f  rst_n
-                         net (fo=1, unset)            0.973     0.973    rst_n
-                                                                      f  channel[0].Mul_i_1/I0
-                         LUT1 (Prop_lut1_I0_O)        0.124     1.097 r  channel[0].Mul_i_1/O
-                         net (fo=12, unplaced)        0.800     1.897    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/SCLR
-                         DSP48E1                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTM
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.515     1.515    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 rst_n
-                            (input port)
-  Destination:            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTP
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Setup (Max at Slow Process Corner)
-  Data Path Delay:        1.897ns  (logic 0.124ns (6.537%)  route 1.773ns (93.463%))
-  Logic Levels:           1  (LUT1=1)
-  Clock Path Skew:        1.515ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.515ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 f  rst_n
-                         net (fo=1, unset)            0.973     0.973    rst_n
-                                                                      f  channel[0].Mul_i_1/I0
-                         LUT1 (Prop_lut1_I0_O)        0.124     1.097 r  channel[0].Mul_i_1/O
-                         net (fo=12, unplaced)        0.800     1.897    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/SCLR
-                         DSP48E1                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTP
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.515     1.515    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 rst_n
-                            (input port)
-  Destination:            channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTA
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Setup (Max at Slow Process Corner)
-  Data Path Delay:        1.897ns  (logic 0.124ns (6.537%)  route 1.773ns (93.463%))
-  Logic Levels:           1  (LUT1=1)
-  Clock Path Skew:        1.515ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.515ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 f  rst_n
-                         net (fo=1, unset)            0.973     0.973    rst_n
-                                                                      f  channel[0].Mul_i_1/I0
-                         LUT1 (Prop_lut1_I0_O)        0.124     1.097 r  channel[0].Mul_i_1/O
-                         net (fo=12, unplaced)        0.800     1.897    channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/SCLR
-                         DSP48E1                                      r  channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTA
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.515     1.515    channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 rst_n
-                            (input port)
-  Destination:            channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTB
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Setup (Max at Slow Process Corner)
-  Data Path Delay:        1.897ns  (logic 0.124ns (6.537%)  route 1.773ns (93.463%))
-  Logic Levels:           1  (LUT1=1)
-  Clock Path Skew:        1.515ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.515ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 f  rst_n
-                         net (fo=1, unset)            0.973     0.973    rst_n
-                                                                      f  channel[0].Mul_i_1/I0
-                         LUT1 (Prop_lut1_I0_O)        0.124     1.097 r  channel[0].Mul_i_1/O
-                         net (fo=12, unplaced)        0.800     1.897    channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/SCLR
-                         DSP48E1                                      r  channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTB
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.515     1.515    channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 rst_n
-                            (input port)
-  Destination:            channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTM
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Setup (Max at Slow Process Corner)
-  Data Path Delay:        1.897ns  (logic 0.124ns (6.537%)  route 1.773ns (93.463%))
-  Logic Levels:           1  (LUT1=1)
-  Clock Path Skew:        1.515ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.515ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 f  rst_n
-                         net (fo=1, unset)            0.973     0.973    rst_n
-                                                                      f  channel[0].Mul_i_1/I0
-                         LUT1 (Prop_lut1_I0_O)        0.124     1.097 r  channel[0].Mul_i_1/O
-                         net (fo=12, unplaced)        0.800     1.897    channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/SCLR
-                         DSP48E1                                      r  channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTM
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.515     1.515    channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 rst_n
-                            (input port)
-  Destination:            channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTP
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Setup (Max at Slow Process Corner)
-  Data Path Delay:        1.897ns  (logic 0.124ns (6.537%)  route 1.773ns (93.463%))
-  Logic Levels:           1  (LUT1=1)
-  Clock Path Skew:        1.515ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.515ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 f  rst_n
-                         net (fo=1, unset)            0.973     0.973    rst_n
-                                                                      f  channel[0].Mul_i_1/I0
-                         LUT1 (Prop_lut1_I0_O)        0.124     1.097 r  channel[0].Mul_i_1/O
-                         net (fo=12, unplaced)        0.800     1.897    channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/SCLR
-                         DSP48E1                                      r  channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTP
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.515     1.515    channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[1].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 rst_n
-                            (input port)
-  Destination:            channel[2].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTA
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Setup (Max at Slow Process Corner)
-  Data Path Delay:        1.897ns  (logic 0.124ns (6.537%)  route 1.773ns (93.463%))
-  Logic Levels:           1  (LUT1=1)
-  Clock Path Skew:        1.515ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.515ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 f  rst_n
-                         net (fo=1, unset)            0.973     0.973    rst_n
-                                                                      f  channel[0].Mul_i_1/I0
-                         LUT1 (Prop_lut1_I0_O)        0.124     1.097 r  channel[0].Mul_i_1/O
-                         net (fo=12, unplaced)        0.800     1.897    channel[2].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/SCLR
-                         DSP48E1                                      r  channel[2].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTA
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.515     1.515    channel[2].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[2].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 rst_n
-                            (input port)
-  Destination:            channel[2].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTB
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Setup (Max at Slow Process Corner)
-  Data Path Delay:        1.897ns  (logic 0.124ns (6.537%)  route 1.773ns (93.463%))
-  Logic Levels:           1  (LUT1=1)
-  Clock Path Skew:        1.515ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.515ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 f  rst_n
-                         net (fo=1, unset)            0.973     0.973    rst_n
-                                                                      f  channel[0].Mul_i_1/I0
-                         LUT1 (Prop_lut1_I0_O)        0.124     1.097 r  channel[0].Mul_i_1/O
-                         net (fo=12, unplaced)        0.800     1.897    channel[2].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/SCLR
-                         DSP48E1                                      r  channel[2].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/RSTB
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           1.515     1.515    channel[2].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[2].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-
-
-
-
-Min Delay Paths
---------------------------------------------------------------------------------------
-Slack:                    inf
-  Source:                 ct_scale[0]
-                            (input port)
-  Destination:            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[0]
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Hold (Min at Fast Process Corner)
-  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.909ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.909ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 r  ct_scale[0]
-                         net (fo=2, unset)            0.410     0.410    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/B[0]
-                         DSP48E1                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[0]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.909     0.909    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 ct_scale[10]
-                            (input port)
-  Destination:            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[10]
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Hold (Min at Fast Process Corner)
-  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.909ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.909ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 r  ct_scale[10]
-                         net (fo=2, unset)            0.410     0.410    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/B[10]
-                         DSP48E1                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[10]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.909     0.909    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 ct_scale[11]
-                            (input port)
-  Destination:            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[11]
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Hold (Min at Fast Process Corner)
-  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.909ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.909ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 r  ct_scale[11]
-                         net (fo=2, unset)            0.410     0.410    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/B[11]
-                         DSP48E1                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[11]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.909     0.909    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 ct_scale[12]
-                            (input port)
-  Destination:            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[12]
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Hold (Min at Fast Process Corner)
-  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.909ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.909ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 r  ct_scale[12]
-                         net (fo=2, unset)            0.410     0.410    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/B[12]
-                         DSP48E1                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[12]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.909     0.909    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 ct_scale[13]
-                            (input port)
-  Destination:            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[13]
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Hold (Min at Fast Process Corner)
-  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.909ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.909ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 r  ct_scale[13]
-                         net (fo=2, unset)            0.410     0.410    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/B[13]
-                         DSP48E1                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[13]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.909     0.909    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 ct_scale[14]
-                            (input port)
-  Destination:            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[14]
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Hold (Min at Fast Process Corner)
-  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.909ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.909ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 r  ct_scale[14]
-                         net (fo=2, unset)            0.410     0.410    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/B[14]
-                         DSP48E1                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[14]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.909     0.909    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 ct_scale[15]
-                            (input port)
-  Destination:            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[15]
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Hold (Min at Fast Process Corner)
-  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.909ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.909ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 r  ct_scale[15]
-                         net (fo=2, unset)            0.410     0.410    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/B[15]
-                         DSP48E1                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[15]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.909     0.909    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 ct_scale[16]
-                            (input port)
-  Destination:            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[16]
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Hold (Min at Fast Process Corner)
-  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.909ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.909ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 r  ct_scale[16]
-                         net (fo=2, unset)            0.410     0.410    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/B[16]
-                         DSP48E1                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[16]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.909     0.909    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 ct_scale[17]
-                            (input port)
-  Destination:            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[17]
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Hold (Min at Fast Process Corner)
-  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.909ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.909ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 r  ct_scale[17]
-                         net (fo=2, unset)            0.410     0.410    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/B[17]
-                         DSP48E1                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[17]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.909     0.909    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
-
-Slack:                    inf
-  Source:                 ct_scale[18]
-                            (input port)
-  Destination:            channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[18]
-                            (rising edge-triggered cell DSP48E1 clocked by CLK  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             (none)
-  Path Type:              Hold (Min at Fast Process Corner)
-  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.909ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.909ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 r  ct_scale[18]
-                         net (fo=2, unset)            0.410     0.410    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/B[18]
-                         DSP48E1                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/A[18]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CLK rise edge)        0.000     0.000 r  
-                                                      0.000     0.000 r  clk
-                         net (fo=29, unset)           0.909     0.909    channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/CLK
-                                                                      r  channel[0].Mul/U0/i_mult/gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg/CLK
 
 
 
