@@ -76,7 +76,7 @@ module WindowGenerator(
 	::range
 	2 - 15
 	*/
-	parameter[3 : 0] window_width = 5;
+	parameter[3 : 0] window_width = 3;
 	/*
 	::description
 	Color's bit wide.
@@ -98,7 +98,7 @@ module WindowGenerator(
 	input rst_n;
 	/*
 	::description
-	Input data enable, it works as fifo0's wr_en.
+	Input data enable, in pipeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.
 	*/
 	input in_enable;
 	/*

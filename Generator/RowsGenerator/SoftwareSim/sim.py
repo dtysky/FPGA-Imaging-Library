@@ -75,11 +75,11 @@ def debug(im, conf):
 	mode = im.mode
 	xsize = im.size[0]
 	if mode not in ['L', '1']:
-		show_error('This module just supports Gray-scale and binary images, check your images !')
+		show_error('Simulations for this module just supports Gray-scale and binary images, check your images !')
 	if xsize != 512:
-		show_error('This module just supports 512xN images, check your images !')
+		show_error('Simulations for this module just supports 512xN images, check your images !')
 	if conf['width'] not in [3, 5]:
-		show_error('''This module just supports conf "width" 3 and 5, check your images !''')
+		show_error('''Simulations for this module just supports conf "width" 3 and 5, check your images !''')
 	rows = RG(im, conf['width'])
 	data_res = 'Showed row1 -> rowN\nBut the lowest color_width-bits of this are the first row !\n\n'
 	while not rows.frame_empty():
