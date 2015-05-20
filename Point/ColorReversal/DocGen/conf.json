@@ -18,7 +18,7 @@
 			"Parameters",
 			"Ports",
 			"Instances",
-			["Simulations","Functional simulation is just supported for RGB and Gray-scale images !\n\n### Software\n\n\n### HDL\n\n\n### Compare\n\n\n"],
+			["Simulations","Simulations for this module just support RGB, Gray-scale and binary images !\n\n### Waves\n\n\n### Original\n\n\n### Results\n\n\n### PSNR\n\n\n"],
 			["Utilization",""],
 			["Timing",""],
 			["Power",""]

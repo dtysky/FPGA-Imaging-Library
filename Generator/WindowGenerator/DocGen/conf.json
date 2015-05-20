@@ -11,7 +11,7 @@
 			"Design",
 			"Version",
 			"Modified",
-			["Source", "[WindowGenerator](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Generate/WindowGenerator)"],
+			["Source", "[WindowGenerator](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Generator/WindowGenerator)"],
 			["IP-GUI", "![WindowGenerator IP-GUI](http://src.dtysky.moe/image/f-i-l/3/9/3.png)"],
 			"Function",
 			"Files",

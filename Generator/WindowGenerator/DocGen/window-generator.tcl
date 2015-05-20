@@ -38,7 +38,7 @@ Range: None
 
 in_enable:
 unsigned.
-Description: Input data enable, it works as fifo0's wr_en.
+Description: Input data enable, in pipeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.
 Range: None
 
 in_data:

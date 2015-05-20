@@ -72,7 +72,7 @@ module RowsGenerator(
 	parameter[3 : 0] rows_width = 3;
 	/*
 	::description
-	Thee width of image.
+	The width of image.
 	::range
 	1 - 4096
 	*/
@@ -157,7 +157,7 @@ module RowsGenerator(
 				1 : 
 					/*
 					::description
-					Fifo which has 1 width and N depth (0 < N < 4096), used for rows cache which width is 1. 
+					Fifo which has 1 width and N depth (0 < N < 4096), used for rows cache which color_width is 1. 
 					You can configure the fifo by yourself, but all fifos in one project whcih have same name must have same configurations. 
 					And you can just change the "Write Depth" and "Fifo Implementation", the Read Latency must be 1 !
 					*/
@@ -173,7 +173,7 @@ module RowsGenerator(
 				2, 3, 4 : 
 					/*
 					::description
-					Fifo which has 4 width and N depth (0 < N < 4096), used for rows cache which width is 2, 3 and 4. 
+					Fifo which has 4 width and N depth (0 < N < 4096), used for rows cache which color_width is 2, 3 and 4. 
 					You can configure the fifo by yourself, but all fifos in one project whcih have same name must have same configurations. 
 					And you can just change the "Write Depth" and "Fifo Implementation", the Read Latency must be 1 !
 					*/
@@ -189,7 +189,7 @@ module RowsGenerator(
 				5, 6, 7, 8 : 
 					/*
 					::description
-					Fifo which has 8 width and N depth (0 < N < 4096), used for rows cache which width is 5, 6, 7 and 8. 
+					Fifo which has 8 width and N depth (0 < N < 4096), used for rows cache which color_width is 5, 6, 7 and 8. 
 					You can configure the fifo by yourself, but all fifos in one project whcih have same name must have same configurations. 
 					And you can just change the "Write Depth" and "Fifo Implementation", the Read Latency must be 1 !
 					*/
@@ -205,7 +205,7 @@ module RowsGenerator(
 				9, 10, 11, 12 : 
 					/*
 					::description
-					Fifo which has 12 width and N depth (0 < N < 4096), used for rows cache which width is 9, 10, 11 and 12. 
+					Fifo which has 12 width and N depth (0 < N < 4096), used for rows cache which color_width is 9, 10, 11 and 12. 
 					You can configure the fifo by yourself, but all fifos in one project whcih have same name must have same configurations. 
 					And you can just change the "Write Depth" and "Fifo Implementation", the Read Latency must be 1 !
 					*/

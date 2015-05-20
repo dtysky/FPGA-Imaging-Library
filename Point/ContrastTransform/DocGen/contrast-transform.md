@@ -8,18 +8,18 @@ ContrastTransform
 ***
 
 **Modified**  
-2015-05-05  
+2015-05-16  
 
 ***
 
 ## Source
-[Threshold](https://github.com/dtysky/FPGA-Imaging-Library/tree/master/Point/Threshold)
+[ContrastTransform](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Point/ContrastTransform)
 
 
 ***
 
 ## IP-GUI
-![Threshold IP-GUI](http://src.dtysky.moe/image/f-i-l/3/4/.png)
+![ContrastTransform IP-GUI](http://src.dtysky.moe/image/f-i-l/3/5/3.png)
 
 
 ***

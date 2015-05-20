@@ -16,6 +16,18 @@ LightnessTransform
 
 ***
 
+## Source
+[LightnessTransform](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Point/LightnessTransform)
+
+
+***
+
+## IP-GUI
+![LightnessTransform IP-GUI](http://src.dtysky.moe/image/f-i-l/3/6/3.png)
+
+
+***
+
 ### Function
 Change the lightness of an image.Give the first output after 2 cycles while the input enable.  
 

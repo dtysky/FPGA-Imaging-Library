@@ -17,7 +17,7 @@
 			"Parameters",
 			"Ports",
 			"Instances",
-			["Simulations","Simulations for this module just support Gray-scale !\n\n### Waves\n\n\n### Original\n\n\n### Results\n\n\n### PSNR\n\n\n"],
+			["Simulations","Simulations for this module just support Gray-scale images !\n\n### Waves\n\n\n### Original\n\n\n### Results\n\n\n### PSNR\n\n\n"],
 			["Utilization",""],
 			["Timing",""],
 			["Thanks","**The sources of images for simulations:**  \n"]

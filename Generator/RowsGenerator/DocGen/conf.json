@@ -19,7 +19,7 @@
 			"Design",
 			"Version",
 			"Modified",
-			["Source", "[RowsGenerator](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Generate/RowsGenerator)"],
+			["Source", "[RowsGenerator](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Generator/RowsGenerator)"],
 			["IP-GUI", "![RowsGenerator IP-GUI](http://src.dtysky.moe/image/f-i-l/3/8/3.png)"],
 			"Function",
 			"Files",

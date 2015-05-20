@@ -13,13 +13,13 @@ Graying
 ***
 
 ## Source
-[Graying](https://github.com/dtysky/FPGA-Imaging-Library/tree/master/Point/Graying)
+[Graying](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Point/Graying)
 
 
 ***
 
 ## IP-GUI
-![Graying IP-GUI](http://src.dtysky.moe/image/f-i-l/3/2/7.png)
+![Graying IP-GUI](http://src.dtysky.moe/image/f-i-l/3/3/3.png)
 
 
 ***
@@ -206,7 +206,7 @@ Covert RGB images to gray-scale images.Users can configure the multipliers by th
 ***
 
 ## Simulations
-Simulations for this module just support Gray-scale and 512x512 images !
+Simulations for this module just support RGB images !
 
 ### Waves
 

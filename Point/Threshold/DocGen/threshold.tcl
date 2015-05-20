@@ -33,7 +33,7 @@ Range: None
 
 th_mode:
 unsigned.
-Description: The method to processing.
+Description: The method for processing.
 Range: 0 for Base, 1 for Contour
 
 th1:
@@ -43,7 +43,7 @@ Range: color_width - 1 : 0
 
 th2:
 unsigned.
-Description: First thorshold, only used for "Contour" method.
+Description: Second thorshold, only used for "Contour" method.
 Range: color_width - 1 : 0
 
 in_enable:

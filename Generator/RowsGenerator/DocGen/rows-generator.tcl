@@ -16,7 +16,7 @@ Description: The width of rows.
 
 im_width:
 unsigned.
-Description: Thee width of image.
+Description: The width of image.
 
 color_width:
 unsigned.

@@ -67,7 +67,7 @@ def show_error(e):
 def name_format(root, name, ex, conf):
 	return '%s-%s-soft%s' % (name, conf['window_width'], '.bmp')
 
-def mean_fitter(window):
+def mean_filter(window):
 	w_sum = 0
 	for row in window:
 		w_sum += sum(row)
@@ -99,8 +99,6 @@ def mean_fitter(window):
 		return (w_sum >> 8) + (w_sum >> 10);
 	elif len(window) == 15:
 		return (w_sum >> 8) + (w_sum >> 11);
-	elif len(window) == 16:
-		return w_sum >> 8;
 
 def transform(im, conf):
 	mode = im.mode
@@ -116,7 +114,7 @@ def transform(im, conf):
 		win = window.update(rows.update())
 		if not window.is_enable():
 			continue
-		data_res.append(mean_fitter(win))
+		data_res.append(mean_filter(win))
 	im_res = Image.new('L', im.size)
 	im_res.putdata(data_res)
 	return im_res

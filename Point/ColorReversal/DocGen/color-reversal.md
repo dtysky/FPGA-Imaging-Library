@@ -3,7 +3,7 @@ FPGA-Imaging-Library
 
 
 ## Design
-ContrastTransform
+ColorReversal
 
 
 **Version**  

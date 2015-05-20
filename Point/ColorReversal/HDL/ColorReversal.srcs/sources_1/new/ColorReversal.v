@@ -4,10 +4,10 @@
 FPGA-Imaging-Library
 
 :Design
-ContrastTransform
+ColorReversal
 
 :Function
-Get a reversal all ponit's color. 
+Get a reversal of all ponit's color. 
 Give the first output after 1 cycle while the input enable.
 
 :Module
@@ -19,7 +19,7 @@ Main module
 :Modified
 2015-05-16
 
-Copyright (C) 2015  Dai Tianyu (dtysky)
+Copyright (C) 2015 Tianyu Dai (dtysky) <dtysky@outlook.com>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

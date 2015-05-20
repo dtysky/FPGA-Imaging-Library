@@ -13,13 +13,13 @@ Threshold
 ***
 
 ## Source
-[Threshold](https://github.com/dtysky/FPGA-Imaging-Library/tree/master/Point/Threshold)
+[Threshold](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Point/Threshold)
 
 
 ***
 
 ## IP-GUI
-![Threshold IP-GUI](http://src.dtysky.moe/image/f-i-l/3/4/.png)
+![Threshold IP-GUI](http://src.dtysky.moe/image/f-i-l/3/4/3.png)
 
 
 ***
@@ -114,7 +114,7 @@ Convert gray-scales image to binary images.Give the first output after 1 cycles 
 <td>unsigned</td>
 <td>0 for Base, 1 for Contour</td>
 <td>None</td>
-<td>The method to processing.</td>
+<td>The method for processing.</td>
 </tr>
 <tr>
 <td>th1</td>
@@ -130,7 +130,7 @@ Convert gray-scales image to binary images.Give the first output after 1 cycles 
 <td>unsigned</td>
 <td>color_width - 1 : 0</td>
 <td>None</td>
-<td>First thorshold, only used for "Contour" method.</td>
+<td>Second thorshold, only used for "Contour" method.</td>
 </tr>
 <tr>
 <td>in_enable</td>

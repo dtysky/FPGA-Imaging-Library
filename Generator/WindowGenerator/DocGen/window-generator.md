@@ -21,7 +21,7 @@ WindowGenerator
 ***
 
 ## Source
-[WindowGenerator](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Generate/WindowGenerator)
+[WindowGenerator](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Generator/WindowGenerator)
 
 
 ***
@@ -86,7 +86,7 @@ In req-ack mode, before the first window can be output, it will give a input ack
 <td>window_width</td>
 <td>unsigned</td>
 <td>2 - 15</td>
-<td>5</td>
+<td>3</td>
 <td>The width(and height) of window.</td>
 </tr>
 <tr>
@@ -135,7 +135,7 @@ In req-ack mode, before the first window can be output, it will give a input ack
 <td>unsigned</td>
 <td>None</td>
 <td>None</td>
-<td>Input data enable, it works as fifo0's wr_en.</td>
+<td>Input data enable, in pipeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.</td>
 </tr>
 <tr>
 <td>in_data</td>

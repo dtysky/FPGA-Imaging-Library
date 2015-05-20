@@ -21,7 +21,7 @@ RowsGenerator
 ***
 
 ## Source
-[RowsGenerator](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Generate/RowsGenerator)
+[RowsGenerator](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/Generator/RowsGenerator)
 
 
 ***
@@ -120,7 +120,7 @@ Give the first output after rows_width * (rows_depth + 1) cycles while the input
 <td>unsigned</td>
 <td>1 - 4096</td>
 <td>320</td>
-<td>Thee width of image.</td>
+<td>The width of image.</td>
 </tr>
 <tr>
 <td>color_width</td>
@@ -218,22 +218,22 @@ Give the first output after rows_width * (rows_depth + 1) cycles while the input
 <tr>
 <td>Fifo</td>
 <td>Fifo1xWidthRows</td>
-<td>Fifo which has 1 width and N depth (0 < N < 4096), used for rows cache which width is 1.You can configure the fifo by yourself, but all fifos in one project whcih have same name must have same configurations.And you can just change the "Write Depth" and "Fifo Implementation", the Read Latency must be 1 !</td>
+<td>Fifo which has 1 width and N depth (0 < N < 4096), used for rows cache which color_width is 1.You can configure the fifo by yourself, but all fifos in one project whcih have same name must have same configurations.And you can just change the "Write Depth" and "Fifo Implementation", the Read Latency must be 1 !</td>
 </tr>
 <tr>
 <td>Fifo</td>
 <td>Fifo4xWidthRows</td>
-<td>Fifo which has 4 width and N depth (0 < N < 4096), used for rows cache which width is 2, 3 and 4.You can configure the fifo by yourself, but all fifos in one project whcih have same name must have same configurations.And you can just change the "Write Depth" and "Fifo Implementation", the Read Latency must be 1 !</td>
+<td>Fifo which has 4 width and N depth (0 < N < 4096), used for rows cache which color_width is 2, 3 and 4.You can configure the fifo by yourself, but all fifos in one project whcih have same name must have same configurations.And you can just change the "Write Depth" and "Fifo Implementation", the Read Latency must be 1 !</td>
 </tr>
 <tr>
 <td>Fifo</td>
 <td>Fifo8xWidthRows</td>
-<td>Fifo which has 8 width and N depth (0 < N < 4096), used for rows cache which width is 5, 6, 7 and 8.You can configure the fifo by yourself, but all fifos in one project whcih have same name must have same configurations.And you can just change the "Write Depth" and "Fifo Implementation", the Read Latency must be 1 !</td>
+<td>Fifo which has 8 width and N depth (0 < N < 4096), used for rows cache which color_width is 5, 6, 7 and 8.You can configure the fifo by yourself, but all fifos in one project whcih have same name must have same configurations.And you can just change the "Write Depth" and "Fifo Implementation", the Read Latency must be 1 !</td>
 </tr>
 <tr>
 <td>Fifo</td>
 <td>Fifo12xWidthRows</td>
-<td>Fifo which has 12 width and N depth (0 < N < 4096), used for rows cache which width is 9, 10, 11 and 12.You can configure the fifo by yourself, but all fifos in one project whcih have same name must have same configurations.And you can just change the "Write Depth" and "Fifo Implementation", the Read Latency must be 1 !</td>
+<td>Fifo which has 12 width and N depth (0 < N < 4096), used for rows cache which color_width is 9, 10, 11 and 12.You can configure the fifo by yourself, but all fifos in one project whcih have same name must have same configurations.And you can just change the "Write Depth" and "Fifo Implementation", the Read Latency must be 1 !</td>
 </tr>
 </table>
 </center>

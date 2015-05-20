@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="2" Path="B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/Gary2BinAuto/HDL/Gary2BinAuto.xpr">
+<Project Version="7" Minor="2" Path="B:/Complex_Mind/FPGA-Imaging-Library/Master/LocalFilter/Gary2BinAuto/HDL/Gary2BinAuto.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="703cbbb7ab0b41fda58b4713cd794ad8"/>
@@ -29,7 +29,6 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="Gary2BinAuto"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
@@ -86,8 +85,6 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="Gary2BinAuto_TB"/>
-        <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
