@@ -1,6 +1,6 @@
 
 # Loading additional proc with user specified bodies to compute parameter values.
-source [file join [file dirname [file dirname [info script]]] gui/WindowGenerator_v1_0.gtcl]
+source [file join [file dirname [file dirname [info script]]] gui/MeanFilter_v1_0.gtcl]
 
 # Definitional proc to organize widgets for parameters.
 proc init_gui { IPINST } {
@@ -10,7 +10,7 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "work_mode" -parent ${Page_0} -widget comboBox
   ipgui::add_param $IPINST -name "window_width" -parent ${Page_0}
   ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "window_width_half" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "sum_stage" -parent ${Page_0}
   ipgui::add_static_text $IPINST -name "Par_Discriptions" -parent ${Page_0} -text {
 
 work_mode:
@@ -24,6 +24,10 @@ Description: The width(and height) of window.
 color_width:
 unsigned.
 Description: Color's bit wide.
+
+sum_stage:
+unsigned.
+Description: Stage of sum.
 
 }
 
@@ -42,13 +46,13 @@ Range: None
 
 in_enable:
 unsigned.
-Description: Input data enable, it works as fifo0's wr_en.
+Description: Input data enable, in pipeeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.
 Range: None
 
 in_data:
 unsigned.
 Description: Input data, it must be synchronous with in_enable.
-Range: color_width * window_width - 1 : 0
+Range: color_width * window_width * window_width - 1 : 0
 
 out_ready:
 unsigned.
@@ -58,12 +62,7 @@ Range: None
 out_data:
 unsigned.
 Description: Output data, it will be synchronous with out_ready.
-Range: color_width * window_width * window_width - 1 : 0
-
-input_ack:
-unsigned.
-Description: Input ack, only used for req-ack mode, this port will give a ack while the input_data received.
-Range: None
+Range: color_width - 1 : 0
 
 }
 
@@ -89,18 +88,18 @@ This project is free software and released under the GNU Lesser General Public L
 
 }
 
-proc update_PARAM_VALUE.window_width_half { PARAM_VALUE.window_width_half PARAM_VALUE.window_width_half PARAM_VALUE.window_width } {
-	# Procedure called to update window_width_half when any of the dependent parameters in the arguments change
+proc update_PARAM_VALUE.sum_stage { PARAM_VALUE.sum_stage PARAM_VALUE.sum_stage PARAM_VALUE.window_width } {
+	# Procedure called to update sum_stage when any of the dependent parameters in the arguments change
 	
-	set window_width_half ${PARAM_VALUE.window_width_half}
+	set sum_stage ${PARAM_VALUE.sum_stage}
 	set window_width ${PARAM_VALUE.window_width}
-	set values(window_width_half) [get_property value $window_width_half]
+	set values(sum_stage) [get_property value $sum_stage]
 	set values(window_width) [get_property value $window_width]
-	set_property value [gen_USERPARAMETER_window_width_half_VALUE $values(window_width_half) $values(window_width)] $window_width_half
+	set_property value [gen_USERPARAMETER_sum_stage_VALUE $values(sum_stage) $values(window_width)] $sum_stage
 }
 
-proc validate_PARAM_VALUE.window_width_half { PARAM_VALUE.window_width_half } {
-	# Procedure called to validate window_width_half
+proc validate_PARAM_VALUE.sum_stage { PARAM_VALUE.sum_stage } {
+	# Procedure called to validate sum_stage
 	return true
 }
 
@@ -145,5 +144,10 @@ proc update_MODELPARAM_VALUE.window_width { MODELPARAM_VALUE.window_width PARAM_
 proc update_MODELPARAM_VALUE.color_width { MODELPARAM_VALUE.color_width PARAM_VALUE.color_width } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.color_width}] ${MODELPARAM_VALUE.color_width}
+}
+
+proc update_MODELPARAM_VALUE.sum_stage { MODELPARAM_VALUE.sum_stage PARAM_VALUE.sum_stage } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.sum_stage}] ${MODELPARAM_VALUE.sum_stage}
 }
 

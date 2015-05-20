@@ -1,0 +1,4 @@
+# This file is automatically written.  Do not modify.
+proc gen_USERPARAMETER_sum_stage_VALUE {sum_stage window_width } {
+set ${sum_stage} [expr int(log(($window_width) * ($window_width))/log(2))]
+}

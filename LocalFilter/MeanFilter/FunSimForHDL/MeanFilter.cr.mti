@@ -1,0 +1,17 @@
+../HDL/MeanFilter.srcs/sources_1/new/MeanFilter.v {1 {vlog -work work -vopt B:/Complex_Mind/FPGA-Imaging-Library/Master/LocalFilter/MeanFilter/HDL/MeanFilter.srcs/sources_1/new/MeanFilter.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module MeanFilter
+
+Top level modules:
+	MeanFilter
+
+} {} {}} ../HDL/MeanFilter.srcs/sim_1/new/MeanFilter_TB.sv {1 {vlog -work work -vopt -sv B:/Complex_Mind/FPGA-Imaging-Library/Master/LocalFilter/MeanFilter/HDL/MeanFilter.srcs/sim_1/new/MeanFilter_TB.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module CLOCK
+-- Compiling interface TBInterface
+-- Compiling module MeanFilter_TB
+
+Top level modules:
+	MeanFilter_TB
+
+} {} {}}

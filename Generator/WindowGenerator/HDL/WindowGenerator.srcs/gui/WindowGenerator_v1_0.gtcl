@@ -1,0 +1,4 @@
+# This file is automatically written.  Do not modify.
+proc gen_USERPARAMETER_window_width_half_VALUE {window_width_half window_width } {
+set ${window_width_half} [expr int($window_width/2)]
+}
