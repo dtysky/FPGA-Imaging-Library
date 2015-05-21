@@ -4,11 +4,11 @@
 FPGA-Imaging-Library
 
 :Design
-MeanFilter
+RankFifter
 
 :Function
-Local filter - Mean filter, it always used for smoothing images. 
-It will give the first output after sum_stage cycles + 1 while the input enable. 
+Local filter - Rank filter, it always used for denoising with preserving edge. 
+It will give the first output after sum_stage + 2 cycles while the input enable. 
 
 :Module
 Test bench
@@ -17,7 +17,7 @@ Test bench
 1.0
 
 :Modified
-2015-05-20
+2015-05-21
 
 Copyright (C) 2015 Tianyu Dai (dtysky) <dtysky@outlook.com>
 
@@ -63,14 +63,16 @@ endmodule
 interface TBInterface (input bit clk, input bit rst_n);
 	parameter[3 : 0] window_width = 3;
 	parameter[3: 0] color_width = 8;
-	parameter sum_stage = 3;
+	parameter sum_stage = 2;
+	parameter full_win_bits = 6;
+	bit[full_win_bits - 1 : 0] rank;
 	bit in_enable;
 	bit[color_width * window_width * window_width - 1 : 0] in_data;
 	bit out_ready;
 	bit[color_width - 1 : 0] out_data;
 endinterface
 
-module MeanFilter_TB();
+module RankFilter_TB();
 
 	integer fi,fo;
 	string fname[$];
@@ -81,22 +83,22 @@ module MeanFilter_TB();
 	integer window_width;
 
 	bit clk, rst_n;
-	TBInterface #(3, 8, 3) GrayPipelinex3(clk, rst_n);
-	TBInterface #(5, 8, 4) GrayPipelinex5(clk, rst_n);
-	TBInterface #(3, 8, 3) GrayReqAckx3(clk, rst_n);
-	TBInterface #(5, 8, 4) GrayReqAckx5(clk, rst_n);
+	TBInterface #(3, 8, 2, 4) GrayPipelinex3(clk, rst_n);
+	TBInterface #(5, 8, 2, 6) GrayPipelinex5(clk, rst_n);
+	TBInterface #(3, 8, 2, 4) GrayReqAckx3(clk, rst_n);
+	TBInterface #(5, 8, 2, 6) GrayReqAckx5(clk, rst_n);
 	CLOCK CLOCK1 (clk);
-	MeanFilter #(0, GrayPipelinex3.window_width, GrayPipelinex3.color_width, GrayPipelinex3.sum_stage) 
-		MFGrayPipelinex3(GrayPipelinex3.clk, GrayPipelinex3.rst_n,  
+	RankFifter #(0, GrayPipelinex3.window_width, GrayPipelinex3.color_width, GrayPipelinex3.sum_stage, GrayPipelinex3.full_win_bits) 
+		RFGrayPipelinex3(GrayPipelinex3.clk, GrayPipelinex3.rst_n, GrayPipelinex3.rank, 
 			GrayPipelinex3.in_enable, GrayPipelinex3.in_data, GrayPipelinex3.out_ready, GrayPipelinex3.out_data);
-	MeanFilter #(0, GrayPipelinex5.window_width, GrayPipelinex5.color_width, GrayPipelinex5.sum_stage) 
-		MFGrayPipelinex5(GrayPipelinex5.clk, GrayPipelinex5.rst_n,  
+	RankFifter #(0, GrayPipelinex5.window_width, GrayPipelinex5.color_width, GrayPipelinex5.sum_stage, GrayPipelinex5.full_win_bits) 
+		RFGrayPipelinex5(GrayPipelinex5.clk, GrayPipelinex5.rst_n, GrayPipelinex5.rank, 
 			GrayPipelinex5.in_enable, GrayPipelinex5.in_data, GrayPipelinex5.out_ready, GrayPipelinex5.out_data);
-	MeanFilter #(1, GrayReqAckx3.window_width, GrayReqAckx3.color_width, GrayReqAckx3.sum_stage) 
-		MFGrayReqAckx3(GrayReqAckx3.clk, GrayReqAckx3.rst_n,  
+	RankFifter #(1, GrayReqAckx3.window_width, GrayReqAckx3.color_width, GrayReqAckx3.sum_stage, GrayReqAckx3.full_win_bits) 
+		RFGrayReqAckx3(GrayReqAckx3.clk, GrayReqAckx3.rst_n, GrayReqAckx3.rank, 
 			GrayReqAckx3.in_enable, GrayReqAckx3.in_data, GrayReqAckx3.out_ready, GrayReqAckx3.out_data);
-	MeanFilter #(1, GrayReqAckx5.window_width, GrayReqAckx5.color_width, GrayReqAckx5.sum_stage) 
-		MFGrayReqAckx5(GrayReqAckx5.clk, GrayReqAckx5.rst_n,  
+	RankFifter #(1, GrayReqAckx5.window_width, GrayReqAckx5.color_width, GrayReqAckx5.sum_stage, GrayReqAckx5.full_win_bits) 
+		RFGrayReqAckx5(GrayReqAckx5.clk, GrayReqAckx5.rst_n, GrayReqAckx5.rank, 
 			GrayReqAckx5.in_enable, GrayReqAckx5.in_data, GrayReqAckx5.out_ready, GrayReqAckx5.out_data);
 
 	task init_file();
@@ -106,6 +108,13 @@ module MeanFilter_TB();
 		fst = $fscanf(fi, "%s", imconf);
 		$fwrite(fo, "%s\n", imconf);
 		fst = $fscanf(fi, "%d", window_width);
+		if(window_width == 3) begin
+			fst = $fscanf(fi, "%b", GrayPipelinex3.rank);
+			GrayReqAckx3.rank = GrayPipelinex3.rank;
+		end else if(window_width == 5) begin
+			fst = $fscanf(fi, "%b", GrayPipelinex5.rank);
+			GrayReqAckx5.rank = GrayPipelinex5.rank;
+		end
 	endtask : init_file
 
 	task init_signal();
@@ -134,9 +143,9 @@ module MeanFilter_TB();
 				$display("%m: at time %0t ps , %s-pipeline working start !", $time, ftmp);
 			now_start = 1;
 			if(window_width == 3)
-				$fwrite(fo, "%d\n", GrayPipelinex3.out_data);
+				$fwrite(fo, "%0d\n", GrayPipelinex3.out_data);
 			else if(window_width == 5)
-				$fwrite(fo, "%d\n", GrayPipelinex5.out_data);
+				$fwrite(fo, "%0d\n", GrayPipelinex5.out_data);
 		end
 	endtask : work_pipeline
 
@@ -155,9 +164,9 @@ module MeanFilter_TB();
 			$display("%m: at time %0t ps , %s-reqack working start !", $time, ftmp);
 		now_start = 1;
 		if(window_width == 3)
-			$fwrite(fo, "%d\n", GrayReqAckx3.out_data);
+			$fwrite(fo, "%0d\n", GrayReqAckx3.out_data);
 		else if(window_width == 5)
-			$fwrite(fo, "%d\n", GrayReqAckx5.out_data);
+			$fwrite(fo, "%0d\n", GrayReqAckx5.out_data);
 		GrayReqAckx3.in_enable = 0;
 		GrayReqAckx5.in_enable = 0;
 	endtask : work_reqack

@@ -1,0 +1,20 @@
+{
+	"conf" : [
+		{
+			"window_width" : 3,
+			"filter" : "mean"
+		},
+		{
+			"window_width" : 3,
+			"filter" : "mid"
+		},
+		{
+			"window_width" : 5,
+			"filter" : "mean"
+		},
+		{
+			"window_width" : 5,
+			"filter" : "mid"
+		}
+	]
+}

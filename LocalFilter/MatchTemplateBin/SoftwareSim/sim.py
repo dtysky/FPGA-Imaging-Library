@@ -3,10 +3,10 @@ Project
 FPGA-Imaging-Library
 
 Design
-MeanFilter
+MatchTemplateBin
 
 Function
-Local filter - Mean filter, it always used for smoothing images. 
+Match a binary from template. 
 
 Module
 Software simulation.
@@ -15,7 +15,7 @@ Version
 1.0
 
 Modified
-2015-05-19
+2015-05-22
 
 Copyright (C) 2015 Tianyu Dai (dtysky) <dtysky@outlook.com>
 
@@ -53,6 +53,8 @@ import os, json
 from ctypes import *
 from RowsGenerator import RowsGenerator as RG
 from WindowGenerator import WindowGenerator as WG
+from MeanFilter import *
+from RankFilter import *
 user32 = windll.LoadLibrary('user32.dll')
 MessageBox = lambda x:user32.MessageBoxA(0, x, 'Error', 0) 
 
@@ -65,48 +67,20 @@ def show_error(e):
 	exit(0)
 
 def name_format(root, name, ex, conf):
-	return '%s-%s-soft%s' % (name, conf['window_width'], '.bmp')
-
-def mean_filter(window):
-	w_sum = 0
-	for row in window:
-		w_sum += sum(row)
-	if len(window) == 2:
-		return w_sum >> 2;
-	elif len(window) == 3:
-		return (w_sum >> 4) + (w_sum >> 5) + (w_sum >> 6);
-	elif len(window) == 4:
-		return w_sum >> 4;
-	elif len(window) == 5:
-		return (w_sum >> 5) + (w_sum >> 7) + (w_sum >> 10);
-	elif len(window) == 6:
-		return (w_sum >> 6) + (w_sum >> 7) + (w_sum >> 8);
-	elif len(window) == 7:
-		return (w_sum >> 6) + (w_sum >> 8) + (w_sum >> 10);
-	elif len(window) == 8:
-		return w_sum >> 6;
-	elif len(window) == 9:
-		return (w_sum >> 7) + (w_sum >> 8) + (w_sum >> 11);
-	elif len(window) == 10:
-		return (w_sum >> 7) + (w_sum >> 9) + (w_sum >> 13);
-	elif len(window) == 11:
-		return (w_sum >> 7) + (w_sum >> 12) + (w_sum >> 13);
-	elif len(window) == 12:
-		return (w_sum >> 8) + (w_sum >> 9) + (w_sum >> 10);
-	elif len(window) == 13:
-		return (w_sum >> 8) + (w_sum >> 9) + (w_sum >> 14);
-	elif len(window) == 14:
-		return (w_sum >> 8) + (w_sum >> 10) + (w_sum >> 12);
-	elif len(window) == 15:
-		return (w_sum >> 8) + (w_sum >> 11);
+	return '%s-%s-%s-soft%s' % (name, conf['window_width'], conf['filter'], '.bmp')
 
 def transform(im, conf):
 	mode = im.mode
 	width = int(conf['window_width'])
+	half_width = width >> 1
+	full_half_width = width * width >> 1
+	fil = conf['filter']
 	if mode not in ['L']:
 		show_error('Simulations for this module just supports Gray-scale images, check your images !')
 	if width not in [3, 5]:
 		show_error('Simulations for this module just supports "window_width" 3 and 5, check your conf !')
+	if fil not in ['mean', 'mid']:
+		show_error('"filter" just supports "mean" and "mid"m check your conf !')
 	data_res = []
 	rows = RG(im, width)
 	window = WG(width)
@@ -114,18 +88,26 @@ def transform(im, conf):
 		win = window.update(rows.update())
 		if not window.is_enable():
 			continue
-		data_res.append(mean_filter(win))
-	im_res = Image.new('L', im.size)
+		if fil == 'mean':
+			data_res.append(1 if win[half_width][half_width] >= mean_filter(win) else 0)
+		else:
+			data_res.append(1 if win[half_width][half_width] >= rank_filter(win, full_half_width) else 0)
+	im_res = Image.new('1', im.size)
 	im_res.putdata(data_res)
 	return im_res
 
 def debug(im, conf):
 	mode = im.mode
 	width = int(conf['window_width'])
+	half_width = width >> 1
+	full_half_width = width * width >> 1
+	fil = conf['filter']
 	if mode not in ['L']:
 		show_error('Simulations for this module just supports Gray-scale images, check your images !')
 	if width not in [3, 5]:
 		show_error('Simulations for this module just supports "window_width" 3 and 5, check your conf !')
+	if fil not in ['mean', 'mid']:
+		show_error('"filter" just supports "mean" and "mid"m check your conf !')
 	data_src = im.getdata()
 	data_res = ''
 	rows = RG(im, width)
@@ -134,7 +116,10 @@ def debug(im, conf):
 		win = window.update(rows.update())
 		if not window.is_enable():
 			continue
-		data_res += '%d\n' % mean_fitter(win)
+		if fil == 'mean':
+			data_res += '1' if mean_filter(win) >= win[half_width][half_width] else '0'
+		else:
+			data_res += '1' if rank_filter(win, full_half_width) >= win[half_width][half_width] else '0'
 	return data_res
 
 FileAll = []
