@@ -3,10 +3,10 @@ Project
 FPGA-Imaging-Library
 
 Design
-MatchTemplateBin
+ErosionDilationBin
 
 Function
-Match a binary from template for binary images. 
+Erosion or Dilation for binary images. 
 
 Module
 Software simulation.
@@ -72,11 +72,15 @@ def name_format(root, name, ex, conf):
 def transform(im, conf):
 	mode = im.mode
 	template = conf['template']
+	ed_mode = conf['mode']
 	if mode not in ['1']:
 		show_error('Simulations for this module just supports binary images, check your images !')
+	if ed_mode not in ['Erosion', 'Dilation']:
+		show_error('"filter" just supports "Erosion" and "Dilation", check your conf !')
 	for row in template:
 		if len(template) != len(row):
 			show_error('every row in "template" must equal to length of template, check your conf !')
+	ed_mode = 0 if ed_mode == 'Erosion' else 1
 	width = len(template)
 	data_res = []
 	rows = RG(im, width)
@@ -85,7 +89,14 @@ def transform(im, conf):
 		win = window.update(rows.update())
 		if not window.is_enable():
 			continue
-		data_res.append(1 if win == template else 0)
+		pix = 1
+		for wy in xrange(width):
+			for wx in xrange(width):
+				p_w = w[wy][wx] ^ ed_mode
+				p_w = p_w | ~mask[wy][wx]
+				pix = pix & p_w
+		pix = pix ^ ed_mode
+		data_res.append(pix)
 	im_res = Image.new('1', im.size)
 	im_res.putdata(data_res)
 	return im_res
@@ -93,11 +104,15 @@ def transform(im, conf):
 def debug(im, conf):
 	mode = im.mode
 	template = conf['template']
-	if mode not in ['1']:
+	ed_mode = conf['mode']
+	if mode not in ['L']:
 		show_error('Simulations for this module just supports binary images, check your images !')
+	if ed_mode not in ['Erosion', 'Dilation']:
+		show_error('"filter" just supports "Erosion" and "Dilation", check your conf !')
 	for row in template:
 		if len(template) != len(row):
 			show_error('every row in "template" must equal to length of template, check your conf !')
+	ed_mode = 0 if ed_mode == 'Erosion' else 1
 	width = len(template)
 	data_res = ''
 	rows = RG(im, width)
@@ -106,7 +121,14 @@ def debug(im, conf):
 		win = window.update(rows.update())
 		if not window.is_enable():
 			continue
-		data_res += '%d\n' % 1 if win == template else 0
+		pix = 1
+		for wy in xrange(width):
+			for wx in xrange(width):
+				p_w = w[wy][wx] ^ ed_mode
+				p_w = p_w | ~mask[wy][wx]
+				pix = pix & p_w
+		pix = pix ^ ed_mode
+		data_res += '%d\n' % pix
 	return data_res
 
 FileAll = []
