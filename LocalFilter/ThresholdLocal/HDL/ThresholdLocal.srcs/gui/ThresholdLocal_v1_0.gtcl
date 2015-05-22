@@ -1,0 +1,8 @@
+# This file is automatically written.  Do not modify.
+proc gen_USERPARAMETER_max_delay_bits_VALUE {max_delay max_delay_bits } {
+if {[expr log($max_delay)/log(2)] >= [expr int(log($max_delay)/log(2))] } {
+	set ${max_delay_bits} [expr int(log($max_delay)/log(2)) + 1]
+} else {
+	set ${max_delay_bits} [expr int(log($max_delay)/log(2))]
+}
+}

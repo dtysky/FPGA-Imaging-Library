@@ -1,0 +1,11 @@
+# This file is automatically written.  Do not modify.
+proc gen_USERPARAMETER_sum_stage_VALUE {sum_stage window_width } {
+set ${sum_stage} [expr int(log(($window_width) * ($window_width))/log(8)) + 1]
+}
+proc gen_USERPARAMETER_full_win_bits_VALUE {window_width full_win_bits } {
+if {[expr log($window_width)/log(2)] >= [expr int(log($window_width)/log(2))] } {
+	set ${full_win_bits} [expr int(log($window_width)/log(2)) + 1]
+} else {
+	set ${full_win_bits} [expr int(log($window_width)/log(2))]
+}
+}

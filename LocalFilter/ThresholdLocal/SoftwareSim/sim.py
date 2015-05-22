@@ -3,7 +3,7 @@ Project
 FPGA-Imaging-Library
 
 Design
-RankFilter
+ThresholdLocal
 
 Function
 Local thresholding by Threshold from filters. 
@@ -77,8 +77,6 @@ def transform(im, conf):
 	fil = conf['filter']
 	if mode not in ['L']:
 		show_error('Simulations for this module just supports Gray-scale images, check your images !')
-	if width not in [3, 5]:
-		show_error('Simulations for this module just supports "window_width" 3 and 5, check your conf !')
 	if fil not in ['mean', 'mid']:
 		show_error('"filter" just supports "mean" and "mid"m check your conf !')
 	data_res = []
@@ -104,8 +102,6 @@ def debug(im, conf):
 	fil = conf['filter']
 	if mode not in ['L']:
 		show_error('Simulations for this module just supports Gray-scale images, check your images !')
-	if width not in [3, 5]:
-		show_error('Simulations for this module just supports "window_width" 3 and 5, check your conf !')
 	if fil not in ['mean', 'mid']:
 		show_error('"filter" just supports "mean" and "mid"m check your conf !')
 	data_src = im.getdata()

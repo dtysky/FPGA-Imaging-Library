@@ -4,7 +4,7 @@
 FPGA-Imaging-Library
 
 :Design
-MeanFilter
+RankFilter
 
 :Function
 Local filter - Rank filter, it always used for denoising with preserving edge. 
@@ -74,10 +74,10 @@ module RankFifter(
 	::range
 	2 - 15
 	*/
-	parameter[3 : 0] window_width = 3;
+	parameter[3 : 0] window_width = 5;
 	/*
 	::description
-	Color's bit wide.
+	Color's bit width.
 	::range
 	1 - 12
 	*/
@@ -86,7 +86,7 @@ module RankFifter(
 	::description
 	Stage of sum.
 	::range
-	Depend on width of window, log8(window_width^2) + 1
+	Depend on width of window, int(log8(window_width^2)) + 1
 	*/
 	parameter[2 : 0] sum_stage = 2;
 	/*
@@ -106,10 +106,14 @@ module RankFifter(
 	Reset, active low.
 	*/
 	input rst_n;
+	/*
+	::description
+	Filter's rank, if half of full size of window, this module working as median filter, etc.
+	*/
 	input[full_win_bits - 1 : 0] rank;
 	/*
 	::description
-	Input data enable, in pipeeeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.
+	Input data enable, in pipeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.
 	*/
 	input in_enable;
 	/*

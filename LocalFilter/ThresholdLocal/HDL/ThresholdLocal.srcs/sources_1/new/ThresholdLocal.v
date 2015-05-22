@@ -117,12 +117,12 @@ module ThresholdLocal(
 	input [color_width * in_window_width * in_window_width - 1 : 0] in_data;
 	/*
 	::description
-	Ref data enable.
+	Threshold enable.
 	*/
 	input ref_enable;
 	/*
 	::description
-	Red data, used as threshold for thresholding, it must be synchronous with ref_enable.
+	Threshold, used as threshold for thresholding, it must be synchronous with ref_enable.
 	*/
 	input[color_width - 1 : 0] ref_data;
 	/*
@@ -145,6 +145,7 @@ module ThresholdLocal(
 
 		if(work_mode == 0) begin
 			reg[color_width - 1 : 0] buffer[0 : max_delay - 1];
+			wire[max_delay - 1 : 0] res;
 			always @(posedge clk or negedge rst_n or negedge in_enable) begin
 				if(~rst_n || ~in_enable)
 					con_out <= 0;
@@ -161,7 +162,7 @@ module ThresholdLocal(
 					reg_out_data <= 0;
 				end else begin
 					reg_out_ready <= 1;
-					reg_out_data <= buffer[con_out - 1] < ref_data ? 0 : 1;
+					reg_out_data <= res[con_out - 1];
 				end
 			end
 			for (i = 0; i < max_delay; i = i + 1) begin
@@ -172,6 +173,7 @@ module ThresholdLocal(
 					always @(posedge clk)
 						buffer[i] <= buffer[i - 1];
 				end
+				assign res[i] = buffer[i] < ref_data ? 0 : 1;
 			end
 		end else begin 
 			always @(posedge clk or negedge rst_n or negedge ref_enable) begin
