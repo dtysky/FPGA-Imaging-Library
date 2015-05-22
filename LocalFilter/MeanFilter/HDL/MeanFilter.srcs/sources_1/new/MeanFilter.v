@@ -8,7 +8,7 @@ MeanFilter
 
 :Function
 Local filter - Mean filter, it always used for smoothing images. 
-It will give the first output after sum_stage cycles while the input enable. 
+It will give the first output after sum_stage + 1 cycles while the input enable. 
 
 :Module
 Main module

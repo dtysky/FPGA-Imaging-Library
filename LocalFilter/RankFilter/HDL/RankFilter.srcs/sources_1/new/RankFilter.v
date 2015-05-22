@@ -77,7 +77,7 @@ module RankFifter(
 	parameter[3 : 0] window_width = 5;
 	/*
 	::description
-	Color's bit wide.
+	Color's bit width.
 	::range
 	1 - 12
 	*/
@@ -106,10 +106,14 @@ module RankFifter(
 	Reset, active low.
 	*/
 	input rst_n;
+	/*
+	::description
+	Filter's rank, if half of full size of window, this module working as median filter, etc.
+	*/
 	input[full_win_bits - 1 : 0] rank;
 	/*
 	::description
-	Input data enable, in pipeeeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.
+	Input data enable, in pipeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.
 	*/
 	input in_enable;
 	/*

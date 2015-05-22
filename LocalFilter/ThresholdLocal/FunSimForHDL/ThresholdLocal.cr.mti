@@ -1,0 +1,10 @@
+../HDL/ThresholdLocal.srcs/sim_1/new/ThresholdLocal_TB.sv {1 {vlog -work work -vopt -sv B:/Complex_Mind/FPGA-Imaging-Library/Master/LocalFilter/ThresholdLocal/HDL/ThresholdLocal.srcs/sim_1/new/ThresholdLocal_TB.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module CLOCK
+-- Compiling interface TBInterface
+-- Compiling module ThresholdLocal_TB
+
+Top level modules:
+	ThresholdLocal_TB
+
+} {} {}}
