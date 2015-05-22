@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="2" Path="B:/Complex_Mind/FPGA-Imaging-Library/Master/LocalFilter/Gary2BinAuto/HDL/Gary2BinAuto.xpr">
+<Project Version="7" Minor="2" Path="B:/Complex_Mind/FPGA-Imaging-Library/Master/LocalFilter/ThresholdLocal/HDL/ThresholdLocal.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="703cbbb7ab0b41fda58b4713cd794ad8"/>
@@ -17,18 +17,16 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/new/Gary2BinAuto.v">
+      <File Path="$PSRCDIR/sources_1/new/ThresholdLocal.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/component.xml">
-        <FileInfo SFType="IPXACT"/>
-      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="ThresholdLocal"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
@@ -40,43 +38,7 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sim_1/imports/WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/ip/Fifo8x512/Fifo8x512_funcsim.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/ip/Fifo8x512/Fifo8x512_funcsim.v"/>
-          <Attr Name="ImportTime" Val="1429019579"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sim_1/imports/WINDOW/WindowCreator/HDL/Window.srcs/sources_1/new/Window.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../WindowCreator/HDL/Window.srcs/sources_1/new/Window.v"/>
-          <Attr Name="ImportTime" Val="1428426871"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sim_1/imports/WINDOW/MeanFitter/HDL/MeanFitter.srcs/sources_1/new/MeanFitter.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../MeanFitter/HDL/MeanFitter.srcs/sources_1/new/MeanFitter.v"/>
-          <Attr Name="ImportTime" Val="1428426971"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sim_1/imports/WINDOW/RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/new/Rows8x512.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../RowsCreator/HDL/Rows8x512/Rows8x512.srcs/sources_1/new/Rows8x512.v"/>
-          <Attr Name="ImportTime" Val="1428577556"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sim_1/new/Gary2BinAuto_TB.sv">
+      <File Path="$PSRCDIR/sim_1/new/ThresholdLocal_TB.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -85,6 +47,8 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="ThresholdLocal_TB"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>

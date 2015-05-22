@@ -9,6 +9,7 @@ ThresholdLocal
 :Function
 Local thresholding by Threshold from filters. 
 It will give the first output after 1 cycle while the tow input both enable. 
+ref_enable must enable after in_enable !
 
 :Module
 Main module
@@ -49,70 +50,143 @@ My blog:
 
 */
 `timescale 1ns / 1ps
+
 module ThresholdLocal(
 	clk, 
 	rst_n, 
-	org_enable, 
-	org_data, 
+	in_enable, 
+	in_data, 
 	ref_enable, 
 	ref_data, 
-	out_enable, 
+	out_ready, 
 	out_data);
 
-	parameter color_width = 8;
-	parameter ref_window_size = 5;
-	parameter max_delay = 16;
+	/*
+	::description
+	This module's working mode.
+	::range
+	0 for Pipline, 1 for Req-ack
+	*/
+	parameter[0 : 0] work_mode = 0;
+	/*
+	::description
+	The width(and height) of input window, if input is not a window, set it to 1.
+	::range
+	1 - 15
+	*/
+	parameter[3 : 0] in_window_width = 1;
+	/*
+	::description
+	Color's bit width.
+	::range
+	1 - 12
+	*/
+	parameter[3 : 0] color_width = 8;
+	/*
+	::description
+	The possible max cycles from in_enable to ref_enable.
+	*/
+	parameter max_delay = 8;
+	/*
+	::description
+	Width bits of max delay.
+	::range
+	Depend on max delay
+	*/
+	parameter max_delay_bits = 4;
 
-	input clk, rst_n;
-	input org_enable;
-	input[ref_window_size * ref_window_size * color_width - 1 : 0] org_data;
+	/*
+	::description
+	Clock.
+	*/
+	input clk;
+	/*
+	::description
+	Reset, active low.
+	*/
+	input rst_n;
+	/*
+	::description
+	Filter's rank, if half of full size of window, this module working as median filter, etc.
+	*/
+	input in_enable;
+	/*
+	::description
+	Input data, it must be synchronous with in_enable.
+	*/
+	input [color_width * in_window_width * in_window_width - 1 : 0] in_data;
+	/*
+	::description
+	Ref data enable.
+	*/
 	input ref_enable;
+	/*
+	::description
+	Red data, used as threshold for thresholding, it must be synchronous with ref_enable.
+	*/
 	input[color_width - 1 : 0] ref_data;
-	output out_enable;
+	/*
+	::description
+	Output data ready, in both two mode, it will be high while the out_data can be read.
+	*/
+	output out_ready;
+	/*
+	::description
+	Output data, it will be synchronous with out_ready.
+	*/
 	output out_data;
 
-	reg[3 : 0] con_out;
 	reg reg_out_ready;
 	reg reg_out_data;
-
-	always @(posedge clk or negedge rst_n or negedge org_enable) begin
-		if(~rst_n || ~org_enable)
-			con_out <= 0;
-		else if(~con_out == max_delay)
-			con_out <= con_out;
-		else if(~ref_enable)
-			con_out <= con_out + 1;
-		else
-			con_out <= con_out;
-	end
-
-	always @(posedge clk or negedge rst_n or negedge ref_enable) begin
-		if(~rst_n || ~ref_enable) begin
-			reg_out_ready <= 0;
-			reg_out_data <= 0;
-		end else begin
-			reg_out_ready <= 1;
-			reg_out_data <= buffer[con_out].o;
-		end
-	end
-	assign out_ready = reg_out_ready;
-	assign out_data = out_ready ? reg_out_data : 0;
+	reg[max_delay_bits - 1 : 0] con_out;
 
 	genvar i, j;
 	generate
-		for (i = 0; i < max_delay; i = i + 1) begin : buffer
-			reg[color_width - 1 : 0] b;
-			reg o[max_delay - 1 : 0];
-			if(i == 0) begin 
-				always @(posedge clk)
-					b <= org_data[((ref_window_size * ref_window_size >> 1) + 1) * color_width - 1 : (ref_window_size * ref_window_size >> 1) * color_width];
-			end else begin 
-				always @(posedge clk)
-					b <= buffer[i - 1].b;
-			end	
-			always @(*)
-				o <= b < ref_data ? 0 : 1;
+
+		if(work_mode == 0) begin
+			reg[color_width - 1 : 0] buffer[0 : max_delay - 1];
+			always @(posedge clk or negedge rst_n or negedge in_enable) begin
+				if(~rst_n || ~in_enable)
+					con_out <= 0;
+				else if(con_out == max_delay)
+					con_out <= con_out;
+				else if(~ref_enable)
+					con_out <= con_out + 1;
+				else
+					con_out <= con_out;
+			end
+			always @(posedge clk or negedge rst_n or negedge ref_enable) begin
+				if(~rst_n || ~ref_enable) begin
+					reg_out_ready <= 0;
+					reg_out_data <= 0;
+				end else begin
+					reg_out_ready <= 1;
+					reg_out_data <= buffer[con_out - 1] < ref_data ? 0 : 1;
+				end
+			end
+			for (i = 0; i < max_delay; i = i + 1) begin
+				if(i == 0) begin 
+					always @(posedge clk)
+						buffer[i] <= in_data[((in_window_width * in_window_width >> 1) + 1) * color_width - 1 : (in_window_width * in_window_width >> 1) * color_width];
+				end else begin 
+					always @(posedge clk)
+						buffer[i] <= buffer[i - 1];
+				end
+			end
+		end else begin 
+			always @(posedge clk or negedge rst_n or negedge ref_enable) begin
+				if(~rst_n || ~ref_enable) begin
+					reg_out_ready <= 0;
+					reg_out_data <= 0;
+				end else begin
+					reg_out_ready <= 1;
+					reg_out_data <= in_data < ref_data ? 0 : 1;
+				end
+			end
 		end
+
+		assign out_ready = reg_out_ready;
+		assign out_data = reg_out_data;
 	endgenerate
 
 endmodule
