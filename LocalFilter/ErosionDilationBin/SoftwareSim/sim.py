@@ -53,8 +53,6 @@ import os, json
 from ctypes import *
 from RowsGenerator import RowsGenerator as RG
 from WindowGenerator import WindowGenerator as WG
-from MeanFilter import *
-from RankFilter import *
 user32 = windll.LoadLibrary('user32.dll')
 MessageBox = lambda x:user32.MessageBoxA(0, x, 'Error', 0) 
 
@@ -67,7 +65,10 @@ def show_error(e):
 	exit(0)
 
 def name_format(root, name, ex, conf):
-	return '%s-%s-%s-soft%s' % (name, conf['window_width'], conf['filter'], '.bmp')
+	c = ''
+	for row in conf['template']:
+		c += str(row).replace('[', "").replace(']', "").replace(', ', "")
+	return '%s-%s-%s-soft%s' % (name, conf['mode'], c, '.bmp')
 
 def transform(im, conf):
 	mode = im.mode
@@ -92,8 +93,8 @@ def transform(im, conf):
 		pix = 1
 		for wy in xrange(width):
 			for wx in xrange(width):
-				p_w = w[wy][wx] ^ ed_mode
-				p_w = p_w | ~mask[wy][wx]
+				p_w = win[wy][wx] ^ ed_mode
+				p_w = p_w | ~template[wy][wx]
 				pix = pix & p_w
 		pix = pix ^ ed_mode
 		data_res.append(pix)
