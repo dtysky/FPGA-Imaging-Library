@@ -5,7 +5,7 @@
 [My blog](http://dtysky.moe)  
 
 # Simulations
-**Simulations for this module just support gray-scale images and conf['window_width'] only can be 3 and 5!** 
+**Simulations for this module just support gray-scale images and conf['window_width'] only can be 3 and 5!**  
 
 ## Steps for simulations
 **Warning: procedures for simulation depend on python 2.x and PIL(Python Imaging Library), please get them by your self.**  
