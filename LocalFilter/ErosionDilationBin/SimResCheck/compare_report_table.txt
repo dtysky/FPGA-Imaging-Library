@@ -1,0 +1,26 @@
+#### PSNR:
+
+<table border="1" cellspacing="0">
+	<tr>
+		<th>1-Dilation-110110000</th>
+		<th>1-Dilation-111111000</th>
+		<th>1-Erosion-110110000</th>
+		<th>1-Erosion-111111000</th>
+		<th>2-Dilation-110110000</th>
+		<th>2-Dilation-111111000</th>
+		<th>2-Erosion-110110000</th>
+		<th>2-Erosion-111111000</th>
+		<th>Total</th>
+	</tr>
+	<tr>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+	</tr>
+</table>
