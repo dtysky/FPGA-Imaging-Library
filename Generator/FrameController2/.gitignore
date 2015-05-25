@@ -1,9 +1,9 @@
 HDL/*
 !HDL/*.srcs/
 !HDL/*.xpr
-HDL/Rows8x512/*.srcs/sources_1/ip/MultiplierAdd16x16x16
-!HDL/Rows8x512/*.srcs/sources_1/ip/MultiplierAdd16x16x16/MultiplierAdd16x16x16_funcsim.v
-!HDL/Rows8x512/*.srcs/sources_1/ip/MultiplierAdd16x16x16/MultiplierAdd16x16x16.xci
+HDL/FrameController2.srcs/sources_1/ip/Multiplier12x12FR2/*
+!HDL/FrameController2.srcs/sources_1/ip/Multiplier12x12FR2/Multiplier12x12FR2_funcsim.v
+!HDL/FrameController2.srcs/sources_1/ip/Multiplier12x12FR2/Multiplier12x12FR2.xci
 FunSimForHDL/*
 !FunSimForHDL/*.mpf
 !FunSimForHDL/*.mti

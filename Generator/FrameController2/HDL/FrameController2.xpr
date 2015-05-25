@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="2" Path="B:/Complex_Mind/FPGA-Imaging-Library/Geometry/FrameController2/HDL/FrameController2.xpr">
+<Project Version="7" Minor="2" Path="B:/Complex_Mind/FPGA-Imaging-Library/Master/Generator/FrameController2/HDL/FrameController2.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="91fe39d8cc5544129e3d781e79b94f9d"/>
@@ -38,21 +38,7 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sim_1/import/BRam_funcsim.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sim_1/new/FrameController2_TB.sv">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../Scale/HDL/Scale.srcs/sim_1/import/Multiplier16x16_funcsim.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -67,8 +53,8 @@
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
-    <FileSet Name="MultiplierAdd16x16x16" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MultiplierAdd16x16x16">
-      <File Path="$PSRCDIR/sources_1/ip/MultiplierAdd16x16x16/MultiplierAdd16x16x16.xci">
+    <FileSet Name="Multiplier12x12FR2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Multiplier12x12FR2">
+      <File Path="$PSRCDIR/sources_1/ip/Multiplier12x12FR2/Multiplier12x12FR2.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -76,7 +62,7 @@
         </FileInfo>
       </File>
       <Config>
-        <Option Name="TopModule" Val="MultiplierAdd16x16x16"/>
+        <Option Name="TopModule" Val="Multiplier12x12FR2"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -104,9 +90,11 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="MultiplierAdd16x16x16_synth_1" Type="Ft3:Synth" SrcSet="MultiplierAdd16x16x16" Part="xc7z010clg400-1" ConstrsSet="MultiplierAdd16x16x16" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/MultiplierAdd16x16x16_synth_1">
+    <Run Id="Multiplier12x12FR2_synth_1" Type="Ft3:Synth" SrcSet="Multiplier12x12FR2" Part="xc7z010clg400-1" ConstrsSet="Multiplier12x12FR2" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Multiplier12x12FR2_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -125,9 +113,11 @@
         <Step Id="write_bitstream"/>
       </Strategy>
     </Run>
-    <Run Id="MultiplierAdd16x16x16_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="MultiplierAdd16x16x16" Description="Vivado Implementation Defaults" SynthRun="MultiplierAdd16x16x16_synth_1">
+    <Run Id="Multiplier12x12FR2_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Multiplier12x12FR2" Description="Vivado Implementation Defaults" SynthRun="Multiplier12x12FR2_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
+          <Desc>Vivado Implementation Defaults</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
