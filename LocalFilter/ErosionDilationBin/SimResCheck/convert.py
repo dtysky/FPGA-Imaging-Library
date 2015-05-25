@@ -13,7 +13,7 @@ def convert(data):
 	for p in data[2:]:
 		data_res.append(int(p))
 	xsize, ysize = int(data[0]), int(data[1])
-	im_res = Image.new('L', (xsize, ysize))
+	im_res = Image.new('1', (xsize, ysize))
 	im_res.putdata(data_res)
 	return im_res
 

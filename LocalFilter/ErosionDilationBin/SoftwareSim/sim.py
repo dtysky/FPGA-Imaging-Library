@@ -77,10 +77,15 @@ def transform(im, conf):
 	if mode not in ['1']:
 		show_error('Simulations for this module just supports binary images, check your images !')
 	if ed_mode not in ['Erosion', 'Dilation']:
-		show_error('"filter" just supports "Erosion" and "Dilation", check your conf !')
+		show_error('"mode" just supports "Erosion" and "Dilation", check your conf !')
 	for row in template:
 		if len(template) != len(row):
 			show_error('every row in "template" must equal to length of template, check your conf !')
+		if len(template) not in [3, 5]:
+			show_error('size of "template" must equal to e or 5, check your conf !')
+		for p in row:
+			if p not in [0, 1]:
+				show_error('Elements in "template" must equal to 0 or 1, check your conf !')
 	ed_mode = 0 if ed_mode == 'Erosion' else 1
 	width = len(template)
 	data_res = []
@@ -93,7 +98,8 @@ def transform(im, conf):
 		pix = 1
 		for wy in xrange(width):
 			for wx in xrange(width):
-				p_w = win[wy][wx] ^ ed_mode
+				w = 0 if win[wy][wx] == 0 else 1 
+				p_w = w ^ ed_mode
 				p_w = p_w | ~template[wy][wx]
 				pix = pix & p_w
 		pix = pix ^ ed_mode
@@ -109,10 +115,15 @@ def debug(im, conf):
 	if mode not in ['L']:
 		show_error('Simulations for this module just supports binary images, check your images !')
 	if ed_mode not in ['Erosion', 'Dilation']:
-		show_error('"filter" just supports "Erosion" and "Dilation", check your conf !')
+		show_error('"mode" just supports "Erosion" and "Dilation", check your conf !')
 	for row in template:
 		if len(template) != len(row):
 			show_error('every row in "template" must equal to length of template, check your conf !')
+		if len(template) not in [3, 5]:
+			show_error('size of "template" must equal to e or 5, check your conf !')
+		for p in row:
+			if p not in [0, 1]:
+				show_error('Elements in "template" must equal to 0 or 1, check your conf !')
 	ed_mode = 0 if ed_mode == 'Erosion' else 1
 	width = len(template)
 	data_res = ''

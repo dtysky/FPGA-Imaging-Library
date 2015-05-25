@@ -16,35 +16,44 @@ def show_error(e):
 	exit(0)
 
 def name_format(root, name, ex, conf):
-	return '%s-%s-%s' % (name, conf['window_width'], conf['rank'])
+	c = ''
+	for row in conf['template']:
+		c += str(row).replace('[', "").replace(']', "").replace(', ', "")
+	return '%s-%s-%s' % (name, conf['mode'], c)
 
 def conf_format(im, conf):
-	width = conf['window_width']
-	width_bits = int(math.log(width * width, 2))
-	if math.log(width * width, 2) > width_bits:
-		width_bits += 1
-	rank = bin(conf['rank'])[2:]
-	for i in xrange(width_bits + 2 - len(bin(conf['rank']))):
-		rank = '0' + rank
-	return '%d\n%s\n' % (width, rank)
+	ed_mode = 0 if conf['mode'] == 'Erosion' else 1
+	template = list(conf['template'])
+	template.reverse()
+	temp = []
+	for row in template:
+		row = list(row)
+		row.reverse()
+		temp.append(row)
+	template = str(temp).replace('[','').replace(']','').replace(', ','')
+	return '%d\n%d\n%s\n' % (len(conf['template']), ed_mode, template)
 
 def color_format(mode, color):
-	res = bin(color)[2:]
-	for i in xrange(10 - len(bin(color))):
-		res = '0' + res
-	return res
+	c = '0' if color == 0 else '1'
+	return c
 
 def create_dat(im, conf):
 	mode = im.mode
-	width = int(conf['window_width'])
-	rank = int(conf['rank'])
-	if mode not in ['L']:
-		show_error('Simulations for this module just supports Gray-scale images, check your images !')
-	if width not in [3, 5]:
-		show_error('Simulations for this module just supports "window_width" 3 and 5, check your conf !')
-	if rank < 0 or rank > width * width - 1:
-		show_error('"rank" must greater than 0 and less than window * window - 1, check your conf !')
-	xsize, ysize = im.size
+	template = list(conf['template'])
+	ed_mode = conf['mode']
+	if mode not in ['1']:
+		show_error('Simulations for this module just supports binary images, check your images !')
+	if ed_mode not in ['Erosion', 'Dilation']:
+		show_error('"mode" just supports "Erosion" and "Dilation", check your conf !')
+	for row in template:
+		if len(template) != len(row):
+			show_error('every row in "template" must equal to length of template, check your conf !')
+		if len(template) not in [3, 5]:
+			show_error('size of "template" must equal to e or 5, check your conf !')
+		for p in row:
+			if p not in [0, 1]:
+				show_error('Elements in "template" must equal to 0 or 1, check your conf !')
+	width = len(template)
 	data_res = ''
 	rows = RG(im, width)
 	window = WG(width)
