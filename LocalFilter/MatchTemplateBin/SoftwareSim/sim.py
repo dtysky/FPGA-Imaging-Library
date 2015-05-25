@@ -15,7 +15,7 @@ Version
 1.0
 
 Modified
-2015-05-22
+2015-05-25
 
 Copyright (C) 2015 Tianyu Dai (dtysky) <dtysky@outlook.com>
 
@@ -53,8 +53,6 @@ import os, json
 from ctypes import *
 from RowsGenerator import RowsGenerator as RG
 from WindowGenerator import WindowGenerator as WG
-from MeanFilter import *
-from RankFilter import *
 user32 = windll.LoadLibrary('user32.dll')
 MessageBox = lambda x:user32.MessageBoxA(0, x, 'Error', 0) 
 
@@ -67,7 +65,10 @@ def show_error(e):
 	exit(0)
 
 def name_format(root, name, ex, conf):
-	return '%s-%s-%s-soft%s' % (name, conf['window_width'], conf['filter'], '.bmp')
+	c = ''
+	for row in conf['template']:
+		c += str(row).replace('[', "").replace(']', "").replace(', ', "")
+	return '%s-%s-soft%s' % (name, c, '.bmp')
 
 def transform(im, conf):
 	mode = im.mode
@@ -77,6 +78,12 @@ def transform(im, conf):
 	for row in template:
 		if len(template) != len(row):
 			show_error('every row in "template" must equal to length of template, check your conf !')
+		if len(template) not in [3, 5]:
+			show_error('size of "template" must equal to e or 5, check your conf !')
+		for p in row:
+			if p not in [0, 1]:
+				show_error('Elements in "template" must equal to 0 or 1, check your conf !')
+	template = eval(str(template).replace('1', '255'))
 	width = len(template)
 	data_res = []
 	rows = RG(im, width)
@@ -98,6 +105,11 @@ def debug(im, conf):
 	for row in template:
 		if len(template) != len(row):
 			show_error('every row in "template" must equal to length of template, check your conf !')
+		if len(template) not in [3, 5]:
+			show_error('size of "template" must equal to e or 5, check your conf !')
+		for p in row:
+			if p not in [0, 1]:
+				show_error('Elements in "template" must equal to 0 or 1, check your conf !')
 	width = len(template)
 	data_res = ''
 	rows = RG(im, width)

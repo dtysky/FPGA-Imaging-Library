@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="2" Path="B:/Complex_Mind/XUP_IMAGE/SUB_MODULE/WINDOW/MatchTemplateBin/HDL/MatchTemplateBin.xpr">
+<Project Version="7" Minor="2" Path="B:/Complex_Mind/FPGA-Imaging-Library/Master/LocalFilter/MatchTemplateBin/HDL/MatchTemplateBin.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="a7b9173a608745eb9ae9ef6e964a41aa"/>
@@ -41,33 +41,6 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sim_1/imports/sources_1/ip/Fifo/Fifo_funcsim.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../RowsCreator/HDL/Rows1x512/Rows1x512.srcs/sources_1/ip/Fifo/Fifo_funcsim.v"/>
-          <Attr Name="ImportTime" Val="1427901499"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sim_1/imports/sources_1/new/Rows1x512.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../RowsCreator/HDL/Rows1x512/Rows1x512.srcs/sources_1/new/Rows1x512.v"/>
-          <Attr Name="ImportTime" Val="1427901230"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sim_1/imports/WINDOW/WindowCreator/HDL/Window.srcs/sources_1/new/Window.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../WindowCreator/HDL/Window.srcs/sources_1/new/Window.v"/>
-          <Attr Name="ImportTime" Val="1427818326"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sim_1/new/MatchTemplateBin_TB.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -100,12 +73,11 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="9">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" Dir="$PRUNDIR/synth_1">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" SynthRun="synth_1">
       <Strategy Version="1" Minor="2">
