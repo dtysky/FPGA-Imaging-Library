@@ -1,0 +1,300 @@
+
+# Additional procs with user specified bodies to compute parameter values.
+proc gen_USERPARAMETER_im_width_bits_VALUE {im_width im_height im_width_bits } {
+if {$im_width > $im_height } {
+	if {[expr log($im_width)/log(2)] > [expr int(log($im_width)/log(2))] } {
+		set ${im_width_bits} [expr int(log($im_width)/log(2)) + 1]
+	} else {
+		set ${im_width_bits} [expr int(log($im_width)/log(2))]
+	}
+} else {
+	if {[expr log($im_height)/log(2)] > [expr int(log($im_height)/log(2))] } {
+		set ${im_width_bits} [expr int(log($im_height)/log(2)) + 1]
+	} else {
+		set ${im_width_bits} [expr int(log($im_height)/log(2))]
+	}
+}
+}
+proc gen_HDLPARAMETER_RST_POLARITY_VALUE {RST_POLARITY } {expr { ( $RST_POLARITY eq "ACTIVE_HIGH" ) ? 1 : 0}}
+proc gen_HDLPARAMETER_RESET_POLARITY_VALUE {RESET_POLARITY } {expr { ( $RESET_POLARITY eq "ACTIVE_HIGH" ) ? 1 : 0}}
+proc gen_USERPARAMETER_addr_width_VALUE {im_width im_height addr_width } {
+if {[expr log($im_width * $im_height)/log(2)] > [expr int(log($im_width * $im_height)/log(2))] } {
+	set ${addr_width} [expr int(log($im_width * $im_height)/log(2)) + 1]
+} else {
+	set ${addr_width} [expr int(log($im_width * $im_height)/log(2))]
+}
+}
+proc gen_HDLPARAMETER_TOTAL_PERIOD_VALUE {PULSE_PERIOD RST_PERIOD } {expr {  ( $PULSE_PERIOD > 0 ) ? [expr $PULSE_PERIOD - $RST_PERIOD] : 0 }}
+proc gen_USERPARAMETER_RESET_POLARITY_ENABLEMENT {CLOCK_TYPE } {expr { $CLOCK_TYPE eq "Single_Ended"} }
+proc gen_HDLPARAMETER_CLOCK_PERIOD_VALUE {FREQ_HZ } {expr { 1000000000.0 / $FREQ_HZ }}
+proc gen_USERPARAMETER_INITIAL_RESET_CLOCK_CYCLES_ENABLEMENT {CLOCK_TYPE } {expr { $CLOCK_TYPE eq "Single_Ended"} }
+
+# Definitional proc to organize widgets for parameters.
+proc init_gui { IPINST } {
+  ipgui::add_param $IPINST -name "Component_Name"
+  #Adding Page
+  set Page_0 [ipgui::add_page $IPINST -name "Page 0" -display_name {Parameters}]
+  ipgui::add_param $IPINST -name "work_mode" -parent ${Page_0} -widget comboBox
+  ipgui::add_param $IPINST -name "wr_mode" -parent ${Page_0} -widget comboBox
+  ipgui::add_param $IPINST -name "data_width" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "im_height" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "im_width" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "im_width_bits" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "addr_width" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "mul_delay" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "ram_read_latency" -parent ${Page_0}
+  ipgui::add_static_text $IPINST -name "Par_Discriptions" -parent ${Page_0} -text {
+
+work_mode:
+unsigned.
+Description: This module's working mode.
+
+wr_mode:
+unsigned.
+Description: This module's WR mode.
+
+data_width:
+unsigned.
+Description: Data bit width.
+
+im_width:
+unsigned.
+Description: Width of image.
+
+im_height:
+unsigned.
+Description: Height of image.
+
+im_width_bits:
+unsigned.
+Description: The bits of width of image.
+
+addr_width:
+unsigned.
+Description: Address bit width of a ram for storing this image.
+
+ram_read_latency:
+unsigned.
+Description: RL of RAM, in xilinx 7-series device, it is 2.
+
+mul_delay:
+unsigned.
+Description: Delay for multiplier.
+
+}
+
+  #Adding Page
+  set Ports [ipgui::add_page $IPINST -name "Ports"]
+  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Ports} -text {
+clk:
+unsigned.
+Description: Clock.
+Range: None
+
+rst_n:
+unsigned.
+Description: Reset, active low.
+Range: None
+
+in_count_x:
+unsigned.
+Description: Input pixel count for width.
+Range: im_width_bits - 1 : 0
+
+in_count_y:
+unsigned.
+Description: Input pixel count for height.
+Range: im_width_bits - 1 : 0
+
+in_enable:
+unsigned.
+Description: Input data enable, in pipeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.
+Range: None
+
+in_data:
+unsigned.
+Description: Input data, it must be synchronous with in_enable.
+Range: data_width - 1 : 0
+
+out_ready:
+unsigned.
+Description: Output data ready, in both two mode, it will be high while the out_data can be read.
+Range: None
+
+out_data:
+unsigned.
+Description: Output data, it will be synchronous with out_ready.
+Range: data_width - 1 : 0
+
+ram_addr:
+unsigned.
+Description: Address for ram.
+Range: addr_width - 1 : 0
+
+}
+
+  #Adding Page
+  set Help [ipgui::add_page $IPINST -name "Help"]
+  ipgui::add_static_text $IPINST -name "Copyright" -parent ${Help} -text {
+Homepage for this project:
+http://fil.dtysky.moe
+
+Sources for this project:
+https://github.com/dtysky/FPGA-Imaging-Library
+
+My e-mail:
+dtysky@outlook.com
+
+My blog:
+http://dtysky.moe
+
+Copyright 2015, Tianyu Dai(dtysky). All Rights Reserved.
+This project is free software and released under the GNU Lesser General Public License (LGPL).
+}
+
+
+}
+
+proc update_PARAM_VALUE.addr_width { PARAM_VALUE.addr_width PARAM_VALUE.im_width PARAM_VALUE.im_height PARAM_VALUE.addr_width } {
+	# Procedure called to update addr_width when any of the dependent parameters in the arguments change
+	
+	set addr_width ${PARAM_VALUE.addr_width}
+	set im_width ${PARAM_VALUE.im_width}
+	set im_height ${PARAM_VALUE.im_height}
+	set values(im_width) [get_property value $im_width]
+	set values(im_height) [get_property value $im_height]
+	set values(addr_width) [get_property value $addr_width]
+	set_property value [gen_USERPARAMETER_addr_width_VALUE $values(im_width) $values(im_height) $values(addr_width)] $addr_width
+}
+
+proc validate_PARAM_VALUE.addr_width { PARAM_VALUE.addr_width } {
+	# Procedure called to validate addr_width
+	return true
+}
+
+proc update_PARAM_VALUE.im_width_bits { PARAM_VALUE.im_width_bits PARAM_VALUE.im_width PARAM_VALUE.im_height PARAM_VALUE.im_width_bits } {
+	# Procedure called to update im_width_bits when any of the dependent parameters in the arguments change
+	
+	set im_width_bits ${PARAM_VALUE.im_width_bits}
+	set im_width ${PARAM_VALUE.im_width}
+	set im_height ${PARAM_VALUE.im_height}
+	set values(im_width) [get_property value $im_width]
+	set values(im_height) [get_property value $im_height]
+	set values(im_width_bits) [get_property value $im_width_bits]
+	set_property value [gen_USERPARAMETER_im_width_bits_VALUE $values(im_width) $values(im_height) $values(im_width_bits)] $im_width_bits
+}
+
+proc validate_PARAM_VALUE.im_width_bits { PARAM_VALUE.im_width_bits } {
+	# Procedure called to validate im_width_bits
+	return true
+}
+
+proc update_PARAM_VALUE.data_width { PARAM_VALUE.data_width } {
+	# Procedure called to update data_width when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.data_width { PARAM_VALUE.data_width } {
+	# Procedure called to validate data_width
+	return true
+}
+
+proc update_PARAM_VALUE.im_height { PARAM_VALUE.im_height } {
+	# Procedure called to update im_height when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.im_height { PARAM_VALUE.im_height } {
+	# Procedure called to validate im_height
+	return true
+}
+
+proc update_PARAM_VALUE.im_width { PARAM_VALUE.im_width } {
+	# Procedure called to update im_width when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.im_width { PARAM_VALUE.im_width } {
+	# Procedure called to validate im_width
+	return true
+}
+
+proc update_PARAM_VALUE.mul_delay { PARAM_VALUE.mul_delay } {
+	# Procedure called to update mul_delay when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.mul_delay { PARAM_VALUE.mul_delay } {
+	# Procedure called to validate mul_delay
+	return true
+}
+
+proc update_PARAM_VALUE.ram_read_latency { PARAM_VALUE.ram_read_latency } {
+	# Procedure called to update ram_read_latency when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.ram_read_latency { PARAM_VALUE.ram_read_latency } {
+	# Procedure called to validate ram_read_latency
+	return true
+}
+
+proc update_PARAM_VALUE.work_mode { PARAM_VALUE.work_mode } {
+	# Procedure called to update work_mode when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.work_mode { PARAM_VALUE.work_mode } {
+	# Procedure called to validate work_mode
+	return true
+}
+
+proc update_PARAM_VALUE.wr_mode { PARAM_VALUE.wr_mode } {
+	# Procedure called to update wr_mode when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.wr_mode { PARAM_VALUE.wr_mode } {
+	# Procedure called to validate wr_mode
+	return true
+}
+
+
+proc update_MODELPARAM_VALUE.work_mode { MODELPARAM_VALUE.work_mode PARAM_VALUE.work_mode } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.work_mode}] ${MODELPARAM_VALUE.work_mode}
+}
+
+proc update_MODELPARAM_VALUE.wr_mode { MODELPARAM_VALUE.wr_mode PARAM_VALUE.wr_mode } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.wr_mode}] ${MODELPARAM_VALUE.wr_mode}
+}
+
+proc update_MODELPARAM_VALUE.data_width { MODELPARAM_VALUE.data_width PARAM_VALUE.data_width } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.data_width}] ${MODELPARAM_VALUE.data_width}
+}
+
+proc update_MODELPARAM_VALUE.im_width { MODELPARAM_VALUE.im_width PARAM_VALUE.im_width } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.im_width}] ${MODELPARAM_VALUE.im_width}
+}
+
+proc update_MODELPARAM_VALUE.im_height { MODELPARAM_VALUE.im_height PARAM_VALUE.im_height } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.im_height}] ${MODELPARAM_VALUE.im_height}
+}
+
+proc update_MODELPARAM_VALUE.im_width_bits { MODELPARAM_VALUE.im_width_bits PARAM_VALUE.im_width_bits } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.im_width_bits}] ${MODELPARAM_VALUE.im_width_bits}
+}
+
+proc update_MODELPARAM_VALUE.addr_width { MODELPARAM_VALUE.addr_width PARAM_VALUE.addr_width } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.addr_width}] ${MODELPARAM_VALUE.addr_width}
+}
+
+proc update_MODELPARAM_VALUE.ram_read_latency { MODELPARAM_VALUE.ram_read_latency PARAM_VALUE.ram_read_latency } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.ram_read_latency}] ${MODELPARAM_VALUE.ram_read_latency}
+}
+
+proc update_MODELPARAM_VALUE.mul_delay { MODELPARAM_VALUE.mul_delay PARAM_VALUE.mul_delay } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.mul_delay}] ${MODELPARAM_VALUE.mul_delay}
+}
+
