@@ -3,10 +3,10 @@ Project
 FPGA-Imaging-Library
 
 Design
-Crop
+Pan
 
 Function
-Cropping images, depending on your top, bottom, left and right coordinate. 
+Panning a image from your given offset. 
 
 Module
 Software simulation.
@@ -63,51 +63,67 @@ def show_error(e):
 	exit(0)
 
 def name_format(root, name, ex, conf):
-	return '%s-%sx%sx%sx%s-soft%s' % (name, conf['top'], conf['bottom'], conf['left'], conf['right'], '.bmp')
+	return '%s-%sx%s-soft%s' % (name, conf['xoffset'], conf['yoffset'], '.bmp')
+
+def address_gen(c, coffset, csize):
+	if c + coffset > csize - 1:
+		return c + coffset - csize
+	elif c + coffset < 0:
+		return c + coffset + csize
+	return c + coffset
 
 def in_range(pos, crange):
 	return pos[0] >= crange[2] and pos[0] <= crange[3] and pos[1] >= crange[0] and pos[1] <= crange[1]
 
 def transform(im, conf):
 	mode = im.mode
-	crange = (conf['top'], conf['bottom'], conf['left'], conf['right'])
+	xoffset, yoffset = (conf['xoffset'], conf['yoffset'])
 	if mode not in ['RGB', 'L']:
 		show_error('Simulations for this module just supports RGB and Gray-scale images, check your images !')
 	if im.size != (512, 512):
 		show_error('Simulations for this module just supports 512x512 images, check your images !')
 	data_src = im.getdata()
-	data_res = []
+	data_res = list(data_src)
 	xsize, ysize = im.size
+	crange = (yoffset, yoffset + ysize - 1, xoffset, xoffset + xsize - 1)
 	for y in xrange(ysize):
 		for x in xrange(xsize):
+			xaddr = address_gen(x, xoffset, xsize)
+			yaddr = address_gen(y, yoffset, ysize)
 			if mode == 'RGB':
-				data_res.append(data_src[y * xsize + x] if in_range((x,y), crange) else (0, 0, 0))
+				data_res[yaddr * xsize + xaddr] = data_src[y * xsize + x] \
+					if in_range((xaddr, yaddr), crange) else (0, 0, 0)
 			else:
-				data_res.append(data_src[y * xsize + x] if in_range((x,y), crange) else 0)
+				data_res[yaddr * xsize + xaddr] = data_src[y * xsize + x] \
+					if in_range((xaddr, yaddr), crange) else 0
 	im_res = Image.new(mode, im.size)
 	im_res.putdata(data_res)
 	return im_res
 
 def debug(im, conf):
 	mode = im.mode
-	crange = (conf['top'], conf['bottom'], conf['left'], conf['right'])
+	xoffset, yoffset = (conf['xoffset'], conf['yoffset'])
 	if mode not in ['RGB', 'L']:
 		show_error('Simulations for this module just supports RGB and Gray-scale images, check your images !')
 	if im.size != (512, 512):
 		show_error('Simulations for this module just supports 512x512 images, check your images !')
 	data_src = im.getdata()
-	data_res = ''
+	data_res = list(data_src)
 	xsize, ysize = im.size
+	crange = (yoffset, yoffset + ysize, xoffset, xoffset + xsize)
 	for y in xrange(ysize):
 		for x in xrange(xsize):
+			xaddr = address_gen(x, xoffset, xsize)
+			yaddr = address_gen(y, yoffset, ysize)
 			if mode == 'RGB':
-				data_res += '%d %d %s\n' % (x, y, \
-					str(data_src[y * xsize + x]).replace('(','').replace(')','').replace(', ',' ')\
-					if in_range((x,y), crange) else '0 0 0')
+				data_res[yaddr * xsize + xaddr] = '%d %d %s\n' % (xaddr, yaddr, \
+					str(data_src[y * xsize + x]).replace('(','').replace(')','').replace(', ',' ') \
+					if in_range((xaddr, yaddr), crange) else '0 0 0')
 			else:
-				data_res += '%d %d %s\n' % (x, y, \
-					str(data_src[y * xsize + x]).replace('(','').replace(')','').replace(', ',' ')\
-					if in_range((x,y), crange) else '0')
+				data_res[yaddr * xsize + xaddr] = '%d %d %s\n' % (xaddr, yaddr, \
+					str(data_src[y * xsize + x]) \
+					if in_range((xaddr, yaddr), crange) else '0')
+	data_res = ''.join(data_res)
 	return data_res
 
 FileAll = []

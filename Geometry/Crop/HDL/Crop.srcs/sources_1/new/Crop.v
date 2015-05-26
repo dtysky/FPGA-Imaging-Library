@@ -8,7 +8,7 @@ Crop
 
 :Function
 Cropping images, depending on your top, bottom, left and right coordinate. 
-Give the first output after 1 cycle1 while the input enable.
+Give the first output after 1 cycle while the input enable.
 
 :Module
 Main module

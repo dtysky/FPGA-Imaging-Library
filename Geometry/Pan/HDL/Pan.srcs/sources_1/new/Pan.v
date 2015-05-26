@@ -1,11 +1,25 @@
+//Com2DocHDL
 /*
-Image processing project : Pan.
+:Project
+FPGA-Imaging-Library
 
-Function: Panning a image from your given offset.
+:Design
+Pan
 
-Main module.
+:Function
+Panning a image from your given offset. 
+Give the first output after 2 cycles while the input enable.
 
-Copyright (C) 2015  Dai Tianyu (dtysky)
+:Module
+Main module
+
+:Version
+1.0
+
+:Modified
+2015-05-26
+
+Copyright (C) 2015  Tianyu Dai (dtysky) <dtysky@outlook.com>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -21,20 +35,18 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-Documents for all modules:
-http://image-on-fpga.dtysky.moe
+Homepage for this project:
+	http://fil.dtysky.moe
 
-All modules for image processing project:
-https://github.com/dtysky/Image-processing-on-FPGA
+Sources for this project:
+	https://github.com/dtysky/FPGA-Imaging-Library
 
-This mail is for connecting me:
-dtysky@outlook.com
+My e-mail:
+	dtysky@outlook.com
 
-My blog is here:
-http://dtysky.moe
-
+My blog:
+	http://dtysky.moe
 */
-
 `timescale 1ns / 1ps
 
 module Pan(
@@ -46,50 +58,189 @@ module Pan(
 	in_data,
 	in_count_x,
 	in_count_y,
-	out_enable,
+	out_ready,
 	out_data,
 	out_count_x,
 	out_count_y);
-
-	parameter color_width = 8;
+	/*
+	::description
+	This module's working mode.
+	::range
+	0 for Pipline, 1 for Req-ack
+	*/
+	parameter work_mode = 0;
+	/*
+	::description
+	Data bit width. 
+	*/
+	parameter data_width = 8;
+	/*
+	::description
+	Width of image.
+	::range
+	1 - 4096
+	*/
 	parameter im_width = 320;
+	/*
+	::description
+	Height of image.
+	::range
+	1 - 4096
+	*/
 	parameter im_height = 240;
+	/*
+	::description
+	The bits of width of image.
+	::range
+	Depend on width of image
+	*/
 	parameter im_width_bits = 9;
-	
-	input clk, rst_n;
-	input signed [im_width_bits : 0] offset_x, offset_y;
+
+	/*
+	::description
+	Clock.
+	*/
+	input clk;
+	/*
+	::description
+	Reset, active low.
+	*/
+	input rst_n;
+	/*
+	::description
+	Offset for horizontal. 
+	::range
+	The value must be true code if offset is positive, if negative, must be complemental code. 
+	*/
+	input signed [im_width_bits : 0] offset_x;
+	/*
+	::description
+	::description
+	Offset for vertical. 
+	::range
+	The value must be true code if offset is positive, if negative, must be complemental code. 
+	*/
+	input signed [im_width_bits : 0] offset_y;
+	/*
+	::description
+	Input data enable, in pipeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.
+	*/
 	input in_enable;
-	input[color_width - 1 : 0] in_data;
-	input[im_width_bits - 1 : 0] in_count_x, in_count_y;
-	output out_enable;
-	output[color_width - 1 : 0] out_data;
-	output[im_width_bits - 1 : 0] out_count_x, out_count_y;
+	/*
+	::description
+	Input data, it must be synchronous with in_enable.
+	*/
+	input [data_width - 1 : 0] in_data;
+	/*
+	::description
+	Input pixel count for width. 
+	*/
+	input[im_width_bits - 1 : 0] in_count_x;
+	/*
+	::description
+	Input pixel count for height. 
+	*/
+	input[im_width_bits - 1 : 0] in_count_y;
+	/*
+	::description
+	Output data ready, in both two mode, it will be high while the out_data can be read.
+	*/
+	output out_ready;
+	/*
+	::description
+	Output data, it will be synchronous with out_ready.
+	*/
+	output[data_width - 1 : 0] out_data;
+	/*
+	::description
+	Output pixel count for height. 
+	*/
+	output[im_width_bits - 1 : 0] out_count_x;
+	/*
+	::description
+	Output pixel count for height. 
+	*/
+	output[im_width_bits - 1 : 0] out_count_y;
 
-	wire signed [im_width_bits : 0] tmp_out_x, tmp_out_y;
+	reg[2 : 0] con_enable;
+	reg signed [im_width_bits : 0] addr_sum_x, addr_sum_y;
+	reg signed [im_width_bits : 0] tmp_sum_x, tmp_sum_y;
+	reg signed [im_width_bits : 0] addr_sp_x, addr_sp_y;
+	reg in_range_t, in_range_b, in_range_l, in_range_r;
 
-	function signed [im_width_bits : 0] out_count_gen(
-		input[im_width_bits - 1 : 0] c,
-		input signed [im_width_bits : 0] coffset,
-		input[im_width_bits - 1 : 0] csize);
-		reg signed [im_width_bits : 0] c_sum;
-		reg [im_width_bits - 1 : 0] out_sp;
-		begin
-			c_sum = c + coffset;
-			out_sp = c_sum >= csize ? c_sum - csize : c_sum + csize;
-			out_count_gen = c_sum < csize && c_sum >= 0 ? c_sum : out_sp;
+	genvar i;
+	generate
+
+		always @(posedge clk or negedge rst_n or negedge in_enable) begin
+			if(~rst_n || ~in_enable)
+				con_enable <= 0;
+			else if(con_enable == 2)
+				con_enable <= con_enable;
+			else
+				con_enable <= con_enable + 1;
 		end
-	endfunction
-	
-	assign out_enable = ~rst_n || ~in_enable ? 0 : 1;
+		assign out_ready = con_enable == 2 ? 1 : 0;
 
-	assign tmp_out_x = out_count_gen(in_count_x, offset_x, im_width);
-	assign tmp_out_y = out_count_gen(in_count_y, offset_y, im_height);
+		always @(posedge clk or negedge rst_n or negedge in_enable) begin
+			if(~rst_n || ~in_enable) begin
+				addr_sum_x <= 0;
+				addr_sum_y <= 0;
+				tmp_sum_x <= 0;
+				tmp_sum_y <= 0;
+			end else begin
+				addr_sum_x <= in_count_x + offset_x;
+				addr_sum_y <= in_count_y + offset_y;
+				tmp_sum_x <= addr_sum_x;
+				tmp_sum_y <= addr_sum_y;
+			end
+		end
 
-	assign out_count_x = ~rst_n || ~in_enable ? 0 : tmp_out_x[im_width_bits - 1 : 0];
-	assign out_count_y = ~rst_n || ~in_enable ? 0 : tmp_out_y[im_width_bits - 1 : 0];
-	assign out_data =
-		tmp_out_x >= offset_x && tmp_out_x < im_width + offset_x &&
-		tmp_out_y >= offset_y && tmp_out_y < im_height + offset_y ?
-		in_data : 0;
+		always @(posedge clk or negedge rst_n or negedge in_enable) begin
+			if(~rst_n || ~in_enable) begin
+				addr_sp_x <= 0;
+				addr_sp_y <= 0;
+			end else begin
+				addr_sp_x <= addr_sum_x < 0 ? addr_sum_x + im_width : addr_sum_x - im_width;
+				addr_sp_y <= addr_sum_y < 0 ? addr_sum_y + im_height : addr_sum_y - im_height;
+			end
+		end
+
+		always @(posedge clk or negedge rst_n or negedge in_enable) begin
+			if(~rst_n || ~in_enable) begin
+				in_range_t <= 0;
+				in_range_b <= 0;
+				in_range_l <= 0;
+				in_range_r <= 0;
+			end else begin
+				in_range_t <= addr_sum_y >= 0 ? 1 : 0;
+				in_range_b <= addr_sum_y < im_height ? 1 : 0;
+				in_range_l <= addr_sum_x >= 0 ? 1 : 0;
+				in_range_r <= addr_sum_x < im_width ? 1 : 0;
+			end
+		end
+
+		assign out_count_x = in_range_l & in_range_r & out_ready ? tmp_sum_x : addr_sp_x;
+		assign out_count_y = in_range_t & in_range_b & out_ready ? tmp_sum_y : addr_sp_y;
+
+		if(work_mode == 0) begin
+			for (i = 0; i < 2; i = i + 1) begin : buffer
+				reg[data_width - 1 : 0] b;
+				if(i == 0) begin
+					always @(posedge clk)
+						b <= in_data;
+				end else begin
+					always @(posedge clk)
+						b <= buffer[i - 1].b;
+				end
+			end
+			assign out_data = out_ready & in_range_t & in_range_b & in_range_l & in_range_r ? buffer[1].b : 0;
+		end else begin 
+			reg[data_width - 1 : 0] reg_in_data;
+			always @(posedge in_enable)
+				reg_in_data <= in_data;
+			assign out_data = out_ready & in_range_t & in_range_b & in_range_l & in_range_r ? reg_in_data : 0;
+		end
+
+	endgenerate
 
 endmodule

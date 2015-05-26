@@ -6,46 +6,119 @@ source [file join [file dirname [file dirname [info script]]] gui/Pan_v1_0.gtcl]
 proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
-  set Page_0 [ipgui::add_page $IPINST -name "Page 0" -display_name {Paratemers}]
-  set_property tooltip {Paratemers} ${Page_0}
-  ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}
+  set Page_0 [ipgui::add_page $IPINST -name "Page 0" -display_name {Parameters}]
+  ipgui::add_param $IPINST -name "work_mode" -parent ${Page_0} -widget comboBox
+  ipgui::add_param $IPINST -name "data_width" -parent ${Page_0}
   ipgui::add_param $IPINST -name "im_height" -parent ${Page_0}
   ipgui::add_param $IPINST -name "im_width" -parent ${Page_0}
   ipgui::add_param $IPINST -name "im_width_bits" -parent ${Page_0}
+  ipgui::add_static_text $IPINST -name "Par_Discriptions" -parent ${Page_0} -text {
+
+work_mode:
+unsigned.
+Description: This module's working mode.
+
+data_width:
+unsigned.
+Description: Data bit width.
+
+im_width:
+unsigned.
+Description: Width of image.
+
+im_height:
+unsigned.
+Description: Height of image.
+
+im_width_bits:
+unsigned.
+Description: The bits of width of image.
+
+}
 
   #Adding Page
-  set Pins [ipgui::add_page $IPINST -name "Pins"]
-  set_property tooltip {Pins} ${Pins}
-  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Pins} -text {clk: Clock.
-rst_n: Reset, active low.
-offset_x: Horizontal offset, it's signed.
-offset_x: Longitudinal offset, it's signed.
-in_enable: Input enable.
-in_data: Input data, the first data must be given in the same time with in_enable enabling.
-in_count_x: Count for width of the input image.
-in_count_y: Count for height of the input image.
-out_enable: Output enable, low -> high when the first data can be read.
-out_data: Output data.
-out_count_x: Count for width of the output image.
-out_count_y: Count for height of the output image.}
+  set Ports [ipgui::add_page $IPINST -name "Ports"]
+  ipgui::add_static_text $IPINST -name "Discriptions" -parent ${Ports} -text {
+clk:
+unsigned.
+Description: Clock.
+Range: None
+
+rst_n:
+unsigned.
+Description: Reset, active low.
+Range: None
+
+offset_x:
+signed.
+Description: Offset for horizontal.
+Range: The value must be true code if offset is positive, if negative, must be complemental code.
+
+offset_y:
+signed.
+Description: Offset for vertical.
+Range: The value must be true code if offset is positive, if negative, must be complemental code.
+
+in_enable:
+unsigned.
+Description: Input data enable, in pipeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.
+Range: None
+
+in_data:
+unsigned.
+Description: Input data, it must be synchronous with in_enable.
+Range: data_width - 1 : 0
+
+in_count_x:
+unsigned.
+Description: Input pixel count for width.
+Range: im_width_bits - 1 : 0
+
+in_count_y:
+unsigned.
+Description: Input pixel count for height.
+Range: im_width_bits - 1 : 0
+
+out_ready:
+unsigned.
+Description: Output data ready, in both two mode, it will be high while the out_data can be read.
+Range: None
+
+out_data:
+unsigned.
+Description: Output data, it will be synchronous with out_ready.
+Range: data_width - 1 : 0
+
+out_count_x:
+unsigned.
+Description: Output pixel count for height.
+Range: im_width_bits - 1 : 0
+
+out_count_y:
+unsigned.
+Description: Output pixel count for height.
+Range: im_width_bits - 1 : 0
+
+}
 
   #Adding Page
   set Help [ipgui::add_page $IPINST -name "Help"]
-  set_property tooltip {Help} ${Help}
-  ipgui::add_static_text $IPINST -name "Copyright" -parent ${Help} -text {Documents for all modules:
-http://image-on-fpga.dtysky.moe
-
-All modules for image processing project:
-https://github.com/dtysky/Image-processing-on-FPGA
-
-This mail is for connecting me:
-dtysky@outlook.com
-
-My blog is here:
-http://dtysky.moe
-
-Copyright  2015, Dai Tianyu(dtysky). All Rights Reserved.
-This project is free software and released under the GNU Lesser General Public License (LGPL).}
+  ipgui::add_static_text $IPINST -name "Copyright" -parent ${Help} -text {
+Homepage for this project:
+http://fil.dtysky.moe
+
+Sources for this project:
+https://github.com/dtysky/FPGA-Imaging-Library
+
+My e-mail:
+dtysky@outlook.com
+
+My blog:
+http://dtysky.moe
+
+Copyright 2015, Tianyu Dai(dtysky). All Rights Reserved.
+This project is free software and released under the GNU Lesser General Public License (LGPL).
+}
 
 
 }
@@ -67,12 +140,12 @@ proc validate_PARAM_VALUE.im_width_bits { PARAM_VALUE.im_width_bits } {
 	return true
 }
 
-proc update_PARAM_VALUE.color_width { PARAM_VALUE.color_width } {
-	# Procedure called to update color_width when any of the dependent parameters in the arguments change
+proc update_PARAM_VALUE.data_width { PARAM_VALUE.data_width } {
+	# Procedure called to update data_width when any of the dependent parameters in the arguments change
 }
 
-proc validate_PARAM_VALUE.color_width { PARAM_VALUE.color_width } {
-	# Procedure called to validate color_width
+proc validate_PARAM_VALUE.data_width { PARAM_VALUE.data_width } {
+	# Procedure called to validate data_width
 	return true
 }
 
@@ -94,10 +167,24 @@ proc validate_PARAM_VALUE.im_width { PARAM_VALUE.im_width } {
 	return true
 }
 
+proc update_PARAM_VALUE.work_mode { PARAM_VALUE.work_mode } {
+	# Procedure called to update work_mode when any of the dependent parameters in the arguments change
+}
 
-proc update_MODELPARAM_VALUE.color_width { MODELPARAM_VALUE.color_width PARAM_VALUE.color_width } {
+proc validate_PARAM_VALUE.work_mode { PARAM_VALUE.work_mode } {
+	# Procedure called to validate work_mode
+	return true
+}
+
+
+proc update_MODELPARAM_VALUE.work_mode { MODELPARAM_VALUE.work_mode PARAM_VALUE.work_mode } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.color_width}] ${MODELPARAM_VALUE.color_width}
+	set_property value [get_property value ${PARAM_VALUE.work_mode}] ${MODELPARAM_VALUE.work_mode}
+}
+
+proc update_MODELPARAM_VALUE.data_width { MODELPARAM_VALUE.data_width PARAM_VALUE.data_width } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.data_width}] ${MODELPARAM_VALUE.data_width}
 }
 
 proc update_MODELPARAM_VALUE.im_width { MODELPARAM_VALUE.im_width PARAM_VALUE.im_width } {
