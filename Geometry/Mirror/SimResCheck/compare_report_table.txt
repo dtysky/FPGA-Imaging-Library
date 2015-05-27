@@ -1,0 +1,22 @@
+#### PSNR:
+
+<table border="1" cellspacing="0">
+	<tr>
+		<th>1-All</th>
+		<th>1-Horizontal</th>
+		<th>1-Vertical</th>
+		<th>2-All</th>
+		<th>2-Horizontal</th>
+		<th>2-Vertical</th>
+		<th>Total</th>
+	</tr>
+	<tr>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+	</tr>
+</table>

@@ -49,7 +49,6 @@ My blog:
 
 */
 `timescale 1ns / 1ps
-
 `define full_win_width window_width * window_width
 
 module MeanFilter(
@@ -64,7 +63,7 @@ module MeanFilter(
 	::description
 	This module's working mode.
 	::range
-	0 for Pipline, 1 for Req-ack
+	0 for Pipeline, 1 for Req-ack
 	*/
 	parameter[0 : 0] work_mode = 0;
 	/*
@@ -101,7 +100,7 @@ module MeanFilter(
 	input rst_n;
 	/*
 	::description
-	Input data enable, in pipeeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.
+	Input data enable, in pipeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.
 	*/
 	input in_enable;
 	/*
@@ -183,25 +182,23 @@ module MeanFilter(
 		end
 
 		assign sum_all = pipe[sum_stage - 1].sum[0];
-		always @(posedge clk) begin
-			case (window_width)
-			 	2 : reg_out_data <= sum_all >> 2;
-			 	3 : reg_out_data <= (sum_all >> 4) + (sum_all >> 5) + (sum_all >> 6);
-			 	4 : reg_out_data <= sum_all >> 4;
-			 	5 : reg_out_data <= (sum_all >> 5) + (sum_all >> 7) + (sum_all >> 10);
-			 	6 : reg_out_data <= (sum_all >> 6) + (sum_all >> 7) + (sum_all >> 8);
-			 	7 : reg_out_data <= (sum_all >> 6) + (sum_all >> 8) + (sum_all >> 10);
-			 	8 : reg_out_data <= sum_all >> 6;
-			 	9 : reg_out_data <= (sum_all >> 7) + (sum_all >> 8) + (sum_all >> 11);
-			 	10 : reg_out_data <= (sum_all >> 7) + (sum_all >> 9) + (sum_all >> 13);
-			 	11 : reg_out_data <= (sum_all >> 7) + (sum_all >> 12) + (sum_all >> 13);
-			 	12 : reg_out_data <= (sum_all >> 8) + (sum_all >> 9) + (sum_all >> 10);
-			 	13 : reg_out_data <= (sum_all >> 8) + (sum_all >> 9) + (sum_all >> 14);
-			 	14 : reg_out_data <= (sum_all >> 8) + (sum_all >> 10) + (sum_all >> 12);
-			 	15 : reg_out_data <= (sum_all >> 8) + (sum_all >> 11);
-			 	default : /* default */;
-			endcase
-		end
+		case (window_width)
+		 	2 : always @(posedge clk) reg_out_data <= sum_all >> 2;
+		 	3 : always @(posedge clk) reg_out_data <= (sum_all >> 4) + (sum_all >> 5) + (sum_all >> 6);
+		 	4 : always @(posedge clk) reg_out_data <= sum_all >> 4;
+		 	5 : always @(posedge clk) reg_out_data <= (sum_all >> 5) + (sum_all >> 7) + (sum_all >> 10);
+		 	6 : always @(posedge clk) reg_out_data <= (sum_all >> 6) + (sum_all >> 7) + (sum_all >> 8);
+		 	7 : always @(posedge clk) reg_out_data <= (sum_all >> 6) + (sum_all >> 8) + (sum_all >> 10);
+		 	8 : always @(posedge clk) reg_out_data <= sum_all >> 6;
+		 	9 : always @(posedge clk) reg_out_data <= (sum_all >> 7) + (sum_all >> 8) + (sum_all >> 11);
+		 	10 : always @(posedge clk) reg_out_data <= (sum_all >> 7) + (sum_all >> 9) + (sum_all >> 13);
+		 	11 : always @(posedge clk) reg_out_data <= (sum_all >> 7) + (sum_all >> 12) + (sum_all >> 13);
+		 	12 : always @(posedge clk) reg_out_data <= (sum_all >> 8) + (sum_all >> 9) + (sum_all >> 10);
+		 	13 : always @(posedge clk) reg_out_data <= (sum_all >> 8) + (sum_all >> 9) + (sum_all >> 14);
+		 	14 : always @(posedge clk) reg_out_data <= (sum_all >> 8) + (sum_all >> 10) + (sum_all >> 12);
+		 	15 : always @(posedge clk) reg_out_data <= (sum_all >> 8) + (sum_all >> 11);
+		 	default : /* default */;
+		endcase
 
 		assign out_data = out_ready ? reg_out_data : 0;
 
