@@ -122,14 +122,14 @@ module Scale(
 	input rst_n;
 	/*
 	::description
-	Scale for horizontal. 
+	Scale for horizontal, must be reciprocal of real scale. 
 	::range
-	Fixed number, 12bits.12bits 
+	Fixed number, 6bits.18bits 
 	*/
 	input [23 : 0] scale_x;
 	/*
 	::description
-	Scale for vertical. 
+	Scale for vertical, must be reciprocal of real scale.  
 	::range
 	Fixed number, 4bits.20bits 
 	*/
@@ -177,7 +177,6 @@ module Scale(
 
 	reg reg_out_ready;
 	reg in_range_h, in_range_v;
-	reg signed [im_width_bits : 0] count_x, count_y;
 	wire[18 : 0] mul_x_p, mul_y_p;
 	wire[17 : 0] mul_x_r, mul_y_r;
 	reg[3 : 0] con_mul_enable;
@@ -185,6 +184,7 @@ module Scale(
 
 	generate
 		if(work_mode == 0) begin
+			reg [im_width_bits - 1 : 0] count_x, count_y;
 			always @(posedge clk or negedge rst_n or negedge in_enable) begin
 				if(~rst_n || ~in_enable)
 					count_x <= 0;
@@ -213,6 +213,7 @@ module Scale(
 			end
 			assign frame_enable = con_mul_enable == mul_delay + 1 ? 1 : 0;
 		end else begin 
+			reg signed [im_width_bits : 0] count_x, count_y;
 			reg in_enable_last;
 			always @(posedge clk)
 				in_enable_last <= in_enable;

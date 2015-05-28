@@ -1,13 +1,13 @@
 Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
-----------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
-| Date         : Tue May 26 23:30:28 2015
+| Date         : Thu May 28 22:10:54 2015
 | Host         : Dtysky running 64-bit major release  (build 9200)
-| Command      : report_utilization -file B:/Complex_Mind/FPGA-Imaging-Library/Master/Geometry/Pan/DocGen/utilization.txt -name utilization_1
-| Design       : Pan
+| Command      : report_utilization -file B:/Complex_Mind/FPGA-Imaging-Library/Master/Geometry/Scale/DocGen/utilization.txt -name utilization_1
+| Design       : Scale
 | Device       : xc7z010
 | Design State : Synthesized
-----------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 
@@ -27,18 +27,20 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+-------------------------+------+-------+-----------+-------+
-|        Site Type        | Used | Fixed | Available | Util% |
-+-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   55 |     0 |     17600 |  0.31 |
-|   LUT as Logic          |   55 |     0 |     17600 |  0.31 |
-|   LUT as Memory         |    0 |     0 |      6000 |  0.00 |
-| Slice Registers         |   71 |     0 |     35200 |  0.20 |
-|   Register as Flip Flop |   71 |     0 |     35200 |  0.20 |
-|   Register as Latch     |    0 |     0 |     35200 |  0.00 |
-| F7 Muxes                |    0 |     0 |      8800 |  0.00 |
-| F8 Muxes                |    0 |     0 |      4400 |  0.00 |
-+-------------------------+------+-------+-----------+-------+
++----------------------------+------+-------+-----------+-------+
+|          Site Type         | Used | Fixed | Available | Util% |
++----------------------------+------+-------+-----------+-------+
+| Slice LUTs*                |   77 |     0 |     17600 |  0.43 |
+|   LUT as Logic             |   75 |     0 |     17600 |  0.42 |
+|   LUT as Memory            |    2 |     0 |      6000 |  0.03 |
+|     LUT as Distributed RAM |    0 |     0 |           |       |
+|     LUT as Shift Register  |    2 |     0 |           |       |
+| Slice Registers            |   69 |     0 |     35200 |  0.19 |
+|   Register as Flip Flop    |   69 |     0 |     35200 |  0.19 |
+|   Register as Latch        |    0 |     0 |     35200 |  0.00 |
+| F7 Muxes                   |    0 |     0 |      8800 |  0.00 |
+| F8 Muxes                   |    0 |     0 |      4400 |  0.00 |
++----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -55,9 +57,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 55    |          Yes |           - |        Reset |
+| 33    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 16    |          Yes |       Reset |            - |
+| 36    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -77,11 +79,12 @@ Table of Contents
 3. DSP
 ------
 
-+-----------+------+-------+-----------+-------+
-| Site Type | Used | Fixed | Available | Util% |
-+-----------+------+-------+-----------+-------+
-| DSPs      |    0 |     0 |        80 |  0.00 |
-+-----------+------+-------+-----------+-------+
++----------------+------+-------+-----------+-------+
+|    Site Type   | Used | Fixed | Available | Util% |
++----------------+------+-------+-----------+-------+
+| DSPs           |    2 |     0 |        80 |  2.50 |
+|   DSP48E1 only |    2 |       |           |       |
++----------------+------+-------+-----------+-------+
 
 
 4. IO and GT Specific
@@ -146,15 +149,17 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDCE     |   55 |        Flop & Latch |
-| LUT2     |   26 |                 LUT |
-| FDRE     |   16 |        Flop & Latch |
-| LUT5     |   10 |                 LUT |
+| LUT1     |   37 |                 LUT |
+| FDRE     |   36 |        Flop & Latch |
+| FDCE     |   33 |        Flop & Latch |
+| LUT4     |   17 |                 LUT |
+| CARRY4   |   10 |          CarryLogic |
 | LUT6     |    9 |                 LUT |
-| LUT1     |    9 |                 LUT |
-| CARRY4   |    9 |          CarryLogic |
-| LUT3     |    3 |                 LUT |
-| LUT4     |    1 |                 LUT |
+| LUT2     |    9 |                 LUT |
+| LUT5     |    6 |                 LUT |
+| LUT3     |    6 |                 LUT |
+| SRL16E   |    2 |  Distributed Memory |
+| DSP48E1  |    2 |    Block Arithmetic |
 +----------+------+---------------------+
 
 
@@ -169,8 +174,10 @@ Table of Contents
 9. Instantiated Netlists
 ------------------------
 
-+----------+------+
-| Ref Name | Used |
-+----------+------+
++--------------------+------+
+|      Ref Name      | Used |
++--------------------+------+
+| Multiplier12x24SCL |    2 |
++--------------------+------+
 
 
