@@ -1,16 +1,16 @@
 {
 	"conf" : [
 		{
-			"xscale" : "0.3",
-			"yscale" : "0.3"
+			"xscale" : 1.97,
+			"yscale" : 0.213
 		},
 		{
-			"xscale" : "1.7",
-			"yscale" : "1.7"
+			"xscale" : 0.391,
+			"yscale" : 2.17
 		},
 		{
-			"xscale" : "0.6",
-			"yscale" : "2.3"
+			"xscale" : 0.4,
+			"yscale" : 0.4
 		}
 	]
 }

@@ -4,12 +4,11 @@
 FPGA-Imaging-Library
 
 :Design
-FrameController2
+FrameController
 
 :Function
-Controlling a frame(block ram etc.), writing or reading with counts.
 For controlling a BlockRAM from xilinx.
-Give the first output after mul_delay + 2 + ram_read_latency cycles while the input enable.
+Give the first output after ram_read_latency cycles while the input enable.
 
 :Module
 Main module
@@ -18,7 +17,7 @@ Main module
 1.0
 
 :Modified
-2015-05-25
+2015-05-12
 
 Copyright (C) 2015  Tianyu Dai (dtysky) <dtysky@outlook.com>
 
@@ -51,11 +50,10 @@ My blog:
 */
 `timescale 1ns / 1ps
 
-module FrameController2(
+
+module FrameController(
 	clk,
 	rst_n,
-	in_count_x,
-	in_count_y,
 	in_enable,
 	in_data,
 	out_ready,
@@ -97,13 +95,6 @@ module FrameController2(
 	parameter im_height = 240;
 	/*
 	::description
-	The bits of width of image.
-	::range
-	Depend on width of image
-	*/
-	parameter im_width_bits = 9;
-	/*
-	::description
 	Address bit width of a ram for storing this image.
 	::range
 	Depend on im_width and im_height.
@@ -118,11 +109,11 @@ module FrameController2(
 	parameter ram_read_latency = 2;
 	/*
 	::description
-	Delay for multiplier.
+	The first row you want to storing, used for eliminating offset.
 	::range
-	Depend on your multilpliers' configurations
+	Depend on your input offset.
 	*/
-	parameter mul_delay = 3;
+	parameter row_init = 0;
 	/*
 	::description
 	Clock.
@@ -133,16 +124,6 @@ module FrameController2(
 	Reset, active low.
 	*/
 	input rst_n;
-	/*
-	::description
-	Input pixel count for width. 
-	*/
-	input[im_width_bits - 1 : 0] in_count_x;
-	/*
-	::description
-	Input pixel count for height. 
-	*/
-	input[im_width_bits - 1 : 0] in_count_y;
 	/*
 	::description
 	Input data enable, in pipeline mode, it works as another rst_n, in req-ack mode, only it is high will in_data can be really changes.
@@ -169,86 +150,68 @@ module FrameController2(
 	*/
 	output[addr_width - 1 : 0] ram_addr;
 
-	reg[3 : 0] con_enable;
-	reg[im_width_bits - 1 : 0] reg_in_count_x;
-	reg[im_width_bits - 1 : 0] reg_in_count_y;
-	reg[addr_width - 1 : 0] reg_addr;
-	wire[11 : 0] mul_a, mul_b;
-	wire[23 : 0] mul_p;
-	assign mul_a = {{(12 - im_width_bits){1'b0}}, in_count_y};
-	assign mul_b = im_width;
+	reg[addr_width - 1 : 0] reg_ram_addr;
+	reg[3 : 0] con_ready;
 
-	genvar i;
+	assign ram_addr = reg_ram_addr;
+	assign out_data = out_ready ? in_data : 0;
+
 	generate
-		/*
-		::description
-		Multiplier for Unsigned 12bits x Unsigned 12bits, used for creating address for frame. 
-		You can configure the multiplier by yourself, then change the "mul_delay". 
-		You can not change the ports' configurations!
-		*/
-		Multiplier12x12FR2 Mul(.CLK(clk), .A(mul_a), .B(mul_b), .SCLR(~rst_n), .P(mul_p));
-		for (i = 0; i < mul_delay; i = i + 1) begin : conut_buffer
-			reg[im_width_bits - 1 : 0] b;
-			if(i == 0) begin
-				always @(posedge clk)
-					b <= in_count_x;
-			end else begin
-				always @(posedge clk)
-					b <= conut_buffer[i - 1].b;
-			end
-		end
-		always @(posedge clk or negedge rst_n or negedge in_enable) begin
-			if(~rst_n || ~in_enable) begin
-				reg_addr <= 0;
-			end else begin
-				reg_addr <= mul_p + conut_buffer[mul_delay - 1].b;
-			end
-		end
-		assign ram_addr = reg_addr;
 
 		if(wr_mode == 0) begin
 
-			always @(posedge clk or negedge rst_n or negedge in_enable) begin
-				if(~rst_n || ~in_enable)
-					con_enable <= 0;
-				else if(con_enable == mul_delay + 1)
-					con_enable <= con_enable;
-				else
-					con_enable <= con_enable + 1;
-			end
-			assign out_ready = con_enable == mul_delay + 1 ? 1 : 0;
-
 			if(work_mode == 0) begin
-				for (i = 0; i < mul_delay + 1; i = i + 1) begin : buffer
-					reg[data_width - 1 : 0] b;
-					if(i == 0) begin
-						always @(posedge clk)
-							b <= in_data;
-					end else begin
-						always @(posedge clk)
-							b <= buffer[i - 1].b;
-					end
+				always @(posedge clk or negedge rst_n or negedge in_enable) begin
+					if(~rst_n || ~in_enable)
+						reg_ram_addr <= row_init * im_width;
+					else if(reg_ram_addr == im_width * im_height - 1)
+						reg_ram_addr <= 0;
+					else
+						reg_ram_addr <= reg_ram_addr + 1;
 				end
-				assign out_data = out_ready ? buffer[mul_delay].b : 0;
 			end else begin 
-				reg[data_width - 1 : 0] reg_out_data;
-				always @(posedge in_enable)
-					reg_out_data = in_data;
-				assign out_data = out_ready ? reg_out_data : 0;
+				always @(posedge in_enable or negedge rst_n) begin
+					if(~rst_n)
+						reg_ram_addr <= row_init * im_width - 1;
+					else if(reg_ram_addr == im_width * im_height - 1)
+						reg_ram_addr <= 0;
+					else
+						reg_ram_addr <= reg_ram_addr + 1;
+				end
 			end
+			assign out_ready = ~rst_n || ~in_enable ? 0 : 1;
 
 		end else begin
 
+			if(work_mode == 0) begin
+				always @(posedge clk or negedge rst_n or negedge in_enable) begin
+					if(~rst_n || ~in_enable)
+						reg_ram_addr <= 0;
+					else if(reg_ram_addr == im_width * im_height - 1)
+						reg_ram_addr <= 0;
+					else
+						reg_ram_addr <= reg_ram_addr + 1;
+				end
+			end else begin 
+				always @(posedge in_enable or negedge rst_n) begin
+					if(~rst_n)
+						reg_ram_addr <= 0 - 1;
+					else if(reg_ram_addr == im_width * im_height - 1)
+						reg_ram_addr <= 0;
+					else
+						reg_ram_addr <= reg_ram_addr + 1;
+				end
+			end
+
 			always @(posedge clk or negedge rst_n or negedge in_enable) begin
 				if(~rst_n || ~in_enable)
-					con_enable <= 0;
-				else if (con_enable == mul_delay + 1 + ram_read_latency)
-					con_enable <= con_enable;
+					con_ready <= 0;
+				else if (con_ready == ram_read_latency)
+					con_ready <= con_ready;
 				else
-					con_enable <= con_enable + 1;
+					con_ready <= con_ready + 1;
 			end
-			assign out_data = out_ready ? in_data : 0;
-			assign out_ready = con_enable == mul_delay + 1 + ram_read_latency ? 1 : 0;
+			assign out_ready = con_ready == ram_read_latency ? 1 : 0;
 
 		end
 

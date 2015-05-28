@@ -7,3 +7,6 @@ FunSimForHDL/*
 !FunSimForHDL/*.do
 !FunSimForHDL/*.md
 *.pyc
+HDL/Scale.srcs/sources_1/ip/Multiplier12x24SCL/*
+!HDL/Scale.srcs/sources_1/ip/Multiplier12x24SCL/Multiplier12x24SCL.xci
+!HDL/Scale.srcs/sources_1/ip/Multiplier12x24SCL/Multiplier12x24SCL_funcsim.v

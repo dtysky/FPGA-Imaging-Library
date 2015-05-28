@@ -1,14 +1,37 @@
-# Testing for this module just support gray-scale images !  
+# Wiki and Contact
+[Homepage for this project](http://ifl.dtysky.moe)  
+[Sources for this project](https://github.com/dtysky/FPGA-Imaging-Library)  
+[My e-mail](Mailto:dtysky@outlook.com)  
+[My blog](http://dtysky.moe)  
 
-# Using these to do functional simulation:  
+# Simulations
+**Simulations for this module just support Gray-scale and 512x512 images, and scales for simulations for this module just supports 0.x - 4095.x !**  
 
-At first, changing your work path:  
-    
-    set proj_path your-project-path  
+## Steps for simulations
+**Warning: procedures for simulation depend on python 2.x and PIL(Python Imaging Library), please get them by your self.**  
 
-etc.  
-    
-    set proj_path B:/Complex_Mind/FPGA-Imaging-Library/GEOMETRIC/Scale  
+### Preparing
+Open "ImageForTest".  
+Put images which you want to use for simulations.  
+Edit the "conf.json" for setting the configuration for simulations.  
+
+### Software simulation
+Open "SoftwareSim".  
+Run "sim.py".  
+Open "SimResCheck", check your results.  
+
+### Creat preparing data for functional simulation
+Open "HDLSimDataGen".  
+Run "creat.py".  
+
+### Functional simulation
+Functional simulation just support for modelsim 10.1 up.   
+Above all, you must compile all xilinx vivado library to modelsim.  
+
+Open "FunSimForHDL".  
+Open "ContrastTranslate.mpf" with modelsim.  
+
+#### Do these:
 
 Run this commond at first time:
 
@@ -16,8 +39,18 @@ Run this commond at first time:
 
 Then, compile all your source file:  
 
-    top-menu -> compile -> compile all  
+    modelsim gui -> Compile -> Compile all  
 
 Then, run this:
 
-    do $proj_path/FunSimForHDL/Run.do
+    do Run.do
+
+If you just want to the finally result, and don't want to watch the waveform, run this:  
+
+    do RunOver.do
+
+## Comparing
+Open "SimResCheck".  
+Run "covert.py", then you can get the results form functional simulation.  
+Run "compare.py" for creating a report for software simulation and functional simulation.  
+
