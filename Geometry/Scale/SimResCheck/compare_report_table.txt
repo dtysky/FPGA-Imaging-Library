@@ -1,0 +1,16 @@
+#### PSNR:
+
+<table border="1" cellspacing="0">
+	<tr>
+		<th>1-0.391x2.17</th>
+		<th>1-0.4x0.4</th>
+		<th>1-1.97x0.213</th>
+		<th>Total</th>
+	</tr>
+	<tr>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+		<td>1000000.00</td>
+	</tr>
+</table>
