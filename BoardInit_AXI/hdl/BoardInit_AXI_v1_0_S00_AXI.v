@@ -5,6 +5,8 @@
 	(
 		// Users to add parameters here
 		parameter integer im_bits_width = 9,
+		parameter integer color_width = 8,
+		parameter integer window_width = 8,
 		// User parameters ends
 		// Do not modify the parameters beyond this line
 		// Width of S_AXI data bus
@@ -17,19 +19,21 @@
 		input wire rst_n,
 		input wire pll_locked,
 		output wire rst_all_n,
-		output wire mode_erosion,
-		output wire mode_dilation,
-		output wire[24 : 0] dilation0,
-		output wire[8 : 0] erosion0,
-		output wire[24 : 0] erosion1,
-		output wire[8 : 0] erosion2,
-		output wire[8 : 0] erosion3,
-		output wire[8 : 0] erosion4,
-		output wire[8 : 0] erosion5,
-		output wire[8 : 0] match0,
-		output wire[7 : 0] harris_th,
-		output wire[im_bits_width - 1 : 0] top, bottom, left, right,
-		output wire[7 : 0] black_th, white_th,
+		output wire th_mode,
+		output wire[color_width - 1 : 0] th1,
+		output wire[color_width - 1 : 0] th2,
+		output wire[23 : 0] ct_scale,
+		output wire signed[color_width : 0] lm_gain,
+		output wire[3 : 0] rank,
+		output wire ed_mode,
+		output wire[window_width * window_width - 1 : 0] ed_template,
+		output wire[window_width * window_width - 1 : 0] mt_template,
+		output wire[im_bits_width - 1 : 0] crop_top,crop_bottom,crop_left,crop_right,
+		output wire[1 : 0] mirror_mode,
+		output wire signed[im_bits_width : 0] offset_x, offset_y,
+		output wire [23 : 0] scale_x, scale_y,
+		output wire signed[24 : 0] sh_u, sh_v,
+		output wire[7 : 0] angle,
 		output wire[31 : 0] sels,
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -713,23 +717,27 @@
 	end    
 
 	// Add user logic here
-	assign mode_erosion = 0;
-	assign mode_dilation = 1;
-	assign dilation0 = slv_reg1[24 : 0];
-	assign erosion0 = slv_reg2[8 : 0];
-	assign erosion1 = slv_reg3[24 : 0];
-	assign erosion2 = slv_reg4[8 : 0];
-	assign erosion3 = slv_reg5[8 : 0];
-	assign erosion4 = slv_reg6[8 : 0];
-	assign erosion5 = slv_reg7[8 : 0];
-	assign match0 = slv_reg8[8 : 0];
-	assign harris_th = slv_reg9[7 : 0];
-	assign top = slv_reg10[im_bits_width - 1 : 0];
-	assign bottom = slv_reg11[im_bits_width - 1 : 0];
-	assign left = slv_reg12[im_bits_width - 1 : 0];
-	assign right = slv_reg13[im_bits_width - 1 : 0];
-	assign black_th = slv_reg14;
-	assign white_th = slv_reg15;
+	assign th_mode = slv_reg1;
+	assign th1 = slv_reg2;
+	assign th2 = slv_reg3;
+	assign ct_scale = slv_reg4;
+	assign lm_gain = slv_reg5;
+	assign rank = slv_reg6;
+	assign ed_mode = slv_reg7;
+	assign ed_template = slv_reg8;
+	assign mt_template = slv_reg9;
+	assign crop_top = slv_reg10;
+	assign crop_bottom = slv_reg11;
+	assign crop_left = slv_reg12;
+	assign crop_right = slv_reg13;
+	assign mirror_mode = slv_reg14;
+	assign offset_x = slv_reg15;
+	assign offset_y = slv_reg16;
+	assign scale_x = slv_reg17;
+	assign scale_y = slv_reg18;
+	assign sh_u = slv_reg17;
+	assign sh_v = slv_reg18;
+	assign angle = slv_reg19;
 	assign sels = slv_reg31;
 
 	reg[15 : 0] con_init;
