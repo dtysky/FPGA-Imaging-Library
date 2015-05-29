@@ -111,29 +111,29 @@ module Crop(
 	/*
 	::description
 	Top of the rang you want to crop. 
-	range:
+	::range
 	Depend on height of image, 0 - im_height-1. 
 	*/
 	input[im_width_bits - 1 : 0] top;
 	/*
 	::description
 	Bottom of the rang you want to crop. 
-	range:
+	::range
 	Depend on height of image, 0 - im_height-1. 
 	*/
 	input[im_width_bits - 1 : 0] bottom;
 	/*
 	::description
 	Left of the rang you want to crop. 
-	range:
-	Depend on height of image, 0 - im_height-1. 
+	::range
+	Depend on height of image, 0 - im_width-1. 
 	*/
 	input[im_width_bits - 1 : 0] left;
 	/*
 	::description
 	Right of the rang you want to crop. 
-	range:
-	Depend on height of image, 0 - im_height-1. 
+	::range
+	Depend on height of image, 0 - im_width-1. 
 	*/
 	input[im_width_bits - 1 : 0] right;
 	/*

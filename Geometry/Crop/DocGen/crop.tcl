@@ -48,23 +48,23 @@ Range: None
 
 top:
 unsigned.
-Description: Top of the rang you want to crop.range:Depend on height of image, 0 - im_height-1.
-Range: im_width_bits - 1 : 0
+Description: Top of the rang you want to crop.
+Range: Depend on height of image, 0 - im_height-1.
 
 bottom:
 unsigned.
-Description: Bottom of the rang you want to crop.range:Depend on height of image, 0 - im_height-1.
-Range: im_width_bits - 1 : 0
+Description: Bottom of the rang you want to crop.
+Range: Depend on height of image, 0 - im_height-1.
 
 left:
 unsigned.
-Description: Left of the rang you want to crop.range:Depend on height of image, 0 - im_height-1.
-Range: im_width_bits - 1 : 0
+Description: Left of the rang you want to crop.
+Range: Depend on height of image, 0 - im_width-1.
 
 right:
 unsigned.
-Description: Right of the rang you want to crop.range:Depend on height of image, 0 - im_height-1.
-Range: im_width_bits - 1 : 0
+Description: Right of the rang you want to crop.
+Range: Depend on height of image, 0 - im_width-1.
 
 in_enable:
 unsigned.

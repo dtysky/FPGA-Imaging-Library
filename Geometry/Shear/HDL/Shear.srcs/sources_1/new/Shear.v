@@ -284,7 +284,7 @@ module Shear(
 		FixedRoundSigned #(37, 18, im_width_bits) FRSV(clk, mul_v_p, mul_v_r, overflow_v0);
 
 		if(work_mode == 0) begin
-		genvar i;
+			genvar i;
 			for (i = 0; i < mul_delay + 3; i = i + 1) begin : count_buffer
 				reg signed [im_width_bits : 0] u, v;
 				if(i == 0) begin

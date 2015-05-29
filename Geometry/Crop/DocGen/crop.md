@@ -29,7 +29,7 @@ Crop
 
 ### Function
 Cropping images, depending on your top, bottom, left and right coordinate.  
-Give the first output after 1 cycle1 while the input enable.  
+Give the first output after 1 cycle while the input enable.  
   
 
 ***
@@ -140,33 +140,33 @@ Give the first output after 1 cycle1 while the input enable.
 <td>top</td>
 <td>input</td>
 <td>unsigned</td>
-<td>im_width_bits - 1 : 0</td>
+<td>Depend on height of image, 0 - im_height-1.</td>
 <td>None</td>
-<td>Top of the rang you want to crop.range:Depend on height of image, 0 - im_height-1.</td>
+<td>Top of the rang you want to crop.</td>
 </tr>
 <tr>
 <td>bottom</td>
 <td>input</td>
 <td>unsigned</td>
-<td>im_width_bits - 1 : 0</td>
+<td>Depend on height of image, 0 - im_height-1.</td>
 <td>None</td>
-<td>Bottom of the rang you want to crop.range:Depend on height of image, 0 - im_height-1.</td>
+<td>Bottom of the rang you want to crop.</td>
 </tr>
 <tr>
 <td>left</td>
 <td>input</td>
 <td>unsigned</td>
-<td>im_width_bits - 1 : 0</td>
+<td>Depend on height of image, 0 - im_width-1.</td>
 <td>None</td>
-<td>Left of the rang you want to crop.range:Depend on height of image, 0 - im_height-1.</td>
+<td>Left of the rang you want to crop.</td>
 </tr>
 <tr>
 <td>right</td>
 <td>input</td>
 <td>unsigned</td>
-<td>im_width_bits - 1 : 0</td>
+<td>Depend on height of image, 0 - im_width-1.</td>
 <td>None</td>
-<td>Right of the rang you want to crop.range:Depend on height of image, 0 - im_height-1.</td>
+<td>Right of the rang you want to crop.</td>
 </tr>
 <tr>
 <td>in_enable</td>

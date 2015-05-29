@@ -1,0 +1,30 @@
+{
+	"conf":{
+		"path": "../HDL/",
+		"excluded_path" : ["\\ip\\"],
+		"out_path": "",
+		"mode": [".v",".sv"],
+		"additional_files": [
+		],
+		"titles": [
+			"Design",
+			"Version",
+			"Modified",
+			["Source", "[Rotate](https://github.com/dtysky/FPGA-Imaging-Library/tree/Publish/LocalFilter/Rotate)"],
+			["IP-GUI", "![Rotate IP-GUI](http://src.dtysky.moe/image/f-i-l/3/21/3.png)"],
+			"Function",
+			"Files",
+			"Parameters",
+			"Ports",
+			"Instances",
+			["Simulations","Simulations for this module just support Gray-scale images !\n\n### Waves\n\n\n### Original\n\n\n### Results\n\n\n### PSNR\n\n\n"],
+			["Utilization",""],
+			["Timing",""],
+			["Thanks","**The sources of images for simulations:**  \n"]
+		],
+		"tcl": [
+			true,
+"Homepage for this project:\nhttp://fil.dtysky.moe\n\nSources for this project:\nhttps://github.com/dtysky/FPGA-Imaging-Library\n\nMy e-mail:\ndtysky@outlook.com\n\nMy blog:\nhttp://dtysky.moe\n\nCopyright 2015, Tianyu Dai(dtysky). All Rights Reserved.\nThis project is free software and released under the GNU Lesser General Public License (LGPL)."
+		]
+	}
+}

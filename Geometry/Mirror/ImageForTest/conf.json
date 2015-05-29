@@ -1,0 +1,13 @@
+{
+	"conf" : [
+		{
+			"mode" : "Horizontal"
+		},
+		{
+			"mode" : "Vertical"
+		},
+		{
+			"mode" : "All"
+		}
+	]
+}

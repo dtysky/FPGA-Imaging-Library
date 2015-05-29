@@ -7,3 +7,6 @@ FunSimForHDL/*
 !FunSimForHDL/*.do
 !FunSimForHDL/*.md
 *.pyc
+HDL/Rotate.srcs/sources_1/ip/Multiplier13Sx20SRTT/*
+!HDL/Rotate.srcs/sources_1/ip/Multiplier13Sx20SRTT/Multiplier13Sx20SRTT.xci
+!HDL/Rotate.srcs/sources_1/ip/Multiplier13Sx20SRTT/Multiplier13Sx20SRTT_funcsim.v
