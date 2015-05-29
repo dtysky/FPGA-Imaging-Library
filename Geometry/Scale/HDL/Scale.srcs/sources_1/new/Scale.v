@@ -181,28 +181,31 @@ module Scale(
 	wire[17 : 0] mul_x_r, mul_y_r;
 	reg[3 : 0] con_mul_enable;
 	reg[data_width - 1 : 0] reg_out_data;
+	wire[im_width_bits - 1 : 0] count_x, count_y;
 
 	generate
 		if(work_mode == 0) begin
-			reg [im_width_bits - 1 : 0] count_x, count_y;
+			reg [im_width_bits - 1 : 0] reg_count_x, reg_count_y;
 			always @(posedge clk or negedge rst_n or negedge in_enable) begin
 				if(~rst_n || ~in_enable)
-					count_x <= 0;
-				else if(count_x == im_width - 1)
-					count_x <= 0;
+					reg_count_x <= 0;
+				else if(reg_count_x == im_width - 1)
+					reg_count_x <= 0;
 				else
-					count_x <= count_x + 1;
+					reg_count_x <= reg_count_x + 1;
 			end
 			always @(posedge clk or negedge rst_n or negedge in_enable) begin
 				if(~rst_n || ~in_enable)
-					count_y <= 0;
-				else if(count_x == im_width - 1 && count_y == im_height - 1)
-					count_y <= 0;
-				else if(count_x == im_width - 1)
-					count_y <= count_y + 1;
+					reg_count_y <= 0;
+				else if(reg_count_x == im_width - 1 && reg_count_y == im_height - 1)
+					reg_count_y <= 0;
+				else if(reg_count_x == im_width - 1)
+					reg_count_y <= reg_count_y + 1;
 				else
-					count_y <= count_y;
+					reg_count_y <= reg_count_y;
 			end
+			assign count_x = reg_count_x;
+			assign count_y = reg_count_y;
 			always @(posedge clk or negedge rst_n or negedge in_enable) begin
 				if(~rst_n || ~in_enable)
 					con_mul_enable <= 0;
@@ -213,34 +216,36 @@ module Scale(
 			end
 			assign frame_enable = con_mul_enable == mul_delay + 1 ? 1 : 0;
 		end else begin 
-			reg signed [im_width_bits : 0] count_x, count_y;
+			reg signed [im_width_bits : 0] reg_count_x, reg_count_y;
 			reg in_enable_last;
 			always @(posedge clk)
 				in_enable_last <= in_enable;
 			always @(posedge clk or negedge rst_n) begin
 				if(~rst_n)
-					count_x <= -1;
+					reg_count_x <= -1;
 				else if(~in_enable_last & in_enable) begin
-					if(count_x == im_width - 1)
-						count_x <= 0;
+					if(reg_count_x == im_width - 1)
+						reg_count_x <= 0;
 					else
-						count_x <= count_x + 1;
+						reg_count_x <= reg_count_x + 1;
 				end else
-					count_x <= count_x;
+					reg_count_x <= reg_count_x;
 			end
 			always @(posedge clk or negedge rst_n) begin
 				if(~rst_n)
-					count_y <= 0;
+					reg_count_y <= 0;
 				else if(~in_enable_last & in_enable) begin
-					if(count_x == im_width - 1 && count_y == im_height - 1)
-						count_y <= 0;
-					else if(count_x == im_width - 1)
-						count_y <= count_y + 1;
+					if(reg_count_x == im_width - 1 && reg_count_y == im_height - 1)
+						reg_count_y <= 0;
+					else if(reg_count_x == im_width - 1)
+						reg_count_y <= reg_count_y + 1;
 					else
-						count_y <= count_y;
+						reg_count_y <= reg_count_y;
 				end	else
-					count_y <= count_y;
+					reg_count_y <= reg_count_y;
 			end
+			assign count_x = reg_count_x[im_width_bits - 1 : 0];
+			assign count_y = reg_count_y[im_width_bits - 1 : 0];
 			always @(posedge clk or negedge rst_n or negedge in_enable) begin
 				if(~rst_n || ~in_enable)
 					con_mul_enable <= 0;

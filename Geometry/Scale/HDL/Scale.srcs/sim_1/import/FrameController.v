@@ -1,4 +1,3 @@
-//Com2DocHDL
 /*
 :Project
 FPGA-Imaging-Library
