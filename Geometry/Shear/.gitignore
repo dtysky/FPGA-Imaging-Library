@@ -7,3 +7,6 @@ FunSimForHDL/*
 !FunSimForHDL/*.do
 !FunSimForHDL/*.md
 *.pyc
+HDL/Shear.srcs/sources_1/ip/Multiplier12x25SSHR/*
+!HDL/Shear.srcs/sources_1/ip/Multiplier12x25SSHR/Multiplier12x25SSHR.xci
+!HDL/Shear.srcs/sources_1/ip/Multiplier12x25SSHR/Multiplier12x25SSHR_funcsim.v

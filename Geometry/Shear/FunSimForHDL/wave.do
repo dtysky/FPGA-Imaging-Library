@@ -1,36 +1,57 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/clk
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/rst_n
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/sh_u
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/sh_v
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/in_enable
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/frame_in_enable
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/frame_in_data
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/frame_out_enable
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/frame_out_count_x
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/frame_out_count_y
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/out_enable
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/out_data
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/reg_count_u
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/reg_count_v
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/count_u
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/count_v
-add wave -noupdate -radix decimal /Shear_TB/Shear1/sh_uc
-add wave -noupdate -radix decimal /Shear_TB/Shear1/sh_vc
-add wave -noupdate -radix decimal /Shear_TB/Shear1/mul_x_p
-add wave -noupdate -radix decimal /Shear_TB/Shear1/mul_y_p
-add wave -noupdate -radix decimal /Shear_TB/Shear1/mul_x_r
-add wave -noupdate -radix decimal /Shear_TB/Shear1/mul_y_r
-add wave -noupdate -radix decimal /Shear_TB/Shear1/reg_mul_x_c
-add wave -noupdate -radix decimal /Shear_TB/Shear1/reg_mul_y_c
-add wave -noupdate -radix decimal /Shear_TB/Shear1/mul_x_c
-add wave -noupdate -radix decimal /Shear_TB/Shear1/mul_y_c
-add wave -noupdate -radix unsigned /Shear_TB/Shear1/con_mul_enable
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/clk
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/rst_n
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayPipeline/sh_u
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayPipeline/sh_v
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/in_enable
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/count_u
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/count_v
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayPipeline/mul_x_p
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayPipeline/mul_y_p
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayPipeline/mul_x_r
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayPipeline/mul_y_r
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayPipeline/reg_frame_out_count_x
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayPipeline/reg_frame_out_count_y
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/frame_out_count_x
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/frame_out_count_y
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/frame_enable
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/frame_in_ready
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/frame_in_data
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/in_range_t
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/in_range_b
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/in_range_l
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/in_range_r
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/out_ready
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayPipeline/out_data
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/clk
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/rst_n
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayReqAck/sh_u
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayReqAck/sh_v
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/in_enable
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/count_u
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/count_v
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayReqAck/mul_x_p
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayReqAck/mul_y_p
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayReqAck/mul_x_r
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayReqAck/mul_y_r
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayReqAck/reg_frame_out_count_x
+add wave -noupdate -radix decimal /Shear_TB/SHRGrayReqAck/reg_frame_out_count_y
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/frame_out_count_x
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/frame_out_count_y
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/frame_enable
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/frame_in_ready
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/frame_in_data
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/in_range_t
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/in_range_b
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/in_range_l
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/in_range_r
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/out_ready
+add wave -noupdate -radix unsigned /Shear_TB/SHRGrayReqAck/out_data
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {24182524 ps} 0}
+WaveRestoreCursors {{Cursor 1} {104924654 ps} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 190
+configure wave -namecolwidth 307
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
@@ -44,4 +65,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {24179737 ps} {24185257 ps}
+WaveRestoreZoom {104923358 ps} {104930170 ps}
