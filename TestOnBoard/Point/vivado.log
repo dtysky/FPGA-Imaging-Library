@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Sat May 30 20:06:31 2015
+# Process ID: 14808
+# Log file: B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/vivado.log
+# Journal file: B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file 'B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/bd/design_1/ip/design_1_DataWidthConvert_0_1/design_1_DataWidthConvert_0_1.upgrade_log'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master' may become invalid. A better location for the repostory would be in a path adjacent to the project. (Current project location is 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point'.)
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'B:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:processing_system7:5.5'. The one found in IP location 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63' will take precedence over the same IP in the Xilinx installed IP.
+open_project: Time (s): cpu = 00:00:51 ; elapsed = 00:00:24 . Memory (MB): peak = 797.586 ; gain = 232.383
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat May 30 20:08:18 2015...

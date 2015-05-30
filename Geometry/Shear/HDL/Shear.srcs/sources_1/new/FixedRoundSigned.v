@@ -49,7 +49,7 @@ My blog:
 */
 `timescale 1ns / 1ps
 
-module FixedRoundSigned(
+module FixedRoundSigned1(
 	clk,
 	fixed_num,
 	round,

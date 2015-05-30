@@ -33,7 +33,7 @@
 		output wire signed[im_bits_width : 0] offset_x, offset_y,
 		output wire [23 : 0] scale_x, scale_y,
 		output wire signed[24 : 0] sh_u, sh_v,
-		output wire[7 : 0] angle,
+		output wire[8 : 0] angle,
 		output wire[31 : 0] sels,
 		// User ports ends
 		// Do not modify the ports beyond this line

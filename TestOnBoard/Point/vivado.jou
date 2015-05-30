@@ -1,0 +1,11 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Sat May 30 20:06:31 2015
+# Process ID: 14808
+# Log file: B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/vivado.log
+# Journal file: B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.xpr
