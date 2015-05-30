@@ -73,7 +73,7 @@ module RankFifter(
 	::range
 	2 - 15
 	*/
-	parameter[3 : 0] window_width = 5;
+	parameter[3 : 0] window_width = 3;
 	/*
 	::description
 	Color's bit width.
@@ -133,7 +133,8 @@ module RankFifter(
 	
 	reg[color_width - 1 : 0] reg_in_data[0 : `full_win_width - 1];
 	reg[`full_win_width - 1 : 0] big_flag[0 : `full_win_width - 1];
-	reg[color_width - 1 : 0] sorted_list[0 : `full_win_width - 1];
+	wire[`full_win_width - 1 : 0] rank_list;
+	wire[full_win_bits - 1 : 0] rank_res;
 	reg[3 : 0] con_enable;
 	reg[color_width - 1 : 0] reg_out_data;
 
@@ -143,12 +144,12 @@ module RankFifter(
 		always @(posedge clk or negedge rst_n or negedge in_enable) begin
 			if(~rst_n || ~in_enable) 
 				con_enable <= 0;
-			else if(con_enable == sum_stage + 2)
+			else if(con_enable == sum_stage + 3)
 				con_enable <= con_enable;
 			else
 				con_enable <= con_enable + 1;
 		end
-		assign out_ready = con_enable == sum_stage + 2 ? 1 : 0;
+		assign out_ready = con_enable == sum_stage + 3 ? 1 : 0;
 
 		for (i = 0; i < `full_win_width; i = i + 1) begin
 			if(work_mode == 0) begin
@@ -161,7 +162,7 @@ module RankFifter(
 		end
 
 		if(work_mode == 0) begin : pipemode
-			for (i = 0; i < sum_stage + 1; i = i + 1) begin : buffer
+			for (i = 0; i < sum_stage + 2; i = i + 1) begin : buffer
 				reg[color_width - 1 : 0] b[0 : `full_win_width - 1];
 				for (j = 0; j < `full_win_width; j = j + 1) begin
 					if(i == 0) begin
@@ -250,15 +251,15 @@ module RankFifter(
 		end
 
 		for (i = 0; i < `full_win_width; i = i + 1) begin
-			if(work_mode == 0) begin
-				always @(*) sorted_list[pipe[sum_stage - 1].pixel[i].sum[0]] = pipemode.buffer[sum_stage].b[i];
-			end else begin 
-				always @(*) sorted_list[pipe[sum_stage - 1].pixel[i].sum[0]] = reg_in_data[i];
-			end
+			assign rank_list[i] = pipe[sum_stage - 1].pixel[i].sum[0] == rank ? 1 : 0;
 		end
+		Encoder #(window_width, full_win_bits) ED(rank_list, rank_res);
 
-		always @(posedge clk) 
-			reg_out_data <= sorted_list[rank];
+		if(work_mode == 0) begin
+			always @(posedge clk) reg_out_data <= pipemode.buffer[sum_stage + 1].b[rank_res];
+		end else begin 
+			always @(posedge clk) reg_out_data <= reg_in_data[rank_res];
+		end
 		assign out_data = out_ready ? reg_out_data : 0;
 
 	endgenerate

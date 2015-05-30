@@ -1,13 +1,13 @@
 Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
-| Date         : Fri May 22 14:44:46 2015
+| Date         : Sat May 30 22:45:47 2015
 | Host         : Dtysky running 64-bit major release  (build 9200)
-| Command      : report_utilization -file B:/Complex_Mind/FPGA-Imaging-Library/Master/LocalFilter/RankFilter/DocGen/utilizationx3.txt -name utilization_1
+| Command      : report_utilization -file B:/Complex_Mind/FPGA-Imaging-Library/Master/LocalFilter/RankFilter/U.txt -name utilization_1
 | Design       : RankFifter
 | Device       : xc7z010
 | Design State : Synthesized
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 
@@ -30,14 +30,14 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  405 |     0 |     17600 |  2.30 |
-|   LUT as Logic             |  333 |     0 |     17600 |  1.89 |
+| Slice LUTs*                |  377 |     0 |     17600 |  2.14 |
+|   LUT as Logic             |  305 |     0 |     17600 |  1.73 |
 |   LUT as Memory            |   72 |     0 |      6000 |  1.20 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   72 |     0 |           |       |
-| Slice Registers            |  876 |     0 |     35200 |  2.48 |
+| Slice Registers            |  228 |     0 |     35200 |  0.64 |
 |   Register as Flip Flop    |  228 |     0 |     35200 |  0.64 |
-|   Register as Latch        |  648 |     0 |     35200 |  1.84 |
+|   Register as Latch        |    0 |     0 |     35200 |  0.00 |
 | F7 Muxes                   |   16 |     0 |      8800 |  0.18 |
 | F8 Muxes                   |    0 |     0 |      4400 |  0.00 |
 +----------------------------+------+-------+-----------+-------+
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 652   |          Yes |           - |        Reset |
+| 4     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 224   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -148,17 +148,16 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LDCE     |  648 |        Flop & Latch |
-| LUT4     |  389 |                 LUT |
+| LUT4     |  309 |                 LUT |
 | FDRE     |  224 |        Flop & Latch |
+| LUT6     |   74 |                 LUT |
 | SRL16E   |   72 |  Distributed Memory |
-| LUT6     |   61 |                 LUT |
 | LUT1     |   36 |                 LUT |
 | CARRY4   |   36 |          CarryLogic |
-| LUT5     |   18 |                 LUT |
-| LUT2     |   18 |                 LUT |
+| LUT2     |   22 |                 LUT |
+| LUT3     |   20 |                 LUT |
 | MUXF7    |   16 |               MuxFx |
-| LUT3     |   10 |                 LUT |
+| LUT5     |   16 |                 LUT |
 | FDCE     |    4 |        Flop & Latch |
 +----------+------+---------------------+
 
