@@ -214,15 +214,15 @@
         <xilinx:taxonomy>/BaseIP</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>camCap_v1_0</xilinx:displayName>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>xilinx.com:ip:camCap:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2015-04-08T15:44:37Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2015-05-30T07:14:20Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="nopcore"/>
         <xilinx:tag xilinx:name="xilinx.com:ip:camCap:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/other_ip/cam</xilinx:tag>
-        <xilinx:tag xilinx:name="xilinx.com:XUP:camCap:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/other_ip/cam</xilinx:tag>
+        <xilinx:tag xilinx:name="xilinx.com:XUP:camCap:1.0_ARCHIVE_LOCATION">B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>

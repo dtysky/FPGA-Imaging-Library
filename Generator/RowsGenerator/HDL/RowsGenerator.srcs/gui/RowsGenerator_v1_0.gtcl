@@ -1,6 +1,6 @@
 # This file is automatically written.  Do not modify.
 proc gen_USERPARAMETER_im_width_bits_VALUE {im_width im_width_bits } {	
-if {[expr log($im_width)/log(2)] >= [expr int(log($im_width)/log(2))] } {
+if {[expr log($im_width)/log(2)] > [expr int(log($im_width)/log(2))] } {
 	set ${im_width_bits} [expr int(log($im_width)/log(2)) + 1]
 } else {
 	set ${im_width_bits} [expr int(log($im_width)/log(2))]

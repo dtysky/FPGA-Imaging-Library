@@ -32,3 +32,6 @@ if {$window_size == 2} {
 	set ${pip_counter} 8
 }
 }
+proc gen_USERPARAMETER_pipe_stage_VALUE {pipe_stage window_width } {
+set ${pipe_stage} [expr int(log(($window_width) * ($window_width))/log(2))]
+}

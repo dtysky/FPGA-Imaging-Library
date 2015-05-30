@@ -3,7 +3,7 @@
 FPGA-Imaging-Library
 
 :Design
-ColorRgb24toVGA
+ColorRGB24toVGA
 
 :Function
 Covert 24bits-RGB to VGA.
@@ -50,7 +50,7 @@ My blog:
 `timescale 1ns / 1ps
 
 
-module ColorRgb24toVGA(
+module ColorRGB24toVGA(
 	input[23:0] rgb24,
 	output[15:0] vga
     );

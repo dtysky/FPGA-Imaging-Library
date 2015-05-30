@@ -84,7 +84,7 @@ module ContrastTransform(
 	::description
 	Delay for multiplier.
 	::range
-	Depend your multilpliers' configurations
+	Depend on your multilpliers' configurations
 	*/
 	parameter mul_delay = 3;
 	/*

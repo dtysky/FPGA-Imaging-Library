@@ -1,6 +1,6 @@
 # This file is automatically written.  Do not modify.
 proc gen_USERPARAMETER_addr_width_VALUE {im_width im_height addr_width } {
-if {[expr log($im_width * $im_height)/log(2)] >= [expr int(log($im_width * $im_height)/log(2))] } {
+if {[expr log($im_width * $im_height)/log(2)] > [expr int(log($im_width * $im_height)/log(2))] } {
 	set ${addr_width} [expr int(log($im_width * $im_height)/log(2)) + 1]
 } else {
 	set ${addr_width} [expr int(log($im_width * $im_height)/log(2))]

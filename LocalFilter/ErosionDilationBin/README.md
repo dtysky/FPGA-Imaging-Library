@@ -5,7 +5,7 @@
 [My blog](http://dtysky.moe)  
 
 # Simulations
-**Simulations for this module just support binary images, "mode" in conf just supports "Erosion" and "Dilation", and size of "template" must equal to e or 5 !**  
+**Simulations for this module just support binary images, "mode" in conf just supports "Erosion" and "Dilation", and size of "template" must equal to 3 or 5 !**  
 
 ## Steps for simulations
 **Warning: procedures for simulation depend on python 2.x and PIL(Python Imaging Library), please get them by your self.**  

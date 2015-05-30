@@ -28,6 +28,11 @@ module DataWidthConvert(i, o);
 	input[data_width_in - 1 : 0] i;
 	output[data_width_out - 1 : 0] o;
 
-	assign o = i[data_width_in - 1 : 0];
-
+	generate
+		if(data_width_in >= data_width_out) begin
+			assign o = i[data_width_in - 1 : 0];
+		end else begin 
+			assign o = {{data_width_out - data_width_in{1'b0}} ,i};
+		end
+	endgenerate
 endmodule

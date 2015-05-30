@@ -94,12 +94,14 @@ module ErosionDilationBin(
 	input rst_n;
 	/*
 	::description
-	Reset, active low.
+	Operation's mode.
+	::range
+	0 for Erosion, 1 for Dilation. 
 	*/
 	input mode;
 	/*
 	::description
-	Reset, active low.
+	Template for operation. 
 	*/
 	input[window_width * window_width - 1 : 0] template;
 	/*

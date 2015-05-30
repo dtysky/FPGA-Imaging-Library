@@ -10,8 +10,7 @@ ipgui::add_param $IPINST -name "im_height" -parent ${Page_0}
 ipgui::add_param $IPINST -name "im_width_bits" -parent ${Page_0}
 ipgui::add_param $IPINST -name "mul_delay" -parent ${Page_0}
 ipgui::add_param $IPINST -name "ram_RL" -parent ${Page_0}
-ipgui::add_static_text $IPINST -name "Par_Discriptions" -parent ${Page_0} -text {
-
+  ipgui::add_static_text $IPINST -name "Par_Discriptions" -parent ${Page_0} -text {
 
 work_mode:
 unsigned.

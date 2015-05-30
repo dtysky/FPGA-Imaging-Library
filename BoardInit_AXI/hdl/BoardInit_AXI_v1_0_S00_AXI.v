@@ -735,9 +735,9 @@
 	assign offset_y = slv_reg16;
 	assign scale_x = slv_reg17;
 	assign scale_y = slv_reg18;
-	assign sh_u = slv_reg17;
-	assign sh_v = slv_reg18;
-	assign angle = slv_reg19;
+	assign sh_u = slv_reg19;
+	assign sh_v = slv_reg20;
+	assign angle = slv_reg21;
 	assign sels = slv_reg31;
 
 	reg[15 : 0] con_init;

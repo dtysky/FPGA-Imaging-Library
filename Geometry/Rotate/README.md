@@ -5,7 +5,7 @@
 [My blog](http://dtysky.moe)  
 
 # Simulations
-**Simulations for this module just support Gray-scale and 512x512 images, and shs for simulations for this module just supports -63.x - 63.x !**  
+**Simulations for this module just support Gray-scale and 512x512 images, and angle for simulations for this module just supports 0 - 359 !**  
 
 ## Steps for simulations
 **Warning: procedures for simulation depend on python 2.x and PIL(Python Imaging Library), please get them by your self.**  

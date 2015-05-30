@@ -49,7 +49,6 @@ My blog:
 
 */
 `timescale 1ns / 1ps
-
 `define full_win_width window_width * window_width
 
 module RankFifter(
@@ -65,7 +64,7 @@ module RankFifter(
 	::description
 	This module's working mode.
 	::range
-	0 for Pipline, 1 for Req-ack
+	0 for Pipeline, 1 for Req-ack
 	*/
 	parameter[0 : 0] work_mode = 0;
 	/*
@@ -264,3 +263,4 @@ module RankFifter(
 
 	endgenerate
 endmodule
+`undef full_win_width

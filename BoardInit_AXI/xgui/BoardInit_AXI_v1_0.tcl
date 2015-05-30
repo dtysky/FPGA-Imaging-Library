@@ -8,8 +8,37 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "C_S00_AXI_BASEADDR" -parent ${Page_0}
   ipgui::add_param $IPINST -name "C_S00_AXI_HIGHADDR" -parent ${Page_0}
   ipgui::add_param $IPINST -name "im_bits_width" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "color_width" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "window_width" -parent ${Page_0}
 
 
+}
+
+proc update_PARAM_VALUE.C_S_AXI_ADDR_WIDTH { PARAM_VALUE.C_S_AXI_ADDR_WIDTH } {
+	# Procedure called to update C_S_AXI_ADDR_WIDTH when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.C_S_AXI_ADDR_WIDTH { PARAM_VALUE.C_S_AXI_ADDR_WIDTH } {
+	# Procedure called to validate C_S_AXI_ADDR_WIDTH
+	return true
+}
+
+proc update_PARAM_VALUE.C_S_AXI_DATA_WIDTH { PARAM_VALUE.C_S_AXI_DATA_WIDTH } {
+	# Procedure called to update C_S_AXI_DATA_WIDTH when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.C_S_AXI_DATA_WIDTH { PARAM_VALUE.C_S_AXI_DATA_WIDTH } {
+	# Procedure called to validate C_S_AXI_DATA_WIDTH
+	return true
+}
+
+proc update_PARAM_VALUE.color_width { PARAM_VALUE.color_width } {
+	# Procedure called to update color_width when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.color_width { PARAM_VALUE.color_width } {
+	# Procedure called to validate color_width
+	return true
 }
 
 proc update_PARAM_VALUE.im_bits_width { PARAM_VALUE.im_bits_width } {
@@ -18,6 +47,15 @@ proc update_PARAM_VALUE.im_bits_width { PARAM_VALUE.im_bits_width } {
 
 proc validate_PARAM_VALUE.im_bits_width { PARAM_VALUE.im_bits_width } {
 	# Procedure called to validate im_bits_width
+	return true
+}
+
+proc update_PARAM_VALUE.window_width { PARAM_VALUE.window_width } {
+	# Procedure called to update window_width when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.window_width { PARAM_VALUE.window_width } {
+	# Procedure called to validate window_width
 	return true
 }
 
@@ -58,18 +96,28 @@ proc validate_PARAM_VALUE.C_S00_AXI_HIGHADDR { PARAM_VALUE.C_S00_AXI_HIGHADDR } 
 }
 
 
-proc update_MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH { MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH PARAM_VALUE.C_S00_AXI_DATA_WIDTH } {
-	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.C_S00_AXI_DATA_WIDTH}] ${MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH}
-}
-
-proc update_MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH { MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH PARAM_VALUE.C_S00_AXI_ADDR_WIDTH } {
-	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.C_S00_AXI_ADDR_WIDTH}] ${MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH}
-}
-
 proc update_MODELPARAM_VALUE.im_bits_width { MODELPARAM_VALUE.im_bits_width PARAM_VALUE.im_bits_width } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.im_bits_width}] ${MODELPARAM_VALUE.im_bits_width}
+}
+
+proc update_MODELPARAM_VALUE.color_width { MODELPARAM_VALUE.color_width PARAM_VALUE.color_width } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.color_width}] ${MODELPARAM_VALUE.color_width}
+}
+
+proc update_MODELPARAM_VALUE.window_width { MODELPARAM_VALUE.window_width PARAM_VALUE.window_width } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.window_width}] ${MODELPARAM_VALUE.window_width}
+}
+
+proc update_MODELPARAM_VALUE.C_S_AXI_DATA_WIDTH { MODELPARAM_VALUE.C_S_AXI_DATA_WIDTH PARAM_VALUE.C_S_AXI_DATA_WIDTH } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.C_S_AXI_DATA_WIDTH}] ${MODELPARAM_VALUE.C_S_AXI_DATA_WIDTH}
+}
+
+proc update_MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH { MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH PARAM_VALUE.C_S_AXI_ADDR_WIDTH } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.C_S_AXI_ADDR_WIDTH}] ${MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH}
 }
 

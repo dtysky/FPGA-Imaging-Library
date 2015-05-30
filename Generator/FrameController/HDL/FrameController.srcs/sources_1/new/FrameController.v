@@ -48,7 +48,6 @@ My blog:
 	http://dtysky.moe
 
 */
-
 `timescale 1ns / 1ps
 
 
@@ -77,11 +76,9 @@ module FrameController(
 	parameter wr_mode = 0;
 	/*
 	::description
-	Color's bit width.
-	::range
-	1 - 12
+	Data bit width. 
 	*/
-	parameter color_width = 8;
+	parameter data_width = 8;
 	/*
 	::description
 	Width of image.
@@ -136,7 +133,7 @@ module FrameController(
 	::description
 	Input data, it must be synchronous with in_enable.
 	*/
-	input [color_width - 1 : 0] in_data;
+	input [data_width - 1 : 0] in_data;
 	/*
 	::description
 	Output data ready, in both two mode, it will be high while the out_data can be read.
@@ -146,7 +143,7 @@ module FrameController(
 	::description
 	Output data, it will be synchronous with out_ready.
 	*/
-	output[color_width - 1 : 0] out_data;
+	output[data_width - 1 : 0] out_data;
 	/*
 	::description
 	Address for ram.

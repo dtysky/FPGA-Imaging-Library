@@ -10,9 +10,9 @@
 		// User parameters ends
 		// Do not modify the parameters beyond this line
 		// Width of S_AXI data bus
-		parameter integer C_S_AXI_DATA_WIDTH	= 32,
+		parameter integer C_S00_AXI_DATA_WIDTH	= 32,
 		// Width of S_AXI address bus
-		parameter integer C_S_AXI_ADDR_WIDTH	= 7
+		parameter integer C_S00_AXI_ADDR_WIDTH	= 7
 	)
 	(
 		// Users to add ports here
@@ -74,6 +74,7 @@
 		.th_mode(th_mode),
 		.th1(th1),
 		.th2(th2),
+		.lm_gain(lm_gain),
 		.ct_scale(ct_scale),
 		.rank(rank),
 		.ed_mode(ed_mode),
@@ -88,9 +89,9 @@
 		.offset_y(offset_y),
 		.scale_x(scale_x),
 		.scale_y(scale_y),
-		.scale_x(sh_u),
-		.scale_y(sh_v),
-		.scale_x(angle),
+		.sh_u(sh_u),
+		.sh_v(sh_v),
+		.angle(angle),
 		.sels(sels),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),

@@ -5,7 +5,7 @@
 [My blog](http://dtysky.moe)  
 
 # Simulations
-**Simulations for this module just support RGB images !**  
+**Simulations for this module just support Gray-scale and 512x512 images !**  
 
 ## Steps for simulations
 **Warning: procedures for simulation depend on python 2.x and PIL(Python Imaging Library), please get them by your self.**  

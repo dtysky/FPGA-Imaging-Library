@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>dtysky.moe</spirit:vendor>
-  <spirit:library>Image</spirit:library>
+  <spirit:library>F-I-L</spirit:library>
   <spirit:name>ColorRGB16toRGB24</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:model>

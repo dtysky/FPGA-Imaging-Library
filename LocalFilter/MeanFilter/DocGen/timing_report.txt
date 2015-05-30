@@ -1,7 +1,7 @@
 Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
-| Date              : Wed May 20 18:31:59 2015
+| Date              : Wed May 27 17:35:43 2015
 | Host              : Dtysky running 64-bit major release  (build 9200)
 | Command           : report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -name timing_1 -file B:/Complex_Mind/FPGA-Imaging-Library/Master/LocalFilter/MeanFilter/DocGen/timing_report.txt
 | Design            : MeanFilter
@@ -481,7 +481,7 @@ Slack:                    inf
                                                                       r  pipe[0].genblk1[0].sum_reg[0][9]_i_1/CI
                          CARRY4 (Prop_carry4_CI_O[0])
                                                       0.146     2.085 r  pipe[0].genblk1[0].sum_reg[0][9]_i_1/O[0]
-                         net (fo=1, unplaced)         0.000     2.085    p_9_out[8]
+                         net (fo=1, unplaced)         0.000     2.085    p_3_out[8]
                          FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][8]/D
   -------------------------------------------------------------------    -------------------
 
@@ -511,7 +511,7 @@ Slack:                    inf
                                                                       r  pipe[0].genblk1[0].sum_reg[0][9]_i_1/CI
                          CARRY4 (Prop_carry4_CI_CO[1])
                                                       0.108     2.047 r  pipe[0].genblk1[0].sum_reg[0][9]_i_1/CO[1]
-                         net (fo=1, unplaced)         0.000     2.047    p_9_out[9]
+                         net (fo=1, unplaced)         0.000     2.047    p_3_out[9]
                          FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][9]/D
   -------------------------------------------------------------------    -------------------
 
@@ -541,7 +541,7 @@ Slack:                    inf
                                                                       r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/CI
                          CARRY4 (Prop_carry4_CI_O[1])
                                                       0.220     1.956 r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/O[1]
-                         net (fo=1, unplaced)         0.000     1.956    p_9_out[5]
+                         net (fo=1, unplaced)         0.000     1.956    p_3_out[5]
                          FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][5]/D
   -------------------------------------------------------------------    -------------------
 
@@ -571,7 +571,7 @@ Slack:                    inf
                                                                       r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/CI
                          CARRY4 (Prop_carry4_CI_O[3])
                                                       0.187     1.923 r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/O[3]
-                         net (fo=1, unplaced)         0.000     1.923    p_9_out[7]
+                         net (fo=1, unplaced)         0.000     1.923    p_3_out[7]
                          FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][7]/D
   -------------------------------------------------------------------    -------------------
 
@@ -601,7 +601,7 @@ Slack:                    inf
                                                                       r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/CI
                          CARRY4 (Prop_carry4_CI_O[0])
                                                       0.146     1.882 r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/O[0]
-                         net (fo=1, unplaced)         0.000     1.882    p_9_out[4]
+                         net (fo=1, unplaced)         0.000     1.882    p_3_out[4]
                          FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][4]/D
   -------------------------------------------------------------------    -------------------
 
@@ -631,7 +631,7 @@ Slack:                    inf
                                                                       r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/CI
                          CARRY4 (Prop_carry4_CI_O[2])
                                                       0.144     1.880 r  pipe[0].genblk1[0].sum_reg[0][7]_i_1/O[2]
-                         net (fo=1, unplaced)         0.000     1.880    p_9_out[6]
+                         net (fo=1, unplaced)         0.000     1.880    p_3_out[6]
                          FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][6]/D
   -------------------------------------------------------------------    -------------------
 
@@ -675,7 +675,7 @@ Slack:                    inf
                                                                       r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/DI[1]
                          CARRY4 (Prop_carry4_DI[1]_O[3])
                                                       0.480     1.708 r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/O[3]
-                         net (fo=1, unplaced)         0.000     1.708    p_9_out[3]
+                         net (fo=1, unplaced)         0.000     1.708    p_3_out[3]
                          FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][3]/D
   -------------------------------------------------------------------    -------------------
 
@@ -698,7 +698,7 @@ Slack:                    inf
                                                                       r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/DI[1]
                          CARRY4 (Prop_carry4_DI[1]_O[2])
                                                       0.446     1.674 r  pipe[0].genblk1[0].sum_reg[0][3]_i_1/O[2]
-                         net (fo=1, unplaced)         0.000     1.674    p_9_out[2]
+                         net (fo=1, unplaced)         0.000     1.674    p_3_out[2]
                          FDRE                                         r  pipe[0].genblk1[0].sum_reg[0][2]/D
   -------------------------------------------------------------------    -------------------
 
@@ -742,7 +742,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
                          FDRE                         0.000     0.000 r  pipe[2].genblk1[0].sum_reg[0][11]/C
                          FDRE (Prop_fdre_C_Q)         0.100     0.100 r  pipe[2].genblk1[0].sum_reg[0][11]/Q
-                         net (fo=1, unplaced)         0.125     0.225    reg_out_data210_in[7]
+                         net (fo=1, unplaced)         0.125     0.225    reg_out_data24_in[7]
                                                                       r  reg_out_data[7]_i_4/I1
                          LUT2 (Prop_lut2_I1_O)        0.028     0.253 r  reg_out_data[7]_i_4/O
                          net (fo=1, unplaced)         0.000     0.253    n_0_reg_out_data[7]_i_4
@@ -821,7 +821,7 @@ Slack:                    inf
                                                                       r  pipe[1].genblk1[1].sum_reg[1][3]_i_1/S[3]
                          CARRY4 (Prop_carry4_S[3]_O[3])
                                                       0.049     0.305 r  pipe[1].genblk1[1].sum_reg[1][3]_i_1/O[3]
-                         net (fo=1, unplaced)         0.000     0.305    n_4_pipe[1].genblk1[1].sum_reg[1][3]_i_1
+                         net (fo=1, unplaced)         0.000     0.305    p_0_in[3]
                          FDRE                                         r  pipe[1].genblk1[1].sum_reg[1][3]/D
   -------------------------------------------------------------------    -------------------
 
@@ -845,7 +845,7 @@ Slack:                    inf
                                                                       r  pipe[1].genblk1[1].sum_reg[1][7]_i_1/S[3]
                          CARRY4 (Prop_carry4_S[3]_O[3])
                                                       0.049     0.305 r  pipe[1].genblk1[1].sum_reg[1][7]_i_1/O[3]
-                         net (fo=1, unplaced)         0.000     0.305    n_4_pipe[1].genblk1[1].sum_reg[1][7]_i_1
+                         net (fo=1, unplaced)         0.000     0.305    p_0_in[7]
                          FDRE                                         r  pipe[1].genblk1[1].sum_reg[1][7]/D
   -------------------------------------------------------------------    -------------------
 
@@ -886,7 +886,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
                          FDRE                         0.000     0.000 r  pipe[2].genblk1[0].sum_reg[0][7]/C
                          FDRE (Prop_fdre_C_Q)         0.100     0.100 r  pipe[2].genblk1[0].sum_reg[0][7]/Q
-                         net (fo=3, unplaced)         0.133     0.233    reg_out_data210_in[3]
+                         net (fo=3, unplaced)         0.133     0.233    reg_out_data24_in[3]
                                                                       r  reg_out_data[3]_i_5/I3
                          LUT4 (Prop_lut4_I3_O)        0.028     0.261 r  reg_out_data[3]_i_5/O
                          net (fo=1, unplaced)         0.000     0.261    n_0_reg_out_data[3]_i_5
@@ -950,7 +950,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
                          FDRE                         0.000     0.000 r  pipe[2].genblk1[0].sum_reg[0][9]/C
                          FDRE (Prop_fdre_C_Q)         0.100     0.100 f  pipe[2].genblk1[0].sum_reg[0][9]/Q
-                         net (fo=3, unplaced)         0.133     0.233    reg_out_data210_in[5]
+                         net (fo=3, unplaced)         0.133     0.233    reg_out_data24_in[5]
                                                                       f  reg_out_data[7]_i_3/I0
                          LUT1 (Prop_lut1_I0_O)        0.028     0.261 r  reg_out_data[7]_i_3/O
                          net (fo=1, unplaced)         0.000     0.261    n_0_reg_out_data[7]_i_3

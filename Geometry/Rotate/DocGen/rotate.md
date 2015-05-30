@@ -235,12 +235,12 @@ Rotate
 <th>Description</th>
 </tr>
 <tr>
-<td>sina)</td>
+<td>Sin</td>
 <td>SinLUT</td>
 <td>Getting sine of angle.</td>
 </tr>
 <tr>
-<td>cosa)</td>
+<td>Cos</td>
 <td>CosLUT</td>
 <td>Getting cosine of angle.</td>
 </tr>

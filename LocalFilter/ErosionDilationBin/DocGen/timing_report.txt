@@ -1,7 +1,7 @@
 Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
-| Date              : Mon May 25 01:51:11 2015
+| Date              : Mon May 25 15:19:51 2015
 | Host              : Dtysky running 64-bit major release  (build 9200)
 | Command           : report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -name timing_1 -file B:/Complex_Mind/FPGA-Imaging-Library/Master/LocalFilter/ErosionDilationBin/DocGen/timing_report.txt
 | Design            : ErosionDilationBin
@@ -64,18 +64,6 @@ pipe[1].genblk1[0].res_reg[0]/C
 pipe[1].genblk1[1].res_reg[1]/C
 pipe[2].genblk1[0].res_reg[0]/C
 
- There are 9 register/latch pins with no clock driven by root clock pin: in_enable (HIGH)
-
-genblk1[0].reg_in_data_reg[0]/C
-genblk1[1].reg_in_data_reg[1]/C
-genblk1[2].reg_in_data_reg[2]/C
-genblk1[3].reg_in_data_reg[3]/C
-genblk1[4].reg_in_data_reg[4]/C
-genblk1[5].reg_in_data_reg[5]/C
-genblk1[6].reg_in_data_reg[6]/C
-genblk1[7].reg_in_data_reg[7]/C
-genblk1[8].reg_in_data_reg[8]/C
-
 
 2. checking constant_clock
 --------------------------
@@ -89,21 +77,12 @@ genblk1[8].reg_in_data_reg[8]/C
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 20 pins that are not constrained for maximum delay. (HIGH)
+ There are 11 pins that are not constrained for maximum delay. (HIGH)
 
 con_enable_reg[0]/CLR
 con_enable_reg[0]/D
 con_enable_reg[1]/CLR
 con_enable_reg[1]/D
-genblk1[0].reg_in_data_reg[0]/D
-genblk1[1].reg_in_data_reg[1]/D
-genblk1[2].reg_in_data_reg[2]/D
-genblk1[3].reg_in_data_reg[3]/D
-genblk1[4].reg_in_data_reg[4]/D
-genblk1[5].reg_in_data_reg[5]/D
-genblk1[6].reg_in_data_reg[6]/D
-genblk1[7].reg_in_data_reg[7]/D
-genblk1[8].reg_in_data_reg[8]/D
 pipe[0].genblk1[0].res_reg[0]/D
 pipe[0].genblk1[1].res_reg[1]/D
 pipe[0].genblk1[2].res_reg[2]/D
@@ -200,7 +179,7 @@ out_ready
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-        inf        0.000                      0                   22          inf        0.000                      0                   22           NA           NA                      NA                    NA  
+        inf        0.000                      0                   13          inf        0.000                      0                   13           NA           NA                      NA                    NA  
 
 
 There are no user specified timing constraints.
@@ -269,8 +248,8 @@ Path Group:  (none)
 From Clock:  
   To Clock:  
 
-Max Delay            22 Endpoints
-Min Delay            22 Endpoints
+Max Delay            13 Endpoints
+Min Delay            13 Endpoints
 --------------------------------------------------------------------------------------
 
 
@@ -357,25 +336,24 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 genblk1[1].reg_in_data_reg[1]/C
-                            (rising edge-triggered cell FDRE)
+  Source:                 template[1]
+                            (input port)
   Destination:            pipe[0].genblk1[0].res_reg[0]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        1.675ns  (logic 0.915ns (54.627%)  route 0.760ns (45.373%))
-  Logic Levels:           3  (FDRE=1 LUT4=1 LUT5=1)
+  Data Path Delay:        1.670ns  (logic 0.248ns (14.850%)  route 1.422ns (85.150%))
+  Logic Levels:           2  (LUT4=1 LUT5=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         FDRE                         0.000     0.000 r  genblk1[1].reg_in_data_reg[1]/C
-                         FDRE (Prop_fdre_C_Q)         0.496     0.496 r  genblk1[1].reg_in_data_reg[1]/Q
-                         net (fo=1, unplaced)         0.311     0.807    pix11_in
-                                                                      r  pipe[0].genblk1[0].res[0]_i_2/I3
-                         LUT5 (Prop_lut5_I3_O)        0.295     1.102 f  pipe[0].genblk1[0].res[0]_i_2/O
-                         net (fo=1, unplaced)         0.449     1.551    n_0_pipe[0].genblk1[0].res[0]_i_2
+                                                      0.000     0.000 f  template[1]
+                         net (fo=0)                   0.973     0.973    template[1]
+                                                                      f  pipe[0].genblk1[0].res[0]_i_2/I4
+                         LUT5 (Prop_lut5_I4_O)        0.124     1.097 f  pipe[0].genblk1[0].res[0]_i_2/O
+                         net (fo=1, unplaced)         0.449     1.546    n_0_pipe[0].genblk1[0].res[0]_i_2
                                                                       f  pipe[0].genblk1[0].res[0]_i_1/I3
-                         LUT4 (Prop_lut4_I3_O)        0.124     1.675 r  pipe[0].genblk1[0].res[0]_i_1/O
-                         net (fo=1, unplaced)         0.000     1.675    p_11_out
+                         LUT4 (Prop_lut4_I3_O)        0.124     1.670 r  pipe[0].genblk1[0].res[0]_i_1/O
+                         net (fo=1, unplaced)         0.000     1.670    p_11_out
                          FDRE                                         r  pipe[0].genblk1[0].res_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
@@ -486,66 +464,6 @@ Slack:                    inf
 Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 genblk1[2].reg_in_data_reg[2]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            pipe[0].genblk1[1].res_reg[1]/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.387ns  (logic 0.256ns (66.134%)  route 0.131ns (33.866%))
-  Logic Levels:           2  (FDRE=1 LUT5=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         FDRE                         0.000     0.000 r  genblk1[2].reg_in_data_reg[2]/C
-                         FDRE (Prop_fdre_C_Q)         0.158     0.158 r  genblk1[2].reg_in_data_reg[2]/Q
-                         net (fo=1, unplaced)         0.131     0.289    n_0_genblk1[2].reg_in_data_reg[2]
-                                                                      r  pipe[0].genblk1[1].res[1]_i_1/I3
-                         LUT5 (Prop_lut5_I3_O)        0.098     0.387 r  pipe[0].genblk1[1].res[1]_i_1/O
-                         net (fo=1, unplaced)         0.000     0.387    p_10_out
-                         FDRE                                         r  pipe[0].genblk1[1].res_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 genblk1[4].reg_in_data_reg[4]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            pipe[0].genblk1[2].res_reg[2]/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.387ns  (logic 0.256ns (66.134%)  route 0.131ns (33.866%))
-  Logic Levels:           2  (FDRE=1 LUT5=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         FDRE                         0.000     0.000 r  genblk1[4].reg_in_data_reg[4]/C
-                         FDRE (Prop_fdre_C_Q)         0.158     0.158 r  genblk1[4].reg_in_data_reg[4]/Q
-                         net (fo=1, unplaced)         0.131     0.289    n_0_genblk1[4].reg_in_data_reg[4]
-                                                                      r  pipe[0].genblk1[2].res[2]_i_1/I3
-                         LUT5 (Prop_lut5_I3_O)        0.098     0.387 r  pipe[0].genblk1[2].res[2]_i_1/O
-                         net (fo=1, unplaced)         0.000     0.387    p_9_out
-                         FDRE                                         r  pipe[0].genblk1[2].res_reg[2]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 genblk1[6].reg_in_data_reg[6]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            pipe[0].genblk1[3].res_reg[3]/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.387ns  (logic 0.256ns (66.134%)  route 0.131ns (33.866%))
-  Logic Levels:           2  (FDRE=1 LUT5=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         FDRE                         0.000     0.000 r  genblk1[6].reg_in_data_reg[6]/C
-                         FDRE (Prop_fdre_C_Q)         0.158     0.158 r  genblk1[6].reg_in_data_reg[6]/Q
-                         net (fo=1, unplaced)         0.131     0.289    n_0_genblk1[6].reg_in_data_reg[6]
-                                                                      r  pipe[0].genblk1[3].res[3]_i_1/I3
-                         LUT5 (Prop_lut5_I3_O)        0.098     0.387 r  pipe[0].genblk1[3].res[3]_i_1/O
-                         net (fo=1, unplaced)         0.000     0.387    p_8_out
-                         FDRE                                         r  pipe[0].genblk1[3].res_reg[3]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
   Source:                 pipe[0].genblk1[1].res_reg[1]/C
                             (rising edge-triggered cell FDRE)
   Destination:            pipe[1].genblk1[0].res_reg[0]/D
@@ -626,51 +544,118 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 in_data[0]
+  Source:                 in_data[8]
                             (input port)
-  Destination:            genblk1[0].reg_in_data_reg[0]/D
+  Destination:            pipe[0].genblk1[0].res_reg[0]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
-  Logic Levels:           0  
+  Data Path Delay:        0.455ns  (logic 0.045ns (9.887%)  route 0.410ns (90.113%))
+  Logic Levels:           1  (LUT4=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 r  in_data[0]
-                         net (fo=0)                   0.410     0.410    in_data[0]
-                         FDRE                                         r  genblk1[0].reg_in_data_reg[0]/D
+                                                      0.000     0.000 r  in_data[8]
+                         net (fo=0)                   0.410     0.410    in_data[8]
+                                                                      r  pipe[0].genblk1[0].res[0]_i_1/I2
+                         LUT4 (Prop_lut4_I2_O)        0.045     0.455 r  pipe[0].genblk1[0].res[0]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.455    p_11_out
+                         FDRE                                         r  pipe[0].genblk1[0].res_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 in_data[1]
+  Source:                 template[2]
                             (input port)
-  Destination:            genblk1[1].reg_in_data_reg[1]/D
+  Destination:            pipe[0].genblk1[1].res_reg[1]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
-  Logic Levels:           0  
+  Data Path Delay:        0.455ns  (logic 0.045ns (9.887%)  route 0.410ns (90.113%))
+  Logic Levels:           1  (LUT5=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 r  in_data[1]
-                         net (fo=0)                   0.410     0.410    in_data[1]
-                         FDRE                                         r  genblk1[1].reg_in_data_reg[1]/D
+                                                      0.000     0.000 f  template[2]
+                         net (fo=0)                   0.410     0.410    template[2]
+                                                                      f  pipe[0].genblk1[1].res[1]_i_1/I4
+                         LUT5 (Prop_lut5_I4_O)        0.045     0.455 r  pipe[0].genblk1[1].res[1]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.455    p_10_out
+                         FDRE                                         r  pipe[0].genblk1[1].res_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 in_data[2]
+  Source:                 template[4]
                             (input port)
-  Destination:            genblk1[2].reg_in_data_reg[2]/D
+  Destination:            pipe[0].genblk1[2].res_reg[2]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
-  Logic Levels:           0  
+  Data Path Delay:        0.455ns  (logic 0.045ns (9.887%)  route 0.410ns (90.113%))
+  Logic Levels:           1  (LUT5=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 r  in_data[2]
-                         net (fo=0)                   0.410     0.410    in_data[2]
-                         FDRE                                         r  genblk1[2].reg_in_data_reg[2]/D
+                                                      0.000     0.000 f  template[4]
+                         net (fo=0)                   0.410     0.410    template[4]
+                                                                      f  pipe[0].genblk1[2].res[2]_i_1/I4
+                         LUT5 (Prop_lut5_I4_O)        0.045     0.455 r  pipe[0].genblk1[2].res[2]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.455    p_9_out
+                         FDRE                                         r  pipe[0].genblk1[2].res_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 template[6]
+                            (input port)
+  Destination:            pipe[0].genblk1[3].res_reg[3]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.455ns  (logic 0.045ns (9.887%)  route 0.410ns (90.113%))
+  Logic Levels:           1  (LUT5=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 f  template[6]
+                         net (fo=0)                   0.410     0.410    template[6]
+                                                                      f  pipe[0].genblk1[3].res[3]_i_1/I4
+                         LUT5 (Prop_lut5_I4_O)        0.045     0.455 r  pipe[0].genblk1[3].res[3]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.455    p_8_out
+                         FDRE                                         r  pipe[0].genblk1[3].res_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 con_enable_reg[0]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            con_enable_reg[1]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.467ns  (logic 0.259ns (55.433%)  route 0.208ns (44.567%))
+  Logic Levels:           2  (FDCE=1 LUT2=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDCE                         0.000     0.000 r  con_enable_reg[0]/C
+                         FDCE (Prop_fdce_C_Q)         0.158     0.158 r  con_enable_reg[0]/Q
+                         net (fo=4, unplaced)         0.208     0.366    con_enable[0]
+                                                                      r  con_enable[1]_i_1/I1
+                         LUT2 (Prop_lut2_I1_O)        0.101     0.467 r  con_enable[1]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.467    n_0_con_enable[1]_i_1
+                         FDCE                                         r  con_enable_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 rst_n
+                            (input port)
+  Destination:            con_enable_reg[0]/CLR
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.787ns  (logic 0.045ns (5.716%)  route 0.742ns (94.284%))
+  Logic Levels:           1  (LUT2=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  rst_n
+                         net (fo=0)                   0.410     0.410    rst_n
+                                                                      r  con_enable[1]_i_2/I1
+                         LUT2 (Prop_lut2_I1_O)        0.045     0.455 f  con_enable[1]_i_2/O
+                         net (fo=2, unplaced)         0.332     0.787    con_enable0
+                         FDCE                                         f  con_enable_reg[0]/CLR
   -------------------------------------------------------------------    -------------------
 
 

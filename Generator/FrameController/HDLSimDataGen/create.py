@@ -30,11 +30,16 @@ def color_format(mode, color):
 	return res
 
 def create_dat(im, conf):
-	data_src = im.getdata()
+	mode = im.mode
 	xsize, ysize = im.size
+	if mode not in ['L']:
+		show_error('Simulations for this module just support Gray-scale images, check your images !')
+	if [xsize, ysize] != [512, 512]:
+		show_error('Simulations for this module just support 512x512 images, check your images !')
+	data_src = im.getdata()
 	data_res = ''
 	for color in data_src:
-		data_res += color_format(im.mode, color) + '\n'
+		data_res += color_format(mode, color) + '\n'
 	return data_res[:-1]
 
 FileAll = []

@@ -72,10 +72,3 @@ proc update_MODELPARAM_VALUE.color_width { MODELPARAM_VALUE.color_width PARAM_VA
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.color_width}] ${MODELPARAM_VALUE.color_width}
 }
-
-
-
-
-}
-
-

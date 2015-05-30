@@ -184,7 +184,7 @@ module FrameController2(
 		::description
 		Multiplier for Unsigned 12bits x Unsigned 12bits, used for creating address for frame. 
 		You can configure the multiplier by yourself, then change the "mul_delay". 
-		All Multiplier's pipeline stage must be same, you can not change the ports' configurations!
+		You can not change the ports' configurations!
 		*/
 		Multiplier12x12FR2 Mul(.CLK(clk), .A(mul_a), .B(mul_b), .SCLR(~rst_n), .P(mul_p));
 		for (i = 0; i < mul_delay; i = i + 1) begin : conut_buffer

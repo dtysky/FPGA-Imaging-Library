@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <spirit:vendor>dtysky</spirit:vendor>
+  <spirit:vendor>dtysky.moe</spirit:vendor>
   <spirit:library>User</spirit:library>
   <spirit:name>DataWidthConvert</spirit:name>
   <spirit:version>1.0</spirit:version>
@@ -18,7 +18,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>2735cf52</spirit:value>
+            <spirit:value>1eaf10da</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -34,7 +34,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>2735cf52</spirit:value>
+            <spirit:value>1eaf10da</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -108,7 +108,7 @@
       <spirit:file>
         <spirit:name>srcs/DataWidthConvert.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_2735cf52</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_1eaf10da</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -148,28 +148,44 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">virtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">qvirtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">kintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">kintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">qkintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">qkintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">artix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">artix7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">aartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">qartix7</xilinx:family>
         <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">qzynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">azynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">virtexu</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">kintexu</xilinx:family>
       </xilinx:supportedFamilies>
       <xilinx:taxonomies>
         <xilinx:taxonomy>/BaseIP</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>DataWidthConvert_v1_0</xilinx:displayName>
-      <xilinx:vendorURL>http://dtysky.github.io/</xilinx:vendorURL>
+      <xilinx:vendorURL>http://dtysky.moe</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>xilinx.com:ip:DataWidthConvert:1.0</xilinx:canUpgradeFrom>
+        <xilinx:canUpgradeFrom>dtysky:User:DataWidthConvert:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2015-04-16T07:39:39Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2015-05-30T07:34:45Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="nopcore"/>
         <xilinx:tag xilinx:name="xilinx.com:ip:DataWidthConvert:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/connect/datawidthconvert</xilinx:tag>
         <xilinx:tag xilinx:name="dtysky:ip:DataWidthConvert:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/connect/datawidthconvert</xilinx:tag>
-        <xilinx:tag xilinx:name="dtysky:User:DataWidthConvert:1.0_ARCHIVE_LOCATION">b:/complex_mind/xup_image/sub_module/connect/datawidthconvert</xilinx:tag>
+        <xilinx:tag xilinx:name="dtysky:User:DataWidthConvert:1.0_ARCHIVE_LOCATION">B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard</xilinx:tag>
+        <xilinx:tag xilinx:name="dtysky.moe:User:DataWidthConvert:1.0_ARCHIVE_LOCATION">B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a5e3905e"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="282bd053"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="535e76bc"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="68bb2c65"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="ffda13ef"/>
