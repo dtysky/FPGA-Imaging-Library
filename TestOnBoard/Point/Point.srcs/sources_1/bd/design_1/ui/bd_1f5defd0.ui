@@ -1,0 +1,104 @@
+{
+   guistr: "# # String gsaved with Nlview 6.4.10  2014-10-02 bk=1.3207 VDI=35 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port vsync -pg 1 -y 770 -defaultsOSRD
+preplace port vga_hsync -pg 1 -y 510 -defaultsOSRD
+preplace port xclk -pg 1 -y 320 -defaultsOSRD
+preplace port clk_in1 -pg 1 -y 570 -defaultsOSRD
+preplace port I2C_SCLK -pg 1 -y 380 -defaultsOSRD
+preplace port href -pg 1 -y 790 -defaultsOSRD
+preplace port I2C_SDAT -pg 1 -y 400 -defaultsOSRD
+preplace port pclk -pg 1 -y 750 -defaultsOSRD
+preplace port vga_vsync -pg 1 -y 530 -defaultsOSRD
+preplace portBus vga_green -pg 1 -y 470 -defaultsOSRD
+preplace portBus vga_red -pg 1 -y 450 -defaultsOSRD
+preplace portBus d -pg 1 -y 810 -defaultsOSRD
+preplace portBus vga_blue -pg 1 -y 490 -defaultsOSRD
+preplace inst ColorBin2Channels_0 -pg 1 -lvl 5 -y 610 -defaultsOSRD
+preplace inst DataWidthConvert_0 -pg 1 -lvl 6 -y 420 -defaultsOSRD
+preplace inst ColorGray2Channels_0 -pg 1 -lvl 9 -y 550 -defaultsOSRD
+preplace inst ColorReversal_0 -pg 1 -lvl 5 -y 70 -defaultsOSRD
+preplace inst VGA640x480_0 -pg 1 -lvl 10 -y 500 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -y 520 -defaultsOSRD
+preplace inst ColorRGB24toVGA_0 -pg 1 -lvl 9 -y 670 -defaultsOSRD
+preplace inst ContrastTransform_0 -pg 1 -lvl 5 -y 1050 -defaultsOSRD
+preplace inst Mux4_0 -pg 1 -lvl 7 -y 300 -defaultsOSRD
+preplace inst FrameController_0 -pg 1 -lvl 4 -y 810 -defaultsOSRD
+preplace inst ColorRGB16toRGB24_0 -pg 1 -lvl 1 -y 990 -defaultsOSRD
+preplace inst Mux4_1 -pg 1 -lvl 7 -y 680 -defaultsOSRD
+preplace inst FrameController_1 -pg 1 -lvl 8 -y 360 -defaultsOSRD
+preplace inst Graying_0 -pg 1 -lvl 2 -y 960 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 3 -y 560 -defaultsOSRD
+preplace inst BoardInit_AXI_0 -pg 1 -lvl 4 -y 430 -defaultsOSRD
+preplace inst DataDelay_0 -pg 1 -lvl 2 -y 840 -defaultsOSRD
+preplace inst Threshold_0 -pg 1 -lvl 5 -y 390 -defaultsOSRD
+preplace inst LightnessTransform_0 -pg 1 -lvl 5 -y 730 -defaultsOSRD
+preplace inst Bram8x320x240_0 -pg 1 -lvl 3 -y 830 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 570 -defaultsOSRD
+preplace inst DataDelay_1 -pg 1 -lvl 2 -y 690 -defaultsOSRD
+preplace inst Bram8x320x240_1 -pg 1 -lvl 8 -y 640 -defaultsOSRD
+preplace inst IICctrl_0 -pg 1 -lvl 1 -y 390 -defaultsOSRD
+preplace inst camCap_0 -pg 1 -lvl 1 -y 780 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 2 -y 310 -defaultsOSRD
+preplace netloc BoardInit_AXI_0_lm_gain 1 4 1 1580
+preplace netloc ColorGray2Channels_0_channels 1 8 2 2710 620 2930
+preplace netloc Bram8x320x240_1_doutb 1 8 1 2670
+preplace netloc FrameController_1_ram_addr 1 7 2 2410 530 2660
+preplace netloc ColorReversal_0_out_ready 1 5 2 1950 280 NJ
+preplace netloc clk_wiz_0_locked 1 1 3 370 420 NJ 440 1260
+preplace netloc camCap_0_wclk 1 1 2 380 770 910
+preplace netloc DataWidthConvert_0_o 1 6 1 2170
+preplace netloc BoardInit_AXI_0_rst_all_n 1 0 10 100 450 340 780 NJ 730 1280 720 1640 530 NJ 530 NJ 530 2350 440 NJ 370 2940
+preplace netloc FrameController_1_out_ready 1 7 2 2420 540 2680
+preplace netloc ContrastTransform_0_out_ready 1 5 2 NJ 1040 2190
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 1 940
+preplace netloc clk_in1_1 1 0 1 N
+preplace netloc FrameController_1_out_data 1 7 2 2400 520 2670
+preplace netloc FrameController_0_out_ready 1 4 1 1600
+preplace netloc href_1 1 0 1 N
+preplace netloc IICctrl_0_I2C_SCLK 1 1 10 370 390 NJ 150 NJ 150 NJ 500 NJ 360 NJ 450 NJ 450 NJ 380 NJ 380 NJ
+preplace netloc Threshold_0_out_data 1 4 2 1670 560 1910
+preplace netloc ColorReversal_0_out_data 1 5 2 1940 660 NJ
+preplace netloc ColorRGB16toRGB24_0_rgb24 1 1 1 N
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 380 380 890
+preplace netloc camCap_0_addr 1 1 1 330
+preplace netloc camCap_0_we 1 1 1 370
+preplace netloc BoardInit_AXI_0_sels 1 4 2 NJ 540 1950
+preplace netloc Mux4_1_o 1 7 1 2380
+preplace netloc LightnessTransform_0_out_data 1 5 2 1940 700 NJ
+preplace netloc FrameController_0_ram_addr 1 2 3 950 720 NJ 730 1560
+preplace netloc Graying_0_out_data 1 2 1 940
+preplace netloc ContrastTransform_0_out_data 1 5 2 1950 720 NJ
+preplace netloc Threshold_0_out_ready 1 5 2 1910 300 NJ
+preplace netloc proc_sys_reset_0_interconnect_aresetn 1 2 1 N
+preplace netloc Bram8x320x240_0_doutb 1 3 1 1230
+preplace netloc VGA640x480_0_vga_blue 1 10 1 N
+preplace netloc clk_wiz_0_clk_out1 1 1 7 NJ 750 890 930 1260 710 1630 520 NJ 520 NJ 520 2370
+preplace netloc Mux4_0_o 1 7 1 2360
+preplace netloc camCap_0_dout 1 0 2 100 700 320
+preplace netloc DataDelay_1_out_data 1 2 1 920
+preplace netloc axi_interconnect_0_M00_AXI 1 3 1 1240
+preplace netloc d_1 1 0 1 N
+preplace netloc pclk_1 1 0 1 N
+preplace netloc clk_wiz_0_clk_out2 1 0 11 100 330 320 410 NJ 430 NJ 700 NJ 550 NJ 550 NJ 550 2390 500 NJ 500 2930 320 NJ
+preplace netloc VGA640x480_0_frame_addr 1 7 4 2420 740 NJ 610 NJ 610 3200
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 2 2 950 410 1280
+preplace netloc BoardInit_AXI_0_ct_scale 1 4 1 1570
+preplace netloc Net 1 1 10 N 400 NJ 400 NJ 160 NJ 510 NJ 370 NJ 460 NJ 460 NJ 400 NJ 400 NJ
+preplace netloc VGA640x480_0_vga_vsync 1 10 1 N
+preplace netloc clk_wiz_0_clk_out3 1 1 3 350 430 910 420 NJ
+preplace netloc BoardInit_AXI_0_th1 1 4 1 1650
+preplace netloc BoardInit_AXI_0_th_mode 1 4 1 1670
+preplace netloc VGA640x480_0_vga_red 1 10 1 N
+preplace netloc ColorBin2Channels_0_channels 1 5 2 1920 680 NJ
+preplace netloc FrameController_0_out_data 1 4 1 1610
+preplace netloc BoardInit_AXI_0_th2 1 4 1 1590
+preplace netloc vsync_1 1 0 1 N
+preplace netloc VGA640x480_0_vga_hsync 1 10 1 N
+preplace netloc VGA640x480_0_vga_green 1 10 1 N
+preplace netloc ColorRGB24toVGA_0_vga 1 9 1 2940
+preplace netloc LightnessTransform_0_out_ready 1 5 2 NJ 730 2160
+preplace netloc DataDelay_0_out_data 1 2 1 900
+levelinfo -pg 1 80 210 720 1090 1420 1790 2050 2270 2540 2820 3070 3220
+",
+}

@@ -1,0 +1,8 @@
+*.cache/
+*.ioplanning/
+*.runs/
+*.hw/
+Point.srcs/sources_1/ipshared/
+Point.srcs/sources_1/bd/design_1/ip/
+Point.sdk/*
+!Point.sdk/Point/
