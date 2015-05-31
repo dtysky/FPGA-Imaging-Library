@@ -2,46 +2,10 @@
 # Vivado v2014.4 (64-bit)
 # SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
 # IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Sun May 31 14:50:34 2015
-# Process ID: 4336
+# Start of session at: Sun May 31 16:12:12 2015
+# Process ID: 18220
 # Log file: B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/vivado.log
 # Journal file: B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.xpr
-open_bd_design {B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd}
-startgroup
-set_property -dict [list CONFIG.ram_read_latency {1}] [get_bd_cells FrameController2_0]
-endgroup
-startgroup
-set_property -dict [list CONFIG.ram_read_latency {1}] [get_bd_cells FrameController_0]
-endgroup
-startgroup
-set_property -dict [list CONFIG.row_init {0}] [get_bd_cells FrameController_1]
-endgroup
-startgroup
-set_property -dict [list CONFIG.ram_read_latency {2}] [get_bd_cells FrameController2_0]
-endgroup
-delete_bd_objs [get_bd_nets FrameController2_0_out_ready]
-delete_bd_objs [get_bd_nets FrameController2_0_out_data]
-connect_bd_net [get_bd_pins FrameController2_0/out_ready] [get_bd_pins Scale_0/frame_in_ready]
-connect_bd_net -net [get_bd_nets FrameController2_0_out_ready] [get_bd_pins Shear_0/frame_in_ready] [get_bd_pins FrameController2_0/out_ready]
-connect_bd_net -net [get_bd_nets FrameController2_0_out_ready] [get_bd_pins Rotate_0/frame_in_ready] [get_bd_pins FrameController2_0/out_ready]
-connect_bd_net [get_bd_pins FrameController2_0/out_data] [get_bd_pins Scale_0/frame_in_data]
-connect_bd_net -net [get_bd_nets FrameController2_0_out_data] [get_bd_pins Shear_0/frame_in_data] [get_bd_pins FrameController2_0/out_data]
-connect_bd_net -net [get_bd_nets FrameController2_0_out_data] [get_bd_pins Rotate_0/frame_in_data] [get_bd_pins FrameController2_0/out_data]
-set_property location {7 2561 608} [get_bd_cells FrameController_0]
-startgroup
-set_property -dict [list CONFIG.ram_read_latency {2}] [get_bd_cells FrameController_0]
-endgroup
-startgroup
-set_property -dict [list CONFIG.ram_read_latency {1}] [get_bd_cells FrameController_0]
-endgroup
-startgroup
-set_property -dict [list CONFIG.ram_read_latency {1}] [get_bd_cells FrameController2_0]
-endgroup
-save_bd_design
-generate_target all [get_files  B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream
-wait_on_run impl_1

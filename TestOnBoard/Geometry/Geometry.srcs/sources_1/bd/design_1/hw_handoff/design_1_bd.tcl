@@ -207,7 +207,7 @@ proc create_root_design { parentCell } {
 
   # Create instance: FrameController_0, and set properties
   set FrameController_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:FrameController:1.0 FrameController_0 ]
-  set_property -dict [ list CONFIG.ram_read_latency {1} CONFIG.wr_mode {1}  ] $FrameController_0
+  set_property -dict [ list CONFIG.ram_read_latency {2} CONFIG.wr_mode {1}  ] $FrameController_0
 
   # Create instance: FrameController_1, and set properties
   set FrameController_1 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:FrameController:1.0 FrameController_1 ]
@@ -278,12 +278,15 @@ proc create_root_design { parentCell } {
 
   # Create instance: Rotate_0, and set properties
   set Rotate_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:Rotate:1.0 Rotate_0 ]
+  set_property -dict [ list CONFIG.ram_RL {6}  ] $Rotate_0
 
   # Create instance: Scale_0, and set properties
   set Scale_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:Scale:1.0 Scale_0 ]
+  set_property -dict [ list CONFIG.ram_RL {6}  ] $Scale_0
 
   # Create instance: Shear_0, and set properties
   set Shear_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:Shear:1.0 Shear_0 ]
+  set_property -dict [ list CONFIG.ram_RL {6}  ] $Shear_0
 
   # Create instance: VGA640x480_0, and set properties
   set VGA640x480_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:VGA640x480:1.0 VGA640x480_0 ]

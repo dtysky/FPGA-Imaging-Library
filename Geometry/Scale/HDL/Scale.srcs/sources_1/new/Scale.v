@@ -131,7 +131,7 @@ module Scale(
 	::description
 	Scale for vertical, must be reciprocal of real scale.  
 	::range
-	Fixed number, 4bits.20bits 
+	Fixed number, 6bits.18bits 
 	*/
 	input [23 : 0] scale_y;
 	/*

@@ -6,6 +6,7 @@
  */
 
 
+
 #include "xparameters.h"
 #include "BoardInit_AXI.h"
 
@@ -29,12 +30,12 @@ int main(){
 	BOARDINIT_SetWithCheck(bdit.MirrorMode, 2);
 	BOARDINIT_SetFixed(bdit.OffsetX, -100, 9, 0);
 	BOARDINIT_SetFixed(bdit.OffsetY, -100, 9, 0);
-	BOARDINIT_SetFixed(bdit.ScaleX, 1.0, 6, 18);
-	BOARDINIT_SetFixed(bdit.ScaleY, 1.0, 6, 18);
-	BOARDINIT_SetFixed(bdit.ShU, 0.5, 6, 18);
-	BOARDINIT_SetFixed(bdit.ShV, 0.5, 6, 18);
-	BOARDINIT_SetWithCheck(bdit.Angle, 90);
-	BOARDINIT_SetWithCheck(bdit.Sels, ViewReverse + ViewScale);
+	BOARDINIT_SetFixed(bdit.ScaleX, 1 / 0.6, 6, 18);
+	BOARDINIT_SetFixed(bdit.ScaleY, 1 / 1.3, 6, 18);
+	BOARDINIT_SetFixed(bdit.ShU, -1.671, 6, 18);
+	BOARDINIT_SetFixed(bdit.ShV, 0.539, 6, 18);
+	BOARDINIT_SetWithCheck(bdit.Angle, 225);
+	BOARDINIT_SetWithCheck(bdit.Sels, ViewReverse + ViewShear);
 	BOARDINIT_Reset(&bdit);
 	return 0;
 }

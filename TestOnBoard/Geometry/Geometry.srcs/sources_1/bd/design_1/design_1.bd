@@ -204,7 +204,7 @@
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_FrameController_0_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="wr_mode">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="ram_read_latency">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ram_read_latency">2</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -309,6 +309,7 @@
         <spirit:componentRef spirit:library="F-I-L" spirit:name="Scale" spirit:vendor="dtysky.moe" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_Scale_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ram_RL">6</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -473,6 +474,7 @@
         <spirit:componentRef spirit:library="F-I-L" spirit:name="Rotate" spirit:vendor="dtysky.moe" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_Rotate_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ram_RL">6</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -480,6 +482,7 @@
         <spirit:componentRef spirit:library="F-I-L" spirit:name="Shear" spirit:vendor="dtysky.moe" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_Shear_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ram_RL">6</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>

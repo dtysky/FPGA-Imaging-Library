@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun May 31 15:04:32 2015" VIVADOVERSION="2014.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun May 31 15:43:59 2015" VIVADOVERSION="2014.4">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="design_1_imp" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -890,7 +890,7 @@
         <PARAMETER NAME="im_width" VALUE="320"/>
         <PARAMETER NAME="im_height" VALUE="240"/>
         <PARAMETER NAME="addr_width" VALUE="17"/>
-        <PARAMETER NAME="ram_read_latency" VALUE="1"/>
+        <PARAMETER NAME="ram_read_latency" VALUE="2"/>
         <PARAMETER NAME="row_init" VALUE="0"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_FrameController_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
@@ -1710,7 +1710,7 @@
         <PARAMETER NAME="im_height" VALUE="240"/>
         <PARAMETER NAME="im_width_bits" VALUE="9"/>
         <PARAMETER NAME="mul_delay" VALUE="3"/>
-        <PARAMETER NAME="ram_RL" VALUE="7"/>
+        <PARAMETER NAME="ram_RL" VALUE="6"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_Rotate_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -1787,7 +1787,7 @@
         <PARAMETER NAME="im_height" VALUE="240"/>
         <PARAMETER NAME="im_width_bits" VALUE="9"/>
         <PARAMETER NAME="mul_delay" VALUE="3"/>
-        <PARAMETER NAME="ram_RL" VALUE="7"/>
+        <PARAMETER NAME="ram_RL" VALUE="6"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_Scale_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -1864,7 +1864,7 @@
         <PARAMETER NAME="im_height" VALUE="240"/>
         <PARAMETER NAME="im_width_bits" VALUE="9"/>
         <PARAMETER NAME="mul_delay" VALUE="3"/>
-        <PARAMETER NAME="ram_RL" VALUE="7"/>
+        <PARAMETER NAME="ram_RL" VALUE="6"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_Shear_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
