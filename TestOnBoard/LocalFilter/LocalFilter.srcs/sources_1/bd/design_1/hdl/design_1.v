@@ -1,7 +1,7 @@
 //Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
-//Date        : Sat May 30 22:51:57 2015
+//Date        : Sun May 31 13:57:22 2015
 //Host        : Dtysky running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -49,6 +49,8 @@ module design_1
   wire [23:0]ColorGray2Channels_0_channels;
   wire [23:0]ColorRGB16toRGB24_0_rgb24;
   wire [15:0]ColorRGB24toVGA_0_vga;
+  wire [0:0]ColorReversal_0_out_data;
+  wire ColorReversal_0_out_ready;
   wire [1:0]DataCombin2_0_o;
   wire [16:0]DataDelay_0_out_data;
   wire [0:0]DataDelay_1_out_data;
@@ -224,7 +226,7 @@ design_1_Bram8x320x240_0_1 Bram8x320x240_1
         .doutb(Bram8x320x240_1_doutb),
         .wea(FrameController_1_out_ready));
 design_1_ColorBin2Channels_0_1 ColorBin2Channels_0
-       (.b(ThresholdLocal_0_out_data),
+       (.b(ColorReversal_0_out_data),
         .channels(ColorBin2Channels_0_channels));
 design_1_ColorBin2Channels_0_2 ColorBin2Channels_1
        (.b(ErosionDilationBin_0_out_data),
@@ -238,6 +240,13 @@ design_1_ColorRGB16toRGB24_0_0 ColorRGB16toRGB24_0
 design_1_ColorRGB24toVGA_0_0 ColorRGB24toVGA_0
        (.rgb24(ColorGray2Channels_0_channels),
         .vga(ColorRGB24toVGA_0_vga));
+design_1_ColorReversal_0_0 ColorReversal_0
+       (.clk(clk_wiz_0_clk_out1),
+        .in_data(ThresholdLocal_0_out_data),
+        .in_enable(ThresholdLocal_0_out_ready),
+        .out_data(ColorReversal_0_out_data),
+        .out_ready(ColorReversal_0_out_ready),
+        .rst_n(BoardInit_AXI_0_rst_all_n));
 design_1_DataCombin2_0_0 DataCombin2_0
        (.i0(DataSplit4_0_o1),
         .i1(DataSplit4_0_o2),
@@ -313,7 +322,7 @@ design_1_Mux2_1_0 Mux2_1
 design_1_Mux4_0_0 Mux4_0
        (.i0(MeanFilter_0_out_ready),
         .i1(RankFifter_0_out_ready),
-        .i2(ThresholdLocal_0_out_ready),
+        .i2(ColorReversal_0_out_ready),
         .i3(ErosionDilationBin_0_out_ready),
         .o(Mux4_0_o),
         .sel(DataCombin2_0_o));
@@ -341,8 +350,8 @@ design_1_RowsGenerator_0_0 RowsGenerator_0
         .rst_n(BoardInit_AXI_0_rst_all_n));
 design_1_RowsGenerator_0_1 RowsGenerator_1
        (.clk(clk_wiz_0_clk_out1),
-        .in_data(ThresholdLocal_0_out_data),
-        .in_enable(ThresholdLocal_0_out_ready),
+        .in_data(ColorReversal_0_out_data),
+        .in_enable(ColorReversal_0_out_ready),
         .out_data(RowsGenerator_1_out_data),
         .out_ready(RowsGenerator_1_out_ready),
         .rst_n(BoardInit_AXI_0_rst_all_n));

@@ -2,8 +2,8 @@
 # Vivado v2014.4 (64-bit)
 # SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
 # IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Sun May 31 00:18:56 2015
-# Process ID: 20596
+# Start of session at: Sun May 31 14:50:34 2015
+# Process ID: 4336
 # Log file: B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/vivado.log
 # Journal file: B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry\vivado.jou
 #-----------------------------------------------------------
@@ -13,39 +13,26 @@ CRITICAL WARNING: [Project 1-19] Could not find the file 'B:/Complex_Mind/FPGA-I
 CRITICAL WARNING: [Project 1-19] Could not find the file 'B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/ip/design_1_ColorBin2Channels_0_0/design_1_ColorBin2Channels_0_0.upgrade_log'.
 CRITICAL WARNING: [Project 1-19] Could not find the file 'B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/ip/design_1_ContrastTransform_0_0/sources_1/ip/Multiplier12x24CT/Multiplier12x24CT.upgrade_log'.
 CRITICAL WARNING: [Project 1-19] Could not find the file 'B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/ip/design_1_RankFifter_0_0/design_1_RankFifter_0_0.upgrade_log'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/ip/design_1_RankFifter_0_1/design_1_RankFifter_0_1.upgrade_log'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/ip/design_1_Mux8_0_0/design_1_Mux8_0_0.upgrade_log'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/ip/design_1_DataCombin3_0_0/design_1_DataCombin3_0_0.upgrade_log'.
 Scanning sources...
 Finished scanning sources
-WARNING: [Project 1-509] GeneratedRun file for 'synth_1' not found
-WARNING: [Project 1-509] GeneratedRun file for 'impl_1' not found
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master' may become invalid. A better location for the repostory would be in a path adjacent to the project. (Current project location is 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry'.)
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master/BoardInit_AXI'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master/Character'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master/Connector'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master/Detection'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master/Generator'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master/Geometry'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master/InOut'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master/LocalFilter'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master/Point'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'B:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip'.
-CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:processing_system7:5.5'. The one found in IP location 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63' will take precedence over the same IP in locations: 
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/LocalFilter/LocalFilter.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip/xilinx/processing_system7_v5_5
-open_project: Time (s): cpu = 00:00:32 ; elapsed = 00:00:25 . Memory (MB): peak = 792.828 ; gain = 232.445
+open_project: Time (s): cpu = 00:00:47 ; elapsed = 00:00:25 . Memory (MB): peak = 795.227 ; gain = 219.820
 open_bd_design {B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd}
 Adding component instance block -- xilinx.com:ip:IICctrl:1.0 - IICctrl_0
 Adding component instance block -- xilinx.com:ip:clk_wiz:5.1 - clk_wiz_0
-Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
 Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_0
 Adding component instance block -- xilinx.com:ip:Bram8x320x240:1.0 - Bram8x320x240_0
 Adding component instance block -- dtysky.moe:F-I-L:FrameController:1.0 - FrameController_0
@@ -54,692 +41,69 @@ Adding component instance block -- dtysky.moe:F-I-L:VGA640x480:1.0 - VGA640x480_
 Adding component instance block -- dtysky:Image:DataDelay:1.0 - DataDelay_0
 Adding component instance block -- dtysky.moe:F-I-L:FrameController:1.0 - FrameController_1
 Adding component instance block -- xilinx.com:ip:Bram8x320x240:1.0 - Bram8x320x240_1
-Adding component instance block -- dtysky:Image:Mux4:1.0 - Mux4_0
-Adding component instance block -- dtysky:Image:Mux4:1.0 - Mux4_1
 Adding component instance block -- xilinx.com:XUP:camCap:1.0 - camCap_0
 Adding component instance block -- dtysky:Image:DataDelay:1.0 - DataDelay_1
 Adding component instance block -- dtysky.moe:F-I-L:ColorRGB16toRGB24:1.0 - ColorRGB16toRGB24_0
 Adding component instance block -- dtysky.moe:F-I-L:ColorGray2Channels:1.0 - ColorGray2Channels_0
-Adding component instance block -- dtysky.moe:F-I-L:BoardInit_AXI:1.0 - BoardInit_AXI_0
 Adding component instance block -- dtysky.moe:F-I-L:ColorRGB24toVGA:1.0 - ColorRGB24toVGA_0
-Adding component instance block -- dtysky.moe:F-I-L:ErosionDilationBin:1.0 - ErosionDilationBin_0
-Adding component instance block -- dtysky.moe:F-I-L:MeanFilter:1.0 - MeanFilter_0
-Adding component instance block -- dtysky.moe:F-I-L:RowsGenerator:1.0 - RowsGenerator_0
-Adding component instance block -- dtysky.moe:F-I-L:WindowGenerator:1.0 - WindowGenerator_0
+Adding component instance block -- dtysky.moe:F-I-L:Crop:1.0 - Crop_0
+Adding component instance block -- dtysky.moe:F-I-L:Mirror:1.0 - Mirror_0
+Adding component instance block -- dtysky:F-I-L:Pan:1.0 - Pan_0
+Adding component instance block -- dtysky.moe:F-I-L:Scale:1.0 - Scale_0
+Adding component instance block -- dtysky.moe:F-I-L:CountGenerator:1.0 - CountGenerator_0
 Adding component instance block -- dtysky:User:DataSplit4:1.0 - DataSplit4_0
-Adding component instance block -- dtysky.moe:F-I-L:RowsGenerator:1.0 - RowsGenerator_1
-Adding component instance block -- dtysky.moe:F-I-L:WindowGenerator:1.0 - WindowGenerator_1
 Adding component instance block -- dtysky:user:Mux2:1.0 - Mux2_0
-Adding component instance block -- dtysky:user:Mux2:1.0 - Mux2_1
-Adding component instance block -- dtysky.moe:F-I-L:ThresholdLocal:1.0 - ThresholdLocal_0
-Adding component instance block -- dtysky.moe:F-I-L:ColorBin2Channels:1.0 - ColorBin2Channels_0
-Adding component instance block -- dtysky.moe:F-I-L:ColorBin2Channels:1.0 - ColorBin2Channels_1
+Adding component instance block -- dtysky.moe:F-I-L:FrameController2:1.0 - FrameController2_0
 Adding component instance block -- dtysky:User:DataCombin2:1.0 - DataCombin2_0
-Adding component instance block -- dtysky.moe:F-I-L:RankFifter:1.0 - RankFifter_0
+Adding component instance block -- dtysky:Image:Mux4:1.0 - Mux4_0
+Adding component instance block -- dtysky:Image:Mux4:1.0 - Mux4_1
+Adding component instance block -- dtysky:Image:Mux4:1.0 - Mux4_2
+Adding component instance block -- dtysky:user:Mux2:1.0 - Mux2_1
+Adding component instance block -- dtysky:Image:Mux4:1.0 - Mux4_3
+Adding component instance block -- dtysky:Image:Mux4:1.0 - Mux4_4
+Adding component instance block -- dtysky:Image:Mux4:1.0 - Mux4_5
+Adding component instance block -- dtysky:user:Mux2:1.0 - Mux2_2
+Adding component instance block -- dtysky.moe:F-I-L:FrameController2:1.0 - FrameController2_1
+Adding component instance block -- dtysky:Image:Mux4:1.0 - Mux4_6
+Adding component instance block -- dtysky:Image:Mux4:1.0 - Mux4_7
+Adding component instance block -- dtysky:Image:Mux4:1.0 - Mux4_8
+Adding component instance block -- dtysky:user:Mux2:1.0 - Mux2_3
+Adding component instance block -- dtysky.moe:F-I-L:BoardInit_AXI:1.0 - BoardInit_AXI_0
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- dtysky.moe:F-I-L:Rotate:1.0 - Rotate_0
+Adding component instance block -- dtysky.moe:F-I-L:Shear:1.0 - Shear_0
 Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
 Successfully read diagram <design_1> from BD file <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd>
-open_bd_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 804.207 ; gain = 3.648
-delete_bd_objs [get_bd_nets BoardInit_AXI_0_sels] [get_bd_nets DataSplit4_0_o1] [get_bd_nets DataSplit4_0_o2] [get_bd_cells DataSplit4_0]
-delete_bd_objs [get_bd_cells DataCombin2_0]
-delete_bd_objs [get_bd_nets RowsGenerator_0_out_ready] [get_bd_nets RowsGenerator_0_out_data] [get_bd_cells WindowGenerator_0]
-delete_bd_objs [get_bd_nets FrameController_0_out_ready] [get_bd_nets FrameController_0_out_data] [get_bd_cells RowsGenerator_0]
-delete_bd_objs [get_bd_nets BoardInit_AXI_0_rank] [get_bd_cells RankFifter_0]
-delete_bd_objs [get_bd_nets WindowGenerator_0_out_ready] [get_bd_nets WindowGenerator_0_out_data] [get_bd_cells MeanFilter_0]
-delete_bd_objs [get_bd_nets DataSplit4_0_o0] [get_bd_nets MeanFilter_0_out_ready] [get_bd_nets RankFifter_0_out_ready] [get_bd_nets Mux2_0_o] [get_bd_cells Mux2_0]
-delete_bd_objs [get_bd_nets MeanFilter_0_out_data] [get_bd_nets RankFifter_0_out_data] [get_bd_nets Mux2_1_o] [get_bd_cells Mux2_1]
-delete_bd_objs [get_bd_cells ThresholdLocal_0]
-delete_bd_objs [get_bd_nets ThresholdLocal_0_out_ready] [get_bd_nets ThresholdLocal_0_out_data] [get_bd_nets RowsGenerator_1_out_ready] [get_bd_nets RowsGenerator_1_out_data] [get_bd_cells RowsGenerator_1]
-delete_bd_objs [get_bd_nets WindowGenerator_1_out_ready] [get_bd_nets WindowGenerator_1_out_data] [get_bd_cells WindowGenerator_1]
-delete_bd_objs [get_bd_nets BoardInit_AXI_0_ed_mode] [get_bd_nets BoardInit_AXI_0_ed_template] [get_bd_nets ErosionDilationBin_0_out_ready] [get_bd_nets ErosionDilationBin_0_out_data] [get_bd_cells ErosionDilationBin_0]
-delete_bd_objs [get_bd_nets ColorBin2Channels_0_channels] [get_bd_cells ColorBin2Channels_0]
-delete_bd_objs [get_bd_nets ColorBin2Channels_1_channels] [get_bd_cells ColorBin2Channels_1]
-save_bd_design
-WARNING: [BD 41-597] NET <DataCombin2_0_o> has no source
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
+open_bd_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:13 . Memory (MB): peak = 806.066 ; gain = 10.840
 startgroup
-create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:Crop:1.0 Crop_0
-create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:Mirror:1.0 Mirror_0
-create_bd_cell -type ip -vlnv dtysky:F-I-L:Pan:1.0 Pan_0
-create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:Rotate:1.0 Rotate_0
-create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:Scale:1.0 Scale_0
-create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:Shear:1.0 Shear_0
-endgroup
-set_property location {5.5 2731 536} [get_bd_cells Scale_0]
-set_property location {6 2654 723} [get_bd_cells Rotate_0]
-set_property location {6 2778 298} [get_bd_cells Shear_0]
-set_property location {5 2299 679} [get_bd_cells Pan_0]
-set_property location {4.5 2037 67} [get_bd_cells Crop_0]
-set_property location {5 2081 402} [get_bd_cells Pan_0]
-set_property location {5 2009 816} [get_bd_cells Mirror_0]
-set_property location {5 2086 22} [get_bd_cells Crop_0]
-set_property location {5 2058 393} [get_bd_cells Pan_0]
-set_property location {5 2054 691} [get_bd_cells Mirror_0]
-set_property location {5 2056 400} [get_bd_cells Pan_0]
-set_property location {5 2049 371} [get_bd_cells Pan_0]
-set_property location {5 2054 38} [get_bd_cells Crop_0]
-set_property location {5 2056 431} [get_bd_cells Pan_0]
-set_property location {5 2073 671} [get_bd_cells Mirror_0]
-startgroup
-create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:FrameController:1.0 FrameController_2
-endgroup
-delete_bd_objs [get_bd_cells FrameController_2]
-startgroup
-create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:CountGenerator:1.0 CountGenerator_0
-endgroup
-set_property location {5 1817 704} [get_bd_cells CountGenerator_0]
-set_property location {6 1967 1054} [get_bd_cells CountGenerator_0]
-set_property location {4.5 1715 1000} [get_bd_cells FrameController_0]
-delete_bd_objs [get_bd_nets Bram8x320x240_0_doutb]
-delete_bd_objs [get_bd_nets FrameController_0_ram_addr]
-set_property location {5 1773 1000} [get_bd_cells FrameController_0]
-set_property location {5 1812 1158} [get_bd_cells CountGenerator_0]
-connect_bd_net [get_bd_pins FrameController_0/out_data] [get_bd_pins CountGenerator_0/in_data]
-connect_bd_net [get_bd_pins FrameController_0/out_ready] [get_bd_pins CountGenerator_0/in_enable]
-set_property location {6.5 2339 812} [get_bd_cells Mirror_0]
-set_property location {7 2315 431} [get_bd_cells Pan_0]
-set_property location {7 2335 158} [get_bd_cells Crop_0]
-set_property location {5 1794 820} [get_bd_cells FrameController_0]
-set_property location {5 1803 951} [get_bd_cells CountGenerator_0]
-set_property location {5 1830 661} [get_bd_cells FrameController_0]
-set_property location {5 1799 843} [get_bd_cells CountGenerator_0]
-startgroup
-create_bd_cell -type ip -vlnv dtysky:User:DataSplit4:1.0 DataSplit4_0
+set_property -dict [list CONFIG.ram_read_latency {1}] [get_bd_cells FrameController2_0]
 endgroup
 startgroup
-create_bd_cell -type ip -vlnv dtysky:Image:Mux8:1.0 Mux8_0
-endgroup
-ipx::edit_ip_in_project -upgrade true -name Mux8_v1_0_project -directory b:/Complex_Mind/FPGA-Imaging-Library/Master/Connector/Mux8/Mux8_v1_0_project b:/Complex_Mind/FPGA-Imaging-Library/Master/Connector/Mux8/component.xml
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'B:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip'.
-create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 943.969 ; gain = 56.219
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:processing_system7:5.5'. The one found in IP location 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63' will take precedence over the same IP in locations: 
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/LocalFilter/LocalFilter.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip/xilinx/processing_system7_v5_5
-ipx::edit_ip_in_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 943.969 ; gain = 56.219
-update_compile_order -fileset sim_1
-ipx::merge_project_changes hdl_parameters [ipx::current_core]
-ERROR: [IP_Flow 19-4321] Packaging IP GUI table is not supported
-ipx::remove_all_port [ipx::current_core]
-ipx::add_ports_from_hdl [ipx::current_core] -top_level_hdl_file b:/complex_mind/fpga-imaging-library/master/connector/mux8/srcs/Mux8.v -top_module_name Mux8
-ipx::merge_project_changes ports [ipx::current_core]
-ipx::update_ip_instances -delete_project true
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master' may become invalid. A better location for the repostory would be in a path adjacent to the project. (Current project location is 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry'.)
-CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:processing_system7:5.5'. The one found in IP location 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63' will take precedence over the same IP in locations: 
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/LocalFilter/LocalFilter.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip/xilinx/processing_system7_v5_5
-update_ip_catalog: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 961.168 ; gain = 0.000
-INFO: [IP_Flow 19-3422] Upgraded design_1_Mux8_0_0 (Mux8_v1_0 1.0) from revision 1 to revision 2
-CRITICAL WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading IP 'design_1_Mux8_0_0'. These changes may impact your design.
-INFO: [IP_Flow 19-3471] Wrote upgrade log to 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/ip/design_1_Mux8_0_0/design_1_Mux8_0_0.upgrade_log'.
-WARNING: [BD 41-597] NET <DataCombin2_0_o> has no source
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-ipx::update_ip_instances: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 961.168 ; gain = 0.000
-set_property location {10 3406 196} [get_bd_cells Mux8_0]
-delete_bd_objs [get_bd_nets Mux4_0_o] [get_bd_nets DataCombin2_0_o] [get_bd_cells Mux4_0]
-set_property -dict [list CONFIG.data_width {1}] [get_bd_cells Mux8_0]
-copy_bd_objs /  [get_bd_cells {Mux8_0}]
-set_property location {9 3421 1027} [get_bd_cells Mux8_1]
-delete_bd_objs [get_bd_nets Mux4_1_o] [get_bd_cells Mux4_1]
-set_property location {9 3456 720} [get_bd_cells Mux8_1]
-set_property -dict [list CONFIG.data_width {7}] [get_bd_cells Mux8_1]
-save_bd_design
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-set_property location {5 1730 937} [get_bd_cells DataSplit4_0]
-set_property location {5 1721 770} [get_bd_cells DataSplit4_0]
-connect_bd_net [get_bd_pins BoardInit_AXI_0/sels] [get_bd_pins DataSplit4_0/i]
-set_property location {5 1713 791} [get_bd_cells DataSplit4_0]
-set_property location {4 1512 904} [get_bd_cells DataSplit4_0]
-startgroup
-create_bd_cell -type ip -vlnv dtysky:user:Mux2:1.0 Mux2_0
-endgroup
-connect_bd_net [get_bd_pins DataSplit4_0/o0] [get_bd_pins Mux2_0/sel]
-copy_bd_objs /  [get_bd_cells {Mux2_0}]
-connect_bd_net -net [get_bd_nets DataSplit4_0_o0] [get_bd_pins Mux2_1/sel] [get_bd_pins DataSplit4_0/o0]
-startgroup
-set_property -dict [list CONFIG.data_width {1}] [get_bd_cells Mux2_0]
-endgroup
-set_property location {5 1674 843} [get_bd_cells Mux2_0]
-set_property location {5 1733 945} [get_bd_cells Mux2_1]
-set_property location {4.5 1562 1077} [get_bd_cells Bram8x320x240_0]
-set_property location {4 1543 1101} [get_bd_cells Bram8x320x240_0]
-set_property location {5 1900 493} [get_bd_cells Bram8x320x240_0]
-set_property location {4 1527 876} [get_bd_cells DataSplit4_0]
-set_property location {5 1944 679} [get_bd_cells Mux2_0]
-set_property location {5 1955 778} [get_bd_cells Mux2_1]
-set_property location {4.5 1812 485} [get_bd_cells Bram8x320x240_0]
-set_property location {5 1780 293} [get_bd_cells Mux2_0]
-set_property location {5 1819 684} [get_bd_cells Mux2_1]
-set_property location {5.5 1912 485} [get_bd_cells Bram8x320x240_0]
-set_property location {5 1821 465} [get_bd_cells Bram8x320x240_0]
-set_property location {5.5 2126 543} [get_bd_cells FrameController_0]
-set_property location {6 2178 708} [get_bd_cells CountGenerator_0]
-startgroup
-create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:FrameController2:1.0 FrameController2_0
-endgroup
-set_property location {6 2104 190} [get_bd_cells FrameController2_0]
-set_property location {6 2127 253} [get_bd_cells FrameController2_0]
-set_property location {6 2131 286} [get_bd_cells FrameController2_0]
-set_property location {6 2131 257} [get_bd_cells FrameController2_0]
-startgroup
-set_property -dict [list CONFIG.data_width {16}] [get_bd_cells Mux2_1]
+set_property -dict [list CONFIG.ram_read_latency {1}] [get_bd_cells FrameController_0]
 endgroup
 startgroup
-set_property -dict [list CONFIG.data_width {17}] [get_bd_cells Mux2_1]
+set_property -dict [list CONFIG.row_init {0}] [get_bd_cells FrameController_1]
 endgroup
-connect_bd_net [get_bd_pins FrameController2_0/ram_addr] [get_bd_pins Mux2_1/i1]
-set_property location {6 2095 915} [get_bd_cells FrameController2_0]
-set_property location {6 2117 259} [get_bd_cells FrameController_0]
-set_property location {6 2135 478} [get_bd_cells CountGenerator_0]
-set_property location {6 2140 704} [get_bd_cells FrameController2_0]
-connect_bd_net [get_bd_pins FrameController_0/ram_addr] [get_bd_pins Mux2_1/i0]
-connect_bd_net [get_bd_pins FrameController_0/in_data] [get_bd_pins Bram8x320x240_0/doutb]
-connect_bd_net -net [get_bd_nets Bram8x320x240_0_doutb] [get_bd_pins FrameController2_0/in_data] [get_bd_pins Bram8x320x240_0/doutb]
-delete_bd_objs [get_bd_nets FrameController_0_ram_addr] [get_bd_nets FrameController2_0_ram_addr] [get_bd_cells Mux2_1]
-set_property location {5 1844 569} [get_bd_cells Bram8x320x240_0]
-set_property location {5 1841 338} [get_bd_cells Mux2_0]
-connect_bd_net [get_bd_pins Mux2_0/i0] [get_bd_pins FrameController_0/ram_addr]
-connect_bd_net [get_bd_pins Mux2_0/i1] [get_bd_pins FrameController2_0/ram_addr]
 startgroup
-set_property -dict [list CONFIG.data_width {17}] [get_bd_cells Mux2_0]
+set_property -dict [list CONFIG.ram_read_latency {2}] [get_bd_cells FrameController2_0]
 endgroup
-connect_bd_net [get_bd_pins Mux2_0/o] [get_bd_pins Bram8x320x240_0/addrb]
-set_property location {7 2615 30} [get_bd_cells Crop_0]
-set_property location {7 2623 376} [get_bd_cells Pan_0]
-set_property location {7 2611 611} [get_bd_cells Mirror_0]
-set_property location {7 2630 42} [get_bd_cells Crop_0]
-set_property location {7 2625 369} [get_bd_cells Pan_0]
-set_property location {7 2632 602} [get_bd_cells Mirror_0]
-connect_bd_net [get_bd_pins CountGenerator_0/out_ready] [get_bd_pins Crop_0/in_enable]
-connect_bd_net -net [get_bd_nets CountGenerator_0_out_ready] [get_bd_pins Pan_0/in_enable] [get_bd_pins CountGenerator_0/out_ready]
-connect_bd_net -net [get_bd_nets CountGenerator_0_out_ready] [get_bd_pins Mirror_0/in_enable] [get_bd_pins CountGenerator_0/out_ready]
-connect_bd_net [get_bd_pins CountGenerator_0/out_data] [get_bd_pins Mirror_0/in_data]
-connect_bd_net -net [get_bd_nets CountGenerator_0_out_data] [get_bd_pins Pan_0/in_data] [get_bd_pins CountGenerator_0/out_data]
-connect_bd_net -net [get_bd_nets CountGenerator_0_out_data] [get_bd_pins Crop_0/in_data] [get_bd_pins CountGenerator_0/out_data]
-connect_bd_net [get_bd_pins CountGenerator_0/count_x] [get_bd_pins Crop_0/in_count_x]
-connect_bd_net [get_bd_pins CountGenerator_0/count_y] [get_bd_pins Crop_0/in_count_y]
-connect_bd_net -net [get_bd_nets CountGenerator_0_count_x] [get_bd_pins Pan_0/in_count_x] [get_bd_pins CountGenerator_0/count_x]
-connect_bd_net -net [get_bd_nets CountGenerator_0_count_y] [get_bd_pins Pan_0/in_count_y] [get_bd_pins CountGenerator_0/count_y]
-connect_bd_net -net [get_bd_nets CountGenerator_0_count_x] [get_bd_pins Mirror_0/in_count_x] [get_bd_pins CountGenerator_0/count_x]
-connect_bd_net -net [get_bd_nets CountGenerator_0_count_y] [get_bd_pins Mirror_0/in_count_y] [get_bd_pins CountGenerator_0/count_y]
-connect_bd_net [get_bd_pins Crop_0/top] [get_bd_pins BoardInit_AXI_0/crop_top]
-connect_bd_net [get_bd_pins BoardInit_AXI_0/crop_bottom] [get_bd_pins Crop_0/bottom]
-connect_bd_net [get_bd_pins Crop_0/left] [get_bd_pins BoardInit_AXI_0/crop_left]
-connect_bd_net [get_bd_pins BoardInit_AXI_0/crop_right] [get_bd_pins Crop_0/right]
-connect_bd_net [get_bd_pins Pan_0/offset_x] [get_bd_pins BoardInit_AXI_0/offset_x]
-connect_bd_net [get_bd_pins BoardInit_AXI_0/offset_y] [get_bd_pins Pan_0/offset_y]
-connect_bd_net [get_bd_pins Mirror_0/mode] [get_bd_pins BoardInit_AXI_0/mirror_mode]
-save_bd_design
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-set_property location {7 2704 984} [get_bd_cells Shear_0]
-set_property location {7 2741 807} [get_bd_cells Scale_0]
-set_property location {7 2650 1103} [get_bd_cells Shear_0]
-set_property location {7 2782 1337} [get_bd_cells Rotate_0]
-connect_bd_net [get_bd_pins FrameController2_0/out_ready] [get_bd_pins Scale_0/in_enable]
-connect_bd_net -net [get_bd_nets FrameController2_0_out_ready] [get_bd_pins Shear_0/in_enable] [get_bd_pins FrameController2_0/out_ready]
-connect_bd_net -net [get_bd_nets FrameController2_0_out_ready] [get_bd_pins Rotate_0/in_enable] [get_bd_pins FrameController2_0/out_ready]
-connect_bd_net [get_bd_pins FrameController2_0/out_data] [get_bd_pins Scale_0/frame_in_ready]
-connect_bd_net -net [get_bd_nets FrameController2_0_out_data] [get_bd_pins Shear_0/frame_in_data] [get_bd_pins FrameController2_0/out_data]
-connect_bd_net -net [get_bd_nets FrameController2_0_out_data] [get_bd_pins Rotate_0/frame_in_data] [get_bd_pins FrameController2_0/out_data]
 delete_bd_objs [get_bd_nets FrameController2_0_out_ready]
-connect_bd_net [get_bd_pins FrameController2_0/out_ready] [get_bd_pins Scale_0/frame_in_data]
+delete_bd_objs [get_bd_nets FrameController2_0_out_data]
+connect_bd_net [get_bd_pins FrameController2_0/out_ready] [get_bd_pins Scale_0/frame_in_ready]
 connect_bd_net -net [get_bd_nets FrameController2_0_out_ready] [get_bd_pins Shear_0/frame_in_ready] [get_bd_pins FrameController2_0/out_ready]
 connect_bd_net -net [get_bd_nets FrameController2_0_out_ready] [get_bd_pins Rotate_0/frame_in_ready] [get_bd_pins FrameController2_0/out_ready]
-connect_bd_net [get_bd_pins Scale_0/frame_enable] [get_bd_pins FrameController2_0/in_enable]
-delete_bd_objs [get_bd_nets Scale_0_frame_enable]
-update_ip_catalog -rebuild
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master' may become invalid. A better location for the repostory would be in a path adjacent to the project. (Current project location is 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry'.)
-CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:processing_system7:5.5'. The one found in IP location 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63' will take precedence over the same IP in locations: 
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/LocalFilter/LocalFilter.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip/xilinx/processing_system7_v5_5
-update_ip_catalog: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1024.250 ; gain = 0.000
+connect_bd_net [get_bd_pins FrameController2_0/out_data] [get_bd_pins Scale_0/frame_in_data]
+connect_bd_net -net [get_bd_nets FrameController2_0_out_data] [get_bd_pins Shear_0/frame_in_data] [get_bd_pins FrameController2_0/out_data]
+connect_bd_net -net [get_bd_nets FrameController2_0_out_data] [get_bd_pins Rotate_0/frame_in_data] [get_bd_pins FrameController2_0/out_data]
+set_property location {7 2561 608} [get_bd_cells FrameController_0]
 startgroup
-create_bd_cell -type ip -vlnv dtysky:User:DataCombin3:1.0 DataCombin3_0
-endgroup
-ipx::edit_ip_in_project -upgrade true -name DataCombin3_v1_0_project -directory b:/Complex_Mind/FPGA-Imaging-Library/Master/Connector/DataCombin3/DataCombin3_v1_0_project b:/Complex_Mind/FPGA-Imaging-Library/Master/Connector/DataCombin3/component.xml
-INFO: [Project 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
-Current project path is 'b:/complex_mind/fpga-imaging-library/master/connector/datacombin3/datacombin3_v1_0_project'
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'B:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip'.
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:processing_system7:5.5'. The one found in IP location 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63' will take precedence over the same IP in locations: 
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/LocalFilter/LocalFilter.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip/xilinx/processing_system7_v5_5
-ipx::edit_ip_in_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1024.250 ; gain = 0.000
-update_compile_order -fileset sim_1
-ipx::merge_project_changes hdl_parameters [ipx::current_core]
-ipx::create_xgui_files [ipx::current_core]
-ipx::update_ip_instances -delete_project true
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master' may become invalid. A better location for the repostory would be in a path adjacent to the project. (Current project location is 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry'.)
-CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:processing_system7:5.5'. The one found in IP location 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63' will take precedence over the same IP in locations: 
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/LocalFilter/LocalFilter.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip/xilinx/processing_system7_v5_5
-update_ip_catalog: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1024.250 ; gain = 0.000
-INFO: [IP_Flow 19-3422] Upgraded design_1_DataCombin3_0_0 (DataCombin3_v1_0 1.0) from revision 1 to revision 2
-CRITICAL WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading IP 'design_1_DataCombin3_0_0'. These changes may impact your design.
-INFO: [IP_Flow 19-3471] Wrote upgrade log to 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/ip/design_1_DataCombin3_0_0/design_1_DataCombin3_0_0.upgrade_log'.
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-ipx::update_ip_instances: Time (s): cpu = 00:00:12 ; elapsed = 00:00:31 . Memory (MB): peak = 1027.914 ; gain = 3.664
-connect_bd_net [get_bd_pins DataSplit4_0/o1] [get_bd_pins DataCombin3_0/i0]
-connect_bd_net [get_bd_pins DataSplit4_0/o2] [get_bd_pins DataCombin3_0/i1]
-connect_bd_net [get_bd_pins DataSplit4_0/o3] [get_bd_pins DataCombin3_0/i2]
-ipx::edit_ip_in_project -upgrade true -name DataCombin3_v1_0_project -directory b:/Complex_Mind/FPGA-Imaging-Library/Master/Connector/DataCombin3/DataCombin3_v1_0_project b:/Complex_Mind/FPGA-Imaging-Library/Master/Connector/DataCombin3/component.xml
-INFO: [Project 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
-Current project path is 'b:/complex_mind/fpga-imaging-library/master/connector/datacombin3/datacombin3_v1_0_project'
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'B:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip'.
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1046.840 ; gain = 0.000
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:processing_system7:5.5'. The one found in IP location 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63' will take precedence over the same IP in locations: 
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/LocalFilter/LocalFilter.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip/xilinx/processing_system7_v5_5
-ipx::edit_ip_in_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1047.172 ; gain = 0.332
-update_compile_order -fileset sim_1
-ipx::merge_project_changes ports [ipx::current_core]
-ipx::update_ip_instances -delete_project true
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master' may become invalid. A better location for the repostory would be in a path adjacent to the project. (Current project location is 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry'.)
-CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:processing_system7:5.5'. The one found in IP location 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63' will take precedence over the same IP in locations: 
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/LocalFilter/LocalFilter.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip/xilinx/processing_system7_v5_5
-update_ip_catalog: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1070.254 ; gain = 10.148
-INFO: [IP_Flow 19-3422] Upgraded design_1_DataCombin3_0_0 (DataCombin3_v1_0 1.0) from revision 2 to revision 3
-CRITICAL WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading IP 'design_1_DataCombin3_0_0'. These changes may impact your design.
-INFO: [IP_Flow 19-3471] Wrote upgrade log to 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/ip/design_1_DataCombin3_0_0/design_1_DataCombin3_0_0.upgrade_log'.
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-ipx::update_ip_instances: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1078.102 ; gain = 17.996
-startgroup
-create_bd_cell -type ip -vlnv dtysky:User:DataCombin2:1.0 DataCombin2_0
-endgroup
-connect_bd_net -net [get_bd_nets DataSplit4_0_o1] [get_bd_pins DataCombin2_0/i0] [get_bd_pins DataSplit4_0/o1]
-connect_bd_net -net [get_bd_nets DataSplit4_0_o1] [get_bd_pins DataCombin2_0/i1] [get_bd_pins DataSplit4_0/o1]
-startgroup
-create_bd_cell -type ip -vlnv dtysky:Image:Mux4:1.0 Mux4_0
-endgroup
-connect_bd_net [get_bd_pins DataCombin2_0/o] [get_bd_pins Mux4_0/sel]
-set_property location {6 2118 1247} [get_bd_cells Mux4_0]
-copy_bd_objs /  [get_bd_cells {Mux4_0}]
-copy_bd_objs /  [get_bd_cells {Mux4_0}]
-set_property location {4.5 1712 1560} [get_bd_cells Mux4_2]
-set_property location {7 2315 1580} [get_bd_cells Mux4_2]
-set_property location {6 2277 1425} [get_bd_cells Mux4_1]
-set_property -dict [list CONFIG.data_width {9}] [get_bd_cells Mux4_1]
-set_property -dict [list CONFIG.data_width {9}] [get_bd_cells Mux4_2]
-startgroup
-set_property -dict [list CONFIG.data_width {1}] [get_bd_cells Mux4_0]
-endgroup
-connect_bd_net -net [get_bd_nets DataCombin2_0_o] [get_bd_pins Mux4_1/sel] [get_bd_pins DataCombin2_0/o]
-connect_bd_net -net [get_bd_nets DataCombin2_0_o] [get_bd_pins Mux4_2/sel] [get_bd_pins DataCombin2_0/o]
-connect_bd_net [get_bd_pins Scale_0/frame_enable] [get_bd_pins Mux4_0/i0]
-connect_bd_net [get_bd_pins Shear_0/frame_enable] [get_bd_pins Mux4_0/i1]
-connect_bd_net [get_bd_pins Rotate_0/frame_enable] [get_bd_pins Mux4_0/i2]
-connect_bd_net -net [get_bd_nets Rotate_0_frame_enable] [get_bd_pins Mux4_0/i3] [get_bd_pins Rotate_0/frame_enable]
-connect_bd_net [get_bd_pins Scale_0/frame_out_count_x] [get_bd_pins Mux4_1/i0]
-connect_bd_net [get_bd_pins Scale_0/frame_out_count_y] [get_bd_pins Mux4_1/i2]
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins Scale_0/frame_out_count_y] [get_bd_pins Mux4_1/i2]'
-connect_bd_net [get_bd_pins Scale_0/out_ready] [get_bd_pins Mux4_1/i2]
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins Scale_0/out_ready] [get_bd_pins Mux4_1/i2]'
-connect_bd_net [get_bd_pins Shear_0/frame_out_count_x] [get_bd_pins Mux4_1/i1]
-connect_bd_net [get_bd_pins Rotate_0/frame_out_count_x] [get_bd_pins Mux4_2/i0]
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins Rotate_0/frame_out_count_x] [get_bd_pins Mux4_2/i0]'
-connect_bd_net [get_bd_pins Rotate_0/frame_out_count_x] [get_bd_pins Mux4_1/i3]
-connect_bd_net -net [get_bd_nets Rotate_0_frame_out_count_x] [get_bd_pins Mux4_1/i2] [get_bd_pins Rotate_0/frame_out_count_x]
-connect_bd_net [get_bd_pins Scale_0/frame_out_count_y] [get_bd_pins Mux4_2/i0]
-connect_bd_net [get_bd_pins Shear_0/frame_out_count_y] [get_bd_pins Mux4_2/i1]
-connect_bd_net [get_bd_pins Rotate_0/frame_out_count_y] [get_bd_pins Mux4_2/i2]
-connect_bd_net -net [get_bd_nets Rotate_0_frame_out_count_y] [get_bd_pins Mux4_2/i3] [get_bd_pins Rotate_0/frame_out_count_y]
-connect_bd_net [get_bd_pins Mux4_0/o] [get_bd_pins FrameController2_0/in_enable]
-connect_bd_net [get_bd_pins Mux4_1/o] [get_bd_pins FrameController2_0/in_count_x]
-connect_bd_net [get_bd_pins FrameController2_0/in_count_y] [get_bd_pins Mux4_2/o]
-save_bd_design
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-connect_bd_net [get_bd_pins Scale_0/scale_x] [get_bd_pins BoardInit_AXI_0/scale_x]
-connect_bd_net [get_bd_pins BoardInit_AXI_0/scale_y] [get_bd_pins Scale_0/scale_y]
-connect_bd_net [get_bd_pins Shear_0/sh_u] [get_bd_pins BoardInit_AXI_0/sh_u]
-connect_bd_net [get_bd_pins BoardInit_AXI_0/sh_v] [get_bd_pins Shear_0/sh_v]
-connect_bd_net [get_bd_pins Rotate_0/angle] [get_bd_pins BoardInit_AXI_0/angle]
-save_bd_design
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-delete_bd_objs [get_bd_nets DataSplit4_0_o0]
-connect_bd_net -net [get_bd_nets DataSplit4_0_o3] [get_bd_pins Mux2_0/sel] [get_bd_pins DataSplit4_0/o3]
-delete_bd_objs [get_bd_nets DataSplit4_0_o2] [get_bd_cells DataCombin3_0]
-delete_bd_objs [get_bd_nets DataSplit4_0_o1]
-connect_bd_net [get_bd_pins DataSplit4_0/o1] [get_bd_pins DataCombin2_0/i0]
-connect_bd_net [get_bd_pins DataSplit4_0/o2] [get_bd_pins DataCombin2_0/i1]
-delete_bd_objs [get_bd_nets DataSplit4_0_o3]
-delete_bd_objs [get_bd_nets DataSplit4_0_o1]
-delete_bd_objs [get_bd_nets DataSplit4_0_o2]
-connect_bd_net [get_bd_pins DataSplit4_0/o0] [get_bd_pins DataCombin2_0/i0]
-connect_bd_net [get_bd_pins DataSplit4_0/o1] [get_bd_pins DataCombin2_0/i1]
-connect_bd_net [get_bd_pins DataSplit4_0/o2] [get_bd_pins Mux2_0/sel]
-save_bd_design
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-set_property location {6 2265 757} [get_bd_cells DataCombin2_0]
-set_property location {5 2316 768} [get_bd_cells DataCombin2_0]
-set_property location {4.5 2131 536} [get_bd_cells Mux2_0]
-set_property location {5 2093 756} [get_bd_cells DataCombin2_0]
-set_property location {5 2101 965} [get_bd_cells Bram8x320x240_0]
-set_property location {5 2145 1224} [get_bd_cells Mux4_0]
-set_property location {5 2162 1429} [get_bd_cells Mux4_1]
-set_property location {5 2195 1630} [get_bd_cells Mux4_2]
-delete_bd_objs [get_bd_cells Mux8_0]
-delete_bd_objs [get_bd_cells Mux8_1]
-copy_bd_objs /  [get_bd_cells {Mux4_0 Mux4_1 Mux2_0 Mux4_2}]
-startgroup
-set_property location {8 3560 1532} [get_bd_cells Mux2_1]
-set_property location {8 3570 1392} [get_bd_cells Mux4_3]
-set_property location {8 3570 1692} [get_bd_cells Mux4_4]
-set_property location {3 1140 1662} [get_bd_cells Mux4_5]
-endgroup
-set_property location {8 3596 1132} [get_bd_cells Mux4_5]
-set_property location {8 3563 985} [get_bd_cells Mux2_1]
-set_property location {8 3577 1514} [get_bd_cells Mux4_4]
-set_property location {8 3606 1688} [get_bd_cells Mux4_5]
-delete_bd_objs [get_bd_nets FrameController_1_out_data]
-delete_bd_objs [get_bd_nets FrameController_1_ram_addr]
-copy_bd_objs /  [get_bd_cells {Mux2_1}]
-set_property location {8 3635 1126} [get_bd_cells Mux2_2]
-delete_bd_objs [get_bd_nets FrameController_1_out_ready]
-set_property location {8 3611 562} [get_bd_cells FrameController_1]
-set_property location {4.5 1886 431} [get_bd_cells Mux2_0]
-set_property location {5 1870 614} [get_bd_cells DataCombin2_0]
-set_property location {5 1914 801} [get_bd_cells Bram8x320x240_0]
-set_property location {5 2015 1052} [get_bd_cells Mux4_0]
-set_property location {5 2015 1291} [get_bd_cells Mux4_1]
-set_property location {5 2065 1541} [get_bd_cells Mux4_2]
-set_property location {5.5 2400 527} [get_bd_cells FrameController_0]
-set_property location {6 2450 750} [get_bd_cells CountGenerator_0]
-set_property location {6 2460 1144} [get_bd_cells FrameController2_0]
-set_property location {6.5 2900 160} [get_bd_cells Crop_0]
-set_property location {7 2831 526} [get_bd_cells Pan_0]
-set_property location {7 2950 787} [get_bd_cells Mirror_0]
-set_property location {7 2852 1093} [get_bd_cells Scale_0]
-set_property location {7 2868 1349} [get_bd_cells Shear_0]
-set_property location {7 2911 1669} [get_bd_cells Rotate_0]
-set_property location {7.5 3294 470} [get_bd_cells Mux2_1]
-set_property location {8.5 3448 743} [get_bd_cells Mux2_2]
-set_property location {9 3439 438} [get_bd_cells Mux2_1]
-set_property location {7.5 3272 548} [get_bd_cells FrameController_1]
-set_property location {9.5 3553 479} [get_bd_cells Mux2_1]
-set_property location {10 3587 741} [get_bd_cells Mux2_2]
-set_property location {9 3612 995} [get_bd_cells Mux4_3]
-set_property location {9 3623 1182} [get_bd_cells Mux4_4]
-set_property location {9 3640 1399} [get_bd_cells Mux4_5]
-set_property location {8 3265 637} [get_bd_cells FrameController_1]
-set_property location {8 3299 967} [get_bd_cells FrameController_1]
-set_property location {8 3280 1161} [get_bd_cells FrameController_1]
-set_property location {8 3284 433} [get_bd_cells Mux4_3]
-set_property location {8 3276 635} [get_bd_cells Mux4_4]
-set_property location {8 3290 855} [get_bd_cells Mux4_5]
-set_property location {8 3276 1326} [get_bd_cells FrameController_1]
-set_property location {9 3623 888} [get_bd_cells Mux2_2]
-set_property location {9 3621 709} [get_bd_cells Mux2_1]
-save_bd_design
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-startgroup
-create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:FrameController2:1.0 FrameController2_1
-endgroup
-set_property location {8 3274 1101} [get_bd_cells FrameController2_1]
-connect_bd_net [get_bd_pins Pan_0/out_ready] [get_bd_pins Mux4_3/i0]
-connect_bd_net [get_bd_pins Mirror_0/out_ready] [get_bd_pins Mux4_3/i1]
-delete_bd_objs [get_bd_nets Mirror_0_out_ready]
-delete_bd_objs [get_bd_nets Pan_0_out_ready]
-connect_bd_net [get_bd_pins Crop_0/out_ready] [get_bd_pins Mux4_3/i0]
-connect_bd_net [get_bd_pins Pan_0/out_ready] [get_bd_pins Mux4_3/i1]
-connect_bd_net [get_bd_pins Mirror_0/out_ready] [get_bd_pins Mux4_3/i2]
-connect_bd_net -net [get_bd_nets Mirror_0_out_ready] [get_bd_pins Mux4_3/i3] [get_bd_pins Mirror_0/out_ready]
-set_property location {8 3254 282} [get_bd_cells Mux4_3]
-set_property location {8 3274 490} [get_bd_cells Mux4_4]
-set_property location {8 3276 689} [get_bd_cells Mux4_5]
-copy_bd_objs /  [get_bd_cells {Mux4_5}]
-set_property location {8 3345 905} [get_bd_cells Mux4_6]
-set_property -dict [list CONFIG.data_width {8}] [get_bd_cells Mux4_4]
-connect_bd_net [get_bd_pins Crop_0/out_data] [get_bd_pins Mux4_4/i0]
-connect_bd_net [get_bd_pins Pan_0/out_data] [get_bd_pins Mux4_4/i1]
-connect_bd_net [get_bd_pins Mirror_0/out_data] [get_bd_pins Mux4_4/i2]
-connect_bd_net -net [get_bd_nets Mirror_0_out_data] [get_bd_pins Mux4_4/i3] [get_bd_pins Mirror_0/out_data]
-connect_bd_net [get_bd_pins Crop_0/out_count_x] [get_bd_pins Mux4_5/i0]
-connect_bd_net [get_bd_pins Mux4_5/i1] [get_bd_pins Pan_0/out_count_x]
-connect_bd_net [get_bd_pins Mirror_0/out_count_x] [get_bd_pins Mux4_5/i2]
-connect_bd_net -net [get_bd_nets Mirror_0_out_count_x] [get_bd_pins Mux4_5/i3] [get_bd_pins Mirror_0/out_count_x]
-connect_bd_net [get_bd_pins Mux4_6/i0] [get_bd_pins Crop_0/out_count_y]
-connect_bd_net [get_bd_pins Pan_0/out_count_y] [get_bd_pins Mux4_6/i1]
-connect_bd_net [get_bd_pins Mux4_6/i2] [get_bd_pins Mirror_0/out_count_y]
-connect_bd_net -net [get_bd_nets Mirror_0_out_count_y] [get_bd_pins Mux4_6/i3] [get_bd_pins Mirror_0/out_count_y]
-save_bd_design
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-connect_bd_net [get_bd_pins Mux4_6/o] [get_bd_pins FrameController2_1/in_count_y]
-connect_bd_net [get_bd_pins Mux4_5/o] [get_bd_pins FrameController2_1/in_count_x]
-connect_bd_net [get_bd_pins Mux4_4/o] [get_bd_pins FrameController2_1/in_data]
-connect_bd_net [get_bd_pins FrameController2_1/in_enable] [get_bd_pins Mux4_3/o]
-save_bd_design
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-set_property location {8 3385 123} [get_bd_cells Mux4_3]
-set_property location {8 3380 275} [get_bd_cells Mux4_4]
-set_property location {8 3434 432} [get_bd_cells Mux4_5]
-set_property location {8 3401 613} [get_bd_cells Mux4_6]
-set_property location {8 3383 793} [get_bd_cells FrameController2_1]
-set_property location {8 3415 1084} [get_bd_cells FrameController_1]
-startgroup
-create_bd_cell -type ip -vlnv dtysky:Image:Mux4:1.0 Mux4_7
+set_property -dict [list CONFIG.ram_read_latency {2}] [get_bd_cells FrameController_0]
 endgroup
 startgroup
-create_bd_cell -type ip -vlnv dtysky:Image:Mux4:1.0 Mux4_8
-endgroup
-set_property location {8 3376 1473} [get_bd_cells Mux4_8]
-set_property location {8 3385 1292} [get_bd_cells Mux4_7]
-set_property -dict [list CONFIG.data_width {1}] [get_bd_cells Mux4_7]
-connect_bd_net [get_bd_pins Scale_0/out_ready] [get_bd_pins Mux4_7/i0]
-connect_bd_net [get_bd_pins Shear_0/out_ready] [get_bd_pins Mux4_7/i1]
-connect_bd_net [get_bd_pins Rotate_0/out_ready] [get_bd_pins Mux4_7/i2]
-connect_bd_net -net [get_bd_nets Rotate_0_out_ready] [get_bd_pins Mux4_7/i3] [get_bd_pins Rotate_0/out_ready]
-connect_bd_net [get_bd_pins Rotate_0/out_data] [get_bd_pins Mux4_8/i3]
-connect_bd_net -net [get_bd_nets Rotate_0_out_data] [get_bd_pins Mux4_8/i2] [get_bd_pins Rotate_0/out_data]
-connect_bd_net [get_bd_pins Mux4_8/i1] [get_bd_pins Shear_0/out_data]
-set_property location {8 3159 1661} [get_bd_cells Scale_0]
-undo
-INFO: [Common 17-17] undo 'set_property location {8 3159 1661} [get_bd_cells Scale_0]'
-connect_bd_net [get_bd_pins Scale_0/out_data] [get_bd_pins Mux4_8/i0]
-save_bd_design
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-connect_bd_net [get_bd_pins Mux4_7/o] [get_bd_pins FrameController_1/in_enable]
-connect_bd_net [get_bd_pins FrameController_1/in_data] [get_bd_pins Mux4_8/o]
-set_property location {9 3713 1061} [get_bd_cells Mux2_2]
-set_property location {9 3697 857} [get_bd_cells Mux2_1]
-set_property -dict [list CONFIG.data_width {1}] [get_bd_cells Mux2_1]
-connect_bd_net [get_bd_pins FrameController2_1/out_ready] [get_bd_pins Mux2_1/i0]
-connect_bd_net [get_bd_pins FrameController_1/out_ready] [get_bd_pins Mux2_1/i1]
-copy_bd_objs /  [get_bd_cells {Mux2_2}]
-set_property location {9 3708 1252} [get_bd_cells Mux2_3]
-set_property -dict [list CONFIG.data_width {8}] [get_bd_cells Mux2_2]
-connect_bd_net [get_bd_pins FrameController_1/out_data] [get_bd_pins Mux2_2/i0]
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins FrameController_1/out_data] [get_bd_pins Mux2_2/i0]'
-connect_bd_net [get_bd_pins FrameController2_1/out_data] [get_bd_pins Mux2_2/i0]
-connect_bd_net [get_bd_pins FrameController_1/out_data] [get_bd_pins Mux2_2/i1]
-connect_bd_net [get_bd_pins FrameController_1/ram_addr] [get_bd_pins Mux2_3/i1]
-connect_bd_net [get_bd_pins Mux2_3/i0] [get_bd_pins FrameController2_1/ram_addr]
-save_bd_design
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-connect_bd_net [get_bd_pins Mux2_1/o] [get_bd_pins Bram8x320x240_1/wea]
-connect_bd_net [get_bd_pins Mux2_2/o] [get_bd_pins Bram8x320x240_1/dina]
-connect_bd_net [get_bd_pins Bram8x320x240_1/addra] [get_bd_pins Mux2_3/o]
-save_bd_design
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-startgroup
-connect_bd_net -net [get_bd_nets DataSplit4_0_o2] [get_bd_pins Mux2_1/sel] [get_bd_pins DataSplit4_0/o2]
-connect_bd_net -net [get_bd_nets DataSplit4_0_o2] [get_bd_pins Mux2_2/sel] [get_bd_pins DataSplit4_0/o2]
-connect_bd_net -net [get_bd_nets DataSplit4_0_o2] [get_bd_pins Mux2_3/sel] [get_bd_pins DataSplit4_0/o2]
+set_property -dict [list CONFIG.ram_read_latency {1}] [get_bd_cells FrameController_0]
 endgroup
 startgroup
-connect_bd_net -net [get_bd_nets DataCombin2_0_o] [get_bd_pins Mux4_8/sel] [get_bd_pins DataCombin2_0/o]
-connect_bd_net -net [get_bd_nets DataCombin2_0_o] [get_bd_pins Mux4_7/sel] [get_bd_pins DataCombin2_0/o]
-connect_bd_net -net [get_bd_nets DataCombin2_0_o] [get_bd_pins Mux4_6/sel] [get_bd_pins DataCombin2_0/o]
-connect_bd_net -net [get_bd_nets DataCombin2_0_o] [get_bd_pins Mux4_5/sel] [get_bd_pins DataCombin2_0/o]
-connect_bd_net -net [get_bd_nets DataCombin2_0_o] [get_bd_pins Mux4_4/sel] [get_bd_pins DataCombin2_0/o]
-connect_bd_net -net [get_bd_nets DataCombin2_0_o] [get_bd_pins Mux4_3/sel] [get_bd_pins DataCombin2_0/o]
-endgroup
-save_bd_design
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-startgroup
-connect_bd_net -net [get_bd_nets clk_wiz_0_clk_out1] [get_bd_pins CountGenerator_0/clk] [get_bd_pins clk_wiz_0/clk_out1]
-connect_bd_net -net [get_bd_nets clk_wiz_0_clk_out1] [get_bd_pins Crop_0/clk] [get_bd_pins clk_wiz_0/clk_out1]
-connect_bd_net -net [get_bd_nets clk_wiz_0_clk_out1] [get_bd_pins FrameController2_0/clk] [get_bd_pins clk_wiz_0/clk_out1]
-connect_bd_net -net [get_bd_nets clk_wiz_0_clk_out1] [get_bd_pins FrameController2_1/clk] [get_bd_pins clk_wiz_0/clk_out1]
-connect_bd_net -net [get_bd_nets clk_wiz_0_clk_out1] [get_bd_pins Mirror_0/clk] [get_bd_pins clk_wiz_0/clk_out1]
-connect_bd_net -net [get_bd_nets clk_wiz_0_clk_out1] [get_bd_pins Pan_0/clk] [get_bd_pins clk_wiz_0/clk_out1]
-connect_bd_net -net [get_bd_nets clk_wiz_0_clk_out1] [get_bd_pins Rotate_0/clk] [get_bd_pins clk_wiz_0/clk_out1]
-connect_bd_net -net [get_bd_nets clk_wiz_0_clk_out1] [get_bd_pins Scale_0/clk] [get_bd_pins clk_wiz_0/clk_out1]
-connect_bd_net -net [get_bd_nets clk_wiz_0_clk_out1] [get_bd_pins Shear_0/clk] [get_bd_pins clk_wiz_0/clk_out1]
-endgroup
-startgroup
-connect_bd_net -net [get_bd_nets BoardInit_AXI_0_rst_all_n] [get_bd_pins Crop_0/rst_n] [get_bd_pins BoardInit_AXI_0/rst_all_n]
-connect_bd_net -net [get_bd_nets BoardInit_AXI_0_rst_all_n] [get_bd_pins FrameController2_0/rst_n] [get_bd_pins BoardInit_AXI_0/rst_all_n]
-connect_bd_net -net [get_bd_nets BoardInit_AXI_0_rst_all_n] [get_bd_pins FrameController2_1/rst_n] [get_bd_pins BoardInit_AXI_0/rst_all_n]
-connect_bd_net -net [get_bd_nets BoardInit_AXI_0_rst_all_n] [get_bd_pins Mirror_0/rst_n] [get_bd_pins BoardInit_AXI_0/rst_all_n]
-connect_bd_net -net [get_bd_nets BoardInit_AXI_0_rst_all_n] [get_bd_pins Pan_0/rst_n] [get_bd_pins BoardInit_AXI_0/rst_all_n]
-connect_bd_net -net [get_bd_nets BoardInit_AXI_0_rst_all_n] [get_bd_pins Rotate_0/rst_n] [get_bd_pins BoardInit_AXI_0/rst_all_n]
-connect_bd_net -net [get_bd_nets BoardInit_AXI_0_rst_all_n] [get_bd_pins Rotate_0/in_enable] [get_bd_pins BoardInit_AXI_0/rst_all_n]
-connect_bd_net -net [get_bd_nets BoardInit_AXI_0_rst_all_n] [get_bd_pins Scale_0/in_enable] [get_bd_pins BoardInit_AXI_0/rst_all_n]
-connect_bd_net -net [get_bd_nets BoardInit_AXI_0_rst_all_n] [get_bd_pins Scale_0/rst_n] [get_bd_pins BoardInit_AXI_0/rst_all_n]
-connect_bd_net -net [get_bd_nets BoardInit_AXI_0_rst_all_n] [get_bd_pins Shear_0/in_enable] [get_bd_pins BoardInit_AXI_0/rst_all_n]
-connect_bd_net -net [get_bd_nets BoardInit_AXI_0_rst_all_n] [get_bd_pins Shear_0/rst_n] [get_bd_pins BoardInit_AXI_0/rst_all_n]
-connect_bd_net -net [get_bd_nets BoardInit_AXI_0_rst_all_n] [get_bd_pins CountGenerator_0/rst_n] [get_bd_pins BoardInit_AXI_0/rst_all_n]
+set_property -dict [list CONFIG.ram_read_latency {1}] [get_bd_cells FrameController2_0]
 endgroup
 save_bd_design
 Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
@@ -750,7 +114,6 @@ INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for 
 Generated Block Design Tcl file B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
 Exporting to file B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
 CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DataSplit4_0/i'(4) to net 'BoardInit_AXI_0_sels'(32) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/Rotate_0/angle'(9) to net 'BoardInit_AXI_0_angle'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
 Verilog Output written to : design_1.v
 Verilog Output written to : design_1_wrapper.v
 Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
@@ -758,513 +121,72 @@ INFO: [BD 41-1029] Generation completed for the IP Integrator block IICctrl_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block camCap_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block BoardInit_AXI_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Bram8x320x240_0 .
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_FrameController_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_FrameController_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_FrameController_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'design_1_FrameController_0_0'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Graying_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block VGA640x480_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block DataDelay_0 .
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_FrameController_0_1'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_FrameController_0_1'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_FrameController_0_1'...
+INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'design_1_FrameController_0_1'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController_1 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Bram8x320x240_1 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block DataDelay_1 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block ColorRGB16toRGB24_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block ColorGray2Channels_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block ColorRGB24toVGA_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Crop_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Crop_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Crop_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'design_1_Crop_0_0'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Crop_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Mirror_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Mirror_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Mirror_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'design_1_Mirror_0_0'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Mirror_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Pan_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Pan_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Pan_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'design_1_Pan_0_0'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Pan_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Rotate_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Rotate_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Rotate_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'design_1_Rotate_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Rotate_0_0/Multiplier13Sx20SRTT'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Multiplier13Sx20SRTT' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Rotate_0_0/Multiplier13Sx20SRTT'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Multiplier13Sx20SRTT' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Rotate_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Scale_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Scale_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Scale_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'design_1_Scale_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Scale_0_0/Multiplier12x24SCL'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Multiplier12x24SCL' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Scale_0_0/Multiplier12x24SCL'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Multiplier12x24SCL' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Scale_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Shear_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Shear_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Shear_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'design_1_Shear_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Shear_0_0/Multiplier12x25SSHR'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Multiplier12x25SSHR' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Shear_0_0/Multiplier12x25SSHR'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Multiplier12x25SSHR' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Shear_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_CountGenerator_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_CountGenerator_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_CountGenerator_0_0'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block CountGenerator_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_DataSplit4_0_1'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_DataSplit4_0_1'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_DataSplit4_0_1'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block DataSplit4_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Mux2_0_1'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Mux2_0_1'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Mux2_0_1'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_0 .
 INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_FrameController2_0_0'...
 INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_FrameController2_0_0'...
 INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_FrameController2_0_0'...
 INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'design_1_FrameController2_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_FrameController2_0_0/Multiplier12x12FR2'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Multiplier12x12FR2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_FrameController2_0_0/Multiplier12x12FR2'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Multiplier12x12FR2' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_FrameController2_0_0/Multiplier12x12FR2'. Target already exists and is up to date.
+INFO: [IP_Flow 19-1706] Not generating 'Simulation' target for IP 'design_1_FrameController2_0_0/Multiplier12x12FR2'. Target already exists and is up to date.
 INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController2_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_DataCombin2_0_1'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_DataCombin2_0_1'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_DataCombin2_0_1'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block DataCombin2_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Mux4_0_2'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Mux4_0_2'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Mux4_0_2'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Mux4_0_3'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Mux4_0_3'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Mux4_0_3'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_1 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Mux4_0_4'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Mux4_0_4'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Mux4_0_4'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_2 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Mux2_0_3'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Mux2_0_3'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Mux2_0_3'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_1 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Mux4_0_5'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Mux4_0_5'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Mux4_0_5'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_3 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Mux4_1_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Mux4_1_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Mux4_1_0'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_4 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Mux4_2_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Mux4_2_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Mux4_2_0'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_5 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Mux2_1_1'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Mux2_1_1'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Mux2_1_1'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_2 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_FrameController2_1_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_FrameController2_1_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_FrameController2_1_0'...
-INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'design_1_FrameController2_1_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_FrameController2_1_0/Multiplier12x12FR2'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Multiplier12x12FR2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_FrameController2_1_0/Multiplier12x12FR2'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Multiplier12x12FR2' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
 INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController2_1 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Mux4_5_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Mux4_5_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Mux4_5_0'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_6 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Mux4_7_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Mux4_7_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Mux4_7_0'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_7 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Mux4_8_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Mux4_8_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Mux4_8_0'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_8 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Mux2_2_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Mux2_2_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Mux2_2_0'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_3 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_auto_pc_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_auto_pc_0'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'design_1_auto_pc_0'...
-INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
-generate_target: Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1232.527 ; gain = 80.094
-ipx::edit_ip_in_project -upgrade true -name BoardInit_AXI_v1_0_project -directory b:/Complex_Mind/FPGA-Imaging-Library/Master/BoardInit_AXI/BoardInit_AXI_v1_0_project b:/Complex_Mind/FPGA-Imaging-Library/Master/BoardInit_AXI/component.xml
-INFO: [Project 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
-Current project path is 'b:/complex_mind/fpga-imaging-library/master/boardinit_axi/boardinit_axi_v1_0_project'
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'B:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip'.
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:processing_system7:5.5'. The one found in IP location 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63' will take precedence over the same IP in locations: 
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/LocalFilter/LocalFilter.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip/xilinx/processing_system7_v5_5
-ipx::edit_ip_in_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1253.789 ; gain = 10.566
-update_compile_order -fileset sim_1
-ipx::merge_project_changes ports [ipx::current_core]
-INFO: [IP_Flow 19-2418] Expression "((C_S00_AXI_DATA_WIDTH / 8) - 1)": Will not convert operator '/' to XPATH 'div' to allow integer division if applicable.
-ipx::update_ip_instances -delete_project true
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master' may become invalid. A better location for the repostory would be in a path adjacent to the project. (Current project location is 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry'.)
-CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:processing_system7:5.5'. The one found in IP location 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63' will take precedence over the same IP in locations: 
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/LocalFilter/LocalFilter.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip/xilinx/processing_system7_v5_5
-update_ip_catalog: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1263.215 ; gain = 0.000
-INFO: [IP_Flow 19-3422] Upgraded design_1_BoardInit_AXI_0_0 (BoardInit_AXI_v1.0 1.0) from revision 4 to revision 5
-CRITICAL WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading IP 'design_1_BoardInit_AXI_0_0'. These changes may impact your design.
-INFO: [IP_Flow 19-3471] Wrote upgrade log to 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/ip/design_1_BoardInit_AXI_0_0/design_1_BoardInit_AXI_0_0.upgrade_log'.
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-ipx::update_ip_instances: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1276.594 ; gain = 13.379
-generate_target all [get_files  B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd]
-INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
-INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
-INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
-Generated Block Design Tcl file B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
-Exporting to file B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
-CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DataSplit4_0/i'(4) to net 'BoardInit_AXI_0_sels'(32) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/Rotate_0/angle'(9) to net 'BoardInit_AXI_0_angle'(10) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-Verilog Output written to : design_1.v
-Verilog Output written to : design_1_wrapper.v
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-INFO: [BD 41-1029] Generation completed for the IP Integrator block IICctrl_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block camCap_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_BoardInit_AXI_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_BoardInit_AXI_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_BoardInit_AXI_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Software Driver' target for IP 'design_1_BoardInit_AXI_0_0'...
-INFO: [BD 41-1029] Generation completed for the IP Integrator block BoardInit_AXI_0 .
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_processing_system7_0_1'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_processing_system7_0_1'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_processing_system7_0_1'...
+WARNING: [xilinx.com:ip:processing_system7:5.5-1] design_1_processing_system7_0_1: The Zynq BFM requires an AXI BFM license to run. Please ensure that you have purchased and setup the AXI BFM license prior to running simulation with this block. Please contact your Xilinx sales office for more information on purchasing this license
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'design_1_processing_system7_0_1'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'design_1_processing_system7_0_1'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Bram8x320x240_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Graying_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block VGA640x480_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block DataDelay_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Bram8x320x240_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block DataDelay_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block ColorRGB16toRGB24_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block ColorGray2Channels_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block ColorRGB24toVGA_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Crop_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mirror_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Pan_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Rotate_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Scale_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Shear_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block CountGenerator_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block DataSplit4_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController2_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block DataCombin2_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_2 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_3 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_4 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_5 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_2 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController2_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_6 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_7 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_8 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_3 .
 INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_auto_pc_0'...
 INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_0'...
 INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_auto_pc_0'...
 INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'design_1_auto_pc_0'...
 INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
-generate_target: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 1307.438 ; gain = 30.844
-ipx::edit_ip_in_project -upgrade true -name BoardInit_AXI_v1_0_project -directory b:/Complex_Mind/FPGA-Imaging-Library/Master/BoardInit_AXI/BoardInit_AXI_v1_0_project b:/Complex_Mind/FPGA-Imaging-Library/Master/BoardInit_AXI/component.xml
-INFO: [Project 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
-Current project path is 'b:/complex_mind/fpga-imaging-library/master/boardinit_axi/boardinit_axi_v1_0_project'
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'B:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip'.
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:processing_system7:5.5'. The one found in IP location 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63' will take precedence over the same IP in locations: 
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/LocalFilter/LocalFilter.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip/xilinx/processing_system7_v5_5
-ipx::edit_ip_in_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1310.738 ; gain = 3.301
-update_compile_order -fileset sim_1
-ipx::merge_project_changes ports [ipx::current_core]
-INFO: [IP_Flow 19-2418] Expression "((C_S00_AXI_DATA_WIDTH / 8) - 1)": Will not convert operator '/' to XPATH 'div' to allow integer division if applicable.
-ipx::create_xgui_files [ipx::current_core]
-ipx::update_ip_instances -delete_project true
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master' may become invalid. A better location for the repostory would be in a path adjacent to the project. (Current project location is 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry'.)
-CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:processing_system7:5.5'. The one found in IP location 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63' will take precedence over the same IP in locations: 
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/LocalFilter/LocalFilter.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip/xilinx/processing_system7_v5_5
-update_ip_catalog: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1323.246 ; gain = 12.508
-INFO: [IP_Flow 19-3422] Upgraded design_1_BoardInit_AXI_0_0 (BoardInit_AXI_v1.0 1.0) from revision 5 to revision 6
-CRITICAL WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading IP 'design_1_BoardInit_AXI_0_0'. These changes may impact your design.
-INFO: [IP_Flow 19-3471] Wrote upgrade log to 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/ip/design_1_BoardInit_AXI_0_0/design_1_BoardInit_AXI_0_0.upgrade_log'.
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-ipx::update_ip_instances: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1331.184 ; gain = 20.445
-generate_target all [get_files  B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd]
-INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
-INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
-INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
-Generated Block Design Tcl file B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
-Exporting to file B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
-CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DataSplit4_0/i'(4) to net 'BoardInit_AXI_0_sels'(32) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-Verilog Output written to : design_1.v
-Verilog Output written to : design_1_wrapper.v
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-INFO: [BD 41-1029] Generation completed for the IP Integrator block IICctrl_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block camCap_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_BoardInit_AXI_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_BoardInit_AXI_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_BoardInit_AXI_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Software Driver' target for IP 'design_1_BoardInit_AXI_0_0'...
-INFO: [BD 41-1029] Generation completed for the IP Integrator block BoardInit_AXI_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Bram8x320x240_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Graying_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block VGA640x480_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block DataDelay_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Bram8x320x240_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block DataDelay_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block ColorRGB16toRGB24_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block ColorGray2Channels_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block ColorRGB24toVGA_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Crop_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mirror_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Pan_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Rotate_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Scale_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Shear_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block CountGenerator_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block DataSplit4_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController2_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block DataCombin2_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_2 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_3 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_4 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_5 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_2 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController2_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_6 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_7 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_8 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_3 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_auto_pc_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_auto_pc_0'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'design_1_auto_pc_0'...
-INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
-generate_target: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1370.047 ; gain = 14.508
+generate_target: Time (s): cpu = 00:00:57 ; elapsed = 00:00:58 . Memory (MB): peak = 961.578 ; gain = 111.953
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream
-[Sun May 31 01:06:18 2015] Launched synth_1...
+[Sun May 31 15:05:34 2015] Launched synth_1...
 Run output will be captured here: B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.runs/synth_1/runme.log
-[Sun May 31 01:06:18 2015] Launched impl_1...
+[Sun May 31 15:05:34 2015] Launched impl_1...
 Run output will be captured here: B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.runs/impl_1/runme.log
-reset_run synth_1
-update_ip_catalog -rebuild
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:fixedio:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:fixedio_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:hpstatusctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:hpstatusctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:jtag:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:jtag_rtl:2.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_processing_system7:usbctrl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_processing_system7:usbctrl_rtl:1.0' found within IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master'.
-WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'b:/Complex_Mind/FPGA-Imaging-Library/Master' may become invalid. A better location for the repostory would be in a path adjacent to the project. (Current project location is 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry'.)
-CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:processing_system7:5.5'. The one found in IP location 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63' will take precedence over the same IP in locations: 
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/LocalFilter/LocalFilter.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Point/Point.srcs/sources_1/ipshared/xilinx.com/processing_system7_v5_5/da926f63
-   b:/Spira_Heaven/Xilinx/Vivado/2014.4/data/ip/xilinx/processing_system7_v5_5
-update_ip_catalog: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1370.047 ; gain = 0.000
-report_ip_status -name ip_status 
-upgrade_ip [get_ips  {design_1_Rotate_0_0 design_1_Shear_0_0}]
-Upgrading 'B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd'
-INFO: [IP_Flow 19-3422] Upgraded design_1_Rotate_0_0 (Rotate_v1_0 1.0) from revision 3 to revision 4
-INFO: [IP_Flow 19-3471] Wrote upgrade log to 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/ip/design_1_Rotate_0_0/design_1_Rotate_0_0.upgrade_log'.
-INFO: [IP_Flow 19-3422] Upgraded design_1_Shear_0_0 (Shear_v1_0 1.0) from revision 3 to revision 4
-INFO: [IP_Flow 19-3471] Wrote upgrade log to 'b:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/ip/design_1_Shear_0_0/design_1_Shear_0_0.upgrade_log'.
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-report_ip_status -name ip_status 
-generate_target all [get_files  B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd]
-INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
-INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
-INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
-Generated Block Design Tcl file B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
-Exporting to file B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
-CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DataSplit4_0/i'(4) to net 'BoardInit_AXI_0_sels'(32) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-Verilog Output written to : design_1.v
-Verilog Output written to : design_1_wrapper.v
-Wrote  : <B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/design_1.bd> 
-INFO: [BD 41-1029] Generation completed for the IP Integrator block IICctrl_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block camCap_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block BoardInit_AXI_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Bram8x320x240_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Graying_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block VGA640x480_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block DataDelay_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Bram8x320x240_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block DataDelay_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block ColorRGB16toRGB24_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block ColorGray2Channels_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block ColorRGB24toVGA_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Crop_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mirror_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Pan_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Rotate_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Rotate_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Rotate_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'design_1_Rotate_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Rotate_0_0/Multiplier13Sx20SRTT'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Multiplier13Sx20SRTT' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Rotate_0_0/Multiplier13Sx20SRTT'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Multiplier13Sx20SRTT' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Rotate_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Scale_0 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_Shear_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Shear_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Shear_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'design_1_Shear_0_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_Shear_0_0/Multiplier12x25SSHR'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Multiplier12x25SSHR' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_Shear_0_0/Multiplier12x25SSHR'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Multiplier12x25SSHR' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Shear_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block CountGenerator_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block DataSplit4_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController2_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block DataCombin2_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_2 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_3 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_4 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_5 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_2 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block FrameController2_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_6 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_7 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux4_8 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Mux2_3 .
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_auto_pc_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_auto_pc_0'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'design_1_auto_pc_0'...
-INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
-generate_target: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1418.059 ; gain = 0.000
-launch_runs synth_1
-INFO: [HDL 9-2216] Analyzing Verilog file "B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library work [B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:1]
-INFO: [HDL 9-2216] Analyzing Verilog file "B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/hdl/design_1.v" into library work [B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.srcs/sources_1/bd/design_1/hdl/design_1.v:1]
-[Sun May 31 01:15:56 2015] Launched synth_1...
-Run output will be captured here: B:/Complex_Mind/FPGA-Imaging-Library/Master/TestOnBoard/Geometry/Geometry.runs/synth_1/runme.log

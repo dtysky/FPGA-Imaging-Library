@@ -1,7 +1,7 @@
 //Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
-//Date        : Sun May 31 01:15:18 2015
+//Date        : Sun May 31 15:04:37 2015
 //Host        : Dtysky running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -491,8 +491,8 @@ design_1_Rotate_0_0 Rotate_0
 design_1_Scale_0_0 Scale_0
        (.clk(clk_wiz_0_clk_out1),
         .frame_enable(Scale_0_frame_enable),
-        .frame_in_data({FrameController2_0_out_ready,FrameController2_0_out_ready,FrameController2_0_out_ready,FrameController2_0_out_ready,FrameController2_0_out_ready,FrameController2_0_out_ready,FrameController2_0_out_ready,FrameController2_0_out_ready}),
-        .frame_in_ready(FrameController2_0_out_data[0]),
+        .frame_in_data(FrameController2_0_out_data),
+        .frame_in_ready(FrameController2_0_out_ready),
         .frame_out_count_x(Scale_0_frame_out_count_x),
         .frame_out_count_y(Scale_0_frame_out_count_y),
         .in_enable(BoardInit_AXI_0_rst_all_n),
@@ -613,7 +613,7 @@ design_1_proc_sys_reset_0_0 proc_sys_reset_0
         .mb_debug_sys_rst(GND_1),
         .peripheral_aresetn(proc_sys_reset_0_peripheral_aresetn),
         .slowest_sync_clk(clk_wiz_0_clk_out3));
-design_1_processing_system7_0_0 processing_system7_0
+design_1_processing_system7_0_1 processing_system7_0
        (.FCLK_RESET0_N(processing_system7_0_FCLK_RESET0_N),
         .M_AXI_GP0_ACLK(clk_wiz_0_clk_out3),
         .M_AXI_GP0_ARADDR(processing_system7_0_M_AXI_GP0_ARADDR),

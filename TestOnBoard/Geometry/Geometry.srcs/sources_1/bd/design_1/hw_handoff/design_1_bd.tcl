@@ -200,17 +200,18 @@ proc create_root_design { parentCell } {
 
   # Create instance: FrameController2_0, and set properties
   set FrameController2_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:FrameController2:1.0 FrameController2_0 ]
+  set_property -dict [ list CONFIG.ram_read_latency {1}  ] $FrameController2_0
 
   # Create instance: FrameController2_1, and set properties
   set FrameController2_1 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:FrameController2:1.0 FrameController2_1 ]
 
   # Create instance: FrameController_0, and set properties
   set FrameController_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:FrameController:1.0 FrameController_0 ]
-  set_property -dict [ list CONFIG.wr_mode {1}  ] $FrameController_0
+  set_property -dict [ list CONFIG.ram_read_latency {1} CONFIG.wr_mode {1}  ] $FrameController_0
 
   # Create instance: FrameController_1, and set properties
   set FrameController_1 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:FrameController:1.0 FrameController_1 ]
-  set_property -dict [ list CONFIG.row_init {1} CONFIG.wr_mode {0}  ] $FrameController_1
+  set_property -dict [ list CONFIG.row_init {0} CONFIG.wr_mode {0}  ] $FrameController_1
 
   # Create instance: Graying_0, and set properties
   set Graying_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:Graying:1.0 Graying_0 ]
@@ -343,8 +344,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net DataSplit4_0_o0 [get_bd_pins DataCombin2_0/i0] [get_bd_pins DataSplit4_0/o0]
   connect_bd_net -net DataSplit4_0_o1 [get_bd_pins DataCombin2_0/i1] [get_bd_pins DataSplit4_0/o1]
   connect_bd_net -net DataSplit4_0_o2 [get_bd_pins DataSplit4_0/o2] [get_bd_pins Mux2_0/sel] [get_bd_pins Mux2_1/sel] [get_bd_pins Mux2_2/sel] [get_bd_pins Mux2_3/sel]
-  connect_bd_net -net FrameController2_0_out_data [get_bd_pins FrameController2_0/out_data] [get_bd_pins Rotate_0/frame_in_data] [get_bd_pins Scale_0/frame_in_ready] [get_bd_pins Shear_0/frame_in_data]
-  connect_bd_net -net FrameController2_0_out_ready [get_bd_pins FrameController2_0/out_ready] [get_bd_pins Rotate_0/frame_in_ready] [get_bd_pins Scale_0/frame_in_data] [get_bd_pins Shear_0/frame_in_ready]
+  connect_bd_net -net FrameController2_0_out_data [get_bd_pins FrameController2_0/out_data] [get_bd_pins Rotate_0/frame_in_data] [get_bd_pins Scale_0/frame_in_data] [get_bd_pins Shear_0/frame_in_data]
+  connect_bd_net -net FrameController2_0_out_ready [get_bd_pins FrameController2_0/out_ready] [get_bd_pins Rotate_0/frame_in_ready] [get_bd_pins Scale_0/frame_in_ready] [get_bd_pins Shear_0/frame_in_ready]
   connect_bd_net -net FrameController2_0_ram_addr [get_bd_pins FrameController2_0/ram_addr] [get_bd_pins Mux2_0/i1]
   connect_bd_net -net FrameController2_1_out_data [get_bd_pins FrameController2_1/out_data] [get_bd_pins Mux2_2/i0]
   connect_bd_net -net FrameController2_1_out_ready [get_bd_pins FrameController2_1/out_ready] [get_bd_pins Mux2_1/i0]

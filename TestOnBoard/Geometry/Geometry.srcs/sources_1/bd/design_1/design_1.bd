@@ -176,16 +176,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>processing_system7_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="processing_system7" spirit:vendor="xilinx.com" spirit:version="5.5"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_processing_system7_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="PCW_CRYSTAL_PERIPHERAL_FREQMHZ">50</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="PCW_EN_CLK0_PORT">0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="PCW_UIPARAM_DDR_ENABLE">0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>proc_sys_reset_0</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="proc_sys_reset" spirit:vendor="xilinx.com" spirit:version="5.0"/>
         <spirit:configurableElementValues>
@@ -214,6 +204,7 @@
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_FrameController_0_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="wr_mode">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ram_read_latency">1</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -245,7 +236,7 @@
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_FrameController_0_1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="wr_mode">0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="row_init">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="row_init">0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -347,6 +338,7 @@
         <spirit:componentRef spirit:library="F-I-L" spirit:name="FrameController2" spirit:vendor="dtysky.moe" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_FrameController2_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ram_read_latency">1</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -467,6 +459,16 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
+        <spirit:instanceName>processing_system7_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="processing_system7" spirit:vendor="xilinx.com" spirit:version="5.5"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_processing_system7_0_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_CRYSTAL_PERIPHERAL_FREQMHZ">50</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_EN_CLK0_PORT">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_UIPARAM_DDR_ENABLE">0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
         <spirit:instanceName>Rotate_0</spirit:instanceName>
         <spirit:componentRef spirit:library="F-I-L" spirit:name="Rotate" spirit:vendor="dtysky.moe" spirit:version="1.0"/>
         <spirit:configurableElementValues>
@@ -483,14 +485,14 @@
     </spirit:componentInstances>
     <spirit:interconnections>
       <spirit:interconnection>
-        <spirit:name>processing_system7_0_M_AXI_GP0</spirit:name>
-        <spirit:activeInterface spirit:busRef="M_AXI_GP0" spirit:componentRef="processing_system7_0"/>
-        <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="axi_interconnect_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
         <spirit:name>axi_interconnect_0_M00_AXI</spirit:name>
         <spirit:activeInterface spirit:busRef="M00_AXI" spirit:componentRef="axi_interconnect_0"/>
         <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="BoardInit_AXI_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>processing_system7_0_M_AXI_GP0</spirit:name>
+        <spirit:activeInterface spirit:busRef="M_AXI_GP0" spirit:componentRef="processing_system7_0"/>
+        <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="axi_interconnect_0"/>
       </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>
@@ -530,23 +532,18 @@
       <spirit:adHocConnection>
         <spirit:name>clk_wiz_0_clk_out3</spirit:name>
         <spirit:internalPortReference spirit:componentRef="clk_wiz_0" spirit:portRef="clk_out3"/>
-        <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="M_AXI_GP0_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="proc_sys_reset_0" spirit:portRef="slowest_sync_clk"/>
+        <spirit:internalPortReference spirit:componentRef="BoardInit_AXI_0" spirit:portRef="s00_axi_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="M_AXI_GP0_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S00_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="BoardInit_AXI_0" spirit:portRef="s00_axi_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>clk_wiz_0_locked</spirit:name>
         <spirit:internalPortReference spirit:componentRef="clk_wiz_0" spirit:portRef="locked"/>
         <spirit:internalPortReference spirit:componentRef="proc_sys_reset_0" spirit:portRef="dcm_locked"/>
         <spirit:internalPortReference spirit:componentRef="BoardInit_AXI_0" spirit:portRef="pll_locked"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>processing_system7_0_FCLK_RESET0_N</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_RESET0_N"/>
-        <spirit:internalPortReference spirit:componentRef="proc_sys_reset_0" spirit:portRef="ext_reset_in"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>proc_sys_reset_0_interconnect_aresetn</spirit:name>
@@ -556,10 +553,10 @@
       <spirit:adHocConnection>
         <spirit:name>proc_sys_reset_0_peripheral_aresetn</spirit:name>
         <spirit:internalPortReference spirit:componentRef="proc_sys_reset_0" spirit:portRef="peripheral_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S00_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="BoardInit_AXI_0" spirit:portRef="rst_n"/>
         <spirit:internalPortReference spirit:componentRef="BoardInit_AXI_0" spirit:portRef="s00_axi_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S00_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M00_ARESETN"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>camCap_0_dout</spirit:name>
@@ -797,20 +794,6 @@
         <spirit:name>BoardInit_AXI_0_mirror_mode</spirit:name>
         <spirit:internalPortReference spirit:componentRef="BoardInit_AXI_0" spirit:portRef="mirror_mode"/>
         <spirit:internalPortReference spirit:componentRef="Mirror_0" spirit:portRef="mode"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>FrameController2_0_out_data</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="FrameController2_0" spirit:portRef="out_data"/>
-        <spirit:internalPortReference spirit:componentRef="Scale_0" spirit:portRef="frame_in_ready"/>
-        <spirit:internalPortReference spirit:componentRef="Rotate_0" spirit:portRef="frame_in_data"/>
-        <spirit:internalPortReference spirit:componentRef="Shear_0" spirit:portRef="frame_in_data"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>FrameController2_0_out_ready</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="FrameController2_0" spirit:portRef="out_ready"/>
-        <spirit:internalPortReference spirit:componentRef="Scale_0" spirit:portRef="frame_in_data"/>
-        <spirit:internalPortReference spirit:componentRef="Rotate_0" spirit:portRef="frame_in_ready"/>
-        <spirit:internalPortReference spirit:componentRef="Shear_0" spirit:portRef="frame_in_ready"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>DataCombin2_0_o</spirit:name>
@@ -1101,6 +1084,25 @@
         <spirit:name>Mux2_3_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="Mux2_3" spirit:portRef="o"/>
         <spirit:internalPortReference spirit:componentRef="Bram8x320x240_1" spirit:portRef="addra"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>processing_system7_0_FCLK_RESET0_N</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_RESET0_N"/>
+        <spirit:internalPortReference spirit:componentRef="proc_sys_reset_0" spirit:portRef="ext_reset_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>FrameController2_0_out_ready</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="FrameController2_0" spirit:portRef="out_ready"/>
+        <spirit:internalPortReference spirit:componentRef="Scale_0" spirit:portRef="frame_in_ready"/>
+        <spirit:internalPortReference spirit:componentRef="Shear_0" spirit:portRef="frame_in_ready"/>
+        <spirit:internalPortReference spirit:componentRef="Rotate_0" spirit:portRef="frame_in_ready"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>FrameController2_0_out_data</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="FrameController2_0" spirit:portRef="out_data"/>
+        <spirit:internalPortReference spirit:componentRef="Scale_0" spirit:portRef="frame_in_data"/>
+        <spirit:internalPortReference spirit:componentRef="Shear_0" spirit:portRef="frame_in_data"/>
+        <spirit:internalPortReference spirit:componentRef="Rotate_0" spirit:portRef="frame_in_data"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
   </spirit:design>

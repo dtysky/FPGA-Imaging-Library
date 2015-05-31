@@ -20,9 +20,9 @@ BOARDINIT bdit;
 int main(){
 	BOARDINIT_Init(&bdit, XPAR_BOARDINIT_AXI_0_S00_AXI_BASEADDR);
 	BOARDINIT_SetWithCheck(bdit.Rank, 4);
-	BOARDINIT_SetWithCheck(bdit.EdMode, 0);
-	BOARDINIT_SetWithCheck(bdit.EdTemplate, 0b011011000);
-	BOARDINIT_SetWithCheck(bdit.Sels, ActMeanFilter + ViewRankFilter);
+	BOARDINIT_SetWithCheck(bdit.EdMode, 1);
+	BOARDINIT_SetWithCheck(bdit.EdTemplate, 0b110110000);
+	BOARDINIT_SetWithCheck(bdit.Sels, ActMeanFilter + ViewErosionDilationBin);
 	BOARDINIT_Reset(&bdit);
 	return 0;
 }

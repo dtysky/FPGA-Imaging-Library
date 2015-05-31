@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat May 30 22:51:53 2015" VIVADOVERSION="2014.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun May 31 13:57:18 2015" VIVADOVERSION="2014.4">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="design_1_imp" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -113,6 +113,7 @@
             <CONNECTION INSTANCE="WindowGenerator_0" PORT="rst_n"/>
             <CONNECTION INSTANCE="WindowGenerator_1" PORT="rst_n"/>
             <CONNECTION INSTANCE="RankFifter_0" PORT="rst_n"/>
+            <CONNECTION INSTANCE="ColorReversal_0" PORT="rst_n"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="th_mode" SIGIS="undef"/>
@@ -147,7 +148,7 @@
         <PORT DIR="O" LEFT="23" NAME="scale_y" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="24" NAME="sh_u" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="24" NAME="sh_v" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="7" NAME="angle" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="8" NAME="angle" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="31" NAME="sels" RIGHT="0" SIGIS="undef" SIGNAME="BoardInit_AXI_0_sels">
           <CONNECTIONS>
             <CONNECTION INSTANCE="DataSplit4_0" PORT="i"/>
@@ -384,9 +385,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="b" SIGIS="undef" SIGNAME="ThresholdLocal_0_out_data">
+        <PORT DIR="I" NAME="b" SIGIS="undef" SIGNAME="ColorReversal_0_out_data">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ThresholdLocal_0" PORT="out_data"/>
+            <CONNECTION INSTANCE="ColorReversal_0" PORT="out_data"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="7" NAME="channels" RIGHT="0" SIGIS="undef" SIGNAME="ColorBin2Channels_0_channels">
@@ -476,6 +477,51 @@
         <PORT DIR="O" LEFT="15" NAME="vga" RIGHT="0" SIGIS="undef" SIGNAME="ColorRGB24toVGA_0_vga">
           <CONNECTIONS>
             <CONNECTION INSTANCE="VGA640x480_0" PORT="in_data"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/ColorReversal_0" HWVERSION="1.0" INSTANCE="ColorReversal_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ColorReversal" VLNV="dtysky.moe:F-I-L:ColorReversal:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="work_mode" VALUE="0"/>
+        <PARAMETER NAME="color_channels" VALUE="1"/>
+        <PARAMETER NAME="color_width" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_ColorReversal_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk" SIGIS="undef" SIGNAME="clk_wiz_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n" SIGIS="undef" SIGNAME="BoardInit_AXI_0_rst_all_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BoardInit_AXI_0" PORT="rst_all_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="in_enable" SIGIS="undef" SIGNAME="ThresholdLocal_0_out_ready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ThresholdLocal_0" PORT="out_ready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="in_data" RIGHT="0" SIGIS="undef" SIGNAME="ThresholdLocal_0_out_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ThresholdLocal_0" PORT="out_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="out_ready" SIGIS="undef" SIGNAME="ColorReversal_0_out_ready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RowsGenerator_1" PORT="in_enable"/>
+            <CONNECTION INSTANCE="Mux4_0" PORT="i2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="out_data" RIGHT="0" SIGIS="undef" SIGNAME="ColorReversal_0_out_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RowsGenerator_1" PORT="in_data"/>
+            <CONNECTION INSTANCE="ColorBin2Channels_0" PORT="b"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -957,9 +1003,9 @@
             <CONNECTION INSTANCE="RankFifter_0" PORT="out_ready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="i2" RIGHT="0" SIGIS="undef" SIGNAME="ThresholdLocal_0_out_ready">
+        <PORT DIR="I" LEFT="0" NAME="i2" RIGHT="0" SIGIS="undef" SIGNAME="ColorReversal_0_out_ready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ThresholdLocal_0" PORT="out_ready"/>
+            <CONNECTION INSTANCE="ColorReversal_0" PORT="out_ready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="i3" RIGHT="0" SIGIS="undef" SIGNAME="ErosionDilationBin_0_out_ready">
@@ -1133,14 +1179,14 @@
             <CONNECTION INSTANCE="BoardInit_AXI_0" PORT="rst_all_n"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="in_enable" SIGIS="undef" SIGNAME="ThresholdLocal_0_out_ready">
+        <PORT DIR="I" NAME="in_enable" SIGIS="undef" SIGNAME="ColorReversal_0_out_ready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ThresholdLocal_0" PORT="out_ready"/>
+            <CONNECTION INSTANCE="ColorReversal_0" PORT="out_ready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="in_data" RIGHT="0" SIGIS="undef" SIGNAME="ThresholdLocal_0_out_data">
+        <PORT DIR="I" LEFT="0" NAME="in_data" RIGHT="0" SIGIS="undef" SIGNAME="ColorReversal_0_out_data">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ThresholdLocal_0" PORT="out_data"/>
+            <CONNECTION INSTANCE="ColorReversal_0" PORT="out_data"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="out_ready" SIGIS="undef" SIGNAME="RowsGenerator_1_out_ready">
@@ -1200,14 +1246,12 @@
         </PORT>
         <PORT DIR="O" NAME="out_ready" SIGIS="undef" SIGNAME="ThresholdLocal_0_out_ready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RowsGenerator_1" PORT="in_enable"/>
-            <CONNECTION INSTANCE="Mux4_0" PORT="i2"/>
+            <CONNECTION INSTANCE="ColorReversal_0" PORT="in_enable"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="out_data" SIGIS="undef" SIGNAME="ThresholdLocal_0_out_data">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ColorBin2Channels_0" PORT="b"/>
-            <CONNECTION INSTANCE="RowsGenerator_1" PORT="in_data"/>
+            <CONNECTION INSTANCE="ColorReversal_0" PORT="in_data"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2603,6 +2647,7 @@
             <CONNECTION INSTANCE="WindowGenerator_0" PORT="clk"/>
             <CONNECTION INSTANCE="WindowGenerator_1" PORT="clk"/>
             <CONNECTION INSTANCE="RankFifter_0" PORT="clk"/>
+            <CONNECTION INSTANCE="ColorReversal_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="25000000" DIR="O" NAME="clk_out2" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out2">

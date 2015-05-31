@@ -423,6 +423,15 @@
           <spirit:configurableElementValue spirit:referenceId="window_width">3</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>ColorReversal_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="F-I-L" spirit:name="ColorReversal" spirit:vendor="dtysky.moe" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_ColorReversal_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="color_channels">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="color_width">1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
       <spirit:interconnection>
@@ -577,6 +586,7 @@
         <spirit:internalPortReference spirit:componentRef="WindowGenerator_0" spirit:portRef="rst_n"/>
         <spirit:internalPortReference spirit:componentRef="WindowGenerator_1" spirit:portRef="rst_n"/>
         <spirit:internalPortReference spirit:componentRef="RankFifter_0" spirit:portRef="rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="ColorReversal_0" spirit:portRef="rst_n"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>clk_wiz_0_clk_out2</spirit:name>
@@ -601,6 +611,7 @@
         <spirit:internalPortReference spirit:componentRef="WindowGenerator_0" spirit:portRef="clk"/>
         <spirit:internalPortReference spirit:componentRef="WindowGenerator_1" spirit:portRef="clk"/>
         <spirit:internalPortReference spirit:componentRef="RankFifter_0" spirit:portRef="clk"/>
+        <spirit:internalPortReference spirit:componentRef="ColorReversal_0" spirit:portRef="clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>VGA640x480_0_vga_red</spirit:name>
@@ -752,12 +763,6 @@
         <spirit:internalPortReference spirit:componentRef="ThresholdLocal_0" spirit:portRef="ref_enable"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>ThresholdLocal_0_out_ready</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="ThresholdLocal_0" spirit:portRef="out_ready"/>
-        <spirit:internalPortReference spirit:componentRef="RowsGenerator_1" spirit:portRef="in_enable"/>
-        <spirit:internalPortReference spirit:componentRef="Mux4_0" spirit:portRef="i2"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>RowsGenerator_1_out_ready</spirit:name>
         <spirit:internalPortReference spirit:componentRef="RowsGenerator_1" spirit:portRef="out_ready"/>
         <spirit:internalPortReference spirit:componentRef="WindowGenerator_1" spirit:portRef="in_enable"/>
@@ -804,12 +809,6 @@
         <spirit:internalPortReference spirit:componentRef="ColorBin2Channels_1" spirit:portRef="b"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>ThresholdLocal_0_out_data</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="ThresholdLocal_0" spirit:portRef="out_data"/>
-        <spirit:internalPortReference spirit:componentRef="ColorBin2Channels_0" spirit:portRef="b"/>
-        <spirit:internalPortReference spirit:componentRef="RowsGenerator_1" spirit:portRef="in_data"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>ColorBin2Channels_1_channels</spirit:name>
         <spirit:internalPortReference spirit:componentRef="ColorBin2Channels_1" spirit:portRef="channels"/>
         <spirit:internalPortReference spirit:componentRef="Mux4_1" spirit:portRef="i3"/>
@@ -833,6 +832,28 @@
         <spirit:name>BoardInit_AXI_0_rank</spirit:name>
         <spirit:internalPortReference spirit:componentRef="BoardInit_AXI_0" spirit:portRef="rank"/>
         <spirit:internalPortReference spirit:componentRef="RankFifter_0" spirit:portRef="rank"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>ThresholdLocal_0_out_ready</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="ThresholdLocal_0" spirit:portRef="out_ready"/>
+        <spirit:internalPortReference spirit:componentRef="ColorReversal_0" spirit:portRef="in_enable"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>ThresholdLocal_0_out_data</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="ThresholdLocal_0" spirit:portRef="out_data"/>
+        <spirit:internalPortReference spirit:componentRef="ColorReversal_0" spirit:portRef="in_data"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>ColorReversal_0_out_ready</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="ColorReversal_0" spirit:portRef="out_ready"/>
+        <spirit:internalPortReference spirit:componentRef="RowsGenerator_1" spirit:portRef="in_enable"/>
+        <spirit:internalPortReference spirit:componentRef="Mux4_0" spirit:portRef="i2"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>ColorReversal_0_out_data</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="ColorReversal_0" spirit:portRef="out_data"/>
+        <spirit:internalPortReference spirit:componentRef="RowsGenerator_1" spirit:portRef="in_data"/>
+        <spirit:internalPortReference spirit:componentRef="ColorBin2Channels_0" spirit:portRef="b"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
   </spirit:design>

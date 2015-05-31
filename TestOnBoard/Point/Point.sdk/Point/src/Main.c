@@ -21,7 +21,7 @@ int main(){
 	BOARDINIT_SetWithCheck(bdit.Th1, 130);
 	BOARDINIT_SetWithCheck(bdit.Th2, 170);
 	BOARDINIT_SetFixed(bdit.CtScale, 0.3, 12, 12);
-	BOARDINIT_SetFixed(bdit.LmGain, -10, 8, 0);
+	BOARDINIT_SetFixed(bdit.LmGain, -50, 8, 0);
 	BOARDINIT_SetWithCheck(bdit.Sels, SelLightnessTransform);
 	BOARDINIT_Reset(&bdit);
 	return 0;
