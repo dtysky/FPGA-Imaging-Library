@@ -297,22 +297,22 @@ module Rotate(
 		::description
 		For rounding signed fixed number.
 		*/
-		FixedRoundSigned #(33, 18, im_width_bits) FRSX1(clk, mul_x_p1, mul_x_r1);
+		FixedRoundSigned2 #(33, 18, im_width_bits) FRSX1(clk, mul_x_p1, mul_x_r1);
 		/*
 		::description
 		For rounding signed fixed number.
 		*/
-		FixedRoundSigned #(33, 18, im_width_bits) FRSX2(clk, mul_x_p2, mul_x_r2);
+		FixedRoundSigned2 #(33, 18, im_width_bits) FRSX2(clk, mul_x_p2, mul_x_r2);
 		/*
 		::description
 		For rounding signed fixed number.
 		*/
-		FixedRoundSigned #(33, 18, im_width_bits) FRSY1(clk, mul_y_p1, mul_y_r1);
+		FixedRoundSigned2 #(33, 18, im_width_bits) FRSY1(clk, mul_y_p1, mul_y_r1);
 		/*
 		::description
 		For rounding signed fixed number.
 		*/
-		FixedRoundSigned #(33, 18, im_width_bits) FRSY2(clk, mul_y_p2, mul_y_r2);
+		FixedRoundSigned2 #(33, 18, im_width_bits) FRSY2(clk, mul_y_p2, mul_y_r2);
 
 		always @(posedge clk) begin
 			add_x <= mul_x_r1 + mul_x_r2;

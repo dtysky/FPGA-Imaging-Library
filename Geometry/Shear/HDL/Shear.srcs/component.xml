@@ -21,7 +21,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>2b06b6a2</spirit:value>
+            <spirit:value>967fa53e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -40,7 +40,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>2b06b6a2</spirit:value>
+            <spirit:value>dc838180</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -331,13 +331,15 @@
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>sources_1/new/FixedRoundSigned.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>sources_1/new/Shear.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_008c7a2c</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_819eeeee</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sources_1/new/FixedRoundSigned1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_89f14d23</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -357,7 +359,7 @@
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>sources_1/new/FixedRoundSigned.v</spirit:name>
+        <spirit:name>sources_1/new/FixedRoundSigned1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -493,8 +495,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Shear_v1_0</xilinx:displayName>
       <xilinx:vendorURL>http://fil.dtysky.moe</xilinx:vendorURL>
-      <xilinx:coreRevision>3</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2015-05-29T07:36:13Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>5</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2015-05-30T17:35:06Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:ip:Shear:1.0_ARCHIVE_LOCATION">b:/complex_mind/fpga-imaging-library/master/geometry/shear/hdl/shear.srcs</xilinx:tag>
         <xilinx:tag xilinx:name="xilinx.com:user:Shear:1.0_ARCHIVE_LOCATION">b:/complex_mind/fpga-imaging-library/master/geometry/shear/hdl/shear.srcs</xilinx:tag>
@@ -504,7 +506,7 @@
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="cd0b6df2"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="18217a07"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="cb08c2bf"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="69474001"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="fd9fcc39"/>

@@ -2,7 +2,7 @@ __author__ = 'Dai Tianyu (dtysky)'
 # Generateing LUTs for sin and cos.
 from math import sin, cos, radians
 
-# Convert num(1sign-1bit.16bis) to 17bits fixed binary decimal
+# Convert num(1sign-1bit.18bis) to 20bits fixed binary decimal
 def format_d(num):
 	r, d = format(num, 'f').split('.')
 	r = '0' + r[0] if len(r) == 1 else '1' + r[1]

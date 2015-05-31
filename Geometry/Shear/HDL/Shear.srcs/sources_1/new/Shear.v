@@ -276,12 +276,12 @@ module Shear(
 		::description
 		For rounding signed fixed number.
 		*/
-		FixedRoundSigned #(37, 18, im_width_bits) FRSU(clk, mul_u_p, mul_u_r, overflow_u0);
+		FixedRoundSigned1 #(37, 18, im_width_bits) FRSU(clk, mul_u_p, mul_u_r, overflow_u0);
 		/*
 		::description
 		For rounding signed fixed number.
 		*/
-		FixedRoundSigned #(37, 18, im_width_bits) FRSV(clk, mul_v_p, mul_v_r, overflow_v0);
+		FixedRoundSigned1 #(37, 18, im_width_bits) FRSV(clk, mul_v_p, mul_v_r, overflow_v0);
 
 		if(work_mode == 0) begin
 			genvar i;
