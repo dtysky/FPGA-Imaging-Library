@@ -5,8 +5,8 @@
 ***
 
 ## Progress
-Refactoring codes and building Wiki now:  
-重构代码并搭建Wiki中：  
+Version 1.0 published:    
+1.0版本已发布：  
 [http://fil.dtysky.moe/](http://fil.dtysky.moe)  
 <br>
 系列教程：  
