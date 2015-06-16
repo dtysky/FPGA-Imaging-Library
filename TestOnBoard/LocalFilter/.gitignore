@@ -2,8 +2,8 @@
 *.ioplanning/
 *.runs/
 *.hw/
-LocalFilter.srcs/sources_1/ipshared/
-LocalFilter.srcs/sources_1/bd/design_1/ip/
-LocalFilter.sdk/*
-!LocalFilter.sdk/LocalFilter/
+Geometry.srcs/sources_1/ipshared/
+Geometry.srcs/sources_1/bd/design_1/ip/
+Geometry.sdk/*
+!Geometry.sdk/Geometry/
 .Xil/

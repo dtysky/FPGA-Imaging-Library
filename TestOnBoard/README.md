@@ -1,10 +1,11 @@
 All projects here are used for testing on board for each category, please "*.xpr" with Vivado, then:  
 
-0. Add F-I-L in IP Setting  
-1. Reset output products  
-2. Generate output products  
-3. Run Synthesis, Implementation and Generate Bitstream
-4. Export Hardware
-5. Lanch SDK
-6. Change configurations in Main.c
-7. Run
+0. Open vivado
+1. Cd to your proj_path in tcl console  
+example: cd B:/Complex_Mind/FPGA-Imaging-Library/PLv1.0/TestOnBoard/Geometry  
+2. Tcl Console: source bulid.tcl   
+3. Export Hardware
+4. Lanch SDK
+5. Create new application project  
+6. copy codes in ForBuild/Main.c to your Main.c
+7. Change setting and run

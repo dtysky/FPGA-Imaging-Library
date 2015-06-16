@@ -1,24 +1,18 @@
-
 ################################################################
 # This is a generated script based on design: design_1
 #
 # Though there are limitations about the generated script,
 # the main purpose of this utility is to make learning
+set prj_name "LocalFilter"
+set prj_path "Proj/"
+
+create_project $prj_name $prj_path -part xc7z010clg400-1 -force
+
+set_property ip_repo_paths {../../BoardInit_AXI ../../Connector ../../Generator ../../Geometry ../../InOut ../../LocalFilter ../../Point} [current_fileset]
+update_ip_catalog
+
 # IP Integrator Tcl commands easier.
 ################################################################
-
-################################################################
-# Check if script is running in correct Vivado version.
-################################################################
-set scripts_vivado_version 2014.4
-set current_vivado_version [version -short]
-
-if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
-   puts ""
-   puts "ERROR: This script was generated using Vivado <$scripts_vivado_version> and is being run in <$current_vivado_version> of Vivado. Please run the script in Vivado <$scripts_vivado_version> then open the design in Vivado <$current_vivado_version>. Upgrade the design by running \"Tools => Report => Report IP Status...\", then run write_bd_tcl to create an updated script."
-
-   return 1
-}
 
 ################################################################
 # START
@@ -161,6 +155,7 @@ proc create_root_design { parentCell } {
 
   # Create instance: BoardInit_AXI_0, and set properties
   set BoardInit_AXI_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:BoardInit_AXI:1.0 BoardInit_AXI_0 ]
+  set_property -dict [ list CONFIG.window_width {3}  ] $BoardInit_AXI_0
 
   # Create instance: Bram8x320x240_0, and set properties
   set Bram8x320x240_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:Bram8x320x240:1.0 Bram8x320x240_0 ]
@@ -171,6 +166,10 @@ proc create_root_design { parentCell } {
   # Create instance: ColorBin2Channels_0, and set properties
   set ColorBin2Channels_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:ColorBin2Channels:1.0 ColorBin2Channels_0 ]
   set_property -dict [ list CONFIG.color_channels {1}  ] $ColorBin2Channels_0
+
+  # Create instance: ColorBin2Channels_1, and set properties
+  set ColorBin2Channels_1 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:ColorBin2Channels:1.0 ColorBin2Channels_1 ]
+  set_property -dict [ list CONFIG.color_channels {1}  ] $ColorBin2Channels_1
 
   # Create instance: ColorGray2Channels_0, and set properties
   set ColorGray2Channels_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:ColorGray2Channels:1.0 ColorGray2Channels_0 ]
@@ -183,11 +182,10 @@ proc create_root_design { parentCell } {
 
   # Create instance: ColorReversal_0, and set properties
   set ColorReversal_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:ColorReversal:1.0 ColorReversal_0 ]
-  set_property -dict [ list CONFIG.color_channels {1}  ] $ColorReversal_0
+  set_property -dict [ list CONFIG.color_channels {1} CONFIG.color_width {1}  ] $ColorReversal_0
 
-  # Create instance: ContrastTransform_0, and set properties
-  set ContrastTransform_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:ContrastTransform:1.0 ContrastTransform_0 ]
-  set_property -dict [ list CONFIG.color_channels {1}  ] $ContrastTransform_0
+  # Create instance: DataCombin2_0, and set properties
+  set DataCombin2_0 [ create_bd_cell -type ip -vlnv dtysky:User:DataCombin2:1.0 DataCombin2_0 ]
 
   # Create instance: DataDelay_0, and set properties
   set DataDelay_0 [ create_bd_cell -type ip -vlnv dtysky:Image:DataDelay:1.0 DataDelay_0 ]
@@ -197,9 +195,12 @@ proc create_root_design { parentCell } {
   set DataDelay_1 [ create_bd_cell -type ip -vlnv dtysky:Image:DataDelay:1.0 DataDelay_1 ]
   set_property -dict [ list CONFIG.data_width {1} CONFIG.delay {5}  ] $DataDelay_1
 
-  # Create instance: DataWidthConvert_0, and set properties
-  set DataWidthConvert_0 [ create_bd_cell -type ip -vlnv dtysky.moe:User:DataWidthConvert:1.0 DataWidthConvert_0 ]
-  set_property -dict [ list CONFIG.data_width_out {2}  ] $DataWidthConvert_0
+  # Create instance: DataSplit4_0, and set properties
+  set DataSplit4_0 [ create_bd_cell -type ip -vlnv dtysky:User:DataSplit4:1.0 DataSplit4_0 ]
+  set_property -dict [ list CONFIG.data_width {1}  ] $DataSplit4_0
+
+  # Create instance: ErosionDilationBin_0, and set properties
+  set ErosionDilationBin_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:ErosionDilationBin:1.0 ErosionDilationBin_0 ]
 
   # Create instance: FrameController_0, and set properties
   set FrameController_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:FrameController:1.0 FrameController_0 ]
@@ -207,7 +208,7 @@ proc create_root_design { parentCell } {
 
   # Create instance: FrameController_1, and set properties
   set FrameController_1 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:FrameController:1.0 FrameController_1 ]
-  set_property -dict [ list CONFIG.wr_mode {0}  ] $FrameController_1
+  set_property -dict [ list CONFIG.row_init {1} CONFIG.wr_mode {0}  ] $FrameController_1
 
   # Create instance: Graying_0, and set properties
   set Graying_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:Graying:1.0 Graying_0 ]
@@ -215,9 +216,15 @@ proc create_root_design { parentCell } {
   # Create instance: IICctrl_0, and set properties
   set IICctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:IICctrl:1.0 IICctrl_0 ]
 
-  # Create instance: LightnessTransform_0, and set properties
-  set LightnessTransform_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:LightnessTransform:1.0 LightnessTransform_0 ]
-  set_property -dict [ list CONFIG.color_channels {1}  ] $LightnessTransform_0
+  # Create instance: MeanFilter_0, and set properties
+  set MeanFilter_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:MeanFilter:1.0 MeanFilter_0 ]
+
+  # Create instance: Mux2_0, and set properties
+  set Mux2_0 [ create_bd_cell -type ip -vlnv dtysky:user:Mux2:1.0 Mux2_0 ]
+  set_property -dict [ list CONFIG.data_width {1}  ] $Mux2_0
+
+  # Create instance: Mux2_1, and set properties
+  set Mux2_1 [ create_bd_cell -type ip -vlnv dtysky:user:Mux2:1.0 Mux2_1 ]
 
   # Create instance: Mux4_0, and set properties
   set Mux4_0 [ create_bd_cell -type ip -vlnv dtysky:Image:Mux4:1.0 Mux4_0 ]
@@ -226,11 +233,31 @@ proc create_root_design { parentCell } {
   # Create instance: Mux4_1, and set properties
   set Mux4_1 [ create_bd_cell -type ip -vlnv dtysky:Image:Mux4:1.0 Mux4_1 ]
 
-  # Create instance: Threshold_0, and set properties
-  set Threshold_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:Threshold:1.0 Threshold_0 ]
+  # Create instance: RankFifter_0, and set properties
+  set RankFifter_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:RankFifter:1.0 RankFifter_0 ]
+  set_property -dict [ list CONFIG.window_width {3}  ] $RankFifter_0
+
+  # Create instance: RowsGenerator_0, and set properties
+  set RowsGenerator_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:RowsGenerator:1.0 RowsGenerator_0 ]
+
+  # Create instance: RowsGenerator_1, and set properties
+  set RowsGenerator_1 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:RowsGenerator:1.0 RowsGenerator_1 ]
+  set_property -dict [ list CONFIG.color_width {1}  ] $RowsGenerator_1
+
+  # Create instance: ThresholdLocal_0, and set properties
+  set ThresholdLocal_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:ThresholdLocal:1.0 ThresholdLocal_0 ]
+  set_property -dict [ list CONFIG.in_window_width {3}  ] $ThresholdLocal_0
 
   # Create instance: VGA640x480_0, and set properties
   set VGA640x480_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:VGA640x480:1.0 VGA640x480_0 ]
+
+  # Create instance: WindowGenerator_0, and set properties
+  set WindowGenerator_0 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:WindowGenerator:1.0 WindowGenerator_0 ]
+  set_property -dict [ list CONFIG.window_width {3}  ] $WindowGenerator_0
+
+  # Create instance: WindowGenerator_1, and set properties
+  set WindowGenerator_1 [ create_bd_cell -type ip -vlnv dtysky.moe:F-I-L:WindowGenerator:1.0 WindowGenerator_1 ]
+  set_property -dict [ list CONFIG.color_width {1} CONFIG.window_width {3}  ] $WindowGenerator_1
 
   # Create instance: axi_interconnect_0, and set properties
   set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
@@ -241,7 +268,7 @@ proc create_root_design { parentCell } {
 
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.1 clk_wiz_0 ]
-  set_property -dict [ list CONFIG.CLKOUT1_JITTER {175.402} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {25} CONFIG.CLKOUT2_JITTER {175.402} CONFIG.CLKOUT2_PHASE_ERROR {98.575} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {25} CONFIG.CLKOUT2_USED {true} CONFIG.CLKOUT3_JITTER {151.636} CONFIG.CLKOUT3_PHASE_ERROR {98.575} CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {50} CONFIG.CLKOUT3_USED {true} CONFIG.CLKOUT4_JITTER {130.958} CONFIG.CLKOUT4_PHASE_ERROR {98.575} CONFIG.CLKOUT4_USED {true} CONFIG.MMCM_CLKOUT0_DIVIDE_F {40.000} CONFIG.MMCM_CLKOUT1_DIVIDE {40} CONFIG.MMCM_CLKOUT2_DIVIDE {20} CONFIG.MMCM_CLKOUT3_DIVIDE {10} CONFIG.NUM_OUT_CLKS {4} CONFIG.USE_RESET {false}  ] $clk_wiz_0
+  set_property -dict [ list CONFIG.CLKOUT1_JITTER {175.402} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {25} CONFIG.CLKOUT2_JITTER {175.402} CONFIG.CLKOUT2_PHASE_ERROR {98.575} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {25} CONFIG.CLKOUT2_USED {true} CONFIG.CLKOUT3_JITTER {151.636} CONFIG.CLKOUT3_PHASE_ERROR {98.575} CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {50} CONFIG.CLKOUT3_USED {true} CONFIG.CLKOUT4_JITTER {130.958} CONFIG.CLKOUT4_PHASE_ERROR {98.575} CONFIG.CLKOUT4_USED {true} CONFIG.NUM_OUT_CLKS {4} CONFIG.USE_RESET {false}  ] $clk_wiz_0
 
   # Create instance: proc_sys_reset_0, and set properties
   set proc_sys_reset_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_0 ]
@@ -255,53 +282,67 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins processing_system7_0/M_AXI_GP0]
 
   # Create port connections
-  connect_bd_net -net BoardInit_AXI_0_ct_scale [get_bd_pins BoardInit_AXI_0/ct_scale] [get_bd_pins ContrastTransform_0/ct_scale]
-  connect_bd_net -net BoardInit_AXI_0_lm_gain [get_bd_pins BoardInit_AXI_0/lm_gain] [get_bd_pins LightnessTransform_0/lm_gain]
-  connect_bd_net -net BoardInit_AXI_0_rst_all_n [get_bd_pins BoardInit_AXI_0/rst_all_n] [get_bd_pins ColorReversal_0/rst_n] [get_bd_pins ContrastTransform_0/rst_n] [get_bd_pins FrameController_0/in_enable] [get_bd_pins FrameController_0/rst_n] [get_bd_pins FrameController_1/rst_n] [get_bd_pins Graying_0/in_enable] [get_bd_pins Graying_0/rst_n] [get_bd_pins IICctrl_0/iRST_N] [get_bd_pins LightnessTransform_0/rst_n] [get_bd_pins Threshold_0/rst_n] [get_bd_pins VGA640x480_0/rst_n]
-  connect_bd_net -net BoardInit_AXI_0_sels [get_bd_pins BoardInit_AXI_0/sels] [get_bd_pins DataWidthConvert_0/i]
-  connect_bd_net -net BoardInit_AXI_0_th1 [get_bd_pins BoardInit_AXI_0/th1] [get_bd_pins Threshold_0/th1]
-  connect_bd_net -net BoardInit_AXI_0_th2 [get_bd_pins BoardInit_AXI_0/th2] [get_bd_pins Threshold_0/th2]
-  connect_bd_net -net BoardInit_AXI_0_th_mode [get_bd_pins BoardInit_AXI_0/th_mode] [get_bd_pins Threshold_0/th_mode]
+  connect_bd_net -net BoardInit_AXI_0_ed_mode [get_bd_pins BoardInit_AXI_0/ed_mode] [get_bd_pins ErosionDilationBin_0/mode]
+  connect_bd_net -net BoardInit_AXI_0_ed_template [get_bd_pins BoardInit_AXI_0/ed_template] [get_bd_pins ErosionDilationBin_0/template]
+  connect_bd_net -net BoardInit_AXI_0_rank [get_bd_pins BoardInit_AXI_0/rank] [get_bd_pins RankFifter_0/rank]
+  connect_bd_net -net BoardInit_AXI_0_rst_all_n [get_bd_pins BoardInit_AXI_0/rst_all_n] [get_bd_pins ColorReversal_0/rst_n] [get_bd_pins ErosionDilationBin_0/rst_n] [get_bd_pins FrameController_0/in_enable] [get_bd_pins FrameController_0/rst_n] [get_bd_pins FrameController_1/rst_n] [get_bd_pins Graying_0/in_enable] [get_bd_pins Graying_0/rst_n] [get_bd_pins IICctrl_0/iRST_N] [get_bd_pins MeanFilter_0/rst_n] [get_bd_pins RankFifter_0/rst_n] [get_bd_pins RowsGenerator_0/rst_n] [get_bd_pins RowsGenerator_1/rst_n] [get_bd_pins ThresholdLocal_0/rst_n] [get_bd_pins VGA640x480_0/rst_n] [get_bd_pins WindowGenerator_0/rst_n] [get_bd_pins WindowGenerator_1/rst_n]
+  connect_bd_net -net BoardInit_AXI_0_sels [get_bd_pins BoardInit_AXI_0/sels] [get_bd_pins DataSplit4_0/i]
   connect_bd_net -net Bram8x320x240_0_doutb [get_bd_pins Bram8x320x240_0/doutb] [get_bd_pins FrameController_0/in_data]
   connect_bd_net -net Bram8x320x240_1_doutb [get_bd_pins Bram8x320x240_1/doutb] [get_bd_pins ColorGray2Channels_0/gray]
-  connect_bd_net -net ColorBin2Channels_0_channels [get_bd_pins ColorBin2Channels_0/channels] [get_bd_pins Mux4_1/i1]
+  connect_bd_net -net ColorBin2Channels_0_channels [get_bd_pins ColorBin2Channels_0/channels] [get_bd_pins Mux4_1/i2]
+  connect_bd_net -net ColorBin2Channels_1_channels [get_bd_pins ColorBin2Channels_1/channels] [get_bd_pins Mux4_1/i3]
   connect_bd_net -net ColorGray2Channels_0_channels [get_bd_pins ColorGray2Channels_0/channels] [get_bd_pins ColorRGB24toVGA_0/rgb24]
   connect_bd_net -net ColorRGB16toRGB24_0_rgb24 [get_bd_pins ColorRGB16toRGB24_0/rgb24] [get_bd_pins Graying_0/in_data]
   connect_bd_net -net ColorRGB24toVGA_0_vga [get_bd_pins ColorRGB24toVGA_0/vga] [get_bd_pins VGA640x480_0/in_data]
-  connect_bd_net -net ColorReversal_0_out_data [get_bd_pins ColorReversal_0/out_data] [get_bd_pins Mux4_1/i0]
-  connect_bd_net -net ColorReversal_0_out_ready [get_bd_pins ColorReversal_0/out_ready] [get_bd_pins Mux4_0/i0]
-  connect_bd_net -net ContrastTransform_0_out_data [get_bd_pins ContrastTransform_0/out_data] [get_bd_pins Mux4_1/i3]
-  connect_bd_net -net ContrastTransform_0_out_ready [get_bd_pins ContrastTransform_0/out_ready] [get_bd_pins Mux4_0/i3]
+  connect_bd_net -net ColorReversal_0_out_data [get_bd_pins ColorBin2Channels_0/b] [get_bd_pins ColorReversal_0/out_data] [get_bd_pins RowsGenerator_1/in_data]
+  connect_bd_net -net ColorReversal_0_out_ready [get_bd_pins ColorReversal_0/out_ready] [get_bd_pins Mux4_0/i2] [get_bd_pins RowsGenerator_1/in_enable]
+  connect_bd_net -net DataCombin2_0_o [get_bd_pins DataCombin2_0/o] [get_bd_pins Mux4_0/sel] [get_bd_pins Mux4_1/sel]
   connect_bd_net -net DataDelay_0_out_data [get_bd_pins Bram8x320x240_0/addra] [get_bd_pins DataDelay_0/out_data]
   connect_bd_net -net DataDelay_1_out_data [get_bd_pins Bram8x320x240_0/wea] [get_bd_pins DataDelay_1/out_data]
-  connect_bd_net -net DataWidthConvert_0_o [get_bd_pins DataWidthConvert_0/o] [get_bd_pins Mux4_0/sel] [get_bd_pins Mux4_1/sel]
-  connect_bd_net -net FrameController_0_out_data [get_bd_pins ColorReversal_0/in_data] [get_bd_pins ContrastTransform_0/in_data] [get_bd_pins FrameController_0/out_data] [get_bd_pins LightnessTransform_0/in_data] [get_bd_pins Threshold_0/in_data]
-  connect_bd_net -net FrameController_0_out_ready [get_bd_pins ColorReversal_0/in_enable] [get_bd_pins ContrastTransform_0/in_enable] [get_bd_pins FrameController_0/out_ready] [get_bd_pins LightnessTransform_0/in_enable] [get_bd_pins Threshold_0/in_enable]
+  connect_bd_net -net DataSplit4_0_o0 [get_bd_pins DataSplit4_0/o0] [get_bd_pins Mux2_0/sel] [get_bd_pins Mux2_1/sel]
+  connect_bd_net -net DataSplit4_0_o1 [get_bd_pins DataCombin2_0/i0] [get_bd_pins DataSplit4_0/o1]
+  connect_bd_net -net DataSplit4_0_o2 [get_bd_pins DataCombin2_0/i1] [get_bd_pins DataSplit4_0/o2]
+  connect_bd_net -net ErosionDilationBin_0_out_data [get_bd_pins ColorBin2Channels_1/b] [get_bd_pins ErosionDilationBin_0/out_data]
+  connect_bd_net -net ErosionDilationBin_0_out_ready [get_bd_pins ErosionDilationBin_0/out_ready] [get_bd_pins Mux4_0/i3]
+  connect_bd_net -net FrameController_0_out_data [get_bd_pins FrameController_0/out_data] [get_bd_pins RowsGenerator_0/in_data]
+  connect_bd_net -net FrameController_0_out_ready [get_bd_pins FrameController_0/out_ready] [get_bd_pins RowsGenerator_0/in_enable]
   connect_bd_net -net FrameController_0_ram_addr [get_bd_pins Bram8x320x240_0/addrb] [get_bd_pins FrameController_0/ram_addr]
   connect_bd_net -net FrameController_1_out_data [get_bd_pins Bram8x320x240_1/dina] [get_bd_pins FrameController_1/out_data]
   connect_bd_net -net FrameController_1_out_ready [get_bd_pins Bram8x320x240_1/wea] [get_bd_pins FrameController_1/out_ready]
   connect_bd_net -net FrameController_1_ram_addr [get_bd_pins Bram8x320x240_1/addra] [get_bd_pins FrameController_1/ram_addr]
   connect_bd_net -net Graying_0_out_data [get_bd_pins Bram8x320x240_0/dina] [get_bd_pins Graying_0/out_data]
   connect_bd_net -net IICctrl_0_I2C_SCLK [get_bd_ports I2C_SCLK] [get_bd_pins IICctrl_0/I2C_SCLK]
-  connect_bd_net -net LightnessTransform_0_out_data [get_bd_pins LightnessTransform_0/out_data] [get_bd_pins Mux4_1/i2]
-  connect_bd_net -net LightnessTransform_0_out_ready [get_bd_pins LightnessTransform_0/out_ready] [get_bd_pins Mux4_0/i2]
+  connect_bd_net -net MeanFilter_0_out_data [get_bd_pins MeanFilter_0/out_data] [get_bd_pins Mux2_1/i0] [get_bd_pins Mux4_1/i0]
+  connect_bd_net -net MeanFilter_0_out_ready [get_bd_pins MeanFilter_0/out_ready] [get_bd_pins Mux2_0/i0] [get_bd_pins Mux4_0/i0]
+  connect_bd_net -net Mux2_0_o [get_bd_pins Mux2_0/o] [get_bd_pins ThresholdLocal_0/ref_enable]
+  connect_bd_net -net Mux2_1_o [get_bd_pins Mux2_1/o] [get_bd_pins ThresholdLocal_0/ref_data]
   connect_bd_net -net Mux4_0_o [get_bd_pins FrameController_1/in_enable] [get_bd_pins Mux4_0/o]
   connect_bd_net -net Mux4_1_o [get_bd_pins FrameController_1/in_data] [get_bd_pins Mux4_1/o]
   connect_bd_net -net Net [get_bd_ports I2C_SDAT] [get_bd_pins IICctrl_0/I2C_SDAT]
-  connect_bd_net -net Threshold_0_out_data [get_bd_pins ColorBin2Channels_0/b] [get_bd_pins Threshold_0/out_data]
-  connect_bd_net -net Threshold_0_out_ready [get_bd_pins Mux4_0/i1] [get_bd_pins Threshold_0/out_ready]
+  connect_bd_net -net RankFifter_0_out_data [get_bd_pins Mux2_1/i1] [get_bd_pins Mux4_1/i1] [get_bd_pins RankFifter_0/out_data]
+  connect_bd_net -net RankFifter_0_out_ready [get_bd_pins Mux2_0/i1] [get_bd_pins Mux4_0/i1] [get_bd_pins RankFifter_0/out_ready]
+  connect_bd_net -net RowsGenerator_0_out_data [get_bd_pins RowsGenerator_0/out_data] [get_bd_pins WindowGenerator_0/in_data]
+  connect_bd_net -net RowsGenerator_0_out_ready [get_bd_pins RowsGenerator_0/out_ready] [get_bd_pins WindowGenerator_0/in_enable]
+  connect_bd_net -net RowsGenerator_1_out_data [get_bd_pins RowsGenerator_1/out_data] [get_bd_pins WindowGenerator_1/in_data]
+  connect_bd_net -net RowsGenerator_1_out_ready [get_bd_pins RowsGenerator_1/out_ready] [get_bd_pins WindowGenerator_1/in_enable]
+  connect_bd_net -net ThresholdLocal_0_out_data [get_bd_pins ColorReversal_0/in_data] [get_bd_pins ThresholdLocal_0/out_data]
+  connect_bd_net -net ThresholdLocal_0_out_ready [get_bd_pins ColorReversal_0/in_enable] [get_bd_pins ThresholdLocal_0/out_ready]
   connect_bd_net -net VGA640x480_0_frame_addr [get_bd_pins Bram8x320x240_1/addrb] [get_bd_pins VGA640x480_0/frame_addr]
   connect_bd_net -net VGA640x480_0_vga_blue [get_bd_ports vga_blue] [get_bd_pins VGA640x480_0/vga_blue]
   connect_bd_net -net VGA640x480_0_vga_green [get_bd_ports vga_green] [get_bd_pins VGA640x480_0/vga_green]
   connect_bd_net -net VGA640x480_0_vga_hsync [get_bd_ports vga_hsync] [get_bd_pins VGA640x480_0/vga_hsync]
   connect_bd_net -net VGA640x480_0_vga_red [get_bd_ports vga_red] [get_bd_pins VGA640x480_0/vga_red]
   connect_bd_net -net VGA640x480_0_vga_vsync [get_bd_ports vga_vsync] [get_bd_pins VGA640x480_0/vga_vsync]
+  connect_bd_net -net WindowGenerator_0_out_data [get_bd_pins MeanFilter_0/in_data] [get_bd_pins RankFifter_0/in_data] [get_bd_pins ThresholdLocal_0/in_data] [get_bd_pins WindowGenerator_0/out_data]
+  connect_bd_net -net WindowGenerator_0_out_ready [get_bd_pins MeanFilter_0/in_enable] [get_bd_pins RankFifter_0/in_enable] [get_bd_pins ThresholdLocal_0/in_enable] [get_bd_pins WindowGenerator_0/out_ready]
+  connect_bd_net -net WindowGenerator_1_out_data [get_bd_pins ErosionDilationBin_0/in_data] [get_bd_pins WindowGenerator_1/out_data]
+  connect_bd_net -net WindowGenerator_1_out_ready [get_bd_pins ErosionDilationBin_0/in_enable] [get_bd_pins WindowGenerator_1/out_ready]
   connect_bd_net -net camCap_0_addr [get_bd_pins DataDelay_0/in_data] [get_bd_pins camCap_0/addr]
   connect_bd_net -net camCap_0_dout [get_bd_pins ColorRGB16toRGB24_0/rgb16] [get_bd_pins camCap_0/dout]
   connect_bd_net -net camCap_0_wclk [get_bd_pins Bram8x320x240_0/clka] [get_bd_pins DataDelay_0/clk] [get_bd_pins DataDelay_1/clk] [get_bd_pins Graying_0/clk] [get_bd_pins camCap_0/wclk]
   connect_bd_net -net camCap_0_we [get_bd_pins DataDelay_1/in_data] [get_bd_pins camCap_0/we]
   connect_bd_net -net clk_in1_1 [get_bd_ports clk_in1] [get_bd_pins clk_wiz_0/clk_in1]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins Bram8x320x240_0/clkb] [get_bd_pins Bram8x320x240_1/clka] [get_bd_pins ColorReversal_0/clk] [get_bd_pins ContrastTransform_0/clk] [get_bd_pins FrameController_0/clk] [get_bd_pins FrameController_1/clk] [get_bd_pins LightnessTransform_0/clk] [get_bd_pins Threshold_0/clk] [get_bd_pins clk_wiz_0/clk_out1]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins Bram8x320x240_0/clkb] [get_bd_pins Bram8x320x240_1/clka] [get_bd_pins ColorReversal_0/clk] [get_bd_pins ErosionDilationBin_0/clk] [get_bd_pins FrameController_0/clk] [get_bd_pins FrameController_1/clk] [get_bd_pins MeanFilter_0/clk] [get_bd_pins RankFifter_0/clk] [get_bd_pins RowsGenerator_0/clk] [get_bd_pins RowsGenerator_1/clk] [get_bd_pins ThresholdLocal_0/clk] [get_bd_pins WindowGenerator_0/clk] [get_bd_pins WindowGenerator_1/clk] [get_bd_pins clk_wiz_0/clk_out1]
   connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_ports xclk] [get_bd_pins Bram8x320x240_1/clkb] [get_bd_pins IICctrl_0/iCLK] [get_bd_pins VGA640x480_0/clk_25m] [get_bd_pins clk_wiz_0/clk_out2]
   connect_bd_net -net clk_wiz_0_clk_out3 [get_bd_pins BoardInit_AXI_0/s00_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins clk_wiz_0/clk_out3] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK]
   connect_bd_net -net clk_wiz_0_locked [get_bd_pins BoardInit_AXI_0/pll_locked] [get_bd_pins clk_wiz_0/locked] [get_bd_pins proc_sys_reset_0/dcm_locked]
@@ -331,4 +372,16 @@ proc create_root_design { parentCell } {
 
 create_root_design ""
 
+generate_target {synthesis implementation} [get_files $prj_path/$prj_name.srcs/sources_1/bd/design_1/design_1.bd]
 
+make_wrapper -files [get_files $prj_path/$prj_name.srcs/sources_1/bd/design_1/design_1.bd] -top
+import_files -force -norecurse -fileset sources_1 $prj_path/$prj_name.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+import_files -force -norecurse -fileset constrs_1 ForBuild/Constraints.xdc
+set_property top design_1_wrapper [current_fileset]
+
+launch_runs synth_1
+wait_on_run synth_1
+
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_run impl_1

@@ -1,24 +1,18 @@
-
 ################################################################
 # This is a generated script based on design: design_1
 #
 # Though there are limitations about the generated script,
 # the main purpose of this utility is to make learning
+set prj_name "Geometry"
+set prj_path "Proj/"
+
+create_project $prj_name $prj_path -part xc7z010clg400-1 -force
+
+set_property ip_repo_paths {../../BoardInit_AXI ../../Connector ../../Generator ../../Geometry ../../InOut ../../LocalFilter ../../Point} [current_fileset]
+update_ip_catalog
+
 # IP Integrator Tcl commands easier.
 ################################################################
-
-################################################################
-# Check if script is running in correct Vivado version.
-################################################################
-set scripts_vivado_version 2014.4
-set current_vivado_version [version -short]
-
-if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
-   puts ""
-   puts "ERROR: This script was generated using Vivado <$scripts_vivado_version> and is being run in <$current_vivado_version> of Vivado. Please run the script in Vivado <$scripts_vivado_version> then open the design in Vivado <$current_vivado_version>. Upgrade the design by running \"Tools => Report => Report IP Status...\", then run write_bd_tcl to create an updated script."
-
-   return 1
-}
 
 ################################################################
 # START
@@ -440,3 +434,16 @@ proc create_root_design { parentCell } {
 create_root_design ""
 
 
+generate_target {synthesis implementation} [get_files $prj_path/$prj_name.srcs/sources_1/bd/design_1/design_1.bd]
+
+make_wrapper -files [get_files $prj_path/$prj_name.srcs/sources_1/bd/design_1/design_1.bd] -top
+import_files -force -norecurse -fileset sources_1 $prj_path/$prj_name.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+import_files -force -norecurse -fileset constrs_1 ForBuild/Constraints.xdc
+set_property top design_1_wrapper [current_fileset]
+
+launch_runs synth_1
+wait_on_run synth_1
+
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_run impl_1
